@@ -6,9 +6,26 @@
 @import 'variables';
 
 // Bootstrap
-@import '~bootstrap/scss/bootstrap';
 
-.navbar-laravel {
-  background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+
+
+.docs-example-orbit-slide {
+    padding: 2rem 4rem;
+    color: $maroon;
+
+    .orbit-slide:nth-of-type(1) & {
+      background-color: $cueaYellow;
+    }
+
+    .orbit-slide:nth-of-type(2) & {
+        background-color: $cueaYellow;
+    }
+
+    .orbit-slide:nth-of-type(3) & {
+        background-color: $cueaYellow;
+    }
+
+    .orbit-slide:nth-of-type(4) & {
+        background-color: $cueaYellow;
+    }
 }

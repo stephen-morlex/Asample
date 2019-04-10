@@ -18,3 +18,11 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/faculties-schools-and-institues', 'FacultyController@index')->name('faculty.index');
+Route::get('/faculties-schools-and-institues/{faculty}','FacultyController@show')->name('faculty.show');
+
+
+// programs routes
+Route::get('/programmes', 'ProgramController@index')->name('program.index');
+Route::get('/programmes/{program}', 'ProgramController@show')->name('program.show');
+Route::get('/programmes-section/{section}', 'ProgramController@section')->name('program.section');

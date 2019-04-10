@@ -122,6 +122,7 @@
 <!-- Webful JS -->
 <script src="{{ asset('js/webful.js') }}"></script>
 
+
 <!-- Including LightBox Plugin Delete if not using -->
 <script src="{{ asset('js/lightbox.min.js') }}"></script>
 
@@ -141,3 +142,4 @@
 <script type="text/javascript" src="{{ asset('lib/revolution/js/extensions/revolution.extension.parallax.min.js') }}"></script>
 <script type="text/javascript" src="{{ asset('lib/revolution/js/extensions/revolution.extension.slideanims.min.js') }}"></script>
 <script type="text/javascript" src="{{ asset('lib/revolution/js/extensions/revolution.extension.video.min.js') }}"></script>
+<script src="{{ asset('js/app.js') }}"></script>

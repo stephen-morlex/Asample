@@ -19,6 +19,7 @@
 
     <!-- Animation CSS -->
     <link rel="stylesheet" type="text/css" href="{{ asset('/css/animate.css') }}" media="all" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
 
     <!-- Foundation CSS File -->
     <link rel="stylesheet" type="text/css" href="{{ asset('/css/foundation.min.css') }}" media="all" />
@@ -32,7 +33,9 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('/css/lightbox.min.css') }}" media="all" />
 
     <!-- Theme Styles CSS File -->
+    <link rel="stylesheet" type="text/css" href="{{ asset('/css/app.css') }}" media="all" />
     <link rel="stylesheet" type="text/css" href="{{ asset('/css/style.css') }}" media="all" />
+
     <!-- Font Awesome CSS File -->
     <link href="{{ asset('css/font-awesome.min.css')}}" rel="stylesheet">
 
