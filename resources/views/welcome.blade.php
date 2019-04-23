@@ -288,7 +288,7 @@
                 <li><i class="fa fa-check-square-o" aria-hidden="true"></i> Helping Board in your learning management</li>
             </ul>
             <div class="clearfix"></div>
-            <a href="faculty.html" class="primary button bordered-light">Find out More!</a>
+            <a href="{{ route('faculty.index') }}" class="primary button bordered-light">Find out More!</a>
         </div>
     </div><!-- courses column Ends /-->
 
@@ -308,15 +308,15 @@
 
     <div class="newadmission-info medium-4 small-12 columns">
         <div class="">
-            <h3><i class="fa fa-sign-in" aria-hidden="true"></i> Admission Proccess</h3>
-            <p>We are happy to tell you that we are accepting new addmissions for new batch so dont delay get enrolled asap ...</p>
+            <h3><i class="fa fa-sign-in" aria-hidden="true"></i> Admission Process</h3>
+            <p>We are happy to tell you that we are accepting new addmissions for the semster so dont delay get enrolled asap ...</p>
             <ul class="no-bullet">
-                <li><i class="fa fa-check-square-o" aria-hidden="true"></i> Find a course best suits your skills</li>
-                <li><i class="fa fa-check-square-o" aria-hidden="true"></i> Attent the seminar related to that course</li>
-                <li><i class="fa fa-check-square-o" aria-hidden="true"></i> Helping Board in your learning management</li>
+                <li><i class="fa fa-check-square-o" aria-hidden="true"></i> Find a course best suits of your choice</li>
+                <li><i class="fa fa-check-square-o" aria-hidden="true"></i> Do entry exams and payment for the admission</li>
+                <li><i class="fa fa-check-square-o" aria-hidden="true"></i> Start your course</li>
             </ul>
             <div class="clearfix"></div>
-            <a href="admission.html" class="primary button bordered-light">Get Enrolled!</a>
+            <a href="{{ route('admission.index') }}" class="primary button bordered-light">Get Enrolled!</a>
         </div>
     </div>
     <div class="clearfix"></div>
@@ -328,7 +328,7 @@
     <div class="row">
 
         <div class="medium-6 small-12 columns">
-            <div class="flex-video">
+            <div class="flex-video ">
                 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/ny7pBK0_MTk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
         </div><!-- Left Column /-->

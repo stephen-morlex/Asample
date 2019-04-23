@@ -26,7 +26,9 @@
         <div class="medium-9 small-12 columns posts-wrap">
 
             <div class="event-thumb">
-                <img src="{{ asset('images/event_thumb.jpg') }}" alt="Something0" class="thumbnail" />
+
+                <img  src="{{ Voyager::image( $faculty->image ) }}"  class="thumbnail" />
+
             </div><!-- Course Thumb /-->
 
 
@@ -34,8 +36,9 @@
                 <h2>{{ $faculty->name }}</h2>
                 <p></p>
 
-                    <p>{{ $faculty->description }}</p>
-                    <p>{{ $faculty->content }}</p>
+                    <p>{!! $faculty->description  !!}</p>
+                    <hr>
+                    <p>{!! $faculty->content !!}</p>
                 </div><!-- Course content /-->
 
         </div><!-- Posts wrap ends /-->
@@ -50,35 +53,36 @@
             </div><!-- widget ends /-->
 
             <div class="widget">
-                <h2>Training Methodology</h2>
+                <h2>{!! $faculty->name !!} Brochure</h2>
 
                 <ol class="menu vertical">
-                    <li><a href="courses.html">Lectures & demos by industry experts</a></li>
-                    <li><a href="courses.html">Project driven hands-on approach</a></li>
-                    <li><a href="courses.html">Focus on latest tools, technologies & industry practices</a></li>
-                    <li><a href="courses.html">Projects, assignments & quizzes for student’s evaluation</a></li>
+                    <li><a href="courses.html">
+                            <?php $file = (json_decode($faculty->file))[0]->download_link; ?>
+                            <a href="{{ Voyager::image( $file ) }}" target="_blank">{{$faculty->Nom}}Click here to download Brochure</a>
+                    </a></li>
+
                 </ol>
             </div><!-- widget ends /-->
 
             <div class="widget">
-                <h2>Duration & Frequency</h2>
+                <h2>In takes</h2>
 
                 <ul class="menu vertical">
-                    <li><a href="courses.html">4 Months (16 Weeks)</a></li>
-                    <li><a href="courses.html">3 sessions of 2 hours a week</a></li>
+                    <li><a href="#">January - April</a></li>
+                    <li><a href="#">May - july</a></li>
+                    <li><a href="#">August - December</a></li>
                 </ul>
             </div><!-- widget ends /-->
 
 
 
             <div class="widget">
-                <h2>Popular Courses</h2>
+                <h2> Some People also interested in</h2>
 
                 <ul class="menu vertical">
-                    <li><a href="courses.html">Web Development</a></li>
-                    <li><a href="courses.html">Graphic Designing</a></li>
-                    <li><a href="courses.html">Print Designing</a></li>
-                    <li><a href="courses.html">Android/IOS Development</a></li>
+                    @foreach ($alsoInterested as $f)
+                    <li><a href="{{ route('faculty.show',$f->slug) }}">{{ $f->name }}</a></li>
+                    @endforeach
                 </ul>
             </div><!-- widget ends /-->
 
@@ -99,64 +103,64 @@
 
 <div class="why-cuea content-area module">
 
-        <div class="row">
+    <div class="row">
 
-            <div class="our-process-wrapper">
+        <div class="our-process-wrapper">
 
-                <div class="medium-8 medium-offset-3 small-12 columns our-process">
-                    <h2>Why Cuea!</h2>
+            <div class="medium-8 medium-offset-3 small-12 columns our-process">
+                <h2>Why Cuea!</h2>
 
-                    <div class="process">
-                        <div class="number"><i class="fa fa-heart" aria-hidden="true"></i></div>
-                        <div class="right-info">
-                            <h3>Select a Course you like and Explore it!</h3>
-                            <p>Once upon a time there was a thirsty crow he flew here and there in search of water.</p>
-                        </div>
-                        <div class="clearfix"></div>
-                    </div><!-- process /-->
+                <div class="process">
+                    <div class="number"><i class="fa fa-heart" aria-hidden="true"></i></div>
+                    <div class="right-info">
+                        <h3>Select a Course you like and Explore it!</h3>
+                        <p> Chartered Private University accredited by Commission of University Education.</p>
+                    </div>
+                    <div class="clearfix"></div>
+                </div><!-- process /-->
 
-                    <div class="process">
-                        <div class="number"><i class="fa fa-users" aria-hidden="true"></i></div>
-                        <div class="right-info">
-                            <h3>Join a Seminar To know More about it!</h3>
-                            <p>But he could not find water anywhere at last he reached in a garden where he saw a pitcher.</p>
-                        </div>
-                        <div class="clearfix"></div>
-                    </div><!-- process /-->
+                <div class="process">
+                    <div class="number"><i class="fa fa-users" aria-hidden="true"></i></div>
+                    <div class="right-info">
+                        <h3>Join a Seminar To know More about it!</h3>
+                        <p> 34 solid years of offering education grounded on values
+                            leading regional and international University.</p>
+                    </div>
+                    <div class="clearfix"></div>
+                </div><!-- process /-->
 
-                    <div class="process">
+                <div class="process">
+                    <div class="number"><i class="fa fa-globe" aria-hidden="true"></i></div>
+                    <div class="right-info">
+                        <h3>Get Enrolled and start better future with us!</h3>
+                        <p>Rich diversity: Over 20 nationalities and 100+ programmes on offer</p>
+                    </div>
+                    <div class="clearfix"></div>
+                </div><!-- process /-->
+                <div class="process">
                         <div class="number"><i class="fa fa-share" aria-hidden="true"></i></div>
                         <div class="right-info">
                             <h3>Get Enrolled and start better future with us!</h3>
-                            <p>Thirsty Crow should Call us at: 123-123-1234 to drink water asap before all seats are reserved.</p>
+                            <p> Innovative and marketable graduates</p>
                         </div>
                         <div class="clearfix"></div>
                     </div><!-- process /-->
                     <div class="process">
-                            <div class="number"><i class="fa fa-fish" aria-hidden="true"></i></div>
+                            <div class="number"><i class="fa fa-cogs" aria-hidden="true"></i></div>
                             <div class="right-info">
                                 <h3>Get Enrolled and start better future with us!</h3>
                                 <p>Thirsty Crow should Call us at: 123-123-1234 to drink water asap before all seats are reserved.</p>
                             </div>
                             <div class="clearfix"></div>
                         </div><!-- process /-->
-                        <div class="process">
-                                <div class="number"><i class="fa fa-phone" aria-hidden="true"></i></div>
-                                <div class="right-info">
-                                    <h3>Get Enrolled and start better future with us!</h3>
-                                    <p>Thirsty Crow should Call us at: 123-123-1234 to drink water asap before all seats are reserved.</p>
-                                </div>
-                                <div class="clearfix"></div>
-                            </div><!-- process /-->
-                </div><!-- Left Process Ends /-->
+            </div><!-- Left Process Ends /-->
 
 <!--                    <div class="medium-4 small-12 columns our-testimonials"></div> Our Testimonials Ends /-->
 
-            </div><!-- Events Wrapper Ends /-->
+        </div><!-- Events Wrapper Ends /-->
 
-        </div><!-- Row Ends /-->
-  </div>
-<!-- Our Teachers /-->
+    </div><!-- Row Ends /-->
+</div>
 
 
 <!-- Call to Action box -->

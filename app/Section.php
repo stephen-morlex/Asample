@@ -10,4 +10,9 @@ class Section extends Model
     {
         return $this->hasMany('App\Program');
     }
+
+    public function admission()
+    {
+        return $this->hasMany('App\Admission');
+    }
 }

@@ -42,7 +42,7 @@
                               </div><!-- Testimonial Thumb /-->
                               <div class="testimonial-detail">
                                   <a href="{{ route('program.show',$pro->slug) }}"><h4>{{ $pro->name }}!</h4>
-                                  <p>{{ str_limit($pro->body,180) }}</p>
+                                  <p>{!! Markdown::convertToHtml(str_limit($pro->body,180)) !!}</p>
                                 </a>
                                   <a href="{{ route('program.section', $pro->section->slug) }}"><cite>{{ $pro->section->name }}  program</cite></a>
                               </div><!-- Testimonial Detail /-->

@@ -42,7 +42,8 @@ class ProgramController extends Controller
             $programs =$programs->orderBy('year')->paginate(6);
         } elseif (request()->sort=='old') {
             $programs =$programs->orderBy('year', 'desc')->paginate(6);
-        } else {
+        }
+        else {
             $programs=$programs->paginate(6);
         }
         return view('program.section', compact('sections', 'programs', 'sectionName'));

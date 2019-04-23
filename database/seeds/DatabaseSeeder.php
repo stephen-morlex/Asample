@@ -4,6 +4,8 @@ use Illuminate\Database\Seeder;
 use App\Program;
 use App\Faculty;
 use App\Section;
+use App\Admission;
+use App\Event;
 
 class DatabaseSeeder extends Seeder
 {
@@ -18,6 +20,8 @@ class DatabaseSeeder extends Seeder
         factory(Section::class,4)->create();
         factory(Faculty::class,20)->create();
         factory(Program::class,10)->create();
+        factory(Admission::class,10)->create();
+        factory(Event::class,10)->create();
 
 
     }

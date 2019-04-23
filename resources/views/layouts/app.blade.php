@@ -50,6 +50,7 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('/lib/revolution/css/layers.css') }}">
     <!-- REVOLUTION NAVIGATION STYLES -->
     <link rel="stylesheet" type="text/css" href="{{ asset('/lib/revolution/css/navigation.css') }}">
+
 </head>
 
 <body>

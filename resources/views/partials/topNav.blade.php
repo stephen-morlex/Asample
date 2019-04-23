@@ -5,11 +5,11 @@
         <div class="large-6 medium-6 small-12 columns topbar-new text-left">
             <ul class="menu">
                 <li><a href="index.html">Prospective Students</a></li>
-                <li><a href="about-us.html">Alumni</a></li>
-                <li><a href="blog1.html">Events</a></li>
+                <li><a href="http://ww3.cuea.edu/alumni">Alumni</a></li>
+                <li><a href="{{ route('events.index') }}">Events</a></li>
                 <li><a href="contact.html">News</a></li>
                 <li><a href="contact.html">Media</a></li>
-                <li><a href="contact.html">Library</a></li>
+                <li><a href="http://ir.cuea.edu/html/joomla/">Library</a></li>
                 <li><a href="contact.html">Parents</a></li>
                 <!-- <li><a href="contact.html">Give CUEA</a></li> -->
 

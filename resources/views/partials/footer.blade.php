@@ -32,15 +32,15 @@
             </div><!-- Widget 2 Ends /-->
 
             <div class="large-3 medium-6 small-12 columns footer-widget">
-                <h2>Institute Hours</h2>
+                <h2>Useful Information</h2>
                 <div class="tx-div"></div>
                 <ul class="vertical office-hours">
-                    <li>Monday: 09:00 - 17:00 </li>
-                    <li>Tuseday: 09:00 - 17:00</li>
-                    <li>Wednesday: 09:00 - 17:00</li>
-                    <li>Thursday: 09:00 - 17:00</li>
-                    <li>Friday: 09:00 - 17:00</li>
-                    <li>Saturday, Sunday: No Admission/Enquiry</li>
+                    <li><a href="http://"> Academice Support Service</a></li>
+                    <li><a href="http://"> FAQs for Admissions</a></li>
+                    <li><a href="http://">Information for the international student</a></li>
+                    <li><a href="http://">Information for transfer students</a></li>
+                    <li><a href="http://">Payment information</a></li>
+
                 </ul>
             </div><!-- Widget 3 Ends /-->
 
@@ -113,6 +113,7 @@
 <!-- Including Jquery so All js Can run -->
 <script type="text/javascript" src="{{ asset('js/jquery.js') }}"></script>
 
+
 <!-- Including Foundation JS so Foundation function can work. -->
 <script type="text/javascript" src="{{ asset('js/foundation.min.js') }}"></script>
 
@@ -142,4 +143,4 @@
 <script type="text/javascript" src="{{ asset('lib/revolution/js/extensions/revolution.extension.parallax.min.js') }}"></script>
 <script type="text/javascript" src="{{ asset('lib/revolution/js/extensions/revolution.extension.slideanims.min.js') }}"></script>
 <script type="text/javascript" src="{{ asset('lib/revolution/js/extensions/revolution.extension.video.min.js') }}"></script>
-<script src="{{ asset('js/app.js') }}"></script>
+

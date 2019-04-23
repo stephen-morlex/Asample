@@ -35,7 +35,7 @@
                 <h2>{{ $program->name }}</h2>
                 <p></p>
 
-                    <p>{{ $program->body }}</p>
+                    <p>{!!  $program->body  !!}</p>
                 </div><!-- Course content /-->
 
         </div><!-- Posts wrap ends /-->
@@ -47,7 +47,7 @@
                 <ol class="menu vertical">
                     <li><a href="courses.html">Students & Graduates of Computer Science & Information Technology</a></li>
                     <li><a href="courses.html">Web Programmers & Web Designers
-EVS Spacer	Any other person willing to learn Web Development</a></li>
+                    EVS Spacer	Any other person willing to learn Web Development</a></li>
                     <li><a href="courses.html">Students & Graduates of any other discipline looking for future in IT</a></li>
                 </ol>
             </div><!-- widget ends /-->

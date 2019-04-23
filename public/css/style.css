@@ -673,6 +673,10 @@ Welcome Message CSS Ends
 .course .course-thumb:hover .image {
     opacity: 0.3;
 }
+
+/* timelines style for admission process */
+
+
 .middle {
     transition: .5s ease;
     opacity: 0;

@@ -17,6 +17,10 @@ class CreateSectionsTable extends Migration
             $table->bigIncrements('id');
             $table->string('name');
             $table->string('image');
+            $table->text('requirement');
+            $table->string('application');
+            $table->string('brochure');
+            $table->text('fees');
             $table->string('slug');
             $table->timestamps();
         });

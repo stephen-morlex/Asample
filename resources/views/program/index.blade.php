@@ -117,12 +117,13 @@
               <div class="medium-6 small-12 columns">
                     <div class="course">
                         <div class="course-thumb">
-                            <img src="images/3.jpg" alt="Graphic Design" />
-                            <div class="price-tag">$28.55</div>
+                            <img src="{{ Voyager::image( $section->image ) }}" alt="Graphic Design" />
+
                         </div>
-                        <h3>{{ $section->name }}</h3>
+                        <h3>{{ $section->name }} Program</h3>
                         <a href="{{ route('program.section', $section->slug) }}" class="secondary button">Enroll now</a>
                     </div>
+                    <br>
                 </div><!-- First Course /-->
 
 
@@ -170,7 +171,7 @@
                         <div class="number"><i class="fa fa-heart" aria-hidden="true"></i></div>
                         <div class="right-info">
                             <h3>Select a Course you like and Explore it!</h3>
-                            <p>Once upon a time there was a thirsty crow he flew here and there in search of water.</p>
+                            <p> Chartered Private University accredited by Commission of University Education.</p>
                         </div>
                         <div class="clearfix"></div>
                     </div><!-- process /-->
@@ -179,29 +180,30 @@
                         <div class="number"><i class="fa fa-users" aria-hidden="true"></i></div>
                         <div class="right-info">
                             <h3>Join a Seminar To know More about it!</h3>
-                            <p>But he could not find water anywhere at last he reached in a garden where he saw a pitcher.</p>
+                            <p> 34 solid years of offering education grounded on values
+                                leading regional and international University.</p>
                         </div>
                         <div class="clearfix"></div>
                     </div><!-- process /-->
 
                     <div class="process">
-                        <div class="number"><i class="fa fa-share" aria-hidden="true"></i></div>
+                        <div class="number"><i class="fa fa-globe" aria-hidden="true"></i></div>
                         <div class="right-info">
                             <h3>Get Enrolled and start better future with us!</h3>
-                            <p>Thirsty Crow should Call us at: 123-123-1234 to drink water asap before all seats are reserved.</p>
+                            <p>Rich diversity: Over 20 nationalities and 100+ programmes on offer</p>
                         </div>
                         <div class="clearfix"></div>
                     </div><!-- process /-->
                     <div class="process">
-                            <div class="number"><i class="fa fa-fish" aria-hidden="true"></i></div>
+                            <div class="number"><i class="fa fa-share" aria-hidden="true"></i></div>
                             <div class="right-info">
                                 <h3>Get Enrolled and start better future with us!</h3>
-                                <p>Thirsty Crow should Call us at: 123-123-1234 to drink water asap before all seats are reserved.</p>
+                                <p> Innovative and marketable graduates</p>
                             </div>
                             <div class="clearfix"></div>
                         </div><!-- process /-->
                         <div class="process">
-                                <div class="number"><i class="fa fa-phone" aria-hidden="true"></i></div>
+                                <div class="number"><i class="fa fa-cogs" aria-hidden="true"></i></div>
                                 <div class="right-info">
                                     <h3>Get Enrolled and start better future with us!</h3>
                                     <p>Thirsty Crow should Call us at: 123-123-1234 to drink water asap before all seats are reserved.</p>
@@ -238,8 +240,8 @@
                             <img src="images/logo.jpg" alt="John Doe" />
                         </div><!-- Testimonial Thumb /-->
                         <div class="testimonial-detail">
-                            <h4>{{ $pro->name }}!</h4>
-                            <p>{{ str_limit($pro->body,180) }}</p>
+                            <h4>{{ $pro->name }}</h4>
+                            <p>{!! Markdown::convertToHtml(str_limit($pro->body,95)) !!}</p>
                             <a href="{{ route('program.section', $pro->section->slug) }}"><cite>{{ $pro->section->name }}  program</cite></a>
                         </div><!-- Testimonial Detail /-->
                         <div class="clearfix"></div>

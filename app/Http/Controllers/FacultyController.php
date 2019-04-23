@@ -16,7 +16,7 @@ class FacultyController extends Controller
      */
     public function index()
     {
-        $faculties =Faculty::all();
+        $faculties =Faculty::latest()->get();
 
         return view('faculty.index',compact('faculties'));
 
@@ -55,11 +55,13 @@ class FacultyController extends Controller
     {
         $faculty = Faculty::with('programs')->get();
         $faculty = Faculty::where('slug', $slug)->firstOrFail();
+        $alsoInterested = Faculty::inRandomOrder()->take(5)->get();
         $section =Section::all();
         return view('faculty.show')->with([
             'faculty' => $faculty,
             'section' => $section,
             'faculty' => $faculty,
+            'alsoInterested' => $alsoInterested,
         ]);
     }
     /**

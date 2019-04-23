@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'WelcomeController@index')->name('welcome');
 
 Auth::routes();
 
@@ -26,3 +24,20 @@ Route::get('/faculties-schools-and-institues/{faculty}','FacultyController@show'
 Route::get('/programmes', 'ProgramController@index')->name('program.index');
 Route::get('/programmes/{program}', 'ProgramController@show')->name('program.show');
 Route::get('/programmes-section/{section}', 'ProgramController@section')->name('program.section');
+
+
+// admission routes
+
+Route::get('/cuea-admission', 'AdmissionController@index')->name('admission.index');
+Route::get('/cuea-admission/{section}', 'AdmissionController@show')->name('admission.show');
+
+
+// events routes
+
+Route::get('/events', 'EventController@index')->name('events.index');
+Route::get('/event/{event}', 'EventController@show')->name('event.show');
+
+
+Route::group(['prefix' => 'cuea'], function () {
+    Voyager::routes();
+});
