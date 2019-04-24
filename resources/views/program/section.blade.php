@@ -2,7 +2,7 @@
 
 @section('content')
 @include('partials.topNav')
-@include('partials.header')
+@include('layouts.mainNav')
 <!-- Content section -->
 
     <br>

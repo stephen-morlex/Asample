@@ -50,11 +50,9 @@
                             </li>
                             <li class="single-sub parent-nav"><a href="{{ route('admission.index') }}">Admissions</a>
                                 <ul class="child-nav menu vertical">
-                                    {{--  @forelse ($sections as $s)
-                                        <li><a href="courses.html">Undergraduate Admissions</a></li>
-                                    @empty
-
-                                    @endforelse  --}}
+                                    @foreach ($ad as $s)
+                                        <li><a href="{{ route('admission.show', $s->slug) }}">{{ $s->name }} Admission</a></li>
+                                    @endforeach
 
 
                                 </ul>
@@ -73,11 +71,14 @@
                                 </ul>
                             </li>
                             <li class="single-sub parent-nav">
-                                <a href="events.html">CUEA Experience</a>
+                                <a href="{{ route('student.index') }}">Student Experience</a>
                                 <ul class="child-nav menu vertical">
-                                    <li><a href="events.html">Student services</a></li>
-                                    <li><a href="single-event.html">Recreation</a></li>
-                                </ul>
+                                        @foreach ($studLife as $sl)
+                                            <li><a href="{{ route('admission.show', $sl->slug) }}">{{ $sl->name }}</a></li>
+                                        @endforeach
+
+
+                                    </ul>
                             </li>
                             <li class="single-sub parent-nav"><a href="about-us.html">About CUEA</a>
                                 <ul class="child-nav menu vertical">

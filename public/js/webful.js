@@ -2,43 +2,43 @@
 
 (function($) {
     "use strict";
-	
+
 	//calling foundation js
 	$(document).foundation();
-		
+
 	//Disable Default click behaviour on anchor
-	$(".search-icon-toggle").on("click", function(event) { 
+	$(".search-icon-toggle").on("click", function(event) {
 		event.preventDefault();
 	});
-	
+
 	//scroll effect
 	$("#top").on("click",function () {
 		$("html, body").animate({ scrollTop: 0 }, "slow");
 		return false;
-	});        
-	
+	});
+
 	$("#top").on("click",function (event) {
-		event.stopPropagation();                
-		var idTo = $(this).attr("data-atr");                
+		event.stopPropagation();
+		var idTo = $(this).attr("data-atr");
 		var Position = $("[id='" + idTo + "']").offset();
 		$("html, body").animate({ scrollTop: Position }, "slow");
 		return false;
 	});
 
-	$(window).on("scroll",function() { 
-		if($(this).scrollTop() > 1000) { 
+	$(window).on("scroll",function() {
+		if($(this).scrollTop() > 1000) {
 			$("#top").fadeIn();
-		} else { 
+		} else {
 			$("#top").fadeOut();
 		}
 	});
-	
+
 	//Loading animation js
-	$(window).on("load",function(){ 
+	$(window).on("load",function(){
 		$("#loading").addClass("loaded");
 		$("#loading").html('');
 	});
-	
+
 	//Animation effect on teacher social links
 	$(".teacher").on("mouseenter",function() {
 		var animationEnd = "webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend";
@@ -71,7 +71,7 @@
 			}
 		}
 	});
-	
+
 	//Calling Testimonials Crousel
 	$(".testimonials").owlCarousel({
 		loop:true,
@@ -96,7 +96,7 @@
 			}
 		}
 	});
-	
+
 	//calling Brand Crousel
 	$(".brand-carousel").owlCarousel({
 		loop:true,
@@ -121,7 +121,7 @@
 			}
 		}
 	});
-		
+
 	//Revolution Slider Code Starts
 	var revapi4;
 	$(document).ready(function() {
@@ -203,5 +203,5 @@
 			}
 		});
 	});	//Revolution Slider Ends
-					
-})(jQuery); //jQuery main function ends strict Mode on 
+
+})(jQuery); //jQuery main function ends strict Mode on

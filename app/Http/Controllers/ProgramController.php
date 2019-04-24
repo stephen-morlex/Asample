@@ -20,11 +20,7 @@ class ProgramController extends Controller
         return view('program.index',compact('sections','programs'));
     }
 
-     /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function section()
     {
         $sections= Section::all();
