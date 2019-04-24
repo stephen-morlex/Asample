@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Program;
 use Illuminate\Http\Request;
 use App\Section;
+use App\StudentCategory;
 
 class ProgramController extends Controller
 {
@@ -17,7 +18,9 @@ class ProgramController extends Controller
     {
         $sections = Section::take(4)->get();
         $programs=Program::all();
-        return view('program.index',compact('sections','programs'));
+        $ad=Section::orderBy('name','asc')->get();
+        $studLife=StudentCategory::orderBy('name','asc')->get();
+        return view('program.index',compact('sections','programs','ad','studLife'));
     }
 
 
@@ -42,7 +45,9 @@ class ProgramController extends Controller
         else {
             $programs=$programs->paginate(6);
         }
-        return view('program.section', compact('sections', 'programs', 'sectionName'));
+        $ad=Section::orderBy('name','asc')->get();
+        $studLife=StudentCategory::orderBy('name','asc')->get();
+        return view('program.section', compact('sections', 'programs', 'sectionName','ad','studLife'));
     }
 
     /**
@@ -74,10 +79,14 @@ class ProgramController extends Controller
      */
     public function show($slug)
     {
-        $program = Program::where('slug', $slug)->firstOrFail();
 
+        $program = Program::where('slug', $slug)->firstOrFail();
+        $ad=Section::orderBy('name','asc')->get();
+        $studLife=StudentCategory::orderBy('name','asc')->get();
         return view('program.show')->with([
             'program' => $program,
+            'ad'=>$ad,
+            'studLife'=>$studLife
         ]);
     }
 
