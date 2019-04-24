@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Admission;
+use App\Student;
 use Illuminate\Http\Request;
 use App\Section;
 use App\StudentCategory;
 
-class AdmissionController extends Controller
+class StudentController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,11 +16,11 @@ class AdmissionController extends Controller
      */
     public function index()
     {
-        $sections=Section::with('admission')->get();
+        $studentLife= Student::take(1)->get();
+        $studentSide= Student::skip(0)->take(10)->get();
         $ad=Section::orderBy('name','asc')->get();
         $studLife=StudentCategory::orderBy('name','asc')->get();
-        return view('admission.index',compact('sections','ad','studLife'));
-
+        return view('studentLife.index',compact('ad','studentLife','studentSide','studLife'));
     }
 
     /**
@@ -33,7 +33,18 @@ class AdmissionController extends Controller
         //
     }
 
-     /**
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    {
+        //
+    }
+
+   /**
      * Display the specified resource.
      *
      * @param  string  $slug
@@ -41,24 +52,24 @@ class AdmissionController extends Controller
      */
     public function show($slug)
     {
-        $admission = Section::with('admission')->where('slug', $slug)->firstOrFail();
+        $student = Student::where('slug', $slug)->firstOrFail();
         $ad=Section::orderBy('name','asc')->get();
         $studLife=StudentCategory::orderBy('name','asc')->get();
-        return view('admission.show')->with([
-            'admission' => $admission,
+
+        return view('studentLife.show')->with([
+            'student' => $student,
             'ad'=>$ad,
             'studLife'=>$studLife
         ]);
     }
 
-
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Admission  $admission
+     * @param  \App\Student  $student
      * @return \Illuminate\Http\Response
      */
-    public function edit(Admission $admission)
+    public function edit(Student $student)
     {
         //
     }
@@ -67,10 +78,10 @@ class AdmissionController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Admission  $admission
+     * @param  \App\Student  $student
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Admission $admission)
+    public function update(Request $request, Student $student)
     {
         //
     }
@@ -78,10 +89,10 @@ class AdmissionController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Admission  $admission
+     * @param  \App\Student  $student
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Admission $admission)
+    public function destroy(Student $student)
     {
         //
     }

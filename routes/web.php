@@ -32,6 +32,11 @@ Route::get('/cuea-admission', 'AdmissionController@index')->name('admission.inde
 Route::get('/cuea-admission/{section}', 'AdmissionController@show')->name('admission.show');
 
 
+// student life route
+
+Route::get('/student-experience', 'StudentController@index')->name('student.index');
+Route::get('/student-experience/{student}', 'StudentController@show')->name('student.show');
+
 // events routes
 
 Route::get('/events', 'EventController@index')->name('events.index');

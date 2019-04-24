@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use App\Section;
 use App\StudentCategory;
+use Illuminate\Http\Request;
 
-class WelcomeController extends Controller
+class StudentCategoryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,10 +14,7 @@ class WelcomeController extends Controller
      */
     public function index()
     {
-        $admissions= Section::orderBy('name')->get();
-        $ad=Section::orderBy('name','asc')->get();
-        $studLife=StudentCategory::orderBy('name','asc')->get();
-        return view('welcome',compact('admission','ad','studLife'));
+        //
     }
 
     /**
@@ -45,10 +41,10 @@ class WelcomeController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\StudentCategory  $studentCategory
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(StudentCategory $studentCategory)
     {
         //
     }
@@ -56,10 +52,10 @@ class WelcomeController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\StudentCategory  $studentCategory
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(StudentCategory $studentCategory)
     {
         //
     }
@@ -68,10 +64,10 @@ class WelcomeController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\StudentCategory  $studentCategory
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, StudentCategory $studentCategory)
     {
         //
     }
@@ -79,10 +75,10 @@ class WelcomeController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\StudentCategory  $studentCategory
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(StudentCategory $studentCategory)
     {
         //
     }

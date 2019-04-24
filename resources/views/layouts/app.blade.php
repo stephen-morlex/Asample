@@ -54,6 +54,7 @@
 </head>
 
 <body>
+
 	<!-- Page Preloader -->
     <div id="loading">
         <div id="loading-center">
@@ -66,6 +67,7 @@
 
     <div class="main-container">
         @yield('content')
+
     </div>
 
 </body>

@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @include('partials.topNav')
-@include('partials.header')
+@include('layouts.mainNav')
 <br>
 <div class="row">
         <div class=" small-12 columns">
