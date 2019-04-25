@@ -24,6 +24,8 @@
                 <li>{{ $error }}</li>
             @endforeach
         </div><br>
+        @else
+            <li>Success, Thanks for contacting us!</li>
     @endif
 
 
@@ -79,13 +81,13 @@
                             	<div class="medium-6 small-12 columns">
                                 	<label>
                                     	First Name *
-                                        <input type="text" value="" required name="firstName" id="firstName" placeholder="Your first name here..." />
+                                        <input type="text" value="{{ old('firstName') }}" required name="firstName" id="firstName" placeholder="Your first name here..." />
                                     </label>    
                                 </div>
                                 <div class="medium-6 small-12 columns">
                                 	<label>
                                     	Last Name *
-                                        <input type="text" value="" name="lastName" id="lastName" required placeholder="Your last name here..." />
+                                        <input type="text" value="{{ old('lastName') }}" name="lastName" id="lastName" required placeholder="Your last name here..." />
                                     </label>
                                 </div>
                             </div><!-- Row Ends /-->
@@ -94,13 +96,13 @@
                             	<div class="medium-6 small-12 columns">
                                 	<label>
                                     	Email *
-                                        <input type="email" name="email" id="email" value="" required placeholder="Enter your email ..." />
+                                        <input type="email" name="email" id="email" value="{{ old('email') }}" required placeholder="Enter your email ..." />
                                     </label>    
                                 </div>
                                 <div class="medium-6 small-12 columns">
                                 	<label>
                                     	Subject *
-                                        <input type="text" required name="subject" id="subject" value="" placeholder="Reason contacting us ..." />
+                                        <input type="text" required name="subject" id="subject" value="{{ old('subject') }}" placeholder="Reason contacting us ..." />
                                     </label>
                                 </div>
                             </div><!-- Row Ends /-->
@@ -133,9 +135,9 @@
                             	<div class="medium-12 small-12 columns">
                                 	<label>
                                     	Your Comments 
-                                        <textarea rows="10" required name="message" id="message" placeholder="Your message ..."></textarea>
+                                        <textarea rows="10" required name="message" id="message" placeholder="Your message ...">{{ old('message') }}</textarea>
                                     </label>    
-    								<input type="hidden" name="contact_form" value="YES" />
+    								
                                 	<input type="submit" class="button primary" value="Send your message" />
                                 </div>
                             </div><!-- Row Ends /-->

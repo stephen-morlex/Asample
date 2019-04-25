@@ -6,6 +6,7 @@ use App\Section;
 use App\Program;
 use App\StudentCategory;
 use App\Contact;
+// use Illuminate\Support\Facades\Mail
 use Illuminate\Http\Request;
 
 class ContactController extends Controller
@@ -25,6 +26,8 @@ class ContactController extends Controller
 
         return view('contact.index', compact('sections', 'programs', 'ad', 'studLife'));
     }
+
+
 
     /**
      * Show the form for creating a new resource.
@@ -56,8 +59,14 @@ class ContactController extends Controller
         ]);
 
         Contact::create($request->all());
-        return back()->with('success', 'Thanks for contacting us!');
-        // return redirect(route('contact.index'));
+
+        // Mail::send('newUser', function($message){
+        //     $message->from('testmail@gg.lv');
+        //     $message->subject('welcome');
+        //     $message->to('admin@admin.com');
+        // });
+
+        return redirect(route('contact.index'));
 
     }
 
@@ -74,6 +83,8 @@ class ContactController extends Controller
         //
     }
 
+
+
     /**
      * Show the form for editing the specified resource.
      *
@@ -84,6 +95,8 @@ class ContactController extends Controller
     {
         //
     }
+
+
 
     /**
      * Update the specified resource in storage.
@@ -96,6 +109,8 @@ class ContactController extends Controller
     {
         //
     }
+
+
 
     /**
      * Remove the specified resource from storage.
