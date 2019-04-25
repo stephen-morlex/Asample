@@ -36,6 +36,7 @@ Route::get('/cuea-admission/{section}', 'AdmissionController@show')->name('admis
 
 Route::get('/student-experience', 'StudentController@index')->name('student.index');
 Route::get('/student-experience/{student}', 'StudentController@show')->name('student.show');
+Route::get('/student/{studentCategory}', 'StudentController@studentCats')->name('student.cat');
 
 // events routes
 

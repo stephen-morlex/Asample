@@ -74,7 +74,7 @@
                                 <a href="{{ route('student.index') }}">Student Experience</a>
                                 <ul class="child-nav menu vertical">
                                         @foreach ($studLife as $sl)
-                                            <li><a href="{{ route('admission.show', $sl->slug) }}">{{ $sl->name }}</a></li>
+                                            <li><a href="{{ route('student.cat', $sl->slug) }}">{{ $sl->name }}</a></li>
                                         @endforeach
 
 

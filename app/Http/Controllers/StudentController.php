@@ -16,11 +16,28 @@ class StudentController extends Controller
      */
     public function index()
     {
+
         $studentLife= Student::take(1)->get();
-        $studentSide= Student::skip(0)->take(10)->get();
+        $studentSide= Student::skip(0)->take(50)->get();
         $ad=Section::orderBy('name','asc')->get();
         $studLife=StudentCategory::orderBy('name','asc')->get();
         return view('studentLife.index',compact('ad','studentLife','studentSide','studLife'));
+    }
+
+    public function studentCats()
+    {
+        $studLife= StudentCategory::all();
+        if (request()->studentCat) {
+            $studentLife=Student::with('student');
+        } else {
+            $studentLife =Student::take(12);
+            $sectionName='studLife';
+            $studentLife=$studentLife->paginate(6);
+        }
+
+        $ad=Section::orderBy('name','asc')->get();
+        $studLife=StudentCategory::orderBy('name','asc')->get();
+        return view('studentLife.studentCat', compact('studLife', 'studentLife', 'sectionName','ad','studLife'));
     }
 
     /**
