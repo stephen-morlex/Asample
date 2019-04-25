@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Section;
+use App\Program;
+use App\StudentCategory;
 use App\Contact;
 use Illuminate\Http\Request;
 
@@ -15,7 +18,12 @@ class ContactController extends Controller
     public function index()
     {
         //
-        return view('contact.index');
+        $sections   = Section::take(4)->get();
+        $programs   = Program::all();
+        $ad         = Section::orderBy('name','asc')->get();
+        $studLife   = StudentCategory::orderBy('name','asc')->get();
+
+        return view('contact.index', compact('sections', 'programs', 'ad', 'studLife'));
     }
 
     /**
@@ -28,6 +36,8 @@ class ContactController extends Controller
         //
     }
 
+
+
     /**
      * Store a newly created resource in storage.
      *
@@ -37,7 +47,21 @@ class ContactController extends Controller
     public function store(Request $request)
     {
         //
+        $this->validate($request, [
+            'firstName' => 'required|max:50|min:2',
+            'lastName'  => 'required|max:50|min:2',
+            'email'     => 'required|email|max: 255',
+            'subject'   => 'required|max:100|min:2',
+            'message'   => 'required|min:5',
+        ]);
+
+        Contact::create($request->all());
+        return back()->with('success', 'Thanks for contacting us!');
+        // return redirect(route('contact.index'));
+
     }
+
+
 
     /**
      * Display the specified resource.

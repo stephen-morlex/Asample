@@ -45,6 +45,7 @@ Route::get('/event/{event}', 'EventController@show')->name('event.show');
 
 // CONTACT US
 Route::get('/contact', 'ContactController@index')->name('contact.index');
+Route::post('/contact/connecting', 'ContactController@store')->name('contact.store');
 
 
 Route::group(['prefix' => 'cuea'], function () {

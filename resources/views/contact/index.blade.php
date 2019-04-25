@@ -1,8 +1,9 @@
   @extends('layouts.app')
       
 
+    @section('content')
     @include('partials.topNav')
-
+    @include('layouts.mainNav')
 
     <br>
     <div class="row">
@@ -17,10 +18,16 @@
     </div>
 
 
+    @if($errors->all())
+        <div class="alert alert-warning" role="alert">
+            @foreach($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </div><br>
+    @endif
 
 
 
-    @section('content')
     <!-- Content section -->
     <div class="content-section module">
     	<div class="row">
@@ -31,12 +38,12 @@
             </div>
             <!-- Map Ends /-->
             
-            <!-- Contact content area -->
+            <!-- Contact content area --> 
             <div class="content-wrapper">
             
             	<div class="medium-3 small-12 columns">
                 	<div class="contact-info">
-                    	<img src="images/help/callgirl.png" alt="Calling Girl" />
+                    	<img src="{{ asset('images/3.jpg') }}" alt="Calling Girl" />
                     </div>
                     <div class="contact-info">
                     	<h4>Meet our Company</h4>
@@ -59,73 +66,79 @@
                     </div>
                 </div><!-- Left column Ends /-->
             	
+
+
                 <div class="medium-9 small-12 columns">
                 	<h2>Please fill the form below to contact us</h2>
+
                     <div class="contact-form">
-						<form action="email_processor.php?ref=contact.html" method="post">
-                    	<div class="row">
-                        	<div class="medium-6 small-12 columns">
-                            	<label>
-                                	First Name *
-                                    <input type="text" value="" required name="first-name" placeholder="Your name here..." />
-                                </label>    
-                            </div>
-                            <div class="medium-6 small-12 columns">
-                            	<label>
-                                	Last Name *
-                                    <input type="text" value="" name="last-name" placeholder="Your last name here..." />
-                                </label>
-                            </div>
-                        </div><!-- Row Ends /-->
-                        
-                        <div class="row">
-                        	<div class="medium-6 small-12 columns">
-                            	<label>
-                                	Email *
-                                    <input type="text" name="your-email" value="" placeholder="Enter your email ..." />
-                                </label>    
-                            </div>
-                            <div class="medium-6 small-12 columns">
-                            	<label>
-                                	Subject *
-                                    <input type="text" required name="subject" value="" placeholder="Reason contacting us ..." />
-                                </label>
-                            </div>
-                        </div><!-- Row Ends /-->
-                        
-                        <div class="row">
-                        	<div class="medium-6 small-12 columns">
-                            	<label>
-                                	Select a Course
-                                    <select name="course">
-                                    	<option value="1">Chose Course</option>
-                                        <option value="2">Course One</option>
-                                        <option value="3">Course Two</option>
-                                    </select>
-                                </label>    
-                            </div>
-                            <div class="medium-6 small-12 columns">
-                            	<label>
-                                	Select Teacher
-                                    <select name="teacher">
-                                    	<option value="1">Chose Teacher</option>
-                                        <option value="2">Teacher One</option>
-                                        <option value="3">Teacher Two</option>
-                                    </select>
-                                </label>
-                            </div>
-                        </div><!-- Row Ends /-->
-                        
-                        <div class="row">
-                        	<div class="medium-12 small-12 columns">
-                            	<label>
-                                	Your Comments 
-                                    <textarea rows="10" required name="your-message" placeholder="Your message ..."></textarea>
-                                </label>    
-								<input type="hidden" name="contact_form" value="YES" />
-                            	<input type="submit" class="button primary" value="Send your message" />
-                            </div>
-                        </div><!-- Row Ends /-->
+						<form action="{{ route('contact.store') }}" method="post">
+
+                            @csrf
+                        	<div class="row">
+                            	<div class="medium-6 small-12 columns">
+                                	<label>
+                                    	First Name *
+                                        <input type="text" value="" required name="firstName" id="firstName" placeholder="Your first name here..." />
+                                    </label>    
+                                </div>
+                                <div class="medium-6 small-12 columns">
+                                	<label>
+                                    	Last Name *
+                                        <input type="text" value="" name="lastName" id="lastName" required placeholder="Your last name here..." />
+                                    </label>
+                                </div>
+                            </div><!-- Row Ends /-->
+                            
+                            <div class="row">
+                            	<div class="medium-6 small-12 columns">
+                                	<label>
+                                    	Email *
+                                        <input type="email" name="email" id="email" value="" required placeholder="Enter your email ..." />
+                                    </label>    
+                                </div>
+                                <div class="medium-6 small-12 columns">
+                                	<label>
+                                    	Subject *
+                                        <input type="text" required name="subject" id="subject" value="" placeholder="Reason contacting us ..." />
+                                    </label>
+                                </div>
+                            </div><!-- Row Ends /-->
+                            
+                            <!-- <div class="row">
+                            	<div class="medium-6 small-12 columns">
+                                	<label>
+                                    	Select a Course
+                                        <select name="course">
+                                        	<option value="1">Chose Course</option>
+                                            <option value="2">Course One</option>
+                                            <option value="3">Course Two</option>
+                                        </select>
+                                    </label>    
+                                </div>
+                                <div class="medium-6 small-12 columns">
+                                	<label>
+                                    	Select Teacher
+                                        <select name="teacher">
+                                        	<option value="1">Chose Teacher</option>
+                                            <option value="2">Teacher One</option>
+                                            <option value="3">Teacher Two</option>
+                                        </select>
+                                    </label>
+                                </div>
+                            </div> -->
+                            <!-- Row Ends /-->
+                            
+                            <div class="row">
+                            	<div class="medium-12 small-12 columns">
+                                	<label>
+                                    	Your Comments 
+                                        <textarea rows="10" required name="message" id="message" placeholder="Your message ..."></textarea>
+                                    </label>    
+    								<input type="hidden" name="contact_form" value="YES" />
+                                	<input type="submit" class="button primary" value="Send your message" />
+                                </div>
+                            </div><!-- Row Ends /-->
 						</form>
                     </div><!-- Contact form /-->
                 </div><!-- Right Column Ends /-->

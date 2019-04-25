@@ -7,6 +7,7 @@
                 	<div class="logo">
                     	<a href="/">
                         	<img src="{{ asset('images/crop.png') }}" alt="Webful Education" />
+                            <!-- <img src="{{ asset('images/s5_logo.png') }}" alt="logo" /> -->
                         </a>
                     </div><!-- logo /-->
                 </div>
