@@ -24,8 +24,7 @@
                 <li>{{ $error }}</li>
             @endforeach
         </div><br>
-        @else
-            <li>Success, Thanks for contacting us!</li>
+
     @endif
 
 
