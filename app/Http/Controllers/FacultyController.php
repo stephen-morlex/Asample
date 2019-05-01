@@ -17,9 +17,9 @@ class FacultyController extends Controller
      */
     public function index()
     {
-        $faculties =Faculty::latest()->get();
-        $ad=Section::orderBy('name','asc')->get();
-        $studLife=StudentCategory::orderBy('name','asc')->get();
+        $faculties = Faculty::latest()->get();
+        $ad        = Section::orderBy('name','asc')->get();
+        $studLife  = StudentCategory::orderBy('name','asc')->get();
 
         return view('faculty.index',compact('faculties','ad','studLife'));
 
@@ -56,12 +56,13 @@ class FacultyController extends Controller
      */
     public function show($slug)
     {
-        $faculty = Faculty::with('programs')->get();
-        $faculty = Faculty::where('slug', $slug)->firstOrFail();
+        $faculty  = Faculty::with('programs')->get();
+        $faculty  = Faculty::where('slug', $slug)->firstOrFail();
         $alsoInterested = Faculty::inRandomOrder()->take(5)->get();
-        $studLife=StudentCategory::orderBy('name','asc')->get();
-        $ad=Section::orderBy('name','asc')->get();
-        $section =Section::all();
+        $studLife = StudentCategory::orderBy('name','asc')->get();
+        $ad       = Section::orderBy('name','asc')->get();
+        $section  = Section::all();
+
         return view('faculty.show')->with([
             'faculty' => $faculty,
             'section' => $section,

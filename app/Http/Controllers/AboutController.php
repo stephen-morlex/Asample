@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Student;
-use Illuminate\Http\Request;
+use App\About;
 use App\Section;
+use App\Program;
 use App\StudentCategory;
+use Illuminate\Http\Request;
 
-class StudentController extends Controller
+class AboutController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,12 +17,16 @@ class StudentController extends Controller
      */
     public function index()
     {
-        $studentLife = Student::take(1)->get();
-        $studentSide = Student::skip(0)->take(10)->get();
-        $ad          = Section::orderBy('name','asc')->get();
-        $studLife    = StudentCategory::orderBy('name','asc')->get();
-        return view('studentLife.index',compact('ad','studentLife','studentSide','studLife'));
+        //
+        $sections   = Section::take(4)->get();
+        $programs   = Program::all();
+        $ad         = Section::orderBy('name','asc')->get();
+        $studLife   = StudentCategory::orderBy('name','asc')->get();
+
+        return view('about.index', compact('sections', 'programs', 'ad', 'studLife'));
     }
+
+
 
     /**
      * Show the form for creating a new resource.
@@ -32,6 +37,8 @@ class StudentController extends Controller
     {
         //
     }
+
+
 
     /**
      * Store a newly created resource in storage.
@@ -44,55 +51,64 @@ class StudentController extends Controller
         //
     }
 
-   /**
+
+
+    /**
      * Display the specified resource.
      *
-     * @param  string  $slug
+     * @param  \App\About  $about
      * @return \Illuminate\Http\Response
      */
-    public function show($slug)
+    public function show(About $about)
     {
-        $student    = Student::where('slug', $slug)->firstOrFail();
+        //
+        $admission  = Section::with('admission')->where('slug', $slug)->firstOrFail();
         $ad         = Section::orderBy('name','asc')->get();
         $studLife   = StudentCategory::orderBy('name','asc')->get();
 
-        return view('studentLife.show')->with([
-            'student'   => $student,
+        return view('about.show')->with([
+            'admission' => $admission,
             'ad'        => $ad,
             'studLife'  => $studLife
         ]);
     }
 
+
+
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Student  $student
+     * @param  \App\About  $about
      * @return \Illuminate\Http\Response
      */
-    public function edit(Student $student)
+    public function edit(About $about)
     {
         //
     }
+
+
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Student  $student
+     * @param  \App\About  $about
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Student $student)
+    public function update(Request $request, About $about)
     {
         //
     }
 
+
+
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Student  $student
+     * @param  \App\About  $about
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Student $student)
+    public function destroy(About $about)
     {
         //
     }

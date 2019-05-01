@@ -80,9 +80,13 @@
 
                                     </ul>
                             </li>
-                            <li class="single-sub parent-nav"><a href="about-us.html">About CUEA</a>
+                            <li class="single-sub parent-nav"><a href="#">About CUEA</a> 
                                 <ul class="child-nav menu vertical">
-                                    <li><a href="about-us.html">Brief History</a></li>
+                                    @foreach ($abouts as $about)
+                                        <li><a href="{{ route('about.show', $about->slug) }}">{{ $about->title }}</a></li>
+                                    @endforeach
+                                    
+                                    <!-- <li><a href="about-us.html">Brief History</a></li>
                                     <li><a href="ou.html">Our Vision & Mission</a></li>
                                     <li><a href="our_philosophy.html">Our Philosophy</a></li>
                                     <li><a href="our_core_values.html">Our Core Value</a></li>
@@ -90,7 +94,7 @@
                                     <li><a href="our_objective.html">Our Objective</a></li>
                                     <li><a href="quality_policy.html">Quality Policy</a></li>
                                     <li><a href="corporate_quality_objectives.html">Corporate Quality Objectives</a></li>
-                                    <li><a href="quality_policy.html">Governance</a></li>
+                                    <li><a href="quality_policy.html">Governance</a></li> -->
 
 
 

@@ -190,7 +190,7 @@
             <!-- Content Area Ends /-->
 
                <!-- Content Area Starts -->
-       	<div class="content-area module faq">
+        <div class="content-area module faq">
                 <div class="row">
 
                     <div class="medium-9 small-12 columns">
@@ -270,7 +270,7 @@
         <div class="call-to-action">
            <div class="row">
                 <div class="medium-10 small-12 columns">
-                    <h2><i class="fa fa-phone" aria-hidden="true"></i> 	If you Have Any Questions Call Us On <span>(010)123-456-7890</span></h2>
+                    <h2><i class="fa fa-phone" aria-hidden="true"></i>  If you Have Any Questions Call Us On <span>(010)123-456-7890</span></h2>
                 </div>
                 <div class="medium-2 small-12 columns">
                     <a href="#" class="button secondary">Appointment</a>

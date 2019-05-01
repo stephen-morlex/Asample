@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Section;
 use App\StudentCategory;
 
+
 class AdmissionController extends Controller
 {
     /**
@@ -16,10 +17,10 @@ class AdmissionController extends Controller
      */
     public function index()
     {
-        $sections=Section::with('admission')->get();
-        $ad=Section::orderBy('name','asc')->get();
-        $studLife=StudentCategory::orderBy('name','asc')->get();
-        return view('admission.index',compact('sections','ad','studLife'));
+        $sections   = Section::with('admission')->get();
+        $ad         = Section::orderBy('name','asc')->get();
+        $studLife   = StudentCategory::orderBy('name','asc')->get();
+        return view('admission.index', compact('sections','ad','studLife'));
 
     }
 
@@ -41,13 +42,14 @@ class AdmissionController extends Controller
      */
     public function show($slug)
     {
-        $admission = Section::with('admission')->where('slug', $slug)->firstOrFail();
-        $ad=Section::orderBy('name','asc')->get();
-        $studLife=StudentCategory::orderBy('name','asc')->get();
+        $admission  = Section::with('admission')->where('slug', $slug)->firstOrFail();
+        $ad         = Section::orderBy('name','asc')->get();
+        $studLife   = StudentCategory::orderBy('name','asc')->get();
+
         return view('admission.show')->with([
             'admission' => $admission,
-            'ad'=>$ad,
-            'studLife'=>$studLife
+            'ad'        => $ad,
+            'studLife'  => $studLife
         ]);
     }
 

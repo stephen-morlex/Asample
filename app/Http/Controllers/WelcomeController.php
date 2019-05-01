@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Section;
+use App\About;
 use App\StudentCategory;
 
 class WelcomeController extends Controller
@@ -15,10 +16,17 @@ class WelcomeController extends Controller
      */
     public function index()
     {
-        $admissions= Section::orderBy('name')->get();
-        $ad=Section::orderBy('name','asc')->get();
-        $studLife=StudentCategory::orderBy('name','asc')->get();
-        return view('welcome',compact('admission','ad','studLife'));
+        $admissions = Section::orderBy('name')->get();
+        $ad         = Section::orderBy('name','asc')->get();
+        $abouts     = About::orderBy('title','asc')->get();
+        $studLife   = StudentCategory::orderBy('name','asc')->get();
+
+        return view('welcome',compact(
+            'admission',
+            'ad', 
+            'abouts',
+            'studLife'
+        ));
     }
 
     /**
