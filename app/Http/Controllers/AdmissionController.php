@@ -6,6 +6,7 @@ use App\Admission;
 use Illuminate\Http\Request;
 use App\Section;
 use App\StudentCategory;
+use App\Research;
 
 class AdmissionController extends Controller
 {
@@ -19,7 +20,8 @@ class AdmissionController extends Controller
         $sections=Section::with('admission')->get();
         $ad=Section::orderBy('name','asc')->get();
         $studLife=StudentCategory::orderBy('name','asc')->get();
-        return view('admission.index',compact('sections','ad','studLife'));
+        $researchNav = Research::orderBy('name','asc')->get();
+        return view('admission.index',compact('sections','ad','studLife','researchNav'));
 
     }
 
@@ -44,10 +46,12 @@ class AdmissionController extends Controller
         $admission = Section::with('admission')->where('slug', $slug)->firstOrFail();
         $ad=Section::orderBy('name','asc')->get();
         $studLife=StudentCategory::orderBy('name','asc')->get();
+        $researchNav = Research::orderBy('name','asc')->get();
         return view('admission.show')->with([
             'admission' => $admission,
             'ad'=>$ad,
-            'studLife'=>$studLife
+            'studLife'=>$studLife,
+            'researchNav' => $researchNav
         ]);
     }
 

@@ -2,14 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Faculty;
+use App\Services;
 use Illuminate\Http\Request;
-use App\Program;
 use App\Section;
 use App\StudentCategory;
 use App\Research;
 
-class FacultyController extends Controller
+class ServicesController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,11 +17,11 @@ class FacultyController extends Controller
      */
     public function index()
     {
-        $faculties =Faculty::latest()->get();
+        $services=Services::inRandomOrder()->get();
         $ad=Section::orderBy('name','asc')->get();
         $studLife=StudentCategory::orderBy('name','asc')->get();
         $researchNav = Research::orderBy('name','asc')->get();
-        return view('faculty.index',compact('faculties','ad','studLife','research','researchNav'));
+        return view('services.index',compact('ad','studLife','researchNav','services'));
 
     }
 
@@ -47,9 +46,7 @@ class FacultyController extends Controller
         //
     }
 
-
-
-   /**
+        /**
      * Display the specified resource.
      *
      * @param  string  $slug
@@ -57,31 +54,42 @@ class FacultyController extends Controller
      */
     public function show($slug)
     {
-        $faculty = Faculty::with('programs')->get();
-        $faculty = Faculty::where('slug', $slug)->firstOrFail();
-        $alsoInterested = Faculty::inRandomOrder()->take(5)->get();
+
+        $service = Services::where('slug', $slug)->firstOrFail();
         $studLife=StudentCategory::orderBy('name','asc')->get();
         $ad=Section::orderBy('name','asc')->get();
         $researchNav = Research::orderBy('name','asc')->get();
+        $sideServices=Services::orderBy('name','asc')->get();
         $section =Section::all();
-        return view('faculty.show')->with([
-            'faculty' => $faculty,
+        return view('services.show')->with([
+            'service' => $service,
             'section' => $section,
-            'faculty' => $faculty,
-            'alsoInterested' => $alsoInterested,
             'studLife'=>$studLife,
             'ad'=>$ad,
-            'researchNav'=>$researchNav
+            'researchNav'=>$researchNav,
+            'sideServices' =>$sideServices
         ]);
     }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  \App\Services  $services
+     * @return \Illuminate\Http\Response
+     */
+    public function edit(Services $services)
+    {
+        //
+    }
+
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Faculty  $faculty
+     * @param  \App\Services  $services
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Faculty $faculty)
+    public function update(Request $request, Services $services)
     {
         //
     }
@@ -89,10 +97,10 @@ class FacultyController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Faculty  $faculty
+     * @param  \App\Services  $services
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Faculty $faculty)
+    public function destroy(Services $services)
     {
         //
     }

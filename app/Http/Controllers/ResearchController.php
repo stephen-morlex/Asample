@@ -2,14 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Faculty;
+use App\Research;
 use Illuminate\Http\Request;
-use App\Program;
 use App\Section;
 use App\StudentCategory;
-use App\Research;
 
-class FacultyController extends Controller
+class ResearchController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,12 +16,12 @@ class FacultyController extends Controller
      */
     public function index()
     {
-        $faculties =Faculty::latest()->get();
+        $research= Research::first()->take(1)->get();
         $ad=Section::orderBy('name','asc')->get();
         $studLife=StudentCategory::orderBy('name','asc')->get();
         $researchNav = Research::orderBy('name','asc')->get();
-        return view('faculty.index',compact('faculties','ad','studLife','research','researchNav'));
-
+        $sideResearch=Research::orderBy('name','asc')->get();
+        return view('research.index',compact('ad','studLife','researchNav','sideResearch','research'));
     }
 
     /**
@@ -47,9 +45,7 @@ class FacultyController extends Controller
         //
     }
 
-
-
-   /**
+    /**
      * Display the specified resource.
      *
      * @param  string  $slug
@@ -57,31 +53,41 @@ class FacultyController extends Controller
      */
     public function show($slug)
     {
-        $faculty = Faculty::with('programs')->get();
-        $faculty = Faculty::where('slug', $slug)->firstOrFail();
-        $alsoInterested = Faculty::inRandomOrder()->take(5)->get();
+
+        $research = Research::where('slug', $slug)->firstOrFail();
         $studLife=StudentCategory::orderBy('name','asc')->get();
         $ad=Section::orderBy('name','asc')->get();
         $researchNav = Research::orderBy('name','asc')->get();
+        $sideResearch=Research::orderBy('name','asc')->get();
         $section =Section::all();
-        return view('faculty.show')->with([
-            'faculty' => $faculty,
+        return view('research.show')->with([
+            'research' => $research,
             'section' => $section,
-            'faculty' => $faculty,
-            'alsoInterested' => $alsoInterested,
             'studLife'=>$studLife,
             'ad'=>$ad,
-            'researchNav'=>$researchNav
+            'researchNav'=>$researchNav,
+            'sideResearch' =>$sideResearch
         ]);
     }
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  \App\Research  $research
+     * @return \Illuminate\Http\Response
+     */
+    public function edit(Research $research)
+    {
+        //
+    }
+
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Faculty  $faculty
+     * @param  \App\Research  $research
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Faculty $faculty)
+    public function update(Request $request, Research $research)
     {
         //
     }
@@ -89,10 +95,10 @@ class FacultyController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Faculty  $faculty
+     * @param  \App\Research  $research
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Faculty $faculty)
+    public function destroy(Research $research)
     {
         //
     }

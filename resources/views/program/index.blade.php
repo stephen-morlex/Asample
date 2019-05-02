@@ -117,7 +117,7 @@
               <div class="medium-6 small-12 columns">
                     <div class="course">
                         <div class="course-thumb">
-                            <img src="{{ Voyager::image( $section->image ) }}" alt="Graphic Design" />
+                            <img src="{{ Voyager::image( $section->thumbnail('cropped'))}}" alt="Graphic Design" />
 
                         </div>
                         <h3>{{ $section->name }} Program</h3>
@@ -233,15 +233,16 @@
             @forelse ($programs as $pro)
 
             <div class="medium-12 small-12 columns">
+                </a>
                     <div class="testimonial">
 
-                                <a href="{{ route('program.show',$pro->slug) }}"><span class="label success">Details</span></a>
+                       <a href="{{ route('program.show',$pro->slug) }}"><span class="label success">More</span></a>
                         <div class="testimonial-thumb">
-                            <img src="images/logo.jpg" alt="John Doe" />
+                                <a href="{{ route('program.show',$pro->slug) }}"> <img class="display:none" src="{{ Voyager::image( $pro->thumbnail('cropped'))}}"  /></a>
                         </div><!-- Testimonial Thumb /-->
                         <div class="testimonial-detail">
                             <h4>{{ $pro->name }}</h4>
-                            <p>{!! Markdown::convertToHtml(str_limit($pro->body,95)) !!}</p>
+                            <p>{!! str_limit($pro->body,95) !!}</p>
                             <a href="{{ route('program.section', $pro->section->slug) }}"><cite>{{ $pro->section->name }}  program</cite></a>
                         </div><!-- Testimonial Detail /-->
                         <div class="clearfix"></div>

@@ -27,10 +27,10 @@
 
                     <div class="medium-9 small-12 columns">
                      	<div class="event-thumb">
-                        	<img src="{{ $event->image }}" class="thumbnail" />
+                        	<img src="{{ Voyager::image( $event->image ) }}" class="thumbnail" />
                         </div><!-- Event Thumb /-->
 						<div class="event-content">
-                        	<p> {!! Markdown::convertToHtml($event->content) !!}</p>
+                        	<p> {!! $event->content !!}</p>
 
                         </div><!-- Events content /-->
                     </div><!-- Events Wrapper Ends /-->

@@ -6,6 +6,7 @@ use App\Program;
 use Illuminate\Http\Request;
 use App\Section;
 use App\StudentCategory;
+use App\Research;
 
 class ProgramController extends Controller
 {
@@ -20,7 +21,8 @@ class ProgramController extends Controller
         $programs=Program::all();
         $ad=Section::orderBy('name','asc')->get();
         $studLife=StudentCategory::orderBy('name','asc')->get();
-        return view('program.index',compact('sections','programs','ad','studLife'));
+        $researchNav = Research::orderBy('name','asc')->get();
+        return view('program.index',compact('sections','programs','ad','studLife','researchNav'));
     }
 
 
@@ -47,7 +49,8 @@ class ProgramController extends Controller
         }
         $ad=Section::orderBy('name','asc')->get();
         $studLife=StudentCategory::orderBy('name','asc')->get();
-        return view('program.section', compact('sections', 'programs', 'sectionName','ad','studLife'));
+        $researchNav = Research::orderBy('name','asc')->get();
+        return view('program.section', compact('sections', 'programs', 'sectionName','ad','studLife','researchNav'));
     }
 
     /**
@@ -83,10 +86,12 @@ class ProgramController extends Controller
         $program = Program::where('slug', $slug)->firstOrFail();
         $ad=Section::orderBy('name','asc')->get();
         $studLife=StudentCategory::orderBy('name','asc')->get();
+        $researchNav = Research::orderBy('name','asc')->get();
         return view('program.show')->with([
             'program' => $program,
             'ad'=>$ad,
-            'studLife'=>$studLife
+            'studLife'=>$studLife,
+            'researchNav' =>$researchNav
         ]);
     }
 

@@ -102,7 +102,7 @@
                             </li>
 
                             <li class="accordion-item" data-accordion-item>
-                                <a href="#" class="accordion-title">Undergraduate Application Forms</a>
+                                <a href="#" class="accordion-title"> Application Forms</a>
                                 <div class="accordion-content" data-tab-content>
                                         <?php $file = (json_decode($admission->application))[0]->download_link; ?>
                                         <a href="{{ Voyager::image( $file ) }}" target="_blank">{{$admission->Nom}} Undergraduate Application</a>
@@ -110,7 +110,7 @@
                             </li>
 
                             <li class="accordion-item" data-accordion-item>
-                                <a href="#" class="accordion-title">Undergraduate Brochure</a>
+                                <a href="#" class="accordion-title"> Brochure</a>
                                 <div class="accordion-content" data-tab-content>
                                         <?php $file = (json_decode($admission->brochure))[0]->download_link; ?>
                                         <a href="{{ Voyager::image( $file ) }}" target="_blank">{{$admission->Nom}} Undergraduate Brohure</a>

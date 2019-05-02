@@ -1,5 +1,5 @@
   @extends('layouts.app')
-      
+
 
     @section('content')
     @include('partials.topNav')
@@ -18,31 +18,22 @@
     </div>
 
 
-    @if($errors->all())
-        <div class="alert alert-warning" role="alert">
-            @foreach($errors->all() as $error)
-                <li>{{ $error }}</li>
-            @endforeach
-        </div><br>
-        @else
-            <li>Success, Thanks for contacting us!</li>
-    @endif
 
 
 
     <!-- Content section -->
     <div class="content-section module">
     	<div class="row">
-        	
+
             <!-- Map Area -->
             <div class="map-wrapper module">
             	<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d286851.9103813513!2d-122.1651158!3d37.4064828!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fa6b1117280ff%3A0xebbf998e5df289ab!2sMenlo+Park%2C+CA!5e0!3m2!1sen!2s!4v1471984430727" height="300"></iframe>
             </div>
             <!-- Map Ends /-->
-            
-            <!-- Contact content area --> 
+
+            <!-- Contact content area -->
             <div class="content-wrapper">
-            
+
             	<div class="medium-3 small-12 columns">
                 	<div class="contact-info">
                     	<img src="{{ asset('images/3.jpg') }}" alt="Calling Girl" />
@@ -67,7 +58,7 @@
                         </div><!-- Social Icons /-->
                     </div>
                 </div><!-- Left column Ends /-->
-            	
+
 
 
                 <div class="medium-9 small-12 columns">
@@ -82,7 +73,7 @@
                                 	<label>
                                     	First Name *
                                         <input type="text" value="{{ old('firstName') }}" required name="firstName" id="firstName" placeholder="Your first name here..." />
-                                    </label>    
+                                    </label>
                                 </div>
                                 <div class="medium-6 small-12 columns">
                                 	<label>
@@ -91,13 +82,13 @@
                                     </label>
                                 </div>
                             </div><!-- Row Ends /-->
-                            
+
                             <div class="row">
                             	<div class="medium-6 small-12 columns">
                                 	<label>
                                     	Email *
                                         <input type="email" name="email" id="email" value="{{ old('email') }}" required placeholder="Enter your email ..." />
-                                    </label>    
+                                    </label>
                                 </div>
                                 <div class="medium-6 small-12 columns">
                                 	<label>
@@ -106,7 +97,7 @@
                                     </label>
                                 </div>
                             </div><!-- Row Ends /-->
-                            
+
                             <!-- <div class="row">
                             	<div class="medium-6 small-12 columns">
                                 	<label>
@@ -116,7 +107,7 @@
                                             <option value="2">Course One</option>
                                             <option value="3">Course Two</option>
                                         </select>
-                                    </label>    
+                                    </label>
                                 </div>
                                 <div class="medium-6 small-12 columns">
                                 	<label>
@@ -130,14 +121,14 @@
                                 </div>
                             </div> -->
                             <!-- Row Ends /-->
-                            
+
                             <div class="row">
                             	<div class="medium-12 small-12 columns">
                                 	<label>
-                                    	Your Comments 
+                                    	Your Comments
                                         <textarea rows="10" required name="message" id="message" placeholder="Your message ...">{{ old('message') }}</textarea>
-                                    </label>    
-    								
+                                    </label>
+
                                 	<input type="submit" class="button primary" value="Send your message" />
                                 </div>
                             </div><!-- Row Ends /-->
@@ -147,12 +138,12 @@
                 <div class="clearfix"></div>
             </div>
             <!-- Contact Content Area /-->
-            
+
         </div><!-- Row /-->
     </div>
     <!-- Content Section Ends /-->
-    
-    
+
+
     <!-- Call to Action box -->
     <div class="call-to-action">
        <div class="row">
@@ -165,9 +156,9 @@
        </div><!-- row /-->
      </div>
     <!-- Call to Action End /-->
-    
+
 
     @include('partials.footer')
     @endsection
-       
+
 

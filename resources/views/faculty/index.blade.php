@@ -44,7 +44,7 @@
                                             <h3>{{ Str::limit($fa->name) }}</h3>
                                             <div class="course-thumb animated zoomInRight delay-1s">
                                                 <a href="{{ route('faculty.show', $fa->slug) }}">
-                                                <img src="{{ Voyager::image( $fa->image ) }}" alt="{{ Str::limit($fa->name) }}" />
+                                                <img src="{{ Voyager::image( $fa->thumbnail('cropped'))}}" alt="{{ Str::limit($fa->name) }}" />
                                                  </a>
                                             </div>
                                          <a  class="middle" href="{{ route('faculty.show',$fa->slug) }}" class="secondary button">More About {{ Str::limit($fa->name,50) }}</a>

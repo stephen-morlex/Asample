@@ -8,6 +8,7 @@ use App\StudentCategory;
 use App\Contact;
 // use Illuminate\Support\Facades\Mail
 use Illuminate\Http\Request;
+use App\Research;
 
 class ContactController extends Controller
 {
@@ -23,8 +24,9 @@ class ContactController extends Controller
         $programs   = Program::all();
         $ad         = Section::orderBy('name','asc')->get();
         $studLife   = StudentCategory::orderBy('name','asc')->get();
+        $researchNav = Research::orderBy('name','asc')->get();
 
-        return view('contact.index', compact('sections', 'programs', 'ad', 'studLife'));
+        return view('contact.index', compact('sections', 'programs', 'ad', 'studLife','researchNav'));
     }
 
 

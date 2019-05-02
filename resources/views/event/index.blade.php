@@ -29,15 +29,15 @@
                 <div class="medium-6 small-12 columns">
                     <div class="event">
                         <div class="medium-8 small-12 columns event-data">
-                            <h4><a href="{{ route('event.show',$event->slug) }}">{{ $event->title }}</a></h4>
-                            <p>{{ $event->content }}</p>
-                            <p><strong>Starting:</strong> {{ $event->start }}
-                            <p><strong>Ending:</strong> {{ $event->end }}
+                            <h4><a href="{{ route('event.show',$event->slug) }}">{!! $event->title !!}</a></h4>
+                            <p> {!!  str_limit($event->content,250) !!}</p>
+                            <p><strong>Timinings:</strong> {{ $event->start }}-{{ $event->end }}
+
                             <br><strong>Date:</strong> {{ $event->date }}</p>
                             <a href="{{ route('event.show',$event->slug) }}" class="button primary bordered-dark"> More details</a>
                         </div><!-- Event DAta /-->
                         <div class="medium-4 small-12 columns event-thumb">
-                            <img src="{{ $event->image }}" alt="PHP Course" />
+                            <img src="{{ Voyager::image( $event->thumbnail('cropped'))}}" />
                         </div><!-- Event thumb /-->
                         <div class="clearfix"></div>
                     </div><!-- Event div ends /-->
@@ -79,3 +79,4 @@
 
 @include('partials.footer')
 @endsection
+

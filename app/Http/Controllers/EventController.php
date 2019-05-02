@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Event;
 use Illuminate\Http\Request;
+use App\Research;
+use App\StudentCategory;
+use App\Section;
 
 class EventController extends Controller
 {
@@ -15,7 +18,11 @@ class EventController extends Controller
     public function index()
     {
         $events=Event::latest()->paginate(6);
-        return view('event.index',compact('events'));
+
+        $ad=Section::orderBy('name','asc')->get();
+        $studLife=StudentCategory::orderBy('name','asc')->get();
+        $researchNav = Research::orderBy('name','asc')->get();
+        return view('event.index',compact('events','researchNav','ad','studLife'));
     }
 
     /**
@@ -48,9 +55,15 @@ class EventController extends Controller
     public function show($slug)
     {
         $event = Event::where('slug', $slug)->firstOrFail();
+        $ad=Section::orderBy('name','asc')->get();
+        $studLife=StudentCategory::orderBy('name','asc')->get();
+        $researchNav = Research::orderBy('name','asc')->get();
 
         return view('event.show')->with([
             'event' => $event,
+            'researchNav'=>$researchNav,
+            'ad'=>$ad,
+            'studLife' =>$studLife
         ]);
     }
 

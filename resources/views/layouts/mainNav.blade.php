@@ -44,7 +44,7 @@
                                 <ul class="child-nav menu vertical">
                                     <li><a href="{{ route('faculty.index') }}">Faculties, Schools & Institutes</a></li>
                                     <li><a href="{{ route('program.index') }}">Programs</a></li>
-                                    <li><a href="gallery.html">Student Service information</a></li>
+                                    <li><a href="{{ route('services.index') }}">Student Service information</a></li>
 
                                 </ul>
                             </li>
@@ -57,14 +57,14 @@
 
                                 </ul>
                             </li>
-                            <li class="single-sub parent-nav"><a href="our-staff.html"> Research</a>
+                            <li class="single-sub parent-nav"><a href="{{ route('research.index') }}"> Research</a>
                                 <ul class="child-nav menu vertical">
-                                    <li><a href="our-staff.html">About the Directorate of Research</a></li>
-                                    <li><a href="single-teacher.html">AHead project</a></li>
-                                    <li><a href="single-teacher.html">Academic Staff Capacity Building Programme</a></li>
-                                    <li><a href="single-teacher.html">Conference Proceedings</a></li>
-                                    <li><a href="single-teacher.html">Eastern Africa Journal of Humanities and Sciences</a></li>
-                                    <li><a href="single-teacher.html">Reseacrh report</a></li>
+
+                                   @forelse ($researchNav as $r)
+                                   <li><a href="{{ route('research.show', $r->slug) }}">{{ $r->name }}</a></li>
+                                   @empty
+
+                                   @endforelse
 
 
 

@@ -28,24 +28,26 @@
 
                 <div class="course-section">
 
-                    <div class="section-title">
-                        <h2><span>Graphic Designing</span></h2>
-                    </div><!-- Section Title Ends /-->
+
 @forelse ($studentLife as $item)
 
 <div class="medium-4 small-12 columns">
+        <a href="{{ route('student.show', $item->slug) }}">
     <div class="course">
         <div class="course-thumb">
+
             <img src="/images/print.jpg" alt="Graphic Design" />
         </div>
         <h3>{{ $item->name }}</h3>
+
         <p style="">{!! (str_limit($item->content,50)) !!}</p>
-        <ul class="no-bullet">
+        {{--  <ul class="no-bullet">
             <li><i class="fa fa-clock-o" aria-hidden="true"></i> <strong>Timing: </strong>8:00-9:00 / Wednesday and Sunday only</li>
             <li><i class="fa fa-calendar" aria-hidden="true"></i> <strong>Starting From: </strong>November 28, 2013</li>
         </ul>
-        <a href="#" class="secondary button">Register Yourself!</a>
+        <a href="#" class="secondary button">Register Yourself!</a>  --}}
     </div>
+        </a>
 </div><!-- First Course /-->
 @empty
 

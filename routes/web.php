@@ -43,6 +43,21 @@ Route::get('/student/{studentCategory}', 'StudentController@studentCats')->name(
 Route::get('/events', 'EventController@index')->name('events.index');
 Route::get('/event/{event}', 'EventController@show')->name('event.show');
 
+// Research routes
+
+
+Route::get('/research','ResearchController@index')->name('research.index');
+Route::get('/research/{research}','ResearchController@show')->name('research.show');
+
+// Students service information
+
+
+
+Route::get('/students-service-information','ServicesController@index')->name('services.index');
+Route::get('/students-service-information/{services}','ServicesController@show')->name('services.show');
+
+
+
 
 // CONTACT US
 Route::get('/contact', 'ContactController@index')->name('contact.index');

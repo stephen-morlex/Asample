@@ -27,7 +27,7 @@
         <div class="medium-9 small-12 columns posts-wrap">
 
             <div class="event-thumb">
-                <img src="{{ asset('images/event_thumb.jpg') }}"  class="thumbnail" />
+                <img src="{{ Voyager::image( $program->image)}}"  class="thumbnail" />
             </div><!-- Course Thumb /-->
 
 
