@@ -8,12 +8,12 @@ $factory->define(App\Faculty::class, function (Faker $faker) {
     $name = $faker->sentence;
     return [
 
-        'name'=>$name,
-        'slug'=>str_slug($name),
-        'description'=>$faker->paragraph(),
-        'content'=>$faker->text($maxNbChars = 200),
-        'image'=>('image.jpg'),
-        'file'=>('file.pdf'),
+        'name' 			=> $name,
+        'image' 		=> ('image.jpg'),
+        'file' 			=> ('file.pdf'),
+        'description' 	=> $faker->paragraph(),
+        'content' 		=> $faker->text($maxNbChars = 200),
+        'slug' 			=> str_slug($name),
 
     ];
 });

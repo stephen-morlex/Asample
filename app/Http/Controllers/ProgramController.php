@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Program;
 use Illuminate\Http\Request;
 use App\Section;
+use App\About;
 use App\StudentCategory;
 use App\Research;
 
@@ -22,35 +23,37 @@ class ProgramController extends Controller
         $ad=Section::orderBy('name','asc')->get();
         $studLife=StudentCategory::orderBy('name','asc')->get();
         $researchNav = Research::orderBy('name','asc')->get();
-        return view('program.index',compact('sections','programs','ad','studLife','researchNav'));
+        $abouts     = About::orderBy('title','asc')->get();
+        return view('program.index',compact('sections','programs','ad','studLife','researchNav','abouts'));
     }
 
 
     public function section()
     {
-        $sections= Section::all();
+        $sections = Section::all();
         if (request()->section) {
-            $programs=Program::with('section')->whereHas('section', function ($query) {
+            $programs = Program::with('section')->whereHas('section', function ($query) {
                 $query->where('slug', request()->section);
             });
 
-            $sectionName=optional($sections->where('slug', request()->section)->first())->name;
+            $sectionName = optional($sections->where('slug', request()->section)->first())->name;
         } else {
-            $programs =Program::take(12);
-            $sectionName='sections';
+            $programs = Program::take(12);
+            $sectionName = 'sections';
         }
-        if (request()->sort=='new') {
-            $programs =$programs->orderBy('year')->paginate(6);
-        } elseif (request()->sort=='old') {
-            $programs =$programs->orderBy('year', 'desc')->paginate(6);
+        if (request()->sort == 'new') {
+            $programs = $programs->orderBy('year')->paginate(6);
+        } elseif (request()->sort == 'old') {
+            $programs = $programs->orderBy('year', 'desc')->paginate(6);
         }
         else {
-            $programs=$programs->paginate(6);
+            $programs = $programs->paginate(6);
         }
         $ad=Section::orderBy('name','asc')->get();
         $studLife=StudentCategory::orderBy('name','asc')->get();
         $researchNav = Research::orderBy('name','asc')->get();
-        return view('program.section', compact('sections', 'programs', 'sectionName','ad','studLife','researchNav'));
+        $abouts     = About::orderBy('title','asc')->get();
+        return view('program.section', compact('sections', 'programs', 'sectionName','ad','studLife','researchNav','abouts'));
     }
 
     /**
@@ -83,15 +86,17 @@ class ProgramController extends Controller
     public function show($slug)
     {
 
-        $program = Program::where('slug', $slug)->firstOrFail();
-        $ad=Section::orderBy('name','asc')->get();
-        $studLife=StudentCategory::orderBy('name','asc')->get();
-        $researchNav = Research::orderBy('name','asc')->get();
+        $program    = Program::where('slug', $slug)->firstOrFail();
+        $ad         = Section::orderBy('name','asc')->get();
+        $studLife   = StudentCategory::orderBy('name','asc')->get();
+        $abouts     = About::orderBy('title','asc')->get();
+
+
         return view('program.show')->with([
-            'program' => $program,
-            'ad'=>$ad,
-            'studLife'=>$studLife,
-            'researchNav' =>$researchNav
+            'program'   => $program,
+            'ad'        => $ad,
+            'studLife'  => $studLife,
+            'abouts'    => $abouts
         ]);
     }
 

@@ -18,6 +18,16 @@
     </div>
 
 
+<<<<<<< HEAD
+=======
+    @if($errors->all())
+        <div class="alert alert-warning" role="alert">
+            @foreach($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </div><br>
+    @endif
+>>>>>>> 729a1e8bc0aea904b84cc8acbfb9d00f440b3817
 
 
 

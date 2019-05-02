@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Section;
 use App\Program;
+use App\About;
 use App\StudentCategory;
 use App\Contact;
 // use Illuminate\Support\Facades\Mail
@@ -25,8 +26,9 @@ class ContactController extends Controller
         $ad         = Section::orderBy('name','asc')->get();
         $studLife   = StudentCategory::orderBy('name','asc')->get();
         $researchNav = Research::orderBy('name','asc')->get();
+        $abouts     = About::orderBy('title','asc')->get();
 
-        return view('contact.index', compact('sections', 'programs', 'ad', 'studLife','researchNav'));
+        return view('contact.index', compact('sections', 'programs', 'ad', 'studLife','researchNav','abouts'));
     }
 
 

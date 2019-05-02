@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Event;
+use App\About;
 use Illuminate\Http\Request;
 use App\Research;
 use App\StudentCategory;
@@ -22,7 +23,8 @@ class EventController extends Controller
         $ad=Section::orderBy('name','asc')->get();
         $studLife=StudentCategory::orderBy('name','asc')->get();
         $researchNav = Research::orderBy('name','asc')->get();
-        return view('event.index',compact('events','researchNav','ad','studLife'));
+        $abouts     = About::orderBy('title','asc')->get();
+        return view('event.index',compact('events','researchNav','ad','studLife','abouts'));
     }
 
     /**
@@ -58,12 +60,14 @@ class EventController extends Controller
         $ad=Section::orderBy('name','asc')->get();
         $studLife=StudentCategory::orderBy('name','asc')->get();
         $researchNav = Research::orderBy('name','asc')->get();
+        $abouts     = About::orderBy('title','asc')->get();
 
         return view('event.show')->with([
             'event' => $event,
             'researchNav'=>$researchNav,
             'ad'=>$ad,
-            'studLife' =>$studLife
+            'studLife' =>$studLife,
+            'abouts'=> $abouts
         ]);
     }
 

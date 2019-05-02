@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Student;
 use Illuminate\Http\Request;
 use App\Section;
+use App\About;
 use App\StudentCategory;
 use App\Research;
 
@@ -18,12 +19,14 @@ class StudentController extends Controller
     public function index()
     {
 
+
         $studentLife= Student::take(1)->get();
         $studentSide= Student::skip(0)->take(50)->get();
         $ad=Section::orderBy('name','asc')->get();
         $studLife=StudentCategory::orderBy('name','asc')->get();
         $researchNav = Research::orderBy('name','asc')->get();
-        return view('studentLife.index',compact('ad','studentLife','studentSide','studLife','researchNav'));
+        $abouts     = About::orderBy('title','asc')->get();
+        return view('studentLife.index',compact('ad','studentLife','studentSide','studLife','researchNav','abouts'));
     }
 
     public function studentCats()
@@ -40,7 +43,9 @@ class StudentController extends Controller
         $ad=Section::orderBy('name','asc')->get();
         $studLife=StudentCategory::orderBy('name','asc')->get();
         $researchNav = Research::orderBy('name','asc')->get();
-        return view('studentLife.studentCat', compact('studLife', 'studentLife', 'sectionName','ad','studLife','researchNav'));
+        $abouts     = About::orderBy('title','asc')->get();
+        return view('studentLife.studentCat', compact('studLife', 'studentLife', 'sectionName','ad','studLife','researchNav','abouts'));
+
     }
 
     /**
@@ -76,11 +81,13 @@ class StudentController extends Controller
         $ad=Section::orderBy('name','asc')->get();
         $studLife=StudentCategory::orderBy('name','asc')->get();
         $researchNav = Research::orderBy('name','asc')->get();
+        $abouts     = About::orderBy('title','asc')->get();
         return view('studentLife.show')->with([
             'student' => $student,
             'ad'=>$ad,
             'studLife'=>$studLife,
-            'researchNav' =>$researchNav
+            'researchNav' =>$researchNav,
+            'abouts' => $abouts
         ]);
     }
 

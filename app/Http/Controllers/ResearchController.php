@@ -6,6 +6,7 @@ use App\Research;
 use Illuminate\Http\Request;
 use App\Section;
 use App\StudentCategory;
+use App\About;
 
 class ResearchController extends Controller
 {
@@ -21,7 +22,8 @@ class ResearchController extends Controller
         $studLife=StudentCategory::orderBy('name','asc')->get();
         $researchNav = Research::orderBy('name','asc')->get();
         $sideResearch=Research::orderBy('name','asc')->get();
-        return view('research.index',compact('ad','studLife','researchNav','sideResearch','research'));
+        $abouts     = About::orderBy('title','asc')->get();
+        return view('research.index',compact('ad','studLife','researchNav','sideResearch','research','abouts'));
     }
 
     /**
@@ -59,6 +61,7 @@ class ResearchController extends Controller
         $ad=Section::orderBy('name','asc')->get();
         $researchNav = Research::orderBy('name','asc')->get();
         $sideResearch=Research::orderBy('name','asc')->get();
+        $abouts     = About::orderBy('title','asc')->get();
         $section =Section::all();
         return view('research.show')->with([
             'research' => $research,
@@ -66,7 +69,8 @@ class ResearchController extends Controller
             'studLife'=>$studLife,
             'ad'=>$ad,
             'researchNav'=>$researchNav,
-            'sideResearch' =>$sideResearch
+            'sideResearch' =>$sideResearch,
+            'abouts' =>$abouts
         ]);
     }
     /**

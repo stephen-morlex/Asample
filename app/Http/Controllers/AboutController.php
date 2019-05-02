@@ -2,14 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\Services;
-use Illuminate\Http\Request;
-use App\Section;
-use App\StudentCategory;
-use App\Research;
 use App\About;
+use App\Section;
+use App\Program;
+use App\StudentCategory;
+use Illuminate\Http\Request;
+use App\Research;
 
-class ServicesController extends Controller
+class AboutController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,14 +18,19 @@ class ServicesController extends Controller
      */
     public function index()
     {
-        $services=Services::inRandomOrder()->get();
-        $ad=Section::orderBy('name','asc')->get();
-        $studLife=StudentCategory::orderBy('name','asc')->get();
-        $researchNav = Research::orderBy('name','asc')->get();
+        //
+        $about      = About::first()->take(1)->get();
+        $sections   = Section::take(4)->get();
+        $programs   = Program::all();
+        $ad         = Section::orderBy('name','asc')->get();
+        $studLife   = StudentCategory::orderBy('name','asc')->get();
         $abouts     = About::orderBy('title','asc')->get();
-        return view('services.index',compact('ad','studLife','researchNav','services','abouts'));
+        $researchNav = Research::orderBy('name','asc')->get();
 
+        return view('about.index', compact('sections', 'programs', 'ad', 'studLife', 'abouts','about','researchNav'));
     }
+
+
 
     /**
      * Show the form for creating a new resource.
@@ -36,6 +41,8 @@ class ServicesController extends Controller
     {
         //
     }
+
+
 
     /**
      * Store a newly created resource in storage.
@@ -48,7 +55,8 @@ class ServicesController extends Controller
         //
     }
 
-        /**
+
+/**
      * Display the specified resource.
      *
      * @param  string  $slug
@@ -57,54 +65,59 @@ class ServicesController extends Controller
     public function show($slug)
     {
 
-        $service = Services::where('slug', $slug)->firstOrFail();
-        $studLife=StudentCategory::orderBy('name','asc')->get();
-        $ad=Section::orderBy('name','asc')->get();
-        $researchNav = Research::orderBy('name','asc')->get();
-        $sideServices=Services::orderBy('name','asc')->get();
+        $about  = About::where('slug', $slug)->firstOrFail();
+        $admissions = Section::orderBy('name')->get();
+        $ad         = Section::orderBy('name','asc')->get();
+        $studLife   = StudentCategory::orderBy('name','asc')->get();
         $abouts     = About::orderBy('title','asc')->get();
-        $section =Section::all();
-        return view('services.show')->with([
-            'service' => $service,
-            'section' => $section,
-            'studLife'=>$studLife,
-            'ad'=>$ad,
-            'researchNav'=>$researchNav,
-            'sideServices' =>$sideServices,
-            'abouts' =>$abouts
+        $researchNav = Research::orderBy('name','asc')->get();
+
+        return view('about.show')->with([
+            'about'     => $about,
+            'ad'        => $ad,
+            'studLife'  => $studLife,
+            'abouts'    => $abouts,
+            'admissions'=>$admissions,
+            'researchNav' =>$researchNav
         ]);
     }
+
+
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Services  $services
+     * @param  \App\About  $about
      * @return \Illuminate\Http\Response
      */
-    public function edit(Services $services)
+    public function edit(About $about)
     {
         //
     }
+
+
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Services  $services
+     * @param  \App\About  $about
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Services $services)
+    public function update(Request $request, About $about)
     {
         //
     }
 
+
+
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Services  $services
+     * @param  \App\About  $about
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Services $services)
+    public function destroy(About $about)
     {
         //
     }

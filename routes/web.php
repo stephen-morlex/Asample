@@ -26,8 +26,8 @@ Route::get('/programmes/{program}', 'ProgramController@show')->name('program.sho
 Route::get('/programmes-section/{section}', 'ProgramController@section')->name('program.section');
 
 
-// admission routes
 
+// admission routes
 Route::get('/cuea-admission', 'AdmissionController@index')->name('admission.index');
 Route::get('/cuea-admission/{section}', 'AdmissionController@show')->name('admission.show');
 
@@ -59,9 +59,17 @@ Route::get('/students-service-information/{services}','ServicesController@show')
 
 
 
+
+// ABOUT CUEA
+Route::get('/about-cuea', 'AboutController@index')->name('about.index');
+Route::get('/about-cuea/{id}', 'AboutController@show')->name('about.show');
+
+
+
 // CONTACT US
-Route::get('/contact', 'ContactController@index')->name('contact.index');
+Route::get('/contact/', 'ContactController@index')->name('contact.index');
 Route::post('/contact/connecting', 'ContactController@store')->name('contact.store');
+
 
 
 Route::group(['prefix' => 'cuea'], function () {

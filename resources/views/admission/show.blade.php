@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 
+
 @section('content')
 @include('partials.topNav')
 @include('layouts.mainNav')
