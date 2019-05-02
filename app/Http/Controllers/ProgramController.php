@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Program;
 use Illuminate\Http\Request;
 use App\Section;
+use App\About;
 use App\StudentCategory;
 
 class ProgramController extends Controller
@@ -16,12 +17,13 @@ class ProgramController extends Controller
      */
     public function index()
     {
-        $sections = Section::take(4)->get();
-        $programs = Program::all();
-        $ad       = Section::orderBy('name','asc')->get();
-        $studLife = StudentCategory::orderBy('name','asc')->get();
+        $sections   = Section::take(4)->get();
+        $programs   = Program::all();
+        $ad         = Section::orderBy('name','asc')->get();
+        $studLife   = StudentCategory::orderBy('name','asc')->get();
+        $abouts     = About::orderBy('title','asc')->get();
 
-        return view('program.index',compact('sections','programs','ad','studLife'));
+        return view('program.index',compact('sections','programs','ad','studLife', 'abouts'));
     }
 
 
@@ -83,14 +85,16 @@ class ProgramController extends Controller
     public function show($slug)
     {
 
-        $program  = Program::where('slug', $slug)->firstOrFail();
-        $ad       = Section::orderBy('name','asc')->get();
-        $studLife = StudentCategory::orderBy('name','asc')->get();
+        $program    = Program::where('slug', $slug)->firstOrFail();
+        $ad         = Section::orderBy('name','asc')->get();
+        $studLife   = StudentCategory::orderBy('name','asc')->get();
+        $abouts     = About::orderBy('title','asc')->get();
 
         return view('program.show')->with([
             'program'   => $program,
             'ad'        => $ad,
-            'studLife'  => $studLife
+            'studLife'  => $studLife,
+            'abouts'    => $abouts
         ]);
     }
 

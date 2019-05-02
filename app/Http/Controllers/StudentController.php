@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Student;
 use Illuminate\Http\Request;
 use App\Section;
+use App\About;
 use App\StudentCategory;
 
 class StudentController extends Controller
@@ -20,7 +21,9 @@ class StudentController extends Controller
         $studentSide = Student::skip(0)->take(10)->get();
         $ad          = Section::orderBy('name','asc')->get();
         $studLife    = StudentCategory::orderBy('name','asc')->get();
-        return view('studentLife.index',compact('ad','studentLife','studentSide','studLife'));
+        $abouts      = About::orderBy('title','asc')->get();
+
+        return view('studentLife.index',compact('ad','studentLife','studentSide','studLife', 'abouts'));
     }
 
     /**
@@ -55,11 +58,13 @@ class StudentController extends Controller
         $student    = Student::where('slug', $slug)->firstOrFail();
         $ad         = Section::orderBy('name','asc')->get();
         $studLife   = StudentCategory::orderBy('name','asc')->get();
+        $abouts     = About::orderBy('title','asc')->get();
 
         return view('studentLife.show')->with([
             'student'   => $student,
             'ad'        => $ad,
-            'studLife'  => $studLife
+            'studLife'  => $studLife,
+            'abouts'    => $abouts
         ]);
     }
 

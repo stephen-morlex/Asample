@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Event;
+use App\About;
 use Illuminate\Http\Request;
 
 class EventController extends Controller
@@ -14,8 +15,10 @@ class EventController extends Controller
      */
     public function index()
     {
-        $events = Event::latest()->paginate(6);
-        return view('event.index',compact('events'));
+        $events     = Event::latest()->paginate(6);
+        $abouts     = About::orderBy('title','asc')->get();
+        
+        return view('event.index',compact('events', 'abouts'));
     }
 
     /**
@@ -47,10 +50,12 @@ class EventController extends Controller
      */
     public function show($slug)
     {
-        $event = Event::where('slug', $slug)->firstOrFail();
+        $event      = Event::where('slug', $slug)->firstOrFail();
+        $abouts     = About::orderBy('title','asc')->get();
 
         return view('event.show')->with([
-            'event' => $event,
+            'event'     => $event,
+            'abouts'    => $abouts
         ]);
     }
 

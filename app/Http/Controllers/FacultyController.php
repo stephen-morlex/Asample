@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Faculty;
 use Illuminate\Http\Request;
 use App\Program;
+use App\About;
 use App\Section;
 use App\StudentCategory;
 
@@ -20,8 +21,9 @@ class FacultyController extends Controller
         $faculties = Faculty::latest()->get();
         $ad        = Section::orderBy('name','asc')->get();
         $studLife  = StudentCategory::orderBy('name','asc')->get();
+        $abouts    = About::orderBy('title','asc')->get();
 
-        return view('faculty.index',compact('faculties','ad','studLife'));
+        return view('faculty.index',compact('faculties','ad','studLife', 'abouts'));
 
     }
 
@@ -62,14 +64,16 @@ class FacultyController extends Controller
         $studLife = StudentCategory::orderBy('name','asc')->get();
         $ad       = Section::orderBy('name','asc')->get();
         $section  = Section::all();
+        $abouts   = About::orderBy('title','asc')->get();
 
         return view('faculty.show')->with([
-            'faculty' => $faculty,
-            'section' => $section,
-            'faculty' => $faculty,
+            'faculty'   => $faculty,
+            'section'   => $section,
+            'faculty'   => $faculty,
             'alsoInterested' => $alsoInterested,
-            'studLife'=>$studLife,
-            'ad'=>$ad
+            'studLife'  =>$studLife,
+            'ad'        =>$ad,
+            'abouts'    => $abouts
         ]);
     }
     /**

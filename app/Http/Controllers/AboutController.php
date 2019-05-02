@@ -22,8 +22,9 @@ class AboutController extends Controller
         $programs   = Program::all();
         $ad         = Section::orderBy('name','asc')->get();
         $studLife   = StudentCategory::orderBy('name','asc')->get();
+        $abouts     = About::orderBy('title','asc')->get();
 
-        return view('about.index', compact('sections', 'programs', 'ad', 'studLife'));
+        return view('about.index', compact('sections', 'programs', 'ad', 'studLife', 'abouts'));
     }
 
 
@@ -52,24 +53,27 @@ class AboutController extends Controller
     }
 
 
-
-    /**
+/**
      * Display the specified resource.
      *
-     * @param  \App\About  $about
+     * @param  string  $slug
      * @return \Illuminate\Http\Response
      */
-    public function show(About $about)
+    public function show($slug)
     {
-        //
-        $admission  = Section::with('admission')->where('slug', $slug)->firstOrFail();
+
+        $about      = About::where('slug', $slug)->firstOrFail();
+        $admissions = Section::orderBy('name')->get();
         $ad         = Section::orderBy('name','asc')->get();
         $studLife   = StudentCategory::orderBy('name','asc')->get();
+        $abouts     = About::orderBy('title','asc')->get();
 
         return view('about.show')->with([
-            'admission' => $admission,
+            'about'     => $about,
             'ad'        => $ad,
-            'studLife'  => $studLife
+            'studLife'  => $studLife,
+            'abouts'    => $abouts,
+            'admissions'=>$admissions
         ]);
     }
 

@@ -46,7 +46,7 @@ Route::get('/event/{event}', 'EventController@show')->name('event.show');
 
 // ABOUT CUEA
 Route::get('/about-cuea', 'AboutController@index')->name('about.index');
-Route::get('/about-cuea/{about}', 'AboutController@store')->name('about.show');
+Route::get('/about-cuea/{id}', 'AboutController@show')->name('about.show');
 
 
 
