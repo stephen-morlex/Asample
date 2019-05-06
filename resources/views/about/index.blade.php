@@ -13,7 +13,7 @@
                     <li class="active"><a href="/">Home</a></li>
                     <li class="active"><a href="{{ route('about.index') }}">About Cuea</a></li>
                     @foreach ($about as $a)
-                    <li class="active"><a href="{{ route('about.show',$a->slug) }}"> {{ $a->title }}</a></li>
+                    <li class="active"><a href="#"> {{ $a->title }}</a></li>
                     @endforeach
 
                 </ul>

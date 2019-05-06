@@ -8,6 +8,8 @@ use App\About;
 use App\StudentCategory;
 use App\Research;
 use App\carousel;
+use App\Partner;
+use App\News;
 
 class WelcomeController extends Controller
 {
@@ -24,6 +26,8 @@ class WelcomeController extends Controller
         $abouts     = About::orderBy('title','asc')->get();
         $researchNav = Research::orderBy('name','asc')->get();
         $studLife   = StudentCategory::orderBy('name','asc')->get();
+        $partner    = Partner::orderBy('name', 'asc')->get();
+        $news       = News::latest()->take(3)->get();
 
 
         return view('welcome',compact(
@@ -32,7 +36,9 @@ class WelcomeController extends Controller
             'abouts',
             'studLife',
             'carousel',
-            'researchNav'
+            'researchNav',
+            'partner',
+            'news'
         ));
     }
 

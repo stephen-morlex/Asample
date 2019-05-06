@@ -11,15 +11,13 @@
             <nav aria-label="You are here:" role="navigation">
                 <ul class="breadcrumbs">
                     <li class="active"><a href="/">Home</a></li>
-                    <li class="active"><a href="{{ route('contact.index') }}">Contact</a></li>
+                    <li class="active"><a href="#">Contact</a></li>
                 </ul>
             </nav>
         </div>
     </div>
 
 
-<<<<<<< HEAD
-=======
     @if($errors->all())
         <div class="alert alert-warning" role="alert">
             @foreach($errors->all() as $error)
@@ -27,7 +25,6 @@
             @endforeach
         </div><br>
     @endif
->>>>>>> 729a1e8bc0aea904b84cc8acbfb9d00f440b3817
 
 
 
@@ -45,26 +42,38 @@
             <div class="content-wrapper">
 
             	<div class="medium-3 small-12 columns">
-                	<div class="contact-info">
+<!--                 	<div class="contact-info">
                     	<img src="{{ asset('images/3.jpg') }}" alt="Calling Girl" />
-                    </div>
+                    </div> -->
                     <div class="contact-info">
-                    	<h4>Meet our Company</h4>
-                        <p>111 Street and house #1 Vilane, Washington 99221 USA</p>
+                    	<h4>LANG'ATA CAMPUS</h4>
+                        <p>
+                            <strong>P.O. </strong>Box 62157 - 00200<br>
+                            Nairobi, Kenya<br>
+                            <strong>Email: </strong>admissions@cuea.edu<br>
+                            <strong>Mobile: </strong>+(254) 709-691111<br>
+                            <strong>Mobile: </strong>+(254) 709-691000<br>
+                            <strong>Mobile: </strong>+(254) 704-913318
+                        </p>
                     </div>
+
                     <div class="contact-info">
-                    	<h4>Get in Touch</h4>
-                        <p><strong>Office: </strong>123-123-1234<br>
-                        	<strong>Fax: </strong>123-323-3343<br>
-                            <strong>Toll Free: </strong>123-425-6234<br>
+                    	<h4>ELDORET - GABA CAMPUS</h4>
+                        <p>
+                            <strong>P.O. Box 908 - 30100<br> 
+                            Eldoret, Kenya<br>
+                            <strong>Email: </strong>registrygaba@cuea.edu<br>
+                            <strong>Mobile: </strong>+(254) - 728 458276<br>
+                            <strong>Mobile: </strong>+(254) - 738 238352<br>
+                            <strong>Sms: </strong>+(254) - 729 742791
                         </p>
                     </div>
                     <div class="contact-info">
                     	<h4>Follow Us</h4>
                          <div class="socialicons">
-                            <a href="#"><i class="fa fa-facebook"></i></a>
-                            <a href="#"><i class="fa fa-twitter"></i></a>
-                            <a href="#"><i class="fa fa-google"></i></a>
+                            <a href="https://www.facebook.com/TheCatholicUniversityOfEasternAfricaCuea/" target="_blank"><i class="fa fa-facebook"></i></a>
+                            <a href="https://twitter.com/cuea_official" target="_blank"><i class="fa fa-twitter"></i></a>
+                            <a href="https://www.youtube.com/channel/UCkPi1mamzw2vcA97zWS76lw" target="_blank"><i class="fa fa-youtube"></i></a>
                         </div><!-- Social Icons /-->
                     </div>
                 </div><!-- Left column Ends /-->
@@ -82,13 +91,13 @@
                             	<div class="medium-6 small-12 columns">
                                 	<label>
                                     	First Name *
-                                        <input type="text" value="{{ old('firstName') }}" required name="firstName" id="firstName" placeholder="Your first name here..." />
+                                        <input type="text" value="{{ old('fullName') }}" required name="fullName" id="fullName" placeholder="Your first name here..." />
                                     </label>
                                 </div>
                                 <div class="medium-6 small-12 columns">
                                 	<label>
-                                    	Last Name *
-                                        <input type="text" value="{{ old('lastName') }}" name="lastName" id="lastName" required placeholder="Your last name here..." />
+                                    	Phone Number *
+                                        <input type="text" value="{{ old('phoneNumber') }}" name="phoneNumber" id="phoneNumber" required placeholder="Your phone number here..." />
                                     </label>
                                 </div>
                             </div><!-- Row Ends /-->
@@ -153,19 +162,6 @@
     </div>
     <!-- Content Section Ends /-->
 
-
-    <!-- Call to Action box -->
-    <div class="call-to-action">
-       <div class="row">
-            <div class="medium-10 small-12 columns">
-                <h2><i class="fa fa-phone" aria-hidden="true"></i> 	If you Have Any Questions Call Us On <span>(010)123-456-7890</span></h2>
-            </div>
-            <div class="medium-2 small-12 columns">
-                <a href="#" class="button secondary">Appointment</a>
-            </div>
-       </div><!-- row /-->
-     </div>
-    <!-- Call to Action End /-->
 
 
     @include('partials.footer')

@@ -13,7 +13,7 @@
             <ul class="breadcrumbs">
               <li class="active"><a href="/">Home</a></li>
               <li class="active"><a href="{{ route('faculty.index') }}">Faculties, Schools and Instituate</a></li>
-              <li class="active"><a href="{{ route('faculty.show',$faculty->slug) }}">{{ $faculty->name }}</a></li>
+              <li class="active"><a href="#">{{ $faculty->name }}</a></li>
             </ul>
           </nav>
         </div>

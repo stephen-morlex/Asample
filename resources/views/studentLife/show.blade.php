@@ -11,7 +11,7 @@
             <ul class="breadcrumbs">
               <li class="active"><a href="/">Home</a></li>
               <li class="active"><a href="{{ route('student.index') }}">student experience</a></li>
-              <li class="active"><a href="{{ route('student.show',$student->slug) }}">{{ $student->name }}</a></li>
+              <li class="active"><a href="#">{{ $student->name }}</a></li>
             </ul>
           </nav>
         </div>

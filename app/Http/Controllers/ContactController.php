@@ -7,9 +7,14 @@ use App\Program;
 use App\About;
 use App\StudentCategory;
 use App\Contact;
-// use Illuminate\Support\Facades\Mail
+use Illuminate\Support\Facades\Session;
+// use Illuminate\Support\Facades\Validator\validatePhone;
 use Illuminate\Http\Request;
 use App\Research;
+use Mail;
+
+
+
 
 class ContactController extends Controller
 {
@@ -55,22 +60,17 @@ class ContactController extends Controller
     {
         //
         $this->validate($request, [
-            'firstName' => 'required|max:50|min:2',
-            'lastName'  => 'required|max:50|min:2',
-            'email'     => 'required|email|max: 255',
-            'subject'   => 'required|max:100|min:2',
-            'message'   => 'required|min:5',
+            'fullName'      => 'required|max:50|min:2',
+            'phoneNumber'   => 'required|numeric',
+            'email'         => 'required|email',
+            'subject'       => 'required|max:100|min:2',
+            'message'       => 'required|min:5',
         ]);
 
         Contact::create($request->all());
 
-        // Mail::send('newUser', function($message){
-        //     $message->from('testmail@gg.lv');
-        //     $message->subject('welcome');
-        //     $message->to('admin@admin.com');
-        // });
-
-        return redirect(route('contact.index'));
+        Session::flash('success','thanks for contacting us!');
+        return redirect()->back();
 
     }
 
