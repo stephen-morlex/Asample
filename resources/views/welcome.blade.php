@@ -5,111 +5,108 @@
 @include('layouts.mainNav')
 
 <!-- Banner Starts -->
-<div class="main-banner">
-    <div id="rev_slider_4_1_wrapper" class="rev_slider_wrapper fullwidthbanner-container" data-alias="classicslider1">
-        <!-- START REVOLUTION SLIDER 5.0.7 auto mode -->
-        <div id="rev_slider_4_1" class="rev_slider fullwidthabanner" data-version="5.0.7">
-            <ul>
-              @forelse ($carousel as $ca)
+        <div class="main-banner">
+            <div id="rev_slider_4_1_wrapper" class="rev_slider_wrapper fullwidthbanner-container" data-alias="classicslider1">
+	            <!-- START REVOLUTION SLIDER 5.0.7 auto mode -->
+                <div id="rev_slider_4_1" class="rev_slider fullwidthabanner" data-version="5.0.7">
+               
+                     <ul>	<!-- SLIDE  -->
+                      @foreach ($carousels as $carousel)
+                        <li data-index="rs-16" data-transition="zoomout" data-slotamount="default"  data-easein="Power4.easeInOut" data-easeout="Power4.easeInOut" data-masterspeed="2000"  data-rotate="0"  data-fstransition="fade" data-fsmasterspeed="1500" data-fsslotamount="7" data-saveperformance="off">
+                            <!-- MAIN IMAGE -->
+                            <img src="{{Voyager::image($carousel->image)}}"  alt="First Slide"  data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg" />
+                            <!-- LAYERS -->
+    
+                            <!-- LAYER NR. 1 -->
+                            <div class="tp-caption tp-shape tp-shapewrapper layer1 tp-resizeme rs-parallaxlevel-0" 
+                                 id="slide-16-layer-3" 
+                                 data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" 
+                                 data-y="['middle','middle','middle','middle']" data-voffset="['0','0','0','0']" 
+                                            data-width="full"
+                                data-height="full"
+                                data-whitespace="normal"
+                                data-transform_idle="o:1;"
+                     
+                                 data-transform_in="opacity:0;s:1500;e:Power3.easeInOut;" 
+                                 data-transform_out="s:300;s:300;" 
+                                data-start="1000" 
+                                data-basealign="slide" 
+                                data-responsive_offset="on"> 
+                            </div>
 
-              <!-- SLIDE  -->
-              <li data-index="rs-17" data-transition="fadetotopfadefrombottom" data-slotamount="default"  data-easein="Power3.easeInOut" data-easeout="Power3.easeInOut" data-masterspeed="1500" data-rotate="0"  data-saveperformance="off">
-                  <!-- MAIN IMAGE -->
-                  <img src="{{ Voyager::image( $ca->image ) }}"  alt=""  data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg" data-no-retina>
-                  <!-- LAYERS -->
+                            <!-- LAYER NR. 2 -->
+                            <div class="tp-caption Newspaper-Title-Centered layer2 tp-resizeme rs-parallaxlevel-0" 
+                                 id="slide-16-layer-1" 
+                                 data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" 
+                                 data-y="['middle','middle','middle','middle']" data-voffset="['0','0','0','1']" 
+                                 data-fontsize="['50','50','50','30']"
+                                data-lineheight="['55','55','55','35']"
+                                data-width="['721','721','721','420']"
+                                data-height="none"
+                                data-whitespace="normal"
+                                data-transform_idle="o:1;"
+                     
+                                 data-transform_in="y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;s:1500;e:Power3.easeInOut;" 
+                                 data-transform_out="auto:auto;s:1000;" 
+                                 data-mask_in="x:0px;y:0px;" 
+                                 data-mask_out="x:0;y:0;" 
+                                data-start="1000" 
+                                data-splitin="none" 
+                                data-splitout="none" 
+                                data-responsive_offset="on">{!!$carousel->body!!}
+                            </div>
 
-                  <!-- LAYER NR. 1 -->
-                  <div class="tp-caption tp-shape tp-shapewrapper layer1 tp-resizeme rs-parallaxlevel-0"
-                       id="slide-17-layer-3"
-                       data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
-                       data-y="['middle','middle','middle','middle']" data-voffset="['0','0','0','0']"
-                                  data-width="full"
-                      data-height="full"
-                      data-whitespace="normal"
-                      data-transform_idle="o:1;"
+                            <!-- LAYER NR. 3 -->
+                            <div class="tp-caption Newspaper-Subtitle layer3 tp-resizeme rs-parallaxlevel-0" 
+                                 id="slide-16-layer-2" 
+                                 data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" 
+                                 data-y="['middle','middle','middle','middle']" data-voffset="['-82','-82','-82','-58']" 
+                                            data-width="none"
+                                data-height="none"
+                                data-whitespace="nowrap"
+                                data-transform_idle="o:1;"
+                     
+                                 data-transform_in="y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;s:1500;e:Power3.easeInOut;" 
+                                 data-transform_out="auto:auto;s:1000;" 
+                                 data-mask_in="x:0px;y:0px;" 
+                                 data-mask_out="x:0;y:0;" 
+                                data-start="1000" 
+                                data-splitin="none" 
+                                data-splitout="none" 
+                                data-responsive_offset="on">{!!$carousel->title!!}
+                            </div>
 
-                       data-transform_in="opacity:0;s:1500;e:Power3.easeInOut;"
-                       data-transform_out="s:300;s:300;"
-                      data-start="1000"
-                      data-basealign="slide"
-                      data-responsive_offset="on">
-                  </div>
-
-                  <!-- LAYER NR. 2 -->
-                  <div class="tp-caption Newspaper-Title-Centered layer2 tp-resizeme rs-parallaxlevel-0"
-                       id="slide-17-layer-1"
-                       data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
-                       data-y="['middle','middle','middle','middle']" data-voffset="['0','0','0','1']"
-                                  data-fontsize="['50','50','50','30']"
-                      data-lineheight="['55','55','55','35']"
-                      data-width="['721','721','721','420']"
-                      data-height="none"
-                      data-whitespace="normal"
-                      data-transform_idle="o:1;"
-
-                       data-transform_in="y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;s:1500;e:Power3.easeInOut;"
-                       data-transform_out="auto:auto;s:1000;"
-                       data-mask_in="x:0px;y:0px;"
-                       data-mask_out="x:0;y:0;"
-                      data-start="1000"
-                      data-splitin="none"
-                      data-splitout="none"
-                      data-responsive_offset="on">{{ $ca->body }}
-                  </div>
-
-                  <!-- LAYER NR. 3 -->
-                  <div class="tp-caption Newspaper-Subtitle layer3 tp-resizeme rs-parallaxlevel-0"
-                       id="slide-17-layer-2"
-                       data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
-                       data-y="['middle','middle','middle','middle']" data-voffset="['-82','-82','-82','-58']"
-                                  data-width="none"
-                      data-height="none"
-                      data-whitespace="nowrap"
-                      data-transform_idle="o:1;"
-
-                       data-transform_in="y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;s:1500;e:Power3.easeInOut;"
-                       data-transform_out="auto:auto;s:1000;"
-                       data-mask_in="x:0px;y:0px;"
-                       data-mask_out="x:0;y:0;"
-                      data-start="1000"
-                      data-splitin="none"
-                      data-splitout="none"
-                      data-responsive_offset="on">{{ $ca->title }}
-                  </div>
-
-                  <!-- LAYER NR. 4 -->
-                  <div class="tp-caption layer4 rs-parallaxlevel-0"
-                       id="slide-17-layer-4"
-                       data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
-                       data-y="['middle','middle','middle','middle']" data-voffset="['92','92','92','76']"
-                                  data-width="none"
-                      data-height="none"
-                      data-whitespace="nowrap"
-                      data-transform_idle="o:1;"
-                      data-transform_hover="o:1;rX:0;rY:0;rZ:0;z:0;s:300;e:Power1.easeInOut;"
-                      data-style_hover="c:rgba(0, 0, 0, 1.00);bg:rgba(255, 255, 255, 1.00);bc:rgba(255, 255, 255, 1.00);cursor:pointer;"
-
-                      data-transform_in="y:50px;opacity:0;s:1500;e:Power4.easeInOut;"
-                      data-transform_out="y:50px;opacity:0;s:1000;s:1000;"
-                      data-start="1000"
-                      data-splitin="none"
-                      data-splitout="none"
-                      data-responsive_offset="on"
-                      data-responsive="off"><a href="{{$ca->link }}" class="button primary bordered-light">READ MORE</a>
-                  </div>
-              </li>
-              @empty
-
-              @endforelse
-
-
-            </ul>
-            <div class="tp-static-layers"></div>
-            <div class="tp-bannertimer" style="height: 7px; background-color: rgba(255, 255, 255, 0.25);"></div>
+                            <!-- LAYER NR. 4 -->
+                            <div class="tp-caption layer4 rs-parallaxlevel-0" 
+                                 id="slide-16-layer-4" 
+                                 data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" 
+                                 data-y="['middle','middle','middle','middle']" data-voffset="['92','92','92','76']" 
+                                            data-width="none"
+                                data-height="none"
+                                data-whitespace="nowrap"
+                                data-transform_idle="o:1;"
+                                data-transform_hover="o:1;rX:0;rY:0;rZ:0;z:0;s:300;e:Power1.easeInOut;"
+                                data-style_hover="c:rgba(0, 0, 0, 1.00);bg:rgba(255, 255, 255, 1.00);bc:rgba(255, 255, 255, 1.00);cursor:pointer;"
+                     
+                                data-transform_in="y:50px;opacity:0;s:1500;e:Power4.easeInOut;" 
+                                data-transform_out="y:50px;opacity:0;s:1000;s:1000;" 
+                                data-start="1000" 
+                                data-splitin="none" 
+                                data-splitout="none" 
+                                data-responsive_offset="on" 
+                                data-responsive="off"><a href="{!!$carousel->link!!}" class="button primary bordered-light">READ MORE</a> 
+                            </div>
+                        </li>
+             @endforeach
+                    </ul>
+   
+                   
+                    <div class="tp-static-layers"></div>
+                    <div class="tp-bannertimer" style="height: 7px; background-color: rgba(255, 255, 255, 0.25);"></div>	
+                </div>
+            </div><!-- END REVOLUTION SLIDER -->
         </div>
-    </div><!-- END REVOLUTION SLIDER -->
-</div>
-<!-- Banner Ends /-->
+        <!-- Banner Ends /-->
 
 <!-- information boxes starts -->
 <div class="information-boxes module">
@@ -196,17 +193,16 @@
         </div> <!-- Title Ends /-->
 
         <div class="events-wrapper">
-
-            <div class="medium-6 small-12 columns">
+            <div class="medium-6 small-12 columns" >
                 <div class="event">
-                    <div class="medium-8 small-12 columns event-data">
+                    <div  class="medium-8 small-12 columns event-data "  data-aos="zoom-in-right" data-aos-duration="2000">
                         <h4><a href="single-event.html">PHP Developer December 2016 Seminar</a></h4>
                         <p>We are happy to announce that our next seminar for PHP classes will be held at our Lahore campus click link for details and further information ...</p>
                         <p><strong>Timinings:</strong> 17:00 - 18:00
                         <br><strong>Date:</strong> 24, December 2016</p>
                         <a href="single-event.html" class="button primary ">Join Event</a>
                     </div><!-- Event DAta /-->
-                    <div class="medium-4 small-12 columns event-thumb">
+                    <div class="medium-4 small-12 columns event-thumb" data-aos="zoom-in-left" data-aos-duration="3000">
                         <img src="images/phpcourse.jpg" alt="PHP Course" />
                     </div><!-- Event thumb /-->
                     <div class="clearfix"></div>
@@ -216,14 +212,14 @@
 
             <div class="medium-6 small-12 columns">
                 <div class="event">
-                    <div class="medium-8 small-12 columns event-data">
+                    <div class="medium-8 small-12 columns event-data" data-aos="zoom-in-right" data-aos-duration="2000">
                         <h4><a href="#">Graphics Designer December 2016 Seminar</a></h4>
                         <p>We are happy to announce that our next seminar for PHP classes will be held at our Lahore campus click link for details and further information...</p>
                         <p><strong>Timinings:</strong> 17:00 - 18:00
                         <br><strong>Date:</strong> 24, December 2016</p>
                         <a href="single-event.html" class="button primary ">Join Event</a>
                     </div><!-- Event DAta /-->
-                    <div class="medium-4 small-12 columns event-thumb">
+                    <div class="medium-4 small-12 columns event-thumb"  data-aos="zoom-in-right" data-aos-duration="3000">
                         <img src="images/graphiccourse.jpg" alt="PHP Course" />
                     </div><!-- Event thumb /-->
                     <div class="clearfix"></div>
@@ -305,14 +301,14 @@
 
         <div class="posts-wrapper">
 
-            <div class="medium-4 small-12 columns">
+            <div class="medium-4 small-12 columns" >
                 <div class="post">
-                    <div class="post-thumb">
+                    <div class="post-thumb" data-aos="zoom-in-down" data-aos-anchor-placement="bottom-bottom" data-aos-duration="2000">
                         <a href="#">
                             <img src="images/gallery3.jpg" alt="My Blog post" />
                         </a>
                     </div><!-- Thumb /-->
-                    <div class="post-content">
+                    <div class="post-content"  data-aos="zoom-in-up" data-aos-anchor-placement="bottom-bottom" data-aos-duration="3000">
                         <h4><a href="#">What is good about us?</a></h4>
                         <div class="post-meta"><strong>Date:</strong> 20, Dec, 2016 | <strong>Category:</strong> <a href="#">Campus</a> | <strong>Author:</strong> <a href="#">Ateeq</a></div>
                         <p>Contrary to popular belief, Lorem Ipsum is not simply random text ... <a href="#">Read More &raquo;</a></p>
@@ -372,7 +368,9 @@
 
     <div class="row">
 
-        <div class="brand-carousel">
+        <div class="brand-carousel" data-aos="flip-left"
+     data-aos-easing="ease-out-cubic"
+     data-aos-duration="2000">
 
             <div class="bran-logo"><a href="#"><img  alt="" src="images/partner2.jpg" class="thumbnail" /></a></div>
             <div class="bran-logo"><a href="#"><img  alt="" src="images/partner3.jpg" class="thumbnail" /></a></div>

@@ -40,18 +40,6 @@ return [
             'foreign_key_constraints' => env('DB_FOREIGN_KEYS', true),
         ],
 
-        // 'mysql' => array(
-        // 'driver'    => 'mysql',
-        //     'host'      => 'localhost',
-        //     'database'  => 'Cuea_db',
-        //     'unix_socket'   => '/Applications/MAMP/tmp/mysql/mysql.sock',
-        //     'username'  => 'root',
-        //     'password'  => 'root',
-        //     'charset'   => 'utf8',
-        //     'collation' => 'utf8_unicode_ci',
-        //     'prefix'    => '',
-        // ),
-
 
 
         'mysql' => [

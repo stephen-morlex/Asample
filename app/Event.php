@@ -8,5 +8,6 @@ use TCG\Voyager\Traits\Resizable;
 
 class Event extends Model
 {
+    protected $guarded = [];
     use Resizable;
 }

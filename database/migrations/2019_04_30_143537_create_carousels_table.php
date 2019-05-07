@@ -19,7 +19,7 @@ class CreateCarouselsTable extends Migration
             $table->string('slug')->unique();
             $table->string('body')->nullable();
             $table->string('image')->nullable();
-            $table->string('link')->nullable()->default('read more');
+            $table->string('link')->nullable();
             $table->timestamps();
         });
     }

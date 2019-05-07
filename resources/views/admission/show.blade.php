@@ -25,80 +25,17 @@
 
                     <div class="medium-9 small-12 columns">
                         <ul class="accordion" data-accordion>
-                                <li class="accordion-item" data-accordion-item>
-                                        <a href="#" class="accordion-title">Admission process</a>
-                                        <div class="accordion-content" data-tab-content>
-                                                <ul class="accordion" data-accordion>
-                                                        <li class="accordion-item" data-accordion-item>
-                                                            <a href="#" class="accordion-title">Application checklist</a>
-                                                            <div class="accordion-content" data-tab-content>
-                                                                <p>
-
-                                                                        Undergraduate Applicants
-                                                                        Non-refundable Application Fee (KES. 3,000 or USD $50) – No cash payments (see banking options)
-                                                                        Complete and signed application form (Please observe the deadlines).
-                                                                        Originals & a copy of all academic transcripts, diplomas or certificates (All originals, where necessary, will be returned
-                                                                        High School Leaving Certificate.
-                                                                        One recent passport size photograph (write your name on reverse side).
-                                                                        Copy of the National Identity Card or Birth Certificate.
-                                                                </p>
-                                                            </div>
-                                                        </li>
-
-                                                        <li class="accordion-item" data-accordion-item>
-                                                                <a href="#" class="accordion-title">Banking  Options</a>
-                                                                <div class="accordion-content" data-tab-content>
-                                                                    <p>
-                                                                            All applicants must complete and sign the application form and submit it to the Admissions Office. Only complete applications will be processed. A non-refundable processing fee must accompany the application. However, no cash payments are accepted in the Finance office and all payments should be made by bankers cheques issued to United States International University (USIU-Africa), or deposited into the accounts below; (then forward the deposit slip to the Finance Office at USIU-Africa).
-                                                                            <table class="stack">
-                                                                                    <thead>
-                                                                                      <tr>
-                                                                                        <th width="300">Table Header</th>
-                                                                                        <th>Table Header</th>
-                                                                                        <th width="150">Table Header</th>
-                                                                                        <th width="150">Table Header</th>
-                                                                                      </tr>
-                                                                                    </thead>
-                                                                                    <tbody>
-                                                                                      <tr>
-                                                                                        <td>Content Goes Here</td>
-                                                                                        <td>This is longer content Donec id elit non mi porta gravida at eget metus.</td>
-                                                                                        <td>Content Goes Here</td>
-                                                                                        <td>Content Goes Here</td>
-                                                                                      </tr>
-                                                                                      <tr>
-                                                                                        <td>Content Goes Here</td>
-                                                                                        <td>This is longer Content Goes Here Donec id elit non mi porta gravida at eget metus.</td>
-                                                                                        <td>Content Goes Here</td>
-                                                                                        <td>Content Goes Here</td>
-                                                                                      </tr>
-                                                                                      <tr>
-                                                                                        <td>Content Goes Here</td>
-                                                                                        <td>This is longer Content Goes Here Donec id elit non mi porta gravida at eget metus.</td>
-                                                                                        <td>Content Goes Here</td>
-                                                                                        <td>Content Goes Here</td>
-                                                                                      </tr>
-                                                                                    </tbody>
-                                                                                  </table>
-                                                                    </p>
-                                                                </div>
-                                                            </li>
-
-                                                            <li class="accordion-item" data-accordion-item>
-                                                                    <a href="#" class="accordion-title">Mobile Money Transfer</a>
-                                                                    <div class="accordion-content" data-tab-content>
-
-                                                                    </div>
-                                                                </li>
-                                                        </ul>
-
-                                        </div>
-                                    </li>
-                            <li class="accordion-item " data-accordion-item>
-                                <a href="#" class="accordion-title">Entrance / Eligibility Requirements</a>
+                            <li class="accordion-item" data-accordion-item>
+                                <a href="#" class="accordion-title"> Application Process</a>
                                 <div class="accordion-content" data-tab-content>
+                                    {!! $admission->process !!}
+                                </div>
+                            </li>
 
-                                        {!! $admission->requirement !!}
+                            <li class="accordion-item" data-accordion-item>
+                                <a href="#" class="accordion-title"> Application Requirments</a>
+                                <div class="accordion-content" data-tab-content>
+                                    {!! $admission->requirement !!}
                                 </div>
                             </li>
 
@@ -124,7 +61,7 @@
                                 <a href="#" class="accordion-title">Fees</a>
                                 <div class="accordion-content" data-tab-content>
 
-                                    {{ $admission->fees }}
+                                    {!! $admission->fees !!}
                                 </div>
                             </li>
 

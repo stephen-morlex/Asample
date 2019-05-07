@@ -960,6 +960,16 @@ Our Courses CSS Ends
 Our Teachers CSS Ends
 -------------------------*/
 
+
+/*-------------------------
+Faculty card start
+-------------------------*/
+
+
+
+
+
+
 /*-------------------------
  11 - Seminar/Events CSS
 -------------------------*/
@@ -968,7 +978,7 @@ Our Teachers CSS Ends
 	padding-top:80px;
 	padding-bottom:80px;
     opacity: 1;
-    background:url("/images/cueatest.jpeg") no-repeat center center fixed;
+    background:url("/images/1.jpeg") no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -1987,6 +1997,7 @@ Styles For Inner Pages Ends
 	width:100%;
 	height:auto;
 }
+
 .product-meta {
 	padding-top: 8px;
     padding-bottom: 8px;

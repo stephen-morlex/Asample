@@ -19,7 +19,7 @@ class WelcomeController extends Controller
     public function index()
     {
         $admissions = Section::orderBy('name')->get();
-        $carousel= carousel::latest()->take(3)->get();
+        $carousels= carousel::all();
         $ad         = Section::orderBy('name','asc')->get();
         $abouts     = About::orderBy('title','asc')->get();
         $researchNav = Research::orderBy('name','asc')->get();
@@ -31,7 +31,7 @@ class WelcomeController extends Controller
             'ad',
             'abouts',
             'studLife',
-            'carousel',
+            'carousels',
             'researchNav'
         ));
     }

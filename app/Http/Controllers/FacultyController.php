@@ -9,6 +9,7 @@ use App\About;
 use App\Section;
 use App\StudentCategory;
 use App\Research;
+use Illuminate\Support\Facades\DB;
 
 class FacultyController extends Controller
 {
@@ -59,8 +60,15 @@ class FacultyController extends Controller
      */
     public function show($slug)
     {
-        $faculty  = Faculty::with('programs')->get();
+
+            // $facultyProgram
+            // = DB::table('faculties')
+            // ->join('programs', 'faculties.id', '=', 'programs.faculty_id')
+            // ->select('programs.name')
+            // ->get();
+        // dd($facultyProgram);
         $faculty  = Faculty::where('slug', $slug)->firstOrFail();
+        $faculty->load('programs');
         $alsoInterested = Faculty::inRandomOrder()->take(5)->get();
         $studLife=StudentCategory::orderBy('name','asc')->get();
         $ad=Section::orderBy('name','asc')->get();
@@ -75,7 +83,8 @@ class FacultyController extends Controller
             'studLife'=>$studLife,
             'ad'=>$ad,
             'researchNav'=>$researchNav,
-            'abouts' => $abouts
+            'abouts' => $abouts,
+            // 'facultyProgram'=> $facultyProgram
         ]);
     }
     /**

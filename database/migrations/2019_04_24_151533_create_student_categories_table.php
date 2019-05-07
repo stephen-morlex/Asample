@@ -16,7 +16,7 @@ class CreateStudentCategoriesTable extends Migration
         Schema::create('student_categories', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
-            $table->string('slug');
+            $table->string('slug')->unique();
             $table->timestamps();
         });
     }

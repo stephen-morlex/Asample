@@ -52,7 +52,7 @@
 
         <div class="medium-3 small-12 columns sidebar">
             <div class="widget">
-                <h2>More about Research </h2>
+                <h2>More student services</h2>
 
                 <ul class="menu vertical">
                     @foreach ($sideServices as $sr)

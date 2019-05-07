@@ -114,18 +114,22 @@
 
               @forelse ($sections as $section)
 
-              <div class="medium-6 small-12 columns">
-                    <div class="course">
-                        <div class="course-thumb">
-                            <img src="{{ Voyager::image( $section->thumbnail('cropped'))}}" alt="Graphic Design" />
-
+              <div class="medium-3 small-12 columns">
+                        <div class="single-product">
+                            <div class="product-img thumbnail" data-aos="fade-up"data-aos-anchor-placement="bottom-bottom" data-aos-duration="2000">
+                                <a href="{{route('program.section',$section->slug)}}">
+                                    <img   class="front-image" src="{{ Voyager::image( $section->thumbnail('cropped'))}}">
+                                </a>
+                                <div class="add-to-cart-top" >
+                                        <a href="{{route('program.section',$section->slug)}}" class="button primary">{{$section->name}}</a>
+                                </div>
+                            </div>
+                            <div class="product-info" data-aos="zoom-in"data-aos-anchor-placement="bottom-bottom" data-aos-duration="3000">
+                                <h6><a href="{{route('program.section',$section->slug)}}">{{$section->name}}</a></h6>
+                               <div class="tx-div"></div>
+                            </div>
                         </div>
-                        <h3>{{ $section->name }} Program</h3>
-                        <a href="{{ route('program.section', $section->slug) }}" class="secondary button">Enroll now</a>
-                    </div>
-                    <br>
-                </div><!-- First Course /-->
-
+                    </div><!-- product Ends here -->
 
               @empty
 
@@ -164,7 +168,7 @@
 
             <div class="our-process-wrapper">
 
-                <div class="medium-8 medium-offset-3 small-12 columns our-process">
+                <div class="medium-8 medium-offset-3 small-12 columns our-process" >
                     <h2>Why Cuea!</h2>
 
                     <div class="process">
@@ -232,7 +236,9 @@
 
             @forelse ($programs as $pro)
 
-            <div class="medium-12 small-12 columns">
+            <div class="medium-12 small-12 columns"
+             data-aos="zoom-out"data-aos-anchor-placement="bottom-bottom" data-aos-duration="3000"
+            >
                 </a>
                     <div class="testimonial">
 
