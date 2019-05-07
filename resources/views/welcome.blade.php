@@ -7,106 +7,108 @@
 <!-- Banner Starts -->
         <div class="main-banner">
             <div id="rev_slider_4_1_wrapper" class="rev_slider_wrapper fullwidthbanner-container" data-alias="classicslider1">
-	            <!-- START REVOLUTION SLIDER 5.0.7 auto mode -->
+                <!-- START REVOLUTION SLIDER 5.0.7 auto mode -->
+
                 <div id="rev_slider_4_1" class="rev_slider fullwidthabanner" data-version="5.0.7">
-               
-                     <ul>	<!-- SLIDE  -->
-                      @foreach ($carousels as $carousel)
-                        <li data-index="rs-16" data-transition="zoomout" data-slotamount="default"  data-easein="Power4.easeInOut" data-easeout="Power4.easeInOut" data-masterspeed="2000"  data-rotate="0"  data-fstransition="fade" data-fsmasterspeed="1500" data-fsslotamount="7" data-saveperformance="off">
-                            <!-- MAIN IMAGE -->
-                            <img src="{{Voyager::image($carousel->image)}}"  alt="First Slide"  data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg" />
-                            <!-- LAYERS -->
-    
-                            <!-- LAYER NR. 1 -->
-                            <div class="tp-caption tp-shape tp-shapewrapper layer1 tp-resizeme rs-parallaxlevel-0" 
-                                 id="slide-16-layer-3" 
-                                 data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" 
-                                 data-y="['middle','middle','middle','middle']" data-voffset="['0','0','0','0']" 
-                                            data-width="full"
-                                data-height="full"
-                                data-whitespace="normal"
-                                data-transform_idle="o:1;"
-                     
-                                 data-transform_in="opacity:0;s:1500;e:Power3.easeInOut;" 
-                                 data-transform_out="s:300;s:300;" 
-                                data-start="1000" 
-                                data-basealign="slide" 
-                                data-responsive_offset="on"> 
-                            </div>
+                        <ul>	<!-- SLIDE  -->
+                            @foreach ($carousels as $c)
+                            <!-- SLIDE  -->
+                            <li data-index="rs-18" data-transition="zoomin" data-slotamount="7"  data-easein="Power4.easeInOut" data-easeout="Power4.easeInOut" data-masterspeed="2000" data-rotate="0"  data-saveperformance="off">
+                                <!-- MAIN IMAGE -->
+                                <img src="{{ Voyager::image($c->image) }}"  alt=""  data-bgposition="center center" data-kenburns="on" data-duration="30000" data-ease="Linear.easeNone" data-scalestart="100" data-scaleend="120" data-rotatestart="0" data-rotateend="0" data-offsetstart="0 0" data-offsetend="0 0" data-bgparallax="10" class="rev-slidebg" data-no-retina>
+                                <!-- LAYERS -->
 
-                            <!-- LAYER NR. 2 -->
-                            <div class="tp-caption Newspaper-Title-Centered layer2 tp-resizeme rs-parallaxlevel-0" 
-                                 id="slide-16-layer-1" 
-                                 data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" 
-                                 data-y="['middle','middle','middle','middle']" data-voffset="['0','0','0','1']" 
-                                 data-fontsize="['50','50','50','30']"
-                                data-lineheight="['55','55','55','35']"
-                                data-width="['721','721','721','420']"
-                                data-height="none"
-                                data-whitespace="normal"
-                                data-transform_idle="o:1;"
-                     
-                                 data-transform_in="y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;s:1500;e:Power3.easeInOut;" 
-                                 data-transform_out="auto:auto;s:1000;" 
-                                 data-mask_in="x:0px;y:0px;" 
-                                 data-mask_out="x:0;y:0;" 
-                                data-start="1000" 
-                                data-splitin="none" 
-                                data-splitout="none" 
-                                data-responsive_offset="on">{!!$carousel->body!!}
-                            </div>
+                                <!-- LAYER NR. 1 -->
+                                <div class="tp-caption tp-shape tp-shapewrapper layer1 tp-resizeme rs-parallaxlevel-0"
+                                     id="slide-18-layer-3"
+                                     data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
+                                     data-y="['middle','middle','middle','middle']" data-voffset="['0','0','0','0']"
+                                                data-width="full"
+                                    data-height="full"
+                                    data-whitespace="normal"
+                                    data-transform_idle="o:1;"
 
-                            <!-- LAYER NR. 3 -->
-                            <div class="tp-caption Newspaper-Subtitle layer3 tp-resizeme rs-parallaxlevel-0" 
-                                 id="slide-16-layer-2" 
-                                 data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" 
-                                 data-y="['middle','middle','middle','middle']" data-voffset="['-82','-82','-82','-58']" 
-                                            data-width="none"
-                                data-height="none"
-                                data-whitespace="nowrap"
-                                data-transform_idle="o:1;"
-                     
-                                 data-transform_in="y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;s:1500;e:Power3.easeInOut;" 
-                                 data-transform_out="auto:auto;s:1000;" 
-                                 data-mask_in="x:0px;y:0px;" 
-                                 data-mask_out="x:0;y:0;" 
-                                data-start="1000" 
-                                data-splitin="none" 
-                                data-splitout="none" 
-                                data-responsive_offset="on">{!!$carousel->title!!}
-                            </div>
+                                     data-transform_in="opacity:0;s:1500;e:Power3.easeInOut;"
+                                     data-transform_out="s:300;s:300;"
+                                    data-start="1000"
+                                    data-basealign="slide"
+                                    data-responsive_offset="on">
+                                </div>
 
-                            <!-- LAYER NR. 4 -->
-                            <div class="tp-caption layer4 rs-parallaxlevel-0" 
-                                 id="slide-16-layer-4" 
-                                 data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" 
-                                 data-y="['middle','middle','middle','middle']" data-voffset="['92','92','92','76']" 
-                                            data-width="none"
-                                data-height="none"
-                                data-whitespace="nowrap"
-                                data-transform_idle="o:1;"
-                                data-transform_hover="o:1;rX:0;rY:0;rZ:0;z:0;s:300;e:Power1.easeInOut;"
-                                data-style_hover="c:rgba(0, 0, 0, 1.00);bg:rgba(255, 255, 255, 1.00);bc:rgba(255, 255, 255, 1.00);cursor:pointer;"
-                     
-                                data-transform_in="y:50px;opacity:0;s:1500;e:Power4.easeInOut;" 
-                                data-transform_out="y:50px;opacity:0;s:1000;s:1000;" 
-                                data-start="1000" 
-                                data-splitin="none" 
-                                data-splitout="none" 
-                                data-responsive_offset="on" 
-                                data-responsive="off"><a href="{!!$carousel->link!!}" class="button primary bordered-light">READ MORE</a> 
-                            </div>
-                        </li>
-             @endforeach
-                    </ul>
-   
-                   
-                    <div class="tp-static-layers"></div>
-                    <div class="tp-bannertimer" style="height: 7px; background-color: rgba(255, 255, 255, 0.25);"></div>	
-                </div>
+                                <!-- LAYER NR. 2 -->
+                                <div class="tp-caption Newspaper-Title-Centered layer2 tp-resizeme rs-parallaxlevel-0"
+                                     id="slide-18-layer-1"
+                                     data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
+                                     data-y="['middle','middle','middle','middle']" data-voffset="['0','0','0','1']"
+                                                data-fontsize="['50','50','50','30']"
+                                    data-lineheight="['55','55','55','35']"
+                                    data-width="['721','721','721','420']"
+                                    data-height="none"
+                                    data-whitespace="normal"
+                                    data-transform_idle="o:1;"
+
+                                     data-transform_in="y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;s:1500;e:Power3.easeInOut;"
+                                     data-transform_out="auto:auto;s:1000;"
+                                     data-mask_in="x:0px;y:0px;"
+                                     data-mask_out="x:0;y:0;"
+                                    data-start="1000"
+                                    data-splitin="none"
+                                    data-splitout="none"
+                                    data-responsive_offset="on">{{ $c->body }}
+                                </div>
+
+                                <!-- LAYER NR. 3 -->
+                                <div class="tp-caption Newspaper-Subtitle layer3 tp-resizeme rs-parallaxlevel-0"
+                                     id="slide-18-layer-2"
+                                     data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
+                                     data-y="['middle','middle','middle','middle']" data-voffset="['-82','-82','-82','-58']"
+                                                data-width="none"
+                                    data-height="none"
+                                    data-whitespace="nowrap"
+                                    data-transform_idle="o:1;"
+
+                                     data-transform_in="y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;s:1500;e:Power3.easeInOut;"
+                                     data-transform_out="auto:auto;s:1000;"
+                                     data-mask_in="x:0px;y:0px;"
+                                     data-mask_out="x:0;y:0;"
+                                    data-start="1000"
+                                    data-splitin="none"
+                                    data-splitout="none"
+                                    data-responsive_offset="on">ABOUT THE LIFE OF A DESIGNER
+                                </div>
+
+                                <!-- LAYER NR. 4 -->
+                                <div class="tp-caption layer4 rs-parallaxlevel-0"
+                                     id="slide-18-layer-4"
+                                     data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
+                                     data-y="['middle','middle','middle','middle']" data-voffset="['92','92','92','76']"
+                                                data-width="none"
+                                    data-height="none"
+                                    data-whitespace="nowrap"
+                                    data-transform_idle="o:1;"
+                                    data-transform_hover="o:1;rX:0;rY:0;rZ:0;z:0;s:300;e:Power1.easeInOut;"
+                                    data-style_hover="c:rgba(0, 0, 0, 1.00);bg:rgba(255, 255, 255, 1.00);bc:rgba(255, 255, 255, 1.00);cursor:pointer;"
+
+                                    data-transform_in="y:50px;opacity:0;s:1500;e:Power4.easeInOut;"
+                                    data-transform_out="y:50px;opacity:0;s:1000;s:1000;"
+                                    data-start="1000"
+                                    data-splitin="none"
+                                    data-splitout="none"
+                                    data-responsive_offset="on"
+                                    data-responsive="off"><a href="{{ $c->link }}" class="button primary bordered-light">READ MORE</a>
+                                </div>
+                            </li>
+                            @endforeach
+                        </ul>
+                        <div class="tp-static-layers"></div>
+                        <div class="tp-bannertimer" style="height: 7px; background-color: rgba(255, 255, 255, 0.25);"></div>
+                    </div>
+
+
             </div><!-- END REVOLUTION SLIDER -->
         </div>
         <!-- Banner Ends /-->
+
 
 <!-- information boxes starts -->
 <div class="information-boxes module">
@@ -188,45 +190,33 @@
         <div class="section-title-wrapper light-title">
             <div class="section-title">
                 <h2>Upcoming Events</h2>
-                <p>Our Upcoming Seminars/Events Dont Miss Out!</p>
+                <p>Our Upcoming Events Dont Miss Out!</p>
             </div>
         </div> <!-- Title Ends /-->
 
         <div class="events-wrapper">
+            @forelse ($events as $e)
             <div class="medium-6 small-12 columns" >
-                <div class="event">
-                    <div  class="medium-8 small-12 columns event-data "  data-aos="zoom-in-right" data-aos-duration="2000">
-                        <h4><a href="single-event.html">PHP Developer December 2016 Seminar</a></h4>
-                        <p>We are happy to announce that our next seminar for PHP classes will be held at our Lahore campus click link for details and further information ...</p>
-                        <p><strong>Timinings:</strong> 17:00 - 18:00
-                        <br><strong>Date:</strong> 24, December 2016</p>
-                        <a href="single-event.html" class="button primary ">Join Event</a>
-                    </div><!-- Event DAta /-->
-                    <div class="medium-4 small-12 columns event-thumb" data-aos="zoom-in-left" data-aos-duration="3000">
-                        <img src="images/phpcourse.jpg" alt="PHP Course" />
-                    </div><!-- Event thumb /-->
-                    <div class="clearfix"></div>
-                </div><!-- Event div ends /-->
-            </div><!-- Event Column Ends /-->
+                    <div class="event">
+                        <div  class="medium-8 small-12 columns event-data "  data-aos="zoom-in-right" data-aos-duration="2000">
+                            <h4><a href="{{ route('event.show',$e->slug) }}">{!! $e->title !!}</a></h4>
+                            <p> {!!  str_limit($e->content,70) !!}</p>
+                            <p><strong>Timinings:</strong> {!!  Carbon\Carbon::parse($e->start)->toTimeString() !!} - {!!  Carbon\Carbon::parse($e->end)->toTimeString() !!}
+                            <p><strong>Venue:</strong> {!! $e->location !!}
+                            <br><strong>Date:</strong> {!! Carbon\Carbon::parse($e->date)->format('d-m-Y ') !!}</p>
+                            <a href="{{ route('event.show',$e->slug) }}" class="button primary ">Join Event</a>
+                        </div><!-- Event DAta /-->
+                        <div class="medium-4 small-12 columns event-thumb" data-aos="zoom-in-left" data-aos-duration="3000">
+                            <img src="{{ Voyager::image( $e->thumbnail('cropped'))}}" alt="{!! $e->title !!}" />
+                        </div><!-- Event thumb /-->
+                        <br>
+                        <div class="clearfix"></div>
+                    </div><!-- Event div ends /-->
+                </div><!-- Event Column Ends /-->
 
+            @empty
 
-            <div class="medium-6 small-12 columns">
-                <div class="event">
-                    <div class="medium-8 small-12 columns event-data" data-aos="zoom-in-right" data-aos-duration="2000">
-                        <h4><a href="#">Graphics Designer December 2016 Seminar</a></h4>
-                        <p>We are happy to announce that our next seminar for PHP classes will be held at our Lahore campus click link for details and further information...</p>
-                        <p><strong>Timinings:</strong> 17:00 - 18:00
-                        <br><strong>Date:</strong> 24, December 2016</p>
-                        <a href="single-event.html" class="button primary ">Join Event</a>
-                    </div><!-- Event DAta /-->
-                    <div class="medium-4 small-12 columns event-thumb"  data-aos="zoom-in-right" data-aos-duration="3000">
-                        <img src="images/graphiccourse.jpg" alt="PHP Course" />
-                    </div><!-- Event thumb /-->
-                    <div class="clearfix"></div>
-                </div><!-- Event div ends /-->
-            </div><!-- Event Column Ends /-->
-
-
+            @endforelse
 
         </div><!-- Events Wrapper Ends /-->
 
@@ -234,7 +224,7 @@
     <!-- Row Ends /-->
     <br>
     <div class="load-more text-center">
-            <a href="#" class="button primary">Load More...</a>
+            <a href="{{ route('events.index') }}" class="button primary">More Events...</a>
         </div>
 </div>
 <!-- Seminar Events Ends /-->

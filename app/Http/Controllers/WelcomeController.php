@@ -8,6 +8,7 @@ use App\About;
 use App\StudentCategory;
 use App\Research;
 use App\carousel;
+use App\Event;
 
 class WelcomeController extends Controller
 {
@@ -18,8 +19,9 @@ class WelcomeController extends Controller
      */
     public function index()
     {
+        $events         = Event::latest()->take(2)->get();
         $admissions = Section::orderBy('name')->get();
-        $carousels= carousel::all();
+        $carousels= carousel::latest()->first()->get();
         $ad         = Section::orderBy('name','asc')->get();
         $abouts     = About::orderBy('title','asc')->get();
         $researchNav = Research::orderBy('name','asc')->get();
@@ -32,7 +34,8 @@ class WelcomeController extends Controller
             'abouts',
             'studLife',
             'carousels',
-            'researchNav'
+            'researchNav',
+            'events'
         ));
     }
 

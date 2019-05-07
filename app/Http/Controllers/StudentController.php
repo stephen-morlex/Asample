@@ -74,6 +74,7 @@ class StudentController extends Controller
      */
     public function show($slug)
     {
+        $studentSide= Student::skip(0)->take(50)->get();
         $student = Student::where('slug', $slug)->firstOrFail();
         $ad=Section::orderBy('name','asc')->get();
         $studLife=StudentCategory::orderBy('name','asc')->get();
@@ -84,7 +85,8 @@ class StudentController extends Controller
             'ad'=>$ad,
             'studLife'=>$studLife,
             'researchNav' =>$researchNav,
-            'abouts' => $abouts
+            'abouts' => $abouts,
+            'studentSide' => $studentSide
         ]);
     }
 
