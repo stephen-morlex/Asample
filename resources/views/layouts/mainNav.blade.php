@@ -5,7 +5,7 @@
 
                 <div class="medium-4 small-12 columns">
                 	<div class="logo">
-                    	<a href="index.html">
+                    	<a href="/">
                         	<img src="{{ asset('images/crop.png') }}" alt="Webful Education" />
                         </a>
                     </div><!-- logo /-->
@@ -75,7 +75,7 @@
                                                 <li><a href="{{ route('about.show', $about->slug) }}">{{ $about->title }}</a></li>
                                             @endforeach
 
-                                          
+
 
 
 

@@ -5,7 +5,6 @@
 @include('layouts.mainNav')
 
 <!-- Banner Starts -->
-<<<<<<< HEAD
 
 <div class="main-banner">
 	<div id="rev_slider_4_1_wrapper" class="rev_slider_wrapper fullwidthbanner-container" data-alias="classicslider1">
@@ -112,112 +111,6 @@
 	</div><!-- END REVOLUTION SLIDER -->
 </div>
 <!-- Banner Ends /-->
-=======
-        <div class="main-banner">
-            <div id="rev_slider_4_1_wrapper" class="rev_slider_wrapper fullwidthbanner-container" data-alias="classicslider1">
-                <!-- START REVOLUTION SLIDER 5.0.7 auto mode -->
-
-                <div id="rev_slider_4_1" class="rev_slider fullwidthabanner" data-version="5.0.7">
-                        <ul>	<!-- SLIDE  -->
-                            @foreach ($carousels as $c)
-                            <!-- SLIDE  -->
-                            <li data-index="rs-18" data-transition="zoomin" data-slotamount="7"  data-easein="Power4.easeInOut" data-easeout="Power4.easeInOut" data-masterspeed="2000" data-rotate="0"  data-saveperformance="off">
-                                <!-- MAIN IMAGE -->
-                                <img src="{{ Voyager::image($c->image) }}"  alt=""  data-bgposition="center center" data-kenburns="on" data-duration="30000" data-ease="Linear.easeNone" data-scalestart="100" data-scaleend="120" data-rotatestart="0" data-rotateend="0" data-offsetstart="0 0" data-offsetend="0 0" data-bgparallax="10" class="rev-slidebg" data-no-retina>
-                                <!-- LAYERS -->
-
-                                <!-- LAYER NR. 1 -->
-                                <div class="tp-caption tp-shape tp-shapewrapper layer1 tp-resizeme rs-parallaxlevel-0"
-                                     id="slide-18-layer-3"
-                                     data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
-                                     data-y="['middle','middle','middle','middle']" data-voffset="['0','0','0','0']"
-                                                data-width="full"
-                                    data-height="full"
-                                    data-whitespace="normal"
-                                    data-transform_idle="o:1;"
-
-                                     data-transform_in="opacity:0;s:1500;e:Power3.easeInOut;"
-                                     data-transform_out="s:300;s:300;"
-                                    data-start="1000"
-                                    data-basealign="slide"
-                                    data-responsive_offset="on">
-                                </div>
-
-                                <!-- LAYER NR. 2 -->
-                                <div class="tp-caption Newspaper-Title-Centered layer2 tp-resizeme rs-parallaxlevel-0"
-                                     id="slide-18-layer-1"
-                                     data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
-                                     data-y="['middle','middle','middle','middle']" data-voffset="['0','0','0','1']"
-                                                data-fontsize="['50','50','50','30']"
-                                    data-lineheight="['55','55','55','35']"
-                                    data-width="['721','721','721','420']"
-                                    data-height="none"
-                                    data-whitespace="normal"
-                                    data-transform_idle="o:1;"
-
-                                     data-transform_in="y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;s:1500;e:Power3.easeInOut;"
-                                     data-transform_out="auto:auto;s:1000;"
-                                     data-mask_in="x:0px;y:0px;"
-                                     data-mask_out="x:0;y:0;"
-                                    data-start="1000"
-                                    data-splitin="none"
-                                    data-splitout="none"
-                                    data-responsive_offset="on">{{ $c->body }}
-                                </div>
-
-                                <!-- LAYER NR. 3 -->
-                                <div class="tp-caption Newspaper-Subtitle layer3 tp-resizeme rs-parallaxlevel-0"
-                                     id="slide-18-layer-2"
-                                     data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
-                                     data-y="['middle','middle','middle','middle']" data-voffset="['-82','-82','-82','-58']"
-                                                data-width="none"
-                                    data-height="none"
-                                    data-whitespace="nowrap"
-                                    data-transform_idle="o:1;"
-
-                                     data-transform_in="y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;s:1500;e:Power3.easeInOut;"
-                                     data-transform_out="auto:auto;s:1000;"
-                                     data-mask_in="x:0px;y:0px;"
-                                     data-mask_out="x:0;y:0;"
-                                    data-start="1000"
-                                    data-splitin="none"
-                                    data-splitout="none"
-                                    data-responsive_offset="on">ABOUT THE LIFE OF A DESIGNER
-                                </div>
-
-                                <!-- LAYER NR. 4 -->
-                                <div class="tp-caption layer4 rs-parallaxlevel-0"
-                                     id="slide-18-layer-4"
-                                     data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
-                                     data-y="['middle','middle','middle','middle']" data-voffset="['92','92','92','76']"
-                                                data-width="none"
-                                    data-height="none"
-                                    data-whitespace="nowrap"
-                                    data-transform_idle="o:1;"
-                                    data-transform_hover="o:1;rX:0;rY:0;rZ:0;z:0;s:300;e:Power1.easeInOut;"
-                                    data-style_hover="c:rgba(0, 0, 0, 1.00);bg:rgba(255, 255, 255, 1.00);bc:rgba(255, 255, 255, 1.00);cursor:pointer;"
-
-                                    data-transform_in="y:50px;opacity:0;s:1500;e:Power4.easeInOut;"
-                                    data-transform_out="y:50px;opacity:0;s:1000;s:1000;"
-                                    data-start="1000"
-                                    data-splitin="none"
-                                    data-splitout="none"
-                                    data-responsive_offset="on"
-                                    data-responsive="off"><a href="{{ $c->link }}" class="button primary bordered-light">READ MORE</a>
-                                </div>
-                            </li>
-                            @endforeach
-                        </ul>
-                        <div class="tp-static-layers"></div>
-                        <div class="tp-bannertimer" style="height: 7px; background-color: rgba(255, 255, 255, 0.25);"></div>
-                    </div>
-
-
-            </div><!-- END REVOLUTION SLIDER -->
-        </div>
-        <!-- Banner Ends /-->
-
->>>>>>> 5051e1df1e87d04e8ddf9b6144c96224bb54b21f
 
         <div class="main-banner">
             <div id="rev_slider_4_1_wrapper" class="rev_slider_wrapper fullwidthbanner-container" data-alias="classicslider1">
@@ -538,63 +431,6 @@
 
 	</div><!-- Row Ends /-->
 
-<<<<<<< HEAD
-=======
-        <div class="posts-wrapper">
-
-            <div class="medium-4 small-12 columns" >
-                <div class="post">
-                    <div class="post-thumb" data-aos="zoom-in-down" data-aos-anchor-placement="bottom-bottom" data-aos-duration="2000">
-                        <a href="#">
-                            <img src="images/gallery3.jpg" alt="My Blog post" />
-                        </a>
-                    </div><!-- Thumb /-->
-                    <div class="post-content"  data-aos="zoom-in-up" data-aos-anchor-placement="bottom-bottom" data-aos-duration="3000">
-                        <h4><a href="#">What is good about us?</a></h4>
-                        <div class="post-meta"><strong>Date:</strong> 20, Dec, 2016 | <strong>Category:</strong> <a href="#">Campus</a> | <strong>Author:</strong> <a href="#">Ateeq</a></div>
-                        <p>Contrary to popular belief, Lorem Ipsum is not simply random text ... <a href="#">Read More &raquo;</a></p>
-                    </div><!-- post content /-->
-                </div><!-- Post /-->
-            </div><!-- Post column /-->
-
-            <div class="medium-4 small-12 columns">
-                <div class="post">
-                    <div class="post-thumb">
-                        <a href="#">
-                            <img src="images/gallery9.jpg" alt="My Blog post" />
-                        </a>
-                    </div><!-- Thumb /-->
-                    <div class="post-content">
-                        <h4><a href="#">Is this your Campus/Home</a></h4>
-                        <div class="post-meta"><strong>Date:</strong> 20, Dec, 2016 | <strong>Category:</strong> <a href="#">Campus</a> | <strong>Author:</strong> <a href="#">Ateeq</a></div>
-                        <p>Contrary to popular belief, Lorem Ipsum is not simply random text ... <a href="#">Read More &raquo;</a></p>
-                    </div><!-- post content /-->
-                </div><!-- Post /-->
-            </div><!-- Post column /-->
-
-            <div class="medium-4 small-12 columns">
-                <div class="post">
-                    <div class="post-thumb">
-                        <a href="#">
-                            <img src="images/gallery7.jpg" alt="My Blog post" />
-                        </a>
-                    </div><!-- Thumb /-->
-                    <div class="post-content">
-                        <h4><a href="#">Whats our next mission?</a></h4>
-                        <div class="post-meta"><strong>Date:</strong> 20, Dec, 2016 | <strong>Category:</strong> <a href="#">Campus</a> | <strong>Author:</strong> <a href="#">Ateeq</a></div>
-                        <p>Contrary to popular belief, Lorem Ipsum is not simply random text ... <a href="#">Read More &raquo;</a></p>
-                    </div><!-- post content /-->
-                </div><!-- Post /-->
-            </div><!-- Post column /-->
-
-        </div><!-- Posts Wrapper /-->
-
-        <div class="load-more text-center">
-            <a href="#" class="button primary ">Load More...</a>
-        </div><!-- Load more /-->
-
-    </div><!-- Row Ends /-->
->>>>>>> 5051e1df1e87d04e8ddf9b6144c96224bb54b21f
 
 </div>
 <!-- Blog Posts Ends /-->
@@ -611,13 +447,7 @@
 	<div class="row">
 
 
-<<<<<<< HEAD
 		<div class="brand-carousel">
-=======
-        <div class="brand-carousel" data-aos="flip-left"
-     data-aos-easing="ease-out-cubic"
-     data-aos-duration="2000">
->>>>>>> 5051e1df1e87d04e8ddf9b6144c96224bb54b21f
 
 			@forelse ($partner as $partner)
 			  <div class="bran-logo"><a href="#" target="_blank"><img  alt="" src="{{ $partner->image }}" class="thumbnail" /></a></div>

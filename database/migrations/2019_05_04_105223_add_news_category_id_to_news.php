@@ -16,7 +16,7 @@ class AddNewsCategoryIdToNews extends Migration
         Schema::table('news', function (Blueprint $table) {
             $table->unsignedBigInteger('news_category_id');
             $table->foreign('news_category_id')
-                    ->references('id')->on('news')
+                    ->references('id')->on('news_categories')
                     ->onDelete('cascade');
         });
     }

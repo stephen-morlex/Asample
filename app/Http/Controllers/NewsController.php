@@ -10,7 +10,7 @@ use App\About;
 use App\StudentCategory;
 use App\Contact;
 use App\Research;
-use App\newsCategory;
+use App\NewsCategory;
 
 
 
@@ -31,13 +31,13 @@ class NewsController extends Controller
         $abouts      = About::orderBy('title','asc')->get();
         $news        = News::latest()->get();
         $researchNav = Research::orderBy('name','asc')->get();
-        $newsCategories = newsCategory::latest()->get();
+        $newsCategories = NewsCategory::latest()->get();
 
         return view('cueaNews.index', compact('sections', 'programs', 'ad', 'studLife','researchNav','abouts', 'news', 'newsCategories'));
     }
 
 
- 
+
     public function newsCategory($slug)
     {
         //
