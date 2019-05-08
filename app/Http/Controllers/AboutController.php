@@ -19,7 +19,7 @@ class AboutController extends Controller
     public function index()
     {
         //
-        $about      = About::first()->take(1)->get();
+        $about      = About::all();
         $sections   = Section::take(4)->get();
         $programs   = Program::all();
         $ad         = Section::orderBy('name','asc')->get();

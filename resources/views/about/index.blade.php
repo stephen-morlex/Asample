@@ -6,6 +6,7 @@
     @include('layouts.mainNav')
 
     <br>
+
     <div class="row">
         <div class=" small-12 columns">
             <nav aria-label="You are here:" role="navigation">
@@ -20,16 +21,51 @@
             </nav>
         </div>
     </div>
+    <br>
+    <!-- Content Area Starts -->
+    <div class="content-area module faq">
+     <div class="row">
+
+         <div class="medium-9 small-12 columns">
+             <ul class="accordion" data-accordion>
+                @forelse ($about as $a)
+                <li class="accordion-item {{ request()->is('about*') ? 'active' : '' }}" data-accordion-item>
+                    <a href="#" class="accordion-title">{!! $a->title !!}</a>
+                    <div class="accordion-content" data-tab-content>
+                      {!! $a->content !!}
+                    </div>
+                </li>
+                @empty
+
+                @endforelse
+             </ul> <!-- reasons accordion ends -->
+            </div> <!-- right sidebar ends -->
+
+            <div class="medium-3 small-12 columns">
+                <ul class="accordion" data-accordion>
+                   @forelse ($about as $a)
+                   <li class="accordion-item {{ request()->is('about*') ? 'active' : '' }}" data-accordion-item>
+                       <a href="#" class="accordion-title">{!! $a->title !!}</a>
+                       <div class="accordion-content" data-tab-content>
+                         {!! $a->content !!}
+                       </div>
+                   </li>
+                   @empty
+
+                   @endforelse
+                </ul> <!-- reasons accordion ends -->
+               </div> <!-- right sidebar ends -->
+     </div><!-- row / -->
+ </div>
+ <!-- Content Area Ends /-->
 
 
-   {!! $a->content !!}
-        <!-- Content Section Ends /-->
 
 
 
 
         <!-- Call to Action box -->
-<!--         <div class="call-to-action">
+       <div class="call-to-action">
            <div class="row">
                 <div class="medium-10 small-12 columns">
                     <h2><i class="fa fa-phone" aria-hidden="true"></i>  If you Have Any Questions Call Us On <span>(010)123-456-7890</span></h2>
