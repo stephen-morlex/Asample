@@ -3,9 +3,12 @@
 @include('partials.topNav')
 @include('layouts.mainNav')
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
 <!-- Content section -->
+=======
+>>>>>>> 5051e1df1e87d04e8ddf9b6144c96224bb54b21f
 <br>
 <div class="row">
 	<div class=" small-12 columns">
@@ -32,6 +35,7 @@
       </div>
 
 @section('content')
+<<<<<<< HEAD
 >>>>>>> 5051e1df1e87d04e8ddf9b6144c96224bb54b21f
 
 
@@ -92,6 +96,10 @@
  </div>
 <!-- Call to Action End /-->
 =======
+=======
+
+<!-- Content section -->
+>>>>>>> 5051e1df1e87d04e8ddf9b6144c96224bb54b21f
         <div class="content-section module single-products-page products-page">
             <div class="row">
             	
@@ -152,6 +160,9 @@
            </div><!-- row /-->
          </div>
         <!-- Call to Action End /-->
+<<<<<<< HEAD
+>>>>>>> 5051e1df1e87d04e8ddf9b6144c96224bb54b21f
+=======
 >>>>>>> 5051e1df1e87d04e8ddf9b6144c96224bb54b21f
 
 

@@ -18,6 +18,7 @@
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
    <br>
    <br>
 
@@ -76,6 +77,8 @@
 
 
 =======
+=======
+>>>>>>> 5051e1df1e87d04e8ddf9b6144c96224bb54b21f
 <!-- Content section -->
         <div class="content-section module single-products-page products-page">
             <div class="row">
@@ -123,6 +126,9 @@
             </div><!-- Row Ends -->
         </div>
         <!-- Related Products Ends /-->
+<<<<<<< HEAD
+>>>>>>> 5051e1df1e87d04e8ddf9b6144c96224bb54b21f
+=======
 >>>>>>> 5051e1df1e87d04e8ddf9b6144c96224bb54b21f
         <!-- Call to Action box -->
         <div class="call-to-action">
