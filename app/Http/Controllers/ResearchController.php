@@ -17,7 +17,7 @@ class ResearchController extends Controller
      */
     public function index()
     {
-        $research= Research::first()->take(1)->get();
+        $research= Research::latest()->take(1)->get();
         $ad=Section::orderBy('name','asc')->get();
         $studLife=StudentCategory::orderBy('name','asc')->get();
         $researchNav = Research::orderBy('name','asc')->get();

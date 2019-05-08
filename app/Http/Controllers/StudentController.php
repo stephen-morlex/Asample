@@ -8,6 +8,7 @@ use App\Section;
 use App\About;
 use App\StudentCategory;
 use App\Research;
+use App\News;
 
 class StudentController extends Controller
 {
@@ -26,7 +27,8 @@ class StudentController extends Controller
         $studLife=StudentCategory::orderBy('name','asc')->get();
         $researchNav = Research::orderBy('name','asc')->get();
         $abouts     = About::orderBy('title','asc')->get();
-        return view('studentLife.index',compact('ad','studentLife','studentSide','studLife','researchNav','abouts'));
+        $newsSide =News::orderBy('view_count','desc')->take(3)->get();
+        return view('studentLife.index',compact('ad','studentLife','studentSide','studLife','researchNav','abouts','newsSide'));
     }
 
 
@@ -80,13 +82,15 @@ class StudentController extends Controller
         $studLife=StudentCategory::orderBy('name','asc')->get();
         $researchNav = Research::orderBy('name','asc')->get();
         $abouts     = About::orderBy('title','asc')->get();
+        $newsSide =News::orderBy('view_count','desc')->take(3)->get();
         return view('studentLife.show')->with([
             'student' => $student,
             'ad'=>$ad,
             'studLife'=>$studLife,
             'researchNav' =>$researchNav,
             'abouts' => $abouts,
-            'studentSide' => $studentSide
+            'studentSide' => $studentSide,
+            'newsSide'=>$newsSide
         ]);
     }
 

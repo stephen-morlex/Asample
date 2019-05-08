@@ -332,9 +332,14 @@
     </div>
     <!-- Row Ends /-->
     <br>
-    <div class="load-more text-center">
-            <a href="{{ route('events.index') }}" class="button primary">More Events...</a>
-        </div>
+@if (count($events)>=1)
+<div class="load-more text-center">
+        <a href="{{ route('events.index') }}" class="button primary">More Events...</a>
+ </div>
+ @else
+ <h3 align="center" >there is no event at the moment!</h3>
+@endif
+
 
 </div>
 <!-- Seminar Events Ends /-->
@@ -399,8 +404,10 @@
 	</div> <!-- Title Ends /-->
 
 	<div class="row">
-
+            @if (count($news)>=1)
 		<div class="posts-wrapper">
+
+
 
 			@forelse($news as $newsItem)
 			<div class="medium-4 small-12 columns">
@@ -419,7 +426,6 @@
 			</div><!-- Post column /-->
 			@empty
 
-			<p>No event</p>
 
 			@endforelse
 
@@ -428,7 +434,9 @@
 		<div class="load-more text-center">
 			<a href="{{ route('news.index') }}" class="button primary">See More</a>
 		</div><!-- Load more /-->
-
+        @else
+        <h3 align="center">No News at the moment!</h3>
+        @endif
 	</div><!-- Row Ends /-->
 
 
@@ -448,12 +456,16 @@
 
 
 		<div class="brand-carousel">
+                @if (count($partner) >= 1)
+                    @foreach ($partner as $partner)
+                    <div class="bran-logo"><a href="#" target="_blank"><img  alt="" src="{{Voyager::image( $partner->image) }}" class="thumbnail" /></a></div>
+                    @endforeach
+                @else
+                {{--  <h3 align="center">No partner at the moment!</h3>  --}}
+                @endif
 
-			@forelse ($partner as $partner)
-			  <div class="bran-logo"><a href="#" target="_blank"><img  alt="" src="{{ $partner->image }}" class="thumbnail" /></a></div>
-			@empty
-			  <p>No partner at the moment</p>
-			@endforelse
+
+
 
 		</div><!-- Brand carousel /-->
 

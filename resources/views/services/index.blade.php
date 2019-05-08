@@ -60,7 +60,7 @@
                         </div>
                     </div><!-- product Ends here -->
                 @empty
-
+                    <h4 align="center">There is no services at moment!</h4>
                 @endforelse
 
                 </div><!-- products wrap -->

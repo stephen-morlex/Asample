@@ -1,5 +1,5 @@
 @extends('layouts.app')
-
+@section('content')
 @include('partials.topNav')
 @include('layouts.mainNav')
 <br>
@@ -14,7 +14,6 @@
         </div>
       </div>
 
-@section('content')
 
 <!-- Content section -->
 <div class="content-section module">
@@ -24,26 +23,26 @@
         <div class="row">
 
             <div class="events-wrapper">
+@forelse ($events as $event)
+        <div class="medium-6 small-12 columns">
+                <div class="event">
+                    <div class="medium-8 small-12 columns event-data">
+                        <h4><a href="{{ route('event.show',$event->slug) }}">{!! $event->title !!}</a></h4>
+                        <p> {!!  str_limit($event->content,250) !!}</p>
+                        <p><strong>Timinings:</strong> {{ $event->start }}-{{ $event->end }}
 
-                @foreach ($events as $event)
-                <div class="medium-6 small-12 columns">
-                    <div class="event">
-                        <div class="medium-8 small-12 columns event-data">
-                            <h4><a href="{{ route('event.show',$event->slug) }}">{!! $event->title !!}</a></h4>
-                            <p> {!!  str_limit($event->content,250) !!}</p>
-                            <p><strong>Timinings:</strong> {{ $event->start }}-{{ $event->end }}
-
-                            <br><strong>Date:</strong> {{ $event->date }}</p>
-                            <a href="{{ route('event.show',$event->slug) }}" class="button primary bordered-dark"> More details</a>
-                        </div><!-- Event DAta /-->
-                        <div class="medium-4 small-12 columns event-thumb">
-                            <img src="{{ Voyager::image( $event->thumbnail('cropped'))}}" />
-                        </div><!-- Event thumb /-->
-                        <div class="clearfix"></div>
-                    </div><!-- Event div ends /-->
-                </div><!-- Event Column Ends /-->
-                @endforeach
-
+                        <br><strong>Date:</strong> {{ $event->date }}</p>
+                        <a href="{{ route('event.show',$event->slug) }}" class="button primary bordered-dark"> More details</a>
+                    </div><!-- Event DAta /-->
+                    <div class="medium-4 small-12 columns event-thumb">
+                        <img src="{{ Voyager::image( $event->thumbnail('cropped'))}}" />
+                    </div><!-- Event thumb /-->
+                    <div class="clearfix"></div>
+                </div><!-- Event div ends /-->
+            </div><!-- Event Column Ends /-->
+@empty
+<h3>There is no event at the moment!</h3>
+@endforelse
 
 
 

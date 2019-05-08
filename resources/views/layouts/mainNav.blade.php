@@ -6,7 +6,7 @@
                 <div class="medium-4 small-12 columns">
                 	<div class="logo">
                     	<a href="/">
-                        	<img src="{{ asset('images/crop.png') }}" alt="Webful Education" />
+                        	<img src="{{ asset('images/s5_logo.png') }}" alt="Webful Education" />
                         </a>
                     </div><!-- logo /-->
                 </div><!-- left Ends /-->
@@ -29,7 +29,7 @@
 
                                         </ul> -->
                                     </li>
-                                    <li class="single-sub parent-nav"><a href="admission.html">Academics </a>
+                                    <li class="single-sub parent-nav"><a href="{{ route('faculty.index') }}">Academics </a>
                                         <ul class="child-nav menu vertical">
                                             <li><a href="{{ route('faculty.index') }}">Faculties, Schools & Institutes</a></li>
                                             <li><a href="{{ route('program.index') }}">Programs</a></li>

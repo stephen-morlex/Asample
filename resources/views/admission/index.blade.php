@@ -168,7 +168,7 @@
                     </div><!-- product Ends here -->
 
               @empty
-
+                    <h4 align="center"> there is no program at the moment !</h4>
               @endforelse
 
                     <div class="clearfix"></div>

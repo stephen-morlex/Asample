@@ -21,7 +21,7 @@
 
         <!-- Content section -->
         <div class="content-section gallery-page module-gallery">
-        	
+
             <!-- Gallery Section -->
             <div class="gallery-wrapper module">
                 <div class="section-title-wrapper">
@@ -30,7 +30,7 @@
                         <p>Some Amazing Stuff from our Campus</p>
                     </div>
                 </div> <!-- Title Ends /-->
-                
+
                 <div class="gallery-container">
 
                     @forelse($medias as $media)
@@ -38,17 +38,17 @@
                             <img class="gallery-thumb" src="{{ $media->image }}" alt="{{ $media->title }}"/>
                         </a>
                     @empty
-                        <P>No image</P>
+                        <h3 align="center">There is no media at the moment !</h3>
                     @endforelse
-                
+
                 </div><!-- Gallery Container /-->
-                
+
             </div>
             <!-- Gallery Section Ends /-->
-            
-            
+
+
         </div>
         <!-- Content Section Ends /-->
-        
+
            @include('partials.footer')
     @endsection

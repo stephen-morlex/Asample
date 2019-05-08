@@ -688,12 +688,14 @@ Welcome Message CSS Ends
   }
 
   .timeline {
-    background:#F7f7f7;
+    background:rebeccapurple;
     margin: 30px auto;
     padding: 0 10px;
     position: relative;
     transition: all 0.25s ease-in;
     width: 100%;
+    border:#F7f7f7 solid 2px;
+    color: #0a68b1;
   }
 
   .timeline::before {
@@ -715,6 +717,11 @@ Welcome Message CSS Ends
 
   .timeline a {
 
+    font-weight: bold;
+    transition: all 0.25s ease-in;
+  }
+  .timeline hr {
+    color: red;
     font-weight: bold;
     transition: all 0.25s ease-in;
   }
@@ -2580,7 +2587,8 @@ Styles For Inner Pages Ends
 }
 .logo {
 	text-align:center;
-	margin:auto;
+    margin:auto;
+    height: 100%;
 }
 .logo-small {
 	text-align:center;

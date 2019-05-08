@@ -23,30 +23,32 @@
 <div class="content-section module blog-page">
 
     <div class="row">
+@forelse ($research as $re)
+<div class="medium-9 small-12 columns posts-wrap">
 
-@foreach ($research as $re)
-    <div class="medium-9 small-12 columns posts-wrap">
+        <div class="single-post">
+            <div class="featured-image">
+                <a href="single-post.html">
+                    <img alt="" src="{{ Voyager::image( $re->image ) }}" class="thumbnail" />
+                </a>
+             </div>
+             <hr>
+            <h3 ><a href="{{ route('research.show',$re->slug) }}">{{ $re->name }}</a></h3>
 
-            <div class="single-post">
-                <div class="featured-image">
-                    <a href="single-post.html">
-                        <img alt="" src="{{ Voyager::image( $re->image ) }}" class="thumbnail" />
-                    </a>
-                 </div>
-                 <hr>
-                <h3 ><a href="{{ route('research.show',$re->slug) }}">{{ $re->name }}</a></h3>
+            <div class="post-excerpt">
+               {!! $re->content !!}
+            </div><!-- post excerpt /-->
+             <div class="clearfix"></div>
 
-                <div class="post-excerpt">
-                   {!! $re->content !!}
-                </div><!-- post excerpt /-->
-                 <div class="clearfix"></div>
+        </div><!-- post ends here /-->
 
-            </div><!-- post ends here /-->
+    </div><!-- Posts wrap ends /-->
 
-        </div><!-- Posts wrap ends /-->
-
-
-@endforeach
+@empty
+<div class="post-excerpt">
+        <h3> There is no content at the moment</h3>
+     </div><!-- post excerpt /-->
+@endforelse
         <div class="medium-3 small-12 columns sidebar">
             <div class="widget">
                 <h2>More about Research </h2>

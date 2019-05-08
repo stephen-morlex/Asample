@@ -18,87 +18,6 @@
         </div>
       </div>
 <div class="content-section">
-
-
-    <!-- Our Teachers -->
-    <div class="blog-posts module grey-bg">
-            <div class="row">
-                    <div class="columns">
-                      <div class="orbit" role="region" aria-label="Favorite Text Ever" data-orbit>
-                        <ul class="orbit-container">
-                          <button class="orbit-previous" aria-label="previous"><span class="show-for-sr">Previous Slide</span>&#9664;</button>
-                          <button class="orbit-next" aria-label="next"><span class="show-for-sr">Next Slide</span>&#9654;</button>
-                          <li class="is-active orbit-slide">
-                            <div class="docs-example-orbit-slide">
-                                    <div class="testimonial">
-                                            <div class="testimonial-thumb">
-
-                                            </div><!-- Testimonial Thumb /-->
-                                            <div class="testimonial-detail">
-                                                <h4>Very happy to find this institute!</h4>
-                                                <p>After graduation we were very worried about our children what he will do as he does not have any work experience but when he joined this abc institute this he became so professional!</p>
-                                                <cite>Maria Doe</cite>
-                                            </div><!-- Testimonial Detail /-->
-                                            <div class="clearfix"></div>
-                                         </div>
-                            </div>
-                          </li>
-                          <li class="is-active orbit-slide">
-                                <div class="docs-example-orbit-slide">
-                                        <div class="testimonial">
-                                                <div class="testimonial-thumb">
-
-                                                </div><!-- Testimonial Thumb /-->
-                                                <div class="testimonial-detail">
-                                                    <h4>Very happy to find this institute!</h4>
-                                                    <p>After graduation we were very worried about our children what he will do as he does not have any work experience but when he joined this abc institute this he became so professional!</p>
-                                                    <cite>Maria Doe</cite>
-                                                </div><!-- Testimonial Detail /-->
-                                                <div class="clearfix"></div>
-                                             </div>
-                                </div>
-                              </li>
-                              <li class="is-active orbit-slide">
-                                    <div class="docs-example-orbit-slide">
-                                            <div class="testimonial">
-                                                    <div class="testimonial-thumb">
-
-                                                    </div><!-- Testimonial Thumb /-->
-                                                    <div class="testimonial-detail">
-                                                        <h4>Very happy to find this institute!</h4>
-                                                        <p>After graduation we were very worried about our children what he will do as he does not have any work experience but when he joined this abc institute this he became so professional!</p>
-                                                        <cite>Maria Doe</cite>
-                                                    </div><!-- Testimonial Detail /-->
-                                                    <div class="clearfix"></div>
-                                                 </div>
-                                    </div>
-                                  </li>
-                                  <li class="is-active orbit-slide">
-                                        <div class="docs-example-orbit-slide">
-                                                <div class="testimonial">
-                                                        <div class="testimonial-thumb">
-
-                                                        </div><!-- Testimonial Thumb /-->
-                                                        <div class="testimonial-detail">
-                                                            <h4>Very happy to find this institute!</h4>
-                                                            <p>After graduation we were very worried about our children what he will do as he does not have any work experience but when he joined this abc institute this he became so professional!</p>
-                                                            <cite>Maria Doe</cite>
-                                                        </div><!-- Testimonial Detail /-->
-                                                        <div class="clearfix"></div>
-                                                     </div>
-                                        </div>
-                                      </li>
-                        </ul>
-                        <nav class="orbit-bullets">
-                          <button class="is-active" data-slide="0"><span class="show-for-sr">First slide details.</span><span class="show-for-sr">Current Slide</span></button>
-                          <button data-slide="1"><span class="show-for-sr">Second slide details.</span></button>
-                          <button data-slide="2"><span class="show-for-sr">Third slide details.</span></button>
-                          <button data-slide="3"><span class="show-for-sr">Fourth slide details.</span></button>
-                        </nav>
-                      </div>
-                    </div>
-                  </div>
-    </div>
     <br>
     <div class="seminar-events">
 
@@ -148,19 +67,6 @@
 </div>
 <!-- Content Section Ends /-->
 
-
-<!-- Call to Action box -->
-<div class="call-to-action">
-   <div class="row">
-        <div class="medium-10 small-12 columns">
-            <h2><i class="fa fa-phone" aria-hidden="true"></i> 	If you Have Any Questions Call Us On <span>(010)123-456-7890</span></h2>
-        </div>
-        <div class="medium-2 small-12 columns">
-            <a href="#" class="button secondary">Appointment</a>
-        </div>
-   </div><!-- row /-->
- </div>
-<!-- Call to Action End /-->
 
 <div class="why-cuea content-area module">
 
@@ -261,49 +167,7 @@
 
 
 
-          </div><!-- testimonial wrap /-->
-
-          <div class="medium-3 small-12 columns sidebar">
-              <div class="widget">
-                  <h2>Submit Testimonial</h2>
-
-                  <div class="widget-content">
-                      <form>
-                          <input type="text" placeholder="Your name..." />
-                          <input type="text" placeholder="Your Email ...." />
-                          <select>
-                              <option>Select rating</option>
-                              <option>1 Start</option>
-                              <option>2 Start</option>
-                              <option>3 Start</option>
-                              <option selected>4 Start</option>
-                              <option>5 Start</option>
-                          </select>
-                          <select>
-                              <option>Select Service</option>
-                              <option>Service 1</option>
-                              <option>Service 2</option>
-                              <option>Service 3</option>
-                          </select>
-                          <select>
-                              <option>Select Doctor</option>
-                              <option>Doctor 1</option>
-                              <option>Doctor 2</option>
-                              <option>Doctor 3</option>
-                          </select>
-                          <input type="text" placeholder="Reason of satisfaction..." />
-                          <label>Select Your Image
-                              <input type="file" />
-                         </label>
-                         <textarea placeholder="Your review..." rows="2"></textarea>
-                         <input type="submit" class="button primary" />
-                      </form>
-                  </div>
-
-              </div><!-- widget Ends /-->
-
-         </div><!-- right bar ends here /-->
-
+          </div>
       </div><!-- Row Ends /-->
 
   </div>
@@ -311,5 +175,19 @@
 
 
 
-@include('partials.footer')
+  <!-- Call to Action box -->
+  <div class="call-to-action">
+     <div class="row">
+          <div class="medium-10 small-12 columns">
+              <h2><i class="fa fa-phone" aria-hidden="true"></i> 	If you Have Any Questions Call Us On <span>(010)123-456-7890</span></h2>
+          </div>
+          <div class="medium-2 small-12 columns">
+              <a href="#" class="button secondary">Appointment</a>
+          </div>
+     </div><!-- row /-->
+   </div>
+  <!-- Call to Action End /-->
+
+
+  @include('partials.footer')
 @endsection

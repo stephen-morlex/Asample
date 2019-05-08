@@ -83,6 +83,7 @@ class NewsController extends Controller
     {
 
         $newsItem    = News::where('slug', $slug)->firstOrFail();
+        $newsItem->increment('view_count',1);
         $sections    = Section::take(4)->get();
         $programs    = Program::all();
         $ad          = Section::orderBy('name','asc')->get();

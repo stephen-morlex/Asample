@@ -19,12 +19,12 @@ class AboutController extends Controller
     public function index()
     {
         //
-        $about      = About::all();
+        $about      = About::first()->take(1)->get();
         $sections   = Section::take(4)->get();
         $programs   = Program::all();
         $ad         = Section::orderBy('name','asc')->get();
         $studLife   = StudentCategory::orderBy('name','asc')->get();
-        $abouts     = About::orderBy('title','asc')->get();
+        $abouts     = About::skip(1)->take(10)->get();
         $researchNav = Research::orderBy('name','asc')->get();
 
         return view('about.index', compact('sections', 'programs', 'ad', 'studLife', 'abouts','about','researchNav'));
