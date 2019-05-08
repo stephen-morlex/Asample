@@ -6,7 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class StudentCategory extends Model
 {
-    public function student()
+    protected $guarded = [];
+    public function students()
     {
         return $this->hasMany('App\Student');
     }

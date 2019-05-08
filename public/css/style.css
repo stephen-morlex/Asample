@@ -130,6 +130,7 @@ iframe {
 .module {
 	position:relative;
 	margin-bottom:80px;
+	/*margin-left: 30px;*/
 }
 dl dt {
 	font-weight:bold;
@@ -670,8 +671,10 @@ Welcome Message CSS Ends
     transition: .5s ease;
     backface-visibility: hidden;
 }
-.course .course-thumb:hover .image {
-    opacity: 0.3;
+.course .course-thumb:hover {
+    opacity: 0.7;
+    padding: 7px;
+
 }
 
 /* timelines style for admission process */
@@ -960,6 +963,16 @@ Our Courses CSS Ends
 Our Teachers CSS Ends
 -------------------------*/
 
+
+/*-------------------------
+Faculty card start
+-------------------------*/
+
+
+
+
+
+
 /*-------------------------
  11 - Seminar/Events CSS
 -------------------------*/
@@ -968,7 +981,7 @@ Our Teachers CSS Ends
 	padding-top:80px;
 	padding-bottom:80px;
     opacity: 1;
-    background:url("/images/cueatest.jpeg") no-repeat center center fixed;
+    background:url("/images/1.jpeg") no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -1987,6 +2000,7 @@ Styles For Inner Pages Ends
 	width:100%;
 	height:auto;
 }
+
 .product-meta {
 	padding-top: 8px;
     padding-bottom: 8px;
@@ -2414,6 +2428,7 @@ Styles For Inner Pages Ends
 }
 .gallery-container {
 	text-align:center;
+	width: 100%;
 
 
 }
@@ -2423,9 +2438,8 @@ Styles For Inner Pages Ends
 	width: calc(50% - 20px);
 }
 .gallery-container .gallery-thumb {
-    width: auto;
+    width: 100%;
     padding: 5px;
-
     margin: 0px !important;
 }
 .upper-background {

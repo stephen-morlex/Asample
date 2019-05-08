@@ -150,18 +150,22 @@
 
               @forelse ($sections as $section)
 
-              <div class="medium-6 small-12 columns">
-                    <div class="course">
-                        <div class="course-thumb">
-                            <img src="{{ Voyager::image( $section->thumbnail('cropped'))}}" alt="{{ $section->name }}" />
-
+               <div class="medium-3 small-12 columns">
+                        <div class="single-product">
+                            <div class="product-img thumbnail">
+                                <a href="{{route('admission.show',$section->slug)}}">
+                                    <img   class="front-image" src="{{ Voyager::image( $section->thumbnail('cropped'))}}">
+                                </a>
+                                <div class="add-to-cart-top">
+                                        <a href="{{route('admission.show',$section->slug)}}" class="button primary">{{$section->name}}</a>
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <h6><a href="{{route('admission.show',$section->slug)}}">{{$section->name}}</a></h6>
+                               <div class="tx-div"></div>
+                            </div>
                         </div>
-                        <h3>{{ $section->name }} Admission</h3>
-                        <a href="{{ route('admission.show', $section->slug) }}" class="secondary button">Enroll now</a>
-                    </div>
-                    <br>
-                </div><!-- First Course /-->
-
+                    </div><!-- product Ends here -->
 
               @empty
 

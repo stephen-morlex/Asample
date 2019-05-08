@@ -33,7 +33,7 @@
 
 
             <div class="event-content">
-                <h2>{{ $faculty->name }}</h2>
+                <h2>{!! $faculty->name !!}</h2>
                 <p></p>
 
                     <p>{!! $faculty->description  !!}</p>
@@ -45,11 +45,22 @@
 
         <div class="medium-3 small-12 columns sidebar">
             <div class="widget">
-                <h2>Programmes</h2>
+                <h2>  {!!$faculty->name!!} Programmes</h2>
+                @if ($faculty->programs->count())
+                   <ol class="menu vertical">
+                    @foreach ($faculty->programs as $program)
+                         <li><a href="{{route('program.show',$program->slug)}}">{!!$program->name !!} {{ $loop->last ? '.':',' }}</a></li>
+                        
+                    @endforeach
+                    @else
+                    <li><a href="#">There are no programs yet !</a></li>
+                      </ol>
+                @endif
+             
+                  
+                       
 
-                <ol class="menu vertical">
-
-                </ol>
+              
             </div><!-- widget ends /-->
 
             <div class="widget">
@@ -74,7 +85,7 @@
                 </ul>
             </div><!-- widget ends /-->
 
-
+         
 
             <div class="widget">
                 <h2> Some People also interested in</h2>

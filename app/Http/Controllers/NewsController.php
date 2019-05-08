@@ -46,7 +46,7 @@ class NewsController extends Controller
         $ad          = Section::orderBy('name','asc')->get();
         $studLife    = StudentCategory::orderBy('name','asc')->get();
         $abouts      = About::orderBy('title','asc')->get();
-        $news        = newsCategory::where('slug',$slug)->first()->news;
+        $news        = News::latest()->get();
         $researchNav = Research::orderBy('name','asc')->get();
         $newsCategories = newsCategory::latest()->get();
 

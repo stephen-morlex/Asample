@@ -26,7 +26,7 @@
                 <div class="medium-9 small-12 columns posts-wrap">
 
 
-                    @foreach($news as $item)
+                    @forelse($news as $item)
                     <div class="blog-post">
 
                         <div class="featured-image">
@@ -42,7 +42,9 @@
                             <p>{{str_limit($item->content, $limit = 350, $end = '...')}} <a href="{{ route('news.show', $item->slug) }}">Read more &raquo;</a></p>
                         </div><!-- post content ends /-->
                     </div><!-- post Ends here /-->
-                    @endforeach
+                    @empty
+                    <p>No news</p>
+                    @endforelse
 
                     
                 </div><!-- Posts wrap /-->
@@ -52,9 +54,11 @@
                         <h2>Categories</h2>
                         
                         <ul class="menu vertical">
-                            @foreach($newsCategories as $newsCategory)
+                            @forelse($newsCategories as $newsCategory)
                             <li><a href="{{ route('news.category', $newsCategory->slug) }}">{{ $newsCategory->name }}</a></li>
-                            @endforeach
+                            @empty
+                            <p>No category</p>
+                            @endforelse
                         </ul>
                     </div><!-- widget ends /-->
                     

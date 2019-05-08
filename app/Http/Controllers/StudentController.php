@@ -29,16 +29,13 @@ class StudentController extends Controller
         return view('studentLife.index',compact('ad','studentLife','studentSide','studLife','researchNav','abouts'));
     }
 
-    public function studentCats()
+
+    public function studentCats($slug)
     {
-        $studLife= StudentCategory::all();
-        if (request()->studentCat) {
-            $studentLife=Student::with('student');
-        } else {
-            $studentLife =Student::take(12);
-            $sectionName='studLife';
-            $studentLife=$studentLife->paginate(6);
-        }
+         $studLife= StudentCategory::all();
+
+         $studentLife=StudentCategory::where('slug',$slug)->first()->students()->paginate(6);
+
 
         $ad=Section::orderBy('name','asc')->get();
         $studLife=StudentCategory::orderBy('name','asc')->get();
@@ -77,6 +74,7 @@ class StudentController extends Controller
      */
     public function show($slug)
     {
+        $studentSide= Student::skip(0)->take(50)->get();
         $student = Student::where('slug', $slug)->firstOrFail();
         $ad=Section::orderBy('name','asc')->get();
         $studLife=StudentCategory::orderBy('name','asc')->get();
@@ -87,7 +85,8 @@ class StudentController extends Controller
             'ad'=>$ad,
             'studLife'=>$studLife,
             'researchNav' =>$researchNav,
-            'abouts' => $abouts
+            'abouts' => $abouts,
+            'studentSide' => $studentSide
         ]);
     }
 

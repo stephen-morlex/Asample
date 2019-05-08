@@ -9,7 +9,7 @@ $factory->define(App\Faculty::class, function (Faker $faker) {
     return [
 
         'name' 			=> $name,
-        'image' 		=> ('image.jpg'),
+        'image' 		=> $faker->imageUrl($width = 1000, $height = 398),
         'file' 			=> ('file.pdf'),
         'description' 	=> $faker->paragraph(),
         'content' 		=> $faker->text($maxNbChars = 200),

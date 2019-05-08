@@ -16,12 +16,13 @@ class CreateSectionsTable extends Migration
         Schema::create('sections', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
-            $table->string('image');
+            $table->string('image')->nullable();
+            $table->text('process');
             $table->text('requirement');
-            $table->string('application');
-            $table->string('brochure');
+            $table->string('application')->nullable();
+            $table->string('brochure')->nullable();
             $table->text('fees');
-            $table->string('slug');
+            $table->string('slug')->unique();
             $table->timestamps();
         });
     }

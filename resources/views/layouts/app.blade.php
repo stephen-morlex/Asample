@@ -50,7 +50,8 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('/lib/revolution/css/layers.css') }}">
     <!-- REVOLUTION NAVIGATION STYLES -->
     <link rel="stylesheet" type="text/css" href="{{ asset('/lib/revolution/css/navigation.css') }}">
-
+    {{-- scroll animation --}}
+      <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 </head>
 
 <body>
@@ -69,6 +70,13 @@
         @yield('content')
 
     </div>
+
+    {{-- scroll script --}}
+
+     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
 
 </body>
 </html>

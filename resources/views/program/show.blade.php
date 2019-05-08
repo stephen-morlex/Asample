@@ -13,7 +13,11 @@
             <ul class="breadcrumbs">
               <li class="active"><a href="/">Home</a></li>
               <li class="active"><a href="{{ route('program.index') }}">programmes</a></li>
+<<<<<<< HEAD
               <li><a href="#">{{ $program->name }}</a></li>
+=======
+              <li><a href="#">{!!$program->faculty->name  !!} &nbsp|  {{ $program->name }}</a></li>
+>>>>>>> 5051e1df1e87d04e8ddf9b6144c96224bb54b21f
 
             </ul>
           </nav>
@@ -41,79 +45,15 @@
         </div><!-- Posts wrap ends /-->
 
         <div class="medium-3 small-12 columns sidebar">
-            <div class="widget">
-                <h2>Audience</h2>
-
-                <ol class="menu vertical">
-                    <li><a href="courses.html">Students & Graduates of Computer Science & Information Technology</a></li>
-                    <li><a href="courses.html">Web Programmers & Web Designers
-                    EVS Spacer	Any other person willing to learn Web Development</a></li>
-                    <li><a href="courses.html">Students & Graduates of any other discipline looking for future in IT</a></li>
-                </ol>
-            </div><!-- widget ends /-->
 
             <div class="widget">
-                <h2>Training Methodology</h2>
-
-                <ol class="menu vertical">
-                    <li><a href="courses.html">Lectures & demos by industry experts</a></li>
-                    <li><a href="courses.html">Project driven hands-on approach</a></li>
-                    <li><a href="courses.html">Focus on latest tools, technologies & industry practices</a></li>
-                    <li><a href="courses.html">Projects, assignments & quizzes for student’s evaluation</a></li>
-                </ol>
-            </div><!-- widget ends /-->
-
-            <div class="widget">
-                <h2>Duration & Frequency</h2>
+                <h2>Under</h2>
 
                 <ul class="menu vertical">
-                    <li><a href="courses.html">4 Months (16 Weeks)</a></li>
-                    <li><a href="courses.html">3 sessions of 2 hours a week</a></li>
+                    <li><a href="{{ route('faculty.show',$program->faculty->slug) }}">{!!$program->faculty->name  !!}</a></li>
+
                 </ul>
             </div><!-- widget ends /-->
-
-            <div class="widget">
-                <h2>Upcoming Events</h2>
-
-                <ul class="menu vertical">
-                    <li><a href="single-event.html">Web Application Seminar (26 July)</a></li>
-                    <li><a href="single-event.html">Web Designing Seminar (26 June)</a></li>
-                    <li><a href="single-event.html">Icon Design Seminar (26 Sep)</a></li>
-                    <li><a href="single-event.html">Photography Seminar (26 Aug)</a></li>
-                </ul>
-            </div><!-- widget ends /-->
-
-            <div class="widget">
-                <h2>Popular Courses</h2>
-
-                <ul class="menu vertical">
-                    <li><a href="courses.html">Web Development</a></li>
-                    <li><a href="courses.html">Graphic Designing</a></li>
-                    <li><a href="courses.html">Print Designing</a></li>
-                    <li><a href="courses.html">Android/IOS Development</a></li>
-                </ul>
-            </div><!-- widget ends /-->
-
-            <div class="widget">
-                <h2>Teacher of Month</h2>
-
-                <div class="teacher">
-                    <div class="teacher-thumb">
-                        <img src="images/help/teacher1.jpg" alt="Teacher Doe" />
-                        <div class="teacher-links menu-centered">
-                            <a href="#" class="small-button">About John Doe &raquo;</a>
-                        </div><!-- teacher links /-->
-                    </div><!-- Teacher thumb /-->
-                    <div class="teacher-meta">
-                        <h3><a href="#">Mr. John Doe</a></h3>
-                        <p>Will be presenting the Seminar on</p>
-                    </div><!-- teacher meta /-->
-                </div><!-- Teacher Ends /-->
-            <div class="clearfix"></div>
-            </div><!-- widget ends /-->
-
-        </div><!-- right bar ends here /-->
-
     </div><!-- Row Ends /-->
 
 </div>
