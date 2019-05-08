@@ -1,21 +1,84 @@
-@extends('layouts.app')
+  @extends('layouts.app')
 
-@include('partials.topNav')
-@include('layouts.mainNav')
+
+    @section('content')
+    @include('partials.topNav')
+    @include('layouts.mainNav')
 <br>
 <div class="row">
         <div class=" small-12 columns">
           <nav aria-label="You are here:" role="navigation">
             <ul class="breadcrumbs">
               <li class="active"><a href="/">Home</a></li>
-              <li class="active"><a href="{{ route('faculty.index') }}">Faculties, Schools and Instituate</a></li>
+              <li class="active"><a href="#">Faculties, Schools and Instituate</a></li>
             </ul>
           </nav>
         </div>
       </div>
 
-@section('content')
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+   <br>
+   <br>
+
+          <!-- Content section -->
+          <div class="content-section course-page">
+
+                <!-- Seminar/Events -->
+                <div class="module">
+                    <div class="row">
+
+                        <div class="courses-wrapper">
+
+                            <div class="course-section">
+
+                                <div class="section-title">
+                                    <h2><span>Faculties, Schools & Institutes</span></h2>
+                                </div><!-- Section Title Ends /-->
+                                <hr style=" border: 5px solid #e79800;
+                                border-radius: 5px;">
+
+                                    @forelse ($faculties as $fa)
+
+                                    <div class="medium-6 small-12 columns">
+
+                                        <div class="course">
+                                            
+                                            <div class="course-thumb animated zoomInRight delay-1s">
+                                                <a href="{{ route('faculty.show', $fa->slug) }}">
+                                                <img src="{{ $fa->image }}" alt="{{ $fa->name }}" title="{{ $fa->name }}" />
+                                                 </a>
+                                            </div>
+                                            <h3>{{ Str::limit($fa->name) }}</h3>
+                                         <a  class="middle" href="{{ route('faculty.show',$fa->slug) }}" class="secondary button">More About {{ Str::limit($fa->name,50) }}</a>
+                                      <br>
+                                        </div><br>
+                                    </div>
+
+                                    @empty
+                                            <h3> There is no faculties uploaded yet.</h3>
+                                    @endforelse
+
+
+                                <div class="clearfix"></div>
+                            </div><!-- Courses Section Ends /-->
+
+                        </div><!-- Events Wrapper Ends /-->
+
+                    </div><!-- Row Ends /-->
+                </div>
+                <!-- Seminar Events Ends /-->
+
+            </div>
+            <!-- Content Section Ends /-->
+
+
+
+
+=======
+=======
+>>>>>>> 5051e1df1e87d04e8ddf9b6144c96224bb54b21f
 <!-- Content section -->
         <div class="content-section module single-products-page products-page">
             <div class="row">
@@ -63,6 +126,10 @@
             </div><!-- Row Ends -->
         </div>
         <!-- Related Products Ends /-->
+<<<<<<< HEAD
+>>>>>>> 5051e1df1e87d04e8ddf9b6144c96224bb54b21f
+=======
+>>>>>>> 5051e1df1e87d04e8ddf9b6144c96224bb54b21f
         <!-- Call to Action box -->
         <div class="call-to-action">
            <div class="row">
@@ -80,3 +147,5 @@
 
 @include('partials.footer')
 @endsection
+
+

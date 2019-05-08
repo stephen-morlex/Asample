@@ -13,7 +13,15 @@
             <ul class="breadcrumbs">
               <li class="active"><a href="/">Home</a></li>
               <li class="active"><a href="{{ route('program.index') }}">programmes</a></li>
+<<<<<<< HEAD
+<<<<<<< HEAD
+              <li><a href="#">{{ $program->name }}</a></li>
+=======
               <li><a href="#">{!!$program->faculty->name  !!} &nbsp|  {{ $program->name }}</a></li>
+>>>>>>> 5051e1df1e87d04e8ddf9b6144c96224bb54b21f
+=======
+              <li><a href="#">{!!$program->faculty->name  !!} &nbsp|  {{ $program->name }}</a></li>
+>>>>>>> 5051e1df1e87d04e8ddf9b6144c96224bb54b21f
 
             </ul>
           </nav>

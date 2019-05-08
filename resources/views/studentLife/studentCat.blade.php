@@ -10,7 +10,7 @@
           <nav aria-label="You are here:" role="navigation">
             <ul class="breadcrumbs">
               <li class="active"><a href="/">Home</a></li>
-              <li class="active"><a href="{{ route('student.index') }}">student experience</a></li>
+              <li class="active"><a href="#">student experience</a></li>
             </ul>
           </nav>
         </div>

@@ -62,14 +62,24 @@ Route::get('/students-service-information/{services}','ServicesController@show')
 
 // ABOUT CUEA
 Route::get('/about-cuea', 'AboutController@index')->name('about.index');
-Route::get('/about-cuea/{id}', 'AboutController@show')->name('about.show');
+Route::get('/about-cuea/{about}', 'AboutController@show')->name('about.show');
 
 
 
 // CONTACT US
 Route::get('/contact/', 'ContactController@index')->name('contact.index');
-Route::post('/contact/connecting', 'ContactController@store')->name('contact.store');
+Route::post('/contact/send', 'ContactController@store')->name('contact.store');
 
+
+// MEDIA
+Route::get('/media/', 'MediaController@index')->name('media.index');
+
+
+
+// NEWS
+Route::get('/news/', 'NewsController@index')->name('news.index');
+Route::get('/news/{news}', 'NewsController@show')->name('news.show');
+Route::get('/news/category/{newscategory}', 'NewsController@newsCategory')->name('news.category');
 
 
 Route::group(['prefix' => 'cuea'], function () {

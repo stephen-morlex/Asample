@@ -130,6 +130,7 @@ iframe {
 .module {
 	position:relative;
 	margin-bottom:80px;
+	/*margin-left: 30px;*/
 }
 dl dt {
 	font-weight:bold;
@@ -670,8 +671,10 @@ Welcome Message CSS Ends
     transition: .5s ease;
     backface-visibility: hidden;
 }
-.course .course-thumb:hover .image {
-    opacity: 0.3;
+.course .course-thumb:hover {
+    opacity: 0.7;
+    padding: 7px;
+
 }
 
 /* timelines style for admission process */
@@ -2425,6 +2428,7 @@ Styles For Inner Pages Ends
 }
 .gallery-container {
 	text-align:center;
+	width: 100%;
 
 
 }
@@ -2434,9 +2438,8 @@ Styles For Inner Pages Ends
 	width: calc(50% - 20px);
 }
 .gallery-container .gallery-thumb {
-    width: auto;
+    width: 100%;
     padding: 5px;
-
     margin: 0px !important;
 }
 .upper-background {

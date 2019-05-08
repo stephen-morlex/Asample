@@ -6,6 +6,11 @@ use App\Faculty;
 use App\Section;
 use App\Admission;
 use App\Event;
+use App\Partner;
+use App\Media;
+use App\About;
+use App\News;
+use App\NewsCategory;
 
 class DatabaseSeeder extends Seeder
 {
@@ -22,6 +27,12 @@ class DatabaseSeeder extends Seeder
         factory(Program::class,10)->create();
         factory(Admission::class,10)->create();
         factory(Event::class,10)->create();
+        factory(Partner::class,10)->create();
+        factory(Media::class,10)->create();
+        factory(About::class,4)->create();
+        factory(NewsCategory::class,10)->create();
+
+        factory(News::class,10)->create();
 
 
     }

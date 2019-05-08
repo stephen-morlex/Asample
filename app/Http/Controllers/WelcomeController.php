@@ -7,8 +7,15 @@ use App\Section;
 use App\About;
 use App\StudentCategory;
 use App\Research;
+<<<<<<< HEAD
+use App\Carousel;
+use App\Partner;
+use App\Event;
+use App\News;
+=======
 use App\carousel;
 use App\Event;
+>>>>>>> 5051e1df1e87d04e8ddf9b6144c96224bb54b21f
 
 class WelcomeController extends Controller
 {
@@ -19,13 +26,21 @@ class WelcomeController extends Controller
      */
     public function index()
     {
+<<<<<<< HEAD
+        $events     = Event::latest()->take(2)->get();
+        $admissions = Section::orderBy('name')->get();
+        $carousels  = Carousel::latest()->get();
+=======
         $events         = Event::latest()->take(2)->get();
         $admissions = Section::orderBy('name')->get();
         $carousels= carousel::latest()->first()->get();
+>>>>>>> 5051e1df1e87d04e8ddf9b6144c96224bb54b21f
         $ad         = Section::orderBy('name','asc')->get();
         $abouts     = About::orderBy('title','asc')->get();
         $researchNav = Research::orderBy('name','asc')->get();
         $studLife   = StudentCategory::orderBy('name','asc')->get();
+        $partner    = Partner::orderBy('name', 'asc')->get();
+        $news       = News::latest()->take(3)->get();
 
 
         return view('welcome',compact(
@@ -33,6 +48,13 @@ class WelcomeController extends Controller
             'ad',
             'abouts',
             'studLife',
+<<<<<<< HEAD
+            'carousel',
+            'researchNav',
+            'partner',
+            'news',
+=======
+>>>>>>> 5051e1df1e87d04e8ddf9b6144c96224bb54b21f
             'carousels',
             'researchNav',
             'events'

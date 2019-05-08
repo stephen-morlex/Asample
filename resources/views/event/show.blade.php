@@ -9,7 +9,7 @@
             <ul class="breadcrumbs">
               <li class="active"><a href="/">Home</a></li>
               <li class="active"><a href="{{ route('events.index') }}">Events</a></li>
-              <li class="active"><a href="{{ route('event.show',$event->slug) }}">{{ $event->title }}</a></li>
+              <li class="active"><a href="#">{{ $event->title }}</a></li>
             </ul>
           </nav>
         </div>

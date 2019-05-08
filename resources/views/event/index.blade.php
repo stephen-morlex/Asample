@@ -8,7 +8,7 @@
           <nav aria-label="You are here:" role="navigation">
             <ul class="breadcrumbs">
               <li class="active"><a href="/">Home</a></li>
-              <li class="active"><a href="{{ route('faculty.index') }}">Faculties, Schools and Instituate</a></li>
+              <li class="active"><a href="#">Faculties, Schools and Instituate</a></li>
             </ul>
           </nav>
         </div>

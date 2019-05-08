@@ -11,7 +11,7 @@
             <ul class="breadcrumbs">
               <li class="active"><a href="/">Home</a></li>
               <li class="active"><a href="{{ route('services.index') }}">Student services information</a></li>
-              <li class="active"><a href="{{ route('services.show', $service->slug) }}">{{ $service->name }}</a></li>
+              <li class="active"><a href="#">{{ $service->name }}</a></li>
             </ul>
           </nav>
         </div>

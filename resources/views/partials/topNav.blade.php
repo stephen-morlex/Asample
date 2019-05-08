@@ -7,8 +7,8 @@
                 <li><a href="index.html">Prospective Students</a></li>
                 <li><a href="http://ww3.cuea.edu/alumni">Alumni</a></li>
                 <li><a href="{{ route('events.index') }}">Events</a></li>
-                <li><a href="contact.html">News</a></li>
-                <li><a href="contact.html">Media</a></li>
+                <li><a href="{{ route('news.index') }}">News</a></li>
+                <li><a href="{{ route('media.index') }}">Media</a></li>
                 <li><a href="http://ir.cuea.edu/html/joomla/" target="blank">Library</a></li>
                 <li><a href="contact.html">Parents</a></li>
                 <!-- <li><a href="contact.html">Give CUEA</a></li> -->
