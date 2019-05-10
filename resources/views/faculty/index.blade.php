@@ -37,27 +37,31 @@
                                 <hr style=" border: 5px solid #e79800;
                                 border-radius: 5px;">
 
-                                    @forelse ($faculties as $fa)
-
-                                    <div class="medium-6 small-12 columns">
-
-                                        <div class="course">
-
-                                            <div class="course-thumb animated zoomInRight delay-1s">
-                                                <a href="{{ route('faculty.show', $fa->slug) }}">
-                                                <img src="{{ $fa->image }}" alt="{{ $fa->name }}" title="{{ $fa->name }}" />
-                                                 </a>
+                                <div class="products-wrap">
+                                    @forelse ($faculties as $service)
+                                        <div class="medium-4 small-12 columns">
+                                            <div class="single-product"
+                                             data-aos="zoom-in-up" data-aos-anchor-placement="bottom-bottom" data-aos-duration="3000"
+                                            >
+                                                <div class="product-img thumbnail">
+                                                    <a href="{{route('faculty.show',$service->slug)}}">
+                                                        <img   class="front-image" src="{{ Voyager::image( $service->thumbnail('cropped'))}}">
+                                                    </a>
+                                                    <div class="add-to-cart-top">
+                                                            <a href="{{route('faculty.show',$service->slug)}}" class="button primary">{{$service->name}}</a>
+                                                    </div>
+                                                </div>
+                                                <div class="product-info">
+                                                    <h6><a href="{{route('faculty.show',$service->slug)}}">{{$service->name}}</a></h6>
+                                                   <div class="tx-div"></div>
+                                                </div>
                                             </div>
-                                            <h3>{{ Str::limit($fa->name) }}</h3>
-                                         <a  class="middle" href="{{ route('faculty.show',$fa->slug) }}" class="secondary button">More About {{ Str::limit($fa->name,50) }}</a>
-                                      <br>
-                                        </div><br>
-                                    </div>
-
+                                        </div><!-- product Ends here -->
                                     @empty
-                                            <h3> There is no faculties uploaded yet.</h3>
+                                        <h4 align="center">There is no faculty at moment!</h4>
                                     @endforelse
 
+                                    </div><!-- products wrap -->
 
                                 <div class="clearfix"></div>
                             </div><!-- Courses Section Ends /-->

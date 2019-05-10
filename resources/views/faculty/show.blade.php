@@ -50,29 +50,36 @@
                    <ol class="menu vertical">
                     @foreach ($faculty->programs as $program)
                          <li><a href="{{route('program.show',$program->slug)}}">{!!$program->name !!} {{ $loop->last ? '.':',' }}</a></li>
-                        
+
                     @endforeach
                     @else
                     <li><a href="#">There are no programs yet !</a></li>
                       </ol>
                 @endif
-             
-                  
-                       
 
-              
+
+
+
+
             </div><!-- widget ends /-->
 
             <div class="widget">
                 <h2>{!! $faculty->name !!} Brochure</h2>
 
                 <ol class="menu vertical">
-                    <li><a href="courses.html">
-                            <?php $file = (json_decode($faculty->file))[0]->download_link; ?>
-                            <a href="{{ Voyager::image( $file ) }}" target="_blank">{{$faculty->Nom}}Click here to download Brochure</a>
-                    </a></li>
 
-                </ol>
+
+                    <li>
+                            @if (!empty($faculty->file[0]))
+                            <a href="{{ Voyager::image( (json_decode($faculty->file))[0]->download_link) }}" target="_blank"> Click here to download</a>
+                            @else
+                            <li>no file</li>
+                            @endif
+
+
+
+                    </li>
+             </ol>
             </div><!-- widget ends /-->
 
             <div class="widget">
@@ -85,7 +92,7 @@
                 </ul>
             </div><!-- widget ends /-->
 
-         
+
 
             <div class="widget">
                 <h2> Some People also interested in</h2>
