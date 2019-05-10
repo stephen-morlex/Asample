@@ -45,7 +45,7 @@
 
                                             <div class="course-thumb animated zoomInRight delay-1s">
                                                 <a href="{{ route('faculty.show', $fa->slug) }}">
-                                                <img src="{{ $fa->image }}" alt="{{ $fa->name }}" title="{{ $fa->name }}" />
+                                                <img src="{{ Voyager::image($fa->image) }}" alt="{{ $fa->name }}" title="{{ $fa->name }}" />
                                                  </a>
                                             </div>
                                             <h3>{{ Str::limit($fa->name) }}</h3>

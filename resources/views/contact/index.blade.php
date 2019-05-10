@@ -60,7 +60,7 @@
                     <div class="contact-info">
                     	<h4>ELDORET - GABA CAMPUS</h4>
                         <p>
-                            <strong>P.O. Box 908 - 30100<br> 
+                            <strong>P.O. Box 908 - 30100<br>
                             Eldoret, Kenya<br>
                             <strong>Email: </strong>registrygaba@cuea.edu<br>
                             <strong>Mobile: </strong>+(254) - 728 458276<br>
@@ -166,5 +166,3 @@
 
     @include('partials.footer')
     @endsection
-
-
