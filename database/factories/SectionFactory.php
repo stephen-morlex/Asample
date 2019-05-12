@@ -10,6 +10,7 @@ $factory->define(App\Section::class, function (Faker $faker) {
         'name'        =>$name,
         'image'       =>('image.jpg'),
         'requirement' =>$faker->paragraph,
+        'process' =>$faker->paragraph,
         'application' =>('app.pdf'),
         'brochure'    =>('borchure.pdf'),
         'fees'        =>$faker->paragraph,

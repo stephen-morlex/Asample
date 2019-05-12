@@ -34,12 +34,11 @@
                                 <div class="section-title">
                                     <h2><span>Faculties, Schools & Institutes</span></h2>
                                 </div><!-- Section Title Ends /-->
-                                <hr style=" border: 5px solid #e79800;
-                                border-radius: 5px;">
+                               
 
                                     @forelse ($faculties as $fa)
 
-                                    <div class="medium-6 small-12 columns">
+                                    <!-- <div class="medium-6 small-12 columns">
 
                                         <div class="course">
 
@@ -52,7 +51,27 @@
                                          <a  class="middle" href="{{ route('faculty.show',$fa->slug) }}" class="secondary button">More About {{ Str::limit($fa->name,50) }}</a>
                                       <br>
                                         </div><br>
-                                    </div>
+                                    </div> -->
+
+
+                                    <div class="medium-3 small-12 columns">
+                                      <div class="single-product">
+                                          <div class="product-img thumbnail" data-aos="fade-up"data-aos-anchor-placement="bottom-bottom" data-aos-duration="2000">
+                                              <a href="{{ route('faculty.show', $fa->slug) }}">
+                                                  <img   class="front-image" src="{{ Voyager::image($fa->image) }}" alt="{{ $fa->name }}">
+                                              </a>
+                                              <div class="add-to-cart-top" >
+                                                      <a href="{{ route('faculty.show', $fa->slug) }}" class="button primary">{{$fa->name}}</a>
+                                              </div>
+                                          </div>
+                                          <div class="product-info" data-aos="zoom-in"data-aos-anchor-placement="bottom-bottom" data-aos-duration="3000">
+                                              <h6><a href="{{ route('faculty.show', $fa->slug) }}">{{$fa->name}}</a></h6>
+                                             <div class="tx-div"></div>
+                                          </div>
+                                      </div>
+                                  </div><!-- product Ends here -->
+
+
 
                                     @empty
                                             <h3> There is no faculties uploaded yet.</h3>
