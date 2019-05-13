@@ -1,24 +1,33 @@
 @extends('layouts.app')
-
+@section('content')
 @include('partials.topNav')
 @include('layouts.mainNav')
 
+<!-- banner section -->
+        <div class="title-section module">
+            <div class="row">
+
+                <div class="small-12 columns">
+                    <h1>Faculties, Schools and Instituate</h1>
+                </div><!-- Top Row /-->
+
+                <div class="small-12 columns">
+                    <ul class="breadcrumbs">
+                         <li class="active"><a href="/">Home</a></li>
+                         <li class="active"><a href="">Academics</a></li>
+                         <li class="active"><a href="{{ route('services.index') }}">Student Service Information</a></li>
+                    </ul><!-- Breadcrumbs /-->
+                </div><!-- Bottom Row /-->
+                
+            </div><!-- Row /-->
+        </div>
+
+<!-- End of the banner section -->
 
 <!-- Content section -->
 
-<br>
-<div class="row">
-        <div class=" small-12 columns">
-          <nav aria-label="You are here:" role="navigation">
-            <ul class="breadcrumbs">
-              <li class="active"><a href="/">Home</a></li>
-              <li class="active"><a href="{{ route('faculty.index') }}">Faculties, Schools and Instituate</a></li>
-            </ul>
-          </nav>
-        </div>
-      </div>
 
-@section('content')
+
 
         <div class="content-section module single-products-page products-page">
             <div class="row">
@@ -32,18 +41,12 @@
 		<!-- Related Products -->
 
         	<div class="row">
-            	<div class="section-title-wrapper">
-                    <div class="section-title">
-                        <h2>Student Services Information</h2>
-                        <br>
-                    </div>
-                </div><!-- title ends -->
 
                 <div class="products-wrap">
                 @forelse ($services as $service)
                     <div class="medium-4 small-12 columns">
                         <div class="single-product"
-                         data-aos="zoom-in-up" data-aos-anchor-placement="bottom-bottom" data-aos-duration="3000"
+                         data-aos="zoom-in-up"  data-aos-duration="3000"
                         >
                             <div class="product-img thumbnail">
                                 <a href="{{route('services.show',$service->slug)}}">

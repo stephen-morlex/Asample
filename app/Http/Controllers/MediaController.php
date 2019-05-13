@@ -30,7 +30,7 @@ class MediaController extends Controller
         $medias      = Media::orderBy('title', 'asc')->get();
         $researchNav = Research::orderBy('name','asc')->get();
 
-        return view('media.media', compact('sections', 'programs', 'ad', 'studLife','researchNav','abouts', 'medias'));
+        return view('media.index', compact('sections', 'programs', 'ad', 'studLife','researchNav','abouts', 'medias'));
     }
 
     /**

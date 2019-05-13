@@ -1,48 +1,26 @@
   @extends('layouts.app')
+  @section('content')
+  @include('partials.topNav')
+  @include('layouts.mainNav')
 
+ <!-- banner section -->
+        <div class="title-section module">
+            <div class="row">
 
-    @section('content')
-    @include('partials.topNav')
-    @include('layouts.mainNav')
+                <div class="small-12 columns">
+                    <h1>Contact</h1>
+                </div><!-- Top Row /-->
 
-
-<div class="hero-section" style="$hero-height: 60vh;
-
-.hero-section {
-  background: url('{{ asset('galery/img/1.jpg') }}') 50% no-repeat;
-  background-size: cover;
-  height: $hero-height;
-  text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  .hero-section-text {
-    color: $white;
-    text-shadow: 1px 1px 2px $black;
-  }
-}
-">
-  <div class="hero-section-text">
-    <h1>Header</h1>
-    <h5>subtitle about anything you like</h5>
-  </div>
-</div>
-
-
-
-    <br>
-    <div class="row">
-        <div class=" small-12 columns">
-            <nav aria-label="You are here:" role="navigation">
-                <ul class="breadcrumbs">
-                    <li class="active"><a href="/">Home</a></li>
-                    <li class="active"><a href="#">Contact</a></li>
-                </ul>
-            </nav>
+                <div class="small-12 columns">
+                    <ul class="breadcrumbs">
+                       <li><a href="/">Home</a></li>
+                       <li class="active"><a href="{{route('contact.index')}}">Contact</a></li>
+                    </ul><!-- Breadcrumbs /-->
+                </div><!-- Bottom Row /-->
+                
+            </div><!-- Row /-->
         </div>
-    </div>
-
+ <!-- End of the banner section -->
 
     @if($errors->all())
         <div class="alert alert-warning" role="alert">

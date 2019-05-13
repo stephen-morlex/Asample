@@ -3,32 +3,34 @@
 @section('content')
 @include('partials.topNav')
 @include('layouts.mainNav')
-<!-- Content section -->
 
-    <br>
+<!-- banner section -->
+        <div class="title-section module">
+            <div class="row">
 
-<div class="row">
-        <div class=" small-12 columns">
-          <nav aria-label="You are here:" role="navigation">
-            <ul class="breadcrumbs">
-              <li class="active"><a href="/">Home</a></li>
-              <li class="active"><a href="{{ route('program.index') }}">programmes</a></li>
-              <li><a href="#">{{ $sectionName }}</a></li>
+                <div class="small-12 columns">
+                    <h1>Programs</h1>
+                </div><!-- Top Row /-->
 
-            </ul>
-          </nav>
+                <div class="small-12 columns">
+                    <ul class="breadcrumbs">
+                     <li><a href="/">Home</a></li>
+                     <li class="active"><a href="">Academics</a></li>
+                     <li ><a href="{{route('program.index')}}">Programs</a></li>
+                     <li class="active"><a href="#">{{ $sectionName }}</a></li>
+                    </ul><!-- Breadcrumbs /-->
+                </div><!-- Bottom Row /-->
+                
+            </div><!-- Row /-->
         </div>
-      </div>
+
+<!-- End of the banner section -->
 
 
         <!-- Content section -->
         <div class="content-section space-section module testimonial-page">
 
             <div class="row">
-
-                  <div class="section-title">
-                          <h2><span>{{ $sectionName }} Program</span></h2>
-                      </div><!-- Section Title Ends /-->
 
                 <div class="medium-9 small-12 columns test-wrap">
 
@@ -58,47 +60,7 @@
 
                 </div><!-- testimonial wrap /-->
 
-                <div class="medium-3 small-12 columns sidebar">
-                    <div class="widget">
-                        <h2>Submit Testimonial</h2>
-
-                        <div class="widget-content">
-                            <form>
-                                <input type="text" placeholder="Your name..." />
-                                <input type="text" placeholder="Your Email ...." />
-                                <select>
-                                    <option>Select rating</option>
-                                    <option>1 Start</option>
-                                    <option>2 Start</option>
-                                    <option>3 Start</option>
-                                    <option selected>4 Start</option>
-                                    <option>5 Start</option>
-                                </select>
-                                <select>
-                                    <option>Select Service</option>
-                                    <option>Service 1</option>
-                                    <option>Service 2</option>
-                                    <option>Service 3</option>
-                                </select>
-                                <select>
-                                    <option>Select Doctor</option>
-                                    <option>Doctor 1</option>
-                                    <option>Doctor 2</option>
-                                    <option>Doctor 3</option>
-                                </select>
-                                <input type="text" placeholder="Reason of satisfaction..." />
-                                <label>Select Your Image
-                                    <input type="file" />
-                               </label>
-                               <textarea placeholder="Your review..." rows="2"></textarea>
-                               <input type="submit" class="button primary" />
-                            </form>
-                        </div>
-
-                    </div><!-- widget Ends /-->
-
-               </div><!-- right bar ends here /-->
-
+              
             </div><!-- Row Ends /-->
 
         </div>

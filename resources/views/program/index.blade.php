@@ -3,20 +3,27 @@
 @section('content')
 @include('partials.topNav')
 @include('layouts.mainNav')
-<!-- Content section -->
-<br>
-<div class="row">
-        <div class=" small-12 columns">
-          <nav aria-label="You are here:" role="navigation">
-            <ul class="breadcrumbs">
-              <li class="active"><a href="/">Home</a></li>
-              <li class="active"><a href="#">programmes</a></li>
+<!-- banner section -->
+        <div class="title-section module">
+            <div class="row">
 
+                <div class="small-12 columns">
+                    <h1>Programs</h1>
+                </div><!-- Top Row /-->
 
-            </ul>
-          </nav>
+                <div class="small-12 columns">
+                    <ul class="breadcrumbs">
+                     <li><a href="/">Home</a></li>
+                     <li class="active"><a href="">Academics</a></li>
+                     <li ><a href="#">Programs</a></li>
+                    </ul><!-- Breadcrumbs /-->
+                </div><!-- Bottom Row /-->
+                
+            </div><!-- Row /-->
         </div>
-      </div>
+
+<!-- End of the banner section -->
+
 <div class="content-section">
     <br>
     <div class="seminar-events">
@@ -37,7 +44,7 @@
                         <div class="single-product">
                             <div class="product-img thumbnail" data-aos="fade-up"data-aos-anchor-placement="bottom-bottom" data-aos-duration="2000">
                                 <a href="{{route('program.section',$section->slug)}}">
-                                    <img   class="front-image" src="{{ Voyager::image( $section->thumbnail('cropped'))}}">
+                                    <img   class="front-image" src="{{ Voyager::image( $section->thumbnail('cropped'))}}" alt="{{$section->name}}">
                                 </a>
                                 <div class="add-to-cart-top" >
                                         <a href="{{route('program.section',$section->slug)}}" class="button primary">{{$section->name}}</a>
@@ -150,7 +157,7 @@
 
                        <a href="{{ route('program.show',$pro->slug) }}"><span class="label success">More</span></a>
                         <div class="testimonial-thumb">
-                                <a href="{{ route('program.show',$pro->slug) }}"> <img class="display:none" src="{{ Voyager::image( $pro->thumbnail('cropped'))}}"  /></a>
+                                <a href="{{ route('program.show',$pro->slug) }}"> <img class="display:none" src="{{ Voyager::image( $pro->thumbnail('cropped'))}}" alt="{{$pro->name}}" /></a>
                         </div><!-- Testimonial Thumb /-->
                         <div class="testimonial-detail">
                             <h4>{{ $pro->name }}</h4>

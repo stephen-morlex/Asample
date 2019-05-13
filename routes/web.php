@@ -16,14 +16,14 @@ Route::get('/', 'WelcomeController@index')->name('welcome');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/faculties-schools-and-institues', 'FacultyController@index')->name('faculty.index');
+Route::get('/academics/faculties-schools-and-institues', 'FacultyController@index')->name('faculty.index');
 Route::get('/faculties-schools-and-institues/{faculty}','FacultyController@show')->name('faculty.show');
 
 
 // programs routes
-Route::get('/programmes', 'ProgramController@index')->name('program.index');
-Route::get('/programmes/{program}', 'ProgramController@show')->name('program.show');
-Route::get('/programmes-section/{section}', 'ProgramController@section')->name('program.section');
+Route::get('/academics/programmes', 'ProgramController@index')->name('program.index');
+Route::get('/academics/programmes/{program}', 'ProgramController@show')->name('program.show');
+Route::get('/academics/programmes-section/{section}', 'ProgramController@section')->name('program.section');
 
 
 
@@ -53,7 +53,7 @@ Route::get('/research/{research}','ResearchController@show')->name('research.sho
 
 
 
-Route::get('/students-service-information','ServicesController@index')->name('services.index');
+Route::get('/academics/students-service-information','ServicesController@index')->name('services.index');
 Route::get('/students-service-information/{services}','ServicesController@show')->name('services.show');
 
 

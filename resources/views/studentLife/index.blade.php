@@ -3,20 +3,27 @@
 @section('content')
 @include('partials.topNav')
 @include('layouts.mainNav')
-<!-- Content section -->
-<br>
-<div class="row">
-        <div class=" small-12 columns">
-          <nav aria-label="You are here:" role="navigation">
-            <ul class="breadcrumbs">
-              <li class="active"><a href="/">Home</a></li>
-              <li class="active"><a href="#">student experience</a></li>
-            </ul>
-          </nav>
+
+<!-- banner section -->
+        <div class="title-section module">
+            <div class="row">
+
+                <div class="small-12 columns">
+                    <h1>Student Experience</h1>
+                </div><!-- Top Row /-->
+
+                <div class="small-12 columns">
+                    <ul class="breadcrumbs">
+                       <li><a href="/">Home</a></li>
+                       <li class="active"><a href="{{route('student.index')}}">Student Experience</a></li>
+                    </ul><!-- Breadcrumbs /-->
+                </div><!-- Bottom Row /-->
+                
+            </div><!-- Row /-->
         </div>
-      </div>
-<div class="content-section">
-<br>
+ <!-- End of the banner section -->
+ 
+<!-- Content section -->
     <!-- Seminar/Events -->
     <div class="module">
         <div class="row">
@@ -37,7 +44,7 @@
 
 
             <div class="medium-3 small-12 columns sidebar">
-
+                <div class="row">
                 <div class="widget">
                         <h2>More about student experience</h2>
 
