@@ -18,7 +18,7 @@
                        <li class="active"><a href="{{route('admission.index')}}">Admission</a></li>
                     </ul><!-- Breadcrumbs /-->
                 </div><!-- Bottom Row /-->
-                
+
             </div><!-- Row /-->
         </div>
  <!-- End of the banner section -->
@@ -159,7 +159,9 @@
 
                <div class="medium-3 small-12 columns">
                         <div class="single-product">
-                            <div class="product-img thumbnail">
+                            <div class="product-img thumbnail"
+                            data-aos="fade-up" data-aos-duration="2000"
+                            >
                                 <a href="{{route('admission.show',$section->slug)}}">
                                     <img   class="front-image" src="{{ Voyager::image( $section->thumbnail('cropped'))}}">
                                 </a>
@@ -167,7 +169,9 @@
                                         <a href="{{route('admission.show',$section->slug)}}" class="button primary">{{$section->name}}</a>
                                 </div>
                             </div>
-                            <div class="product-info">
+                            <div class="product-info"
+                            data-aos="zoom-in"data-aos-anchor-placement="bottom-bottom" data-aos-duration="3000"
+                            >
                                 <h6><a href="{{route('admission.show',$section->slug)}}">{{$section->name}}</a></h6>
                                <div class="tx-div"></div>
                             </div>

@@ -18,7 +18,7 @@
                      <li ><a href="#">Programs</a></li>
                     </ul><!-- Breadcrumbs /-->
                 </div><!-- Bottom Row /-->
-                
+
             </div><!-- Row /-->
         </div>
 
@@ -42,7 +42,7 @@
 
               <div class="medium-3 small-12 columns">
                         <div class="single-product">
-                            <div class="product-img thumbnail" data-aos="fade-up"data-aos-anchor-placement="bottom-bottom" data-aos-duration="2000">
+                            <div class="product-img thumbnail" data-aos="fade-up"  data-aos-duration="2000">
                                 <a href="{{route('program.section',$section->slug)}}">
                                     <img   class="front-image" src="{{ Voyager::image( $section->thumbnail('cropped'))}}" alt="{{$section->name}}">
                                 </a>
@@ -50,7 +50,9 @@
                                         <a href="{{route('program.section',$section->slug)}}" class="button primary">{{$section->name}}</a>
                                 </div>
                             </div>
-                            <div class="product-info" data-aos="zoom-in"data-aos-anchor-placement="bottom-bottom" data-aos-duration="3000">
+                            <div class="product-info"
+                            data-aos="zoom-in"data-aos-anchor-placement="bottom-bottom" data-aos-duration="3000"
+                            >
                                 <h6><a href="{{route('program.section',$section->slug)}}">{{$section->name}}</a></h6>
                                <div class="tx-div"></div>
                             </div>

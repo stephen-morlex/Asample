@@ -19,7 +19,7 @@ class ProgramController extends Controller
     public function index()
     {
         $sections = Section::take(4)->get();
-        $programs=Program::all();
+        $programs=Program::orderBy('section_id','asc')->get();
         $ad=Section::orderBy('name','asc')->get();
         $studLife=StudentCategory::orderBy('name','asc')->get();
         $researchNav = Research::orderBy('name','asc')->get();
@@ -37,7 +37,7 @@ class ProgramController extends Controller
             });
             $sectionName = optional($sections->where('slug', request()->section)->first())->name;
         } else {
-            $programs = Program::take(12);
+            $programs = Program::orderBy('section_id','asc')->get();;
             $sectionName = 'sections';
         }
         $programs = $programs->paginate(6);
