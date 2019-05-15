@@ -5,218 +5,112 @@
 @include('layouts.mainNav')
 
 <!-- Banner Starts -->
-
 <div class="main-banner">
-	<div id="rev_slider_4_1_wrapper" class="rev_slider_wrapper fullwidthbanner-container" data-alias="classicslider1">
-		<!-- START REVOLUTION SLIDER 5.0.7 auto mode -->
-		<div id="rev_slider_4_1" class="rev_slider fullwidthabanner" data-version="5.0.7">
-			<ul>
-			  @forelse ($carousels as $ca)
+    <div id="rev_slider_4_1_wrapper" class="rev_slider_wrapper fullwidthbanner-container" data-alias="classicslider1">
+        <!-- START REVOLUTION SLIDER 5.0.7 auto mode -->
+        <div id="rev_slider_4_1" class="rev_slider fullwidthabanner" data-version="5.0.7">
+            <ul>	<!-- SLIDE  -->
+                @foreach ($carousels as $item)
+                <li data-index="{{ $loop->index }}" data-transition="zoomout"
+                data-slotamount="default"  data-easein="Power4.easeInOut"
+                data-easeout="Power4.easeInOut" data-masterspeed="2000"
+                data-rotate="0"  data-fstransition="fade" data-fsmasterspeed="1500"
+                 data-fsslotamount="7" data-saveperformance="off">
+                    <!-- MAIN IMAGE -->
+                    <img src="{{ Voyager::image($item->image) }}"  alt="First Slide"  data-bgposition="center center"
+                    data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg" />
+                    <!-- LAYERS -->
 
-			  <!-- SLIDE  -->
-			  <li data-index="rs-17" data-transition="fadetotopfadefrombottom" data-slotamount="default"  data-easein="Power3.easeInOut" data-easeout="Power3.easeInOut" data-masterspeed="1500" data-rotate="0"  data-saveperformance="off">
-				  <!-- MAIN IMAGE -->
-				  <img src="{{ Voyager::image( $ca->image ) }}"  alt=""  data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg" data-no-retina>
-				  <!-- LAYERS -->
+                    <!-- LAYER NR. 1 -->
+                    <div class="tp-caption tp-shape tp-shapewrapper layer1 tp-resizeme rs-parallaxlevel-0"
+                         id="slide-16-layer-3"
+                         data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
+                         data-y="['middle','middle','middle','middle']" data-voffset="['0','0','0','0']"
+                                    data-width="full"
+                        data-height="full"
+                        data-whitespace="normal"
+                        data-transform_idle="o:1;"
 
-				  <!-- LAYER NR. 1 -->
-				  <div class="tp-caption tp-shape tp-shapewrapper layer1 tp-resizeme rs-parallaxlevel-0"
-					   id="slide-17-layer-3"
-					   data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
-					   data-y="['middle','middle','middle','middle']" data-voffset="['0','0','0','0']"
-								  data-width="full"
-					  data-height="full"
-					  data-whitespace="normal"
-					  data-transform_idle="o:1;"
-
-					   data-transform_in="opacity:0;s:1500;e:Power3.easeInOut;"
-					   data-transform_out="s:300;s:300;"
-					  data-start="1000"
-					  data-basealign="slide"
-					  data-responsive_offset="on">
-				  </div>
-
-				  <!-- LAYER NR. 2 -->
-				  <div class="tp-caption Newspaper-Title-Centered layer2 tp-resizeme rs-parallaxlevel-0"
-					   id="slide-17-layer-1"
-					   data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
-					   data-y="['middle','middle','middle','middle']" data-voffset="['0','0','0','1']"
-								  data-fontsize="['50','50','50','30']"
-					  data-lineheight="['55','55','55','35']"
-					  data-width="['721','721','721','420']"
-					  data-height="none"
-					  data-whitespace="normal"
-					  data-transform_idle="o:1;"
-
-					   data-transform_in="y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;s:1500;e:Power3.easeInOut;"
-					   data-transform_out="auto:auto;s:1000;"
-					   data-mask_in="x:0px;y:0px;"
-					   data-mask_out="x:0;y:0;"
-					  data-start="1000"
-					  data-splitin="none"
-					  data-splitout="none"
-					  data-responsive_offset="on">{{ $ca->body }}
-				  </div>
-
-				  <!-- LAYER NR. 3 -->
-				  <div class="tp-caption Newspaper-Subtitle layer3 tp-resizeme rs-parallaxlevel-0"
-					   id="slide-17-layer-2"
-					   data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
-					   data-y="['middle','middle','middle','middle']" data-voffset="['-82','-82','-82','-58']"
-								  data-width="none"
-					  data-height="none"
-					  data-whitespace="nowrap"
-					  data-transform_idle="o:1;"
-
-					   data-transform_in="y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;s:1500;e:Power3.easeInOut;"
-					   data-transform_out="auto:auto;s:1000;"
-					   data-mask_in="x:0px;y:0px;"
-					   data-mask_out="x:0;y:0;"
-					  data-start="1000"
-					  data-splitin="none"
-					  data-splitout="none"
-					  data-responsive_offset="on">{{ $ca->title }}
-				  </div>
-
-				  <!-- LAYER NR. 4 -->
-				  <div class="tp-caption layer4 rs-parallaxlevel-0"
-					   id="slide-17-layer-4"
-					   data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
-					   data-y="['middle','middle','middle','middle']" data-voffset="['92','92','92','76']"
-								  data-width="none"
-					  data-height="none"
-					  data-whitespace="nowrap"
-					  data-transform_idle="o:1;"
-					  data-transform_hover="o:1;rX:0;rY:0;rZ:0;z:0;s:300;e:Power1.easeInOut;"
-					  data-style_hover="c:rgba(0, 0, 0, 1.00);bg:rgba(255, 255, 255, 1.00);bc:rgba(255, 255, 255, 1.00);cursor:pointer;"
-
-					  data-transform_in="y:50px;opacity:0;s:1500;e:Power4.easeInOut;"
-					  data-transform_out="y:50px;opacity:0;s:1000;s:1000;"
-					  data-start="1000"
-					  data-splitin="none"
-					  data-splitout="none"
-					  data-responsive_offset="on"
-					  data-responsive="off"><a href="{{$ca->link }}" class="button primary bordered-light">READ MORE</a>
-				  </div>
-			  </li>
-			  @empty
-
-			  @endforelse
-
-
-			</ul>
-			<div class="tp-static-layers"></div>
-			<div class="tp-bannertimer" style="height: 7px; background-color: rgba(255, 255, 255, 0.25);"></div>
-		</div>
-	</div><!-- END REVOLUTION SLIDER -->
-</div>
-<!-- Banner Ends /-->
-
-        <div class="main-banner">
-            <div id="rev_slider_4_1_wrapper" class="rev_slider_wrapper fullwidthbanner-container" data-alias="classicslider1">
-                <!-- START REVOLUTION SLIDER 5.0.7 auto mode -->
-
-                <div id="rev_slider_4_1" class="rev_slider fullwidthabanner" data-version="5.0.7">
-                        <ul>	<!-- SLIDE  -->
-                            @foreach ($carousels as $c)
-                            <!-- SLIDE  -->
-                            <li data-index="rs-18" data-transition="zoomin" data-slotamount="7"  data-easein="Power4.easeInOut" data-easeout="Power4.easeInOut" data-masterspeed="2000" data-rotate="0"  data-saveperformance="off">
-                                <!-- MAIN IMAGE -->
-                                <img src="{{ Voyager::image($c->image) }}"  alt=""  data-bgposition="center center" data-kenburns="on" data-duration="30000" data-ease="Linear.easeNone" data-scalestart="100" data-scaleend="120" data-rotatestart="0" data-rotateend="0" data-offsetstart="0 0" data-offsetend="0 0" data-bgparallax="10" class="rev-slidebg" data-no-retina>
-                                <!-- LAYERS -->
-
-                                <!-- LAYER NR. 1 -->
-                                <div class="tp-caption tp-shape tp-shapewrapper layer1 tp-resizeme rs-parallaxlevel-0"
-                                     id="slide-18-layer-3"
-                                     data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
-                                     data-y="['middle','middle','middle','middle']" data-voffset="['0','0','0','0']"
-                                                data-width="full"
-                                    data-height="full"
-                                    data-whitespace="normal"
-                                    data-transform_idle="o:1;"
-
-                                     data-transform_in="opacity:0;s:1500;e:Power3.easeInOut;"
-                                     data-transform_out="s:300;s:300;"
-                                    data-start="1000"
-                                    data-basealign="slide"
-                                    data-responsive_offset="on">
-                                </div>
-
-                                <!-- LAYER NR. 2 -->
-                                <div class="tp-caption Newspaper-Title-Centered layer2 tp-resizeme rs-parallaxlevel-0"
-                                     id="slide-18-layer-1"
-                                     data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
-                                     data-y="['middle','middle','middle','middle']" data-voffset="['0','0','0','1']"
-                                                data-fontsize="['50','50','50','30']"
-                                    data-lineheight="['55','55','55','35']"
-                                    data-width="['721','721','721','420']"
-                                    data-height="none"
-                                    data-whitespace="normal"
-                                    data-transform_idle="o:1;"
-
-                                     data-transform_in="y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;s:1500;e:Power3.easeInOut;"
-                                     data-transform_out="auto:auto;s:1000;"
-                                     data-mask_in="x:0px;y:0px;"
-                                     data-mask_out="x:0;y:0;"
-                                    data-start="1000"
-                                    data-splitin="none"
-                                    data-splitout="none"
-                                    data-responsive_offset="on">{{ $c->body }}
-                                </div>
-
-                                <!-- LAYER NR. 3 -->
-                                <div class="tp-caption Newspaper-Subtitle layer3 tp-resizeme rs-parallaxlevel-0"
-                                     id="slide-18-layer-2"
-                                     data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
-                                     data-y="['middle','middle','middle','middle']" data-voffset="['-82','-82','-82','-58']"
-                                                data-width="none"
-                                    data-height="none"
-                                    data-whitespace="nowrap"
-                                    data-transform_idle="o:1;"
-
-                                     data-transform_in="y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;s:1500;e:Power3.easeInOut;"
-                                     data-transform_out="auto:auto;s:1000;"
-                                     data-mask_in="x:0px;y:0px;"
-                                     data-mask_out="x:0;y:0;"
-                                    data-start="1000"
-                                    data-splitin="none"
-                                    data-splitout="none"
-                                    data-responsive_offset="on">ABOUT THE LIFE OF A DESIGNER
-                                </div>
-
-                                <!-- LAYER NR. 4 -->
-                                <div class="tp-caption layer4 rs-parallaxlevel-0"
-                                     id="slide-18-layer-4"
-                                     data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
-                                     data-y="['middle','middle','middle','middle']" data-voffset="['92','92','92','76']"
-                                                data-width="none"
-                                    data-height="none"
-                                    data-whitespace="nowrap"
-                                    data-transform_idle="o:1;"
-                                    data-transform_hover="o:1;rX:0;rY:0;rZ:0;z:0;s:300;e:Power1.easeInOut;"
-                                    data-style_hover="c:rgba(0, 0, 0, 1.00);bg:rgba(255, 255, 255, 1.00);bc:rgba(255, 255, 255, 1.00);cursor:pointer;"
-
-                                    data-transform_in="y:50px;opacity:0;s:1500;e:Power4.easeInOut;"
-                                    data-transform_out="y:50px;opacity:0;s:1000;s:1000;"
-                                    data-start="1000"
-                                    data-splitin="none"
-                                    data-splitout="none"
-                                    data-responsive_offset="on"
-                                    data-responsive="off"><a href="{{ $c->link }}" class="button primary bordered-light">READ MORE</a>
-                                </div>
-                            </li>
-                            @endforeach
-                        </ul>
-                        <div class="tp-static-layers"></div>
-                        <div class="tp-bannertimer" style="height: 7px; background-color: rgba(255, 255, 255, 0.25);"></div>
+                         data-transform_in="opacity:0;s:1500;e:Power3.easeInOut;"
+                         data-transform_out="s:300;s:300;"
+                        data-start="1000"
+                        data-basealign="slide"
+                        data-responsive_offset="on">
                     </div>
 
+                    <!-- LAYER NR. 2 -->
+                    <div class="tp-caption Newspaper-Title-Centered layer2 tp-resizeme rs-parallaxlevel-0"
+                         id="slide-16-layer-1"
+                         data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
+                         data-y="['middle','middle','middle','middle']" data-voffset="['0','0','0','1']"
+                         data-fontsize="['50','50','50','30']"
+                        data-lineheight="['55','55','55','35']"
+                        data-width="['721','721','721','420']"
+                        data-height="none"
+                        data-whitespace="normal"
+                        data-transform_idle="o:1;"
 
-            </div><!-- END REVOLUTION SLIDER -->
+                         data-transform_in="y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;s:1500;e:Power3.easeInOut;"
+                         data-transform_out="auto:auto;s:1000;"
+                         data-mask_in="x:0px;y:0px;"
+                         data-mask_out="x:0;y:0;"
+                        data-start="1000"
+                        data-splitin="none"
+                        data-splitout="none"
+                        data-responsive_offset="on">{{ $item->body }}
+                    </div>
+
+                    <!-- LAYER NR. 3 -->
+                    <div class="tp-caption Newspaper-Subtitle layer3 tp-resizeme rs-parallaxlevel-0"
+                         id="slide-16-layer-2"
+                         data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
+                         data-y="['middle','middle','middle','middle']" data-voffset="['-82','-82','-82','-58']"
+                                    data-width="none"
+                        data-height="none"
+                        data-whitespace="nowrap"
+                        data-transform_idle="o:1;"
+
+                         data-transform_in="y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;s:1500;e:Power3.easeInOut;"
+                         data-transform_out="auto:auto;s:1000;"
+                         data-mask_in="x:0px;y:0px;"
+                         data-mask_out="x:0;y:0;"
+                        data-start="1000"
+                        data-splitin="none"
+                        data-splitout="none"
+                        data-responsive_offset="on">{{ $item->title }}
+                    </div>
+
+                    <!-- LAYER NR. 4 -->
+                    <div class="tp-caption layer4 rs-parallaxlevel-0"
+                         id="slide-16-layer-4"
+                         data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
+                         data-y="['middle','middle','middle','middle']" data-voffset="['92','92','92','76']"
+                                    data-width="none"
+                        data-height="none"
+                        data-whitespace="nowrap"
+                        data-transform_idle="o:1;"
+                        data-transform_hover="o:1;rX:0;rY:0;rZ:0;z:0;s:300;e:Power1.easeInOut;"
+                        data-style_hover="c:rgba(0, 0, 0, 1.00);bg:rgba(255, 255, 255, 1.00);bc:rgba(255, 255, 255, 1.00);cursor:pointer;"
+
+                        data-transform_in="y:50px;opacity:0;s:1500;e:Power4.easeInOut;"
+                        data-transform_out="y:50px;opacity:0;s:1000;s:1000;"
+                        data-start="1000"
+                        data-splitin="none"
+                        data-splitout="none"
+                        data-responsive_offset="on"
+                        data-responsive="off"><a href="{{ $item->link }}" class="button primary bordered-light">READ MORE</a>
+                    </div>
+                </li>
+                <!-- SLIDE  -->
+
+                @endforeach
+            </ul>
+            <div class="tp-static-layers"></div>
+            <div class="tp-bannertimer" style="height: 7px; background-color: rgba(255, 255, 255, 0.25);"></div>
         </div>
-        <!-- Banner Ends /-->
-
-
+    </div><!-- END REVOLUTION SLIDER -->
+</div>
+<!-- Banner Ends /-->
 
 <!-- information boxes starts -->
 <div class="information-boxes module">
@@ -245,7 +139,7 @@
 				<li><i class="fa fa-check-square-o" aria-hidden="true"></i> Helping Board in your learning management</li>
 			</ul>
 			<div class="clearfix"></div>
-			<a href="#" class="primary button bordered-light">Explore more!</a>
+			<a href="{{ route('student.index') }}" class="primary button bordered-light">Explore more!</a>
 		</div>
 	</div><!-- faculty info ends /-->
 
@@ -310,9 +204,9 @@
                         <div  class="medium-8 small-12 columns event-data "  data-aos="zoom-in-right" data-aos-duration="2000">
                             <h4><a href="{{ route('event.show',$e->slug) }}">{!! $e->title !!}</a></h4>
                             <p> {!!  str_limit($e->content,70) !!}</p>
-                            <p><strong>Timinings:</strong> {!!  Carbon\Carbon::parse($e->start)->toTimeString() !!} - {!!  Carbon\Carbon::parse($e->end)->toTimeString() !!}
+                            <p><strong>Timinings:</strong> {!!  Carbon\Carbon::parse($e->start)->format('g:i A')!!} - {!!  Carbon\Carbon::parse($e->end)->format('g:i A') !!}
                             <p><strong>Venue:</strong> {!! $e->location !!}
-                            <br><strong>Date:</strong> {!! Carbon\Carbon::parse($e->date)->format('d-m-Y ') !!}</p>
+                            <strong>Date:</strong> {!! Carbon\Carbon::parse($e->date)->format('d-m-Y ') !!}</p>
                             <a href="{{ route('event.show',$e->slug) }}" class="button primary ">Join Event</a>
                         </div><!-- Event DAta /-->
                         <div class="medium-4 small-12 columns event-thumb" data-aos="zoom-in-left" data-aos-duration="3000">
@@ -412,15 +306,20 @@
 			@forelse($news as $newsItem)
 			<div class="medium-4 small-12 columns">
 				<div class="post">
-					<div class="post-thumb">
+                    <div class="post-thumb"
+                    data-aos="zoom-in-down"
+                    data-aos-duration="3000"
+                    >
 						<a href="{{ route('news.show', $newsItem->slug) }}">
-							<img src="{{ $newsItem->image }}" alt="{{ $newsItem->image }}" />
+                            <img src="{{ Voyager::image( $newsItem->thumbnail('cropped'))}}" alt="{{ $newsItem->image }}" />
 						</a>
 					</div><!-- Thumb /-->
-					<div class="post-content">
+                    <div class="post-content"
+                     data-aos="zoom-in-up"
+                     data-aos-duration="3000">
 						<h4><a href="{{ route('news.show', $newsItem->slug) }}">{{ $newsItem->title }}</a></h4>
 						<div class="post-meta"><strong>Date:</strong> {{ $newsItem->created_at->diffForHumans() }} | <strong>Category:</strong> <a href="{{ route('news.category', $newsItem->newsCategory->slug) }}">{{ $newsItem->newsCategory->name }}</a> | <strong>Author:</strong> <a href="#">Administrator</a></div>
-						<p>{{str_limit($newsItem->content, $limit = 80, $end = '...')}}<a href="{{ route('news.show', $newsItem->slug) }}">Read More &raquo;</a></p>
+						<p>{!! str_limit($newsItem->content, $limit = 80, $end = '...') !!}<a href="{{ route('news.show', $newsItem->slug) }}">Read More &raquo;</a></p>
 					</div><!-- post content /-->
 				</div><!-- Post /-->
 			</div><!-- Post column /-->
@@ -431,7 +330,7 @@
 
 		</div><!-- Posts Wrapper /-->
 
-		<div class="load-more text-center">
+		<div class="load-more text-center fixed">
 			<a href="{{ route('news.index') }}" class="button primary">See More</a>
 		</div><!-- Load more /-->
         @else
@@ -455,10 +354,14 @@
 	<div class="row">
 
 
-		<div class="brand-carousel">
+		<div class="brand-carousel" >
                 @if (count($partner) >= 1)
                     @foreach ($partner as $partner)
-                    <div class="bran-logo"><a href="#" target="_blank"><img  alt="" src="{{Voyager::image( $partner->image) }}" class="thumbnail" /></a></div>
+                    <div class="bran-logo"><a href="#" target="_blank"><img  alt="" src="{{Voyager::image( $partner->image) }}" class="thumbnail"
+                        data-aos="flip-left"
+                        data-aos-easing="ease-out-cubic"
+                        data-aos-duration="2000"
+                    /></a></div>
                     @endforeach
                 @else
                 {{--  <h3 align="center">No partner at the moment!</h3>  --}}

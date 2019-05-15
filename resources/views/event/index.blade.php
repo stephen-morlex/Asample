@@ -17,7 +17,7 @@
                        <li class="active"><a href="{{route('events.index')}}">Events</a></li>
                     </ul><!-- Breadcrumbs /-->
                 </div><!-- Bottom Row /-->
-                
+
             </div><!-- Row /-->
         </div>
  <!-- End of the banner section -->
@@ -36,10 +36,9 @@
                     <div class="medium-8 small-12 columns event-data">
                         <h4><a href="{{ route('event.show',$event->slug) }}">{!! $event->title !!}</a></h4>
                         <p> {!!  str_limit($event->content,250) !!}</p>
-                        <p><strong>Timinings:</strong> {{ $event->start }}-{{ $event->end }}
-
-                        <br><strong>Date:</strong> {{ $event->date }}</p>
-                        <a href="{{ route('event.show',$event->slug) }}" class="button primary bordered-dark"> More details</a>
+                        <p><strong>Time:</strong> {!!  Carbon\Carbon::parse($event->start)->format('g:i A')!!} - {!!  Carbon\Carbon::parse($event->end)->format('g:i A') !!}</p>
+                        <p><strong>Date:</strong> {!! Carbon\Carbon::parse($event->date)->format('d-m-Y ') !!}</p>
+                        <a href="{{ route('event.show',$event->slug) }}" class="button primary"> More details</a>
                     </div><!-- Event DAta /-->
                     <div class="medium-4 small-12 columns event-thumb">
                         <img src="{{ Voyager::image( $event->thumbnail('cropped'))}}" />
