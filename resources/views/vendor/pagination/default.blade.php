@@ -1,8 +1,8 @@
 @if ($paginator->hasPages())
-    <ul class="pagination" role="navigation">
+    <ul class="pagination-container" role="navigation">
         {{-- Previous Page Link --}}
         @if ($paginator->onFirstPage())
-            <li class="disabled" aria-disabled="true" aria-label="@lang('pagination.previous')">
+            <li class="arrow" aria-disabled="true" aria-label="@lang('pagination.previous')">
                 <span aria-hidden="true">&lsaquo;</span>
             </li>
         @else
@@ -36,7 +36,7 @@
                 <a href="{{ $paginator->nextPageUrl() }}" rel="next" aria-label="@lang('pagination.next')">&rsaquo;</a>
             </li>
         @else
-            <li class="disabled" aria-disabled="true" aria-label="@lang('pagination.next')">
+            <li class="arrow" aria-disabled="true" aria-label="@lang('pagination.next')">
                 <span aria-hidden="true">&rsaquo;</span>
             </li>
         @endif
