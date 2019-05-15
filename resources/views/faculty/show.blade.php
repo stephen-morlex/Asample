@@ -4,21 +4,28 @@
 @include('partials.topNav')
 @include('layouts.mainNav')
 
+<!-- banner section -->
+        <div class="title-section module">
+            <div class="row">
 
-<!-- Content section -->
-<br>
-<div class="row">
-        <div class=" small-12 columns">
-          <nav aria-label="You are here:" role="navigation">
-            <ul class="breadcrumbs">
-              <li class="active"><a href="/">Home</a></li>
-              <li class="active"><a href="{{ route('faculty.index') }}">Faculties, Schools and Instituate</a></li>
-              <li class="active"><a href="#">{{ $faculty->name }}</a></li>
-            </ul>
-          </nav>
+                <div class="small-12 columns">
+                    <h1>Faculties, Schools and Instituate</h1>
+                </div><!-- Top Row /-->
+
+                <div class="small-12 columns">
+                    <ul class="breadcrumbs">
+                     <li><a href="/">Home</a></li>
+                     <li class="active"><a href="">Academics</a></li>
+                     <li ><a href="#">Faculties, Schools and Instituate</a></li>
+                     <li class="active"><a href="#">{{ $faculty->name }}</a></li>
+                    </ul><!-- Breadcrumbs /-->
+                </div><!-- Bottom Row /-->
+                
+            </div><!-- Row /-->
         </div>
-      </div>
-<hr style="color:red 2px;">
+
+<!-- End of the banner section -->
+
 <div class="content-section module blog-page">
 
     <div class="row">
@@ -50,29 +57,36 @@
                    <ol class="menu vertical">
                     @foreach ($faculty->programs as $program)
                          <li><a href="{{route('program.show',$program->slug)}}">{!!$program->name !!} {{ $loop->last ? '.':',' }}</a></li>
-                        
+
                     @endforeach
                     @else
                     <li><a href="#">There are no programs yet !</a></li>
                       </ol>
                 @endif
-             
-                  
-                       
 
-              
+
+
+
+
             </div><!-- widget ends /-->
 
             <div class="widget">
                 <h2>{!! $faculty->name !!} Brochure</h2>
 
                 <ol class="menu vertical">
-                    <li><a href="courses.html">
-                            <?php $file = (json_decode($faculty->file))[0]->download_link; ?>
-                            <a href="{{ Voyager::image( $file ) }}" target="_blank">{{$faculty->Nom}}Click here to download Brochure</a>
-                    </a></li>
 
-                </ol>
+
+                    <li>
+                            @if (!empty($faculty->file[0]))
+                            <a href="{{ Voyager::image( (json_decode($faculty->file))[0]->download_link) }}" target="_blank"> Click here to download</a>
+                            @else
+                            <li>no file</li>
+                            @endif
+
+
+
+                    </li>
+             </ol>
             </div><!-- widget ends /-->
 
             <div class="widget">
@@ -85,7 +99,7 @@
                 </ul>
             </div><!-- widget ends /-->
 
-         
+
 
             <div class="widget">
                 <h2> Some People also interested in</h2>

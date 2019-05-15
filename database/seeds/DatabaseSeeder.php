@@ -31,7 +31,7 @@ class DatabaseSeeder extends Seeder
         factory(Media::class,10)->create();
         factory(About::class,4)->create();
         factory(NewsCategory::class,10)->create();
-
+        
         factory(News::class,10)->create();
 
 

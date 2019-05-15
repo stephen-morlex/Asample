@@ -1,72 +1,57 @@
+ @extends('layouts.app')
+ @section('content')
+ @include('partials.topNav')
+@include('layouts.mainNav')
 
+ <!-- banner section -->
+        <div class="title-section module">
+            <div class="row">
 
+                <div class="small-12 columns">
+                    <h1>Gallery</h1>
+                </div><!-- Top Row /-->
 
-  @extends('layouts.app')
-
-
-    @section('content')
-    @include('partials.topNav')
-    @include('layouts.mainNav')
-
-
-        <br>
-    <div class="row">
-        <div class=" small-12 columns">
-            <nav aria-label="You are here:" role="navigation">
-                <ul class="breadcrumbs">
-                    <li class="active"><a href="/">Home</a></li>
-                    <li class="active"><a href="#">Contact</a></li>
-                </ul>
-            </nav>
+                <div class="small-12 columns">
+                    <ul class="breadcrumbs">
+                       <li><a href="/">Home</a></li>
+                       <li class="active"><a href="{{route('media.index')}}">Gallery</a></li>
+                    </ul><!-- Breadcrumbs /-->
+                </div><!-- Bottom Row /-->
+                
+            </div><!-- Row /-->
         </div>
-    </div>
+ <!-- End of the banner section -->
+
+        <!-- Content section -->
+        <div class="content-section gallery-page module-gallery">
+
+            <!-- Gallery Section -->
+            <div class="gallery-wrapper module">
+                <div class="section-title-wrapper">
+                    <div class="section-title">
+                        <h2>Amazing Campus Life</h2>
+                        <p>Some Amazing Stuff from our Campus</p>
+                    </div>
+                </div> <!-- Title Ends /-->
+
+                <div class="gallery-container">
+
+                    @forelse($medias as $media)
+                        <a href="{{ $media->image }}" data-lightbox="campus-gallery" data-title="{{ $media->title }}">
+                            <img class="gallery-thumb" src="{{ $media->image }}" alt="{{ $media->title }}"/>
+                        </a>
+                    @empty
+                        <h3 align="center">There is no media at the moment !</h3>
+                    @endforelse
+
+                </div><!-- Gallery Container /-->
+
+            </div>
+            <!-- Gallery Section Ends /-->
 
 
-    <!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="Content-Language" content="en"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Grid Gallery</title>
-    <link rel="stylesheet" href="{{ asset('galery/css/grid-gallery.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('galery/css/master.min.css') }}">
-    <link rel="stylesheet" href="//code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-  </head>
-  <body>
-    <div id="gg-screen" hidden></div>
-    <main>
-
-      <div class="main">
-        <div class="gg-box">
-            <img src="{{ asset('galery/img/1.jpg') }}">
-            <img src="{{ asset('galery/img/2.jpg') }}">
-            <img src="{{ asset('galery/img/3.jpg') }}">
-            <img src="{{ asset('galery/img/4.jpg') }}">
-            <img src="{{ asset('galery/img/2.jpg') }}">
-            <img src="{{ asset('galery/img/5.jpg') }}">
-            <img src="{{ asset('galery/img/7.jpg') }}">
-            <img src="{{ asset('galery/img/8.jpg') }}">
-            <img src="{{ asset('galery/img/9.jpg') }}">
-            <img src="{{ asset('galery/img/10.jpg') }}">
-            <img src="{{ asset('galery/img/11.jpg') }}">
-            <img src="{{ asset('galery/img/12.jpg') }}">
-            <img src="{{ asset('galery/img/13.jpg') }}">
-            <img src="{{ asset('galery/img/14.jpg') }}">
-            <img src="{{ asset('galery/img/15.jpg') }}">
-            <img src="{{ asset('galery/img/16.jpg') }}">
-            <img src="{{ asset('galery/img/17.jpg') }}">
-            <img src="{{ asset('galery/img/18.jpg') }}">
-            <img src="{{ asset('galery/img/19.jpg') }}">
-            <img src="{{ asset('galery/img/20.jpg') }}">
         </div>
-      </div>
-    </main>
-    <script type="text/javascript" src="{{ asset('galery/js/grid-gallery.min.js') }}"></script>
-  </body>
-</html>
+        <!-- Content Section Ends /-->
 
-
-    @include('partials.footer')
+           @include('partials.footer')
     @endsection
-

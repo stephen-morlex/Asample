@@ -3,24 +3,30 @@
 @section('content')
 @include('partials.topNav')
 @include('layouts.mainNav')
-<!-- Content section -->
-<br>
-<div class="row">
-        <div class=" small-12 columns">
-          <nav aria-label="You are here:" role="navigation">
-            <ul class="breadcrumbs">
-              <li class="active"><a href="/">Home</a></li>
-              <li class="active"><a href="{{ route('student.index') }}">student experience</a></li>
-              <li class="active"><a href="#">{{ $student->name }}</a></li>
-            </ul>
-          </nav>
+
+<!-- banner section -->
+        <div class="title-section module">
+            <div class="row">
+
+                <div class="small-12 columns">
+                    <h1>Student Experience</h1>
+                </div><!-- Top Row /-->
+
+                <div class="small-12 columns">
+                    <ul class="breadcrumbs">
+                       <li><a href="/">Home</a></li>
+                       <li class="active"><a href="{{route('student.index')}}">Student Experience</a></li>
+                       <li class="active"><a href="#">{{ $student->name }}</a></li>
+                    </ul><!-- Breadcrumbs /-->
+                </div><!-- Bottom Row /-->
+                
+            </div><!-- Row /-->
         </div>
-      </div>
+ <!-- End of the banner section -->
 
+<!-- Content section -->
 
-      <!-- Content section -->
       <div class="content-section">
-<br>
           <!-- Seminar/Events -->
           <div class="module">
               <div class="row">

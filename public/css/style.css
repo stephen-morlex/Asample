@@ -526,6 +526,10 @@ Header Style 2 Ends
 Banner CSS Ends
 -------------------------*/
 
+
+/*admission timeline*/
+
+/*End of admission timeline*/
 /*-------------------------
  07 - Information Boxes CSS
 -------------------------*/
@@ -688,14 +692,14 @@ Welcome Message CSS Ends
   }
 
   .timeline {
-    background:rebeccapurple;
+    background:#F7f7f7;
     margin: 30px auto;
     padding: 0 10px;
     position: relative;
     transition: all 0.25s ease-in;
     width: 100%;
     border:#F7f7f7 solid 2px;
-    color: #0a68b1;
+   
   }
 
   .timeline::before {
@@ -734,6 +738,7 @@ Welcome Message CSS Ends
   .timeline .timeline-item {
     margin-bottom: 50px;
     position: relative;
+    color: #5d5d5d;
   }
 
   .timeline .timeline-item .timeline-icon {
@@ -753,10 +758,12 @@ Welcome Message CSS Ends
     left: 14px;
     position: relative;
     top: 11px;
+    color: #f0951f;
   }
 
   .timeline .timeline-item .timeline-icon svg {
     top: 14px;
+    color: #f0951f;
   }
 
   .timeline .timeline-item .timeline-content {
@@ -768,13 +775,11 @@ Welcome Message CSS Ends
   }
 
   .timeline .timeline-item .timeline-content p {
-    color: #2f2f2f;
+    color: #5d5d5d;
   }
 
   .timeline .timeline-item .timeline-content p {
-    font-size: 16px;
-    line-height: 1.4;
-    margin-bottom: 0;
+    text-align: justify;
   }
 
   .timeline .timeline-item .timeline-content .timeline-content-date {
@@ -1004,6 +1009,7 @@ Faculty card start
     -moz-background-size: cover;
     -o-background-size: cover;
      background-size: cover;
+     color: 
 }
 .seminar-events::after  {
 	content:"";
@@ -1014,7 +1020,7 @@ Faculty card start
 	opacity: 0.6;
     position:absolute;
     z-index:-1;
-	background:url("/images/1.jpg") ;
+	/*background:url("/images/1.jpg") ;*/
     background-size:cover;
 
 }
@@ -1327,7 +1333,7 @@ Call to Action Box Ends
     padding-top:25px;
     padding-bottom:25px;
     position:relative;
-	background-color:#95141b;
+	background-color:rgba(27, 27, 27, 0.9);
 }
 .title-section::after {
     content:"";

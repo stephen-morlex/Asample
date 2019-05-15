@@ -35,6 +35,7 @@
     <!-- Theme Styles CSS File -->
     <link rel="stylesheet" type="text/css" href="{{ asset('/css/app.css') }}" media="all" />
     <link rel="stylesheet" type="text/css" href="{{ asset('/css/style.css') }}" media="all" />
+    
 
     <!-- Font Awesome CSS File -->
     <link href="{{ asset('css/font-awesome.min.css')}}" rel="stylesheet">
