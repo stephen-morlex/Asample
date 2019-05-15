@@ -162,7 +162,7 @@
 
                 <div class="medium-9 small-12 columns">
                 	<h2>Please fill the form below to contact us</h2>
-
+                     @include('partials.message')
                     <div class="contact-form">
 						<form action="{{ route('contact.store') }}" method="post">
 

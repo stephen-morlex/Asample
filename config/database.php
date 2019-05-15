@@ -45,10 +45,10 @@ return [
         'mysql' => array(
         'driver'    => 'mysql',
             'host'      => 'localhost',
-            'database'  => 'Cuea_db',
+            'database'  => 'dummy',
             'unix_socket'   => '/Applications/MAMP/tmp/mysql/mysql.sock',
             'username'  => 'root',
-            'password'  => 'root',
+            'password'  => '',
             'charset'   => 'utf8',
             'collation' => 'utf8_unicode_ci',
             'prefix'    => '',
