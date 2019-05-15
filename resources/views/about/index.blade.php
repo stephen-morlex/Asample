@@ -21,11 +21,11 @@
 
                     </ul><!-- Breadcrumbs /-->
                 </div><!-- Bottom Row /-->
-                
+
             </div><!-- Row /-->
         </div>
  <!-- End of the banner section -->
- 
+
     <!-- Content Area Starts -->
     <div class="content-area module faq">
      <div class="row">
@@ -115,16 +115,22 @@
             </div> <!-- right sidebar ends -->
 
             <div class="medium-3 small-12 columns">
-                <ul class="accordion" >
-                   @forelse ($abouts as $a)
-                   <li class="accordion-item {{ request()->is('about*') ? 'active' : '' }}">
-                       <a href="{{ route('about.show',$a->slug) }}" class="accordion-title">{!! $a->title !!}</a>
-                   </li>
-                   @empty
+                @foreach ($abouts as $item)
 
-                   @endforelse
-                </ul> <!-- reasons accordion ends -->
-               </div> <!-- right sidebar ends -->
+                <div class="icon-box">
+                    <div class="icon-side float-left">
+                        <i class="fa fa-book" aria-hidden="true"></i>
+                    </div><!-- icon side /-->
+                    <div class="info-side float-left">
+                        <a href="{{ route('about.show',$item->slug) }}"><p><strong>{{ $item->title }}</strong><br></a>
+                            <hr>
+                        </p>
+                    </div><!-- info side /-->
+                    <div class="clearfix"></div>
+                </div><!-- icon-box /-->
+                 @endforeach
+
+            </div> <!-- right sidebar ends -->
      </div><!-- row / -->
  </div>
  <!-- Content Area Ends /-->

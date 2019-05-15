@@ -1822,7 +1822,8 @@ Styles For Inner Pages Ends
 	padding-bottom:10px;
 }
 .widget .button, .search input[type=text] {
-	margin-bottom:0px;
+    margin-bottom:0px;
+    width: 100%;
 }
 .widget .tags li {
 	padding-left:0px;
@@ -2386,7 +2387,7 @@ Styles For Inner Pages Ends
 	position:absolute;
 	top:-13px;
 	right:50%;
-	margin-right:-20px;
+	margin-right:1rem;
 	font-size:20px;
 }
 .menu-icon.dark {
@@ -2513,7 +2514,7 @@ Styles For Inner Pages Ends
 	top:-19px;
 }
 .navigation-style-two .search-wrap a {
-	color:#174873;
+	color:#e79800;
 }
 .navigation-style-two .top-bar ul ul {
 	margin-top:10px;
@@ -2522,8 +2523,8 @@ Styles For Inner Pages Ends
 	margin-top:20px;
 }
 .menu-icon.dark:after {
-	background: #174873;
-    box-shadow: 0 7px 0 #174873,0 14px 0 #174873;
+	background: #e79800;
+    box-shadow: 0 7px 0 #e79800,0 14px 0 #e79800;
 }
 .header-new .row .small-12 {
 	margin-top:0px;

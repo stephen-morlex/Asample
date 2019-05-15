@@ -11,7 +11,11 @@
                 <li><a href="{{ route('media.index') }}">Media</a></li>
                 <li><a href="http://ir.cuea.edu/html/joomla/" target="blank">Library</a></li>
                 <li><a href="contact.html">Parents</a></li>
+<<<<<<< HEAD
                <li><a href="{{ route('contact.index') }}">Contact</a></li>
+=======
+
+>>>>>>> 4d411589b954556b7e72ae373229d27d04899dcc
 
 
 

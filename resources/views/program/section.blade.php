@@ -20,7 +20,7 @@
                      <li class="active"><a href="#">{{ $sectionName }}</a></li>
                     </ul><!-- Breadcrumbs /-->
                 </div><!-- Bottom Row /-->
-                
+
             </div><!-- Row /-->
         </div>
 
@@ -40,27 +40,27 @@
                           <div class="testimonial">
                                 <a href="{{ route('program.show',$pro->slug) }}"><span class="label success">Details</span></a>
                               <div class="testimonial-thumb">
-                                 <a href="{{ route('program.show',$pro->slug) }}"> <img src="{{ asset('images/logo.jpg') }}" alt="John Doe" /></a>
+                                 <a href="{{ route('program.show',$pro->slug) }}"> <img src="{{ Voyager::image( $pro->thumbnail('cropped'))}}" alt="John Doe" /></a>
                               </div><!-- Testimonial Thumb /-->
                               <div class="testimonial-detail">
-                                  <a href="{{ route('program.show',$pro->slug) }}"><h4>{{ $pro->name }}!</h4>
-                                  <p>{!! Markdown::convertToHtml(str_limit($pro->body,180)) !!}</p>
-                                </a>
-                                  <a href="{{ route('program.section', $pro->section->slug) }}"><cite>{{ $pro->section->name }}  program</cite></a>
-                              </div><!-- Testimonial Detail /-->
+                                <h4>{{ $pro->name }}</h4>
+                                <p>{!! str_limit($pro->body,95) !!}</p>
+                                <a href="{{ route('program.section', $pro->section->slug) }}"><cite>{{ $pro->section->name }}  program</cite></a>
+                            </div><!-- Testimonial Detail /-->
                               <div class="clearfix"></div>
                            </div> <!-- Testimonial /-->
                        </div><!-- Column Ends /-->
+
                   @empty
                           <h2>Sorry there are no programs at the moment</h2>
                   @endforelse
-
-
+<hr>
+                  {{ $programs->links() }}
 
 
                 </div><!-- testimonial wrap /-->
 
-              
+
             </div><!-- Row Ends /-->
 
         </div>
