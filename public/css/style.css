@@ -46,6 +46,8 @@ CopyRight    : 2016 @ www.webfulcreations.com
   =============================================================*/
 
 
+
+
 /*-------------------------
  01 - General CSS starts
 -------------------------*/
@@ -332,7 +334,7 @@ Top bar CSS Ends
 	margin:0px;
 	font-weight:normal;
 	z-index:9999;
-	background:#95141b;
+	background:#95141b; 
 }
 .top-bar ul .first-sub {
 	border-top:2px solid;
@@ -1155,10 +1157,14 @@ Our Process Ends
 /*-------------------------
  14 - Testimonials Starts
 -------------------------*/
-.testimonial {
+.testimonials-wrapper {
 	background-color:#f7f7f7;
+}
+.testimonial {
+	background-color: white;
 	border-radius:5px;
 	border:1px solid #ededed;
+	margin-bottom: 15%;
 }
 .testimonial .testimonial-thumb {
 	float:left;
@@ -1166,6 +1172,11 @@ Our Process Ends
 .testimonial h4 {
 	font-weight:normal;
 }
+
+.testimonials-wrapper .section-title-wrapper .section-title h2 {
+	margin-top: 5%;
+}
+
 .testimonial .testimonial-detail {
 	float:left;
 	width:calc(100% - 212px);
@@ -2353,7 +2364,7 @@ Styles For Inner Pages Ends
 .top-bar ul {
 	width:100%;
 	margin-top:10px;
-	background-color:#174873;
+	background-color: #95141b;
 }
 .top-bar ul li a {
 	padding-left:15px;
