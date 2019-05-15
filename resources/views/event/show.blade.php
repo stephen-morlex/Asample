@@ -19,7 +19,7 @@
                        <li class="active"><a href="#">{{ $event->title }}</a></li>
                     </ul><!-- Breadcrumbs /-->
                 </div><!-- Bottom Row /-->
-                
+
             </div><!-- Row /-->
         </div>
  <!-- End of the banner section -->
@@ -46,9 +46,9 @@
                         <div class="widget">
                         	<h2>{{ $event->title }}</h2>
                            	<ul class="no-bullet special-icon-margin">
-                                <li><i class="fa fa-clock-o"></i> <strong>Startind:</strong> {{ $event->start }}</li>
-                                <li><i class="fa fa-clock-o"></i> <strong>Ending:</strong> {{ $event->end }}</li>
-                            	<li><i class="fa fa-calendar"></i> <strong>Date:</strong>{{ $event->date }}</li>
+                                <li><i class="fa fa-clock-o"></i> <strong>Startind:</strong> {!!  Carbon\Carbon::parse($event->start)->format('g:i A')!!}</li>
+                                <li><i class="fa fa-clock-o"></i> <strong>Ending:</strong> {!!  Carbon\Carbon::parse($event->end)->format('g:i A') !!}</li>
+                            	<li><i class="fa fa-calendar"></i> <strong>Date:</strong>{!! Carbon\Carbon::parse($event->date)->format('d-m-Y ') !!}</li>
                             	<li><i class="fa fa-location-arrow"></i> <strong>Location:</strong> {{ $event->location }}</li>
                                 <li><i class="fa fa-phone"></i> <strong>Call:</strong> {{ $event->number }}</li>
                             </ul>

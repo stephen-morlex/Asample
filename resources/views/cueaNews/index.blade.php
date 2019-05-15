@@ -17,7 +17,7 @@
                        <li class="active"><a href="{{route('news.index')}}">News</a></li>
                     </ul><!-- Breadcrumbs /-->
                 </div><!-- Bottom Row /-->
-                
+
             </div><!-- Row /-->
         </div>
  <!-- End of the banner section -->
@@ -35,15 +35,15 @@
 
                         <div class="featured-image">
                             <a href="{{ route('news.show', $item->slug) }}">
-                                <img alt="{{ $item->title }}" src="{{ $item->image }}" class="thumbnail" />
+                                <img alt="{{ $item->title }}" src="{{Voyager::image( $item->image) }}" class="thumbnail" />
                             </a>
                         	<div class="post-meta"><i class="fa fa-clock-o" aria-hidden="true"></i> {{ $item->created_at->diffForHumans() }} | <i class="fa fa-user" aria-hidden="true"></i> Administrator</a> | <i class="fa fa-list" aria-hidden="true"></i> <a href="{{ route('news.category', $item->newsCategory->slug) }}">{{ $item->newsCategory->name }}</a></div>
                         </div>
 
-                        <h3><a href="{{ route('news.show', $item->slug) }}">{{ $item->title }}</a></h3>
+                        <h3><a href="{{ route('news.show', $item->slug) }}">{!! $item->title !!}</a></h3>
 
                         <div class="post-excerpt">
-                            <p>{{str_limit($item->content, $limit = 350, $end = '...')}} <a href="{{ route('news.show', $item->slug) }}">Read more &raquo;</a></p>
+                            {!! str_limit($item->content, $limit = 350, $end = '...')!!} <a href="{{ route('news.show', $item->slug) }}">Read more &raquo;</a>
                         </div><!-- post content ends /-->
                     </div><!-- post Ends here /-->
                     @empty

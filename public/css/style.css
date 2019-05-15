@@ -699,7 +699,7 @@ Welcome Message CSS Ends
     transition: all 0.25s ease-in;
     width: 100%;
     border:#F7f7f7 solid 2px;
-   
+
   }
 
   .timeline::before {
@@ -1009,7 +1009,7 @@ Faculty card start
     -moz-background-size: cover;
     -o-background-size: cover;
      background-size: cover;
-     color: 
+     color:
 }
 .seminar-events::after  {
 	content:"";

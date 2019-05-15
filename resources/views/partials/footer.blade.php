@@ -7,7 +7,19 @@
             <div class="large-3 medium-6 small-12 columns footer-widget">
                 <h2>About Us</h2>
                 <div class="tx-div"></div>
-                <p>We are very proud to announce that since 1986 we are spreading awesomness to our community and we have helped a lot people to shape their better future and life! I hope we are doing best we can. If you have any kind of questions please call or contact us.</p>
+                <section class="newsletter-subscribe">
+                    <div class="newsletter-subscribe-inner">
+                      <p class="subheader">Subcribe to our weekly newsletter.</p>
+                    <form action="">
+                      <div class="input-group">
+                        <input class="input-group-field" type="email" placeholder="Enter your email">
+                        <div class="input-group-button">
+                          <input type="submit" class="button secondary" value="Submit">
+                        </div>
+                      </div>
+                    </form>
+                  </section>
+
             </div><!-- Widget 1 ends /-->
 
             <div class="large-3 medium-6 small-12 columns footer-widget quick-links">
