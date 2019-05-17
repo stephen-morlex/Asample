@@ -42,7 +42,6 @@ return [
 
 
 
-<<<<<<< HEAD
         'mysql' => array(
         'driver'    => 'mysql',
             'host'      => 'localhost',
@@ -54,7 +53,6 @@ return [
             'collation' => 'utf8_unicode_ci',
             'prefix'    => '',
         ),
-=======
         // 'mysql' => array(
         // 'driver'    => 'mysql',
         //     'host'      => 'localhost',
@@ -66,7 +64,7 @@ return [
         //     'collation' => 'utf8_unicode_ci',
         //     'prefix'    => '',
         // ),
->>>>>>> 4d411589b954556b7e72ae373229d27d04899dcc
+//>>>>>>> 4d411589b954556b7e72ae373229d27d04899dcc
 
 
 
