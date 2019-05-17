@@ -4,6 +4,7 @@
 @include('partials.topNav')
 @include('layouts.mainNav')
 
+
 <!-- Banner Starts -->
 <div class="main-banner">
     <div id="rev_slider_4_1_wrapper" class="rev_slider_wrapper fullwidthbanner-container" data-alias="classicslider1">
@@ -186,6 +187,68 @@
 </div>
 <!-- Welcome Message Ends /-->
 
+
+
+
+<!-- Blog Posts -->
+<div class="blog-posts module grey-bg">
+
+    <div class="section-title-wrapper">
+        <div class="section-title">
+            <h2>Recent News</h2>
+            <p>Whats going on in our Blog?</p>
+        </div>
+    </div> <!-- Title Ends /-->
+
+    <div class="row">
+            @if (count($news)>=1)
+        <div class="posts-wrapper">
+
+
+
+            @forelse($news as $newsItem)
+            <div class="medium-4 small-12 columns">
+                <div class="post">
+                    <div class="post-thumb"
+                    data-aos="zoom-in-down"
+                    data-aos-duration="3000"
+                    >
+                        <a href="{{ route('news.show', $newsItem->slug) }}">
+                            <img src="{{ Voyager::image( $newsItem->thumbnail('cropped'))}}" alt="{{ $newsItem->image }}" />
+                        </a>
+                    </div><!-- Thumb /-->
+                    <div class="post-content"
+                     data-aos="zoom-in-up"
+                     data-aos-duration="3000">
+                        <h4><a href="{{ route('news.show', $newsItem->slug) }}">{{ $newsItem->title }}</a></h4>
+                        <div class="post-meta"><strong>Date:</strong> {{ $newsItem->created_at->diffForHumans() }} | <strong>Category:</strong> <a href="{{ route('news.category', $newsItem->newsCategory->slug) }}">{{ $newsItem->newsCategory->name }}</a> | <strong>Author:</strong> <a href="#">Administrator</a></div>
+                        <p>{!! str_limit($newsItem->content, $limit = 80, $end = '...') !!}<a href="{{ route('news.show', $newsItem->slug) }}">Read More &raquo;</a></p>
+                    </div><!-- post content /-->
+                </div><!-- Post /-->
+            </div><!-- Post column /-->
+            @empty
+
+
+            @endforelse
+
+        </div><!-- Posts Wrapper /-->
+
+        <div class="load-more text-center fixed">
+            <a href="{{ route('news.index') }}" class="button primary">See More</a>
+        </div><!-- Load more /-->
+        @else
+        <h3 align="center">No News at the moment!</h3>
+        @endif
+    </div><!-- Row Ends /-->
+
+
+</div>
+<!-- Blog Posts Ends /-->
+
+
+
+
+
 <!-- Seminar/Events -->
 <div class="seminar-events module">
 
@@ -287,60 +350,6 @@
 </div>
 <!-- Testimonials Section Ends /-->
 
-<!-- Blog Posts -->
-<div class="blog-posts module grey-bg">
-
-	<div class="section-title-wrapper">
-		<div class="section-title">
-			<h2>Recent News</h2>
-			<p>Whats going on in our Blog?</p>
-		</div>
-	</div> <!-- Title Ends /-->
-
-	<div class="row">
-            @if (count($news)>=1)
-		<div class="posts-wrapper">
-
-
-
-			@forelse($news as $newsItem)
-			<div class="medium-4 small-12 columns">
-				<div class="post">
-                    <div class="post-thumb"
-                    data-aos="zoom-in-down"
-                    data-aos-duration="3000"
-                    >
-						<a href="{{ route('news.show', $newsItem->slug) }}">
-                            <img src="{{ Voyager::image( $newsItem->thumbnail('cropped'))}}" alt="{{ $newsItem->image }}" />
-						</a>
-					</div><!-- Thumb /-->
-                    <div class="post-content"
-                     data-aos="zoom-in-up"
-                     data-aos-duration="3000">
-						<h4><a href="{{ route('news.show', $newsItem->slug) }}">{{ $newsItem->title }}</a></h4>
-						<div class="post-meta"><strong>Date:</strong> {{ $newsItem->created_at->diffForHumans() }} | <strong>Category:</strong> <a href="{{ route('news.category', $newsItem->newsCategory->slug) }}">{{ $newsItem->newsCategory->name }}</a> | <strong>Author:</strong> <a href="#">Administrator</a></div>
-						<p>{!! str_limit($newsItem->content, $limit = 80, $end = '...') !!}<a href="{{ route('news.show', $newsItem->slug) }}">Read More &raquo;</a></p>
-					</div><!-- post content /-->
-				</div><!-- Post /-->
-			</div><!-- Post column /-->
-			@empty
-
-
-			@endforelse
-
-		</div><!-- Posts Wrapper /-->
-
-		<div class="load-more text-center fixed">
-			<a href="{{ route('news.index') }}" class="button primary">See More</a>
-		</div><!-- Load more /-->
-        @else
-        <h3 align="center">No News at the moment!</h3>
-        @endif
-	</div><!-- Row Ends /-->
-
-
-</div>
-<!-- Blog Posts Ends /-->
 
 <!-- Our PArtners -->
 <div class="brands-wrap side-controls module">
