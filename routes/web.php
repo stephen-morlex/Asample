@@ -81,6 +81,10 @@ Route::get('/news/', 'NewsController@index')->name('news.index');
 Route::get('/news/{news}', 'NewsController@show')->name('news.show');
 Route::get('/news/category/{newscategory}', 'NewsController@newsCategory')->name('news.category');
 
+// Search
+Route::get('/search', 'SearchController@search')->name('search.result');
+
+
 
 Route::group(['prefix' => 'cuea'], function () {
     Voyager::routes();

@@ -9,10 +9,12 @@
             </div><!-- logo /-->
         </div><!-- left Ends /-->
         <div class="search-wrap float-right">
-            <a href="#" class="search-icon-toggle" data-toggle="search-dropdown" aria-controls="search-dropdown" data-is-focus="false" data-yeti-box="search-dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-search"></i></a>
+            <a href="#" class="search-icon-toggle" data-toggle="search-dropdown" aria-controls="search-dropdown" data-is-focus="false" data-yeti-box="search-dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-search "></i></a>
         </div><!-- search wrap ends -->
         <div class="dropdown-pane" id="search-dropdown" data-dropdown="jgqsh8-dropdown" data-auto-focus="true" aria-hidden="true" data-yeti-box="search-dropdown" data-resize="search-dropdown" aria-labelledby="fgomhf-dd-anchor" data-events="resize">
-          <input type="text" placeholder="Enter keyword and press enter .... ">
+            <form action="{{ route('search.result') }}" method="get">
+          <input type="text" name="query"  value="{{ isset($searchterm) ? $searchterm : ''  }}" placeholder="Enter keyword and press enter .... ">
+        </form>
         </div>
 
     </div><!-- Row Ends /-->
