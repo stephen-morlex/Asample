@@ -12,6 +12,8 @@
                 <li><a href="http://ir.cuea.edu/html/joomla/" target="blank">Library</a></li>
                 <li><a href="contact.html">Parents</a></li>
 
+               <li><a href="{{ route('contact.index') }}">Contact</a></li>
+
 
 
 

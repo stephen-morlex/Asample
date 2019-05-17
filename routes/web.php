@@ -71,6 +71,11 @@ Route::get('/contact/', 'ContactController@index')->name('contact.index');
 Route::post('/contact/send', 'ContactController@store')->name('contact.store');
 
 
+// APPLICATION FORM 
+Route::get('/application/', 'ApplicationController@index')->name('application.index');
+Route::post('/application/send', 'ApplicationController@store')->name('application.store');
+
+
 // MEDIA
 Route::get('/media/', 'MediaController@index')->name('media.index');
 
