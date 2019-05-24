@@ -57,16 +57,20 @@
                                 </label>
                             </div>
 
-                             <div class="medium-4 small-12 columns">
+                             <div class="medium-2 small-12 columns">
                                 <label>Do you have any disability?</label>
                                 <label>
                                     <select name="disabled">
                                         <option value="yes">Yes</option>
                                         <option value="no">No</option>
                                     </select>
-                                    <label>
-                                    <input type="text" name="disability_specification" value="{{ old('disability_specification') }}" placeholder="If Yes, specify here..." />
+                                    
                                 </label>
+                            </div>
+                            <div class="medium-2 small-12 columns">
+                            <label>
+                                <label>If yes, specify here</label>
+                                    <input type="text" name="disability_specification" value="{{ old('disability_specification') }}" placeholder="here..." />
                                 </label>
                             </div>
 
@@ -560,17 +564,22 @@
                                 </label>
                             </div>
 
-                            <div class="medium-4 small-12 columns">
-                                <label>In case you have been to CUEA before </label>
+                            <div class="medium-2 small-12 columns">
+                                <label> CUEA before </label>
                                 <label>
                                     <select name="cuea_before">
                                         <option value="yes">Bridging</option>
                                         <option value="no">Masters</option>
                                     </select>
+                                </label>
+                            </div>
+
+                                <div class="medium-2 small-12 columns">
+                                    <label>Previous number</label>
                                 <label>
-                                    <input type="text" name="reg_no" value="{{ old('regno') }}" placeholder="Your previous registration number here..." />
+                                    <input type="text" name="reg_no" value="{{ old('reg_no') }}" placeholder="here..." />
                                 </label>
-                                </label>
+                                </div>
                             </div>
 
                         </div>
