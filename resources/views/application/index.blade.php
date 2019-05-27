@@ -57,23 +57,82 @@
                                 </label>
                             </div>
 
-                             <div class="medium-2 small-12 columns">
-                                <label>Do you have any disability?</label>
+                            <div class="medium-4 small-12 columns">
+                                <label>Surname</label>
                                 <label>
-                                    <select name="disabled">
-                                        <option value="yes">Yes</option>
-                                        <option value="no">No</option>
-                                    </select>
-                                    
-                                </label>
-                            </div>
-                            <div class="medium-2 small-12 columns">
-                            <label>
-                                <label>If yes, specify here</label>
-                                    <input type="text" name="disability_specification" value="{{ old('disability_specification') }}" placeholder="here..." />
+                                    <input type="text" name="surname" value="{{ old('surname') }}" placeholder="Your surname here..." />
                                 </label>
                             </div>
 
+
+                            <div class="medium-4 small-12 columns">
+                                <label>Lastname</label>
+                                <label>
+                                    <input type="text" name="lastname" value="{{ old('lastname') }}" placeholder="Your lastname here..." />
+                                </label>
+                            </div>
+
+                        </div><!-- Row Ends /-->
+
+                        <div class="row">
+                            <div class="medium-4 small-12 columns">
+                                <label>Date of Birth</label>
+                                <label>
+                                    <input type="date" name="dob" value="{{ old('dob') }}" placeholder="Your date of birth here..." />
+                                </label>     
+                            </div>
+
+                            
+                            <div class="medium-4 small-12 columns">
+                                <label>Select your gender</label>
+                                <label>
+                                    <input type="radio" name="gender" value="female">Female<br>
+                                    <input type="radio" name="gender" value="male">Male<br>
+                                </label>
+                            </div>
+                            
+                            
+                            <div class="medium-4 small-12 columns">
+                                <label>Select your Marital stats</label>
+                                <label>
+                                    <input type="radio" name="marital_status" value="single">Single<br>
+                                    <input type="radio" name="marital_status" value="Married">Married<br>
+                                </label>
+                            </div>
+
+                            
+                        </div>
+
+
+                        <div class="row">
+
+                            <div class="medium-4 small-12 columns">
+                                <label>Email</label>
+                                <label>
+                                    <input type="email" name="email" value="{{ old('id_number') }}" placeholder="Your email here..." />
+                                </label>     
+                            </div>
+
+                              <div class="medium-4 small-12 columns">
+                                <label>Telephone</label>
+                                <label>
+                                    <input type="text" name="telephone" value="{{ old('telephone') }}" placeholder="Your Telephone number here..." />
+                                </label>
+                            </div>                          
+
+                            
+                            
+                            <div class="medium-4 small-12 columns">
+                                <label>Current Address</label>
+                                <label>
+                                    <input type="text" name="current_address" value="{{ old('address') }}" placeholder="Your current address here..." />
+                                </label>
+                            </div>
+                            
+                        </div><!-- Row Ends /-->
+
+
+                        <div class="row">
                             <div class="medium-4 small-12 columns">
                                 <label>Select your country</label>
                                 <label>
@@ -325,17 +384,16 @@
                                     </select>
                                 </label>
                             </div>
-                        </div><!-- Row Ends /-->
-
-                        <div class="row">
+                            
+                            
                             <div class="medium-4 small-12 columns">
-                                <label>Surname</label>
+                                <label>Passport or ID number</label>
                                 <label>
-                                    <input type="text" name="surname" value="{{ old('surname') }}" placeholder="Your surname here..." />
-                                </label>
+                                    <input type="text" name="id_number" value="{{ old('id_number') }}" placeholder="Your passport or id number here..." />
+                                </label>     
                             </div>
 
-                            <div class="medium-4 small-12 columns">
+                          <div class="medium-4 small-12 columns">
                                 <label>Religous Affiliation</label>
                                 <label>
                                     <select name="religion">
@@ -344,58 +402,25 @@
                                     </select>
                                 </label>
                             </div>
-
-                            <div class="medium-4 small-12 columns">
-                                <label>Passport or ID number</label>
-                                <label>
-                                    <input type="text" name="id_number" value="{{ old('id_number') }}" placeholder="Your passport or id number here..." />
-                                </label>     
-                            </div>
-                        </div>
-
-
-                        <div class="row">
-                            <div class="medium-4 small-12 columns">
-                                <label>Lastname</label>
-                                <label>
-                                    <input type="text" name="lastname" value="{{ old('lastname') }}" placeholder="Your lastname here..." />
-                                </label>
-                            </div>
-                               
-
-                               <div class="medium-4 small-12 columns">
-                                <label>Select your Marital stats</label>
-                                <label>
-                                    <input type="radio" name="marital_status" value="single">Single<br>
-                                    <input type="radio" name="marital_status" value="Married">Married<br>
-                                </label>
-                            </div>
-                            
-                            <div class="medium-4 small-12 columns">
-                                <label>Current Address</label>
-                                <label>
-                                    <input type="text" name="current_address" value="{{ old('address') }}" placeholder="Your current address here..." />
-                                </label>
-                            </div>
-                            
                         </div><!-- Row Ends /-->
-
-
+      
+ 
                         <div class="row">
-
-                            <div class="medium-4 small-12 columns">
-                                <label>Select your gender</label>
+                            
+                            <div class="medium-2 small-12 columns">
+                                <label>Do you have any disability?</label>
                                 <label>
-                                    <input type="radio" name="gender" value="female">Female<br>
-                                    <input type="radio" name="gender" value="male">Male<br>
+                                    <select name="disabled">
+                                        <option value="yes">Yes</option>
+                                        <option value="no">No</option>
+                                    </select>
+                                    
                                 </label>
                             </div>
-
-                            
-                            <div class="medium-4 small-12 columns">
-                                <label>Telephone</label>
-                                <label>
-                                    <input type="text" name="telephone" value="{{ old('telephone') }}" placeholder="Your Telephone number here..." />
+                            <div class="medium-2 small-12 columns">
+                            <label>
+                                <label>If yes, specify here</label>
+                                    <input type="text" name="disability_specification" value="{{ old('disability_specification') }}" placeholder="here..." />
                                 </label>
                             </div>
 
@@ -408,25 +433,6 @@
                                     </select>
                                 </label>
 
-                            </div>
-
-                        </div><!-- Row Ends /-->
-
-
-                        <div class="row">
-
-                            <div class="medium-4 small-12 columns">
-                                <label>Date of Birth</label>
-                                <label>
-                                    <input type="date" name="dob" value="{{ old('dob') }}" placeholder="Your date of birth here..." />
-                                </label>     
-                            </div>
-
-                            <div class="medium-4 small-12 columns">
-                                <label>Email</label>
-                                <label>
-                                    <input type="email" name="email" value="{{ old('id_number') }}" placeholder="Your email here..." />
-                                </label>     
                             </div>
 
                             <div class="medium-4 small-12 columns">
@@ -613,13 +619,14 @@
                                     <input type="text" name="sponsor_address" value="{{ old('sponsor_address') }}" placeholder="Your Sponsor's address here..." />
                                 </label>
                             </div>
-
+                            
                             <div class="medium-3 small-12 columns">
-                                <label>Sponsor's Telephone</label>
+                                <label>Sponsors Telephone</label>
                                 <label>
-                                    <input type="text" name="sponsor_telephone" value="{{ old('sponsor_telephone') }}" placeholder="Your Telephone number here..." />
+                                    <input type="text" name="sponsor_telephone" value="{{ old('sponosr_telephone') }}" placeholder="Your Sponsor's telephone here..." />
                                 </label>
                             </div>
+                            
 
                             <div class="medium-3 small-12 columns">
                                 <label>Sponsor's email</label>
