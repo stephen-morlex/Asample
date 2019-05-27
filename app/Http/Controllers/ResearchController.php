@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use App\Section;
 use App\StudentCategory;
 use App\About;
+use App\News;
+use App\Services;
 
 class ResearchController extends Controller
 {
@@ -17,13 +19,17 @@ class ResearchController extends Controller
      */
     public function index()
     {
-        $research= Research::latest()->take(1)->get();
+        $researches= Research::orderBy('id','asc')->take(1)->get();
         $ad=Section::orderBy('name','asc')->get();
         $studLife=StudentCategory::orderBy('name','asc')->get();
         $researchNav = Research::orderBy('name','asc')->get();
         $sideResearch=Research::orderBy('name','asc')->get();
         $abouts     = About::orderBy('title','asc')->get();
-        return view('research.index',compact('ad','studLife','researchNav','sideResearch','research','abouts'));
+        $newsSide =News::orderBy('view_count','desc')->take(3)->get();
+        $services1=   Services::orderBY('name','asc')->take(6)->get();
+        $services2=   Services::orderBY('name','asc')->skip(6)->take(10)->get();
+
+        return view('research.index',compact('ad','studLife','researchNav','sideResearch','researches','abouts','newsSide','services1','services2'));
     }
 
     /**
@@ -62,7 +68,11 @@ class ResearchController extends Controller
         $researchNav = Research::orderBy('name','asc')->get();
         $sideResearch=Research::orderBy('name','asc')->get();
         $abouts     = About::orderBy('title','asc')->get();
+        $newsSide =News::orderBy('view_count','desc')->take(3)->get();
         $section =Section::all();
+        $services1=   Services::orderBY('name','asc')->take(6)->get();
+        $services2=   Services::orderBY('name','asc')->skip(6)->take(10)->get();
+
         return view('research.show')->with([
             'research' => $research,
             'section' => $section,
@@ -70,7 +80,10 @@ class ResearchController extends Controller
             'ad'=>$ad,
             'researchNav'=>$researchNav,
             'sideResearch' =>$sideResearch,
-            'abouts' =>$abouts
+            'abouts' =>$abouts,
+            'newsSide' => $newsSide,
+            'services1'=>$services1,
+            'services2' => $services2
         ]);
     }
     /**

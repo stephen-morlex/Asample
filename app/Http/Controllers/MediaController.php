@@ -29,8 +29,10 @@ class MediaController extends Controller
         $abouts     = About::orderBy('title','asc')->get();
         $medias      = Media::orderBy('title', 'asc')->get();
         $researchNav = Research::orderBy('name','asc')->get();
+        $services1=   Services::orderBY('name','asc')->take(6)->get();
+        $services2=   Services::orderBY('name','asc')->skip(6)->take(10)->get();
 
-        return view('media.index', compact('sections', 'programs', 'ad', 'studLife','researchNav','abouts', 'medias'));
+        return view('media.index', compact('sections', 'programs', 'ad', 'studLife','researchNav','abouts', 'medias','services1','services2'));
     }
 
     /**

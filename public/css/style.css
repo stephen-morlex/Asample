@@ -52,14 +52,10 @@ CopyRight    : 2016 @ www.webfulcreations.com
  01 - General CSS starts
 -------------------------*/
 body {
-	font-family:'Lato', sans-serif;
-	line-height:25px;
-	font-size:0.875rem;
-	font-weight:400;
-    padding:0;
-    margin:0;
-    font-style:normal;
-	color:#5d5d5d;
+	line-height: 1.5;
+    font-family: Source Sans Pro,Helvetica Neue,Helvetica,Arial,sans-serif;
+    font-size: 1.8em;
+    color: #000;
 }
 h1, h1 a {
 	font-size:2rem;
@@ -83,7 +79,7 @@ label, p, ul, ol, a, blockquote, input, textarea, select, [type=date], [type=tex
 	color:#5d5d5d;
 }
 h1,h2,h3,h4,h5,h6, h2 a, h3 a, h4 a, h5 a, h6 a, h1 span, h2 span, h3 span, h4 span, h5 span, h6 span {
-	font-family:'Montserrat', sans-serif;
+	font-family:Source Sans Pro,Helvetica Neue,Helvetica,Arial,sans-serif;
 	font-weight:bold;
 	color:#95141b;
 }
@@ -97,7 +93,7 @@ iframe {
 .button {
 	text-transform:uppercase;
 	font-weight:bold;
-	font-family:'Montserrat', sans-serif;
+	font-family:Source Sans Pro,Helvetica Neue,Helvetica,Arial,sans-serif;;
 }
 .button.primary {
 	background-color:#f0951f;
@@ -145,6 +141,117 @@ iframe {
 General CSS Ends
 -------------------------*/
 
+/* home page gallery student life */
+
+/* End of home gallery */
+
+/* .......................
+Admission CSS
+......................... */
+
+
+.progress-indicator {
+    list-style: none;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+    display: table;
+    table-layout: fixed;
+  }
+
+  .progress-indicator > li {
+    position: relative;
+    display: table-cell;
+    text-align: center;
+    font-size: 1.5em;
+  }
+
+  .progress-indicator > li span {
+    position: relative;
+    color: #e6e6e6;
+    -webkit-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+            transform: translateX(-50%);
+    font-weight: 600;
+    font-size: 0.875rem;
+
+
+  }
+
+  .progress-indicator > li::before {
+    content: attr(data-step);
+    display: block;
+    margin: 0 auto;
+    background: #e6e6e6;
+    width: 1.5em;
+    height: 1.5em;
+    text-align: center;
+    margin-bottom: 0.25em;
+    line-height: 1.5em;
+    border-radius: 100%;
+    position: relative;
+    z-index: 1000;
+  }
+
+  .progress-indicator > li::after {
+    content: '';
+    position: absolute;
+    display: block;
+    background: #e6e6e6;
+    width: 100%;
+    height: 0.15em;
+    top: 50%;
+    -webkit-transform: translateY(-100%);
+        -ms-transform: translateY(-100%);
+            transform: translateY(-100%);
+    left: 50%;
+    margin-left: 1.5em\9;
+    z-index: 0;
+  }
+
+  .progress-indicator > li:last-child:after {
+    display: none;
+  }
+
+  .progress-indicator > li.is-complete {
+    color: #e79800;
+  }
+
+
+  .progress-indicator > li.is-complete::before, .progress-indicator > li.is-complete::after {
+    color: #fefefe;
+    background: #e79800;
+  }
+
+
+
+  .progress-indicator > li.is-complete span {
+    color: #95141b;
+  }
+
+  .progress-indicator > li.is-complete span:hover {
+    color: #e79800;
+    border-bottom: #e79800 10px;
+  }
+
+  .progress-indicator > li.is-current {
+    color: #95141b;
+  }
+
+  .progress-indicator > li.is-current::before {
+    color: #fefefe;
+    background: #95141b;
+  }
+
+  .progress-indicator > li.is-current span {
+    color: #95141b;
+  }
+
+
+
+/* .......................
+End of Admission CSS
+......................... */
 /*-------------------------
  02 - Useful Elements CSS
 -------------------------*/
@@ -314,7 +421,8 @@ Top bar CSS Ends
 	-webkit-transform:translateZ(0);
 }
 .header .logo img {
-	height:50px;
+
+	height:85px;
 	width:auto;
 }
 .search-wrap a {
@@ -334,7 +442,7 @@ Top bar CSS Ends
 	margin:0px;
 	font-weight:normal;
 	z-index:9999;
-	background:#95141b; 
+	background:#95141b;
 }
 .top-bar ul .first-sub {
 	border-top:2px solid;
@@ -348,7 +456,7 @@ Top bar CSS Ends
 }
 .top-bar {
 	position:relative;
-	font-family:'Montserrat', sans-serif;
+	font-family: Source Sans Pro,Helvetica Neue,Helvetica,Arial,sans-serif;
 }
 .top-bar ul ul {
 	padding-top:0px;
@@ -462,7 +570,7 @@ Header CSS Ends
 	margin-bottom:0px;
 	font-size:1.5rem;
 	line-height:40px;
-	font-family:'Montserrat', sans-serif;
+	font-family: Source Sans Pro,Helvetica Neue,Helvetica,Arial,sans-serif;
 	color:#e79800;
 }
 .topbar-new {
@@ -642,7 +750,7 @@ Welcome Message CSS Ends
 	padding-bottom:5px;
 	padding-left:10px;
 	padding-right:10px;
-	font-family: 'Montserrat', sans-serif;
+	font-family: Source Sans Pro,Helvetica Neue,Helvetica,Arial,sans-serif;
     font-weight: bold;
     padding: 0px 10px;
     text-transform: uppercase;
@@ -995,24 +1103,68 @@ Faculty card start
 	padding-top:80px;
 	padding-bottom:80px;
     opacity: 1;
-    background:url("/images/1.jpeg") no-repeat center center fixed;
+    background:url("/images/law.jpg") no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
      background-size: cover;
 }
+
 .why-cuea {
 	position:relative;
 	padding-top:80px;
 	padding-bottom:80px;
     opacity: 1;
-    background:url("/images/2.jpg") no-repeat center center fixed;
+    background:url("/images/cuea1.jpg") no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
      background-size: cover;
-     color:
+
 }
+.why-cuea::after {
+
+	content:"";
+    top:0;
+    left:0;
+    bottom:0;
+	right:0;
+	opacity: 0.6;
+    position:absolute;
+    z-index:-1;
+	background:url("/images/2.jpg") ;
+    background-size:cover;
+
+}
+
+/* Program seminar */
+
+.program-seminar {
+	position:relative;
+	padding-top:80px;
+	padding-bottom:80px;
+    opacity: 1;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+     background-size: cover;
+
+}
+.program-seminar::after {
+
+	content:"";
+    top:0;
+    left:0;
+    bottom:0;
+	right:0;
+	opacity: 0.6;
+    position:absolute;
+    z-index:-1;
+
+
+}
+
+/* End program seminar */
 .seminar-events::after  {
 	content:"";
     top:0;
@@ -1022,7 +1174,7 @@ Faculty card start
 	opacity: 0.6;
     position:absolute;
     z-index:-1;
-	/*background:url("/images/1.jpg") ;*/
+	background:url("/images/1.jpg") ;
     background-size:cover;
 
 }
@@ -1059,7 +1211,7 @@ Faculty card start
 	left:100%;
 	text-transform:uppercase;
 	font-weight:normal;
-	font-family:'Montserrat', sans-serif;
+	font-family:Source Sans Pro,Helvetica Neue,Helvetica,Arial,sans-serif;
 	font-size:1.5rem;
 	text-align:center;
 	color:#2f2f2f;
@@ -1113,14 +1265,14 @@ Gallery CSS Ends
 	left:0px;
 }
 .our-process h2 {
-	color:#FFF;
+
 	font-size:2.5rem;
 	text-transform:uppercase;
 	margin-bottom:40px;
 	color:#e79800;
 }
 .process h3, .process p {
-	color:#FFF;
+
 	margin-bottom:0px;
 }
 .process h3 {
@@ -1153,18 +1305,163 @@ Gallery CSS Ends
 /*-------------------------
 Our Process Ends
 -------------------------*/
+/* HOME GALLERY */
+.full {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+  }
+  .full .content {
+    background-color: rgba(0,0,0,0.75) !important;
+    height: 100%;
+    width: 100%;
+    display: grid;
+  }
+  .full .content img {
+    left: 50%;
+    transform: translate3d(0, 0, 0);
+    animation: zoomin 1s ease;
+    max-width: 100%;
+    max-height: 100%;
+    margin: auto;
+  }
+  .byebye {
+    opacity: 0;
+  }
+  .byebye:hover {
+    transform: scale(0.2) !important;
+  }
+  .gallery {
+    display: grid;
+    grid-column-gap: 8px;
+    grid-row-gap: 8px;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-auto-rows: 8px;
+  }
+  .gallery img {
+    max-width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 0 16px #333;
+    transition: all 1.5s ease;
+  }
+  .gallery img:hover {
+    box-shadow: 0 0 32px #333;
+  }
+  .gallery .content {
+    padding: 4px;
+  }
+  .gallery .gallery-item {
+    transition: grid-row-start 300ms linear;
+    transition: transform 300ms ease;
+    transition: all 0.5s ease;
+    cursor: pointer;
+  }
+  .gallery .gallery-item:hover {
+    transform: scale(1.025);
+  }
+  @media (max-width: 600px) {
+    .gallery {
+      grid-template-columns: repeat(auto-fill, minmax(30%, 1fr));
+    }
+  }
+  @media (max-width: 400px) {
+    .gallery {
+      grid-template-columns: repeat(auto-fill, minmax(50%, 1fr));
+    }
+  }
+  @-moz-keyframes zoomin {
+    0% {
+      max-width: 50%;
+      transform: rotate(-30deg);
+      filter: blur(4px);
+    }
+    30% {
+      filter: blur(4px);
+      transform: rotate(-80deg);
+    }
+    70% {
+      max-width: 50%;
+      transform: rotate(45deg);
+    }
+    100% {
+      max-width: 100%;
+      transform: rotate(0deg);
+    }
+  }
+  @-webkit-keyframes zoomin {
+    0% {
+      max-width: 50%;
+      transform: rotate(-30deg);
+      filter: blur(4px);
+    }
+    30% {
+      filter: blur(4px);
+      transform: rotate(-80deg);
+    }
+    70% {
+      max-width: 50%;
+      transform: rotate(45deg);
+    }
+    100% {
+      max-width: 100%;
+      transform: rotate(0deg);
+    }
+  }
+  @-o-keyframes zoomin {
+    0% {
+      max-width: 50%;
+      transform: rotate(-30deg);
+      filter: blur(4px);
+    }
+    30% {
+      filter: blur(4px);
+      transform: rotate(-80deg);
+    }
+    70% {
+      max-width: 50%;
+      transform: rotate(45deg);
+    }
+    100% {
+      max-width: 100%;
+      transform: rotate(0deg);
+    }
+  }
+  @keyframes zoomin {
+    0% {
+      max-width: 50%;
+      transform: rotate(-30deg);
+      filter: blur(4px);
+    }
+    30% {
+      filter: blur(4px);
+      transform: rotate(-80deg);
+    }
+    70% {
+      max-width: 50%;
+      transform: rotate(45deg);
+    }
+    100% {
+      max-width: 100%;
+      transform: rotate(0deg);
+    }
+  }
 
+
+/* END OF HOME GALLERY */
 /*-------------------------
  14 - Testimonials Starts
 -------------------------*/
 .testimonials-wrapper {
-	background-color:#f7f7f7;
+	background-color: white;
 }
 .testimonial {
 	background-color: white;
-	border-radius:5px;
-	border:1px solid #ededed;
-	margin-bottom: 15%;
+
+
+	/* margin-bottom: 15%; */
 }
 .testimonial .testimonial-thumb {
 	float:left;
@@ -1174,7 +1471,7 @@ Our Process Ends
 }
 
 .testimonials-wrapper .section-title-wrapper .section-title h2 {
-	margin-top: 5%;
+	/* margin-top: 5%; */
 }
 
 .testimonial .testimonial-detail {
@@ -1201,7 +1498,8 @@ Testimonials Ends
 .blog-posts {
 	background-color:#f7f7f7;
 	border-top:1px solid #ededed;
-	border-bottom:1px solid #ededed;
+    border-bottom:1px solid #ededed;
+    border:1px solid #ededed;
 	padding-top:80px;
 	padding-bottom:80px;
 }
@@ -1344,7 +1642,7 @@ Call to Action Box Ends
     padding-top:25px;
     padding-bottom:25px;
     position:relative;
-	background-color:rgba(27, 27, 27, 0.9);
+	background:url('/images/example.jpg');
 }
 .title-section::after {
     content:"";
@@ -1584,7 +1882,7 @@ Page Preloader Ends
 .info-side p strong {
     font-size: 18px;
 	color:#2f2f2f;
-	font-family:'Montserrat', sans-serif;
+	font-family:Source Sans Pro,Helvetica Neue,Helvetica,Arial,sans-serif;
 }
 .icon-box p {
     margin-bottom: 0px;
@@ -1711,7 +2009,8 @@ body.box {
 }
 .single-post .sharing-posts  .small-12{
   	margin-top : 0px;
-	margin-bottom: 0px;
+    margin-bottom: 0px;
+    border: #EDEDED 2px;
 }
 .author-box {
 	margin-bottom: 25px;
@@ -2089,7 +2388,7 @@ Styles For Inner Pages Ends
 }
 .accordion-title {
 	font-size:1rem;
-	font-family:'Montserrat', sans-serif;
+	font-family: Source Sans Pro,Helvetica Neue,Helvetica,Arial,sans-serif;
 	color:#2f2f2f;
 }
 /*-------------------------

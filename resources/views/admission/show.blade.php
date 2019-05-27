@@ -18,7 +18,7 @@
                        <li class="active"><a href="#">{{ $admission->name }}</a></li>
                     </ul><!-- Breadcrumbs /-->
                 </div><!-- Bottom Row /-->
-                
+
             </div><!-- Row /-->
         </div>
  <!-- End of the banner section -->
@@ -209,15 +209,16 @@
 
         <!-- Call to Action box -->
         <div class="call-to-action">
-           <div class="row">
-                <div class="medium-10 small-12 columns">
-                    <h2><i class="fa fa-phone" aria-hidden="true"></i> 	If you Have Any Questions Call Us On <span>(010)123-456-7890</span></h2>
-                </div>
-                <div class="medium-2 small-12 columns">
-                    <a href="#" class="button secondary">Appointment</a>
-                </div>
-           </div><!-- row /-->
-         </div>
+                <div class="row">
+                     <div class="medium-10 small-12 columns">
+                         <h2><i class="fa fa-phone" aria-hidden="true"></i> 	If you Have Any Questions Call Us On <span>+(254) 709-691-000</span></h2>
+                     </div>
+                     <div class="medium-2 small-12 columns">
+                         <a href="{{ route('contact.index') }}" class="button secondary">Appointment</a>
+                     </div>
+                </div><!-- row /-->
+              </div>
+
         <!-- Call to Action End /-->
 
 

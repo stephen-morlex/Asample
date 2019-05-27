@@ -10,6 +10,7 @@ use App\Section;
 use App\StudentCategory;
 use App\Research;
 use Illuminate\Support\Facades\DB;
+use App\Services;
 
 class FacultyController extends Controller
 {
@@ -25,7 +26,10 @@ class FacultyController extends Controller
         $studLife=StudentCategory::orderBy('name','asc')->get();
         $researchNav = Research::orderBy('name','asc')->get();
         $abouts     = About::orderBy('title','asc')->get();
-        return view('faculty.index',compact('faculties','ad','studLife','research','researchNav','abouts'));
+        $services1=   Services::orderBY('name','asc')->take(6)->get();
+        $services2=   Services::orderBY('name','asc')->skip(6)->take(10)->get();
+
+        return view('faculty.index',compact('faculties','ad','studLife','research','researchNav','abouts','services1','services2'));
 
     }
 
@@ -61,20 +65,18 @@ class FacultyController extends Controller
     public function show($slug)
     {
 
-            // $facultyProgram
-            // = DB::table('faculties')
-            // ->join('programs', 'faculties.id', '=', 'programs.faculty_id')
-            // ->select('programs.name')
-            // ->get();
-        // dd($facultyProgram);
+
         $faculty  = Faculty::where('slug', $slug)->firstOrFail();
-        $faculty->load('programs');
+        $section = Program::with('faculty')->where('faculty_id',$slug)->get();
+        $faculty->load('programs')->first();
         $alsoInterested = Faculty::inRandomOrder()->take(5)->get();
         $studLife=StudentCategory::orderBy('name','asc')->get();
         $ad=Section::orderBy('name','asc')->get();
         $researchNav = Research::orderBy('name','asc')->get();
         $abouts  = About::orderBy('title','asc')->get();
         $section =Section::all();
+        $services1=   Services::orderBY('name','asc')->take(6)->get();
+        $services2=   Services::orderBY('name','asc')->skip(6)->take(10)->get();
         return view('faculty.show')->with([
             'faculty'   => $faculty,
             'section'   => $section,
@@ -84,6 +86,8 @@ class FacultyController extends Controller
             'ad'=>$ad,
             'researchNav'=>$researchNav,
             'abouts' => $abouts,
+            'services1' => $services1,
+            'services2' =>$services2
             // 'facultyProgram'=> $facultyProgram
         ]);
     }

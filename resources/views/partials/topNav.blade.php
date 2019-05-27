@@ -11,9 +11,13 @@
                 <li><a href="{{ route('media.index') }}">Media</a></li>
                 <li><a href="http://ir.cuea.edu/html/joomla/" target="blank">Library</a></li>
                 <li><a href="contact.html">Parents</a></li>
-
                <li><a href="{{ route('contact.index') }}">Contact</a></li>
-
+               {{--  <div class="search-wrap float-right">
+                <a href="#" class="search-icon-toggle" data-toggle="search-dropdown"><i class="fa fa-search"></i></a>
+            </div><!-- search wrap ends -->  --}}
+            <div class="dropdown-pane" id="search-dropdown" data-dropdown data-auto-focus="true">
+              <input type="text" placeholder="Enter keyword and press enter .... " />
+            </div>
 
 
 
@@ -24,10 +28,11 @@
         <div class="large-5 medium-6 small-12 columns">
             <ul class="menu text-right">
                 <li><i class="fa fa-envelope"></i> admissions@cuea.edu</li>
-                <li class="first-social social"><a href="#"><i class="fa fa-facebook"></i></a></li>
-                <li class="social"><a href="#"><i class="fa fa-twitter"></i></a></li>
-                <li class="social"><a href="#"><i class="fa fa-instagram"></i></a></li>
-                <li class="social"><a href="#"><i class="fa fa-google"></i></a></li>
+                <li class="first-social social"><a href="https://www.facebook.com/TheCatholicUniversityOfEasternAfricaCuea?ref=bookmarks" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                <li class="social"><a href="https://twitter.com/cuea_official" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                <li class="social"><a href="https://www.instagram.com/cuea_official/"target="_blank"><i class="fa fa-instagram"></i></a></li>
+                <li class="social"><a href="#"><i class="fa fa-youtube-play" target="_blank"></i></a></li>
+                <li class="social"><a href="https://www.linkedin.com/in/the-catholic-university-of-eastern-africa-4295b3a9?trk=hp-identity-name"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
             </ul>
         </div><!-- Right column Ends /-->
 

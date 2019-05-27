@@ -8,14 +8,14 @@
             <div class="row">
 
                 <div class="small-12 columns">
-                    <h1>Programs</h1>
+                    <h1>Programms</h1>
                 </div><!-- Top Row /-->
 
                 <div class="small-12 columns">
                     <ul class="breadcrumbs">
                      <li><a href="/">Home</a></li>
                      <li class="active"><a href="">Academics</a></li>
-                     <li ><a href="#">Programs</a></li>
+                     <li ><a href="{{ route('program.index') }}">Programms</a></li>
                     </ul><!-- Breadcrumbs /-->
                 </div><!-- Bottom Row /-->
 
@@ -25,8 +25,7 @@
 <!-- End of the banner section -->
 
 <div class="content-section">
-    <br>
-    <div class="seminar-events">
+    <div class="program-seminar">
 
         <div class="row">
 
@@ -147,28 +146,30 @@
                     <h2><span>Our Programmes</span></h2>
                 </div><!-- Section Title Ends /-->
 
-          <div class="medium-9 small-12 columns test-wrap">
+          <div class="medium-12 small-12 columns test-wrap">
 
             @forelse ($programs as $pro)
 
-            <div class="medium-12 small-12 columns"
-             data-aos="zoom-out"data-aos-anchor-placement="bottom-bottom" data-aos-duration="3000"
-            >
-                </a>
-                    <div class="testimonial">
-
+            <div class="medium-8 small-12 columns" >
+                    <a href="{{ route('program.show',$pro->slug) }}">
+                    <div class="testimonial" data-aos="zoom-out"data-aos-duration="3000">
                        <a href="{{ route('program.show',$pro->slug) }}"><span class="label success">More</span></a>
                         <div class="testimonial-thumb">
                                 <a href="{{ route('program.show',$pro->slug) }}"> <img class="display:none" src="{{ Voyager::image( $pro->thumbnail('cropped'))}}" alt="{{$pro->name}}" /></a>
                         </div><!-- Testimonial Thumb /-->
+
                         <div class="testimonial-detail">
+                                <a href="{{ route('program.show',$pro->slug) }}">
                             <h4>{{ $pro->name }}</h4>
                             <p>{!! str_limit($pro->body,95) !!}</p>
                             <a href="{{ route('program.section', $pro->section->slug) }}"><cite>{{ $pro->section->name }}  program</cite></a>
+                                </a>
                         </div><!-- Testimonial Detail /-->
                         <div class="clearfix"></div>
                      </div> <!-- Testimonial /-->
+                    </a>
                  </div><!-- Column Ends /-->
+
             @empty
                     <h2>Sorry there are no programs at the moment</h2>
             @endforelse
@@ -180,21 +181,23 @@
       </div><!-- Row Ends /-->
 
   </div>
+</div>
   <!-- Content Section Ends /-->
 
 
 
   <!-- Call to Action box -->
   <div class="call-to-action">
-     <div class="row">
-          <div class="medium-10 small-12 columns">
-              <h2><i class="fa fa-phone" aria-hidden="true"></i> 	If you Have Any Questions Call Us On <span>(010)123-456-7890</span></h2>
-          </div>
-          <div class="medium-2 small-12 columns">
-              <a href="#" class="button secondary">Appointment</a>
-          </div>
-     </div><!-- row /-->
-   </div>
+        <div class="row">
+             <div class="medium-10 small-12 columns">
+                 <h2><i class="fa fa-phone" aria-hidden="true"></i> 	If you Have Any Questions Call Us On <span>+(254) 709-691-000</span></h2>
+             </div>
+             <div class="medium-2 small-12 columns">
+                 <a href="{{ route('contact.index') }}" class="button secondary">Appointment</a>
+             </div>
+        </div><!-- row /-->
+      </div>
+     <!-- Ca
   <!-- Call to Action End /-->
 
 

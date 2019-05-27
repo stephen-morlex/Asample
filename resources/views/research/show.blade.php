@@ -19,7 +19,7 @@
                        <li class="active"><a href="#">{{ $research->name }}</a></li>
                     </ul><!-- Breadcrumbs /-->
                 </div><!-- Bottom Row /-->
-                
+
             </div><!-- Row /-->
         </div>
  <!-- End of the banner section -->
@@ -34,17 +34,13 @@
 
 		<div class="single-post">
 			<div class="featured-image">
-				<a href="single-post.html">
+				<a href="{{ route('research.show',$research->slug) }}">
 					<img class="display:none" src="{{ Voyager::image( $research->image ) }}" class="thumbnail" />
 				</a>
-				<div class="post-meta">
-					<i class="fa fa-clock-o" aria-hidden="true"></i> 22 April, 2016 | 
-					<i class="fa fa-user" aria-hidden="true"></i> <a href="single-post.html">Administrator</a> | 
-					<i class="fa fa-list" aria-hidden="true"></i> <a href="#">Category</a> | 
-					<i class="fa fa-comments-o" aria-hidden="true"></i> <a href="single-post.html">2 Comments</a></div>
-			 </div>
-
-			<h3 ><a href="single-post.html">{{ $research->name }}</a></h3>
+                </div>
+                <hr>
+                <br>
+			<h3 ><a href="{{ route('research.show',$research->slug) }}">{{ $research->name }}</a></h3>
 
 			<div class="post-excerpt">
 			   {!! $research->content !!}
@@ -62,37 +58,34 @@
 			<div class="widget">
 				<h2>More about Research </h2>
 
-				<ul class="menu vertical">
+				<ol class="menu vertical">
 					@foreach ($sideResearch as $sr)
 
-					<li><a href="{{ route('research.show',$sr->slug)}}">{{ $sr->name }}</a></li>
-					<hr>
+					<li><i class="fa fa-list-ul" aria-hidden="true">
+                        <a href="{{ route('research.show',$sr->slug)}}">{{ $sr->name }}</a>
+                    </i></li>
+                        <br>
 					@endforeach
 
 
-				</ul>
+				</ol>
 			</div><!-- widget ends /-->
 
 
-			<div class="widget">
-				<h2>Popular News</h2>
 
-				 <div class="popular-post">
-					<a href="#"><strong>My new post title come out</strong></a>
-					<p><img alt="" src="images/blogthumb.jpg" class="float-left" />Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi at velit in neque efficitur vehicula. <a href="#">Read more...</a></p>
-				 </div>
+            <div class="widget">
+                    <h2>Popular News</h2>
+                    @foreach ($newsSide as $item)
 
-				 <div class="popular-post">
-					<a href="#"><strong>My new post title come out</strong></a>
-					<p><img alt="" src="images/help/blogthumb.jpg" class="float-left" />Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi at velit in neque efficitur vehicula. <a href="#">Read more...</a></p>
-				 </div>
+                     <div class="popular-post">
+                            <a href="{{ route('news.show', $item->slug) }}"><strong>{{ $item->title }}</strong></a>
+                            <p><img alt="" src="{{ Voyager::image( $item->thumbnail('small'))}}" class="float-left" />{!! str_limit($item->content, $limit = 50) !!} <a href="{{ route('news.show', $item->slug) }}">Read more...</a></p>
+                         </div>
 
-				 <div class="popular-post">
-					<a href="#"><strong>My new post title come out</strong></a>
-					<p><img alt="" src="images/help/blogthumb.jpg" class="float-left" />Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi at velit in neque efficitur vehicula. <a href="#">Read more...</a></p>
-				 </div>
+                    @endforeach
 
-			</div><!-- widget ends /-->
+
+                </div><!-- widget ends /-->
 
 		</div><!-- right bar ends here /-->
 

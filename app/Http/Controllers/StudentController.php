@@ -9,6 +9,7 @@ use App\About;
 use App\StudentCategory;
 use App\Research;
 use App\News;
+use App\Services;
 
 class StudentController extends Controller
 {
@@ -28,7 +29,10 @@ class StudentController extends Controller
         $researchNav = Research::orderBy('name','asc')->get();
         $abouts     = About::orderBy('title','asc')->get();
         $newsSide =News::orderBy('view_count','desc')->take(3)->get();
-        return view('studentLife.index',compact('ad','studentLife','studentSide','studLife','researchNav','abouts','newsSide'));
+        $services1=   Services::orderBY('name','asc')->take(6)->get();
+        $services2=   Services::orderBY('name','asc')->skip(6)->take(10)->get();
+
+        return view('studentLife.index',compact('ad','studentLife','studentSide','studLife','researchNav','abouts','newsSide','services1','services2'));
     }
 
 
@@ -43,7 +47,10 @@ class StudentController extends Controller
         $studLife=StudentCategory::orderBy('name','asc')->get();
         $researchNav = Research::orderBy('name','asc')->get();
         $abouts     = About::orderBy('title','asc')->get();
-        return view('studentLife.studentCat', compact('studLife', 'studentLife', 'sectionName','ad','studLife','researchNav','abouts'));
+        $services1=   Services::orderBY('name','asc')->take(6)->get();
+        $services2=   Services::orderBY('name','asc')->skip(6)->take(10)->get();
+
+        return view('studentLife.studentCat', compact('studLife', 'studentLife', 'sectionName','ad','studLife','researchNav','abouts','services1','services2'));
 
     }
 
@@ -83,6 +90,9 @@ class StudentController extends Controller
         $researchNav = Research::orderBy('name','asc')->get();
         $abouts     = About::orderBy('title','asc')->get();
         $newsSide =News::orderBy('view_count','desc')->take(3)->get();
+        $services1=   Services::orderBY('name','asc')->take(6)->get();
+        $services2=   Services::orderBY('name','asc')->skip(6)->take(10)->get();
+
         return view('studentLife.show')->with([
             'student' => $student,
             'ad'=>$ad,
@@ -90,7 +100,9 @@ class StudentController extends Controller
             'researchNav' =>$researchNav,
             'abouts' => $abouts,
             'studentSide' => $studentSide,
-            'newsSide'=>$newsSide
+            'newsSide'=>$newsSide,
+            'services1' => $services1,
+            'services2' => $services2
         ]);
     }
 

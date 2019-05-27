@@ -18,6 +18,7 @@ class Faculty extends Model implements Searchable
     {
         return $this->belongsTo('App\Program');
     }
+
     public function getSearchResult(): SearchResult
     {
         $url = route('faculty.show', $this->slug);

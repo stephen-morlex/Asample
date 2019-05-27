@@ -9,18 +9,18 @@
             <div class="row">
 
                 <div class="small-12 columns">
-                    <h1>Faculties, Schools and Instituate</h1>
+                    <h1>Faculties, Schools and Institute</h1>
                 </div><!-- Top Row /-->
 
                 <div class="small-12 columns">
                     <ul class="breadcrumbs">
                      <li><a href="/">Home</a></li>
                      <li class="active"><a href="">Academics</a></li>
-                     <li ><a href="#">Faculties, Schools and Instituate</a></li>
-                     <li class="active"><a href="#">{{ $faculty->name }}</a></li>
+                     <li class="active"><a href="{{ route('faculty.index') }}">Faculties, Schools and Institute</a></li>
+                     <li class="active"><a href="{{ route('faculty.show',$faculty->slug) }}">{{ $faculty->name }}</a></li>
                     </ul><!-- Breadcrumbs /-->
                 </div><!-- Bottom Row /-->
-                
+
             </div><!-- Row /-->
         </div>
 
@@ -52,12 +52,31 @@
 
         <div class="medium-3 small-12 columns sidebar">
             <div class="widget">
+                    <ul class="accordion" data-accordion data-deep-link="true" data-update-history="true" data-deep-link-smudge="true" data-deep-link-smudge-delay="500" id="deeplinked-accordion">
+                        @foreach ($section as $item)
+                            <li class="accordion-item " data-accordion-item>
+                              <a href="#deeplink1" class="accordion-title">{!! $item->name !!}</a>
+                              <div class="accordion-content" data-tab-content id="deeplink1">
+                                    @foreach ($section as $program)
+                                   <p><a href="{{route('program.show',$program->slug)}}">{!!$program->name !!} {{ $loop->last ? '.':',' }}</a></p>
+                                   <hr>
+                                    @endforeach
+                              </div>
+                            </li>
+                          @endforeach
+
+                          </ul>
+            </div>
+{{--
+            <div class="widget">
+
                 <h2>  {!!$faculty->name!!} Programmes</h2>
                 @if ($faculty->programs->count())
+
                    <ol class="menu vertical">
                     @foreach ($faculty->programs as $program)
                          <li><a href="{{route('program.show',$program->slug)}}">{!!$program->name !!} {{ $loop->last ? '.':',' }}</a></li>
-
+                        <hr>
                     @endforeach
                     @else
                     <li><a href="#">There are no programs yet !</a></li>
@@ -68,7 +87,7 @@
 
 
 
-            </div><!-- widget ends /-->
+            </div><!-- widget ends /-->  --}}
 
             <div class="widget">
                 <h2>{!! $faculty->name !!} Brochure</h2>

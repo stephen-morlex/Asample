@@ -34,6 +34,9 @@
 
     <!-- Content section -->
     <div class="content-section module">
+        <div class="row">
+                @include('partials.message')
+        </div>
     	<div class="row">
 
             <!-- Map Area -->
@@ -122,11 +125,11 @@
             <div class="content-wrapper">
 
             	<div class="medium-3 small-12 columns">
-<!--                 	<div class="contact-info">
+                	<div class="contact-info">
                     	<img src="{{ asset('images/3.jpg') }}" alt="Calling Girl" />
                     </div> -->
                     <div class="contact-info">
-                    	<h4>LANG'ATA CAMPUS</h4>
+                    	<h4>LANGATA CAMPUS</h4>
                         <p>
                             <strong>P.O. </strong>Box 62157 - 00200<br>
                             Nairobi, Kenya<br>
@@ -162,7 +165,7 @@
 
                 <div class="medium-9 small-12 columns">
                 	<h2>Please fill the form below to contact us</h2>
-                     @include('partials.message')
+
                     <div class="contact-form">
 						<form action="{{ route('contact.store') }}" method="post">
 

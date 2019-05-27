@@ -1,6 +1,5 @@
 @extends('layouts.app')
 @section('content')
-
 @include('partials.topNav')
 @include('layouts.mainNav')
 
@@ -116,7 +115,9 @@
 <!-- information boxes starts -->
 <div class="information-boxes module">
 
-	<div class="courses-info medium-4 small-12 columns">
+    <div class="courses-info medium-4 small-12 columns"
+    data-aos="fade-right" data-aos-anchor-placement="top-bottom"
+    >
 		<div class="">
 			<h3><i class="fa fa-book" aria-hidden="true"></i> Academics</h3>
 			<p>We are very happy to introduce many dynamic courses which includes many new and great features we are happy to  ...</p>
@@ -130,7 +131,9 @@
 		</div>
 	</div><!-- courses column Ends /-->
 
-	<div class="faculty-info medium-4 small-12 columns">
+    <div class="faculty-info medium-4 small-12 columns"
+    data-aos="fade-up" data-aos-anchor-placement="top-bottom"
+    >
 		<div class="">
 			<h3><i class="fa fa-users" aria-hidden="true"></i> Student Life</h3>
 			<p>We have got some best teachers available in town who can help you to polish your skills as much as you can ...</p>
@@ -144,7 +147,9 @@
 		</div>
 	</div><!-- faculty info ends /-->
 
-	<div class="newadmission-info medium-4 small-12 columns">
+    <div class="newadmission-info medium-4 small-12 columns"
+    data-aos="fade-left" data-aos-anchor-placement="top-bottom"
+    >
 		<div class="">
 			<h3><i class="fa fa-sign-in" aria-hidden="true"></i> Admission Process</h3>
 			<p>We are happy to tell you that we are accepting new admissions for the semster,get enrolled asap ...</p>
@@ -171,14 +176,21 @@
 		</div>
 		</div><!-- Left Column /-->
 
-		<div class="medium-6 small-12 columns">
-			<h2>Welcome to <span>CUEA!</span></h2>
-			<p>The Catholic University of Eastern Africa (CUEA), like most other universities, started in a modest way. It commenced as a graduate school of theology known as the Catholic Higher Institute of Eastern Africa (CHIEA).</p>
-
-			<p>The Institute (CHIEA) was founded in 1984 by the regional ecclesiastical authority known as the Association of Member Episcopal Conferences of Eastern Africa (AMECEA). Eritrea, Ethiopia, Kenya, Malawi, Sudan, Tanzania, Uganda and Zambia are the member countries of AMECEA.</p>
-
-			<p> On 2 May 1984, CHIEA was authorized by the Congregation for Catholic Education, Vatican City (cf. Prot. N. 821/80/34), to offer two-year Licentiate/MA programmes in Theology. On 3 September of the same year, it was officially inaugurated by Rt Rev. Bishop Madaldo Mazombwe, the then Chairman of AMECEA.</p>
-
+		<div class="medium-6 small-12 columns wow slideInLeft" data-wow-duration="2s" data-wow-delay="2s">
+			<h2>Why <span>CUEA!</span></h2>
+            <ul>
+                <li> Chartered Private University accredited by Commission of University Education.</li>
+                <li>  34 solid years of offering education grounded on values.</li>
+                <li>A leading regional and international University.</li>
+                <li>A leading regional and international University.</li>
+                <li> Clear learning path from Certificate, Diploma, Degree, Masters and Doctoral Courses with a high completion time rate.</li>
+                <li>  Clear learning path from Certificate, Diploma, Degree, Masters and Doctoral Courses with a high completion time rate.</li>
+                <li>  Training and examination centre for ACCA and KASNEB (CPA & CS).</li>
+                <li>Two campuses: Main campus located in Langata, Nairobi and Gaba campus located in Eldoret.</li>
+                <li>   Rich extra-curricula activities.</li>
+                <li>  Innovative and marketable graduates.</li>
+                <li> Quality and prompt research supervision for postgraduate students.  </li>
+            </ul>
 
 			<a href="about-us.html" class="primary button">More about cuea!</a>
 		</div><!-- Right Column /-->
@@ -190,13 +202,106 @@
 
 
 
+<!-- Seminar/Events -->
+<div class="seminar-events module">
+
+    <div class="row">
+        <div class="section-title-wrapper ">
+            <div class="section-title">
+                <h2>Upcoming Events</h2>
+                <h4>Our Upcoming Events Dont Miss Out!</h4>
+            </div>
+        </div> <!-- Title Ends /-->
+
+        <div class="events-wrapper">
+            @forelse ($events as $e)
+            <div class="medium-6 small-12 columns" >
+                    <div class="event">
+                        <div  class="medium-8 small-12 columns event-data "  data-aos="zoom-in-right" data-aos-duration="2000">
+                            <h4><a href="{{ route('event.show',$e->slug) }}">{!! $e->title !!}</a></h4>
+                            <p> {!!  str_limit($e->content,70) !!}</p>
+                            <p><strong>Timinings:</strong> {!!  Carbon\Carbon::parse($e->start)->format('g:i A')!!} - {!!  Carbon\Carbon::parse($e->end)->format('g:i A') !!}
+                            <p><strong>Venue:</strong> {!! $e->location !!}
+                            <strong>Date:</strong> {!! Carbon\Carbon::parse($e->date)->format('d-m-Y ') !!}</p>
+                            <a href="{{ route('event.show',$e->slug) }}" class="button primary ">Join Event</a>
+                        </div><!-- Event DAta /-->
+                        <div class="medium-4 small-12 columns event-thumb" data-aos="zoom-in-left" data-aos-duration="3000">
+                            <img src="{{ Voyager::image( $e->thumbnail('cropped'))}}" alt="{!! $e->title !!}" />
+                        </div><!-- Event thumb /-->
+                        <br>
+                        <div class="clearfix"></div>
+                    </div><!-- Event div ends /-->
+                </div><!-- Event Column Ends /-->
+
+            @empty
+
+            @endforelse
+
+        </div><!-- Events Wrapper Ends /-->
+
+    </div>
+    <!-- Row Ends /-->
+    <br>
+@if (count($events)>=1)
+<div class="load-more text-center">
+        <a href="{{ route('events.index') }}" class="button primary">More Events...</a>
+ </div>
+ @else
+ <h3 align="center" >there is no event at the moment!</h3>
+@endif
+
+</div>
+<!-- Seminar Events Ends /-->
+
+<!-- Testimonials Section /-->
+<div class="testimonials-wrapper side-controls module">
+	<div class="section-title-wrapper">
+		<div class="section-title">
+			<h2>Our Social media feeds</h2>
+			<h4>Dont miss out!</h4>
+		</div>
+	</div> <!-- Title Ends /-->
+
+	<div class="row">
+
+		<div class="testimonials">
+
+			<div class=" testimonial">
+
+				<div class="testimonial-detail">
+
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+
+    <a class="twitter-timeline" href="https://twitter.com/CUEA_OFFICIAL" data-widget-id="636436522443644928" data-theme="light" data-link-color="#660000" data-chrome="" data-border-color="">Tweets by @CUEA_OFFICIAL</a>
+
+      		</div><!-- Testimonial Detail /-->
+				<div class="clearfix"></div>
+			 </div> <!-- Testimonial /-->
+
+			<div class="testimonial" >
+                <img src="{{ asset('/images/svg/social.svg') }}" alt="Diploma" style="height:50%">
+             </div> <!-- Testimonial /-->
+
+
+		</div><!-- Testimonials /-->
+
+    </div><!-- Row /-->
+
+</div>
+<!-- Testimonials Section Ends /-->
+
+
+
+
+
 <!-- Blog Posts -->
-<div class="blog-posts module grey-bg">
+<div class="why-cuea">
 
     <div class="section-title-wrapper">
         <div class="section-title">
             <h2>Recent News</h2>
-            <p>Whats going on in our Blog?</p>
+            <h4>Whats going on in our Blog?</h4>
         </div>
     </div> <!-- Title Ends /-->
 
@@ -245,110 +350,51 @@
 </div>
 <!-- Blog Posts Ends /-->
 
-
-
-
-
-<!-- Seminar/Events -->
-<div class="seminar-events module">
-
-    <div class="row">
-        <div class="section-title-wrapper light-title">
+<div class="blog-posts module grey-bg">
+        <div class="section-title-wrapper">
             <div class="section-title">
-                <h2>Upcoming Events</h2>
-                <p>Our Upcoming Events Dont Miss Out!</p>
+                <h2>Campus Gallery</h2>
             </div>
-        </div> <!-- Title Ends /-->
+                  </div> <!-- Title Ends /-->
 
-        <div class="events-wrapper">
-            @forelse ($events as $e)
-            <div class="medium-6 small-12 columns" >
-                    <div class="event">
-                        <div  class="medium-8 small-12 columns event-data "  data-aos="zoom-in-right" data-aos-duration="2000">
-                            <h4><a href="{{ route('event.show',$e->slug) }}">{!! $e->title !!}</a></h4>
-                            <p> {!!  str_limit($e->content,70) !!}</p>
-                            <p><strong>Timinings:</strong> {!!  Carbon\Carbon::parse($e->start)->format('g:i A')!!} - {!!  Carbon\Carbon::parse($e->end)->format('g:i A') !!}
-                            <p><strong>Venue:</strong> {!! $e->location !!}
-                            <strong>Date:</strong> {!! Carbon\Carbon::parse($e->date)->format('d-m-Y ') !!}</p>
-                            <a href="{{ route('event.show',$e->slug) }}" class="button primary ">Join Event</a>
-                        </div><!-- Event DAta /-->
-                        <div class="medium-4 small-12 columns event-thumb" data-aos="zoom-in-left" data-aos-duration="3000">
-                            <img src="{{ Voyager::image( $e->thumbnail('cropped'))}}" alt="{!! $e->title !!}" />
-                        </div><!-- Event thumb /-->
-                        <br>
-                        <div class="clearfix"></div>
-                    </div><!-- Event div ends /-->
-                </div><!-- Event Column Ends /-->
+                <div class="gallery" id="gallery">
+                        <div class="gallery-item">
+                            <div class="content"><img src="{{ asset('/images/1.jpg') }}" alt=""></div>
+                        </div>
+                        <div class="gallery-item">
+                            <div class="content"><img src="{{ asset('/images/cuea.jpg') }}" alt=""></div>
+                        </div>
+                        <div class="gallery-item">
+                            <div class="content"><img src="{{ asset('/images/law.jpg') }}" alt=""></div>
+                        </div>
+                        <div class="gallery-item">
+                            <div class="content"><img src="{{ asset('/images/cuea1.jpg') }}" alt=""></div>
+                        </div>
+                        <div class="gallery-item">
+                            <div class="content"><img src="{{ asset('/images/whycuea.jpg') }}" alt=""></div>
+                        </div>
+                        <div class="gallery-item">
+                            <div class="content"><img src="{{ asset('/images/cueatest.jpeg') }}" alt=""></div>
+                        </div>
+                        <div class="gallery-item">
+                            <div class="content"><img src="{{ asset('/images/book.jpg') }}" alt=""></div>
+                        </div>
+                        <div class="gallery-item">
+                            <div class="content"><img src="https://source.unsplash.com/random/?tech,eight" alt=""></div>
+                        </div>
+                        <div class="gallery-item">
+                            <div class="content"><img src="https://source.unsplash.com/random/?tech,crew" alt=""></div>
+                        </div>
+                        <div class="gallery-item">
+                            <div class="content"><img src="https://source.unsplash.com/random/?tech,event" alt=""></div>
+                        </div>
 
-            @empty
+                    </div>
 
-            @endforelse
 
-        </div><!-- Events Wrapper Ends /-->
 
     </div>
-    <!-- Row Ends /-->
-    <br>
-@if (count($events)>=1)
-<div class="load-more text-center">
-        <a href="{{ route('events.index') }}" class="button primary">More Events...</a>
- </div>
- @else
- <h3 align="center" >there is no event at the moment!</h3>
-@endif
 
-
-</div>
-<!-- Seminar Events Ends /-->
-
-
-<!-- Process/Testimonials -->
-
-<!-- Seminar Events Ends /-->
-
-<!-- Testimonials Section /-->
-<div class="testimonials-wrapper side-controls module">
-	<div class="section-title-wrapper">
-		<div class="section-title">
-			<h2>Our Testimonials</h2>
-			<p>What Parents Say About Us?</p>
-		</div>
-	</div> <!-- Title Ends /-->
-
-	<div class="row">
-
-		<div class="testimonials">
-
-			<div class="testimonial">
-				<div class="testimonial-thumb">
-					<img src="images/first_testimonial.jpg" alt="John Doe" />
-				</div><!-- Testimonial Thumb /-->
-				<div class="testimonial-detail">
-					<h4>Very happy to find this institute!</h4>
-					<p>After graduation we were very worried about our children what he will do as he does not have any work experience but when he joined this abc institute this he became so professional!</p>
-					<cite>Maria Doe</cite>
-				</div><!-- Testimonial Detail /-->
-				<div class="clearfix"></div>
-			 </div> <!-- Testimonial /-->
-
-			<div class="testimonial">
-				<div class="testimonial-thumb">
-					<img src="images/first_testimonial2.jpg" alt="John Doe" />
-				</div><!-- Testimonial Thumb /-->
-				<div class="testimonial-detail">
-					<h4>Very happy to find this institute!</h4>
-					<p>After graduation we were very worried about our children what he will do as he does not have any work experience but when he joined this abc institute this he became so professional!</p>
-					<cite>Maria Doe</cite>
-				</div><!-- Testimonial Detail /-->
-				<div class="clearfix"></div>
-			 </div> <!-- Testimonial /-->
-
-		</div><!-- Testimonials /-->
-
-	</div><!-- Row /-->
-
-</div>
-<!-- Testimonials Section Ends /-->
 
 
 <!-- Our PArtners -->
@@ -356,7 +402,7 @@
 	<div class="section-title-wrapper">
 		<div class="section-title">
 			<h2>Our Partners</h2>
-			<p>We are proudly partner with following Companies</p>
+			<h4>We are proudly partner with following Companies</h4>
 		</div>
 	</div> <!-- Title Ends /-->
 
@@ -400,5 +446,41 @@
 <!-- Call to Action End /-->
 @include('partials.footer')
 
+<script>
+        var gallery = document.querySelector('#gallery');
+        var getVal = function (elem, style) { return parseInt(window.getComputedStyle(elem).getPropertyValue(style)); };
+        var getHeight = function (item) { return item.querySelector('.content').getBoundingClientRect().height; };
+        var resizeAll = function () {
+            var altura = getVal(gallery, 'grid-auto-rows');
+            var gap = getVal(gallery, 'grid-row-gap');
+            gallery.querySelectorAll('.gallery-item').forEach(function (item) {
+                var el = item;
+                el.style.gridRowEnd = "span " + Math.ceil((getHeight(item) + gap) / (altura + gap));
+            });
+        };
+        gallery.querySelectorAll('img').forEach(function (item) {
+            item.classList.add('byebye');
+            if (item.complete) {
+                console.log(item.src);
+            }
+            else {
+                item.addEventListener('load', function () {
+                    var altura = getVal(gallery, 'grid-auto-rows');
+                    var gap = getVal(gallery, 'grid-row-gap');
+                    var gitem = item.parentElement.parentElement;
+                    gitem.style.gridRowEnd = "span " + Math.ceil((getHeight(gitem) + gap) / (altura + gap));
+                    item.classList.remove('byebye');
+                });
+            }
+        });
+        window.addEventListener('resize', resizeAll);
+        gallery.querySelectorAll('.gallery-item').forEach(function (item) {
+            item.addEventListener('click', function () {
+                item.classList.toggle('full');
+            });
+        });
+
+</script>
 @endsection
+
 

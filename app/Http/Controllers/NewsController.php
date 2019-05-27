@@ -11,8 +11,7 @@ use App\StudentCategory;
 use App\Contact;
 use App\Research;
 use App\NewsCategory;
-
-
+use App\Services;
 
 class NewsController extends Controller
 {
@@ -32,8 +31,10 @@ class NewsController extends Controller
         $news        = News::latest()->get();
         $researchNav = Research::orderBy('name','asc')->get();
         $newsCategories = NewsCategory::latest()->get();
+        $services1=   Services::orderBY('name','asc')->take(6)->get();
+        $services2=   Services::orderBY('name','asc')->skip(6)->take(10)->get();
 
-        return view('cueaNews.index', compact('sections', 'programs', 'ad', 'studLife','researchNav','abouts', 'news', 'newsCategories'));
+        return view('cueaNews.index', compact('sections', 'programs', 'ad', 'studLife','researchNav','abouts', 'news', 'newsCategories','services1','services2'));
     }
 
 
@@ -49,8 +50,10 @@ class NewsController extends Controller
         $news        = News::latest()->get();
         $researchNav = Research::orderBy('name','asc')->get();
         $newsCategories = newsCategory::latest()->get();
+        $services1=   Services::orderBY('name','asc')->take(6)->get();
+        $services2=   Services::orderBY('name','asc')->skip(6)->take(10)->get();
 
-        return view('cueaNews.index', compact('sections', 'programs', 'ad', 'studLife','researchNav','abouts', 'news', 'newsCategories'));
+        return view('cueaNews.index', compact('sections', 'programs', 'ad', 'studLife','researchNav','abouts', 'news', 'newsCategories','services1','services2'));
     }
     /**
      * Show the form for creating a new resource.
@@ -92,6 +95,8 @@ class NewsController extends Controller
         $news        = News::latest()->get();
         $researchNav = Research::orderBy('name','asc')->get();
         $newsCategories = newsCategory::latest()->get();
+        $services1=   Services::orderBY('name','asc')->take(6)->get();
+        $services2=   Services::orderBY('name','asc')->skip(6)->take(10)->get();
 
         return view('cueaNews.show')->with([
             'newsItem'    => $newsItem,
@@ -102,7 +107,9 @@ class NewsController extends Controller
             'abouts'      =>$abouts,
             'news'        => $news,
             'researchNav' => $researchNav,
-            'newsCategories' => $newsCategories
+            'newsCategories' => $newsCategories,
+            'services1' =>$services1,
+            'services2'=>$services2
         ]);
     }
 
