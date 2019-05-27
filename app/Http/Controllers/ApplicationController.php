@@ -12,6 +12,7 @@ use App\Section;
 use App\StudentCategory;
 use App\Research;
 use App\About;
+use App\Services;
 
 class ApplicationController extends Controller
 {
@@ -30,7 +31,9 @@ class ApplicationController extends Controller
         $religion   = Religion::orderBy('name','asc')->get();
         $researchNav = Research::orderBy('name','asc')->get();
         $abouts     = About::orderBy('title','asc')->get();
-        return view('application.index',compact('sections','ad','studLife','faculties','program','religion','researchNav','abouts'));
+        $services1=   Services::orderBY('name','asc')->take(6)->get();
+        $services2=   Services::orderBY('name','asc')->skip(6)->take(10)->get();
+        return view('application.index',compact('sections','ad','studLife','faculties','program','religion','researchNav','abouts','services1','services2'));
 
     }
 
@@ -95,7 +98,7 @@ class ApplicationController extends Controller
 
         Applicant::create($request->all());
 
-      
+
         Session::flash('success','thanks for Applying to Catholic University of Eastern Africa');
         return redirect()->back();
 
@@ -104,23 +107,27 @@ class ApplicationController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  string  $slug
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($slug)
     {
-        
+
         $admission = Section::with('admission')->where('slug', $slug)->firstOrFail();
         $ad=Section::orderBy('name','asc')->get();
         $studLife=StudentCategory::orderBy('name','asc')->get();
         $researchNav = Research::orderBy('name','asc')->get();
         $abouts   = About::orderBy('title','asc')->get();
+        $services1=   Services::orderBY('name','asc')->take(6)->get();
+        $services2=   Services::orderBY('name','asc')->skip(6)->take(10)->get();
         return view('admission.show')->with([
             'admission' => $admission,
             'ad'=>$ad,
             'studLife'=>$studLife,
             'researchNav' => $researchNav,
-            'abouts'    => $abouts
+            'abouts'    => $abouts,
+            'services1' => $services1,
+            'services2'=>$services2
         ]);
     }
 
