@@ -71,6 +71,11 @@ Route::get('/contact/', 'ContactController@index')->name('contact.index');
 Route::post('/contact/send', 'ContactController@store')->name('contact.store');
 
 
+// APPLICATION FORM 
+Route::get('/application/', 'ApplicationController@index')->name('application.index');
+Route::post('/application/send', 'ApplicationController@store')->name('application.store');
+
+
 // MEDIA
 Route::get('/gallery/', 'GalleryController@index')->name('gallery.index');
 
@@ -80,6 +85,10 @@ Route::get('/gallery/', 'GalleryController@index')->name('gallery.index');
 Route::get('/news/', 'NewsController@index')->name('news.index');
 Route::get('/news/{news}', 'NewsController@show')->name('news.show');
 Route::get('/news/category/{newscategory}', 'NewsController@newsCategory')->name('news.category');
+
+// Search
+Route::get('/search', 'SearchController@search')->name('search.result');
+
 
 
 Route::group(['prefix' => 'cuea'], function () {

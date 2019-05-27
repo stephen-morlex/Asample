@@ -10,93 +10,58 @@
 			<div class="row">
 
 				<div class="small-12 columns">
-					<h1>Faculties, Schools and Instituate</h1>
+					<h1>Faculties, Schools and Institute</h1>
 				</div><!-- Top Row /-->
 
 				<div class="small-12 columns">
 					<ul class="breadcrumbs">
 						 <li class="active"><a href="/">Home</a></li>
 						 <li class="active"><a href="">Academics</a></li>
-			  			<li class="active"><a href="#">Faculties, Schools and Instituate</a></li>
+			  			<li class="active"><a href="{{ route('faculty.index') }}">Faculties, Schools and Institute</a></li>
 					</ul><!-- Breadcrumbs /-->
 				</div><!-- Bottom Row /-->
-				
+
 			</div><!-- Row /-->
 		</div>
 
 <!-- End of the banner section -->
 
-		  <!-- Content section -->
-		  <div class="content-section course-page">
-				<!-- Seminar/Events -->
-				<div class="module">
-					<div class="row">
+<div class="content-section module single-products-page products-page">
 
-						<div class="courses-wrapper">
+    <!-- Content Section Ends /-->
 
-							<div class="course-section">
+    <!-- Related Products -->
 
-							   <!--  <div class="section-title">
-									<h2><span>Faculties, Schools & Institutes</span></h2>
-								</div> -->
+        <div class="row">
 
-									@forelse ($faculties as $fa)
+            <div class="products-wrap">
+            @forelse ($faculties as $service)
+                <div class="medium-4 small-12 columns">
+                    <div class="single-product"
+                     data-aos="zoom-in-up"  data-aos-duration="3000"
+                    >
+                        <div class="product-img thumbnail">
+                            <a href="{{route('faculty.show',$service->slug)}}">
+                                <img   class="front-image" src="{{ Voyager::image( $service->thumbnail('cropped'))}}">
+                            </a>
+                            <div class="add-to-cart-top">
+                                    <a href="{{route('faculty.show',$service->slug)}}" class="button primary">{{$service->name}}</a>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h6><a href="{{route('faculty.show',$service->slug)}}">{{$service->name}}</a></h6>
+                           <div class="tx-div"></div>
+                        </div>
+                    </div>
+                </div><!-- product Ends here -->
+            @empty
+                <h4 align="center">There is no services at moment!</h4>
+            @endforelse
 
-									<!-- <div class="medium-6 small-12 columns">
+            </div><!-- products wrap -->
 
-										<div class="course">
-
-											<div class="course-thumb animated zoomInRight delay-1s">
-												<a href="{{ route('faculty.show', $fa->slug) }}">
-												<img src="{{ Voyager::image($fa->image) }}" alt="{{ $fa->name }}" title="{{ $fa->name }}" />
-												 </a>
-											</div>
-											<h3>{{ Str::limit($fa->name) }}</h3>
-										 <a  class="middle" href="{{ route('faculty.show',$fa->slug) }}" class="secondary button">More About {{ Str::limit($fa->name,50) }}</a>
-									  <br>
-										</div><br>
-									</div> -->
-
-
-									<div class="medium-3 small-12 columns">
-									  <div class="single-product">
-										  <div class="product-img thumbnail" data-aos="fade-up"data-aos-anchor-placement="bottom-bottom" data-aos-duration="2000">
-											  <a href="{{ route('faculty.show', $fa->slug) }}">
-												  <img   class="front-image" src="{{ Voyager::image($fa->image) }}" alt="{{ $fa->name }}">
-											  </a>
-											  <div class="add-to-cart-top" >
-													  <a href="{{ route('faculty.show', $fa->slug) }}" class="button primary">{{$fa->name}}</a>
-											  </div>
-										  </div>
-										  <div class="product-info" data-aos="zoom-in"data-aos-anchor-placement="bottom-bottom" data-aos-duration="3000">
-											  <h6><a href="{{ route('faculty.show', $fa->slug) }}">{{$fa->name}}</a></h6>
-											 <div class="tx-div"></div>
-										  </div>
-									  </div>
-								  </div><!-- product Ends here -->
-
-
-
-									@empty
-											<h3> There is no faculties uploaded yet.</h3>
-									@endforelse
-
-
-								<div class="clearfix"></div>
-							</div><!-- Courses Section Ends /-->
-
-						</div><!-- Events Wrapper Ends /-->
-
-					</div><!-- Row Ends /-->
-				</div>
-				<!-- Seminar Events Ends /-->
-
-			</div>
-			<!-- Content Section Ends /-->
-
-
-
-
+        </div><!-- Row Ends -->
+    </div>
 
 		<!-- Call to Action box -->
 		<div class="call-to-action">

@@ -23,28 +23,22 @@
             </div><!-- Widget 1 ends /-->
 
             <div class="large-3 medium-6 small-12 columns footer-widget quick-links">
-                <h2>Quick Links</h2>
+                <h2>Useful Information</h2>
                 <div class="tx-div"></div>
                 <ul  class="menu vertical">
-                    <li><a href="courses.html">Jobs@Cuea</a></li>
-                    <li><a href="courses.html">Call for papers</a></li>
-                    <li><a href="courses.html">Scholarships</a></li>
-                    <li><a href="courses.html">Quality Assurance</a></li>
-                    <li><a href="courses.html">Student Life</a></li>
-                    <li><a href="courses.html">Upcoming Events</a></li>
+                                @foreach ($services1 as $item)
+                                <li><a href="{{ route('services.show',$item->slug) }}"> {{ $item->name }}</a></li>
+                                @endforeach
                 </ul>
                 <ul  class="menu vertical">
-                    <li><a href="courses.html">Students</a></li>
-                    <li><a href="courses.html">College</a></li>
-                    <li><a href="courses.html">Transport</a></li>
-                    <li><a href="courses.html">Principle</a></li>
-                    <li><a href="courses.html">Policy</a></li>
-                    <li><a href="courses.html">Terms & Conditions</a></li>
+                        @foreach ($services2 as $item)
+                        <li><a href="{{ route('services.show',$item->slug) }}"> {{ $item->name }}</a></li>
+                        @endforeach
                 </ul>
             </div><!-- Widget 2 Ends /-->
 
             <div class="large-3 medium-6 small-12 columns footer-widget">
-                <h2>Useful Information</h2>
+                <h2>Quick Links</h2>
                 <div class="tx-div"></div>
                 <ul class="vertical office-hours">
                     <li><a href="http://"> Academice Support Service</a></li>
@@ -80,9 +74,9 @@
                 <hr>
                 <div class="socialicons">
                     Social:
-                    <a href="#"><i class="fa fa-facebook"></i></a>
-                    <a href="#"><i class="fa fa-twitter"></i></a>
-                    <a href="#"><i class="fa fa-google"></i></a>
+                    <a target="_blank" href="https://www.facebook.com/TheCatholicUniversityOfEasternAfricaCuea?ref=bookmarks"><i class="fa fa-facebook"></i></a>
+                    <a  target="_blank" href="https://twitter.com/cuea_official"><i class="fa fa-twitter"></i></a>
+                    <a target="_blank" href="#"><i class="fa fa-youtube-play"></i></a>
                 </div><!-- Social Icons /-->
             </div><!-- text widget /-->
         </div><!-- widget 4 /-->
@@ -97,16 +91,16 @@
         <div class="row">
 
             <div class="medium-6 small-12 columns">
-                <div class="copyrightinfo">2019 &copy; <a href="#">Catholic University of Eastern Africa.</a> All Rights Reserved.</div>
+                <div class="copyrightinfo"><?php echo date("Y"); ?> &copy; <a href="/">Catholic University of Eastern Africa.</a> All Rights Reserved.</div>
             </div><!-- left side /-->
             <div class="medium-6 small-12 columns hide-for-small-only">
                 <div class="pull-right">
                     <ul class="menu">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about-us.html">About</a></li>
-                        <li><a href="blog1.html">News</a></li>
-                        <li><a href="services.html">Services</a></li>
-                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="{{ route('about.index') }}">About</a></li>
+                        <li><a href="{{ route('news.index') }}">News</a></li>
+                        <li><a href="{{ route('services.index') }}">Services</a></li>
+                        <li><a href="{{ route('contact.index') }}">Contact Us</a></li>
                     </ul>
                 </div>
             </div><!-- Right Side /-->

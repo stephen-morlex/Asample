@@ -102,7 +102,7 @@
                                     <li><a href="single-post.html">Single Post</a></li>
                                 </ul>
                             </li> -->
-                            <li><a href="contact.html">Contact us</a></li>
+                            <li><a href="{{ route('contact.index') }}">Contact us</a></li>
                         </ul>
                 	</nav>
                 </div><!-- top-bar Ends -->

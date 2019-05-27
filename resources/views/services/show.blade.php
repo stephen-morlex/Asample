@@ -19,7 +19,7 @@
                         <li class="active"><a href="{{ route('services.show',$service->slug) }}">{{ $service->name }}</a></li>
                     </ul><!-- Breadcrumbs /-->
                 </div><!-- Bottom Row /-->
-                
+
             </div><!-- Row /-->
         </div>
 
@@ -59,15 +59,14 @@
             <div class="widget">
                 <h2>More student services</h2>
 
-                <ul class="menu vertical">
+                <ol class="menu vertical">
                     @foreach ($sideServices as $sr)
-
-                    <li><a href="{{ route('services.show',$sr->slug)}}">{{ $sr->name }}</a></li>
-                    <hr>
+                    <li><i class="fa fa-list-ul" aria-hidden="true">
+                        <a href="{{ route('services.show',$sr->slug)}}">{{ $sr->name }}</a>
+                    </i></li>
+                    <br>
                     @endforeach
-
-
-                </ul>
+                </ol>
             </div><!-- widget ends /-->
 
 

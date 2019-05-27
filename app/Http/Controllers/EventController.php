@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use App\Research;
 use App\StudentCategory;
 use App\Section;
+use App\Services;
 
 class EventController extends Controller
 {
@@ -24,7 +25,9 @@ class EventController extends Controller
         $studLife=StudentCategory::orderBy('name','asc')->get();
         $researchNav = Research::orderBy('name','asc')->get();
         $abouts     = About::orderBy('title','asc')->get();
-        return view('event.index',compact('events','researchNav','ad','studLife','abouts'));
+        $services1=   Services::orderBY('name','asc')->take(6)->get();
+        $services2=   Services::orderBY('name','asc')->skip(6)->take(10)->get();
+        return view('event.index',compact('events','researchNav','ad','studLife','abouts','services1','services2'));
     }
 
     /**
@@ -61,13 +64,17 @@ class EventController extends Controller
         $studLife=StudentCategory::orderBy('name','asc')->get();
         $researchNav = Research::orderBy('name','asc')->get();
         $abouts     = About::orderBy('title','asc')->get();
+        $services1=   Services::orderBY('name','asc')->take(6)->get();
+        $services2=   Services::orderBY('name','asc')->skip(6)->take(10)->get();
 
         return view('event.show')->with([
             'event' => $event,
             'researchNav'=>$researchNav,
             'ad'=>$ad,
             'studLife' =>$studLife,
-            'abouts'=> $abouts
+            'abouts'=> $abouts,
+            'services1' =>$services1,
+            'services2' =>$services2
         ]);
     }
 

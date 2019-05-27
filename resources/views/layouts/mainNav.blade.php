@@ -1,19 +1,28 @@
-<div class="header header-new">
+ <div class="header header-new">
     <div class="row">
 
-        <div class="medium-4 small-12 columns">
+        <div class="medium-7 small-12 columns">
             <div class="logo">
                 <a href="/">
-                    <img src="/images/s5_logo.png" alt="Webful Education">
+                    <img src="/images/logo2.png" alt="Webful Education">
                 </a>
             </div><!-- logo /-->
         </div><!-- left Ends /-->
-        <div class="search-wrap float-right">
-            <a href="#" class="search-icon-toggle" data-toggle="search-dropdown" aria-controls="search-dropdown" data-is-focus="false" data-yeti-box="search-dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-search"></i></a>
-        </div><!-- search wrap ends -->
-        <div class="dropdown-pane" id="search-dropdown" data-dropdown="jgqsh8-dropdown" data-auto-focus="true" aria-hidden="true" data-yeti-box="search-dropdown" data-resize="search-dropdown" aria-labelledby="fgomhf-dd-anchor" data-events="resize">
-          <input type="text" placeholder="Enter keyword and press enter .... ">
-        </div>
+        <div class="medium-5 small-12 columns">
+            <section class="newsletter-subscribe">
+                <div class="newsletter-subscribe-inner">
+                <form action="{{ route('search.result') }}" method="GET">
+                    @csrf
+                  <div class="input-group">
+                    <input class="input-group-field" type="text" name="query" placeholder="Searching...">
+                    <div class="input-group-button">
+                      <input type="submit" class=" primary button" value="Submit">
+                    </div>
+                  </div>
+                </form>
+              </section>
+
+            </div>
 
     </div><!-- Row Ends /-->
 </div>
@@ -53,14 +62,14 @@
                         </ul>
                     </li>
                     <li class="single-sub parent-nav">
-                        <a href="{{ route('student.index') }}">StudentLife</a>
+                        <a href="{{ route('student.index') }}">Student Life</a>
                         <ul class="child-nav menu vertical">
                                 @foreach ($studLife as $sl)
                                     <li><a href="{{ route('student.cat', $sl->slug) }}">{{ $sl->name }}</a></li>
                                 @endforeach
                         </ul>
                     </li>
-                    <li class="single-sub parent-nav"><a href="{{ route('about.index') }}">About</a>
+                    <li class="single-sub parent-nav"><a href="{{ route('about.index') }}">About Cuea</a>
                         <ul class="child-nav menu vertical">
                             @foreach ($abouts as $about)
                                 <li><a href="{{ route('about.show', $about->slug) }}">{{ $about->title }}</a></li>
@@ -75,10 +84,11 @@
                                 <li><a href="https://www.premiercert.org/cuea/">Degree verification</a></li>
                             </ul>
                      </li>
-                     <li class="single-sub parent-nav"><a href="{{ route('contact.index') }}">Contact</a></li>
+
             </nav>
         </div><!-- top-bar Ends -->
         <!-- Navigation Code Ends here -->
 
     </div><!-- right Ends /-->
 </div>
+

@@ -16,7 +16,7 @@
                     <ul class="breadcrumbs">
                      <li><a href="/">Home</a></li>
                      <li class="active"><a href="">Academics</a></li>
-                     <li ><a href="{{route('program.index')}}">Programs</a></li>
+                     <li ><a href="{{route('program.index')}}">Programms</a></li>
                      <li class="active"><a href="#">{{ $sectionName }}</a></li>
                     </ul><!-- Breadcrumbs /-->
                 </div><!-- Bottom Row /-->

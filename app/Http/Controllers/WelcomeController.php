@@ -11,6 +11,7 @@ use App\carousel;
 use App\Partner;
 use App\Event;
 use App\News;
+use App\Services;
 
 class WelcomeController extends Controller
 {
@@ -30,6 +31,8 @@ class WelcomeController extends Controller
         $studLife   = StudentCategory::orderBy('name','asc')->get();
         $partner    = Partner::orderBy('name', 'asc')->get();
         $news       = News::latest()->take(3)->get();
+        $services1=   Services::orderBY('name','asc')->take(6)->get();
+        $services2=   Services::orderBY('name','asc')->skip(6)->take(10)->get();
 
 
         return view('welcome',compact(
@@ -41,7 +44,9 @@ class WelcomeController extends Controller
             'researchNav',
             'events',
             'news',
-            'partner'
+            'partner',
+            'services1',
+            'services2'
         ));
     }
 

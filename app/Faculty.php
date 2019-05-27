@@ -4,7 +4,9 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use TCG\Voyager\Traits\Resizable;
-class Faculty extends Model
+use Spatie\Searchable\Searchable;
+use Spatie\Searchable\SearchResult;
+class Faculty extends Model implements Searchable
 {
     protected $guarded = [];
     use Resizable;
@@ -15,5 +17,16 @@ class Faculty extends Model
     public function pro()
     {
         return $this->belongsTo('App\Program');
+    }
+
+    public function getSearchResult(): SearchResult
+    {
+        $url = route('faculty.show', $this->slug);
+
+        return new SearchResult(
+            $this,
+            $this->name,
+            $url
+        );
     }
 }

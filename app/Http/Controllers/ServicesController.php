@@ -23,7 +23,10 @@ class ServicesController extends Controller
         $studLife=StudentCategory::orderBy('name','asc')->get();
         $researchNav = Research::orderBy('name','asc')->get();
         $abouts     = About::orderBy('title','asc')->get();
-        return view('services.index',compact('ad','studLife','researchNav','services','abouts'));
+        $services1=   Services::orderBY('name','asc')->take(6)->get();
+        $services2=   Services::orderBY('name','asc')->skip(6)->take(10)->get();
+
+        return view('services.index',compact('ad','studLife','researchNav','services','abouts','services1','services2'));
 
     }
 
@@ -64,6 +67,9 @@ class ServicesController extends Controller
         $sideServices=Services::orderBy('name','asc')->get();
         $abouts     = About::orderBy('title','asc')->get();
         $section =Section::all();
+        $services1=   Services::orderBY('name','asc')->take(6)->get();
+        $services2=   Services::orderBY('name','asc')->skip(6)->take(10)->get();
+
         return view('services.show')->with([
             'service' => $service,
             'section' => $section,
@@ -71,7 +77,9 @@ class ServicesController extends Controller
             'ad'=>$ad,
             'researchNav'=>$researchNav,
             'sideServices' =>$sideServices,
-            'abouts' =>$abouts
+            'abouts' =>$abouts,
+            'services1'=>$services1,
+            'services2' =>$services2
         ]);
     }
 

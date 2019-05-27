@@ -8,7 +8,7 @@
             <div class="row">
 
                 <div class="small-12 columns">
-                    <h1>Faculties, Schools and Instituate</h1>
+                    <h1>Student Service Information</h1>
                 </div><!-- Top Row /-->
 
                 <div class="small-12 columns">
@@ -18,7 +18,7 @@
                          <li class="active"><a href="{{ route('services.index') }}">Student Service Information</a></li>
                     </ul><!-- Breadcrumbs /-->
                 </div><!-- Bottom Row /-->
-                
+
             </div><!-- Row /-->
         </div>
 
@@ -30,12 +30,7 @@
 
 
         <div class="content-section module single-products-page products-page">
-            <div class="row">
 
-
-
-            </div><!-- Row Ends /-->
-        </div>
         <!-- Content Section Ends /-->
 
 		<!-- Related Products -->

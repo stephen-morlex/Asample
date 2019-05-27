@@ -35,7 +35,7 @@
     <!-- Theme Styles CSS File -->
     <link rel="stylesheet" type="text/css" href="{{ asset('/css/app.css') }}" media="all" />
     <link rel="stylesheet" type="text/css" href="{{ asset('/css/style.css') }}" media="all" />
-    
+
 
     <!-- Font Awesome CSS File -->
     <link href="{{ asset('css/font-awesome.min.css')}}" rel="stylesheet">
@@ -53,6 +53,7 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('/lib/revolution/css/navigation.css') }}">
     {{-- scroll animation --}}
       <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+      <link rel="stylesheet" href="css/animate.css">
 </head>
 
 <body>
@@ -77,6 +78,10 @@
      <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
   <script>
     AOS.init();
+  </script>
+  <script src="js/wow.min.js"></script>
+  <script>
+  new WOW().init();
   </script>
 
 </body>

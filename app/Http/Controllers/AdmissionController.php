@@ -8,6 +8,7 @@ use App\Section;
 use App\StudentCategory;
 use App\Research;
 use App\About;
+use App\Services;
 
 class AdmissionController extends Controller
 {
@@ -23,7 +24,9 @@ class AdmissionController extends Controller
         $studLife=StudentCategory::orderBy('name','asc')->get();
         $researchNav = Research::orderBy('name','asc')->get();
         $abouts     = About::orderBy('title','asc')->get();
-        return view('admission.index',compact('sections','ad','studLife','researchNav','abouts'));
+        $services1=   Services::orderBY('name','asc')->take(6)->get();
+        $services2=   Services::orderBY('name','asc')->skip(6)->take(10)->get();
+        return view('admission.index',compact('sections','ad','studLife','researchNav','abouts','services1','services2'));
 
     }
 
@@ -50,12 +53,16 @@ class AdmissionController extends Controller
         $studLife=StudentCategory::orderBy('name','asc')->get();
         $researchNav = Research::orderBy('name','asc')->get();
         $abouts   = About::orderBy('title','asc')->get();
+        $services1=   Services::orderBY('name','asc')->take(6)->get();
+        $services2=   Services::orderBY('name','asc')->skip(6)->take(10)->get();
         return view('admission.show')->with([
             'admission' => $admission,
             'ad'=>$ad,
             'studLife'=>$studLife,
             'researchNav' => $researchNav,
-              'abouts'    => $abouts
+             'abouts'    => $abouts,
+             'services1' => $services1,
+             'services2' =>$services2
         ]);
     }
 

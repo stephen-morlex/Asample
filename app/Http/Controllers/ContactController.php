@@ -12,9 +12,7 @@ use Illuminate\Support\Facades\Session;
 use Illuminate\Http\Request;
 use App\Research;
 use Mail;
-
-
-
+use App\Services;
 
 class ContactController extends Controller
 {
@@ -32,8 +30,10 @@ class ContactController extends Controller
         $studLife   = StudentCategory::orderBy('name','asc')->get();
         $researchNav = Research::orderBy('name','asc')->get();
         $abouts     = About::orderBy('title','asc')->get();
+        $services1=   Services::orderBY('name','asc')->take(6)->get();
+        $services2=   Services::orderBY('name','asc')->skip(6)->take(10)->get();
 
-        return view('contact.index', compact('sections', 'programs', 'ad', 'studLife','researchNav','abouts'));
+        return view('contact.index', compact('sections', 'programs', 'ad', 'studLife','researchNav','abouts','services1','services2'));
     }
 
 
@@ -69,7 +69,7 @@ class ContactController extends Controller
 
         Contact::create($request->all());
 
-        Session::flash('success','thanks for contacting us!');
+        Session::flash('success','thanks for contacting us, we will return to you with the 24 hours of the work');
         return redirect()->back();
 
     }

@@ -19,7 +19,7 @@
                        <li class="active"><a href="#">{{ $student->name }}</a></li>
                     </ul><!-- Breadcrumbs /-->
                 </div><!-- Bottom Row /-->
-                
+
             </div><!-- Row /-->
         </div>
  <!-- End of the banner section -->
@@ -50,10 +50,29 @@
 
 
                     <ol class="menu vertical">
+                        <li>
 
-                        <li> <i class="fa fa-align-left"><a href="{{ route('student.show', $ss->slug) }}">  {{ $ss->name }}</a></i></li>
+                            <i class="fa fa-list-ul" aria-hidden="true">
+                            <a href="{{ route('student.show', $ss->slug) }}">  {{ $ss->name }}</a>
+                            </i>
+                        </li>
+                        <br>
                     </ol>
                     @endforeach
+                </div><!-- widget ends /-->
+
+            <div class="widget">
+                    <h2>Popular News</h2>
+                    @foreach ($newsSide as $item)
+
+                     <div class="popular-post">
+                            <a href="{{ route('news.show', $item->slug) }}"><strong>{{ $item->title }}</strong></a>
+                            <p><img alt="" src="{{ Voyager::image( $item->thumbnail('small'))}}" class="float-left" />{!! str_limit($item->content, $limit = 50) !!} <a href="{{ route('news.show', $item->slug) }}">Read more...</a></p>
+                    </div>
+
+                    @endforeach
+
+
                 </div><!-- widget ends /-->
 
                   </div><!-- Sidebar Ends /-->

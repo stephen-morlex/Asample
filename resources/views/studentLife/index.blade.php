@@ -18,11 +18,11 @@
                        <li class="active"><a href="{{route('student.index')}}">Student Experience</a></li>
                     </ul><!-- Breadcrumbs /-->
                 </div><!-- Bottom Row /-->
-                
+
             </div><!-- Row /-->
         </div>
  <!-- End of the banner section -->
- 
+
 <!-- Content section -->
     <!-- Seminar/Events -->
     <div class="module">
@@ -57,21 +57,20 @@
                     </ol>
                     @endforeach
                 </div><!-- widget ends /-->
-                <div class="widget">
-                        <h2>Popular News</h2>
 
-                        @forelse ($newsSide as $newsSide)
-                             <div class="popular-post">
-                                <a href="#"><strong>My new post title come out</strong></a>
-                                <p><img alt="" src="images/blogthumb.jpg" class="float-left">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi at velit in neque efficitur vehicula. <a href="#">Read more...</a></p>
-                             </div>
-                        @empty
-                                <h4>No popular news</h4>
-                        @endforelse
+            <div class="widget">
+                    <h2>Popular News</h2>
+                    @foreach ($newsSide as $item)
 
-
-
+                     <div class="popular-post">
+                            <a href="{{ route('news.show', $item->slug) }}"><strong>{{ $item->title }}</strong></a>
+                            <p><img alt="" src="{{ Voyager::image( $item->thumbnail('small'))}}" class="float-left" />{!! str_limit($item->content, $limit = 50) !!} <a href="{{ route('news.show', $item->slug) }}">Read more...</a></p>
                     </div>
+
+                    @endforeach
+
+
+                </div><!-- widget ends /-->
 
             </div><!-- right bar ends here /-->
 
