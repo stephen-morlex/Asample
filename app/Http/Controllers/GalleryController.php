@@ -2,16 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use App\Media;
+use App\Gallery;
+use Illuminate\Http\Request;
 use App\Section;
 use App\Program;
 use App\About;
 use App\Research;
 use App\StudentCategory;
 use App\Contact;
-use Illuminate\Http\Request;
 
-class MediaController extends Controller
+
+
+
+class GalleryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -21,16 +24,15 @@ class MediaController extends Controller
     public function index()
     {
         //
-        //
-        $sections   = Section::take(4)->get();
-        $programs   = Program::all();
-        $ad         = Section::orderBy('name','asc')->get();
-        $studLife   = StudentCategory::orderBy('name','asc')->get();
-        $abouts     = About::orderBy('title','asc')->get();
-        $medias      = Media::orderBy('title', 'asc')->get();
+        $sections    = Section::take(4)->get();
+        $programs    = Program::all();
+        $ad          = Section::orderBy('name','asc')->get();
+        $studLife    = StudentCategory::orderBy('name','asc')->get();
+        $abouts      = About::orderBy('title','asc')->get();
+        $galleries   = Gallery::orderBy('title', 'asc')->get();
         $researchNav = Research::orderBy('name','asc')->get();
 
-        return view('media.index', compact('sections', 'programs', 'ad', 'studLife','researchNav','abouts', 'medias'));
+        return view('gallery.index', compact('sections', 'programs', 'ad', 'studLife','researchNav','abouts', 'galleries'));
     }
 
     /**
@@ -57,10 +59,10 @@ class MediaController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Media  $media
+     * @param  \App\Gallery  $gallery
      * @return \Illuminate\Http\Response
      */
-    public function show(Media $media)
+    public function show(Gallery $gallery)
     {
         //
     }
@@ -68,10 +70,10 @@ class MediaController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Media  $media
+     * @param  \App\Gallery  $gallery
      * @return \Illuminate\Http\Response
      */
-    public function edit(Media $media)
+    public function edit(Gallery $gallery)
     {
         //
     }
@@ -80,10 +82,10 @@ class MediaController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Media  $media
+     * @param  \App\Gallery  $gallery
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Media $media)
+    public function update(Request $request, Gallery $gallery)
     {
         //
     }
@@ -91,10 +93,10 @@ class MediaController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Media  $media
+     * @param  \App\Gallery  $gallery
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Media $media)
+    public function destroy(Gallery $gallery)
     {
         //
     }

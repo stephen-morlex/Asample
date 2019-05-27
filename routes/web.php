@@ -72,7 +72,7 @@ Route::post('/contact/send', 'ContactController@store')->name('contact.store');
 
 
 // MEDIA
-Route::get('/media/', 'MediaController@index')->name('media.index');
+Route::get('/gallery/', 'GalleryController@index')->name('gallery.index');
 
 
 

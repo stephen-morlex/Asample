@@ -14,7 +14,7 @@
                 <div class="small-12 columns">
                     <ul class="breadcrumbs">
                        <li><a href="/">Home</a></li>
-                       <li class="active"><a href="{{route('media.index')}}">Gallery</a></li>
+                       <li class="active"><a href="{{route('gallery.index')}}">Gallery</a></li>
                     </ul><!-- Breadcrumbs /-->
                 </div><!-- Bottom Row /-->
                 
@@ -36,12 +36,12 @@
 
                 <div class="gallery-container">
 
-                    @forelse($medias as $media)
-                        <a href="{{ $media->image }}" data-lightbox="campus-gallery" data-title="{{ $media->title }}">
-                            <img class="gallery-thumb" src="{{ $media->image }}" alt="{{ $media->title }}"/>
+                    @forelse($galleries as $gallery)
+                        <a href="{{ $gallery->image }}" data-lightbox="campus-gallery" data-title="{{ $gallery->title }}">
+                            <img class="gallery-thumb" src="{{ $gallery->image }}" alt="{{ $gallery->title }}"/>
                         </a>
                     @empty
-                        <h3 align="center">There is no media at the moment !</h3>
+                        <h3 align="center">There is no gallery at the moment !</h3>
                     @endforelse
 
                 </div><!-- Gallery Container /-->
