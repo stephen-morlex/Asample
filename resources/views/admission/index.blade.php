@@ -1,5 +1,5 @@
 @extends('layouts.app')
-
+@section('title', 'Admission')
 @section('content')
 @include('partials.topNav')
 @include('layouts.mainNav')
@@ -114,11 +114,65 @@
 
         </div><!-- Row Ends /-->
 
+
     </div>
     <!-- Our Teachers /-->
+    <div class="financial">
+            @foreach ($financial as $item)
+            <div class="row">
+                 <div class="medium-6 columns medium-push-6  gallery-image" >
+                         <div class="img-box" data-aos="zoom-in-left"   data-aos-duration="2500"
+                         data-aos-easing="ease-in-sine">
+                                 <a href="{{ route('services.show',$item->slug) }}">
+                                 <img class="thumbnail" src="{{ Voyager::image( $item->image)}}">
+                                 <div class="transparent-box">
+                                   <div class="caption">
+                                     {{--  <p>{{ $item->name }}</p>  --}}
+                                     <p class="opacity-low">{{ $item->name}}</p>
+                                   </div>
+                                 </div>
+                                 </a>
+                               </div>
+                 </div>
+                 <div class="medium-6 columns medium-pull-6" data-aos="zoom-in-right"  data-aos-duration="3000"
+                 data-aos-easing="ease-in-sine">
+                 <a href="{{ route('services.show',$item->slug) }}"><h2>{{ $item->name }}.</h2></a>
+                 <p>{!! str_limit($item->content,300) !!}<a href="{{ route('services.show', $item->slug) }}"><strong>Read More &raquo;</strong></a></p>
+                 </div>
+                 </div>
+            @endforeach
+            <hr>
+            @foreach ($internationlStudent as $internationlStudent)
+            <div class="row">
+                 <div class="medium-6 columns " data-aos="zoom-in-right"  data-aos-duration="3000"
+                 data-aos-easing="ease-in-sine">
+                 <div class="img-box" data-aos="zoom-in-left"   data-aos-duration="2500"
+                         data-aos-easing="ease-in-sine">
+                                 <a href="{{ route('services.show',$internationlStudent->slug) }}">
+                                 <img class="thumbnail" src="{{ Voyager::image( $internationlStudent->image)}}">
+                                 <div class="transparent-box">
+                                   <div class="caption">
+                                     {{--  <p>{{ $internationlStudent->name }}</p>  --}}
+                                     <p class="opacity-low">{{ $internationlStudent->name}}</p>
+                                   </div>
+                                 </div>
+                                 </a>
+                               </div>
+                 </div>
+                 <div class="medium-6 columns " data-aos="zoom-in-right"  data-aos-duration="3000"
+                 data-aos-easing="ease-in-sine">
+                 <a href="{{ route('services.show',$internationlStudent->slug) }}"><h2>{{ $internationlStudent->name }}.</h2></a>
+                 <p>{!! str_limit($internationlStudent->content,300) !!}<a href="{{ route('services.show', $internationlStudent->slug) }}"><strong>Read More &raquo;</strong></a></p>
+                 </div>
+                 </div>
+            @endforeach
+         </div>
+         <!-- Content Area Ends /-->
+
 
 </div>
 <!-- Content Section Ends /-->
+<!-- Content Area Starts -->
 
 
 <!-- Call to Action box -->

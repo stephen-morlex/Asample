@@ -9,6 +9,7 @@ use App\About;
 use App\StudentCategory;
 use App\Research;
 use App\Services;
+use App\Event;
 
 class ProgramController extends Controller
 {
@@ -48,9 +49,10 @@ class ProgramController extends Controller
         $studLife=StudentCategory::orderBy('name','asc')->get();
         $researchNav = Research::orderBy('name','asc')->get();
         $abouts     = About::orderBy('title','asc')->get();
+        $latestEvents     = Event::latest()->take(5)->get();
         $services1=   Services::orderBY('name','asc')->take(6)->get();
         $services2=   Services::orderBY('name','asc')->skip(6)->take(10)->get();
-        return view('program.index',compact('sections','programs','ad','studLife','researchNav','abouts','services1','services2'));
+        return view('program.section',compact('sections','sectionName','programs','ad','studLife','researchNav','abouts','services1','services2','latestEvents'));
     }
 
     /**

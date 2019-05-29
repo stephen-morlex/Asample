@@ -1,4 +1,5 @@
   @extends('layouts.app')
+  @section('title', 'Contact')
   @section('content')
   @include('partials.topNav')
   @include('layouts.mainNav')
@@ -127,7 +128,7 @@
             	<div class="medium-3 small-12 columns">
                 	<div class="contact-info">
                     	<img src="{{ asset('images/3.jpg') }}" alt="Calling Girl" />
-                    </div> -->
+                    </div>
                     <div class="contact-info">
                     	<h4>LANGATA CAMPUS</h4>
                         <p>

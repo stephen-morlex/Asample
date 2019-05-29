@@ -1,5 +1,5 @@
 @extends('layouts.app')
-
+@section('title', $student->name)
 @section('content')
 @include('partials.topNav')
 @include('layouts.mainNav')

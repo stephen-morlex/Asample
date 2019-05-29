@@ -4,7 +4,7 @@
         <div class="medium-7 small-12 columns">
             <div class="logo">
                 <a href="/">
-                    <img src="/images/logo2.png" alt="Webful Education">
+                    <img src="{{ asset('images/logo2.png') }}" alt="CUEA">
                 </a>
             </div><!-- logo /-->
         </div><!-- left Ends /-->
@@ -21,6 +21,10 @@
                   </div>
                 </form>
               </section>
+              <div>
+                  <a href="#"><h4><i class="fa fa-phone" aria-hidden="true"> +254 (0) 709-691-111</i></h4></a>
+                  <div class="tx-div"></div>
+              </div>
 
             </div>
 

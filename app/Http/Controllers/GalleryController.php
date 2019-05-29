@@ -10,9 +10,7 @@ use App\About;
 use App\Research;
 use App\StudentCategory;
 use App\Contact;
-
-
-
+use App\Services;
 
 class GalleryController extends Controller
 {
@@ -34,7 +32,7 @@ class GalleryController extends Controller
         $services1=   Services::orderBY('name','asc')->take(6)->get();
         $services2=   Services::orderBY('name','asc')->skip(6)->take(10)->get();
 
-        return view('media.index', compact('sections', 'programs', 'ad', 'studLife','researchNav','abouts', 'galleries','services1','services2'));
+        return view('gallery.index', compact('sections', 'programs', 'ad', 'studLife','researchNav','abouts', 'galleries','services1','services2'));
 
     }
 

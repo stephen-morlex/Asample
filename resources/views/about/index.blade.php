@@ -1,7 +1,8 @@
-  @extends('layouts.app')
-    @section('content')
-    @include('partials.topNav')
-    @include('layouts.mainNav')
+@extends('layouts.app')
+@section('title', 'About CUEA')
+@section('content')
+@include('partials.topNav')
+@include('layouts.mainNav')
 
     <!-- banner section -->
         <div class="title-section module">

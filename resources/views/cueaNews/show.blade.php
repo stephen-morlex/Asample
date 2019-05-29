@@ -1,4 +1,5 @@
   @extends('layouts.app')
+  @section('title', $newsItem->title)
   @section('content')
   @include('partials.topNav')
   @include('layouts.mainNav')
@@ -37,8 +38,8 @@
                             </a>
                         	<div class="post-meta"><i class="fa fa-clock-o" aria-hidden="true"></i> {{  $newsItem->created_at->diffForHumans() }} | <i class="fa fa-user" aria-hidden="true"></i> <a>Administrator</a> | <i class="fa fa-list" aria-hidden="true"></i> <a href="{{ route('news.category',$newsItem->newsCategory->slug) }}">{{ $newsItem->newsCategory->name }}</a> </div>
                          </div>
-
                         <h3><a href="#">{{ $newsItem->title }}</a></h3>
+                        <hr>
 
                         <div class="post-excerpt">
                            {!! $newsItem->content !!}
@@ -54,12 +55,15 @@
                 <div class="medium-3 small-12 columns sidebar">
                     <div class="widget">
                         <h2>Categories</h2>
+                        <ol class="menu vertical">
+                                @foreach($newsCategories as $newsCategory)
+                                <li><i class="fa fa-list-ul" aria-hidden="true">
+                                    <a href="{{ route('news.category',$newsCategory->slug)}}">{{ $newsCategory->name }}</a>
+                                </i></li>
+                                    <br>
+                                @endforeach
+                            </ol>
 
-                        <ul class="menu vertical">
-                            @foreach($newsCategories as $newsCategory)
-                            <li><a href="{{ route('news.category',$newsCategory->slug) }}">{{ $newsCategory->name }}</a></li>
-                            @endforeach
-                        </ul>
                     </div><!-- widget ends /-->
 
                 </div><!-- right bar ends here /-->

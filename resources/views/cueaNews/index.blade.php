@@ -1,4 +1,5 @@
   @extends('layouts.app')
+  @section('title', 'News')
   @section('content')
   @include('partials.topNav')
   @include('layouts.mainNav')
@@ -54,18 +55,17 @@
                 </div><!-- Posts wrap /-->
 
                 <div class="medium-3 small-12 columns sidebar">
-                    <div class="widget">
-                        <h3>Categories</h3>
-                        <hr>
+                        <div class="widget">
+                                <h2>Categories</h2>
+                                <ol class="menu vertical">
+                                        @foreach($newsCategories as $newsCategory)
+                                        <li><i class="fa fa-list-ul" aria-hidden="true">
+                                            <a href="{{ route('news.category',$newsCategory->slug)}}">{{ $newsCategory->name }}</a>
+                                        </i></li>
+                                            <br>
+                                        @endforeach
+                                    </ol>
 
-                        <ul class="menu vertical">
-                            @forelse($newsCategories as $newsCategory)
-                            <li><a href="{{ route('news.category', $newsCategory->slug) }}">{{ $newsCategory->name }}</a></li>
-                            @empty
-                            <h4>No category at the moment!</h4>
-                            @endforelse
-                        </ul>
-                    </div><!-- widget ends /-->
 
                 </div><!-- right bar ends here /-->
 

@@ -1,5 +1,5 @@
 @extends('layouts.app')
-
+@section('title', $research->name)
 @section('content')
 @include('partials.topNav')
 @include('layouts.mainNav')
@@ -39,7 +39,6 @@
 				</a>
                 </div>
                 <hr>
-                <br>
 			<h3 ><a href="{{ route('research.show',$research->slug) }}">{{ $research->name }}</a></h3>
 
 			<div class="post-excerpt">

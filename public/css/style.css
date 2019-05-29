@@ -449,7 +449,7 @@ Top bar CSS Ends
 }
 .top-bar ul li a {
 	text-transform:uppercase;
-	font-size:0.875rem;
+	font-size:1.00rem;
 }
 .top-bar ul ul li a {
 	text-transform:capitalize;
@@ -705,6 +705,18 @@ Information Boxes CSS Ends
 	font-size:1.850rem;
 	margin-bottom:0px;
 }
+.welcome-message ul li {
+    color: #000;
+    font-family: 'Source Sans Pro',Helvetica Neue,Helvetica,Arial,sans-serif;
+    text-align:initial;
+    padding-top: 5px;
+    font-size: 1.45em;
+}
+.welcome-message ul li i {
+    color: #95141b;
+    padding-right: 10px;
+}
+
 .welcome-message h2 span {
 	color:#e79800;
 	font-size:1.850rem;
@@ -1103,7 +1115,7 @@ Faculty card start
 	padding-top:80px;
 	padding-bottom:80px;
     opacity: 1;
-    background:url("/images/law.jpg") no-repeat center center fixed;
+    background:url("/images/wow.jpg") no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -1115,7 +1127,7 @@ Faculty card start
 	padding-top:80px;
 	padding-bottom:80px;
     opacity: 1;
-    background:url("/images/cuea1.jpg") no-repeat center center fixed;
+    background:url("/images/wow2.jpg") no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -1134,6 +1146,31 @@ Faculty card start
     z-index:-1;
 	background:url("/images/2.jpg") ;
     background-size:cover;
+
+}
+
+.financial {
+	position:relative;
+	padding-top:80px;
+	padding-bottom:80px;
+    background: #FFEFBA;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to top, #FFFFFF, #FFEFBA);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to top, #FFFFFF, #FFEFBA); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+.financial::after {
+
+	content:"";
+    top:0;
+    left:0;
+    bottom:0;
+	right:0;
+	opacity: 0.6;
+    position:absolute;
+    z-index:-1;
+	background: #FFEFBA;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to top, #FFFFFF, #FFEFBA);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to top, #FFFFFF, #FFEFBA); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
 }
 
@@ -1306,150 +1343,68 @@ Gallery CSS Ends
 Our Process Ends
 -------------------------*/
 /* HOME GALLERY */
-.full {
-    position: fixed;
-    left: 0;
+.gallery-image img {
+    height: 100%;
+    width: auto;
+    transform: scale(1.0);
+    transition: transform 0.4s ease;
+  }
+
+  .img-box {
+    box-sizing: content-box;
+    margin: 10px;
+    height: 250px;
+    width: 350px;
+    overflow: hidden;
+    display: inline-block;
+    color: white;
+    position: relative;
+    background-color: white;
+  }
+
+  .caption {
+    position: absolute;
+    bottom: 5px;
+    left: 20px;
+    opacity: 0.0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+
+  .transparent-box {
+    height: 250px;
+    width: 350px;
+    background-color:rgba(0, 0, 0, 0);
+    position: absolute;
     top: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
+    left: 0;
+    transition: background-color 0.3s ease;
   }
-  .full .content {
-    background-color: rgba(0,0,0,0.75) !important;
-    height: 100%;
-    width: 100%;
-    display: grid;
+
+  .img-box:hover img {
+    transform: scale(1.1);
   }
-  .full .content img {
-    left: 50%;
-    transform: translate3d(0, 0, 0);
-    animation: zoomin 1s ease;
-    max-width: 100%;
-    max-height: 100%;
-    margin: auto;
+
+  .img-box:hover .transparent-box {
+    background-color:rgba(0, 0, 0, 0.5);
   }
-  .byebye {
-    opacity: 0;
+
+  .img-box:hover .caption {
+    transform: translateY(-20px);
+    opacity: 1.0;
   }
-  .byebye:hover {
-    transform: scale(0.2) !important;
-  }
-  .gallery {
-    display: grid;
-    grid-column-gap: 8px;
-    grid-row-gap: 8px;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    grid-auto-rows: 8px;
-  }
-  .gallery img {
-    max-width: 100%;
-    border-radius: 8px;
-    box-shadow: 0 0 16px #333;
-    transition: all 1.5s ease;
-  }
-  .gallery img:hover {
-    box-shadow: 0 0 32px #333;
-  }
-  .gallery .content {
-    padding: 4px;
-  }
-  .gallery .gallery-item {
-    transition: grid-row-start 300ms linear;
-    transition: transform 300ms ease;
-    transition: all 0.5s ease;
+
+  .img-box:hover {
     cursor: pointer;
   }
-  .gallery .gallery-item:hover {
-    transform: scale(1.025);
-  }
-  @media (max-width: 600px) {
-    .gallery {
-      grid-template-columns: repeat(auto-fill, minmax(30%, 1fr));
-    }
-  }
-  @media (max-width: 400px) {
-    .gallery {
-      grid-template-columns: repeat(auto-fill, minmax(50%, 1fr));
-    }
-  }
-  @-moz-keyframes zoomin {
-    0% {
-      max-width: 50%;
-      transform: rotate(-30deg);
-      filter: blur(4px);
-    }
-    30% {
-      filter: blur(4px);
-      transform: rotate(-80deg);
-    }
-    70% {
-      max-width: 50%;
-      transform: rotate(45deg);
-    }
-    100% {
-      max-width: 100%;
-      transform: rotate(0deg);
-    }
-  }
-  @-webkit-keyframes zoomin {
-    0% {
-      max-width: 50%;
-      transform: rotate(-30deg);
-      filter: blur(4px);
-    }
-    30% {
-      filter: blur(4px);
-      transform: rotate(-80deg);
-    }
-    70% {
-      max-width: 50%;
-      transform: rotate(45deg);
-    }
-    100% {
-      max-width: 100%;
-      transform: rotate(0deg);
-    }
-  }
-  @-o-keyframes zoomin {
-    0% {
-      max-width: 50%;
-      transform: rotate(-30deg);
-      filter: blur(4px);
-    }
-    30% {
-      filter: blur(4px);
-      transform: rotate(-80deg);
-    }
-    70% {
-      max-width: 50%;
-      transform: rotate(45deg);
-    }
-    100% {
-      max-width: 100%;
-      transform: rotate(0deg);
-    }
-  }
-  @keyframes zoomin {
-    0% {
-      max-width: 50%;
-      transform: rotate(-30deg);
-      filter: blur(4px);
-    }
-    30% {
-      filter: blur(4px);
-      transform: rotate(-80deg);
-    }
-    70% {
-      max-width: 50%;
-      transform: rotate(45deg);
-    }
-    100% {
-      max-width: 100%;
-      transform: rotate(0deg);
-    }
+
+  .caption > p:nth-child(2) {
+    font-size: 0.8em;
   }
 
-
+  .opacity-low {
+    opacity: 0.9;
+    color: #F7f7f7;
+  }
 /* END OF HOME GALLERY */
 /*-------------------------
  14 - Testimonials Starts
@@ -1940,22 +1895,41 @@ body.box {
 /*-------------------------
 21.6 - Blog Page
 -------------------------*/
-.pagination {
-	text-align:center;
-	margin-bottom:0px;
-	margin-top:30px;
-}
-.pagination .current {
-	background:#174873;
-	padding:0px;
-}
-.pagination .current a {
-	color:#FFF;
-}
-.pagination .current a:hover, .pagination a:hover {
-	background-color:#174873;
-	color:#FFF;
-}
+
+.pagination-circular li.current {
+    border: 1px solid #e79800;
+    border-radius: 5000px;
+    background: #e79800;
+    padding: 0.285em 0.8em;
+    font-size: 18px;
+    color: #ffffff;
+  }
+
+  .pagination-circular li.disabled {
+    border: 1px solid #cacaca;
+    background: #cacaca;
+    padding: 0.285em 0.8em;
+    border-radius: 5000px;
+    font-size: 18px;
+  }
+
+  .pagination-circular a {
+    border-radius: 5000px;
+    padding: 0.285em 0.8em;
+    border: 1px solid #e79800;
+    font-size: 18px;
+  }
+
+  .pagination-circular li:not(.disabled):hover a {
+    background: #e79800;
+    color: #fefefe;
+  }
+
+  .pagination-circular li a {
+    transition: background 0.15s ease-in, color 0.15s ease-in;
+  }
+
+
 .blog-page .featured-image {
 	position:relative;
 }
@@ -2011,11 +1985,12 @@ body.box {
   	margin-top : 0px;
     margin-bottom: 0px;
     border: #EDEDED 2px;
+    border-bottom: 1px solid #95141b ;
 }
 .author-box {
 	margin-bottom: 25px;
     padding-bottom: 25px;
-    border-bottom: 1px solid #EDEDED;
+    border: 1px solid #EDEDED;
 }
 .content-section .events-wrapper .event {
 	border:1px solid #ededed;
@@ -2113,6 +2088,7 @@ Styles For Inner Pages Ends
 	padding-bottom:40px;
 }
 .widget {
+    background-color: #fbfbf9;
 	border-top: 1px solid #ededed;
 	border-bottom: 1px solid #ededed;
 	border-left: 1px solid #ededed;

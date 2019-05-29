@@ -170,32 +170,61 @@
 <div class="welcome-message module">
 	<div class="row">
 
-		<div class="medium-6 small-12 columns">
-			<div class="flex-video ">
-				<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/ny7pBK0_MTk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-		</div>
-		</div><!-- Left Column /-->
+            <div class="medium-8 medium-offset-3 small-12 columns our-process">
+                    <h2>Why Cuea!</h2>
 
-		<div class="medium-6 small-12 columns wow slideInLeft" data-wow-duration="2s" data-wow-delay="2s">
-			<h2>Why <span>CUEA!</span></h2>
-            <ul>
-                <li> Chartered Private University accredited by Commission of University Education.</li>
-                <li>  34 solid years of offering education grounded on values.</li>
-                <li>A leading regional and international University.</li>
-                <li>A leading regional and international University.</li>
-                <li> Clear learning path from Certificate, Diploma, Degree, Masters and Doctoral Courses with a high completion time rate.</li>
-                <li>  Clear learning path from Certificate, Diploma, Degree, Masters and Doctoral Courses with a high completion time rate.</li>
-                <li>  Training and examination centre for ACCA and KASNEB (CPA & CS).</li>
-                <li>Two campuses: Main campus located in Langata, Nairobi and Gaba campus located in Eldoret.</li>
-                <li>   Rich extra-curricula activities.</li>
-                <li>  Innovative and marketable graduates.</li>
-                <li> Quality and prompt research supervision for postgraduate students.  </li>
-            </ul>
+                    <div class="process">
+                        <div class="number"><i class="fa fa-heart" aria-hidden="true"></i></div>
+                        <div class="right-info">
+                            <h3> Chartered Private University accredited by Commission of University Education.</h3>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div><!-- process /-->
 
-			<a href="about-us.html" class="primary button">More about cuea!</a>
-		</div><!-- Right Column /-->
+                    <div class="process">
+                        <div class="number"><i class="fa fa-users" aria-hidden="true"></i></div>
+                        <div class="right-info">
+                            <h3>Join a Seminar To know More about it!</h3>
+                            <p> 34 solid years of offering education grounded on values
+                                leading regional and international University.</p>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div><!-- process /-->
 
-	</div><!-- Row /-->
+                    <div class="process">
+                        <div class="number"><i class="fa fa-globe" aria-hidden="true"></i></div>
+                        <div class="right-info">
+                            <h3>Get Enrolled and start better future with us!</h3>
+                            <p>Rich diversity: Over 20 nationalities and 100+ programmes on offer</p>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div><!-- process /-->
+                    <div class="process">
+                            <div class="number"><i class="fa fa-share" aria-hidden="true"></i></div>
+                            <div class="right-info">
+                                <h3>Get Enrolled and start better future with us!</h3>
+                                <p> Innovative and marketable graduates</p>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div><!-- process /-->
+                        <div class="process">
+                                <div class="number"><i class="fa fa-cogs" aria-hidden="true"></i></div>
+                                <div class="right-info">
+                                    <h3>Get Enrolled and start better future with us!</h3>
+                                    <p>Thirsty Crow should Call us at: 123-123-1234 to drink water asap before all seats are reserved.</p>
+                                </div>
+                                <div class="clearfix"></div>
+                            </div><!-- process /-->
+                </div><!-- Left Process Ends /-->
+
+
+    </div><!-- Row /-->
+    <div class="row">
+            <div class="small-6 small-centered text-center columns">
+                    <a href="{{ route('about.index') }}" style="text-align:center;" class="primary button">More about cuea!</a>
+            </div>
+        </div>
+
 </div>
 <!-- Welcome Message Ends /-->
 
@@ -206,12 +235,12 @@
 <div class="seminar-events module">
 
     <div class="row">
-        <div class="section-title-wrapper ">
+
             <div class="section-title">
                 <h2>Upcoming Events</h2>
-                <h4>Our Upcoming Events Dont Miss Out!</h4>
+                <br>
             </div>
-        </div> <!-- Title Ends /-->
+
 
         <div class="events-wrapper">
             @forelse ($events as $e)
@@ -257,9 +286,10 @@
 <div class="testimonials-wrapper side-controls module">
 	<div class="section-title-wrapper">
 		<div class="section-title">
-			<h2>Our Social media feeds</h2>
+			<h2>Social media feeds</h2>
 			<h4>Dont miss out!</h4>
-		</div>
+        </div>
+        <br>
 	</div> <!-- Title Ends /-->
 
 	<div class="row">
@@ -280,7 +310,9 @@
 			 </div> <!-- Testimonial /-->
 
 			<div class="testimonial" >
-                <img src="{{ asset('/images/svg/social.svg') }}" alt="Diploma" style="height:50%">
+                    <div class="flex-video ">
+                            <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/ny7pBK0_MTk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
              </div> <!-- Testimonial /-->
 
 
@@ -298,19 +330,14 @@
 <!-- Blog Posts -->
 <div class="why-cuea">
 
-    <div class="section-title-wrapper">
         <div class="section-title">
-            <h2>Recent News</h2>
-            <h4>Whats going on in our Blog?</h4>
+            <h2>Latest News</h2>
+            <br>
         </div>
-    </div> <!-- Title Ends /-->
 
     <div class="row">
             @if (count($news)>=1)
         <div class="posts-wrapper">
-
-
-
             @forelse($news as $newsItem)
             <div class="medium-4 small-12 columns">
                 <div class="post">
@@ -351,49 +378,30 @@
 <!-- Blog Posts Ends /-->
 
 <div class="blog-posts module grey-bg">
-        <div class="section-title-wrapper">
+
             <div class="section-title">
                 <h2>Campus Gallery</h2>
             </div>
-                  </div> <!-- Title Ends /-->
+            <br>
+           <div class="medium-12 gallery-image">
+                        @foreach($galleries as $gallery)
+                        @php $image = json_decode($gallery->image); @endphp
+                        @if (isset($image[0]))
+                        <div class="img-box">
+                          <img src="{{ Voyager::image($image[0]) }}" alt="{{ $gallery->title }}" />
+                          <div class="transparent-box">
+                            <div class="caption">
+                              {{--  <p>{{ $gallery->title }}</p>  --}}
+                              <p class="opacity-low">{{ $gallery->description }}</p>
+                            </div>
+                          </div>
+                        </div>
+                        @endif
+                        @endforeach
 
-                <div class="gallery" id="gallery">
-                        <div class="gallery-item">
-                            <div class="content"><img src="{{ asset('/images/1.jpg') }}" alt=""></div>
-                        </div>
-                        <div class="gallery-item">
-                            <div class="content"><img src="{{ asset('/images/cuea.jpg') }}" alt=""></div>
-                        </div>
-                        <div class="gallery-item">
-                            <div class="content"><img src="{{ asset('/images/law.jpg') }}" alt=""></div>
-                        </div>
-                        <div class="gallery-item">
-                            <div class="content"><img src="{{ asset('/images/cuea1.jpg') }}" alt=""></div>
-                        </div>
-                        <div class="gallery-item">
-                            <div class="content"><img src="{{ asset('/images/whycuea.jpg') }}" alt=""></div>
-                        </div>
-                        <div class="gallery-item">
-                            <div class="content"><img src="{{ asset('/images/cueatest.jpeg') }}" alt=""></div>
-                        </div>
-                        <div class="gallery-item">
-                            <div class="content"><img src="{{ asset('/images/book.jpg') }}" alt=""></div>
-                        </div>
-                        <div class="gallery-item">
-                            <div class="content"><img src="https://source.unsplash.com/random/?tech,eight" alt=""></div>
-                        </div>
-                        <div class="gallery-item">
-                            <div class="content"><img src="https://source.unsplash.com/random/?tech,crew" alt=""></div>
-                        </div>
-                        <div class="gallery-item">
-                            <div class="content"><img src="https://source.unsplash.com/random/?tech,event" alt=""></div>
-                        </div>
+                </div>
 
-                    </div>
-
-
-
-    </div>
+ </div>
 
 
 
@@ -403,7 +411,8 @@
 		<div class="section-title">
 			<h2>Our Partners</h2>
 			<h4>We are proudly partner with following Companies</h4>
-		</div>
+        </div>
+        <br>
 	</div> <!-- Title Ends /-->
 
 	<div class="row">
@@ -447,40 +456,9 @@
 @include('partials.footer')
 
 <script>
-        var gallery = document.querySelector('#gallery');
-        var getVal = function (elem, style) { return parseInt(window.getComputedStyle(elem).getPropertyValue(style)); };
-        var getHeight = function (item) { return item.querySelector('.content').getBoundingClientRect().height; };
-        var resizeAll = function () {
-            var altura = getVal(gallery, 'grid-auto-rows');
-            var gap = getVal(gallery, 'grid-row-gap');
-            gallery.querySelectorAll('.gallery-item').forEach(function (item) {
-                var el = item;
-                el.style.gridRowEnd = "span " + Math.ceil((getHeight(item) + gap) / (altura + gap));
-            });
-        };
-        gallery.querySelectorAll('img').forEach(function (item) {
-            item.classList.add('byebye');
-            if (item.complete) {
-                console.log(item.src);
-            }
-            else {
-                item.addEventListener('load', function () {
-                    var altura = getVal(gallery, 'grid-auto-rows');
-                    var gap = getVal(gallery, 'grid-row-gap');
-                    var gitem = item.parentElement.parentElement;
-                    gitem.style.gridRowEnd = "span " + Math.ceil((getHeight(gitem) + gap) / (altura + gap));
-                    item.classList.remove('byebye');
-                });
-            }
-        });
-        window.addEventListener('resize', resizeAll);
-        gallery.querySelectorAll('.gallery-item').forEach(function (item) {
-            item.addEventListener('click', function () {
-                item.classList.toggle('full');
-            });
-        });
-
+        var quadimages = document.querySelectorAll("#quad figure");
+        for(i=0; i<quadimages.length; i++) {
+          quadimages[i].addEventListener('click', function(){ this.classList.toggle("expanded"); quad.classList.toggle("full") });
+        }
 </script>
 @endsection
-
-

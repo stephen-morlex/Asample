@@ -1,7 +1,6 @@
 <!-- Footer -->
 <div class="footer">
     <div class="footerTop">
-
         <div class="row">
 
             <div class="large-3 medium-6 small-12 columns footer-widget">
@@ -128,7 +127,6 @@
 
 <!-- Webful JS -->
 <script src="{{ asset('js/webful.js') }}"></script>
-
 
 <!-- Including LightBox Plugin Delete if not using -->
 <script src="{{ asset('js/lightbox.min.js') }}"></script>

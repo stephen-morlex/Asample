@@ -11,6 +11,7 @@ use App\StudentCategory;
 use App\Research;
 use Illuminate\Support\Facades\DB;
 use App\Services;
+use  Illuminate\Support\Facades\Session;
 
 class FacultyController extends Controller
 {
@@ -64,22 +65,19 @@ class FacultyController extends Controller
      */
     public function show($slug)
     {
-
-
         $faculty  = Faculty::where('slug', $slug)->firstOrFail();
-        $section = Program::with('faculty')->where('faculty_id',$slug)->get();
+        $sections =Program::where('faculty_id',$faculty->id)->orderBy('section_id','asc')->get()->groupBy('section_id');
         $faculty->load('programs')->first();
         $alsoInterested = Faculty::inRandomOrder()->take(5)->get();
         $studLife=StudentCategory::orderBy('name','asc')->get();
         $ad=Section::orderBy('name','asc')->get();
         $researchNav = Research::orderBy('name','asc')->get();
         $abouts  = About::orderBy('title','asc')->get();
-        $section =Section::all();
         $services1=   Services::orderBY('name','asc')->take(6)->get();
         $services2=   Services::orderBY('name','asc')->skip(6)->take(10)->get();
         return view('faculty.show')->with([
             'faculty'   => $faculty,
-            'section'   => $section,
+            'sections'   => $sections,
             'faculty'   => $faculty,
             'alsoInterested' => $alsoInterested,
             'studLife'=>$studLife,
@@ -87,9 +85,9 @@ class FacultyController extends Controller
             'researchNav'=>$researchNav,
             'abouts' => $abouts,
             'services1' => $services1,
-            'services2' =>$services2
-            // 'facultyProgram'=> $facultyProgram
+            'services2' =>$services2,
         ]);
+
     }
     /**
      * Update the specified resource in storage.

@@ -1,4 +1,5 @@
 @extends('layouts.app')
+@section('title', 'Events')
 @section('content')
 @include('partials.topNav')
 @include('layouts.mainNav')
