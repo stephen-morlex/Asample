@@ -24,9 +24,12 @@ class AdmissionController extends Controller
         $studLife=StudentCategory::orderBy('name','asc')->get();
         $researchNav = Research::orderBy('name','asc')->get();
         $abouts     = About::orderBy('title','asc')->get();
+        $financial= Services::where('id',10)->get();
+        $internationlStudent= Services::where('id',10)->get();
         $services1=   Services::orderBY('name','asc')->take(6)->get();
         $services2=   Services::orderBY('name','asc')->skip(6)->take(10)->get();
-        return view('admission.index',compact('sections','ad','studLife','researchNav','abouts','services1','services2'));
+        $internationlStudent= Services::where('id',9)->get();
+        return view('admission.index',compact('sections','ad','studLife','researchNav','abouts','services1','services2','financial','internationlStudent'));
 
     }
 
@@ -53,6 +56,7 @@ class AdmissionController extends Controller
         $studLife=StudentCategory::orderBy('name','asc')->get();
         $researchNav = Research::orderBy('name','asc')->get();
         $abouts   = About::orderBy('title','asc')->get();
+        $financial= Services::where('id',10)->get();
         $services1=   Services::orderBY('name','asc')->take(6)->get();
         $services2=   Services::orderBY('name','asc')->skip(6)->take(10)->get();
         return view('admission.show')->with([
@@ -62,11 +66,10 @@ class AdmissionController extends Controller
             'researchNav' => $researchNav,
              'abouts'    => $abouts,
              'services1' => $services1,
-             'services2' =>$services2
+             'services2' =>$services2,
+             'financial'=>$financial
         ]);
     }
-
-
     /**
      * Show the form for editing the specified resource.
      *

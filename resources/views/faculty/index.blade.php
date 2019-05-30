@@ -1,6 +1,5 @@
   @extends('layouts.app')
-
-
+  @section('title', 'Faculties, Schools and Institute')
 	@section('content')
 	@include('partials.topNav')
 	@include('layouts.mainNav')
@@ -35,21 +34,21 @@
         <div class="row">
 
             <div class="products-wrap">
-            @forelse ($faculties as $service)
+            @forelse ($faculties as $faculty)
                 <div class="medium-4 small-12 columns">
                     <div class="single-product"
                      data-aos="zoom-in-up"  data-aos-duration="3000"
                     >
                         <div class="product-img thumbnail">
-                            <a href="{{route('faculty.show',$service->slug)}}">
-                                <img   class="front-image" src="{{ Voyager::image( $service->thumbnail('cropped'))}}">
+                            <a href="{{route('faculty.show',$faculty->slug)}}">
+                                <img   class="front-image" src="{{ Voyager::image( $faculty->thumbnail('cropped'))}}">
                             </a>
                             <div class="add-to-cart-top">
-                                    <a href="{{route('faculty.show',$service->slug)}}" class="button primary">{{$service->name}}</a>
+                                    <a href="{{route('faculty.show',$faculty->slug)}}" class="button primary">{{$faculty->name}}</a>
                             </div>
                         </div>
                         <div class="product-info">
-                            <h6><a href="{{route('faculty.show',$service->slug)}}">{{$service->name}}</a></h6>
+                            <h6><a href="{{route('faculty.show',$faculty->slug)}}">{{$faculty->name}}</a></h6>
                            <div class="tx-div"></div>
                         </div>
                     </div>

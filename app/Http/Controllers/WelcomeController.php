@@ -12,6 +12,7 @@ use App\Partner;
 use App\Event;
 use App\News;
 use App\Services;
+use App\Gallery;
 
 class WelcomeController extends Controller
 {
@@ -29,6 +30,7 @@ class WelcomeController extends Controller
         $abouts     = About::orderBy('title','asc')->get();
         $researchNav = Research::orderBy('name','asc')->get();
         $studLife   = StudentCategory::orderBy('name','asc')->get();
+        $galleries   = Gallery::orderBy('title', 'asc')->take(10)->get();
         $partner    = Partner::orderBy('name', 'asc')->get();
         $news       = News::latest()->take(3)->get();
         $services1=   Services::orderBY('name','asc')->take(6)->get();
@@ -46,7 +48,8 @@ class WelcomeController extends Controller
             'news',
             'partner',
             'services1',
-            'services2'
+            'services2',
+            'galleries'
         ));
     }
 

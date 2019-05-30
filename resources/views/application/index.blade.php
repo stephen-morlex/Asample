@@ -25,8 +25,6 @@
 
 <!-- Content section -->
 <div class="content-section">
-
-    <br>
     <div class="seminar-events">
 
         <div class="row">
@@ -36,9 +34,9 @@
                     <div class="section-title">
                     <h2><span>Application form</span></h2>
                     </div><!-- Section Title Ends /-->
-                    
+
                             <div class="content-area module faq">
-                                
+
                 <div class="row">
 
                     <div class="medium-12 small-12 small-centered columns">
@@ -79,10 +77,10 @@
                                 <label>Date of Birth</label>
                                 <label>
                                     <input type="date" name="dob" value="{{ old('dob') }}" placeholder="Your date of birth here..." />
-                                </label>     
+                                </label>
                             </div>
 
-                            
+
                             <div class="medium-4 small-12 columns">
                                 <label>Select your gender</label>
                                 <label>
@@ -90,8 +88,8 @@
                                     <input type="radio" name="gender" value="male">Male<br>
                                 </label>
                             </div>
-                            
-                            
+
+
                             <div class="medium-4 small-12 columns">
                                 <label>Select your Marital stats</label>
                                 <label>
@@ -100,7 +98,7 @@
                                 </label>
                             </div>
 
-                            
+
                         </div>
 
 
@@ -110,7 +108,7 @@
                                 <label>Email</label>
                                 <label>
                                     <input type="email" name="email" value="{{ old('id_number') }}" placeholder="Your email here..." />
-                                </label>     
+                                </label>
                             </div>
 
                               <div class="medium-4 small-12 columns">
@@ -118,17 +116,17 @@
                                 <label>
                                     <input type="text" name="telephone" value="{{ old('telephone') }}" placeholder="Your Telephone number here..." />
                                 </label>
-                            </div>                          
+                            </div>
 
-                            
-                            
+
+
                             <div class="medium-4 small-12 columns">
                                 <label>Current Address</label>
                                 <label>
                                     <input type="text" name="current_address" value="{{ old('address') }}" placeholder="Your current address here..." />
                                 </label>
                             </div>
-                            
+
                         </div><!-- Row Ends /-->
 
 
@@ -384,13 +382,13 @@
                                     </select>
                                 </label>
                             </div>
-                            
-                            
+
+
                             <div class="medium-4 small-12 columns">
                                 <label>Passport or ID number</label>
                                 <label>
                                     <input type="text" name="id_number" value="{{ old('id_number') }}" placeholder="Your passport or id number here..." />
-                                </label>     
+                                </label>
                             </div>
 
                           <div class="medium-4 small-12 columns">
@@ -403,10 +401,10 @@
                                 </label>
                             </div>
                         </div><!-- Row Ends /-->
-      
- 
+
+
                         <div class="row">
-                            
+
                             <div class="medium-2 small-12 columns">
                                 <label>Do you have any disability?</label>
                                 <label>
@@ -414,7 +412,7 @@
                                         <option value="yes">Yes</option>
                                         <option value="no">No</option>
                                     </select>
-                                    
+
                                 </label>
                             </div>
                             <div class="medium-2 small-12 columns">
@@ -440,10 +438,10 @@
                             </div>
                         </div><!-- Row Ends /-->
 
-    
+
                     </div><!-- Contact form /-->
                        </div> <!-- right sidebar ends -->
-                       
+
                         <div class="medium-12 small-12 small-centered columns">
                         <div class="contact-form">
                         <div class="row">
@@ -509,13 +507,13 @@
                                 </label>
                             </div>
                         </div><!-- Row Ends /-->
-                          
-                 
+
+
 
                     </div>
                 </div>
                     <div class="medium-12 small-12 small-centered columns">
-        
+
                         <div class="contact-form">
                         <div class="row">
                             <div class="medium-4 small-12 columns">
@@ -548,9 +546,9 @@
                                     </select>
                                 </label>
                             </div>
- 
+
                         </div> <!-- End of row -->
-                        
+
                         <div class="row">
                             <div class="medium-4 small-12 columns">
                                 <label>Specify Programme type</label>
@@ -589,7 +587,7 @@
                             </div>
 
                         </div>
-                       
+
                        <div class="row">
                             <div class="medium-4 small-12 columns">
                                     <label>Who will sponsor your education?</label>
@@ -611,7 +609,7 @@
                                 <label>
                                     <input type="text" name="sponsor_name" value="{{ old('sponsor_name') }}" placeholder="Your Sponsor's fullname here..." />
                                 </label>
-                            </div>                      
+                            </div>
 
                             <div class="medium-3 small-12 columns">
                                 <label>Sponsor's Address</label>
@@ -619,14 +617,14 @@
                                     <input type="text" name="sponsor_address" value="{{ old('sponsor_address') }}" placeholder="Your Sponsor's address here..." />
                                 </label>
                             </div>
-                            
+
                             <div class="medium-3 small-12 columns">
                                 <label>Sponsors Telephone</label>
                                 <label>
                                     <input type="text" name="sponsor_telephone" value="{{ old('sponosr_telephone') }}" placeholder="Your Sponsor's telephone here..." />
                                 </label>
                             </div>
-                            
+
 
                             <div class="medium-3 small-12 columns">
                                 <label>Sponsor's email</label>
@@ -643,7 +641,7 @@
                                 <label>
                                     <input type="text" name="next_of_kin" value="{{ old('next_of_kin_') }}" placeholder="Your next of kin's fullname here..." />
                                 </label>
-                            </div>                      
+                            </div>
 
                             <div class="medium-3 small-12 columns">
                                 <label>Next of Kin's Address</label>
@@ -684,16 +682,16 @@
                                     <input type="text" name="other_sources" value="{{ old('other_sources') }}" placeholder="Specify others here..." />
                                 </label>
                                 </label>
-                            </div>  
+                            </div>
                             <div class="medium-4 small-12 columns">
                                 &nbsp;
-                            </div>                    
+                            </div>
 
                        </div>
-                      
+
                     </div>
-                </div> 
-                  
+                </div>
+
                        <div class="row">
                         <div class="medium-4 small-12 columns">
                             &nbsp;

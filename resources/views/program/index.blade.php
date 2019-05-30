@@ -1,5 +1,5 @@
 @extends('layouts.app')
-
+@section('title', 'Programms')
 @section('content')
 @include('partials.topNav')
 @include('layouts.mainNav')
@@ -150,7 +150,7 @@
 
             @forelse ($programs as $pro)
 
-            <div class="medium-8 small-12 columns" >
+            <div class="medium-6 small-12 columns" >
                     <a href="{{ route('program.show',$pro->slug) }}">
                     <div class="testimonial" data-aos="zoom-out"data-aos-duration="3000">
                        <a href="{{ route('program.show',$pro->slug) }}"><span class="label success">More</span></a>

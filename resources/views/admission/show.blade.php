@@ -1,4 +1,5 @@
 @extends('layouts.app')
+@section('title',  $admission->name)
 @section('content')
 @include('partials.topNav')
 @include('layouts.mainNav')
@@ -47,7 +48,7 @@
                                 <a href="#" class="accordion-title"> Application Forms</a>
                                 <div class="accordion-content" data-tab-content>
                                         <?php $file = (json_decode($admission->application))[0]->download_link; ?>
-                                        <a href="{{ Voyager::image( $file ) }}" target="_blank">{{$admission->Nom}} Undergraduate Application</a>
+                                        <a href="{{ Voyager::image( $file ) }}" target="_blank">{{$admission->Nom}} Click here to download the application form </a>
                                 </div>
                             </li>
 
@@ -55,14 +56,11 @@
                                 <a href="#" class="accordion-title"> Brochure</a>
                                 <div class="accordion-content" data-tab-content>
                                         <?php $file = (json_decode($admission->brochure))[0]->download_link; ?>
-                                        <a href="{{ Voyager::image( $file ) }}" target="_blank">{{$admission->Nom}} Undergraduate Brohure</a>
+                                        <a href="{{ Voyager::image( $file ) }}" target="_blank">{{$admission->Nom}} Click here to download the Brohure</a>
                                 </div>
                             </li>
-
-
-
                             <li class="accordion-item" data-accordion-item>
-                                <a href="#" class="accordion-title">Fees</a>
+                                <a href="#" class="accordion-title">Fees structure</a>
                                 <div class="accordion-content" data-tab-content>
 
                                     {!! $admission->fees !!}
@@ -81,8 +79,7 @@
                             </div><!-- icon side /-->
                             <div class="info-side float-left">
                                 <p><strong>Why Study With Us?</strong><br>
-                                From Last 30 years we are in industy and have honor. <br>
-                                123-123-1234
+                                    Chartered Private University accredited by Commission of University Education.
                                 </p>
                             </div><!-- info side /-->
                             <div class="clearfix"></div>
@@ -94,7 +91,7 @@
                             </div><!-- icon side /-->
                             <div class="info-side float-left">
                                 <p><strong>Special Techniques</strong><br>
-                                We are providing special visual teaching techniques to help you grow faster.
+                                    34 solid years of offering education grounded on values.
                                 </p>
                             </div><!-- info side /-->
                             <div class="clearfix"></div>
@@ -105,8 +102,8 @@
                                 <i class="fa fa-user" aria-hidden="true"></i>
                             </div><!-- icon side /-->
                             <div class="info-side float-left">
-                                <p><strong>Qualified Staff</strong><br>
-                                Our Qualified best teachers from industry give you best professional Knowledge.
+                                <p><strong>International University</strong><br>
+                                    Rich diversity: Over 20 nationalities  and 100+ programmes on offer.
                                 </p>
                             </div><!-- info side /-->
                             <div class="clearfix"></div>
@@ -118,8 +115,8 @@
                             </div><!-- icon side /-->
                             <div class="info-side float-left">
                                 <p><strong>Get Admission</strong><br>
-                                Rush before all seats are reserved for current batch. <br>
-                                123-123-1234
+                                    admissions@cuea.edu <br>
+                                    +254 (0) 709-691-111
                                 </p>
                             </div><!-- info side /-->
                             <div class="clearfix"></div>
@@ -131,77 +128,45 @@
             <!-- Content Area Ends /-->
 
                <!-- Content Area Starts -->
-       	<div class="content-area module faq">
+       	<div class="financial">
+               @foreach ($financial as $item)
+               <div class="row">
+                    <div class="medium-6 columns medium-push-6  gallery-image" >
+                            <div class="img-box" data-aos="zoom-in-left"   data-aos-duration="2500"
+                            data-aos-easing="ease-in-sine">
+                                    <a href="{{ route('services.show',$item->slug) }}">
+                                    <img class="thumbnail" src="{{ Voyager::image( $item->image)}}">
+                                    <div class="transparent-box">
+                                      <div class="caption">
+                                        {{--  <p>{{ $item->name }}</p>  --}}
+                                        <p class="opacity-low">{{ $item->name}}</p>
+                                      </div>
+                                    </div>
+                                    </a>
+                                  </div>
+                    </div>
+                    <div class="medium-6 columns medium-pull-6" data-aos="zoom-in-right"  data-aos-duration="3000"
+                    data-aos-easing="ease-in-sine">
+                    <a href="{{ route('services.show',$item->slug) }}"><h2>{{ $item->name }}.</h2></a>
+                    <p>{!! str_limit($item->content,300) !!}<a href="{{ route('services.show', $item->slug) }}"><strong>Read More &raquo;</strong></a></p>
+                    </div>
+                    </div>
+               @endforeach
+               <hr>
                 <div class="row">
-
-                    <div class="medium-9 small-12 columns">
-                        <h2>To request additional information.</h2>
-                        <p>Please contact us below thanks!.</p>
-                        <div class="contact-form">
-
-                        <div class="row">
-                            <div class="medium-6 small-12 columns">
-                                <label>
-                                    <input type="text" value="" placeholder="Your name here..." />
-                                </label>
-                            </div>
-                            <div class="medium-6 small-12 columns">
-                                <label>
-                                    <input type="text" value="" placeholder="Your last name here..." />
-                                </label>
-                            </div>
-                        </div><!-- Row Ends /-->
-
-                        <div class="row">
-                            <div class="medium-6 small-12 columns">
-                                <label>
-                                    <input type="text" value="" placeholder="Enter your Website ..." />
-                                </label>
-                            </div>
-                            <div class="medium-6 small-12 columns">
-                                <label>
-                                    <input type="text" value="" placeholder="Reason contacting us ..." />
-                                </label>
-                            </div>
-                        </div><!-- Row Ends /-->
-
-                        <div class="row">
-                            <div class="medium-12 small-12 columns">
-                                <label>
-                                    <select>
-                                        <option value="1">Chose Course</option>
-                                        <option value="2">Course One</option>
-                                        <option value="3">Course Two</option>
-                                    </select>
-                                </label>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="medium-12 small-12 columns">
-                                <label>
-                                    <select>
-                                        <option value="1">Chose Teacher</option>
-                                        <option value="2">Teacher One</option>
-                                        <option value="3">Teacher Two</option>
-                                    </select>
-                                </label>
-                            </div>
-                        </div><!-- Row Ends /-->
-
-                        <div class="row">
-                            <div class="medium-12 small-12 columns">
-                                <label>
-                                    <textarea rows="4" placeholder="Your message ..."></textarea>
-                                </label>
-                                <input type="submit" class="button primary" value="Send your message" />
-                            </div>
-                        </div><!-- Row Ends /-->
-
-                    </div><!-- Contact form /-->
-                       </div> <!-- right sidebar ends -->
-
-
-                </div><!-- row / -->
+                    <div class="medium-4 columns">
+                    <h3>Photoshop</h3>
+                    <p>AVivamus luctus urna sed urna ultricies ac tempor dui sagittis. In condimentum facilisis porta. Sed nec diam eu diam mattis viverra. Nulla fringilla, orci ac euismod semper, magna.</p>
+                    </div>
+                    <div class="medium-4 columns">
+                    <h3>Javascript</h3>
+                    <p>Vivamus luctus urna sed urna ultricies ac tempor dui sagittis. In condimentum facilisis porta. Sed nec diam eu diam mattis viverra. Nulla fringilla, orci ac euismod semper, magna.</p>
+                    </div>
+                    <div class="medium-4 columns">
+                    <h3>Marketing</h3>
+                    <p>Vivamus luctus urna sed urna ultricies ac tempor dui sagittis. In condimentum facilisis porta. Sed nec diam eu diam mattis viverra. Nulla fringilla, orci ac euismod semper, magna.</p>
+                    </div>
+                    </div>
             </div>
             <!-- Content Area Ends /-->
 

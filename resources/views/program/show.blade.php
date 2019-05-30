@@ -1,5 +1,5 @@
 @extends('layouts.app')
-
+@section('title', $program->name)
 @section('content')
 @include('partials.topNav')
 @include('layouts.mainNav')
@@ -20,7 +20,7 @@
                       <li><a href="{{route('program.show',$program->slug)}}"> {{ $program->name }}</a></li>
                     </ul><!-- Breadcrumbs /-->
                 </div><!-- Bottom Row /-->
-                
+
             </div><!-- Row /-->
         </div>
 

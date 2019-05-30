@@ -1,5 +1,5 @@
 @extends('layouts.app')
-
+@section('title', 'Students Life')
 @section('content')
 @include('partials.topNav')
 @include('layouts.mainNav')

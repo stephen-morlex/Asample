@@ -1,5 +1,5 @@
 @extends('layouts.app')
-
+@section('title', $faculty->name)
 @section('content')
 @include('partials.topNav')
 @include('layouts.mainNav')
@@ -7,11 +7,9 @@
 <!-- banner section -->
         <div class="title-section module">
             <div class="row">
-
                 <div class="small-12 columns">
                     <h1>Faculties, Schools and Institute</h1>
                 </div><!-- Top Row /-->
-
                 <div class="small-12 columns">
                     <ul class="breadcrumbs">
                      <li><a href="/">Home</a></li>
@@ -51,21 +49,29 @@
         </div><!-- Posts wrap ends /-->
 
         <div class="medium-3 small-12 columns sidebar">
+
             <div class="widget">
+                    <h2>{!! $faculty->name !!} Programmes</h2>
+                    @if (count($sections)==0)
+                    <p>There is no programmes at the moment!</p>
+                    @else
                     <ul class="accordion" data-accordion data-deep-link="true" data-update-history="true" data-deep-link-smudge="true" data-deep-link-smudge-delay="500" id="deeplinked-accordion">
-                        @foreach ($section as $item)
+                        @foreach ($sections as $section => $programs)
                             <li class="accordion-item " data-accordion-item>
-                              <a href="#deeplink1" class="accordion-title">{!! $item->name !!}</a>
+                              <a href="#deeplink1" class="accordion-title">{{ App\Section::find($section)->name }}</a>
                               <div class="accordion-content" data-tab-content id="deeplink1">
-                                    @foreach ($section as $program)
-                                   <p><a href="{{route('program.show',$program->slug)}}">{!!$program->name !!} {{ $loop->last ? '.':',' }}</a></p>
-                                   <hr>
+                                    <ul class="menu vertical">
+                                    @foreach ($programs as $program)
+                                    <li class="text-align:justify;"><a href="{{route('program.show',$program->slug)}}">{!!$program->name !!} {{ $loop->last ? '.':',' }}</a></li>
+                                    <hr>
                                     @endforeach
+                                </ul>
                               </div>
                             </li>
                           @endforeach
 
                           </ul>
+                          @endif
             </div>
 {{--
             <div class="widget">
@@ -91,20 +97,14 @@
 
             <div class="widget">
                 <h2>{!! $faculty->name !!} Brochure</h2>
-
                 <ol class="menu vertical">
-
-
                     <li>
                             @if (!empty($faculty->file[0]))
                             <a href="{{ Voyager::image( (json_decode($faculty->file))[0]->download_link) }}" target="_blank"> Click here to download</a>
                             @else
                             <li>no file</li>
                             @endif
-
-
-
-                    </li>
+                     </li>
              </ol>
             </div><!-- widget ends /-->
 

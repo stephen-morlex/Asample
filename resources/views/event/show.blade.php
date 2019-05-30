@@ -1,7 +1,8 @@
 @extends('layouts.app')
+@section('title', $event->title)
 @section('content')
 @include('partials.topNav')
-@include('partials.header')
+@include('layouts.mainNav')
 
 
 <!-- banner section -->

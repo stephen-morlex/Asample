@@ -1,4 +1,5 @@
  @extends('layouts.app')
+ @section('title', ' Gallery')
  @section('content')
  @include('partials.topNav')
 @include('layouts.mainNav')
@@ -17,7 +18,7 @@
                        <li class="active"><a href="{{route('gallery.index')}}">Gallery</a></li>
                     </ul><!-- Breadcrumbs /-->
                 </div><!-- Bottom Row /-->
-                
+
             </div><!-- Row /-->
         </div>
  <!-- End of the banner section -->
@@ -34,17 +35,32 @@
                     </div>
                 </div> <!-- Title Ends /-->
 
-                <div class="gallery-container">
+                <div class="gallery-image">
+                        @foreach($galleries as $gallery)
+                        @php $image = json_decode($gallery->image); @endphp
 
-                    @forelse($galleries as $gallery)
+                        @if (isset($image[0]))
+                        <div class="img-box">
+                          <img src="{{ Voyager::image($image[0]) }}" alt="{{ $gallery->title }}" />
+                          <div class="transparent-box">
+                            <div class="caption">
+                              <p>{{ $gallery->title }}</p>
+                              <p class="opacity-low">{{ $gallery->description }}</p>
+                            </div>
+                          </div>
+                        </div>
+                        @endif
+                        @endforeach
+
+                </div>
+                {{--  <div class="gallery-container">
+
                         <a href="{{ $gallery->image }}" data-lightbox="campus-gallery" data-title="{{ $gallery->title }}">
-                            <img class="gallery-thumb" src="{{ $gallery->image }}" alt="{{ $gallery->title }}"/>
+                            <img class="gallery-thumb" src="{{ Voyager::image($image[0]) }}" alt="{{ $gallery->title }}">
                         </a>
-                    @empty
-                        <h3 align="center">There is no gallery at the moment !</h3>
-                    @endforelse
 
-                </div><!-- Gallery Container /-->
+
+                </div><!-- Gallery Container /-->  --}}
 
             </div>
             <!-- Gallery Section Ends /-->

@@ -4,9 +4,7 @@
     <!-- important for compatibility charset -->
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-
-    <title>Catholic University of Eastern Africa</title>
-
+    <title>Catholic University of Eastern Africa - @yield('title')</title>
     <meta name="author" content="">
     <meta name="keywords" content="">
     <meta name="description" content="">
@@ -15,7 +13,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- FavIcon -->
-    <link rel="icon" href="{{ asset('images/favicon2.png') }}">
+    <link rel="icon" href="{{ asset('/images/favicon2.png') }}">
 
     <!-- Animation CSS -->
     <link rel="stylesheet" type="text/css" href="{{ asset('/css/animate.css') }}" media="all" />
@@ -53,7 +51,11 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('/lib/revolution/css/navigation.css') }}">
     {{-- scroll animation --}}
       <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-      <link rel="stylesheet" href="css/animate.css">
+
+
+<script async src="//platform-api.sharethis.com/js/sharethis.js#property=5ced204190e94700129832d2&product="sticky-share-buttons"></script>
+
+
 </head>
 
 <body>
@@ -79,10 +81,5 @@
   <script>
     AOS.init();
   </script>
-  <script src="js/wow.min.js"></script>
-  <script>
-  new WOW().init();
-  </script>
-
 </body>
 </html>

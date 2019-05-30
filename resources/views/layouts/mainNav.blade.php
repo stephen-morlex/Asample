@@ -4,7 +4,7 @@
         <div class="medium-7 small-12 columns">
             <div class="logo">
                 <a href="/">
-                    <img src="/images/logo2.png" alt="Webful Education">
+                    <img src="{{ asset('images/logo2.png') }}" alt="CUEA">
                 </a>
             </div>
         </div>
