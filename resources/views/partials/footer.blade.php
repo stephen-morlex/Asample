@@ -4,20 +4,22 @@
         <div class="row">
 
             <div class="large-3 medium-6 small-12 columns footer-widget">
-                <h2>About Us</h2>
+                <h2>Newsletter</h2>
                 <div class="tx-div"></div>
                 <section class="newsletter-subscribe">
-                    <div class="newsletter-subscribe-inner">
-                      <p class="subheader">Subcribe to our weekly newsletter.</p>
-                    <form action="">
-                      <div class="input-group">
-                        <input class="input-group-field" type="email" placeholder="Enter your email">
-                        <div class="input-group-button">
-                          <input type="submit" class="button secondary" value="Submit">
-                        </div>
-                      </div>
-                    </form>
-                  </section>
+                        <div class="input-group input-group-rounded">
+                                <p class="subheader">Subcribe to our weekly newsletter.</p>
+                        <form action="{{ route('search.result') }}" method="GET">
+                            @csrf
+                          <div class="input-group">
+                            <input class="input-group-field" type="search" name="sub" placeholder="Enter your email...">
+                            <div class="input-group-button">
+                              <input type="submit" class=" primary button" value="Submit">
+                            </div>
+                          </div>
+                        </form>
+                      </section>
+
 
             </div><!-- Widget 1 ends /-->
 

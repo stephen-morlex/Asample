@@ -10,11 +10,11 @@
         </div><!-- left Ends /-->
         <div class="medium-5 small-12 columns">
             <section class="newsletter-subscribe">
-                <div class="newsletter-subscribe-inner">
+                <div class="input-group input-group-rounded">
                 <form action="{{ route('search.result') }}" method="GET">
                     @csrf
                   <div class="input-group">
-                    <input class="input-group-field" type="text" name="query" placeholder="Searching...">
+                    <input class="input-group-field" type="search" name="query" placeholder="Searching...">
                     <div class="input-group-button">
                       <input type="submit" class=" primary button" value="Submit">
                     </div>
