@@ -170,55 +170,105 @@
 <div class="welcome-message module">
 	<div class="row">
 
-            <div class="medium-8 medium-offset-3 small-12 columns our-process">
+            <div class="medium-12 small-12 columns our-process">
                     <h2>Why Cuea!</h2>
 
-                    <div class="process">
-                        <div class="number"><i class="fa fa-heart" aria-hidden="true"></i></div>
-                        <div class="right-info">
-                            <h3> Chartered Private University accredited by Commission of University Education.</h3>
-                        </div>
-                        <div class="clearfix"></div>
-                    </div><!-- process /-->
-
-                    <div class="process">
-                        <div class="number"><i class="fa fa-users" aria-hidden="true"></i></div>
-                        <div class="right-info">
-                            <h3>Join a Seminar To know More about it!</h3>
-                            <p> 34 solid years of offering education grounded on values
-                                leading regional and international University.</p>
-                        </div>
-                        <div class="clearfix"></div>
-                    </div><!-- process /-->
-
-                    <div class="process">
-                        <div class="number"><i class="fa fa-globe" aria-hidden="true"></i></div>
-                        <div class="right-info">
-                            <h3>Get Enrolled and start better future with us!</h3>
-                            <p>Rich diversity: Over 20 nationalities and 100+ programmes on offer</p>
-                        </div>
-                        <div class="clearfix"></div>
-                    </div><!-- process /-->
-                    <div class="process">
-                            <div class="number"><i class="fa fa-share" aria-hidden="true"></i></div>
+                    <div class="medium-4 small-12 columns process">
+                            <div class="number"><i class="fa fa-heart" aria-hidden="true"></i></div>
                             <div class="right-info">
-                                <h3>Get Enrolled and start better future with us!</h3>
-                                <p> Innovative and marketable graduates</p>
+                                <h5> Chartered Private University accredited by Commission of University Education.</h5>
+                            </div>
+                            <div class="clearfix"></div>
+                    </div><!-- process /-->
+
+                        <div class="medium-4 small-12 columns process">
+                            <div class="number"><i class="fa fa-calendar" aria-hidden="true"></i></div>
+                            <div class="right-info">
+                                <h5>  34 solid years of offering education grounded on values.</h5>
+
                             </div>
                             <div class="clearfix"></div>
                         </div><!-- process /-->
-                        <div class="process">
+
+                        <div class="medium-4 small-12 columns process">
+                            <div class="number"><i class="fa fa-globe" aria-hidden="true"></i></div>
+                            <div class="right-info">
+                                <h5> A leading regional and international University..</h5>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div><!-- process /-->
+
+                        <div class="medium-4 small-12 columns process">
+                                    <div class="number"><i class="fa fa-users" aria-hidden="true"></i></div>
+                                    <div class="right-info">
+                                        <h5> Rich diversity: Over 20 nationalities and 100+ programmes on offer.</h5>
+
+                                    </div>
+                                    <div class="clearfix"></div>
+                         </div><!-- process /-->
+
+                         <div class="medium-4 small-12 columns process">
+                                    <div class="number"><i class="fa fa-files-o" aria-hidden="true"></i></div>
+                                    <div class="right-info">
+                                        <h5>Training and examination centre for ACCA and KASNEB (CPA & CS).</h5>
+
+                                    </div>
+                                    <div class="clearfix"></div>
+                        </div><!-- process /-->
+
+                        <div class="medium-4 small-12 columns process">
                                 <div class="number"><i class="fa fa-cogs" aria-hidden="true"></i></div>
                                 <div class="right-info">
-                                    <h3>Get Enrolled and start better future with us!</h3>
-                                    <p>Thirsty Crow should Call us at: 123-123-1234 to drink water asap before all seats are reserved.</p>
+                                    <h5>Rich extra-curricula activities, innovation and marketable graduates.</h5>
+
+                                </div>
+                                <div class="clearfix"></div>
+                        </div><!-- process /-->
+
+                        <div class="medium-4 small-12 columns process">
+                                    <div class="number"><i class="fa fa-certificate" aria-hidden="true"></i></div>
+                                    <div class="right-info">
+                                        <h5> Clear learning path from Certificate, Diploma, Degree, Masters and Doctoral Courses with a high completion time rate.</h5>
+
+                                    </div>
+                                    <div class="clearfix"></div>
+                        </div><!-- process /-->
+
+
+
+                        <div class="medium-4 small-12 columns process">
+                                <div class="number"><i class="fa fa-building" aria-hidden="true"></i></div>
+
+                                <div class="right-info">
+
+                                    <h5> Two campuses: Main campus located in Langata, Nairobi and Gaba campus located in Eldoret.</h5>
+
+                                </div>
+                                <div class="clearfix"></div>
+                    </div><!-- process /-->
+
+                         {{--  <div class="medium-4 small-12 columns process">
+                                    <div class="number"><i class="fa fa-cogs" aria-hidden="true"></i></div>
+                                    <div class="right-info">
+                                        <h5>  Innovative and marketable graduates. </h5>
+                                    </div>
+                                    <div class="clearfix"></div>
+                        </div><!-- process /-->  --}}
+
+                        <div class="medium-4 small-12 columns process">
+                                <div class="number"><i class="fa fa-eye" aria-hidden="true"></i></div>
+                                <div class="right-info">
+                                    <h5>Quality and prompt research supervision for postgraduate students. </h5>
+
                                 </div>
                                 <div class="clearfix"></div>
                             </div><!-- process /-->
+
                 </div><!-- Left Process Ends /-->
 
 
     </div><!-- Row /-->
+
     <div class="row">
             <div class="small-6 small-centered text-center columns">
                     <a href="{{ route('about.index') }}" style="text-align:center;" class="primary button">More about cuea!</a>
@@ -309,11 +359,14 @@
 				<div class="clearfix"></div>
 			 </div> <!-- Testimonial /-->
 
-			<div class="testimonial" >
-                    <div class="flex-video ">
-                            <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/ny7pBK0_MTk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </div>
-             </div> <!-- Testimonial /-->
+             <div class=" testimonial">
+
+                    <div class="testimonial-detail">
+                            <div class="fb-page" data-href="https://www.facebook.com/TheCatholicUniversityOfEasternAfricaCuea/?__tn__=%2Cd%2CP-R&amp;eid=ARCxgLfT2A__3nfkp2w00sxet90Boh-CYVJoxzpFMMlhLtsXDkXWIlk4m__EShKbnnccNbObeHi0LHRL" data-tabs="timeline" data-width="" data-height="590" data-small-header="true" data-adapt-container-width="true" data-hide-cover="true" data-show-facepile="true"><blockquote cite="https://www.facebook.com/TheCatholicUniversityOfEasternAfricaCuea/?__tn__=%2Cd%2CP-R&amp;eid=ARCxgLfT2A__3nfkp2w00sxet90Boh-CYVJoxzpFMMlhLtsXDkXWIlk4m__EShKbnnccNbObeHi0LHRL" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/TheCatholicUniversityOfEasternAfricaCuea/?__tn__=%2Cd%2CP-R&amp;eid=ARCxgLfT2A__3nfkp2w00sxet90Boh-CYVJoxzpFMMlhLtsXDkXWIlk4m__EShKbnnccNbObeHi0LHRL">The Catholic University of Eastern Africa - CUEA</a></blockquote></div>
+                  </div><!-- Testimonial Detail /-->
+                    <div class="clearfix"></div>
+                 </div> <!-- Testimonial /-->
+
 
 
 		</div><!-- Testimonials /-->

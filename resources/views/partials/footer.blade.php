@@ -21,7 +21,7 @@
 
             </div><!-- Widget 1 ends /-->
 
-            <div class="large-3 medium-6 small-12 columns footer-widget quick-links">
+            <div class="large-5 medium-6 small-12 columns footer-widget quick-links">
                 <h2>Useful Information</h2>
                 <div class="tx-div"></div>
                 <ul  class="menu vertical">
@@ -36,7 +36,7 @@
                 </ul>
             </div><!-- Widget 2 Ends /-->
 
-            <div class="large-3 medium-6 small-12 columns footer-widget">
+            {{--  <div class="large-3 medium-6 small-12 columns footer-widget">
                 <h2>Quick Links</h2>
                 <div class="tx-div"></div>
                 <ul class="vertical office-hours">
@@ -47,7 +47,7 @@
                     <li><a href="http://">Payment information</a></li>
 
                 </ul>
-            </div><!-- Widget 3 Ends /-->
+            </div><!-- Widget 3 Ends /-->  --}}
 
             <div class="large-3 medium-6 small-12 columns footer-widget">
             <div class="textwidget">

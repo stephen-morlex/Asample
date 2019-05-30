@@ -54,7 +54,9 @@
 
 
 <script async src="//platform-api.sharethis.com/js/sharethis.js#property=5ced204190e94700129832d2&product="sticky-share-buttons"></script>
-
+<div id="fb-root"></div>
+       <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v3.3"></script>
+</div>
 
 </head>
 
