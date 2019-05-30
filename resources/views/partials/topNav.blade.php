@@ -12,16 +12,6 @@
                 <li><a href="http://ir.cuea.edu/html/joomla/" target="blank">Library</a></li>
                 <li><a href="contact.html">Parents</a></li>
                <li><a href="{{ route('contact.index') }}">Contact</a></li>
-               {{--  <div class="search-wrap float-right">
-                <a href="#" class="search-icon-toggle" data-toggle="search-dropdown"><i class="fa fa-search"></i></a>
-            </div><!-- search wrap ends -->  --}}
-            <div class="dropdown-pane" id="search-dropdown" data-dropdown data-auto-focus="true">
-              <input type="text" placeholder="Enter keyword and press enter .... " />
-            </div>
-
-
-
-
             </ul>
         </div><!-- Left Column Ends /-->
 

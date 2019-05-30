@@ -3,37 +3,36 @@
     <div class="footerTop">
 
         <div class="row">
-
             <div class="large-3 medium-6 small-12 columns footer-widget">
                 <h2>About Us</h2>
                 <div class="tx-div"></div>
                 <section class="newsletter-subscribe">
                     <div class="newsletter-subscribe-inner">
-                      <p class="subheader">Subcribe to our weekly newsletter.</p>
-                    <form action="">
-                      <div class="input-group">
-                        <input class="input-group-field" type="email" placeholder="Enter your email">
-                        <div class="input-group-button">
-                          <input type="submit" class="button secondary" value="Submit">
-                        </div>
-                      </div>
-                    </form>
-                  </section>
-
+                        <p class="subheader">Subcribe to our weekly newsletter.</p>
+                        <form action="">
+                            <div class="input-group">
+                                <input class="input-group-field" type="email" placeholder="Enter your email">
+                                <div class="input-group-button">
+                                    <input type="submit" class="button secondary" value="Submit">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </section>
             </div><!-- Widget 1 ends /-->
 
             <div class="large-3 medium-6 small-12 columns footer-widget quick-links">
                 <h2>Useful Information</h2>
                 <div class="tx-div"></div>
                 <ul  class="menu vertical">
-                                @foreach ($services1 as $item)
-                                <li><a href="{{ route('services.show',$item->slug) }}"> {{ $item->name }}</a></li>
-                                @endforeach
+                    @foreach ($services1 as $item)
+                    <li><a href="{{ route('services.show',$item->slug) }}"> {{ $item->name }}</a></li>
+                    @endforeach
                 </ul>
                 <ul  class="menu vertical">
-                        @foreach ($services2 as $item)
-                        <li><a href="{{ route('services.show',$item->slug) }}"> {{ $item->name }}</a></li>
-                        @endforeach
+                    @foreach ($services2 as $item)
+                    <li><a href="{{ route('services.show',$item->slug) }}"> {{ $item->name }}</a></li>
+                    @endforeach
                 </ul>
             </div><!-- Widget 2 Ends /-->
 
@@ -46,50 +45,47 @@
                     <li><a href="http://">Information for the international student</a></li>
                     <li><a href="http://">Information for transfer students</a></li>
                     <li><a href="http://">Payment information</a></li>
-
                 </ul>
             </div><!-- Widget 3 Ends /-->
 
             <div class="large-3 medium-6 small-12 columns footer-widget">
-            <div class="textwidget">
-                <ul class="address">
-                    <li>
-                        <i class="fa fa-home"></i>
-                        <h4>Address:</h4>
-                        <p>P.O. Box 62157 - 00200
-                            <br> Nairobi, Kenya</p>
-                    </li>
-                    <li>
-                        <i class="fa fa-mobile"></i>
-                        <h4>Phone:</h4>
-                        <p>+(254) 709-691000
-                        <br>+(254) 704-913318</p>
-                    </li>
-                    <li>
-                        <i class="fa fa-envelope"></i>
-                        <h4>Email:</h4>
-                        <p> admissions@cuea.edu</p>
-                    </li>
-                </ul>
-                <hr>
-                <div class="socialicons">
-                    Social:
-                    <a target="_blank" href="https://www.facebook.com/TheCatholicUniversityOfEasternAfricaCuea?ref=bookmarks"><i class="fa fa-facebook"></i></a>
-                    <a  target="_blank" href="https://twitter.com/cuea_official"><i class="fa fa-twitter"></i></a>
-                    <a target="_blank" href="#"><i class="fa fa-youtube-play"></i></a>
-                </div><!-- Social Icons /-->
-            </div><!-- text widget /-->
-        </div><!-- widget 4 /-->
+                <div class="textwidget">
+                    <ul class="address">
+                        <li>
+                            <i class="fa fa-home"></i>
+                            <h4>Address:</h4>
+                            <p>
+                                P.O. Box 62157 - 00200
+                                <br> Nairobi, Kenya
+                            </p>
+                        </li>
+                        <li>
+                            <i class="fa fa-mobile"></i>
+                            <h4>Phone:</h4>
+                            <p>+(254) 709-691000
+                            <br>+(254) 704-913318</p>
+                        </li>
+                        <li>
+                            <i class="fa fa-envelope"></i>
+                            <h4>Email:</h4>
+                            <p> admissions@cuea.edu</p>
+                        </li>
+                    </ul><hr>
+                    <div class="socialicons">
+                        Social:
+                        <a target="_blank" href="https://www.facebook.com/TheCatholicUniversityOfEasternAfricaCuea?ref=bookmarks"><i class="fa fa-facebook"></i></a>
+                        <a  target="_blank" href="https://twitter.com/cuea_official"><i class="fa fa-twitter"></i></a>
+                        <a target="_blank" href="#"><i class="fa fa-youtube-play"></i></a>
+                    </div><!-- Social Icons /-->
+                </div><!-- text widget /-->
+            </div><!-- widget 4 /-->
             <div class="clearfix"></div>
-
         </div><!-- Row Ends /-->
 
     </div><!-- footerTop Ends here.. -->
 
     <div class="footerbottom">
-
         <div class="row">
-
             <div class="medium-6 small-12 columns">
                 <div class="copyrightinfo"><?php echo date("Y"); ?> &copy; <a href="/">Catholic University of Eastern Africa.</a> All Rights Reserved.</div>
             </div><!-- left side /-->
@@ -104,14 +100,12 @@
                     </ul>
                 </div>
             </div><!-- Right Side /-->
-
         </div><!-- Row /-->
-
     </div><!-- footer Bottom /-->
 </div>
 <!-- Footer Ends here /-->
 
-</div>
+
 <!-- Main Container /-->
 
 <a href="#top" id="top" class="animated fadeInUp start-anim"><i class="fa fa-angle-up"></i></a>
