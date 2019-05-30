@@ -38,11 +38,8 @@ class StudentController extends Controller
 
     public function studentCats($slug)
     {
-         $studLife= StudentCategory::all();
-
-         $studentLife=StudentCategory::where('slug',$slug)->first()->students()->paginate(6);
-
-
+        $studLife= StudentCategory::all();
+        $studentLife=StudentCategory::where('slug',$slug)->first()->students()->paginate(6);
         $ad=Section::orderBy('name','asc')->get();
         $studLife=StudentCategory::orderBy('name','asc')->get();
         $researchNav = Research::orderBy('name','asc')->get();

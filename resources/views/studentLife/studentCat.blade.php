@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', $studentLife->name)
+@section('title',  'Students Life')
 @section('content')
 @include('partials.topNav')
 @include('layouts.mainNav')
@@ -51,11 +51,14 @@
             @empty
                 <h4 align="center">There is no services at moment!</h4>
             @endforelse
+            <div class="small-12 small-centered text-center columns">
+                    {{ $studentLife->links('pagination') }}
+            </div>
 
             </div><!-- products wrap -->
 
         </div><!-- Row Ends -->
-        {{ $studentLife->links() }}
+
             </div>
             <!-- Content Section Ends /-->
 

@@ -23,16 +23,16 @@
 
                     <!-- LAYER NR. 1 -->
                     <div class="tp-caption tp-shape tp-shapewrapper layer1 tp-resizeme rs-parallaxlevel-0"
-                         id="slide-16-layer-3"
-                         data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
-                         data-y="['middle','middle','middle','middle']" data-voffset="['0','0','0','0']"
+                        id="slide-16-layer-3"
+                        data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
+                        data-y="['middle','middle','middle','middle']" data-voffset="['0','0','0','0']"
                                     data-width="full"
                         data-height="full"
                         data-whitespace="normal"
                         data-transform_idle="o:1;"
 
-                         data-transform_in="opacity:0;s:1500;e:Power3.easeInOut;"
-                         data-transform_out="s:300;s:300;"
+                        data-transform_in="opacity:0;s:1500;e:Power3.easeInOut;"
+                        data-transform_out="s:300;s:300;"
                         data-start="1000"
                         data-basealign="slide"
                         data-responsive_offset="on">
@@ -40,20 +40,20 @@
 
                     <!-- LAYER NR. 2 -->
                     <div class="tp-caption Newspaper-Title-Centered layer2 tp-resizeme rs-parallaxlevel-0"
-                         id="slide-16-layer-1"
-                         data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
-                         data-y="['middle','middle','middle','middle']" data-voffset="['0','0','0','1']"
-                         data-fontsize="['50','50','50','30']"
+                        id="slide-16-layer-1"
+                        data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
+                        data-y="['middle','middle','middle','middle']" data-voffset="['0','0','0','1']"
+                        data-fontsize="['50','50','50','30']"
                         data-lineheight="['55','55','55','35']"
                         data-width="['721','721','721','420']"
                         data-height="none"
                         data-whitespace="normal"
                         data-transform_idle="o:1;"
 
-                         data-transform_in="y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;s:1500;e:Power3.easeInOut;"
-                         data-transform_out="auto:auto;s:1000;"
-                         data-mask_in="x:0px;y:0px;"
-                         data-mask_out="x:0;y:0;"
+                        data-transform_in="y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;s:1500;e:Power3.easeInOut;"
+                        data-transform_out="auto:auto;s:1000;"
+                        data-mask_in="x:0px;y:0px;"
+                        data-mask_out="x:0;y:0;"
                         data-start="1000"
                         data-splitin="none"
                         data-splitout="none"
@@ -62,18 +62,18 @@
 
                     <!-- LAYER NR. 3 -->
                     <div class="tp-caption Newspaper-Subtitle layer3 tp-resizeme rs-parallaxlevel-0"
-                         id="slide-16-layer-2"
-                         data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
-                         data-y="['middle','middle','middle','middle']" data-voffset="['-82','-82','-82','-58']"
+                        id="slide-16-layer-2"
+                        data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
+                        data-y="['middle','middle','middle','middle']" data-voffset="['-82','-82','-82','-58']"
                                     data-width="none"
                         data-height="none"
                         data-whitespace="nowrap"
                         data-transform_idle="o:1;"
 
-                         data-transform_in="y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;s:1500;e:Power3.easeInOut;"
-                         data-transform_out="auto:auto;s:1000;"
-                         data-mask_in="x:0px;y:0px;"
-                         data-mask_out="x:0;y:0;"
+                        data-transform_in="y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;s:1500;e:Power3.easeInOut;"
+                        data-transform_out="auto:auto;s:1000;"
+                        data-mask_in="x:0px;y:0px;"
+                        data-mask_out="x:0;y:0;"
                         data-start="1000"
                         data-splitin="none"
                         data-splitout="none"
@@ -82,9 +82,9 @@
 
                     <!-- LAYER NR. 4 -->
                     <div class="tp-caption layer4 rs-parallaxlevel-0"
-                         id="slide-16-layer-4"
-                         data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
-                         data-y="['middle','middle','middle','middle']" data-voffset="['92','92','92','76']"
+                        id="slide-16-layer-4"
+                        data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
+                        data-y="['middle','middle','middle','middle']" data-voffset="['92','92','92','76']"
                                     data-width="none"
                         data-height="none"
                         data-whitespace="nowrap"
@@ -112,59 +112,58 @@
 </div>
 <!-- Banner Ends /-->
 
+
+
+
 <!-- information boxes starts -->
 <div class="information-boxes module">
 
-    <div class="courses-info medium-4 small-12 columns"
-    data-aos="fade-right" data-aos-anchor-placement="top-bottom"
-    >
-		<div class="">
-			<h3><i class="fa fa-book" aria-hidden="true"></i> Academics</h3>
-			<p>We are very happy to introduce many dynamic courses which includes many new and great features we are happy to  ...</p>
-			<ul class="no-bullet">
-				<li><i class="fa fa-check-square-o" aria-hidden="true"></i> Better designed programs for you</li>
-				<li><i class="fa fa-check-square-o" aria-hidden="true"></i> Online Availability to sources</li>
-				<li><i class="fa fa-check-square-o" aria-hidden="true"></i> Helping Board in your learning management</li>
-			</ul>
-			<div class="clearfix"></div>
-			<a href="{{ route('faculty.index') }}" class="primary button bordered-light">Find out More!</a>
-		</div>
-	</div><!-- courses column Ends /-->
+        <div class="courses-info medium-4 small-12 columns" data-aos="fade-right" data-aos-anchor-placement="top-bottom">
+            <div class="">
+                <h3><i class="fa fa-book" aria-hidden="true"></i> Academics</h3>
+                <p>We are very happy to introduce many dynamic courses which includes many new and great features we are happy to  ...</p>
+                <ul class="no-bullet">
+                    <li><i class="fa fa-check-square-o" aria-hidden="true"></i> Better designed programs for you</li>
+                    <li><i class="fa fa-check-square-o" aria-hidden="true"></i> Online Availability to sources</li>
+                    <li><i class="fa fa-check-square-o" aria-hidden="true"></i> Helping Board in your learning management</li>
+                </ul>
+                <div class="clearfix"></div>
+                <a href="{{ route('faculty.index') }}" class="primary button bordered-light">Find out More!</a>
+            </div>
+        </div><!-- courses column Ends /-->
 
-    <div class="faculty-info medium-4 small-12 columns"
-    data-aos="fade-up" data-aos-anchor-placement="top-bottom"
-    >
-		<div class="">
-			<h3><i class="fa fa-users" aria-hidden="true"></i> Student Life</h3>
-			<p>We have got some best teachers available in town who can help you to polish your skills as much as you can ...</p>
-			<ul class="no-bullet">
-				<li><i class="fa fa-check-square-o" aria-hidden="true"></i> Better designed programs for you</li>
-				<li><i class="fa fa-check-square-o" aria-hidden="true"></i> Online Availability to sources</li>
-				<li><i class="fa fa-check-square-o" aria-hidden="true"></i> Helping Board in your learning management</li>
-			</ul>
-			<div class="clearfix"></div>
-			<a href="{{ route('student.index') }}" class="primary button bordered-light">Explore more!</a>
-		</div>
-	</div><!-- faculty info ends /-->
+        <div class="faculty-info medium-4 small-12 columns" data-aos="fade-right" data-aos-anchor-placement="top-bottom">
+            <div class="">
+                <h3><i class="fa fa-users" aria-hidden="true"></i> Student Life</h3>
+                <p>We have got some best teachers available in town who can help you to polish your skills as much as you can ...</p>
+                <ul class="no-bullet">
+                    <li><i class="fa fa-check-square-o" aria-hidden="true"></i> Better designed programs for you</li>
+                    <li><i class="fa fa-check-square-o" aria-hidden="true"></i> Online Availability to sources</li>
+                    <li><i class="fa fa-check-square-o" aria-hidden="true"></i> Helping Board in your learning management</li>
+                </ul>
+                <div class="clearfix"></div>
+                <a href="{{ route('student.index') }}" class="primary button bordered-light">Explore more!</a>
+            </div>
+        </div><!-- faculty info ends /-->
 
-    <div class="newadmission-info medium-4 small-12 columns"
-    data-aos="fade-left" data-aos-anchor-placement="top-bottom"
-    >
-		<div class="">
-			<h3><i class="fa fa-sign-in" aria-hidden="true"></i> Admission Process</h3>
-			<p>We are happy to tell you that we are accepting new admissions for the semster,get enrolled asap ...</p>
-			<ul class="no-bullet">
-				<li><i class="fa fa-check-square-o" aria-hidden="true"></i> Find a course best suits of your choice</li>
-				<li><i class="fa fa-check-square-o" aria-hidden="true"></i> Do entry exams and payment for the admission</li>
-				<li><i class="fa fa-check-square-o" aria-hidden="true"></i> Start your course</li>
-			</ul>
-			<div class="clearfix"></div>
-			<a href="{{ route('admission.index') }}" class="primary button bordered-light">Get Enrolled!</a>
-		</div>
-	</div>
-	<div class="clearfix"></div>
-</div>
-<!-- information boxes ends /-->
+        <div class="newadmission-info medium-4 small-12 columns" data-aos="fade-right" data-aos-anchor-placement="top-bottom">
+            <div class="">
+                <h3><i class="fa fa-sign-in" aria-hidden="true"></i> Admission Process</h3>
+                <p>We are happy to tell you that we are accepting new admissions for the semster,get enrolled asap ...</p>
+                <ul class="no-bullet">
+                    <li><i class="fa fa-check-square-o" aria-hidden="true"></i> Find a course best suits of your choice</li>
+                    <li><i class="fa fa-check-square-o" aria-hidden="true"></i> Do entry exams and payment for the admission</li>
+                    <li><i class="fa fa-check-square-o" aria-hidden="true"></i> Start your course</li>
+                </ul>
+                <div class="clearfix"></div>
+                <a href="{{ route('admission.index') }}" class="primary button bordered-light">Get Enrolled!</a>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+    <!-- information boxes ends /-->
+
+
 
 <!-- Welcome Message -->
 <div class="welcome-message module">
@@ -295,22 +294,22 @@
         <div class="events-wrapper">
             @forelse ($events as $e)
             <div class="medium-6 small-12 columns" >
-                    <div class="event">
-                        <div  class="medium-8 small-12 columns event-data "  data-aos="zoom-in-right" data-aos-duration="2000">
-                            <h4><a href="{{ route('event.show',$e->slug) }}">{!! $e->title !!}</a></h4>
-                            <p> {!!  str_limit($e->content,70) !!}</p>
-                            <p><strong>Timinings:</strong> {!!  Carbon\Carbon::parse($e->start)->format('g:i A')!!} - {!!  Carbon\Carbon::parse($e->end)->format('g:i A') !!}
-                            <p><strong>Venue:</strong> {!! $e->location !!}
-                            <strong>Date:</strong> {!! Carbon\Carbon::parse($e->date)->format('d-m-Y ') !!}</p>
-                            <a href="{{ route('event.show',$e->slug) }}" class="button primary ">Join Event</a>
-                        </div><!-- Event DAta /-->
-                        <div class="medium-4 small-12 columns event-thumb" data-aos="zoom-in-left" data-aos-duration="3000">
-                            <img src="{{ Voyager::image( $e->thumbnail('cropped'))}}" alt="{!! $e->title !!}" />
-                        </div><!-- Event thumb /-->
-                        <br>
-                        <div class="clearfix"></div>
-                    </div><!-- Event div ends /-->
-                </div><!-- Event Column Ends /-->
+                <div class="event">
+                    <div  class="medium-8 small-12 columns event-data "  data-aos="zoom-in-right" data-aos-duration="2000">
+                        <h4><a href="{{ route('event.show',$e->slug) }}">{!! $e->title !!}</a></h4>
+                        <p> {!!  str_limit($e->content,70) !!}</p>
+                        <p><strong>Timinings:</strong> {!!  Carbon\Carbon::parse($e->start)->format('g:i A')!!} - {!!  Carbon\Carbon::parse($e->end)->format('g:i A') !!}
+                        <p><strong>Venue:</strong> {!! $e->location !!}
+                        <strong>Date:</strong> {!! Carbon\Carbon::parse($e->date)->format('d-m-Y ') !!}</p>
+                        <a href="{{ route('event.show',$e->slug) }}" class="button primary ">Join Event</a>
+                    </div><!-- Event DAta /-->
+                    <div class="medium-4 small-12 columns event-thumb" data-aos="zoom-in-left" data-aos-duration="3000">
+                        <img src="{{ Voyager::image( $e->thumbnail('cropped'))}}" alt="{!! $e->title !!}" />
+                    </div><!-- Event thumb /-->
+                    <br>
+                    <div class="clearfix"></div>
+                </div><!-- Event div ends /-->
+            </div><!-- Event Column Ends /-->
 
             @empty
 
@@ -321,13 +320,13 @@
     </div>
     <!-- Row Ends /-->
     <br>
-@if (count($events)>=1)
-<div class="load-more text-center">
+    @if (count($events)>=1)
+    <div class="load-more text-center">
         <a href="{{ route('events.index') }}" class="button primary">More Events...</a>
- </div>
- @else
- <h3 align="center" >there is no event at the moment!</h3>
-@endif
+    </div>
+    @else
+    <h3 align="center" >there is no event at the moment!</h3>
+    @endif
 
 </div>
 <!-- Seminar Events Ends /-->
@@ -345,19 +344,13 @@
 	<div class="row">
 
 		<div class="testimonials">
-
 			<div class=" testimonial">
-
 				<div class="testimonial-detail">
-
-    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-
-
-    <a class="twitter-timeline" href="https://twitter.com/CUEA_OFFICIAL" data-widget-id="636436522443644928" data-theme="light" data-link-color="#660000" data-chrome="" data-border-color="">Tweets by @CUEA_OFFICIAL</a>
-
-      		</div><!-- Testimonial Detail /-->
+                    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+                    <a class="twitter-timeline" href="https://twitter.com/CUEA_OFFICIAL" data-widget-id="636436522443644928" data-theme="light" data-link-color="#660000" data-chrome="" data-border-color="">Tweets by @CUEA_OFFICIAL</a>
+      		    </div><!-- Testimonial Detail /-->
 				<div class="clearfix"></div>
-			 </div> <!-- Testimonial /-->
+			</div> <!-- Testimonial /-->
 
              <div class=" testimonial">
 
@@ -389,7 +382,7 @@
         </div>
 
     <div class="row">
-            @if (count($news)>=1)
+        @if (count($news)>=1)
         <div class="posts-wrapper">
             @forelse($news as $newsItem)
             <div class="medium-4 small-12 columns">
@@ -456,8 +449,10 @@
 
  </div>
 
+</div>
 
-
+</div>
+<!-- Content Section Ends /-->
 <!-- Our PArtners -->
 <div class="brands-wrap side-controls module">
 	<div class="section-title-wrapper">
@@ -470,29 +465,37 @@
 
 	<div class="row">
 
-
 		<div class="brand-carousel" >
-                @if (count($partner) >= 1)
-                    @foreach ($partner as $partner)
-                    <div class="bran-logo"><a href="#" target="_blank"><img  alt="" src="{{Voyager::image( $partner->image) }}" class="thumbnail"
-                        data-aos="flip-left"
-                        data-aos-easing="ease-out-cubic"
-                        data-aos-duration="2000"
-                    /></a></div>
-                    @endforeach
-                @else
-                {{--  <h3 align="center">No partner at the moment!</h3>  --}}
-                @endif
-
-
-
-
+            @if (count($partner) >= 1)
+                @foreach ($partner as $partner)
+                <div class="bran-logo"><a href="#" target="_blank"><img  alt="" src="{{Voyager::image( $partner->image) }}" class="thumbnail"
+                    data-aos="flip-left"
+                    data-aos-easing="ease-out-cubic"
+                    data-aos-duration="2000"
+                /></a></div>
+                @endforeach
+            @else
+            {{--  <h3 align="center">No partner at the moment!</h3>  --}}
+            @endif
 		</div><!-- Brand carousel /-->
 
 	</div><!-- Row /-->
 
 </div>
 <!-- Our Partners /-->
+<div class="financial">
+        <div>
+
+             <div class="responsive-embed "
+             data-aos="zoom-in-left"   data-aos-duration="2500"
+             data-aos-easing="ease-in-sine"
+             >
+                    <iframe width="560" height="400" src="https://www.youtube-nocookie.com/embed/ny7pBK0_MTk" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" width="560" height="400" frameborder="0"></iframe>
+            </div>
+
+
+        </div>
+</div>
 
 <!-- Call to Action box -->
 <div class="call-to-action">
@@ -506,6 +509,9 @@
    </div><!-- row /-->
  </div>
 <!-- Call to Action End /-->
+
+
+
 @include('partials.footer')
 
 <script>

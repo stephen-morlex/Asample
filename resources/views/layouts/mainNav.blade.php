@@ -6,8 +6,8 @@
                 <a href="/">
                     <img src="{{ asset('images/logo2.png') }}" alt="CUEA">
                 </a>
-            </div><!-- logo /-->
-        </div><!-- left Ends /-->
+            </div>
+        </div>
         <div class="medium-5 small-12 columns">
             <section class="newsletter-subscribe">
                 <div class="input-group input-group-rounded">
@@ -28,21 +28,24 @@
 
             </div>
 
-    </div><!-- Row Ends /-->
+    </div>
 </div>
+
+
+
 <div class="navigation-style-two">
     <div class="row nav-wrap">
-        <!-- navigation Code STarts here.. -->
+
         <div class="top-bar">
             <div class="top-bar-title">
                 <span data-responsive-toggle="responsive-menu" data-hide-for="medium" style="display: none;">
                     <a data-toggle=""><span class="menu-icon dark float-left"></span></a>
                 </span>
             </div>
-
             <nav id="responsive-menu">
-                <ul class="menu vertical medium-horizontal dropdown" data-responsive-menu="accordion medium-dropdown" role="menubar" data-dropdown-menu="020c49-dropdown-menu">
+                <ul class="menu vertical medium-horizontal" data-responsive-menu="accordion medium-dropdown">
                     <li class="single-sub parent-nav"><a href="/">Home</a></li>
+
                     <li class="single-sub parent-nav"><a href="{{ route('faculty.index') }}">Academics </a>
                         <ul class="child-nav menu vertical">
                             <li><a href="{{ route('faculty.index') }}">Faculties, Schools & Institutes</a></li>
@@ -65,12 +68,11 @@
                            @endforelse
                         </ul>
                     </li>
-                    <li class="single-sub parent-nav">
-                        <a href="{{ route('student.index') }}">Student Life</a>
+                    <li class="single-sub parent-nav"><a href="{{ route('student.index') }}">Student Life</a>
                         <ul class="child-nav menu vertical">
-                                @foreach ($studLife as $sl)
-                                    <li><a href="{{ route('student.cat', $sl->slug) }}">{{ $sl->name }}</a></li>
-                                @endforeach
+                            @foreach ($studLife as $sl)
+                                <li><a href="{{ route('student.cat', $sl->slug) }}">{{ $sl->name }}</a></li>
+                            @endforeach
                         </ul>
                     </li>
                     <li class="single-sub parent-nav"><a href="{{ route('about.index') }}">About Cuea</a>
@@ -80,19 +82,20 @@
                             @endforeach
                          </ul>
                     </li>
-
-                   <li class="single-sub parent-nav"><a href="{{ route('contact.index') }}">Portals </a>
-                            <ul class="child-nav menu vertical">
-                                <li><a href="https://student.cuea.edu/">Student portal</a></li>
-                                <li><a href="https://staff.cuea.edu/site/login">Teacher portal</a></li>
-                                <li><a href="https://www.premiercert.org/cuea/">Degree verification</a></li>
-                            </ul>
-                     </li>
-
+                    <li class="single-sub parent-nav"><a href="{{ route('contact.index') }}">Portals </a>
+                        <ul class="child-nav menu vertical">
+                            <li><a href="https://student.cuea.edu/">Student portal</a></li>
+                            <li><a href="https://staff.cuea.edu/site/login">Teacher portal</a></li>
+                            <li><a href="https://www.premiercert.org/cuea/">Degree verification</a></li>
+                        </ul>
+                    </li>
+                </ul>
             </nav>
-        </div><!-- top-bar Ends -->
-        <!-- Navigation Code Ends here -->
-
-    </div><!-- right Ends /-->
+        </div>
+    </div>
 </div>
+
+
+
+
 
