@@ -26,9 +26,9 @@ class AboutController extends Controller
         $ad         = Section::orderBy('name','asc')->get();
         $studLife   = StudentCategory::orderBy('name','asc')->get();
         $abouts     = About::skip(1)->take(10)->get();
-        $researchNav = Research::orderBy('name','asc')->get();
-        $services1=   Services::orderBY('name','asc')->take(6)->get();
-        $services2=   Services::orderBY('name','asc')->skip(6)->take(10)->get();
+        $researchNav= Research::orderBy('name','asc')->get();
+        $services1  = Services::orderBY('name','asc')->take(6)->get();
+        $services2  = Services::orderBY('name','asc')->skip(6)->take(10)->get();
 
         return view('about.index', compact('sections', 'programs', 'ad', 'studLife', 'abouts','about','researchNav','services1','services2'));
     }
@@ -68,24 +68,24 @@ class AboutController extends Controller
     public function show($slug)
     {
 
-        $about  = About::where('slug', $slug)->firstOrFail();
+        $about      = About::where('slug', $slug)->firstOrFail();
         $admissions = Section::orderBy('name')->get();
         $ad         = Section::orderBy('name','asc')->get();
         $studLife   = StudentCategory::orderBy('name','asc')->get();
         $abouts     = About::orderBy('title','asc')->get();
-        $researchNav = Research::orderBy('name','asc')->get();
-        $services1=   Services::orderBY('name','asc')->take(6)->get();
-        $services2=   Services::orderBY('name','asc')->skip(6)->take(10)->get();
+        $researchNav= Research::orderBy('name','asc')->get();
+        $services1  = Services::orderBY('name','asc')->take(6)->get();
+        $services2  = Services::orderBY('name','asc')->skip(6)->take(10)->get();
 
         return view('about.show')->with([
             'about'     => $about,
             'ad'        => $ad,
             'studLife'  => $studLife,
             'abouts'    => $abouts,
-            'admissions'=>$admissions,
-            'researchNav' =>$researchNav,
-            'services1' =>$services1,
-            'services2' =>$services2
+            'admissions'=> $admissions,
+            'researchNav' => $researchNav,
+            'services1' => $services1,
+            'services2' => $services2
         ]);
     }
 

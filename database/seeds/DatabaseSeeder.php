@@ -7,7 +7,7 @@ use App\Section;
 use App\Admission;
 use App\Event;
 use App\Partner;
-use App\Media;
+use App\AboutParent;
 use App\About;
 use App\News;
 use App\NewsCategory;
@@ -28,7 +28,7 @@ class DatabaseSeeder extends Seeder
         factory(Admission::class,10)->create();
         factory(Event::class,10)->create();
         factory(Partner::class,10)->create();
-        factory(Media::class,10)->create();
+        factory(AboutParent::class,5)->create();
         factory(About::class,4)->create();
         factory(NewsCategory::class,10)->create();
         

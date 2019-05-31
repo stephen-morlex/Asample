@@ -396,7 +396,7 @@
                     data-aos-duration="3000"
                     >
                         <a href="{{ route('news.show', $newsItem->slug) }}">
-                            <img src="{{ Voyager::image( $newsItem->thumbnail('cropped'))}}" alt="{{ $newsItem->image }}" />
+                            <img src="{{ Voyager::image( $newsItem->thumbnail('cropped'))}}" alt="{{ $newsItem->title }}" />
                         </a>
                     </div><!-- Thumb /-->
                     <div class="post-content"
