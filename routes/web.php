@@ -76,7 +76,7 @@ Route::get('/application/', 'ApplicationController@index')->name('application.in
 Route::post('/application/send', 'ApplicationController@store')->name('application.store');
 
 
-// MEDIA
+// GALLERY
 Route::get('/gallery/', 'GalleryController@index')->name('gallery.index');
 
 
@@ -95,6 +95,11 @@ Route::group(['prefix' => 'cuea'], function () {
     Voyager::routes();
 });
 
+
+
+// PARENT
+Route::get('/parent', 'AboutParentController@index')->name('parent.index');
+Route::get('/parent/{parent}', 'AboutParentController@show')->name('parent.show');
 
 
 Auth::routes();

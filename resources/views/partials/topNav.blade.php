@@ -10,7 +10,7 @@
                 <li><a href="{{ route('news.index') }}">News</a></li>
                 <li><a href="{{ route('gallery.index') }}">Gallery</a></li>
                 <li><a href="http://ir.cuea.edu/html/joomla/" target="blank">Library</a></li>
-                <li><a href="contact.html">Parents</a></li>
+                <li><a href="{{ route('parent.index') }}">Parents</a></li>
                <li><a href="{{ route('contact.index') }}">Contact</a></li>
                {{--  <li><i class="fa fa-phone"></i> +254 (0) 709-691-111</li>  --}}
 
