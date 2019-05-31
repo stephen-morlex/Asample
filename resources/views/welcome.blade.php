@@ -168,9 +168,13 @@
 <!-- Welcome Message -->
 <div class="welcome-message module">
 	<div class="row">
-
+            <div class="section-title-wrapper">
+                    <div class="section-title">
+                        <h2>Why CUEA</h2>
+                    </div>
+                    <br>
+                </div> <!-- Title Ends /-->
             <div class="medium-12 small-12 columns our-process">
-                    <h2>Why Cuea!</h2>
 
                     <div class="medium-4 small-12 columns process">
                             <div class="number"><i class="fa fa-heart" aria-hidden="true"></i></div>
@@ -490,7 +494,7 @@
              data-aos="zoom-in-left"   data-aos-duration="2500"
              data-aos-easing="ease-in-sine"
              >
-                    <iframe width="560" height="400" src="https://www.youtube-nocookie.com/embed/ny7pBK0_MTk" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" width="560" height="400" frameborder="0"></iframe>
+                    <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/ny7pBK0_MTk" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" width="560" height="400" frameborder="0"></iframe>
             </div>
 
 

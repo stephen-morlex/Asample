@@ -25,7 +25,7 @@ class WelcomeController extends Controller
     {
         $events         = Event::latest()->take(2)->get();
         $admissions = Section::orderBy('name')->get();
-        $carousels= carousel::orderBy('id','desc')->get();
+        $carousels= carousel::latest()->limit(5)->get();
         $ad         = Section::orderBy('name','asc')->get();
         $abouts     = About::orderBy('title','asc')->get();
         $researchNav = Research::orderBy('name','asc')->get();

@@ -265,8 +265,8 @@ End of Admission CSS
     text-align:center;
 }
 .section-title h2 {
-	margin-bottom:0px;
-    text-transform:uppercase;
+    margin-bottom:0px;
+    color: #000;
 	font-weight:bold !important;
 }
 .section-title p {
@@ -701,8 +701,7 @@ Information Boxes CSS Ends
  08 - Welcome Message CSS
 -------------------------*/
 .welcome-message h2 {
-	text-transform:uppercase;
-	font-size:1.850rem;
+
 	margin-bottom:0px;
 }
 .welcome-message ul li {
@@ -1306,7 +1305,11 @@ Gallery CSS Ends
 	font-size:2.5rem;
 	text-transform:uppercase;
 	margin-bottom:40px;
-	color:#e79800;
+
+}
+.our-process h5 {
+
+	color:#444;
 }
 .process h3, .process p {
 
@@ -1320,7 +1323,7 @@ Gallery CSS Ends
 	float:left;
 	font-size:2rem;
 	background-color:#f7f7f7;
-	color:#e79800;
+	color:#95141b;
 	display:block;
 	width:60px;
 	height:60px;
@@ -1329,6 +1332,22 @@ Gallery CSS Ends
 	line-height:60px;
 	margin-right:25px;
 	font-weight:bold;
+}
+.process .number:hover {
+	float:left;
+	font-size:2rem;
+	background-color:#95141b;
+	color:#ffffff;
+	display:block;
+	width:60px;
+	height:60px;
+	border-radius:100%;
+	text-align:center;
+	line-height:60px;
+	margin-right:25px;
+    font-weight:bold;
+
+
 }
 .process .right-info {
 	float:left;

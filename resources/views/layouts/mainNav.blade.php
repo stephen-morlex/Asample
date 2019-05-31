@@ -21,10 +21,10 @@
                   </div>
                 </form>
               </section>
-              <div>
+              {{--  <div>
                   <a href="#"><h4><i class="fa fa-phone" aria-hidden="true"> +254 (0) 709-691-111</i></h4></a>
                   <div class="tx-div"></div>
-              </div>
+              </div>  --}}
 
             </div>
 
