@@ -54,8 +54,8 @@ CopyRight    : 2016 @ www.webfulcreations.com
 body {
 	line-height: 1.5;
     font-family: Source Sans Pro,Helvetica Neue,Helvetica,Arial,sans-serif;
-    font-size: 1.8em;
-    color: #000;
+    font-size: 1.8rem;
+    color: black;
 }
 h1, h1 a {
 	font-size:2rem;
@@ -74,9 +74,10 @@ h5, h6, h5 a, h6 a {
 	font-size:1rem;
 }
 label, p, ul, ol, a, blockquote, input, textarea, select, [type=date], [type=text], [type=email], span {
-	font-size:0.875rem;
-	line-height:25px;
-	color:#5d5d5d;
+	font-size: 15px;;
+	line-height: 1.5;
+    color:black;
+
 }
 h1,h2,h3,h4,h5,h6, h2 a, h3 a, h4 a, h5 a, h6 a, h1 span, h2 span, h3 span, h4 span, h5 span, h6 span {
 	font-family:Source Sans Pro,Helvetica Neue,Helvetica,Arial,sans-serif;
@@ -267,7 +268,7 @@ End of Admission CSS
 .section-title h2 {
     margin-bottom:0px;
     color: #000;
-	font-weight:bold !important;
+	font-weight:700;
 }
 .section-title p {
 	font-size:1rem;
@@ -384,6 +385,7 @@ Useful Elements CSS Ends
 	text-align:right;
 }
 .topBar ul li {
+    font-weight: bold;
 	color:#FFF;
 	padding:7px;
 	text-align:right;
@@ -396,11 +398,14 @@ Useful Elements CSS Ends
 	padding-left:25px;
 }
 .topBar ul li a {
+    font-size: 13px;
+    font-weight: bold;
 	padding-left:5px;
 	padding-right:5px;
 	color:#FFF;
 }
 .topBar ul li a:hover {
+    transition-duration: 1.0s;
 	color:#e79800;
 }
 /*-------------------------
@@ -448,12 +453,11 @@ Top bar CSS Ends
 	border-top:2px solid;
 }
 .top-bar ul li a {
-	text-transform:uppercase;
-	font-size:1.00rem;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: initial;
 }
-.top-bar ul ul li a {
-	text-transform:capitalize;
-}
+
 .top-bar {
 	position:relative;
 	font-family: Source Sans Pro,Helvetica Neue,Helvetica,Arial,sans-serif;
@@ -494,7 +498,7 @@ Top bar CSS Ends
 	background-color:transparent;
 }
 .top-bar ul .first-sub {
-	border-top-color:#174873 !important;
+	border-top-color:#e79800 !important;
 }
 .top-bar ul li a {
 	color:#95141b;
@@ -506,6 +510,7 @@ Top bar CSS Ends
 	background-blend-mode: color;
 }
 .top-bar .dropdown.menu>li.opens-right>.is-dropdown-submenu li a {
+    transition: 0.3s ease;
 	border-bottom:0px !important;
 	background-color:#95141b;
 	color:#FFF !important;
@@ -516,20 +521,25 @@ Top bar CSS Ends
 	margin-right:10px;
 }
 .top-bar .dropdown.menu>li.opens-right>.is-dropdown-submenu li a:hover {
-	color:#fff !important;
-	border-bottom: solid #f0951f !important;
+	color:#e79800 !important;
+    /* border-bottom: solid #f0951f !important; */
 	position: relative;
 }
 .is-active ul li a {
 	background-color:#FFF;
-	color:#174873 !important;
+	color:#444 !important;
+}
+.is-active ul li a:hover {
+	background-color:#FFF;
+    color:#e79800 !important;
+
 }
 .menu .active>a {
-	 background-color:#174873;
+	 background-color:#e79800;
 	 color:#FFF;
 }
 .single-sub ul li a {
-	border-bottom-color:#174873 !important;
+	color:#e79800 !important;
 }
 /*-------------------------
 Header CSS Ends
@@ -546,18 +556,27 @@ Header CSS Ends
 	line-height:52px;
 }
 .navigation-style-two .search-wrap a, .navigation-style-two .top-bar ul li a {
-	color:#FFF;
+    color:#FFF;
+    transition: all .5s;
+}
+.navigation-style-two .search-wrap a, .navigation-style-two .top-bar ul li a:active {
+    color:#e79800;
+    transition: all .5s;
 }
 .navigation-style-two .dropdown.menu.medium-horizontal>li>a {
 	padding-top:18px;
 	padding-bottom:18px;
 }
+
 .navigation-style-two .top-bar .dropdown.menu>li.opens-right>.is-dropdown-submenu {
-	margin-top:0px;
-	border-top:3px solid #e79800;
+    margin-top:0px;
+    transition: all .5s;
+	border-top:1px solid #e79800;
 }
 .navigation-style-two .is-active a, .navigation-style-two .top-bar ul li a:hover {
-	border-bottom:3px solid ;
+    /* border-bottom: 3px solid ; */
+    background: #ffffff06;
+	color: #adf;
 }
 .topBar .topbar-new ul {
 	text-align:left;
@@ -1309,7 +1328,7 @@ Gallery CSS Ends
 }
 .our-process h5 {
 
-	color:#444;
+	color:#000;
 }
 .process h3, .process p {
 
@@ -1647,7 +1666,7 @@ Call to Action Box Ends
 	background-size:cover;
 }
 .title-section h1 {
-    text-transform:uppercase;
+    font-weight: bold;
     margin-top:0px;
     margin-bottom:5px;
 	color:#FFF;
@@ -2202,6 +2221,7 @@ Styles For Inner Pages Ends
 	margin-right:0px;
 }
 .sidebar ol li a {
+    font-size: 15px;
 	line-height:22px;
 }
 /*-------------------------
@@ -2412,15 +2432,25 @@ Styles For Inner Pages Ends
 -------------------------*/
 .price-plan {
 	width: 100%;
-    background: #f7f7f7;
-    text-align: center;
 }
 .price-plan .price-title {
-	background: #364e72;
+	background: #95141b;
     color: #f7f7f7;
     font-size: 16px;
 	font-weight:300;
     padding: 20px 10px 25px;
+    -webkit-transition: margin-left 0.3s linear, font-weight 0.2s linear, color 0.3s linear;
+  -moz-transition: margin-left 0.3s linear, font-weight 0.2s linear, color 0.3s linear;
+  -o-transition: margin-left 0.3s linear, font-weight 0.2s linear, color 0.3s linear;
+  -ms-transition: margin-left 0.3s linear, font-weight 0.2s linear, color 0.3s linear;
+}
+.price-plan .price-title:hover {
+	background: #e79800;
+    color: #f7f7f7;
+    font-size: 16px;
+	font-weight:300;
+    margin-left: 20px;
+    font-weight: 600;
 }
  .title-heading {
 	font-size: 26px;
@@ -2572,13 +2602,16 @@ Styles For Inner Pages Ends
 	color:#FFF;
 }
 .footer a {
+    font-size: 1.0625rem;
 	color:#FFF;
 }
 .footer p {
+    font-size: 1.0625rem;
 	color:#FFF;
 }
 .footer a:hover {
-	color:#8d8a85;
+    transition-duration: 1.0s;
+	color:#e79800;
 }
 .footer h2 {
 	color:#f7f7f7;
@@ -2587,6 +2620,7 @@ Styles For Inner Pages Ends
 	background-color:#e79800;
 }
 .footerTop ul {
+    font-size: 1.0625rem;
 	color:#FFF;
 }
 .footerbottom {

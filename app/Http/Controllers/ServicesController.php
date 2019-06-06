@@ -8,6 +8,7 @@ use App\Section;
 use App\StudentCategory;
 use App\Research;
 use App\About;
+use App\News;
 
 class ServicesController extends Controller
 {
@@ -66,6 +67,7 @@ class ServicesController extends Controller
         $researchNav = Research::orderBy('name','asc')->get();
         $sideServices=Services::orderBy('name','asc')->get();
         $abouts     = About::orderBy('title','asc')->get();
+        $newsSide =News::orderBy('view_count','desc')->take(5)->get();
         $section =Section::all();
         $services1=   Services::orderBY('name','asc')->take(6)->get();
         $services2=   Services::orderBY('name','asc')->skip(6)->take(10)->get();
@@ -79,7 +81,8 @@ class ServicesController extends Controller
             'sideServices' =>$sideServices,
             'abouts' =>$abouts,
             'services1'=>$services1,
-            'services2' =>$services2
+            'services2' =>$services2,
+            'newsSide'=>$newsSide
         ]);
     }
 

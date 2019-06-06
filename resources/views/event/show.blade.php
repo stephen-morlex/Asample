@@ -32,7 +32,7 @@
             <div class="module">
                 <div class="row">
 
-                    <div class="medium-9 small-12 columns">
+                    <div class="medium-8 small-12 columns">
                      	<div class="event-thumb">
                         	<img src="{{ Voyager::image( $event->image ) }}" class="thumbnail" />
                         </div><!-- Event Thumb /-->
@@ -42,7 +42,7 @@
                         </div><!-- Events content /-->
                     </div><!-- Events Wrapper Ends /-->
 
-                    <div class="medium-3 small-12 columns sidebar">
+                    <div class="medium-4 small-12 columns sidebar">
 
                         <div class="widget">
                         	<h2>{{ $event->title }}</h2>
@@ -66,23 +66,8 @@
 
         </div>
         <!-- Content Section Ends /-->
-
-
         <!-- Call to Action box -->
-        <div class="call-to-action">
-           <div class="row">
-                <div class="medium-10 small-12 columns">
-                    <h2><i class="fa fa-phone" aria-hidden="true"></i> 	If you Have Any Questions Call Us On <span>(010)123-456-7890</span></h2>
-                </div>
-                <div class="medium-2 small-12 columns">
-                    <a href="#" class="button secondary">Appointment</a>
-                </div>
-           </div><!-- row /-->
-         </div>
+        @include('partials.call')
         <!-- Call to Action End /-->
-
-
-
-
 @include('partials.footer')
 @endsection

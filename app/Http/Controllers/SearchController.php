@@ -42,9 +42,9 @@ class SearchController extends Controller
                     $studLife=StudentCategory::orderBy('name','asc')->get();
                     $researchNav = Research::orderBy('name','asc')->get();
                     $sideResearch=Research::orderBy('name','asc')->get();
-                    $abouts     = About::orderBy('title','asc')->get();
-                    $services1=   Services::orderBY('name','asc')->take(6)->get();
-                    $services2=   Services::orderBY('name','asc')->skip(6)->take(10)->get();
+                    $abouts      = About::orderBy('title','asc')->get();
+                    $services1   = Services::orderBY('name','asc')->take(6)->get();
+                    $services2   = Services::orderBY('name','asc')->skip(6)->take(10)->get();
 
                     return view('search.index',compact('searchterm','searchResults','ad','studLife','researchNav','sideResearch','research','abouts','services1','services2'));
 

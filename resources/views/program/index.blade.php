@@ -8,14 +8,14 @@
             <div class="row">
 
                 <div class="small-12 columns">
-                    <h1>Programms</h1>
+                    <h1>Programmes</h1>
                 </div><!-- Top Row /-->
 
                 <div class="small-12 columns">
                     <ul class="breadcrumbs">
                      <li><a href="/">Home</a></li>
                      <li class="active"><a href="">Academics</a></li>
-                     <li ><a href="{{ route('program.index') }}">Programms</a></li>
+                     <li ><a href="{{ route('program.index') }}">Programmes</a></li>
                     </ul><!-- Breadcrumbs /-->
                 </div><!-- Bottom Row /-->
 
@@ -32,10 +32,12 @@
             <div class="courses-wrapper">
 
                 <div class="course-section">
-
-                    <div class="section-title">
-                        <h2><span>Our Programmes</span></h2>
-                    </div><!-- Section Title Ends /-->
+                        <div class="section-title-wrapper">
+                                <div class="section-title">
+                                    <h2>Our Progammes</h2>
+                                </div>
+                                <br>
+                            </div> <!-- Title Ends /-->
 
               @forelse ($sections as $section)
 
@@ -61,7 +63,6 @@
               @empty
 
               @endforelse
-
                     <div class="clearfix"></div>
                 </div><!-- Courses Section Ends /-->
 
@@ -71,135 +72,160 @@
 
     </div>
     <!-- Our Teachers /-->
-
+    </div>
 </div>
 <!-- Content Section Ends /-->
 
 
-<div class="why-cuea content-area module">
+<div class="seminar-events content-area module">
 
         <div class="row">
-
-            <div class="our-process-wrapper">
-
-                <div class="medium-8 medium-offset-3 small-12 columns our-process" >
-                    <h2>Why Cuea!</h2>
-
-                    <div class="process">
-                        <div class="number"><i class="fa fa-heart" aria-hidden="true"></i></div>
-                        <div class="right-info">
-                            <h3>Select a Course you like and Explore it!</h3>
-                            <p> Chartered Private University accredited by Commission of University Education.</p>
+                <div class="section-title-wrapper">
+                        <div class="section-title">
+                            <h2>Why CUEA</h2>
                         </div>
-                        <div class="clearfix"></div>
-                    </div><!-- process /-->
+                        <br>
+                    </div> <!-- Title Ends /-->
+                    <div class="medium-12 small-12 columns our-process">
 
-                    <div class="process">
-                        <div class="number"><i class="fa fa-users" aria-hidden="true"></i></div>
-                        <div class="right-info">
-                            <h3>Join a Seminar To know More about it!</h3>
-                            <p> 34 solid years of offering education grounded on values
-                                leading regional and international University.</p>
-                        </div>
-                        <div class="clearfix"></div>
-                    </div><!-- process /-->
-
-                    <div class="process">
-                        <div class="number"><i class="fa fa-globe" aria-hidden="true"></i></div>
-                        <div class="right-info">
-                            <h3>Get Enrolled and start better future with us!</h3>
-                            <p>Rich diversity: Over 20 nationalities and 100+ programmes on offer</p>
-                        </div>
-                        <div class="clearfix"></div>
-                    </div><!-- process /-->
-                    <div class="process">
-                            <div class="number"><i class="fa fa-share" aria-hidden="true"></i></div>
-                            <div class="right-info">
-                                <h3>Get Enrolled and start better future with us!</h3>
-                                <p> Innovative and marketable graduates</p>
-                            </div>
-                            <div class="clearfix"></div>
-                        </div><!-- process /-->
-                        <div class="process">
-                                <div class="number"><i class="fa fa-cogs" aria-hidden="true"></i></div>
-                                <div class="right-info">
-                                    <h3>Get Enrolled and start better future with us!</h3>
-                                    <p>Thirsty Crow should Call us at: 123-123-1234 to drink water asap before all seats are reserved.</p>
-                                </div>
-                                <div class="clearfix"></div>
+                            <div class="medium-4 small-12 columns process">
+                                    <div class="number"><i class="fa fa-heart" aria-hidden="true"></i></div>
+                                    <div class="right-info">
+                                        <a href="http://www.cue.or.ke/index.php/component/accreditedinstitutions/?view=university&amp;Itemid=253"><h5> Chartered Private University accredited by Commission of University Education.</h5></a>
+                                    </div>
+                                    <div class="clearfix"></div>
                             </div><!-- process /-->
-                </div><!-- Left Process Ends /-->
 
-<!--                    <div class="medium-4 small-12 columns our-testimonials"></div> Our Testimonials Ends /-->
+                                <div class="medium-4 small-12 columns process">
+                                    <div class="number"><i class="fa fa-calendar" aria-hidden="true"></i></div>
+                                    <div class="right-info">
+                                        <h5>  35 solid years of offering education grounded on values.</h5>
 
-            </div><!-- Events Wrapper Ends /-->
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div><!-- process /-->
 
-        </div><!-- Row Ends /-->
-  </div>
+                                <div class="medium-4 small-12 columns process">
+                                    <div class="number"><i class="fa fa-globe" aria-hidden="true"></i></div>
+                                    <div class="right-info">
+                                        <h5> A leading regional and international University..</h5>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div><!-- process /-->
 
-  <!-- Content section -->
-  <div class="content-section space-section module testimonial-page">
+                                <div class="medium-4 small-12 columns process">
+                                            <div class="number"><i class="fa fa-users" aria-hidden="true"></i></div>
+                                            <div class="right-info">
+                                                <h5> Rich diversity: Over 30 nationalities and 100+ programmes on offer.</h5>
 
-      <div class="row">
+                                            </div>
+                                            <div class="clearfix"></div>
+                                 </div><!-- process /-->
 
-            <div class="section-title">
-                    <h2><span>Our Programmes</span></h2>
-                </div><!-- Section Title Ends /-->
+                                 <div class="medium-4 small-12 columns process">
+                                            <div class="number"><i class="fa fa-files-o" aria-hidden="true"></i></div>
+                                            <div class="right-info">
+                                                <h5>Training and examination centre for ACCA and KASNEB (CPA & CS).</h5>
 
-          <div class="medium-12 small-12 columns test-wrap">
+                                            </div>
+                                            <div class="clearfix"></div>
+                                </div><!-- process /-->
 
-            @forelse ($programs as $pro)
+                                <div class="medium-4 small-12 columns process">
+                                        <div class="number"><i class="fa fa-cogs" aria-hidden="true"></i></div>
+                                        <div class="right-info">
+                                           <a href="{{ route('student.index') }}"> <h5>Rich extra-curricula activities, innovation and marketable graduates.</h5></a>
 
-            <div class="medium-6 small-12 columns" >
-                    <a href="{{ route('program.show',$pro->slug) }}">
-                    <div class="testimonial" data-aos="zoom-out"data-aos-duration="3000">
-                       <a href="{{ route('program.show',$pro->slug) }}"><span class="label success">More</span></a>
-                        <div class="testimonial-thumb">
-                                <a href="{{ route('program.show',$pro->slug) }}"> <img class="display:none" src="{{ Voyager::image( $pro->thumbnail('cropped'))}}" alt="{{$pro->name}}" /></a>
-                        </div><!-- Testimonial Thumb /-->
+                                        </div>
+                                        <div class="clearfix"></div>
+                                </div><!-- process /-->
 
-                        <div class="testimonial-detail">
-                                <a href="{{ route('program.show',$pro->slug) }}">
-                            <h4>{{ $pro->name }}</h4>
-                            <p>{!! str_limit($pro->body,95) !!}</p>
-                            <a href="{{ route('program.section', $pro->section->slug) }}"><cite>{{ $pro->section->name }}  program</cite></a>
-                                </a>
-                        </div><!-- Testimonial Detail /-->
-                        <div class="clearfix"></div>
-                     </div> <!-- Testimonial /-->
-                    </a>
-                 </div><!-- Column Ends /-->
+                                <div class="medium-4 small-12 columns process">
+                                            <div class="number"><i class="fa fa-certificate" aria-hidden="true"></i></div>
+                                            <div class="right-info">
+                                                <h5> Clear learning path from Certificate, Diploma, Degree, Masters and Doctoral Courses with a high completion time rate.</h5>
 
-            @empty
-                    <h2>Sorry there are no programs at the moment</h2>
-            @endforelse
-
+                                            </div>
+                                            <div class="clearfix"></div>
+                                </div><!-- process /-->
 
 
 
-          </div>
-      </div><!-- Row Ends /-->
+                                <div class="medium-4 small-12 columns process">
+                                        <div class="number"><i class="fa fa-building" aria-hidden="true"></i></div>
 
-  </div>
+                                        <div class="right-info">
+
+                                            <h5> Two campuses: Main campus located in Langata, Nairobi and Gaba campus located in Eldoret.</h5>
+
+                                        </div>
+                                        <div class="clearfix"></div>
+                            </div><!-- process /-->
+
+                                 {{--  <div class="medium-4 small-12 columns process">
+                                            <div class="number"><i class="fa fa-cogs" aria-hidden="true"></i></div>
+                                            <div class="right-info">
+                                                <h5>  Innovative and marketable graduates. </h5>
+                                            </div>
+                                            <div class="clearfix"></div>
+                                </div><!-- process /-->  --}}
+
+                                <div class="medium-4 small-12 columns process">
+                                        <div class="number"><i class="fa fa-eye" aria-hidden="true"></i></div>
+                                        <div class="right-info">
+                                            <h5>Quality and prompt research supervision for postgraduate students. </h5>
+
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div><!-- process /-->
+
+                        </div><!-- Left Process Ends /-->
+
+
+
+        </div><!-- Row /-->
 </div>
   <!-- Content Section Ends /-->
 
+<div class="content-section">
+     <div class="program-seminar">
+             <div class="courses-wrapper">
+                    <div class="course-section">
+                            <div class="section-title-wrapper">
+                                    <div class="section-title">
+                                        <h2>Our programmes</h2>
+                                    </div>
+                                    <br>
+                             </div> <!-- Title Ends /-->
+                              @forelse ($programs as $section => $programs)
+                              <div class="medium-3 small-12 columns">
+                                    <div class="price-plan">
+                                        <div class="price-title">
+                                            <h4 class="title-heading">{{ App\Section::find($section)->name }}</h4>
+                                        </div><!-- price title ends /-->
+                                        <ul class="price-details">
+                                            @foreach ($programs as $program)
+                                            <li>
+                                                    <i class="fa fa-caret-right" aria-hidden="true"></i>
+                                                    <a href="{{route('program.show',$program->slug)}}">{!!$program->name !!}.</a>
+                                             </li>
+                                            @endforeach
+                                        </ul><!-- price details /-->
+                                    </div><!-- price-plan /-->
+                                </div><!-- first column ends /-->
+                              @empty
+
+                              @endforelse
+                    <div class="clearfix"></div>
+                    </div>
+            </div>
 
 
-  <!-- Call to Action box -->
-  <div class="call-to-action">
-        <div class="row">
-             <div class="medium-10 small-12 columns">
-                 <h2><i class="fa fa-phone" aria-hidden="true"></i> 	If you Have Any Questions Call Us On <span>+(254) 709-691-000</span></h2>
-             </div>
-             <div class="medium-2 small-12 columns">
-                 <a href="{{ route('contact.index') }}" class="button secondary">Appointment</a>
-             </div>
-        </div><!-- row /-->
-      </div>
-     <!-- Ca
-  <!-- Call to Action End /-->
-
-
-  @include('partials.footer')
+    </div>
+</div>
+<!-- Content Section Ends /-->
+<!-- Call to Action box -->
+@include('partials.call')
+<!-- Call to Action End /-->
+@include('partials.footer')
 @endsection

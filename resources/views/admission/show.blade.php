@@ -28,7 +28,7 @@
         <div class="content-area module faq">
                 <div class="row">
 
-                    <div class="medium-9 small-12 columns">
+                    <div class="medium-8 small-12 columns">
                         <ul class="accordion" data-accordion>
                             <li class="accordion-item" data-accordion-item>
                                 <a href="#" class="accordion-title"> Application Process</a>
@@ -45,10 +45,11 @@
                             </li>
 
                             <li class="accordion-item" data-accordion-item>
-                                <a href="#" class="accordion-title"> Application Forms</a>
+                                <a href="#" class="accordion-title"  target="_blank"> Application Forms</a>
                                 <div class="accordion-content" data-tab-content>
                                         <?php $file = (json_decode($admission->application))[0]->download_link; ?>
-                                        <a href="{{ Voyager::image( $file ) }}" target="_blank">{{$admission->Nom}} Click here to download the application form </a>
+                                        <iframe src ="{{ Voyager::image( $file ) }}" width="1000px" height="600px">Click here to download the application form </iframe>
+
                                 </div>
                             </li>
 
@@ -72,7 +73,7 @@
 
 
 
-                       <div class="medium-3 small-12 columns sidebar">
+                       <div class="medium-4 small-12 columns sidebar">
                         <div class="icon-box">
                             <div class="icon-side float-left">
                                 <i class="fa fa-heart" aria-hidden="true"></i>
@@ -152,41 +153,30 @@
                     </div>
                     </div>
                @endforeach
-               <hr>
-                <div class="row">
-                    <div class="medium-4 columns">
-                    <h3>Photoshop</h3>
-                    <p>AVivamus luctus urna sed urna ultricies ac tempor dui sagittis. In condimentum facilisis porta. Sed nec diam eu diam mattis viverra. Nulla fringilla, orci ac euismod semper, magna.</p>
-                    </div>
-                    <div class="medium-4 columns">
-                    <h3>Javascript</h3>
-                    <p>Vivamus luctus urna sed urna ultricies ac tempor dui sagittis. In condimentum facilisis porta. Sed nec diam eu diam mattis viverra. Nulla fringilla, orci ac euismod semper, magna.</p>
-                    </div>
-                    <div class="medium-4 columns">
-                    <h3>Marketing</h3>
-                    <p>Vivamus luctus urna sed urna ultricies ac tempor dui sagittis. In condimentum facilisis porta. Sed nec diam eu diam mattis viverra. Nulla fringilla, orci ac euismod semper, magna.</p>
-                    </div>
-                    </div>
-            </div>
+
+    <div class="row">
+            <div class="large-12 show-for-small columns">
+                    <hr><h3>Student services</h3><hr>
+                    @forelse ($admissionServices as $item)
+                    <div class="large-3 small-6 columns"
+                    data-aos="zoom-out-left"   data-aos-duration="2500"
+                            data-aos-easing="ease-in-sine"
+                    >
+                            <a href="{{ route('services.show',$item->slug) }}"><img class="thumbnail" src="{{ Voyager::image( $item->image)}}">
+                            <div class="panel">
+                                <p>{!! $item->name !!}</p>
+                            </div>
+                            </div>
+                        </a>
+                    @empty
+                        <p>Opps something went wrong</p>
+                    @endforelse
+        </div>
+    </div>
+</div>
             <!-- Content Area Ends /-->
-
-
-
-        <!-- Call to Action box -->
-        <div class="call-to-action">
-                <div class="row">
-                     <div class="medium-10 small-12 columns">
-                         <h2><i class="fa fa-phone" aria-hidden="true"></i> 	If you Have Any Questions Call Us On <span>+(254) 709-691-000</span></h2>
-                     </div>
-                     <div class="medium-2 small-12 columns">
-                         <a href="{{ route('contact.index') }}" class="button secondary">Appointment</a>
-                     </div>
-                </div><!-- row /-->
-              </div>
-
-        <!-- Call to Action End /-->
-
-
-
+            <!-- Call to Action box -->
+            @include('partials.call')
+            <!-- Call to Action End /-->
 @include('partials.footer')
 @endsection

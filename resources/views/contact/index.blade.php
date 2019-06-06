@@ -245,8 +245,5 @@
         </div><!-- Row /-->
     </div>
     <!-- Content Section Ends /-->
-
-
-
     @include('partials.footer')
     @endsection

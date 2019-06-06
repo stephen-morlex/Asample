@@ -10,7 +10,6 @@ use App\StudentCategory;
 use App\Research;
 use App\Services;
 use App\Event;
-
 class ProgramController extends Controller
 {
     /**
@@ -21,13 +20,13 @@ class ProgramController extends Controller
     public function index()
     {
         $sections = Section::take(4)->get();
-        $programs=Program::orderBy('section_id','asc')->get();
+        $programs=Program::orderBy('section_id','asc')->get()->groupBy('section_id');
         $ad=Section::orderBy('name','asc')->get();
         $studLife=StudentCategory::orderBy('name','asc')->get();
         $researchNav = Research::orderBy('name','asc')->get();
-        $abouts     = About::orderBy('title','asc')->get();
-        $services1=   Services::orderBY('name','asc')->take(6)->get();
-        $services2=   Services::orderBY('name','asc')->skip(6)->take(10)->get();
+        $abouts= About::orderBy('title','asc')->get();
+        $services1=Services::orderBY('name','asc')->take(6)->get();
+        $services2=Services::orderBY('name','asc')->skip(6)->take(10)->get();
         return view('program.index',compact('sections','programs','ad','studLife','researchNav','abouts','services1','services2'));
     }
 
@@ -44,44 +43,16 @@ class ProgramController extends Controller
             $programs = Program::orderBy('section_id','asc')->get();;
             $sectionName = 'sections';
         }
-        $programs = $programs->paginate(6);
+        $programs =$programs->paginate(6);
         $ad=Section::orderBy('name','asc')->get();
         $studLife=StudentCategory::orderBy('name','asc')->get();
-        $researchNav = Research::orderBy('name','asc')->get();
-        $abouts     = About::orderBy('title','asc')->get();
-        $latestEvents     = Event::latest()->take(5)->get();
-        $services1=   Services::orderBY('name','asc')->take(6)->get();
-        $services2=   Services::orderBY('name','asc')->skip(6)->take(10)->get();
+        $researchNav=Research::orderBy('name','asc')->get();
+        $abouts= About::orderBy('title','asc')->get();
+        $latestEvents= Event::latest()->take(5)->get();
+        $services1=Services::orderBY('name','asc')->take(6)->get();
+        $services2=Services::orderBY('name','asc')->skip(6)->take(10)->get();
         return view('program.section',compact('sections','sectionName','programs','ad','studLife','researchNav','abouts','services1','services2','latestEvents'));
     }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-  /**
-     * Display the specified resource.
-     *
-     * @param  string  $slug
-     * @return \Illuminate\Http\Response
-     */
     public function show($slug)
     {
 
@@ -102,39 +73,5 @@ class ProgramController extends Controller
             'services1' => $services1,
             'services2' => $services2
         ]);
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Program  $program
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Program $program)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Program  $program
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Program $program)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Program  $program
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Program $program)
-    {
-        //
     }
 }

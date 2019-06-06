@@ -53,12 +53,7 @@
                                     <li class="is-complete" data-step="3">
                                             <span>Verification of your certificate</span>
                                     </li>
-                                    <li class="is-complete" data-step="4">
-                                            <span>Take an Entrance exam</span>
-                                    </li>
-                                    <li class="is-complete" data-step="5">
-                                            <span>Join University</span>
-                                    </li>
+
                                   </ol>
 
 
@@ -173,21 +168,8 @@
 </div>
 <!-- Content Section Ends /-->
 <!-- Content Area Starts -->
-
-
 <!-- Call to Action box -->
-<div class="call-to-action">
-        <div class="row">
-             <div class="medium-10 small-12 columns">
-                 <h2><i class="fa fa-phone" aria-hidden="true"></i> 	If you Have Any Questions Call Us On <span>+(254) 709-691-000</span></h2>
-             </div>
-             <div class="medium-2 small-12 columns">
-                 <a href="{{ route('contact.index') }}" class="button secondary">Appointment</a>
-             </div>
-        </div><!-- row /-->
-      </div>
-
+@include('partials.call')
 <!-- Call to Action End /-->
-
 @include('partials.footer')
 @endsection

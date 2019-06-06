@@ -57,6 +57,7 @@ class AdmissionController extends Controller
         $researchNav = Research::orderBy('name','asc')->get();
         $abouts   = About::orderBy('title','asc')->get();
         $financial= Services::where('id',10)->get();
+        $admissionServices=Services::inRandomOrder()->limit(4)->get();
         $services1=   Services::orderBY('name','asc')->take(6)->get();
         $services2=   Services::orderBY('name','asc')->skip(6)->take(10)->get();
         return view('admission.show')->with([
@@ -67,7 +68,8 @@ class AdmissionController extends Controller
              'abouts'    => $abouts,
              'services1' => $services1,
              'services2' =>$services2,
-             'financial'=>$financial
+             'financial'=>$financial,
+             'admissionServices' =>$admissionServices
         ]);
     }
     /**

@@ -62,21 +62,9 @@
         </div><!-- Row Ends -->
     </div>
 
-		<!-- Call to Action box -->
-		<div class="call-to-action">
-		   <div class="row">
-				<div class="medium-10 small-12 columns">
-					<h2><i class="fa fa-phone" aria-hidden="true"></i> 	If you Have Any Questions Call Us On <span>(010)123-456-7890</span></h2>
-				</div>
-				<div class="medium-2 small-12 columns">
-					<a href="#" class="button secondary">Appointment</a>
-				</div>
-		   </div><!-- row /-->
-		 </div>
-		<!-- Call to Action End /-->
-
-
-
+    <!-- Call to Action box -->
+    @include('partials.call')
+    <!-- Call to Action End /-->
 @include('partials.footer')
 @endsection
 

@@ -67,7 +67,7 @@ class FacultyController extends Controller
     {
         $faculty  = Faculty::where('slug', $slug)->firstOrFail();
         $sections =Program::where('faculty_id',$faculty->id)->orderBy('section_id','asc')->get()->groupBy('section_id');
-        $faculty->load('programs')->first();
+        $faculty->load('programs')->orderBy('name','asc');
         $alsoInterested = Faculty::inRandomOrder()->take(5)->get();
         $studLife=StudentCategory::orderBy('name','asc')->get();
         $ad=Section::orderBy('name','asc')->get();

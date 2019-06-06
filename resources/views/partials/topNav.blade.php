@@ -4,7 +4,7 @@
 
         <div class="large-7 medium-6 small-12 columns topbar-new text-left">
             <ul class="menu">
-                <li><a href="index.html">Prospective Students</a></li>
+                <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSeklzuOe1vgmtipyfHytwewBlx-fEkiGaZYQOptnHJXhrC4NA/viewform">Prospective Students</a></li>
                 <li><a href="http://ww3.cuea.edu/alumni">Alumni</a></li>
                 <li><a href="{{ route('events.index') }}">Events</a></li>
                 <li><a href="{{ route('news.index') }}">News</a></li>

@@ -29,7 +29,7 @@
 
             <div class="row">
 
-                <div class="medium-9 small-12 columns posts-wrap">
+                <div class="medium-8 small-12 columns posts-wrap">
 
                     <div class="single-post">
                         <div class="featured-image">
@@ -52,7 +52,7 @@
 
                 </div><!-- Posts wrap ends /-->
 
-                <div class="medium-3 small-12 columns sidebar">
+                <div class="medium-4 small-12 columns sidebar">
                     <div class="widget">
                         <h2>Categories</h2>
                         <ol class="menu vertical">
@@ -66,6 +66,20 @@
 
                     </div><!-- widget ends /-->
 
+            <div class="widget">
+                    <h2>Popular News</h2>
+                    @foreach ($newsSide as $item)
+
+                     <div class="popular-post">
+                            <a href="{{ route('news.show', $item->slug) }}"><strong>{{ $item->title }}</strong></a>
+                            <p><img alt="" src="{{ Voyager::image( $item->thumbnail('small'))}}" class="float-left" />{!! str_limit($item->content, $limit = 100) !!} <a href="{{ route('news.show', $item->slug) }}">Read more...</a></p>
+                         </div>
+
+                    @endforeach
+
+
+                </div><!-- widget ends /-->
+
                 </div><!-- right bar ends here /-->
 
             </div><!-- Row Ends /-->
@@ -75,6 +89,8 @@
 
 
 
-
+<!-- Call to Action box -->
+@include('partials.call')
+<!-- Call to Action End /-->
     @include('partials.footer')
     @endsection

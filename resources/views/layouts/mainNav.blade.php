@@ -1,6 +1,5 @@
  <div class="header header-new">
     <div class="row">
-
         <div class="medium-7 small-12 columns">
             <div class="logo">
                 <a href="/">
@@ -16,7 +15,7 @@
                   <div class="input-group">
                     <input class="input-group-field" type="search" name="query" placeholder="Searching...">
                     <div class="input-group-button">
-                      <input type="submit" class=" primary button" value="Submit">
+                      <input type="submit" class=" primary button" value="Search">
                     </div>
                   </div>
                 </form>
@@ -45,14 +44,6 @@
             <nav id="responsive-menu">
                 <ul class="menu vertical medium-horizontal" data-responsive-menu="accordion medium-dropdown">
                     <li class="single-sub parent-nav"><a href="/">Home</a></li>
-
-                    <li class="single-sub parent-nav"><a href="{{ route('faculty.index') }}">Academics </a>
-                        <ul class="child-nav menu vertical">
-                            <li><a href="{{ route('faculty.index') }}">Faculties, Schools & Institutes</a></li>
-                            <li><a href="{{ route('program.index') }}">Programs</a></li>
-                            <li><a href="{{ route('services.index') }}">Student Service information</a></li>
-                        </ul>
-                    </li>
                     <li class="single-sub parent-nav"><a href="{{ route('admission.index') }}">Admissions</a>
                         <ul class="child-nav menu vertical">
                             @foreach ($ad as $s)
@@ -60,6 +51,17 @@
                             @endforeach
                         </ul>
                     </li>
+                    <li class="single-sub parent-nav"><a href="{{ route('faculty.index') }}">Academics </a>
+                        <ul class="child-nav menu vertical">
+                            <li><a href="{{ route('services.index') }}">Academic Calender</a></li>
+                            <li><a href="{{ route('faculty.index') }}">Faculties, Schools & Institutes</a></li>
+                            <li><a href="{{ route('program.index') }}">Academic Programmes</a></li>
+                            <li><a href="{{ route('services.index') }}">Student Service information</a></li>
+                            <li><a href="{{ route('services.index') }}">Fee structures</a></li>
+
+                        </ul>
+                    </li>
+
                     <li class="single-sub parent-nav"><a href="{{ route('research.index') }}"> Research</a>
                         <ul class="child-nav menu vertical">
                            @forelse ($researchNav as $r)
@@ -85,9 +87,11 @@
                     <li class="single-sub parent-nav"><a href="{{ route('contact.index') }}">Portals </a>
                         <ul class="child-nav menu vertical">
                             <li><a href="https://student.cuea.edu/">Student portal</a></li>
-                            <li><a href="https://staff.cuea.edu/site/login">Teacher portal</a></li>
+                            <li><a href="https://staff.cuea.edu/site/login">Staff portal</a></li>
                             <li><a href="https://www.premiercert.org/cuea/">Degree verification</a></li>
                         </ul>
+                    </li>
+                    <li class="single-sub parent-nav"><a href="{{ route('contact.index') }}"> </a>
                     </li>
                 </ul>
             </nav>

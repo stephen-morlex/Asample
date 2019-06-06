@@ -2,54 +2,47 @@
 <div class="footer">
     <div class="footerTop">
         <div class="row">
-            <div class="large-3 medium-6 small-12 columns footer-widget">
-                <h2>Newsletter</h2>
+            <div class="large-4 medium-6 small-12 columns footer-widget">
+                    <h2>CUEA’S&nbsp;Affiliate&nbsp;Colleges</h2>
+                    <div class="tx-div"></div>
+                    <ul class="vertical office-hours">
+                        <li><a href="http://">  Catholic University of South Sudan</a></li>
+                        <li><a href="http://">Christ the King Major Seminary Philosophicum</a></li>
+                        <li><a href="http://">Don Bosco Philosphicum, Moshi</a></li>
+                        <li><a href="http://">Psycho-Spiritual Institute (PSI)</a></li>
+                        <li><a href="http://">Spiritan Missionary Seminary, Arusha</a></li>
+                        <li><a href="http://">Institute of Religious Studies (IRS)</a></li>
+                        <li><a href="http://">St. Augustine’s Teachers College, Ishiara</a></li>
+                        <li><a href="http://">Institute of Catechetics and Pastoral Ministry (ICAPAMI)</a></li>
+                        <li><a href="http://">ChemChemi ya Uzima</a></li>
+                        <li><a href="http://"> AMECEA Pastoral Institute</a></li>
+                        <li><a href="http://">Consolata Institute of Philosophy</a></li>
+                    </ul>
+                    <hr>
+                <h2>CUEA’S&nbsp;Constituent&nbsp;Colleges</h2>
                 <div class="tx-div"></div>
-                <section class="newsletter-subscribe">
-                        <div class="input-group input-group-rounded">
-                                <p class="subheader">Subcribe to our weekly newsletter.</p>
-                        <form action="{{ route('search.result') }}" method="GET">
-                            @csrf
-                          <div class="input-group">
-                            <input class="input-group-field" type="search" name="sub" placeholder="Enter your email...">
-                            <div class="input-group-button">
-                              <input type="submit" class=" primary button" value="Submit">
-                            </div>
-                          </div>
-                        </form>
-                      </section>
-
-
-            </div><!-- Widget 1 ends /-->
+                <ul class="vertical office-hours">
+                    <li><a href="http://">Hekima University College</a></li>
+                    <li><a href="http://">Tangaza University College</a></li>
+                    <li><a href="http://">Marist International University College</a></li>
+                    <li><a href="http://">Uzima University College</a></li>
+                    <li><a href="http://">Sacred Heart University College</a></li>
+                </ul>
+            </div><!-- Widget 3 Ends /-->
 
             <div class="large-5 medium-6 small-12 columns footer-widget quick-links">
                 <h2>Useful Information</h2>
                 <div class="tx-div"></div>
-                <ul  class="menu vertical">
+                <ul  class="vertical office-hours">
                     @foreach ($services1 as $item)
                     <li><a href="{{ route('services.show',$item->slug) }}"> {{ $item->name }}</a></li>
                     @endforeach
-                </ul>
-                <ul  class="menu vertical">
                     @foreach ($services2 as $item)
                     <li><a href="{{ route('services.show',$item->slug) }}"> {{ $item->name }}</a></li>
                     @endforeach
                 </ul>
             </div><!-- Widget 2 Ends /-->
-
-            {{--  <div class="large-3 medium-6 small-12 columns footer-widget">
-                <h2>Quick Links</h2>
-                <div class="tx-div"></div>
-                <ul class="vertical office-hours">
-                    <li><a href="http://"> Academice Support Service</a></li>
-                    <li><a href="http://"> FAQs for Admissions</a></li>
-                    <li><a href="http://">Information for the international student</a></li>
-                    <li><a href="http://">Information for transfer students</a></li>
-                    <li><a href="http://">Payment information</a></li>
-                </ul>
-            </div><!-- Widget 3 Ends /-->  --}}
-
-            <div class="large-3 medium-6 small-12 columns footer-widget">
+            <div class="large-3 medium-8 small-12 columns footer-widget">
                 <div class="textwidget">
                     <ul class="address">
                         <li>
@@ -72,6 +65,22 @@
                             <p> admissions@cuea.edu</p>
                         </li>
                     </ul><hr>
+                    <div class="socailicons">
+                        <section class="newsletter-subscribe">
+                            <div class="input-group input-group-rounded">
+                                    <p class="subheader">Subcribe to our weekly newsletter.</p>
+                            <form action="#">
+                                {{-- @csrf --}}
+                              <div class="input-group">
+                                <input class="input-group-field" type="search" name="sub" placeholder="Enter your email...">
+                                <div class="input-group-button">
+                                  <input type="submit" class=" primary button" value="Submit">
+                                </div>
+                              </div>
+                            </form>
+                        </section>
+                    </div>
+                    <hr>
                     <div class="socialicons">
                         Social:
                         <a target="_blank" href="https://www.facebook.com/TheCatholicUniversityOfEasternAfricaCuea?ref=bookmarks"><i class="fa fa-facebook"></i></a>
@@ -109,7 +118,7 @@
 
 <!-- Main Container /-->
 
-<a href="#top" id="top" class="animated fadeInUp start-anim"><i class="fa fa-angle-up"></i></a>
+<a href="#top" id="top" class="animated fadeInUp start-anim"><i class="fa fa-angle-up fa-lg"></i></a>
 
 <!-- Including Jquery so All js Can run -->
 <script type="text/javascript" src="{{ asset('js/jquery.js') }}"></script>

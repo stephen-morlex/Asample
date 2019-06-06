@@ -25,7 +25,7 @@ class ResearchController extends Controller
         $researchNav = Research::orderBy('name','asc')->get();
         $sideResearch=Research::orderBy('name','asc')->get();
         $abouts     = About::orderBy('title','asc')->get();
-        $newsSide =News::orderBy('view_count','desc')->take(3)->get();
+        $newsSide =News::orderBy('view_count','desc')->take(5)->get();
         $services1=   Services::orderBY('name','asc')->take(6)->get();
         $services2=   Services::orderBY('name','asc')->skip(6)->take(10)->get();
 
@@ -68,7 +68,7 @@ class ResearchController extends Controller
         $researchNav = Research::orderBy('name','asc')->get();
         $sideResearch=Research::orderBy('name','asc')->get();
         $abouts     = About::orderBy('title','asc')->get();
-        $newsSide =News::orderBy('view_count','desc')->take(3)->get();
+        $newsSide =News::orderBy('view_count','desc')->take(5)->get();
         $section =Section::all();
         $services1=   Services::orderBY('name','asc')->take(6)->get();
         $services2=   Services::orderBY('name','asc')->skip(6)->take(10)->get();

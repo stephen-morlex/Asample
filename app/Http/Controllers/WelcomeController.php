@@ -25,12 +25,12 @@ class WelcomeController extends Controller
     {
         $events         = Event::latest()->take(2)->get();
         $admissions = Section::orderBy('name')->get();
-        $carousels= carousel::latest()->limit(5)->get();
+        $carousels= carousel::orderBy('id','desc')->take(5)->get();
         $ad         = Section::orderBy('name','asc')->get();
         $abouts     = About::orderBy('title','asc')->get();
         $researchNav = Research::orderBy('name','asc')->get();
         $studLife   = StudentCategory::orderBy('name','asc')->get();
-        $galleries   = Gallery::orderBy('title', 'asc')->take(10)->get();
+        $galleries   = Gallery::orderBy('title', 'asc')->take(6)->get();
         $partner    = Partner::orderBy('name', 'asc')->get();
         $news       = News::latest()->take(3)->get();
         $services1=   Services::orderBY('name','asc')->take(6)->get();

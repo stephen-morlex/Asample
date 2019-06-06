@@ -2,8 +2,6 @@
 @section('content')
 @include('partials.topNav')
 @include('layouts.mainNav')
-
-
 <!-- Banner Starts -->
 <div class="main-banner">
     <div id="rev_slider_4_1_wrapper" class="rev_slider_wrapper fullwidthbanner-container" data-alias="classicslider1">
@@ -11,99 +9,92 @@
         <div id="rev_slider_4_1" class="rev_slider fullwidthabanner" data-version="5.0.7">
             <ul>	<!-- SLIDE  -->
                 @foreach ($carousels as $item)
-                <li data-index="{{ $loop->index }}" data-transition="zoomout"
-                data-slotamount="default"  data-easein="Power4.easeInOut"
-                data-easeout="Power4.easeInOut" data-masterspeed="2000"
-                data-rotate="0"  data-fstransition="fade" data-fsmasterspeed="1500"
-                 data-fsslotamount="7" data-saveperformance="off">
-                    <!-- MAIN IMAGE -->
-                    <img src="{{ Voyager::image($item->image) }}"  alt="First Slide"  data-bgposition="center center"
-                    data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg" />
-                    <!-- LAYERS -->
+                <li data-index="{{ $loop->index}}" data-transition="zoomin" data-slotamount="7"  data-easein="Power4.easeInOut" data-easeout="Power4.easeInOut" data-masterspeed="2000" data-rotate="0"  data-saveperformance="off">
+                        <!-- MAIN IMAGE -->
+                        <img src="{{ Voyager::image($item->image) }}"  alt=""  data-bgposition="center center" data-kenburns="on" data-duration="30000" data-ease="Linear.easeNone" data-scalestart="100" data-scaleend="120" data-rotatestart="0" data-rotateend="0" data-offsetstart="0 0" data-offsetend="0 0" data-bgparallax="10" class="rev-slidebg" data-no-retina>
+                        <!-- LAYERS -->
+                        <!-- LAYER NR. 1 -->
+                        <div class="tp-caption tp-shape tp-shapewrapper layer1 tp-resizeme rs-parallaxlevel-0"
+                             id="slide-18-layer-3"
+                             data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
+                             data-y="['middle','middle','middle','middle']" data-voffset="['0','0','0','0']"
+                                        data-width="full"
+                            data-height="full"
+                            data-whitespace="normal"
+                            data-transform_idle="o:1;"
 
-                    <!-- LAYER NR. 1 -->
-                    <div class="tp-caption tp-shape tp-shapewrapper layer1 tp-resizeme rs-parallaxlevel-0"
-                        id="slide-16-layer-3"
-                        data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
-                        data-y="['middle','middle','middle','middle']" data-voffset="['0','0','0','0']"
-                                    data-width="full"
-                        data-height="full"
-                        data-whitespace="normal"
-                        data-transform_idle="o:1;"
+                             data-transform_in="opacity:0;s:1500;e:Power3.easeInOut;"
+                             data-transform_out="s:300;s:300;"
+                            data-start="1000"
+                            data-basealign="slide"
+                            data-responsive_offset="on">
+                        </div>
+                        <!-- LAYER NR. 2 -->
+                        <div class="tp-caption Newspaper-Title-Centered layer2 tp-resizeme rs-parallaxlevel-0"
+                             id="slide-18-layer-1"
+                             data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
+                             data-y="['middle','middle','middle','middle']" data-voffset="['0','0','0','1']"
+                                        data-fontsize="['50','50','50','30']"
+                            data-lineheight="['55','55','55','35']"
+                            data-width="['721','721','721','420']"
+                            data-height="none"
+                            data-whitespace="normal"
+                            data-transform_idle="o:1;"
 
-                        data-transform_in="opacity:0;s:1500;e:Power3.easeInOut;"
-                        data-transform_out="s:300;s:300;"
-                        data-start="1000"
-                        data-basealign="slide"
-                        data-responsive_offset="on">
-                    </div>
+                             data-transform_in="y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;s:1500;e:Power3.easeInOut;"
+                             data-transform_out="auto:auto;s:1000;"
+                             data-mask_in="x:0px;y:0px;"
+                             data-mask_out="x:0;y:0;"
+                            data-start="1000"
+                            data-splitin="none"
+                            data-splitout="none"
+                            data-responsive_offset="on">{{ str_limit($item->body,40) }}
+                        </div>
 
-                    <!-- LAYER NR. 2 -->
-                    <div class="tp-caption Newspaper-Title-Centered layer2 tp-resizeme rs-parallaxlevel-0"
-                        id="slide-16-layer-1"
-                        data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
-                        data-y="['middle','middle','middle','middle']" data-voffset="['0','0','0','1']"
-                        data-fontsize="['50','50','50','30']"
-                        data-lineheight="['55','55','55','35']"
-                        data-width="['721','721','721','420']"
-                        data-height="none"
-                        data-whitespace="normal"
-                        data-transform_idle="o:1;"
+                        <!-- LAYER NR. 3 -->
+                        <div class="tp-caption Newspaper-Subtitle layer3 tp-resizeme rs-parallaxlevel-0"
+                             id="slide-18-layer-2"
+                             data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
+                             data-y="['middle','middle','middle','middle']" data-voffset="['-82','-82','-82','-58']"
+                                        data-width="none"
+                            data-height="none"
+                            data-whitespace="nowrap"
+                            data-transform_idle="o:1;"
 
-                        data-transform_in="y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;s:1500;e:Power3.easeInOut;"
-                        data-transform_out="auto:auto;s:1000;"
-                        data-mask_in="x:0px;y:0px;"
-                        data-mask_out="x:0;y:0;"
-                        data-start="1000"
-                        data-splitin="none"
-                        data-splitout="none"
-                        data-responsive_offset="on">{{ $item->body }}
-                    </div>
+                             data-transform_in="y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;s:1500;e:Power3.easeInOut;"
+                             data-transform_out="auto:auto;s:1000;"
+                             data-mask_in="x:0px;y:0px;"
+                             data-mask_out="x:0;y:0;"
+                            data-start="1000"
+                            data-splitin="none"
+                            data-splitout="none"
+                            data-responsive_offset="on">{{ $item->title }}
+                        </div>
 
-                    <!-- LAYER NR. 3 -->
-                    <div class="tp-caption Newspaper-Subtitle layer3 tp-resizeme rs-parallaxlevel-0"
-                        id="slide-16-layer-2"
-                        data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
-                        data-y="['middle','middle','middle','middle']" data-voffset="['-82','-82','-82','-58']"
-                                    data-width="none"
-                        data-height="none"
-                        data-whitespace="nowrap"
-                        data-transform_idle="o:1;"
+                        <!-- LAYER NR. 4 -->
+                        <div class="tp-caption layer4 rs-parallaxlevel-0"
+                             id="slide-18-layer-4"
+                             data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
+                             data-y="['middle','middle','middle','middle']" data-voffset="['92','92','92','76']"
+                                        data-width="none"
+                            data-height="none"
+                            data-whitespace="nowrap"
+                            data-transform_idle="o:1;"
+                            data-transform_hover="o:1;rX:0;rY:0;rZ:0;z:0;s:300;e:Power1.easeInOut;"
+                            data-style_hover="c:rgba(0, 0, 0, 1.00);bg:rgba(255, 255, 255, 1.00);bc:rgba(255, 255, 255, 1.00);cursor:pointer;"
 
-                        data-transform_in="y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;s:1500;e:Power3.easeInOut;"
-                        data-transform_out="auto:auto;s:1000;"
-                        data-mask_in="x:0px;y:0px;"
-                        data-mask_out="x:0;y:0;"
-                        data-start="1000"
-                        data-splitin="none"
-                        data-splitout="none"
-                        data-responsive_offset="on">{{ $item->title }}
-                    </div>
-
-                    <!-- LAYER NR. 4 -->
-                    <div class="tp-caption layer4 rs-parallaxlevel-0"
-                        id="slide-16-layer-4"
-                        data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
-                        data-y="['middle','middle','middle','middle']" data-voffset="['92','92','92','76']"
-                                    data-width="none"
-                        data-height="none"
-                        data-whitespace="nowrap"
-                        data-transform_idle="o:1;"
-                        data-transform_hover="o:1;rX:0;rY:0;rZ:0;z:0;s:300;e:Power1.easeInOut;"
-                        data-style_hover="c:rgba(0, 0, 0, 1.00);bg:rgba(255, 255, 255, 1.00);bc:rgba(255, 255, 255, 1.00);cursor:pointer;"
-
-                        data-transform_in="y:50px;opacity:0;s:1500;e:Power4.easeInOut;"
-                        data-transform_out="y:50px;opacity:0;s:1000;s:1000;"
-                        data-start="1000"
-                        data-splitin="none"
-                        data-splitout="none"
-                        data-responsive_offset="on"
-                        data-responsive="off"><a href="{{ $item->link }}" class="button primary bordered-light">READ MORE</a>
-                    </div>
-                </li>
+                            data-transform_in="y:50px;opacity:0;s:1500;e:Power4.easeInOut;"
+                            data-transform_out="y:50px;opacity:0;s:1000;s:1000;"
+                            data-start="1000"
+                            data-splitin="none"
+                            data-splitout="none"
+                            data-responsive_offset="on"
+                            data-responsive="off"><a href="{{ $item->link }}" class="button primary bordered-light">READ MORE</a>
+                        </div>
+                    </li>
+                @endforeach
                 <!-- SLIDE  -->
 
-                @endforeach
             </ul>
             <div class="tp-static-layers"></div>
             <div class="tp-bannertimer" style="height: 7px; background-color: rgba(255, 255, 255, 0.25);"></div>
@@ -111,49 +102,47 @@
     </div><!-- END REVOLUTION SLIDER -->
 </div>
 <!-- Banner Ends /-->
-
-
-
-
 <!-- information boxes starts -->
 <div class="information-boxes module">
-
-        <div class="courses-info medium-4 small-12 columns" data-aos="fade-right" data-aos-anchor-placement="top-bottom">
+        <div class="courses-info medium-4 small-12 columns">
             <div class="">
                 <h3><i class="fa fa-book" aria-hidden="true"></i> Academics</h3>
-                <p>We are very happy to introduce many dynamic courses which includes many new and great features we are happy to  ...</p>
+                <p>We form graduates to be well-rounded, broad-minded social catalysts for integral human development and personal fulfillment...</p>
                 <ul class="no-bullet">
-                    <li><i class="fa fa-check-square-o" aria-hidden="true"></i> Better designed programs for you</li>
-                    <li><i class="fa fa-check-square-o" aria-hidden="true"></i> Online Availability to sources</li>
-                    <li><i class="fa fa-check-square-o" aria-hidden="true"></i> Helping Board in your learning management</li>
+                    <li><i class="fa fa-check-square-o" aria-hidden="true"></i> Education grounded on values</li>
+                    <li><i class="fa fa-check-square-o" aria-hidden="true"></i> Accredited academic programmes</li>
+                    <li><i class="fa fa-check-square-o" aria-hidden="true"></i> Clear Learning path, Innovative and marketable graduates</li>
                 </ul>
                 <div class="clearfix"></div>
                 <a href="{{ route('faculty.index') }}" class="primary button bordered-light">Find out More!</a>
             </div>
         </div><!-- courses column Ends /-->
 
-        <div class="faculty-info medium-4 small-12 columns" data-aos="fade-right" data-aos-anchor-placement="top-bottom">
+        <div class="faculty-info medium-4 small-12 columns">
             <div class="">
                 <h3><i class="fa fa-users" aria-hidden="true"></i> Student Life</h3>
-                <p>We have got some best teachers available in town who can help you to polish your skills as much as you can ...</p>
+                <p>Our focus is holistic growth and lifelong learning for our students.</p>
                 <ul class="no-bullet">
-                    <li><i class="fa fa-check-square-o" aria-hidden="true"></i> Better designed programs for you</li>
-                    <li><i class="fa fa-check-square-o" aria-hidden="true"></i> Online Availability to sources</li>
-                    <li><i class="fa fa-check-square-o" aria-hidden="true"></i> Helping Board in your learning management</li>
+                    <li><i class="fa fa-check-square-o" aria-hidden="true"></i>Rich extra-curricula activities.</li>
+                    <li><i class="fa fa-check-square-o" aria-hidden="true"></i>Social events for fun and talent showcase.</li>
+                    <li><i class="fa fa-check-square-o" aria-hidden="true"></i>Participation in local and international competitions</li>
+                    <li><i class="fa fa-check-square-o" aria-hidden="true"></i>Spiritual movements</li>
+
                 </ul>
                 <div class="clearfix"></div>
                 <a href="{{ route('student.index') }}" class="primary button bordered-light">Explore more!</a>
             </div>
         </div><!-- faculty info ends /-->
 
-        <div class="newadmission-info medium-4 small-12 columns" data-aos="fade-right" data-aos-anchor-placement="top-bottom">
+        <div class="newadmission-info medium-4 small-12 columns">
             <div class="">
                 <h3><i class="fa fa-sign-in" aria-hidden="true"></i> Admission Process</h3>
-                <p>We are happy to tell you that we are accepting new admissions for the semster,get enrolled asap ...</p>
+                <p>CUEA accepts qualified applicants from all over the world.</p>
                 <ul class="no-bullet">
-                    <li><i class="fa fa-check-square-o" aria-hidden="true"></i> Find a course best suits of your choice</li>
-                    <li><i class="fa fa-check-square-o" aria-hidden="true"></i> Do entry exams and payment for the admission</li>
-                    <li><i class="fa fa-check-square-o" aria-hidden="true"></i> Start your course</li>
+                    <li><i class="fa fa-check-square-o" aria-hidden="true"></i>Applicants fill in the application form and pays the application fee.</li>
+                    <li><i class="fa fa-check-square-o" aria-hidden="true"></i>The University accepts qualified applicants</li>
+                    <li><i class="fa fa-check-square-o" aria-hidden="true"></i>The Applicant receives an Admission letter</li>
+                    <li><i class="fa fa-check-square-o" aria-hidden="true"></i>Government-Sponsored students get a direct placement</li>
                 </ul>
                 <div class="clearfix"></div>
                 <a href="{{ route('admission.index') }}" class="primary button bordered-light">Get Enrolled!</a>
@@ -179,7 +168,7 @@
                     <div class="medium-4 small-12 columns process">
                             <div class="number"><i class="fa fa-heart" aria-hidden="true"></i></div>
                             <div class="right-info">
-                                <h5> Chartered Private University accredited by Commission of University Education.</h5>
+                                <a href="http://www.cue.or.ke/index.php/component/accreditedinstitutions/?view=university&amp;Itemid=253"><h5> Chartered Private University accredited by Commission of University Education.</h5></a>
                             </div>
                             <div class="clearfix"></div>
                     </div><!-- process /-->
@@ -187,7 +176,7 @@
                         <div class="medium-4 small-12 columns process">
                             <div class="number"><i class="fa fa-calendar" aria-hidden="true"></i></div>
                             <div class="right-info">
-                                <h5>  34 solid years of offering education grounded on values.</h5>
+                                <h5>  35 solid years of offering education grounded on values.</h5>
 
                             </div>
                             <div class="clearfix"></div>
@@ -204,7 +193,7 @@
                         <div class="medium-4 small-12 columns process">
                                     <div class="number"><i class="fa fa-users" aria-hidden="true"></i></div>
                                     <div class="right-info">
-                                        <h5> Rich diversity: Over 20 nationalities and 100+ programmes on offer.</h5>
+                                        <h5> Rich diversity: Over 30 nationalities and 100+ programmes on offer.</h5>
 
                                     </div>
                                     <div class="clearfix"></div>
@@ -222,7 +211,7 @@
                         <div class="medium-4 small-12 columns process">
                                 <div class="number"><i class="fa fa-cogs" aria-hidden="true"></i></div>
                                 <div class="right-info">
-                                    <h5>Rich extra-curricula activities, innovation and marketable graduates.</h5>
+                                   <a href="{{ route('student.index') }}"> <h5>Rich extra-curricula activities, innovation and marketable graduates.</h5></a>
 
                                 </div>
                                 <div class="clearfix"></div>
@@ -276,7 +265,7 @@
             <div class="small-6 small-centered text-center columns">
                     <a href="{{ route('about.index') }}" style="text-align:center;" class="primary button">More about cuea!</a>
             </div>
-        </div>
+    </div>
 
 </div>
 <!-- Welcome Message Ends /-->
@@ -359,7 +348,9 @@
              <div class=" testimonial">
 
                     <div class="testimonial-detail">
-                            <div class="fb-page" data-href="https://www.facebook.com/TheCatholicUniversityOfEasternAfricaCuea/?__tn__=%2Cd%2CP-R&amp;eid=ARCxgLfT2A__3nfkp2w00sxet90Boh-CYVJoxzpFMMlhLtsXDkXWIlk4m__EShKbnnccNbObeHi0LHRL" data-tabs="timeline" data-width="" data-height="590" data-small-header="true" data-adapt-container-width="true" data-hide-cover="true" data-show-facepile="true"><blockquote cite="https://www.facebook.com/TheCatholicUniversityOfEasternAfricaCuea/?__tn__=%2Cd%2CP-R&amp;eid=ARCxgLfT2A__3nfkp2w00sxet90Boh-CYVJoxzpFMMlhLtsXDkXWIlk4m__EShKbnnccNbObeHi0LHRL" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/TheCatholicUniversityOfEasternAfricaCuea/?__tn__=%2Cd%2CP-R&amp;eid=ARCxgLfT2A__3nfkp2w00sxet90Boh-CYVJoxzpFMMlhLtsXDkXWIlk4m__EShKbnnccNbObeHi0LHRL">The Catholic University of Eastern Africa - CUEA</a></blockquote></div>
+                        <div class="responsive-embed" data-aos="zoom-in-left"   data-aos-duration="2500" data-aos-easing="ease-in-sine">
+                               <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/ny7pBK0_MTk" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" width="560" height="400" frameborder="0"></iframe>
+                       </div>
                   </div><!-- Testimonial Detail /-->
                     <div class="clearfix"></div>
                  </div> <!-- Testimonial /-->
@@ -414,21 +405,24 @@
             @endforelse
 
         </div><!-- Posts Wrapper /-->
-
-        <div class="load-more text-center fixed">
-            <a href="{{ route('news.index') }}" class="button primary">See More</a>
-        </div><!-- Load more /-->
         @else
         <h3 align="center">No News at the moment!</h3>
         @endif
     </div><!-- Row Ends /-->
+
+    <div class="row">
+        <div class="small-6 small-centered text-center columns">
+                <a href="{{ route('news.index') }}" style="text-align:center;" class="primary button">More news!</a>
+        </div>
+    </div>
+
 
 
 </div>
 <!-- Blog Posts Ends /-->
 
 <div class="blog-posts module grey-bg">
-
+    <div class="row">
             <div class="section-title">
                 <h2>Campus Gallery</h2>
             </div>
@@ -450,12 +444,9 @@
                         @endforeach
 
                 </div>
-
+    </div>
  </div>
 
-</div>
-
-</div>
 <!-- Content Section Ends /-->
 <!-- Our PArtners -->
 <div class="brands-wrap side-controls module">
@@ -466,7 +457,6 @@
         </div>
         <br>
 	</div> <!-- Title Ends /-->
-
 	<div class="row">
 
 		<div class="brand-carousel" >
@@ -487,7 +477,7 @@
 
 </div>
 <!-- Our Partners /-->
-<div class="financial">
+{{--  <div class="financial">
         <div>
 
              <div class="responsive-embed "
@@ -499,22 +489,11 @@
 
 
         </div>
-</div>
+</div>  --}}
 
 <!-- Call to Action box -->
-<div class="call-to-action">
-   <div class="row">
-		<div class="medium-10 small-12 columns">
-			<h2><i class="fa fa-phone" aria-hidden="true"></i> 	If you Have Any Questions Call Us On <span>+(254) 709-691-000</span></h2>
-		</div>
-		<div class="medium-2 small-12 columns">
-			<a href="{{ route('contact.index') }}" class="button secondary">Appointment</a>
-		</div>
-   </div><!-- row /-->
- </div>
+@include('partials.call')
 <!-- Call to Action End /-->
-
-
 
 @include('partials.footer')
 

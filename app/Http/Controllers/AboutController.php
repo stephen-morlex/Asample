@@ -72,7 +72,7 @@ class AboutController extends Controller
         $admissions = Section::orderBy('name')->get();
         $ad         = Section::orderBy('name','asc')->get();
         $studLife   = StudentCategory::orderBy('name','asc')->get();
-        $abouts     = About::orderBy('title','asc')->get();
+        $abouts     = About::orderBy('title','asc')->skip(1)->take(10)->get();;
         $researchNav= Research::orderBy('name','asc')->get();
         $services1  = Services::orderBY('name','asc')->take(6)->get();
         $services2  = Services::orderBY('name','asc')->skip(6)->take(10)->get();
