@@ -38,15 +38,7 @@ class SearchController extends Controller
                     ->registerModel(Program::class, 'name')
                     ->registerModel(Faculty::class, 'name')
                     ->perform($request->input('query'));
-                    $ad=Section::orderBy('name','asc')->get();
-                    $studLife=StudentCategory::orderBy('name','asc')->get();
-                    $researchNav = Research::orderBy('name','asc')->get();
-                    $sideResearch=Research::orderBy('name','asc')->get();
-                    $abouts      = About::orderBy('title','asc')->get();
-                    $services1   = Services::orderBY('name','asc')->take(6)->get();
-                    $services2   = Services::orderBY('name','asc')->skip(6)->take(10)->get();
-
-                    return view('search.index',compact('searchterm','searchResults','ad','studLife','researchNav','sideResearch','research','abouts','services1','services2'));
+                    return view('search.index',compact('searchterm','searchResults'));
 
 
     }

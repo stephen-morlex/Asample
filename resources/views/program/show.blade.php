@@ -20,33 +20,36 @@
                       <li><a href="{{route('program.show',$program->slug)}}"> {{ $program->name }}</a></li>
                     </ul><!-- Breadcrumbs /-->
                 </div><!-- Bottom Row /-->
-
             </div><!-- Row /-->
         </div>
-
 <!-- End of the banner section -->
-
 <!-- Content section -->
 <div class="content-section module blog-page">
     <div class="row">
-        <div class="medium-8 small-12 columns posts-wrap">
+        <div class="medium-9 small-12 columns posts-wrap">
             <div class="event-thumb">
+                 <h2>{{ $program->name }}</h2>
+                 <div class="tx-div"></div>
                 <img src="{{ Voyager::image( $program->image)}}"  class="thumbnail" />
             </div><!-- Course Thumb /-->
             <div class="event-content">
-                <h2>{{ $program->name }}</h2>
-                    <p>{!!  $program->body  !!}</p>
+              {!!  $program->body  !!}
             </div><!-- Course content /-->
         </div><!-- Posts wrap ends /-->
-
-        <div class="medium-4 small-12 columns sidebar">
+        <div class="medium-3 small-12 columns sidebar">
             <div class="widget">
                 <h2>Under</h2>
                 <ul class="menu vertical">
                     <li><a href="{{ route('faculty.show',$program->faculty->slug) }}">{!!$program->faculty->name  !!}</a></li>
                 </ul>
             </div><!-- widget ends /-->
-    </div>
+            <div class="widget">
+                <ul class="menu vertical">
+                    <li><a href="{{ route('admission.show',$program->section->slug) }}"><i class="fa fa-hand-o-right" aria-hidden="true"></i> Click here to apply</a></li>
+                </ul>
+            </div><!-- widget ends /-->
+
+         </div>
     </div>
 </div>
 <!-- Content Section Ends /-->

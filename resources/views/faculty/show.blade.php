@@ -8,7 +8,8 @@
         <div class="title-section module">
             <div class="row">
                 <div class="small-12 columns">
-                    <h1>Faculties, Schools and Institute</h1>
+                    <h1>{!! $faculty->name !!}</h2>
+                        <div class="tx-div"></div>
                 </div><!-- Top Row /-->
                 <div class="small-12 columns">
                     <ul class="breadcrumbs">
@@ -29,18 +30,12 @@
     <div class="row">
 
         <div class="medium-8 small-12 columns posts-wrap">
-
+            {{--  <h2>{!! $faculty->name !!}</h2>  --}}
             <div class="event-thumb">
-
                 <img  src="{{ Voyager::image( $faculty->image ) }}"  class="thumbnail" />
-
             </div><!-- Course Thumb /-->
-
-
             <div class="event-content">
-                <h2>{!! $faculty->name !!}</h2>
                 <p></p>
-
                     <p>{!! $faculty->description  !!}</p>
                     <hr>
                     <p>{!! $faculty->content !!}</p>
@@ -60,7 +55,7 @@
                             <li class="accordion-item " data-accordion-item>
                               <a href="#deeplink1" class="accordion-title">{{ App\Section::find($section)->name }}</a>
                               <div class="accordion-content" data-tab-content id="deeplink1">
-                                    <ul style="height:200px;overflow:scroll;"class="menu vertical">
+                                    <ul style="height:auto !important;overflow:scroll;"class="menu vertical">
                                     @foreach ($programs as $program)
                                     <li><a href="{{route('program.show',$program->slug)}}">{!!$program->name !!}</a></li>
                                     <hr>

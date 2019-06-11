@@ -25,8 +25,10 @@
     <div class="module">
         <div class="row">
             <div class="medium-8 small-12 columns">
+                    <h2>{!! $student->name !!}</h2>
+                    <div class="tx-div"></div>
                 <div class="event-thumb">
-                    <img src="/images/3.jpg" style="height:368;" class="thumbnail" />
+                    <img src="{{ Voyager::image( $student->image ) }}" style="height:368;" class="thumbnail" />
                 </div><!-- Event Thumb /-->
                     <div class="event-content">
                        <p>{!! $student->content !!}</p>
@@ -42,7 +44,7 @@
                                 <a href="{{ route('student.show', $ss->slug) }}">  {{ $ss->name }}</a>
                             </i>
                         </li>
-                        <br>
+                        <hr>
                     </ol>
                     @endforeach
                 </div><!-- widget ends /-->
@@ -53,6 +55,7 @@
                             <a href="{{ route('news.show', $item->slug) }}"><strong>{{ $item->title }}</strong></a>
                             <p><img alt="" src="{{ Voyager::image( $item->thumbnail('small'))}}" class="float-left" />{!! str_limit($item->content, $limit =100) !!} <a href="{{ route('news.show', $item->slug) }}">Read more...</a></p>
                     </div>
+                    <hr>
                     @endforeach
                 </div><!-- widget ends /-->
             </div><!-- Sidebar Ends /-->

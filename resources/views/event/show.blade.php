@@ -33,6 +33,8 @@
                 <div class="row">
 
                     <div class="medium-8 small-12 columns">
+                    <h4><a href="{{ route('event.show',$event->slug) }}">{!! $event->title !!}</a></h4>
+                    <div class="tx-div"></div>
                      	<div class="event-thumb">
                         	<img src="{{ Voyager::image( $event->image ) }}" class="thumbnail" />
                         </div><!-- Event Thumb /-->

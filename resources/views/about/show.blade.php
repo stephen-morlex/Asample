@@ -28,12 +28,8 @@
 <!-- Content Area Starts -->
 <div class="content-area module faq">
  <div class="row">
-
      <div class="medium-8 small-12 columns">
-
-
          <ul class="accordion" data-accordion>
-
             <li class="accordion-item is-active" data-accordion-item>
                 <a href="#" class="accordion-title">{!! $about->title !!}</a>
                 <div class="accordion-content" data-tab-content
@@ -44,12 +40,10 @@
                   {!! $about->content !!}
                 </div>
             </li>
-
          </ul> <!-- reasons accordion ends -->
      </div>
      <div class="medium-4 small-12 columns sidebar">
             @foreach ($abouts as $item)
-
                         <div class="icon-box">
                             <div class="icon-side float-left">
                                 <i class="fa fa-book" aria-hidden="true"></i>

@@ -30,26 +30,21 @@
             <div class="row">
 
                 <div class="medium-8 small-12 columns posts-wrap">
-
+                    <h3><a href="{{route('news.show',$newsItem->slug)}}">{{ $newsItem->title }}</a></h3>
+                    <div class="tx-div"></div>
                     <div class="single-post">
                         <div class="featured-image">
-                            <a href="#">
+                            <a href="{{route('news.show',$newsItem->slug)}}">
                                 <img alt="{{ $newsItem->title }}" src="{{Voyager::image( $newsItem->image) }}" class="thumbnail" />
                             </a>
                         	<div class="post-meta"><i class="fa fa-clock-o" aria-hidden="true"></i> {{  $newsItem->created_at->diffForHumans() }} | <i class="fa fa-user" aria-hidden="true"></i> <a>Administrator</a> | <i class="fa fa-list" aria-hidden="true"></i> | <a href="{{ route('news.category',$newsItem->newsCategory->slug) }}">{{ $newsItem->newsCategory->name }}</a> </div>
                          </div>
-                        <h3><a href="#">{{ $newsItem->title }}</a></h3>
                         <hr>
-
+                        {{ $newsItem->view_count}}
                         <div class="post-excerpt">
                            {!! $newsItem->content !!}
-
                         </div><!-- post excerpt /-->
-
-
-
                     </div><!-- post ends here /-->
-
                 </div><!-- Posts wrap ends /-->
 
                 <div class="medium-4 small-12 columns sidebar">
@@ -69,12 +64,11 @@
             <div class="widget">
                     <h2>Popular News</h2>
                     @foreach ($newsSide as $item)
-
                      <div class="popular-post">
                             <a href="{{ route('news.show', $item->slug) }}"><strong>{{ $item->title }}</strong></a>
                             <p><img alt="" src="{{ Voyager::image( $item->thumbnail('small'))}}" class="float-left" />{!! str_limit($item->content, $limit = 100) !!} <a href="{{ route('news.show', $item->slug) }}">Read more...</a></p>
                          </div>
-
+                         <hr>
                     @endforeach
 
 

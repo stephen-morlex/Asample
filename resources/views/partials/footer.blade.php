@@ -6,27 +6,27 @@
                     <h2>CUEA’S&nbsp;Affiliate&nbsp;Colleges</h2>
                     <div class="tx-div"></div>
                     <ul class="vertical office-hours">
-                        <li><a href="http://">  Catholic University of South Sudan</a></li>
+                        <li><a href="https://www.cuofss.org/index.php" target="_blank">  Catholic University of South Sudan</a></li>
                         <li><a href="http://">Christ the King Major Seminary Philosophicum</a></li>
                         <li><a href="http://">Don Bosco Philosphicum, Moshi</a></li>
-                        <li><a href="http://">Psycho-Spiritual Institute (PSI)</a></li>
-                        <li><a href="http://">Spiritan Missionary Seminary, Arusha</a></li>
-                        <li><a href="http://">Institute of Religious Studies (IRS)</a></li>
-                        <li><a href="http://">St. Augustine’s Teachers College, Ishiara</a></li>
+                        <li><a href="http://www.psi-online.org/" target="_blank">Psycho-Spiritual Institute (PSI)</a></li>
+                        <li><a href="https://spiritanmissionaryseminary.com/" target="_blank">Spiritan Missionary Seminary, Arusha</a></li>
+                        <li><a href="http://www.irs.org.pk/" target="_blank">Institute of Religious Studies (IRS)</a></li>
+                        <li><a href="http://www.elimucentre.com/st-augustine-teachers-college-ishiara/" target="_blank">St. Augustine’s Teachers College, Ishiara</a></li>
                         <li><a href="http://">Institute of Catechetics and Pastoral Ministry (ICAPAMI)</a></li>
-                        <li><a href="http://">ChemChemi ya Uzima</a></li>
-                        <li><a href="http://"> AMECEA Pastoral Institute</a></li>
-                        <li><a href="http://">Consolata Institute of Philosophy</a></li>
+                        <li><a href="https://www.chemichemi.org/" target="_blank">ChemChemi ya Uzima</a></li>
+                        <li><a href="https://amecea.org/ggaba-pastoral-institute/" target="_blank"> AMECEA Pastoral Institute</a></li>
+                        <li><a href="http://www.consolatainstituteofphilosophy.com/" target="_blank">Consolata Institute of Philosophy</a></li>
                     </ul>
                     <hr>
                 <h2>CUEA’S&nbsp;Constituent&nbsp;Colleges</h2>
                 <div class="tx-div"></div>
                 <ul class="vertical office-hours">
-                    <li><a href="http://">Hekima University College</a></li>
-                    <li><a href="http://">Tangaza University College</a></li>
-                    <li><a href="http://">Marist International University College</a></li>
-                    <li><a href="http://">Uzima University College</a></li>
-                    <li><a href="http://">Sacred Heart University College</a></li>
+                    <li><a href="https://hekima.ac.ke/" target="_blank">Hekima University College</a></li>
+                    <li><a href="http://tangaza.ac.ke/" target="_blank">Tangaza University College</a></li>
+                    <li><a href="http://www.miuc.ac.ke/miuc/" target="_blank">Marist International University College</a></li>
+                    <li><a href="https://www.uzimauniversity.ac.ke/" target="_blank">Uzima University College</a></li>
+                    <li><a href="http://www.shu.co.ke/" target="_blank">Sacred Heart University College</a></li>
                 </ul>
             </div><!-- Widget 3 Ends /-->
 

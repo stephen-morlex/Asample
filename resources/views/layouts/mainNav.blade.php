@@ -53,12 +53,15 @@
                     </li>
                     <li class="single-sub parent-nav"><a href="{{ route('faculty.index') }}">Academics </a>
                         <ul class="child-nav menu vertical">
-                            <li><a href="{{ route('services.index') }}">Academic Calender</a></li>
+                            @foreach ($academicCalender as $academicCalender)
+                            <li><a href="{{ route('services.show',$academicCalender->slug) }}">{{ $academicCalender->name }}</a></li>
+                            @endforeach
                             <li><a href="{{ route('faculty.index') }}">Faculties, Schools & Institutes</a></li>
-                            <li><a href="{{ route('program.index') }}">Academic Programmes</a></li>
+                            <li><a href="{{ route('program.index') }}">Academics Programmes</a></li>
                             <li><a href="{{ route('services.index') }}">Student Service information</a></li>
-                            <li><a href="{{ route('services.index') }}">Fee structures</a></li>
-
+                            @foreach ($feeStructure as $feeStructure)
+                            <li><a href="{{ route('services.show',$feeStructure->slug) }}">{{ $feeStructure->name }}</a></li>
+                            @endforeach
                         </ul>
                     </li>
 

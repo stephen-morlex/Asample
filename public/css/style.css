@@ -52,10 +52,11 @@ CopyRight    : 2016 @ www.webfulcreations.com
  01 - General CSS starts
 -------------------------*/
 body {
-	line-height: 1.5;
-    font-family: Source Sans Pro,Helvetica Neue,Helvetica,Arial,sans-serif;
-    font-size: 1.8rem;
-    color: black;
+
+    font-family: 'Source Sans Pro', Arial, sans-serif;
+    font-size:0.875rem;
+    color: #000;
+    line-height:25px;
 }
 h1, h1 a {
 	font-size:2rem;
@@ -68,20 +69,19 @@ h3, h3 a {
 	font-size:1.50rem;
 }
 h4, h4 a {
-	font-size:1.25rem;
+	font-size:1.375em;
 }
 h5, h6, h5 a, h6 a {
 	font-size:1rem;
 }
 label, p, ul, ol, a, blockquote, input, textarea, select, [type=date], [type=text], [type=email], span {
-	font-size: 15px;;
+	font-size: 18px;
 	line-height: 1.5;
-    color:black;
-
+    color:rgb(10, 9, 9);
 }
-h1,h2,h3,h4,h5,h6, h2 a, h3 a, h4 a, h5 a, h6 a, h1 span, h2 span, h3 span, h4 span, h5 span, h6 span {
-	font-family:Source Sans Pro,Helvetica Neue,Helvetica,Arial,sans-serif;
-	font-weight:bold;
+h1,h2,h3,h5,h6, h2 a, h3 a, h5 a, h6 a, h1 span, h2 span, h3 span, h5 span, h6 span {
+	font-family:'Source Sans Pro', Arial, sans-serif;
+	font-weight:bolder;
 	color:#95141b;
 }
 a:hover {
@@ -94,7 +94,7 @@ iframe {
 .button {
 	text-transform:uppercase;
 	font-weight:bold;
-	font-family:Source Sans Pro,Helvetica Neue,Helvetica,Arial,sans-serif;;
+	font-family:'Source Sans Pro', Arial, sans-serif;
 }
 .button.primary {
 	background-color:#f0951f;
@@ -159,14 +159,12 @@ Admission CSS
     display: table;
     table-layout: fixed;
   }
-
   .progress-indicator > li {
     position: relative;
     display: table-cell;
     text-align: center;
     font-size: 1.5em;
   }
-
   .progress-indicator > li span {
     position: relative;
     color: #e6e6e6;
@@ -175,10 +173,7 @@ Admission CSS
             transform: translateX(-50%);
     font-weight: 600;
     font-size: 0.875rem;
-
-
   }
-
   .progress-indicator > li::before {
     content: attr(data-step);
     display: block;
@@ -193,7 +188,6 @@ Admission CSS
     position: relative;
     z-index: 1000;
   }
-
   .progress-indicator > li::after {
     content: '';
     position: absolute;
@@ -460,7 +454,7 @@ Top bar CSS Ends
 
 .top-bar {
 	position:relative;
-	font-family: Source Sans Pro,Helvetica Neue,Helvetica,Arial,sans-serif;
+	font-family: 'Source Sans Pro', Arial, sans-serif;
 }
 .top-bar ul ul {
 	padding-top:0px;
@@ -550,7 +544,6 @@ Header CSS Ends
 -------------------------*/
 .navigation-style-two {
 	background-color: #95141b;
-
 }
 .navigation-style-two .search-wrap a {
 	line-height:52px;
@@ -589,7 +582,7 @@ Header CSS Ends
 	margin-bottom:0px;
 	font-size:1.5rem;
 	line-height:40px;
-	font-family: Source Sans Pro,Helvetica Neue,Helvetica,Arial,sans-serif;
+	font-family: 'Source Sans Pro', Arial, sans-serif;
 	color:#e79800;
 }
 .topbar-new {
@@ -702,8 +695,10 @@ Banner CSS Ends
 	text-align:center;
 }
 .information-boxes p, .information-boxes ul {
-	color:#FFF;
-	text-align:left;
+    color:#FFF;
+    line-height: 1.5;
+    text-align:left;
+    font-size: 16px !important;
 }
 .information-boxes .button {
 	margin-bottom:0px;
@@ -725,7 +720,7 @@ Information Boxes CSS Ends
 }
 .welcome-message ul li {
     color: #000;
-    font-family: 'Source Sans Pro',Helvetica Neue,Helvetica,Arial,sans-serif;
+    font-family: 'Source Sans Pro', Arial, sans-serif;
     text-align:initial;
     padding-top: 5px;
     font-size: 1.45em;
@@ -780,7 +775,7 @@ Welcome Message CSS Ends
 	padding-bottom:5px;
 	padding-left:10px;
 	padding-right:10px;
-	font-family: Source Sans Pro,Helvetica Neue,Helvetica,Arial,sans-serif;
+	font-family: 'Source Sans Pro', Arial, sans-serif;
     font-weight: bold;
     padding: 0px 10px;
     text-transform: uppercase;
@@ -823,14 +818,12 @@ Welcome Message CSS Ends
 
 /* timelines style for admission process */
 
-
 .timeline .timeline-item::after, .timeline .timeline-item::before {
     clear: both;
     content: '';
     display: block;
     width: 100%;
   }
-
   .timeline {
     background:#F7f7f7;
     margin: 30px auto;
@@ -1177,7 +1170,6 @@ Faculty card start
 
 }
 .financial::after {
-
 	content:"";
     top:0;
     left:0;
@@ -1266,7 +1258,7 @@ background: linear-gradient(to top, #FFFFFF, #FFEFBA); /* W3C, IE 10+/ Edge, Fir
 	left:100%;
 	text-transform:uppercase;
 	font-weight:normal;
-	font-family:Source Sans Pro,Helvetica Neue,Helvetica,Arial,sans-serif;
+	font-family:'Source Sans Pro', Arial, sans-serif;
 	font-size:1.5rem;
 	text-align:center;
 	color:#2f2f2f;
@@ -1288,7 +1280,7 @@ background: linear-gradient(to top, #FFFFFF, #FFEFBA); /* W3C, IE 10+/ Edge, Fir
 	border-radius:0px 5px 5px 0px;
 }
 .events-wrapper .columns:nth-child(3), .events-wrapper .columns:nth-child(4) {
-	/*margin-top:30px;*/
+	margin-top:30px;
 }
 /*-------------------------
 Seminar/Events CSS Ends
@@ -1447,8 +1439,8 @@ Our Process Ends
 
 /* Start of newsletter css */
 
-.input-group-rounded {
-    .input-group-field {
+
+    /* .input-group-field {
       border-radius: 5000px 0 0 5000px;
       padding-left: 1rem;
     }
@@ -1456,8 +1448,8 @@ Our Process Ends
     .input-group-button .button {
       border-radius:  0 5000px 5000px 0;
       font-size: 0.8rem;
-    }
-  }
+    } */
+
 
 /* End of newsletter css */
 /*-------------------------
@@ -1480,7 +1472,7 @@ Our Process Ends
 }
 
 .testimonials-wrapper .section-title-wrapper .section-title h2 {
-	/* margin-top: 5%; */
+	margin-top: 5%;
 }
 
 .testimonial .testimonial-detail {
@@ -1566,8 +1558,8 @@ Blog Posts Ends
 	margin-bottom:0px;
 	border:1px solid #ededed;
 	padding:3px;
-	opacity:.8;
-	height:55px;
+	opacity:.4;
+	height:auto !important;
 	width:auto !important;
 }
 .bran-logo .thumbnail:hover {
@@ -1892,7 +1884,7 @@ Page Preloader Ends
 .info-side p strong {
     font-size: 18px;
 	color:#2f2f2f;
-	font-family:Source Sans Pro,Helvetica Neue,Helvetica,Arial,sans-serif;
+	font-family:'Source Sans Pro', Arial, sans-serif;
 }
 .icon-box p {
     margin-bottom: 0px;
@@ -2283,7 +2275,7 @@ Styles For Inner Pages Ends
 	text-transform:uppercase;
 	font-weight:bold;
 	color:#FFF;
-	background-color:#174873;
+	background-color:#e79800;
 }
 .pro-buttons {
 	position:absolute;
@@ -2420,7 +2412,7 @@ Styles For Inner Pages Ends
 }
 .accordion-title {
 	font-size:1rem;
-	font-family: Source Sans Pro,Helvetica Neue,Helvetica,Arial,sans-serif;
+	font-family: 'Source Sans Pro', Arial, sans-serif;
 	color:#2f2f2f;
 }
 /*-------------------------
@@ -2656,6 +2648,7 @@ Styles For Inner Pages Ends
 	border:1px solid #e79800;
 }
 #top:hover {
+    transition-duration: 2s;
 	background-color:#e79800;
 	color:#FFF;
 }

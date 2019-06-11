@@ -15,9 +15,6 @@
         @endforelse
     </ul>
 </div><br>
-
-
-
 <!-- Content section -->
 <div class="content-section module blog-page">
 
@@ -25,7 +22,7 @@
 
             <div class="row">
 
-                <div class="medium-9 small-12 columns posts-wrap">
+                <div class="medium-8 small-12 columns posts-wrap">
 
                     <div class="blog-post">
                         <div class="featured-image">
@@ -34,19 +31,14 @@
                             </a>
                             <div class="post-meta"><i class="fa fa-clock-o" aria-hidden="true"></i> {!! Carbon\Carbon::parse($aboutParents->date)->format('d-m-Y ') !!} | <i class="fa fa-user" aria-hidden="true"></i> <a>Administrator</a></div>
                         </div>
-
                         <h3><a>{!! $aboutParents->title !!}</a></h3>
-
                         <div class="post-excerpt">
                             <p>{!! $aboutParents->content !!}</p>
                         </div><!-- post content ends /-->
                     </div><!-- post Ends here /-->
-
-
-
                 </div><!-- Posts wrap /-->
 
-                <div class="medium-3 small-12 columns sidebar">
+                <div class="medium-4 small-12 columns sidebar">
                     <div class="widget">
                         <h2>Upcoming Events</h2>
                         <ul class="menu vertical">

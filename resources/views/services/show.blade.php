@@ -30,11 +30,13 @@
          <div class="medium-8 small-12 columns posts-wrap">
             <div class="single-post">
                 <div class="featured-image">
+                        <h3 ><a href="{{ route('services.show',$service->slug) }}">{{ $service->name }}</a></h3>
+                        <div class="tx-div"></div>
                     <a href="single-post.html">
                         <img class="display:none" src="{{ Voyager::image( $service->image ) }}" class="thumbnail" />
                     </a>
                  </div>
-                <h3 ><a href="{{ route('services.show',$service->slug) }}">{{ $service->name }}</a></h3>
+
                 <div class="post-excerpt">
                    {!! $service->content !!}
                 </div><!-- post excerpt /-->

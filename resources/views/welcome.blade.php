@@ -127,7 +127,7 @@
                     <li><i class="fa fa-check-square-o" aria-hidden="true"></i>Social events for fun and talent showcase.</li>
                     <li><i class="fa fa-check-square-o" aria-hidden="true"></i>Participation in local and international competitions</li>
                     <li><i class="fa fa-check-square-o" aria-hidden="true"></i>Spiritual movements</li>
-
+                    <br>
                 </ul>
                 <div class="clearfix"></div>
                 <a href="{{ route('student.index') }}" class="primary button bordered-light">Explore more!</a>
@@ -270,9 +270,6 @@
 </div>
 <!-- Welcome Message Ends /-->
 
-
-
-
 <!-- Seminar/Events -->
 <div class="seminar-events module">
 
@@ -289,17 +286,16 @@
             <div class="medium-6 small-12 columns" >
                 <div class="event">
                     <div  class="medium-8 small-12 columns event-data "  data-aos="zoom-in-right" data-aos-duration="2000">
-                        <h4><a href="{{ route('event.show',$e->slug) }}">{!! $e->title !!}</a></h4>
+                        <h5><a href="{{ route('event.show',$e->slug) }}">{!! $e->title !!}</a></h5>
                         <p> {!!  str_limit($e->content,70) !!}</p>
                         <p><strong>Timinings:</strong> {!!  Carbon\Carbon::parse($e->start)->format('g:i A')!!} - {!!  Carbon\Carbon::parse($e->end)->format('g:i A') !!}
                         <p><strong>Venue:</strong> {!! $e->location !!}
                         <strong>Date:</strong> {!! Carbon\Carbon::parse($e->date)->format('d-m-Y ') !!}</p>
-                        <a href="{{ route('event.show',$e->slug) }}" class="button primary ">Join Event</a>
+                        <a href="{{ route('event.show',$e->slug) }}" class="button primary ">More Details</a>
                     </div><!-- Event DAta /-->
                     <div class="medium-4 small-12 columns event-thumb" data-aos="zoom-in-left" data-aos-duration="3000">
                         <img src="{{ Voyager::image( $e->thumbnail('cropped'))}}" alt="{!! $e->title !!}" />
                     </div><!-- Event thumb /-->
-                    <br>
                     <div class="clearfix"></div>
                 </div><!-- Event div ends /-->
             </div><!-- Event Column Ends /-->
@@ -364,60 +360,42 @@
 </div>
 <!-- Testimonials Section Ends /-->
 
-
-
-
-
 <!-- Blog Posts -->
 <div class="why-cuea">
-
         <div class="section-title">
             <h2>Latest News</h2>
             <br>
         </div>
-
     <div class="row">
         @if (count($news)>=1)
         <div class="posts-wrapper">
             @forelse($news as $newsItem)
             <div class="medium-4 small-12 columns">
                 <div class="post">
-                    <div class="post-thumb"
-                    data-aos="zoom-in-down"
-                    data-aos-duration="3000"
-                    >
+                    <div class="post-thumb" data-aos="zoom-in-down" data-aos-duration="3000">
                         <a href="{{ route('news.show', $newsItem->slug) }}">
                             <img src="{{ Voyager::image( $newsItem->thumbnail('cropped'))}}" alt="{{ $newsItem->title }}" />
                         </a>
                     </div><!-- Thumb /-->
-                    <div class="post-content"
-                     data-aos="zoom-in-up"
-                     data-aos-duration="3000">
-                        <h4><a href="{{ route('news.show', $newsItem->slug) }}">{{ $newsItem->title }}</a></h4>
-                        <div class="post-meta"><strong>Date:</strong> {{ $newsItem->created_at->diffForHumans() }} | <strong>Category:</strong> <a href="{{ route('news.category', $newsItem->newsCategory->slug) }}">{{ $newsItem->newsCategory->name }}</a> | <strong>Author:</strong> <a href="#">Administrator</a></div>
-                        <p>{!! str_limit($newsItem->content, $limit = 80, $end = '...') !!}<a href="{{ route('news.show', $newsItem->slug) }}">Read More &raquo;</a></p>
+                    <div class="post-content" data-aos="zoom-in-up" data-aos-duration="3000">
+                        <h5><a href="{{ route('news.show', $newsItem->slug) }}">{{ $newsItem->title }}</a></h5>
+                        <div class="post-meta"><strong>Date:</strong> {{ $newsItem->created_at->diffForHumans() }} | <strong>Category:</strong> <a href="{{ route('news.category', $newsItem->newsCategory->slug) }}">{{ $newsItem->newsCategory->name }}</a></div>
+                        {!! str_limit($newsItem->content, $limit = 80) !!}<a href="{{ route('news.show', $newsItem->slug) }}">Read More &raquo;</a>
                     </div><!-- post content /-->
                 </div><!-- Post /-->
             </div><!-- Post column /-->
             @empty
-
-
             @endforelse
-
         </div><!-- Posts Wrapper /-->
         @else
         <h3 align="center">No News at the moment!</h3>
         @endif
     </div><!-- Row Ends /-->
-
     <div class="row">
         <div class="small-6 small-centered text-center columns">
                 <a href="{{ route('news.index') }}" style="text-align:center;" class="primary button">More news!</a>
         </div>
     </div>
-
-
-
 </div>
 <!-- Blog Posts Ends /-->
 
@@ -458,23 +436,17 @@
         <br>
 	</div> <!-- Title Ends /-->
 	<div class="row">
-
 		<div class="brand-carousel" >
-            @if (count($partner) >= 1)
                 @foreach ($partner as $partner)
-                <div class="bran-logo"><a href="#" target="_blank"><img  alt="" src="{{Voyager::image( $partner->image) }}" class="thumbnail"
+                <div class="bran-logo"><a href="{{ $partner->url }}" target="_blank"><img  alt="" src="{{Voyager::image( $partner->image) }}" class="thumbnail"
                     data-aos="flip-left"
                     data-aos-easing="ease-out-cubic"
                     data-aos-duration="2000"
-                /></a></div>
+                /></a>
+            </div>
                 @endforeach
-            @else
-            {{--  <h3 align="center">No partner at the moment!</h3>  --}}
-            @endif
 		</div><!-- Brand carousel /-->
-
 	</div><!-- Row /-->
-
 </div>
 <!-- Our Partners /-->
 {{--  <div class="financial">

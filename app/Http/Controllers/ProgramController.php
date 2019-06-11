@@ -3,13 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Program;
-use Illuminate\Http\Request;
 use App\Section;
-use App\About;
-use App\StudentCategory;
-use App\Research;
-use App\Services;
-use App\Event;
+
+
 class ProgramController extends Controller
 {
     /**
@@ -21,13 +17,7 @@ class ProgramController extends Controller
     {
         $sections = Section::take(4)->get();
         $programs=Program::orderBy('section_id','asc')->get()->groupBy('section_id');
-        $ad=Section::orderBy('name','asc')->get();
-        $studLife=StudentCategory::orderBy('name','asc')->get();
-        $researchNav = Research::orderBy('name','asc')->get();
-        $abouts= About::orderBy('title','asc')->get();
-        $services1=Services::orderBY('name','asc')->take(6)->get();
-        $services2=Services::orderBY('name','asc')->skip(6)->take(10)->get();
-        return view('program.index',compact('sections','programs','ad','studLife','researchNav','abouts','services1','services2'));
+        return view('program.index',compact('sections','programs'));
     }
 
 
@@ -44,34 +34,15 @@ class ProgramController extends Controller
             $sectionName = 'sections';
         }
         $programs =$programs->paginate(6);
-        $ad=Section::orderBy('name','asc')->get();
-        $studLife=StudentCategory::orderBy('name','asc')->get();
-        $researchNav=Research::orderBy('name','asc')->get();
-        $abouts= About::orderBy('title','asc')->get();
-        $latestEvents= Event::latest()->take(5)->get();
-        $services1=Services::orderBY('name','asc')->take(6)->get();
-        $services2=Services::orderBY('name','asc')->skip(6)->take(10)->get();
-        return view('program.section',compact('sections','sectionName','programs','ad','studLife','researchNav','abouts','services1','services2','latestEvents'));
+        return view('program.section',compact('sections','sectionName','programs'));
     }
     public function show($slug)
     {
 
         $program    = Program::where('slug', $slug)->firstOrFail();
-        $ad         = Section::orderBy('name','asc')->get();
-        $studLife   = StudentCategory::orderBy('name','asc')->get();
-        $abouts     = About::orderBy('title','asc')->get();
-        $researchNav = Research::orderBy('name','asc')->get();
-        $services1=   Services::orderBY('name','asc')->take(6)->get();
-        $services2=   Services::orderBY('name','asc')->skip(6)->take(10)->get();
-
         return view('program.show')->with([
             'program'   => $program,
-            'ad'        => $ad,
-            'studLife'  => $studLife,
-            'abouts'    => $abouts,
-            'researchNav' => $researchNav,
-            'services1' => $services1,
-            'services2' => $services2
+
         ]);
     }
 }

@@ -29,13 +29,14 @@
     <div class="row">
 	    <div class="medium-8 small-12 columns posts-wrap">
 		    <div class="single-post">
+                    <h3 ><a href="{{ route('research.show',$research->slug) }}">{{ $research->name }}</a></h3>
+                    <div class="tx-div"></div>
 			    <div class="featured-image">
                     <a href="{{ route('research.show',$research->slug) }}">
                         <img class="display:none" src="{{ Voyager::image( $research->image ) }}" class="thumbnail" />
                     </a>
                 </div>
                 <hr>
-			    <h3 ><a href="{{ route('research.show',$research->slug) }}">{{ $research->name }}</a></h3>
                 <div class="post-excerpt">
                 {!! $research->content !!}
                 </div><!-- post excerpt /-->
@@ -61,6 +62,7 @@
                             <a href="{{ route('news.show', $item->slug) }}"><strong>{{ $item->title }}</strong></a>
                             <p><img alt="" src="{{ Voyager::image( $item->thumbnail('small'))}}" class="float-left" />{!! str_limit($item->content, $limit = 50) !!} <a href="{{ route('news.show', $item->slug) }}">Read more...</a></p>
                         </div>
+                        <hr>
                     @endforeach
             </div><!-- widget ends /-->
 		</div><!-- right bar ends here /-->

@@ -24,9 +24,6 @@ class ComposerServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        View::composer(['*'], function ($view) {
-            $ad = Section::orderBy('name','asc')->get();
-            $view->with('ad',$ad);
-        });
+
     }
 }

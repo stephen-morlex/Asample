@@ -26,7 +26,7 @@
             @forelse ($studentLife as $s)
         <div class="medium-8 small-12 columns">
                     <div class="event-thumb">
-                        <img src="{{ Voyager::image( $s->image ) }}" alt="Something0" class="thumbnail" />
+                        <img src="{{ Voyager::image( $s->image ) }}" alt="{{ $s->name }}" class="thumbnail" />
                     </div><!-- Event Thumb /-->
                     <div class="event-content">
                         <p>{!! $s->content !!}</p>

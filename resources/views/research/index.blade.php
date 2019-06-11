@@ -31,12 +31,14 @@
 @forelse ($researches as $re)
 <div class="medium-8 small-12 columns posts-wrap">
     <div class="single-post">
+            <h3 ><a href="{{ route('research.show',$re->slug) }}">{{ $re->name }}</a></h3>
+            <div class="tx-div"></div>
         <div class="featured-image">
             <a href="{{ route('research.show',$re->slug) }}">
                 <img alt="" src="{{ Voyager::image( $re->image ) }}" class="thumbnail" />
             </a>
         </div>
-        <h3 ><a href="{{ route('research.show',$re->slug) }}">{{ $re->name }}</a></h3>
+
         <div class="post-excerpt">
                {!! $re->content !!}
         </div><!-- post excerpt /-->
@@ -50,14 +52,16 @@
 @endforelse
         <div class="medium-4 small-12 columns sidebar">
             <div class="widget">
-                <h2>More about Research </h2>
-                <ul class="menu vertical">
-                    @foreach ($sideResearch as $sr)
-                    <li><a href="{{ route('research.show',$sr->slug)}}">{{ $sr->name }}</a></li>
-                    <hr>
-                    @endforeach
-                </ul>
-            </div><!-- widget ends /-->
+				<h2>More about Research </h2>
+				    <ol class="menu vertical">
+                        @foreach ($sideResearch as $sr)
+                        <li><i class="fa fa-list-ul" aria-hidden="true">
+                            <a href="{{ route('research.show',$sr->slug)}}">{{ $sr->name }}</a>
+                        </i></li>
+                            <br>
+                        @endforeach
+                    </ol>
+			</div><!-- widget ends /-->
             <div class="widget">
                 <h2>Popular News</h2>
                 @foreach ($newsSide as $item)

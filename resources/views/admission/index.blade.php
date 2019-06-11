@@ -41,23 +41,17 @@
 
 
                       <div class="medium-17 small-12 columns">
-
                             <ol class="progress-indicator">
                                     <li class="is-complete" data-step="1" >
                                             <span>Chose a program</span>
                                     </li>
-
                                     <li class="is-complete" data-step="2">
                                             <span>Apply</span>
                                     </li>
                                     <li class="is-complete" data-step="3">
                                             <span>Verification of your certificate</span>
                                     </li>
-
                                   </ol>
-
-
-
                      </div><!-- product Ends here -->
                         <div class="clearfix"></div>
        </div><!-- Courses Section Ends /-->

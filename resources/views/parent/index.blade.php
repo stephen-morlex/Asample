@@ -18,11 +18,8 @@
 
 <!-- Content section -->
 <div class="content-section module blog-page">
-
     <div class="tabs-content" data-tabs-content="example-tabs">
-
         <div class="row">
-
             <div class="medium-8 small-12 columns posts-wrap">
                 @forelse ($news as $newsItem)
                 <div class="blog-post">
