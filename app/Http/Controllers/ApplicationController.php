@@ -13,7 +13,11 @@ use App\StudentCategory;
 use App\Research;
 use App\About;
 use App\Services;
-
+use App\ClergyType;
+use App\ModeOfStudy;
+use App\Sources;
+use Redirect;
+use PDF;
 class ApplicationController extends Controller
 {
     /**
@@ -23,6 +27,9 @@ class ApplicationController extends Controller
      */
     public function index()
     {
+        $sources = Sources::orderBy('name','desc')->get();
+        $modeofstudy = ModeOfStudy::orderBy('name','desc')->get();
+        $clergytypes = ClergyType::orderBy('name','desc')->get();
         $sections=Section::with('admission')->get();
         $ad=Section::orderBy('name','asc')->get();
         $studLife=StudentCategory::orderBy('name','asc')->get();
@@ -33,7 +40,7 @@ class ApplicationController extends Controller
         $abouts     = About::orderBy('title','asc')->get();
         $services1=   Services::orderBY('name','asc')->take(6)->get();
         $services2=   Services::orderBY('name','asc')->skip(6)->take(10)->get();
-        return view('application.index',compact('sections','ad','studLife','faculties','program','religion','researchNav','abouts','services1','services2'));
+        return view('application.index',compact('sections','ad','studLife','faculties','sources','program','religion','researchNav','abouts','services1','services2','clergytypes','modeofstudy'));
 
     }
 
@@ -56,50 +63,57 @@ class ApplicationController extends Controller
     public function store(Request $request)
     {
         //
-        $this->validate($request, [
-            'firstname'      => 'required|max:150|min:2',
-            'surname'      => 'required|max:150|min:2',
-            'lastname'      => 'required|max:150|min:2',
-            'gender'      => 'required|max:10|min:2',
-            'dob'       => 'required',
-            'country'      => 'required',
-            'id_number' =>'required',
-            'current_address'   => 'required',
-            'telephone' => 'required|numeric',
-            'marital_status'  => 'required',
-            'religion'       => 'required',
-            'disabled' =>'required',
-            'disability_specification' => 'required',
-            'high_school' => 'required',
-            'school_address' =>'',
-            'when_started_highschool' =>'required',
-            'when_ended_highschool' => 'required',
-            'colledge' => 'required',
-            'colledge_address' => '',
-            'when_started_colledge' =>'',
-            'when_ended_colledge' => '',
-            'programme_type' => 'required',
-            'when_to_start' => 'required',
-            'cuea_before' => '',
-            'reg_no' => '',
-            'first_choice' => 'required',
-            'second_choice' => 'required',
-            'third_choice' => '',
-            'sponsor' => 'required',
-            'sponsor_name' => 'required',
-            'sponsor_address' => 'required',
-            'sponsor_telephone' => 'required',
-            'next_of_kin' => '',
-            'next_of_kin_address' => '',
-            'next_of_kin_telephone' => '',
-            'source' => 'required',
-        ]);
+        $applicant = new Applicant();
+        $applicant->high_school = $request->get('high_school');
+        $applicant->school_address = $request->get('school_address');
+        $applicant->when_started_highschool = $request->get('when_started_highschool');
+        $applicant->when_ended_highschool = $request->get('when_ended_highschool');
+        $applicant->colledge = $request->get('colledge');
+        $applicant->colledge_address = $request->get('colledge_address');
+        $applicant->when_started_colledge = $request->get('when_started_colledge');
+        $applicant->when_ended_colledge = $request->get('when_ended_colledge');
+        $applicant->firstname = $request->get('firstname');
+        $applicant->lastname = $request->get('lastname');
+        $applicant->surname = $request->get('surname');
+        $applicant->gender = $request->get('gender');
+        $applicant->dob = $request->get('dob');
+        $applicant->marital_status = $request->get('marital_status');
+        $applicant->current_address = $request->get('current_address');
+        $applicant->email = $request->get('email');
+        $applicant->telephone = $request->get('telephone');
+        $applicant->country = $request->get('country');
+        $applicant->id_number = $request->get('id_number');
+        $applicant->religion = $request->get('religion');
+        $applicant->disabled = $request->get('disabled');
+        $applicant->disability_specification = $request->get('disability_specification');
+        $applicant->clergy_type = $request->get('clergy_type');
+        $applicant->religious_order = $request->get('religious_order');  
+        $applicant->campus = $request->get('campus');
+        $applicant->level = $request->get('level');
+        $applicant->first_choice = $request->get('first_choice');
+        $applicant->second_choice = $request->get('second_choice');
+        $applicant->third_choice = $request->get('third_choice');
+        $applicant->mode_of_study = $request->get('mode_of_study');
+        $applicant->when_to_start = $request->get('when_to_start');
+        $applicant->cuea_before = $request->get('cuea_before');
+        $applicant->previous_reg_number = $request->get('previous_reg_number');
+        $applicant->sponsor = $request->get('sponsor');
+        $applicant->sponsor_name = $request->get('sponsor_name');
+        $applicant->sponsor_address = $request->get('sponsor_address');
+        $applicant->sponsor_telephone = $request->get('sponsor_telephone');
+        $applicant->sponsor_email = $request->get('sponsor_email');
+        $applicant->next_of_kin = $request->get('next_of_kin');
+        $applicant->next_of_kin_address = $request->get('next_of_kin_address');
+        $applicant->next_of_kin_telephone = $request->get('next_of_kin_telephone');
+        $applicant->next_of_kin_email = $request->get('next_of_kin_email');
+        $applicant->sources = $request->get('sources');
+        $applicant->other_sources = $request->get('other_sources');
+        $applicant->id_number_file = $request->get('id_number_file');
+        $applicant->colledge_file = $request->get('colledge_file');
+        $applicant->high_school_file = $request->get('high_school_file');
+ 
 
-
-        Applicant::create($request->all());
-
-
-        Session::flash('success','thanks for Applying to Catholic University of Eastern Africa');
+        $applicant->save();
         return redirect()->back();
 
     }
@@ -163,5 +177,33 @@ class ApplicationController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function postApplicationAjax()
+    {
+        //
+    }
+    public function pdf(){
+        $sources = Sources::orderBy('name','desc')->get();
+        $modeofstudy = ModeOfStudy::orderBy('name','desc')->get();
+        $clergytypes = ClergyType::orderBy('name','desc')->get();
+        $sections=Section::with('admission')->get();
+        $ad=Section::orderBy('name','asc')->get();
+        $studLife=StudentCategory::orderBy('name','asc')->get();
+        $faculties   = faculty::orderBy('name','asc')->get();
+        $program   = Program::orderBy('name','asc')->get();
+        $religion   = Religion::orderBy('name','asc')->get();
+        $researchNav = Research::orderBy('name','asc')->get();
+        $abouts     = About::orderBy('title','asc')->get();
+        $services1=   Services::orderBY('name','asc')->take(6)->get();
+        $services2=   Services::orderBY('name','asc')->skip(6)->take(10)->get();
+       
+      
+     $applicants =Applicant::get();
+ 
+     $pdf = PDF::loadView('application.application_pdf',compact('sections','ad','studLife','faculties','sources','program','religion','researchNav','abouts','services1','services2','clergytypes','modeofstudy','applicants'));
+   
+     return $pdf->download('applicants.pdf');
+    
     }
 }
