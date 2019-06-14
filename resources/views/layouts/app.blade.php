@@ -11,7 +11,11 @@
 
     <!-- important for responsiveness remove to make your site non responsive. -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+     @include('meta::manager', [
+            'title'         => 'CUEA',
+            'description'   => 'Catholic University of Eastern Africa',
+            'image'         => '',
+        ])
     <!-- FavIcon -->
     <link rel="icon" href="{{ asset('/images/favicon2.png') }}">
 

@@ -30,7 +30,7 @@
                         <div class="post-meta"><i class="fa fa-clock-o" aria-hidden="true"></i>{!! Carbon\Carbon::parse($newsItem->date)->format('d-m-Y ') !!}<i class="fa fa-user" aria-hidden="true"></i> <a>Administrator</a> | <i class="fa fa-list" aria-hidden="true"></i> <a href="{{ route('news.category', $newsItem->newsCategory->slug) }}">{{ $newsItem->newsCategory->name }}</a></div>
                     </div>
                     <div class="post-excerpt">
-                        <p>{!! str_limit($newsItem->content, $limit = 300, $end = '...')!!}<a href="{{ route('news.show',$newsItem->slug) }}">Read more &raquo;</a></p>
+                        <p>{!!  substr(strip_tags($newsItem->content), 0, 240) !!}...<a href="{{ route('news.show', $newsItem->slug) }}"> Read more &raquo;</a></p>
                     </div><!-- post content ends /-->
                 </div><!-- post Ends here /-->
                 @empty

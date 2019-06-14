@@ -64,9 +64,8 @@
                               </div>
                             </li>
                           @endforeach
-
-                          </ul>
-                          @endif
+                    </ul>
+                    @endif
             </div>
             <div class="widget">
                 <h2>{!! $faculty->name !!} Brochure</h2>

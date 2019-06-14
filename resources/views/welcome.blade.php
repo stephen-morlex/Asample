@@ -287,7 +287,7 @@
                 <div class="event">
                     <div  class="medium-8 small-12 columns event-data "  data-aos="zoom-in-right" data-aos-duration="2000">
                         <h5><a href="{{ route('event.show',$e->slug) }}">{!! $e->title !!}</a></h5>
-                        <p> {!!  str_limit($e->content,70) !!}</p>
+                        <p>{!!  substr(strip_tags($e->content), 0, 100) !!}...</p>
                         <p><strong>Timinings:</strong> {!!  Carbon\Carbon::parse($e->start)->format('g:i A')!!} - {!!  Carbon\Carbon::parse($e->end)->format('g:i A') !!}
                         <p><strong>Venue:</strong> {!! $e->location !!}
                         <strong>Date:</strong> {!! Carbon\Carbon::parse($e->date)->format('d-m-Y ') !!}</p>
@@ -299,11 +299,8 @@
                     <div class="clearfix"></div>
                 </div><!-- Event div ends /-->
             </div><!-- Event Column Ends /-->
-
             @empty
-
             @endforelse
-
         </div><!-- Events Wrapper Ends /-->
 
     </div>
@@ -362,41 +359,47 @@
 
 <!-- Blog Posts -->
 <div class="why-cuea">
-        <div class="section-title">
-            <h2>Latest News</h2>
-            <br>
+    <div class="section-title-wrapper">
+		<div class="section-title">
+			<h2>Latest news</h2>
         </div>
+        <br>
+	</div> <!-- Title Ends /-->
     <div class="row">
-        @if (count($news)>=1)
-        <div class="posts-wrapper">
-            @forelse($news as $newsItem)
-            <div class="medium-4 small-12 columns">
-                <div class="post">
-                    <div class="post-thumb" data-aos="zoom-in-down" data-aos-duration="3000">
-                        <a href="{{ route('news.show', $newsItem->slug) }}">
-                            <img src="{{ Voyager::image( $newsItem->thumbnail('cropped'))}}" alt="{{ $newsItem->title }}" />
-                        </a>
-                    </div><!-- Thumb /-->
-                    <div class="post-content" data-aos="zoom-in-up" data-aos-duration="3000">
-                        <h5><a href="{{ route('news.show', $newsItem->slug) }}">{{ $newsItem->title }}</a></h5>
-                        <div class="post-meta"><strong>Date:</strong> {{ $newsItem->created_at->diffForHumans() }} | <strong>Category:</strong> <a href="{{ route('news.category', $newsItem->newsCategory->slug) }}">{{ $newsItem->newsCategory->name }}</a></div>
-                        {!! str_limit($newsItem->content, $limit = 80) !!}<a href="{{ route('news.show', $newsItem->slug) }}">Read More &raquo;</a>
-                    </div><!-- post content /-->
-                </div><!-- Post /-->
-            </div><!-- Post column /-->
-            @empty
-            @endforelse
-        </div><!-- Posts Wrapper /-->
-        @else
-        <h3 align="center">No News at the moment!</h3>
-        @endif
-    </div><!-- Row Ends /-->
-    <div class="row">
-        <div class="small-6 small-centered text-center columns">
-                <a href="{{ route('news.index') }}" style="text-align:center;" class="primary button">More news!</a>
+           @forelse($news as $newsItem)
+            <div class="medium-4 small-12 columns" >
+            <div class="card"  data-aos="fade-up"
+            data-aos-easing="ease-out-cubic"
+            data-aos-duration="2000">
+                    <div class="card-image">
+                         <img src="{{ Voyager::image( $newsItem->thumbnail('cropped'))}}" alt="">
+                        <span class="card-date">{{ $newsItem->created_at->format('d') }} <br>{{ $newsItem->created_at->format('M') }}  </span>
+                        <span class="card-tag"><h5><a href="{{ route('news.show', $newsItem->slug) }}">{{ $newsItem->title }}</a></h5></span>
+                    </div>
+                    <hr>
+                    <div class="card-text">
+                        <p>{!!  substr(strip_tags($newsItem->content), 0, 100) !!}...<a href="{{ route('news.show', $newsItem->slug) }}">Read More &raquo;</a></p>
+                        <div class="card-meta">
+                        <span><i class="fa fa-list"></i> <a href="{{ route('news.category', $newsItem->newsCategory->slug) }}">{{$newsItem->newsCategory->name}}</a></span>
+                        </div>
+                    </div>
+            </div>
+
         </div>
+
+         @empty
+
+         @endforelse
+
+    </div>
+    <br>
+     <div class="row">
+            <div class="small-6 small-centered text-center columns">
+                    <a href="{{ route('news.index') }}" style="text-align:center;" class="primary button">More news!</a>
+            </div>
     </div>
 </div>
+
 <!-- Blog Posts Ends /-->
 
 <div class="blog-posts module grey-bg">
@@ -438,7 +441,7 @@
 	<div class="row">
 		<div class="brand-carousel" >
                 @foreach ($partner as $partner)
-                <div class="bran-logo"><a href="{{ $partner->url }}" target="_blank"><img  alt="" src="{{Voyager::image( $partner->image) }}" class="thumbnail"
+                <div class="bran-logo"><a title="{{ $partner->title }}" href="{{ $partner->url }}" target="_blank"><img  alt="{{ $partner->title }}" src="{{Voyager::image( $partner->image) }}" class="thumbnail"
                     data-aos="flip-left"
                     data-aos-easing="ease-out-cubic"
                     data-aos-duration="2000"

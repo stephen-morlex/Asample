@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "4eeb2019cbd445984eb7f1fd39abac43",
+    "content-hash": "b778b7da112b28a42596db6e9ba6c5e3",
     "packages": [
         {
             "name": "andreasindal/laravel-markdown",
@@ -423,6 +423,55 @@
                 "performance"
             ],
             "time": "2019-05-27T17:52:04+00:00"
+        },
+        {
+            "name": "davmixcool/laravel-meta-manager",
+            "version": "1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/davmixcool/laravel-meta-manager.git",
+                "reference": "63ad53d50f7172d5f4dfe3b387b8b0e9d92dd46a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/davmixcool/laravel-meta-manager/zipball/63ad53d50f7172d5f4dfe3b387b8b0e9d92dd46a",
+                "reference": "63ad53d50f7172d5f4dfe3b387b8b0e9d92dd46a",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.0||~5.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Davmixcool\\MetaManager\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "David Oti",
+                    "email": "davmixcool@gmail.com",
+                    "role": "Senior Developer"
+                }
+            ],
+            "description": "Laravel Meta Manager is an SEO tool that is used to improve SEO of a website or specific page by adding recommended meta tags to your application. ",
+            "homepage": "https://github.com/davmixcool/laravel-meta-manager",
+            "keywords": [
+                "davmixcool",
+                "laravel-meta-manager",
+                "meta-tags",
+                "seo",
+                "social",
+                "tags"
+            ],
+            "time": "2018-10-07T23:49:09+00:00"
         },
         {
             "name": "dnoegel/php-xdg-base-dir",
