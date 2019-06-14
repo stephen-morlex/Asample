@@ -21,17 +21,20 @@
  <!-- End of the banner section -->
 <!-- Content section -->
     <!-- Seminar/Events -->
-<div class="module">
+<div class="content-section module blog-page">
     <div class="row">
             @forelse ($studentLife as $s)
-        <div class="medium-8 small-12 columns">
-                    <div class="event-thumb">
-                        <img src="{{ Voyager::image( $s->image ) }}" alt="{{ $s->name }}" class="thumbnail" />
-                    </div><!-- Event Thumb /-->
-                    <div class="event-content">
-                        <p>{!! $s->content !!}</p>
-                    </div><!-- Events content /-->
-                </div><!-- Events Wrapper Ends /-->
+        <div class="medium-8 small-12 columns posts-wrap">
+            <div class="event-thumb">
+                <br>
+                 <h2>{{ $s->name }}</h2>
+                 <div class="tx-div"></div>
+                <img src="{{ Voyager::image( $s->image)}}"  class="thumbnail" />
+            </div><!-- Course Thumb /-->
+            <div class="event-content">
+              <p> {!!  $s->content  !!}</p>
+            </div><!-- Course content /-->
+        </div><!-- Posts wrap ends /-->
              @empty
                     <h3>there is no content at the moment !</h3>
             @endforelse
@@ -51,7 +54,7 @@
                     @foreach ($newsSide as $item)
                     <div class="popular-post">
                         <a href="{{ route('news.show', $item->slug) }}"><strong>{{ $item->title }}</strong></a>
-                        <p><img alt="" src="{{ Voyager::image( $item->thumbnail('small'))}}" class="float-left" />{!! str_limit($item->content, $limit = 50) !!} <a href="{{ route('news.show', $item->slug) }}">Read more...</a></p>
+                       <p><img alt="" src="{{ Voyager::image( $item->thumbnail('small'))}}" class="float-left" />{!!  substr(strip_tags($item->content), 0,90) !!}...<a href="{{ route('news.show', $item->slug) }}">Read more</a></p>
                     </div>
                     @endforeach
                 </div><!-- widget ends /-->

@@ -20,11 +20,6 @@
                   </div>
                 </form>
               </section>
-              {{--  <div>
-                  <a href="#"><h4><i class="fa fa-phone" aria-hidden="true"> +254 (0) 709-691-111</i></h4></a>
-                  <div class="tx-div"></div>
-              </div>  --}}
-
             </div>
 
     </div>
@@ -64,7 +59,6 @@
                             @endforeach
                         </ul>
                     </li>
-
                     <li class="single-sub parent-nav"><a href="{{ route('research.index') }}"> Research</a>
                         <ul class="child-nav menu vertical">
                            @forelse ($researchNav as $r)

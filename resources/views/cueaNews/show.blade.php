@@ -26,9 +26,7 @@
 
         <!-- Content section -->
         <div class="content-section module blog-page">
-
             <div class="row">
-
                 <div class="medium-8 small-12 columns posts-wrap">
                     <h3><a href="{{route('news.show',$newsItem->slug)}}">{{ $newsItem->title }}</a></h3>
                     <div class="tx-div"></div>
@@ -42,7 +40,7 @@
                         <hr>
                         {{ $newsItem->view_count}}
                         <div class="post-excerpt">
-                           {!! $newsItem->content !!}
+                           <p>{!! $newsItem->content !!}</p>
                         </div><!-- post excerpt /-->
                     </div><!-- post ends here /-->
                 </div><!-- Posts wrap ends /-->
@@ -66,9 +64,8 @@
                     @foreach ($newsSide as $item)
                      <div class="popular-post">
                             <a href="{{ route('news.show', $item->slug) }}"><strong>{{ $item->title }}</strong></a>
-                            <p><img alt="" src="{{ Voyager::image( $item->thumbnail('small'))}}" class="float-left" />{!! str_limit($item->content, $limit = 100) !!} <a href="{{ route('news.show', $item->slug) }}">Read more...</a></p>
-                         </div>
-                         <hr>
+                            <p><img alt="" src="{{ Voyager::image( $item->thumbnail('small'))}}" class="float-left" />{!!  substr(strip_tags($item->content), 0,90) !!}...<a href="{{ route('news.show', $item->slug) }}">Read more</a></p>
+                        </div>
                     @endforeach
 
 

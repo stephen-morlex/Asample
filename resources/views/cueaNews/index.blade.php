@@ -31,9 +31,9 @@
                     </a>
                     <div class="post-meta"><i class="fa fa-clock-o" aria-hidden="true"></i> {{ $item->created_at->diffForHumans() }} | <i class="fa fa-user" aria-hidden="true"></i> Administrator</a> | <i class="fa fa-list" aria-hidden="true"></i> <a href="{{ route('news.category', $item->newsCategory->slug) }}">{{ $item->newsCategory->name }}</a></div>
                 </div>
-                        <h3><a href="{{ route('news.show', $item->slug) }}">{!! $item->title !!}</a></h3>
                     <div class="post-excerpt">
-                        {!! str_limit($item->content, $limit = 350, $end = '...')!!} <a href="{{ route('news.show', $item->slug) }}">Read more &raquo;</a>
+                        <h3><a href="{{ route('news.show', $item->slug) }}">{!! $item->title !!}</a></h3>
+                      <p>{!!  substr(strip_tags($item->content), 0, 240) !!}...<a href="{{ route('news.show', $item->slug) }}"> Read more &raquo;</a></p>
                     </div><!-- post content ends /-->
             </div><!-- post Ends here /-->
                     @empty
@@ -62,7 +62,7 @@
                     @foreach ($newsSide as $item)
                         <div class="popular-post">
                             <a href="{{ route('news.show', $item->slug) }}"><strong>{{ $item->title }}</strong></a>
-                            <p><img alt="" src="{{ Voyager::image( $item->thumbnail('small'))}}" class="float-left" />{!! str_limit($item->content, $limit = 100) !!} <a href="{{ route('news.show', $item->slug) }}">Read more...</a></p>
+                            <p><img alt="" src="{{ Voyager::image( $item->thumbnail('small'))}}" class="float-left" />{!!  substr(strip_tags($item->content), 0,90) !!}...<a href="{{ route('news.show', $item->slug) }}">Read more</a></p>
                         </div>
                     @endforeach
             </div><!-- widget ends /-->

@@ -40,7 +40,7 @@
         </div>
 
         <div class="post-excerpt">
-               {!! $re->content !!}
+              <p> {!! $re->content !!}</p>
         </div><!-- post excerpt /-->
             <div class="clearfix"></div>
     </div><!-- post ends here /-->
@@ -67,7 +67,7 @@
                 @foreach ($newsSide as $item)
                  <div class="popular-post">
                         <a href="{{ route('news.show', $item->slug) }}"><strong>{{ $item->title }}</strong></a>
-                        <p><img alt="" src="{{ Voyager::image( $item->thumbnail('small'))}}" class="float-left" />{!! str_limit($item->content, $limit = 50) !!} <a href="{{ route('news.show', $item->slug) }}">Read more...</a></p>
+                       <p><img alt="" src="{{ Voyager::image( $item->thumbnail('small'))}}" class="float-left" />{!!  substr(strip_tags($item->content), 0,90) !!}...<a href="{{ route('news.show', $item->slug) }}">Read more</a></p>
                  </div>
                 @endforeach
             </div><!-- widget ends /-->

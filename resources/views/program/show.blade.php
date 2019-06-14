@@ -11,7 +11,6 @@
                 <div class="small-12 columns">
                     <h1>Programs</h1>
                 </div><!-- Top Row /-->
-
                 <div class="small-12 columns">
                     <ul class="breadcrumbs">
                      <li><a href="/">Home</a></li>
@@ -28,12 +27,13 @@
     <div class="row">
         <div class="medium-9 small-12 columns posts-wrap">
             <div class="event-thumb">
+                <br>
                  <h2>{{ $program->name }}</h2>
                  <div class="tx-div"></div>
                 <img src="{{ Voyager::image( $program->image)}}"  class="thumbnail" />
             </div><!-- Course Thumb /-->
             <div class="event-content">
-              {!!  $program->body  !!}
+              <p> {!!  $program->body  !!}</p>
             </div><!-- Course content /-->
         </div><!-- Posts wrap ends /-->
         <div class="medium-3 small-12 columns sidebar">

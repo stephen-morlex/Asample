@@ -23,12 +23,18 @@
             </div><!-- Row /-->
         </div>
  <!-- End of the banner section -->
+<!-- Content Area Starts -->
 
-      <!-- Content Area Starts -->
-        <div class="content-area module faq">
-                <div class="row">
-
-                    <div class="medium-8 small-12 columns">
+<div class="content-section">
+    <div class="content-section module blog-page">
+        <div class="row">
+             <div class="medium-8 small-12 columns posts-wrap">
+            <div class="event-thumb">
+                <br>
+                 <h2>{{ $admission->name }} admission</h2>
+                 <div class="tx-div"></div>
+            </div><!-- Course Thumb /-->
+            <div class="event-content">
                         <ul class="accordion" data-accordion>
                             <li class="accordion-item" data-accordion-item>
                                 <a href="#" class="accordion-title"> Application Process</a>
@@ -69,11 +75,9 @@
                             </li>
 
                         </ul> <!-- reasons accordion ends -->
-                       </div> <!-- right sidebar ends -->
-
-
-
-                       <div class="medium-4 small-12 columns sidebar">
+            </div><!-- Course content /-->
+        </div><!-- Posts wrap ends /-->
+           <div class="medium-4 small-12 columns sidebar">
                         <div class="icon-box">
                             <div class="icon-side float-left">
                                 <i class="fa fa-heart" aria-hidden="true"></i>
@@ -124,9 +128,10 @@
                         </div><!-- icon-box /-->
                     </div><!-- icon-box ends -->
 
-                </div><!-- row / -->
-            </div>
-            <!-- Content Area Ends /-->
+        </div><!-- Row Ends /-->
+    </div>
+</div><!-- Content Section Ends /-->
+<!-- Content Area Ends /-->
 
                <!-- Content Area Starts -->
        	<div class="financial">

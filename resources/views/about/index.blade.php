@@ -28,10 +28,14 @@
  <!-- End of the banner section -->
 
     <!-- Content Area Starts -->
-    <div class="content-area module faq">
-     <div class="row">
-
-         <div class="medium-9 small-12 columns">
+<div class="content-section">
+    <div class="content-section module blog-page">
+        <div class="row">
+             <div class="medium-8 small-12 columns posts-wrap">
+            <div class="event-thumb">
+                 <div class="tx-div"></div>
+            </div><!-- Course Thumb /-->
+            <div class="event-content">
              <div>
                  <p>The Catholic University of Eastern Africa (CUEA), like most other universities, started in a modest way. It commenced as a graduate school of theology known as the Catholic Higher Institute of Eastern Africa (CHIEA).</p>
              </div>
@@ -111,29 +115,63 @@
                           </div>
                         </div>
                       </div>
+            </div><!-- Course content /-->
+        </div><!-- Posts wrap ends /-->
+           <div class="medium-4 small-12 columns sidebar">
+                        <div class="icon-box">
+                            <div class="icon-side float-left">
+                                <i class="fa fa-heart" aria-hidden="true"></i>
+                            </div><!-- icon side /-->
+                            <div class="info-side float-left">
+                                <p><strong>Why Study With Us?</strong><br>
+                                    Chartered Private University accredited by Commission of University Education.
+                                </p>
+                            </div><!-- info side /-->
+                            <div class="clearfix"></div>
+                        </div><!-- icon-box /-->
 
+                        <div class="icon-box">
+                            <div class="icon-side float-left">
+                                <i class="fa fa-book" aria-hidden="true"></i>
+                            </div><!-- icon side /-->
+                            <div class="info-side float-left">
+                                <p><strong>Special Techniques</strong><br>
+                                    34 solid years of offering education grounded on values.
+                                </p>
+                            </div><!-- info side /-->
+                            <div class="clearfix"></div>
+                        </div><!-- icon-box /-->
 
-            </div> <!-- right sidebar ends -->
+                        <div class="icon-box">
+                            <div class="icon-side float-left">
+                                <i class="fa fa-user" aria-hidden="true"></i>
+                            </div><!-- icon side /-->
+                            <div class="info-side float-left">
+                                <p><strong>International University</strong><br>
+                                    Rich diversity: Over 20 nationalities  and 100+ programmes on offer.
+                                </p>
+                            </div><!-- info side /-->
+                            <div class="clearfix"></div>
+                        </div><!-- icon-box /-->
 
-            <div class="medium-3 small-12 columns">
-                @foreach ($abouts as $item)
+                        <div class="icon-box">
+                            <div class="icon-side float-left">
+                                <i class="fa fa-phone" aria-hidden="true"></i>
+                            </div><!-- icon side /-->
+                            <div class="info-side float-left">
+                                <p><strong>Get Admission</strong><br>
+                                    admissions@cuea.edu <br>
+                                    +254 (0) 709-691-111
+                                </p>
+                            </div><!-- info side /-->
+                            <div class="clearfix"></div>
+                        </div><!-- icon-box /-->
+                    </div><!-- icon-box ends -->
 
-                <div class="icon-box">
-                    <div class="icon-side float-left">
-                        <i class="fa fa-book" aria-hidden="true"></i>
-                    </div><!-- icon side /-->
-                    <div class="info-side float-left">
-                        <a href="{{ route('about.show',$item->slug) }}"><p><strong>{{ $item->title }}</strong><br></a>
-                            <hr>
-                        </p>
-                    </div><!-- info side /-->
-                    <div class="clearfix"></div>
-                </div><!-- icon-box /-->
-                 @endforeach
+        </div><!-- Row Ends /-->
+    </div>
+</div><!-- Content Section Ends /-->
 
-            </div> <!-- right sidebar ends -->
-     </div><!-- row / -->
- </div>
  <!-- Content Area Ends /-->
  <!-- Call to Action box -->
  @include('partials.call')

@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'Laravel'),
+    'name' => env('APP_NAME', 'CUEA'),
 
     /*
     |--------------------------------------------------------------------------
@@ -175,6 +175,7 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         App\Providers\ComposerServiceProvider::class,
+        Davmixcool\MetaManager\MetaServiceProvider::class,
         // Goodnesskay\LaravelPdfViewer\LaravelPdfViewerServiceProvider::class,
 
     ],

@@ -36,7 +36,7 @@
                 <div class="event">
                     <div class="medium-8 small-12 columns event-data">
                         <h4><a href="{{ route('event.show',$event->slug) }}">{!! $event->title !!}</a></h4>
-                        <p> {!!  str_limit($event->content,250) !!}</p>
+                        <p> {!!  substr(strip_tags($event->content), 0,240) !!}...</p>
                         <p><strong>Time:</strong> {!!  Carbon\Carbon::parse($event->start)->format('g:i A')!!} - {!!  Carbon\Carbon::parse($event->end)->format('g:i A') !!}</p>
                         <p><strong>Date:</strong> {!! Carbon\Carbon::parse($event->date)->format('d-m-Y ') !!}</p>
                         <a href="{{ route('event.show',$event->slug) }}" class="button primary"> More details</a>

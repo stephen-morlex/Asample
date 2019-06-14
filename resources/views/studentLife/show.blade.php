@@ -22,30 +22,31 @@
  <!-- End of the banner section -->
 <!-- Content section -->
 <div class="content-section">
-    <div class="module">
+    <div class="content-section module blog-page">
         <div class="row">
-            <div class="medium-8 small-12 columns">
-                    <h2>{!! $student->name !!}</h2>
-                    <div class="tx-div"></div>
-                <div class="event-thumb">
-                    <img src="{{ Voyager::image( $student->image ) }}" style="height:368;" class="thumbnail" />
-                </div><!-- Event Thumb /-->
-                    <div class="event-content">
-                       <p>{!! $student->content !!}</p>
-                    </div><!-- Events content /-->
-            </div><!-- Events Wrapper Ends /-->
+             <div class="medium-8 small-12 columns posts-wrap">
+            <div class="event-thumb">
+                <br>
+                 <h2>{{ $student->name }}</h2>
+                 <div class="tx-div"></div>
+                <img src="{{ Voyager::image( $student->image)}}"  class="thumbnail" />
+            </div><!-- Course Thumb /-->
+            <div class="event-content">
+              <p> {!!  $student->content  !!}</p>
+            </div><!-- Course content /-->
+        </div><!-- Posts wrap ends /-->
             <div class="medium-4 small-12 columns sidebar">
                 <div class="widget">
                     <h2>More about student experience</h2>
                         @foreach ($studentSide as $ss)
                     <ol class="menu vertical">
                         <li>
-                             <i class="fa fa-list-ul" aria-hidden="true">
+                             <i class="fa fa-list-ul fa-lg" aria-hidden="true">
                                 <a href="{{ route('student.show', $ss->slug) }}">  {{ $ss->name }}</a>
                             </i>
                         </li>
-                        <hr>
                     </ol>
+                    <br>
                     @endforeach
                 </div><!-- widget ends /-->
                 <div class="widget">
@@ -53,9 +54,8 @@
                     @foreach ($newsSide as $item)
                      <div class="popular-post">
                             <a href="{{ route('news.show', $item->slug) }}"><strong>{{ $item->title }}</strong></a>
-                            <p><img alt="" src="{{ Voyager::image( $item->thumbnail('small'))}}" class="float-left" />{!! str_limit($item->content, $limit =100) !!} <a href="{{ route('news.show', $item->slug) }}">Read more...</a></p>
+                            <p><img alt="" src="{{ Voyager::image( $item->thumbnail('small'))}}" class="float-left" />{!!  substr(strip_tags($item->content), 0,90) !!}...<a href="{{ route('news.show', $item->slug) }}">Read more</a></p>
                     </div>
-                    <hr>
                     @endforeach
                 </div><!-- widget ends /-->
             </div><!-- Sidebar Ends /-->
