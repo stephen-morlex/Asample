@@ -75,6 +75,9 @@ Route::post('/contact/send', 'ContactController@store')->name('contact.store');
 Route::get('/application/', 'ApplicationController@index')->name('application.index');
 Route::post('/application/send', 'ApplicationController@store')->name('application.store');
 
+//Generate Pdf
+Route::get('/applicationpp/', 'ApplicationController@applicationpdf')->name('application.application_pdf');
+Route::get('generate-pdf','ApplicationController@generatepdf');
 
 // GALLERY
 Route::get('/gallery/', 'GalleryController@index')->name('gallery.index');

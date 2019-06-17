@@ -108,12 +108,16 @@ class ApplicationController extends Controller
         $applicant->next_of_kin_email = $request->get('next_of_kin_email');
         $applicant->sources = $request->get('sources');
         $applicant->other_sources = $request->get('other_sources');
+
         $applicant->id_number_file = $request->get('id_number_file');
         $applicant->colledge_file = $request->get('colledge_file');
         $applicant->high_school_file = $request->get('high_school_file');
  
 
         $applicant->save();
+
+
+        Session::flash('success','thanks for Applying, we will return to you within the 24 hours of the work');
         return redirect()->back();
 
     }
@@ -183,27 +187,43 @@ class ApplicationController extends Controller
     {
         //
     }
-    public function pdf(){
-        $sources = Sources::orderBy('name','desc')->get();
-        $modeofstudy = ModeOfStudy::orderBy('name','desc')->get();
-        $clergytypes = ClergyType::orderBy('name','desc')->get();
-        $sections=Section::with('admission')->get();
-        $ad=Section::orderBy('name','asc')->get();
-        $studLife=StudentCategory::orderBy('name','asc')->get();
-        $faculties   = faculty::orderBy('name','asc')->get();
-        $program   = Program::orderBy('name','asc')->get();
-        $religion   = Religion::orderBy('name','asc')->get();
-        $researchNav = Research::orderBy('name','asc')->get();
-        $abouts     = About::orderBy('title','asc')->get();
-        $services1=   Services::orderBY('name','asc')->take(6)->get();
-        $services2=   Services::orderBY('name','asc')->skip(6)->take(10)->get();
+    // public function generatepdf(){
+    //     $sources = Sources::orderBy('name','desc')->get();
+    //     $modeofstudy = ModeOfStudy::orderBy('name','desc')->get();
+    //     $clergytypes = ClergyType::orderBy('name','desc')->get();
+    //     $sections=Section::with('admission')->get();
+    //     $ad=Section::orderBy('name','asc')->get();
+    //     $studLife=StudentCategory::orderBy('name','asc')->get();
+    //     $faculties   = faculty::orderBy('name','asc')->get();
+    //     $program   = Program::orderBy('name','asc')->get();
+    //     $religion   = Religion::orderBy('name','asc')->get();
+    //     $researchNav = Research::orderBy('name','asc')->get();
+    //     $abouts     = About::orderBy('title','asc')->get();
+    //     $services1=   Services::orderBY('name','asc')->take(6)->get();
+    //     $services2=   Services::orderBY('name','asc')->skip(6)->take(10)->get();
        
       
-     $applicants =Applicant::get();
+    //  $applicants =Applicant::get();
  
-     $pdf = PDF::loadView('application.application_pdf',compact('sections','ad','studLife','faculties','sources','program','religion','researchNav','abouts','services1','services2','clergytypes','modeofstudy','applicants'));
+    //  $pdf = PDF::loadView('application.application_pdf',compact('sections','ad','studLife','faculties','sources','program','religion','researchNav','abouts','services1','services2','clergytypes','modeofstudy','applicants'));
    
-     return $pdf->download('applicants.pdf');
+    //  return $pdf->download('applicants.pdf');
     
+    // }
+public function applicationpdf()
+{
+    $user = Applicant::findOrFail(1);
+
+    return view('application.application_pdf' ,compact('user'));
+}
+    public function generatepdf()
+    {
+            $user = Applicant::findOrFail(1);
+        
+        $pdf = PDF::loadView('application.application_pdf',compact('user'));
+  
+        set_time_limit(300);
+        return $pdf->download('applicants.pdf');
     }
+
 }
