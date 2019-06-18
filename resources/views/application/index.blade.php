@@ -35,7 +35,7 @@
             <div class="content-area module faq">
                 <div class="row">
 
-                                <div class="medium-13 small-12 small-centered columns">
+                                <div class="medium-12 small-12 small-centered columns">
                                     <h2>Use this form to apply.</h2>
                                     <p>thanks!.</p>
                                      @include('partials.message')
@@ -58,7 +58,7 @@
                                         <span class="help-inline" style="color:#FF0000">*required</span>
                                         <label>Firstname</label>
                                         <label>
-                                            <input type="text" id="firstname" name="firstname" placeholder="Your firstname here..." required/>
+                                            <input type="text" name="firstname" placeholder="Your firstname here..." required/>
                                         </label>
                                     </div>
 
@@ -581,7 +581,7 @@
                                             <span class="help-inline" style="color:#FF0000">*required</span>
                                              <label>Firstchoice</label>
                                             <label>required
-                                                <select name="firstchoice" >
+                                                <select name="first_choice" >
                                                     @foreach ($program as $pl)
                                                      <option value="{{ $pl->name }}" id="first_choice" name="first_choice">{{ $pl->name }}</option>
                                                      @endforeach 
@@ -594,9 +594,9 @@
                                             <span class="help-inline" style="color:#FF0000">*required</span>
                                              <label>Secondchoice</label>
                                             <label>
-                                                 <select name="secondchoice" required>
+                                                 <select name="second_choice" required>
                                                      @foreach ($program as $pl)
-                                                     <option value="{{ $pl->name }}" id="second_choice" name="first_choice">{{ $pl->name }}</option>
+                                                     <option value="{{ $pl->name }}" id="second_choice" name="second_choice">{{ $pl->name }}</option>
                                                      @endforeach 
                                                  </select>
                                            </label>
@@ -606,7 +606,7 @@
                                             <span class="help-inline" style="color:#FF0000">*required</span>
                                              <label>Thirdchoice</label>
                                              <label>
-                                                 <select name="thirdchoice" required>
+                                                 <select name="third_choice" required>
                                                      @foreach ($program as $pl)
                                                      <option value="{{ $pl->name }}" id="third_choice" name="third_choice">{{ $pl->name }}</option>
                                                      @endforeach 
@@ -808,163 +808,7 @@
            </div>
         </div>              
 </div>
-<script>
-        $('#form').validate({ // initialize the plugin
-            errorElement: 'span',
-            errorClass: 'help-inline',
-        rules: {
-                 firstname: {
 
-                    required: true
-                 },
-              lastname: {
-
-                        },
-              surname:{
-
-              },
-              gender: {
-                required: true
-              },
-              dob: {
-                required: true
-              },
-              marital_status:{
-                required: true
-              },
-              current_address: {
-                required: true
-              },
-            email: {
-                required: true,
-                email: true
-            },
-            telephone:{
-                required: true
-            },
-            country: {
-                required: true
-            },
-            id_number: {
-                required: true,
-                 maxlength: 30
-            },
-            religion: {
-
-            },
-            disabled: {
-                required: true
-            },
-            disability_specification:{
-
-            },
-            clergy_type:{
-
-            },
-            religious_order:{
-
-            },
-            high_school: {
-                required: true
-            },
-            school_address:{
-                required: true
-            },
-            when_started_highschool: {
-                required: true
-            },
-            when_ended_highschool: {
-                required: true
-            },
-            colledge: {
-
-            },
-            colledge_address: {
-
-            },
-            when_started_colledge: {
-
-            },
-            when_ended_colledge: {
-
-            },
-            campus: {required: true
-            },
-            level: {
-                required: true
-            },
-            first_choice: {
-                required: true
-            },
-            second_choice: {
-                required: true
-            },
-            third_choice: {
-                required: true
-            },
-            mode_of_study: {
-                required: true
-            },
-            when_to_start: {
-                required: true
-            },
-            cuea_before: {
-
-            },
-            previous_reg_number: {},
-            sponsor: {
-
-            },
-            sponsor_name: {
-
-            },
-            sponsor_address: {
-
-            },
-            sponsor_telephone: {
-                 maxlength: 30
-            },
-            sponsor_email: {
-
-            },
-            next_of_kin: {
-
-            },
-            next_of_kin_address:{
-
-            },
-            next_of_kin_telephone: {
-                 maxlength: 30
-            },
-            next_of_kin_email: {
-                email: true
-            },
-            sources: {
-                required: true
-            },
-            other_sources: {
-                required: true
-             },
-             id_number_file: {
-               required: true,
-               extension: "jpeg|png|jpg|pdf" 
-             }
-             high_school_file: {
-               required: true,
-               extension: "jpeg|png|jpg|pdf"
-            },
-             colledge_file: {
-               required: true,
-               extension: "jpeg|png|jpg|pdf"
-            },
-            messages: {
-               firstname: "Required !",
-               username: "Required !"
-            }
-
-        
-            });
-      </script>
 
 </div><!-- Content Area Ends /-->
                     <div class="clearfix"></div>

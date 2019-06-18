@@ -64,62 +64,81 @@ class ApplicationController extends Controller
     {
         //
         $applicant = new Applicant();
-        $applicant->high_school = $request->get('high_school');
-        $applicant->school_address = $request->get('school_address');
-        $applicant->when_started_highschool = $request->get('when_started_highschool');
-        $applicant->when_ended_highschool = $request->get('when_ended_highschool');
-        $applicant->colledge = $request->get('colledge');
-        $applicant->colledge_address = $request->get('colledge_address');
-        $applicant->when_started_colledge = $request->get('when_started_colledge');
-        $applicant->when_ended_colledge = $request->get('when_ended_colledge');
-        $applicant->firstname = $request->get('firstname');
-        $applicant->lastname = $request->get('lastname');
-        $applicant->surname = $request->get('surname');
-        $applicant->gender = $request->get('gender');
-        $applicant->dob = $request->get('dob');
-        $applicant->marital_status = $request->get('marital_status');
-        $applicant->current_address = $request->get('current_address');
-        $applicant->email = $request->get('email');
-        $applicant->telephone = $request->get('telephone');
-        $applicant->country = $request->get('country');
-        $applicant->id_number = $request->get('id_number');
-        $applicant->religion = $request->get('religion');
-        $applicant->disabled = $request->get('disabled');
-        $applicant->disability_specification = $request->get('disability_specification');
-        $applicant->clergy_type = $request->get('clergy_type');
-        $applicant->religious_order = $request->get('religious_order');  
-        $applicant->campus = $request->get('campus');
-        $applicant->level = $request->get('level');
-        $applicant->first_choice = $request->get('first_choice');
-        $applicant->second_choice = $request->get('second_choice');
-        $applicant->third_choice = $request->get('third_choice');
-        $applicant->mode_of_study = $request->get('mode_of_study');
-        $applicant->when_to_start = $request->get('when_to_start');
-        $applicant->cuea_before = $request->get('cuea_before');
-        $applicant->previous_reg_number = $request->get('previous_reg_number');
-        $applicant->sponsor = $request->get('sponsor');
-        $applicant->sponsor_name = $request->get('sponsor_name');
-        $applicant->sponsor_address = $request->get('sponsor_address');
-        $applicant->sponsor_telephone = $request->get('sponsor_telephone');
-        $applicant->sponsor_email = $request->get('sponsor_email');
-        $applicant->next_of_kin = $request->get('next_of_kin');
-        $applicant->next_of_kin_address = $request->get('next_of_kin_address');
-        $applicant->next_of_kin_telephone = $request->get('next_of_kin_telephone');
-        $applicant->next_of_kin_email = $request->get('next_of_kin_email');
-        $applicant->sources = $request->get('sources');
-        $applicant->other_sources = $request->get('other_sources');
 
-        $applicant->id_number_file = $request->get('id_number_file');
-        $applicant->colledge_file = $request->get('colledge_file');
-        $applicant->high_school_file = $request->get('high_school_file');
- 
+                     // dynamic section
+        ############################################################################
+        $this->validate($request, [
+        'high_school' =>'required',
+        'school_address' =>'required',
+        'when_started_highschool' =>'required',
+        'when_ended_highschool' =>'required',
+        'colledge' =>'',
+        'colledge_address' =>'',
+        'when_started_colledge' =>'',
+        'when_ended_colledge' =>'',
+        'high_school2' =>'',
+        'school_address2' =>'',
+        'when_started_highschool2' =>'',
+        'when_ended_highschool2' =>'',
+        'colledge2' =>'',
+        'colledge_address2' =>'',
+        'when_started_colledge2' =>'',
+        'when_ended_colledge2' =>'',
+        'high_school3' =>'',
+        'school_address3' =>'',
+        'when_started_highschool3' =>'',
+        'when_ended_highschool3' =>'',
+        'colledge3' =>'',
+        'colledge_address3' =>'',
+        'when_started_colledge3' =>'',
+        'when_ended_colledge3' =>'',
+        'firstname' =>'required',
+        'lastname' =>'required',
+        'surname' =>'required',
+        'gender' =>'required',
+        'dob' =>'required',
+        'marital_status' =>'required',
+        'current_address' =>'required',
+        'email' =>'required|email',
+        'telephone' =>'required',
+        'country' =>'required',
+        'id_number' =>'required',
+        'religion' =>'required',
+        'disabled' =>'required',
+        'disability_specification' =>'',
+        'clergy_type' =>'',
+        'religious_order' =>'',  
+        'campus' =>'required',
+        'level' =>'required',
+        'first_choice' =>'required',
+        'second_choice' =>'required',
+        'third_choice' =>'required',
+        'mode_of_study' =>'required',
+        'when_to_start' =>'required',
+        'cuea_before' =>'',
+        'previous_reg_number' =>'numeric',
+        'sponsor' =>'required',
+        'sponsor_name' =>'',
+        'sponsor_address' =>'',
+        'sponsor_telephone' =>'',
+        'sponsor_email' =>'',
+        'next_of_kin' =>'required',
+        'next_of_kin_address' =>'required',
+        'next_of_kin_telephone' =>'required',
+        'next_of_kin_email' =>'required',
+        'sources' =>'required',
+        'other_sources' =>'',
 
-        $applicant->save();
 
+        'id_number_file' =>'required',
+        'colledge_file' =>'required',
+        'high_school_file' =>'required',
+     ]);
 
-        Session::flash('success','thanks for Applying, we will return to you within the 24 hours of the work');
+        Applicant::create($request->all());
+
+        Session::flash('success','thanks for contacting us, we will return to you within 24 hours');
         return redirect()->back();
-
     }
 
     /**
@@ -212,13 +231,14 @@ class ApplicationController extends Controller
     // }
 public function applicationpdf()
 {
-    $user = Applicant::findOrFail(1);
+    $user = Applicant::findOrFail(2);
 
-    return view('application.application_pdf' ,compact('user'));
+    return view('application.application_pdf',compact('user'));
 }
+
     public function generatepdf()
     {
-            $user = Applicant::findOrFail(1);
+            $user = Applicant::findOrFail(2);
         
         $pdf = PDF::loadView('application.application_pdf',compact('user'));
   

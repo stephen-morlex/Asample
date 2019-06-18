@@ -42,7 +42,7 @@ class ContactController extends Controller
 
         Contact::create($request->all());
 
-        Session::flash('success','thanks for contacting us, we will return to you within the 24 hours of the work');
+        Session::flash('success','thanks for contacting us, we will return to you within 24 hours');
         return redirect()->back();
 
     }

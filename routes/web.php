@@ -77,12 +77,11 @@ Route::post('/application/send', 'ApplicationController@store')->name('applicati
 
 //Generate Pdf
 Route::get('/applicationpp/', 'ApplicationController@applicationpdf')->name('application.application_pdf');
-Route::get('generate-pdf','ApplicationController@generatepdf');
+Route::get('/generate-pdf','ApplicationController@generatepdf');
+
 
 // GALLERY
 Route::get('/gallery/', 'GalleryController@index')->name('gallery.index');
-
-
 
 // NEWS
 Route::get('/news/', 'NewsController@index')->name('news.index');
