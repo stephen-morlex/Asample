@@ -81,7 +81,7 @@
                             @endforeach
                          </ul>
                     </li>
-                    <li class="single-sub parent-nav"><a href="{{ route('contact.index') }}">Portals </a>
+                    <li class="single-sub parent-nav"><a>Portals </a>
                         <ul class="child-nav menu vertical">
                             <li><a href="https://student.cuea.edu/">Student portal</a></li>
                             <li><a href="https://staff.cuea.edu/site/login">Staff portal</a></li>

@@ -104,6 +104,10 @@ Route::get('/parent', 'AboutParentController@index')->name('parent.index');
 Route::get('/parent/{parent}', 'AboutParentController@show')->name('parent.show');
 
 
+// DOCUMENT
+Route::get('/documents', 'DocumentController@index')->name('document.index');
+
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
