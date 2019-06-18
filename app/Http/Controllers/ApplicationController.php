@@ -72,26 +72,26 @@ class ApplicationController extends Controller
         'school_address' =>'required',
         'when_started_highschool' =>'required',
         'when_ended_highschool' =>'required',
-        'colledge' =>'',
-        'colledge_address' =>'',
-        'when_started_colledge' =>'',
-        'when_ended_colledge' =>'',
+        'college' =>'',
+        'college_address' =>'',
+        'when_started_college' =>'',
+        'when_ended_college' =>'',
         'high_school2' =>'',
         'school_address2' =>'',
         'when_started_highschool2' =>'',
         'when_ended_highschool2' =>'',
-        'colledge2' =>'',
-        'colledge_address2' =>'',
-        'when_started_colledge2' =>'',
-        'when_ended_colledge2' =>'',
+        'college2' =>'',
+        'college_address2' =>'',
+        'when_started_college2' =>'',
+        'when_ended_college2' =>'',
         'high_school3' =>'',
         'school_address3' =>'',
         'when_started_highschool3' =>'',
         'when_ended_highschool3' =>'',
-        'colledge3' =>'',
-        'colledge_address3' =>'',
-        'when_started_colledge3' =>'',
-        'when_ended_colledge3' =>'',
+        'college3' =>'',
+        'college_address3' =>'',
+        'when_started_college3' =>'',
+        'when_ended_college3' =>'',
         'firstname' =>'required',
         'lastname' =>'required',
         'surname' =>'required',
@@ -131,9 +131,13 @@ class ApplicationController extends Controller
 
 
         'id_number_file' =>'required',
-        'colledge_file' =>'required',
+        'college_file' =>'required',
         'high_school_file' =>'required',
      ]);
+
+       $path =$request->file('id_number_file')->Store('applications');
+       $path =$request->file('high_school_file')->Store('applications');
+       $path =$request->file('college_file')->Store('applications');
 
         Applicant::create($request->all());
 

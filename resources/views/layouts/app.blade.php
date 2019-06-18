@@ -97,10 +97,10 @@
     $(document).ready(function(){
         var i = 1;
         var j=1;
-
+    
         $('#add').click(function(){
             i++;
-            $('#dynamic_field').append('<div class="row" id="row'+i+'"><div class="medium-3 small-12 columns"><label>High school name</label><label><input type="text" name="high_school'+i+'" placeholder="The name of  your high school here..." /></label></div> <div class="medium-3 small-12 columns"><label>School Address</label><label><input type="text" name="school_address'+i+'" value="{{ old('school_address') }}" placeholder="The address of your school here..." /></label></div><div class="medium-2 small-12 columns"><label>When started</label><label><input type="date" name="when_started_highschool'+i+'" value="{{  old('when_started_highschool') }}" placeholder="mm/dd/yyyy" /></label></div><div class="medium-2 small-12 columns"><label>When ended</label><label><input type="date" name="when_ended_highschool'+i+'" placeholder="mm/dd/yyyy" /></label></div><div class="medium-2 small-12 columns"><label>&nbsp;</label><button  type="button" name="remove" id="'+i+'" class="btn_remove button alert">Remove</button></div></div><!-- Row Ends /-->');
+                    $('#dynamic_field').append('<div class="row" id="row'+i+'"><div class="medium-3 small-12 columns"><label>High school name</label><label><input type="text" name="high_school'+i+'" placeholder="The name of  your high school here..." /></label></div> <div class="medium-3 small-12 columns"><label>School Address</label><label><input type="text" name="school_address'+i+'" value="{{ old('school_address') }}" placeholder="The address of your school here..." /></label></div><div class="medium-2 small-12 columns"><label>When started</label><label><input type="date" name="when_started_highschool'+i+'" value="{{  old('when_started_highschool') }}" placeholder="mm/dd/yyyy" /></label></div><div class="medium-2 small-12 columns"><label>When ended</label><label><input type="date" name="when_ended_highschool'+i+'" placeholder="mm/dd/yyyy" /></label></div><div class="medium-2 small-12 columns"><label>&nbsp;</label><button  type="button" name="remove" id="'+i+'" class="btn_remov button alert">Remove</button></div></div><!-- Row Ends /-->');
 
              
               
@@ -110,9 +110,10 @@
  
       
         });
-        $(document).on("click", ".btn_remove",function(){
+        $(document).on("click", ".btn_remov",function(){
             var button_id = $(this).attr("id");
             $("#row"+button_id+"").remove();
+            
         });
         $('#submit').click(function(){
            $.ajax({
@@ -133,11 +134,14 @@
 
          $('#add2').click(function(){
                 j++;
-                $('#dynamic_field2').append('<div class="row" id="row'+j+'"><div class="medium-3 small-12 columns"><label>Colledge name</label><label><input type="text" name="colledge'+j+'" placeholder="The name of colledge here..." /></label></div><div class="medium-3 small-12 columns"><label>School Address</label><label><input type="text" name="colledge_address'+j+'" placeholder="The address of your school here..." /></label></div><div class="medium-2 small-12 columns"><label>When started</label><label><input type="date" name="when_started_colledge'+j+'" placeholder="mm/dd/yyyy" /></label></div><div class="medium-2 small-12 columns"><label>When Ended</label><label><input type="date" name="when_ended_colledge'+j+'" placeholder="mm/dd/yyyy" /></label></div><div class="medium-2 small-12 columns"><label>&nbsp;</label><button  type="button" name="remove" id="'+j+'" class="btn_remove button alert">Remove</button></div></div><!-- Row Ends /-->');
+                
+                $('#dynamic_field2').append('<div class="row" id="row'+j+'"><div class="medium-3 small-12 columns"><label>college name</label><label><input type="text" name="college'+j+'" placeholder="The name of college here..." /></label></div><div class="medium-3 small-12 columns"><label>School Address</label><label><input type="text" name="college_address'+j+'" placeholder="The address of your school here..." /></label></div><div class="medium-2 small-12 columns"><label>When started</label><label><input type="date" name="when_started_college'+j+'" placeholder="mm/dd/yyyy" /></label></div><div class="medium-2 small-12 columns"><label>When Ended</label><label><input type="date" name="when_ended_college'+j+'" placeholder="mm/dd/yyyy" /></label></div><div class="medium-2 small-12 columns"><label>&nbsp;</label><button  type="button" name="remove" id="'+j+'" class="btn_remove2 button alert">Remove</button></div></div><!-- Row Ends /-->');
+            
     });
          $(document).on("click", ".btn_remove2",function(){
             var button_id = $(this).attr("id");
             $("#row"+button_id+"").remove();
+            
         });
      });
 </script>

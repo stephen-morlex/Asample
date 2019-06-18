@@ -418,7 +418,7 @@
                                     
                                     <div class="medium-2 small-12 columns">
                                         <span class="help-inline" style="color:#FF0000">*required</span>
-                                        <label>Do&nbsp;you&nbsp;have&nbsp;any&nbsp;disability?</label>
+                                        <label>Any&nbsp;disabilities?</label>
                                         <label>
                                             <select name="disabled" required>
                                                 <option value="yes" id="disabled">Yes</option>
@@ -505,22 +505,22 @@
                                      </div><!-- Row Ends /-->
                                  </div>
 
-                                <u ><h6>List all colledge schools you have attended</h6></u>
+                                <u ><h6>List all college schools you have attended</h6></u>
                                 <div style="border: 2px solid" id="dynamic_field2">
                                      <div class="row">
                                         <div class="medium-3 small-12 columns">
                                             <span class="help-inline" style="color:#FF0000">*required</span>
-                                            <label>Colledge name</label>
+                                            <label>college name</label>
                                             <label>
-                                                <input type="text" id="colledge" name="colledge" placeholder="The name of colledge here..." />
+                                                <input type="text" id="college" name="college" placeholder="The name of college here..." />
                                             </label>
                                         </div>
 
                                         <div class="medium-3 small-12 columns">
                                             <span class="help-inline" style="color:#FF0000">*required</span>
-                                            <label>Colledge Address</label>
+                                            <label>college Address</label>
                                             <label>
-                                                <input type="text" id="colledge_address" name="colledge_address" placeholder="The address of your school here..." />
+                                                <input type="text" id="college_address" name="college_address" placeholder="The address of your school here..." />
                                             </label>
                                         </div>
 
@@ -528,7 +528,7 @@
                                             <span class="help-inline" style="color:#FF0000">*required</span>
                                             <label>When started</label>
                                             <label>
-                                                <input type="date" id="when_started_colledge" name="when_started_colledge" placeholder="mm/dd/yyyy" />
+                                                <input type="date" id="when_started_college" name="when_started_college" placeholder="mm/dd/yyyy" />
                                             </label>
                                         </div>
 
@@ -536,7 +536,7 @@
                                             <span class="help-inline" style="color:#FF0000">*required</span>
                                             <label>When Ended</label>
                                             <label>
-                                                <input type="date" id="when_ended_colledge" name="when_ended_colledge" placeholder="mm/dd/yyyy" />
+                                                <input type="date" id="when_ended_college" name="when_ended_college" placeholder="mm/dd/yyyy" />
                                             </label>
                                         </div>
                                         <div class="medium-2 small-12 columns">
@@ -580,7 +580,6 @@
                                         <div class="medium-4 small-12 columns">
                                             <span class="help-inline" style="color:#FF0000">*required</span>
                                              <label>Firstchoice</label>
-                                            <label>required
                                                 <select name="first_choice" >
                                                     @foreach ($program as $pl)
                                                      <option value="{{ $pl->name }}" id="first_choice" name="first_choice">{{ $pl->name }}</option>
@@ -641,12 +640,12 @@
 
                                         <div class="medium-2 small-12 columns">
                                             <br>
-
                                             <label> CUEA before </label>
                                             <label>
-                                                <select name="cuea_before" required>
-                                                    <option value="yes" id="cuea_before">Bridging</option>
-                                                    <option value="no"id="cuea_before">Masters</option>
+                                                <select name="cuea_before">
+                                                    <option value="Bridging" id="cuea_before">Bridging</option>
+                                                    <option value="Masters"id="cuea_before">Masters</option>
+                                                    <option value="Undergraduate"id="cuea_before">Undergraduate</option>
                                                 </select>
                                             </label>
                                         </div>
@@ -655,7 +654,7 @@
                                             <br>
                                             <label>Previous number</label>
                                             <label>
-                                                <input type="text" id="previous_reg_number" name="previous_reg_number" value="{{ old('reg_no') }}" placeholder="here..." required />
+                                                <input type="text" id="previous_reg_number" name="previous_reg_number" value="{{ old('reg_no') }}" placeholder="here..."/>
                                             </label>
                                         </div>
                                     </div>
@@ -773,9 +772,9 @@
                                     </div>
                                     <div class="medium-4 small-12 columns">
                                         <span class="help-inline" style="color:#FF0000">*required</span>
-                                        <label>Colledge slips</label>
+                                        <label>college slips</label>
                                         <label>
-                                            <input type="file" name="colledge_file" required/>
+                                            <input type="file" name="college_file" required/>
                                         </label>
                                     </div>
                                     
