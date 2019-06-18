@@ -48,8 +48,8 @@ CopyRight    : 2016 @ www.webfulcreations.com
  01 - General CSS starts
 -------------------------*/
 body {
-    background-color: #FFFFFF;
-    font-family: 'Source Sans Pro', Arial, sans-serif;
+    background-color: #ffffff;
+    font-family: "Source Sans Pro", Arial, sans-serif;
     font-size: 0.875rem;
     color: #000;
     line-height: 25px;
@@ -68,7 +68,7 @@ h2 a {
 
 h3,
 h3 a {
-    font-size: 1.50rem;
+    font-size: 1.5rem;
 }
 
 h4,
@@ -92,9 +92,9 @@ blockquote,
 input,
 textarea,
 select,
-[type=date],
-[type=text],
-[type=email],
+[type="date"],
+[type="text"],
+[type="email"],
 span {
     font-size: 18px;
     line-height: 1.5;
@@ -115,7 +115,7 @@ h2 span,
 h3 span,
 h5 span,
 h6 span {
-    font-family: 'Source Sans Pro', Arial, sans-serif;
+    font-family: "Source Sans Pro", Arial, sans-serif;
     font-weight: bolder;
     color: #95141b;
 }
@@ -132,7 +132,7 @@ iframe {
 .button {
     text-transform: uppercase;
     font-weight: bold;
-    font-family: 'Source Sans Pro', Arial, sans-serif;
+    font-family: "Source Sans Pro", Arial, sans-serif;
 }
 
 .button.primary {
@@ -153,7 +153,7 @@ iframe {
 
 .bordered-light {
     background-color: transparent !important;
-    border: 1px solid #FFF;
+    border: 1px solid #fff;
 }
 
 .bordered-light:hover {
@@ -170,7 +170,7 @@ iframe {
 .bordered-dark:hover {
     background-color: #2f2f2f !important;
     border-color: #2f2f2f !important;
-    color: #FFF !important;
+    color: #fff !important;
 }
 
 .module {
@@ -181,7 +181,7 @@ iframe {
 
 dl dt {
     font-weight: bold;
-    margin-bottom: .3rem;
+    margin-bottom: 0.3rem;
 }
 
 iframe {
@@ -199,7 +199,6 @@ General CSS Ends
 /* .......................
 Admission CSS
 ......................... */
-
 
 .progress-indicator {
     list-style: none;
@@ -243,7 +242,7 @@ Admission CSS
 }
 
 .progress-indicator>li::after {
-    content: '';
+    content: "";
     position: absolute;
     display: block;
     background: #e6e6e6;
@@ -266,14 +265,11 @@ Admission CSS
     color: #e79800;
 }
 
-
 .progress-indicator>li.is-complete::before,
 .progress-indicator>li.is-complete::after {
     color: #fefefe;
     background: #e79800;
 }
-
-
 
 .progress-indicator>li.is-complete span {
     color: #95141b;
@@ -296,8 +292,6 @@ Admission CSS
 .progress-indicator>li.is-current span {
     color: #95141b;
 }
-
-
 
 /* .......................
 End of Admission CSS
@@ -364,12 +358,12 @@ End of Admission CSS
 }
 
 .section-title-wrapper.light-title:before {
-    background-color: #FFF;
+    background-color: #fff;
 }
 
 .section-title-wrapper.light-title::after {
     background-color: #353536;
-    color: #FFF;
+    color: #fff;
 }
 
 .grey-bg .section-title-wrapper::after {
@@ -394,7 +388,7 @@ End of Admission CSS
     float: left;
     margin-left: 5px;
     margin-right: 5px;
-    background-color: #FFF;
+    background-color: #fff;
     color: #e79800;
 }
 
@@ -408,7 +402,7 @@ End of Admission CSS
 .owl-nav .owl-prev:hover,
 .owl-nav .owl-next:hover {
     background-color: #e79800;
-    color: #FFF;
+    color: #fff;
 }
 
 .space-section .row .small-12 {
@@ -435,7 +429,7 @@ End of Admission CSS
 
 .row .sidebar.small-12 {
     margin-top: 0px;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, .1);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
 }
 
 /*-------------------------
@@ -452,7 +446,7 @@ Useful Elements CSS Ends
 }
 
 .topBar p {
-    color: #FFF;
+    color: #fff;
     margin-bottom: 0px;
     float: left;
     padding: 7px;
@@ -464,7 +458,7 @@ Useful Elements CSS Ends
 
 .topBar ul li {
     font-weight: bold;
-    color: #FFF;
+    color: #fff;
     padding: 7px;
     text-align: right;
     display: inline-block;
@@ -483,11 +477,11 @@ Useful Elements CSS Ends
     font-weight: bold;
     padding-left: 5px;
     padding-right: 5px;
-    color: #FFF;
+    color: #fff;
 }
 
 .topBar ul li a:hover {
-    transition-duration: 1.0s;
+    transition-duration: 1s;
     color: #e79800;
 }
 
@@ -510,7 +504,6 @@ Top bar CSS Ends
 }
 
 .header .logo img {
-
     height: 85px;
     width: auto;
 }
@@ -520,7 +513,7 @@ Top bar CSS Ends
     line-height: 40px;
 }
 
-#search-dropdown input[type=text] {
+#search-dropdown input[type="text"] {
     margin-bottom: 0px;
 }
 
@@ -550,7 +543,7 @@ Top bar CSS Ends
 
 .top-bar {
     position: relative;
-    font-family: 'Source Sans Pro', Arial, sans-serif;
+    font-family: "Source Sans Pro", Arial, sans-serif;
 }
 
 .top-bar ul ul {
@@ -618,7 +611,7 @@ Top bar CSS Ends
     transition: 0.3s ease;
     border-bottom: 0px !important;
     background-color: #95141b;
-    color: #FFF !important;
+    color: #fff !important;
     width: 200%;
 }
 
@@ -634,19 +627,18 @@ Top bar CSS Ends
 }
 
 .is-active ul li a {
-    background-color: #FFF;
+    background-color: #fff;
     color: #444 !important;
 }
 
 .is-active ul li a:hover {
-    background-color: #FFF;
+    background-color: #fff;
     color: #e79800 !important;
-
 }
 
 .menu .active>a {
     background-color: #e79800;
-    color: #FFF;
+    color: #fff;
 }
 
 .single-sub ul li a {
@@ -670,14 +662,14 @@ Header CSS Ends
 
 .navigation-style-two .search-wrap a,
 .navigation-style-two .top-bar ul li a {
-    color: #FFF;
-    transition: all .5s;
+    color: #fff;
+    transition: all 0.5s;
 }
 
 .navigation-style-two .search-wrap a,
 .navigation-style-two .top-bar ul li a:active {
     color: #e79800;
-    transition: all .5s;
+    transition: all 0.5s;
 }
 
 .navigation-style-two .dropdown.menu.medium-horizontal>li>a {
@@ -687,7 +679,7 @@ Header CSS Ends
 
 .navigation-style-two .top-bar .dropdown.menu>li.opens-right>.is-dropdown-submenu {
     margin-top: 0px;
-    transition: all .5s;
+    transition: all 0.5s;
     border-top: 1px solid #e79800;
 }
 
@@ -711,7 +703,7 @@ Header CSS Ends
     margin-bottom: 0px;
     font-size: 1.5rem;
     line-height: 40px;
-    font-family: 'Source Sans Pro', Arial, sans-serif;
+    font-family: "Source Sans Pro", Arial, sans-serif;
     color: #e79800;
 }
 
@@ -741,7 +733,7 @@ Header Style 2 Ends
 .layer1 {
     z-index: 5;
     background-color: rgba(0, 0, 0, 0.25);
-    border-color: rgba(0, 0, 0, 1.00);
+    border-color: rgba(0, 0, 0, 1);
 }
 
 .layer2 {
@@ -771,7 +763,7 @@ Header Style 2 Ends
 }
 
 .layer4 a {
-    color: #FFF;
+    color: #fff;
 }
 
 .layer4:hover {
@@ -788,7 +780,6 @@ Header Style 2 Ends
 Banner CSS Ends
 -------------------------*/
 
-
 /*admission timeline*/
 
 /*End of admission timeline*/
@@ -800,6 +791,7 @@ Banner CSS Ends
 .newadmission-info {
     position: relative;
     padding: 30px 30px;
+    max-height: 350px;
 }
 
 .courses-info::after,
@@ -819,7 +811,7 @@ Banner CSS Ends
 }
 
 .courses-info::after {
-    background: url('images/help/courses.jpg');
+    background: url("images/help/courses.jpg");
 }
 
 .faculty-info {
@@ -827,7 +819,7 @@ Banner CSS Ends
 }
 
 .faculty-info::after {
-    background: url('images/help/faculty.jpg');
+    background: url("images/help/faculty.jpg");
 }
 
 .newadmission-info {
@@ -835,11 +827,11 @@ Banner CSS Ends
 }
 
 .newadmission-info::after {
-    background: url('images/help/admission.jpg');
+    background: url("images/help/admission.jpg");
 }
 
 .information-boxes h3 {
-    color: #FFF;
+    color: #fff;
     text-align: center;
     text-transform: uppercase;
 }
@@ -850,10 +842,9 @@ Banner CSS Ends
 
 .information-boxes p,
 .information-boxes ul {
-    color: #FFF;
+    color: #fff;
     line-height: 1.5;
-    text-align: left;
-    font-size: 16px !important;
+    text-align: initial;
 }
 
 .information-boxes .button {
@@ -873,13 +864,12 @@ Information Boxes CSS Ends
  08 - Welcome Message CSS
 -------------------------*/
 .welcome-message h2 {
-
     margin-bottom: 0px;
 }
 
 .welcome-message ul li {
     color: #000;
-    font-family: 'Source Sans Pro', Arial, sans-serif;
+    font-family: "Source Sans Pro", Arial, sans-serif;
     text-align: initial;
     padding-top: 5px;
     font-size: 1.45em;
@@ -892,7 +882,7 @@ Information Boxes CSS Ends
 
 .welcome-message h2 span {
     color: #e79800;
-    font-size: 1.850rem;
+    font-size: 1.85rem;
 }
 
 .welcome-message h3 {
@@ -938,34 +928,56 @@ Welcome Message CSS Ends
 
 .tabs .tabs-title a {
     display: inline-block;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    padding-left: 10px;
-    padding-right: 10px;
-    font-family: 'Source Sans Pro', Arial, sans-serif;
+    font-family: "Source Sans Pro", Arial, sans-serif;
     font-weight: bold;
-    padding: 0px 10px;
+    box-shadow: 0 19px 38px #f7f7f7,
+        0 15px 12px #f7f7f7;
     text-transform: uppercase;
+    border: solid #f7f7f7 2px;
 }
 
 .tabs .tabs-title.is-active a {
-    background-color: transparent;
+    background-color: #95141b;
     border-bottom: 0px !important;
 }
 
 .tabs-panel {
     background-color: transparent !important;
     width: 100%;
-    padding: 0px;
+    text-align: center;
 }
 
 .tabs-content {
     border: 0px;
     background-color: transparent;
 }
+/* Video css */
+
+
+.video{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  iframe {
+    /* optional */
+    width: 100%;
+    height: 100%;
+  }
+
+/* Edn of the video css */
 
 .course {
-    background-color: #FFF;
+    background-color: #fff;
     padding: 10px;
     position: relative;
     box-shadow: 0 0 6px 1px rgb(234, 234, 234);
@@ -980,14 +992,13 @@ Welcome Message CSS Ends
     margin-bottom: 35px;
     opacity: 1;
     display: block;
-    transition: .5s ease;
+    transition: 0.5s ease;
     backface-visibility: hidden;
 }
 
 .course .course-thumb:hover {
     opacity: 0.7;
     padding: 7px;
-
 }
 
 /* timelines style for admission process */
@@ -995,25 +1006,24 @@ Welcome Message CSS Ends
 .timeline .timeline-item::after,
 .timeline .timeline-item::before {
     clear: both;
-    content: '';
+    content: "";
     display: block;
     width: 100%;
 }
 
 .timeline {
-    background: #F7f7f7;
+    background: #f7f7f7;
     margin: 30px auto;
     padding: 0 10px;
     position: relative;
     transition: all 0.25s ease-in;
     width: 100%;
-    border: #F7f7f7 solid 2px;
-
+    border: #f7f7f7 solid 2px;
 }
 
 .timeline::before {
     background: #fefefe;
-    content: '';
+    content: "";
     height: 100%;
     left: 50%;
     position: absolute;
@@ -1023,13 +1033,12 @@ Welcome Message CSS Ends
 
 .timeline::after {
     clear: both;
-    content: '';
+    content: "";
     display: table;
     width: 100%;
 }
 
 .timeline a {
-
     font-weight: bold;
     transition: all 0.25s ease-in;
 }
@@ -1139,11 +1148,8 @@ Welcome Message CSS Ends
     }
 }
 
-
-
-
 .middle {
-    transition: .5s ease;
+    transition: 0.5s ease;
     opacity: 0;
     position: absolute;
     top: 50%;
@@ -1167,7 +1173,7 @@ Welcome Message CSS Ends
     position: absolute;
     bottom: 0px;
     background-color: #0a68b1;
-    color: #FFF;
+    color: #fff;
     left: 65px;
     padding: 5px 15px;
     z-index: 3;
@@ -1180,7 +1186,7 @@ Welcome Message CSS Ends
     right: 0px;
     bottom: 0px;
     background-color: rgba(10, 104, 177, 1);
-    color: #FFF;
+    color: #fff;
     padding: 5px 10px;
     font-weight: bold;
     border-radius: 5px;
@@ -1194,7 +1200,7 @@ Welcome Message CSS Ends
 }
 
 .is-active .secondary {
-    color: #FFF !important;
+    color: #fff !important;
 }
 
 .is-active .secondary:hover {
@@ -1204,7 +1210,7 @@ Welcome Message CSS Ends
 .is-active .bordered-dark:hover {
     background-color: #2f2f2f !important;
     border: 1px solid #2f2f2f !important;
-    color: #FFF !important;
+    color: #fff !important;
 }
 
 .course .button {
@@ -1241,7 +1247,7 @@ Our Courses CSS Ends
 }
 
 .teacher:hover>.teacher-thumb img {
-    opacity: .3;
+    opacity: 0.3;
 }
 
 .teacher:hover>.teacher-thumb .teacher-links {
@@ -1254,7 +1260,7 @@ Our Courses CSS Ends
     width: 35px;
     height: 35px;
     background-color: #e79800;
-    color: #FFF;
+    color: #fff;
     line-height: 35px;
     padding: 0px;
     margin: 0px 5px;
@@ -1283,7 +1289,7 @@ Our Courses CSS Ends
     margin-top: 10px;
     padding: 5px 15px;
     border: 1px solid #e79800;
-    color: #FFF;
+    color: #fff;
     background-color: #e79800;
     border-radius: 20px;
     text-transform: uppercase;
@@ -1292,7 +1298,7 @@ Our Courses CSS Ends
 .small-button:hover,
 .teacher-links .menu li a:hover {
     color: #e79800;
-    background-color: #FFF;
+    background-color: #fff;
     border-color: transparent;
 }
 
@@ -1313,15 +1319,9 @@ Our Courses CSS Ends
 Our Teachers CSS Ends
 -------------------------*/
 
-
 /*-------------------------
 Faculty card start
 -------------------------*/
-
-
-
-
-
 
 /*-------------------------
  11 - Seminar/Events CSS
@@ -1348,11 +1348,9 @@ Faculty card start
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-
 }
 
 .why-cuea::after {
-
     content: "";
     top: 0;
     left: 0;
@@ -1363,20 +1361,18 @@ Faculty card start
     z-index: -1;
     background: url("/images/2.jpg");
     background-size: cover;
-
 }
 
 .financial {
     position: relative;
     padding-top: 80px;
     padding-bottom: 80px;
-    background: #FFEFBA;
+    background: #ffefba;
     /* fallback for old browsers */
-    background: -webkit-linear-gradient(to top, #FFFFFF, #FFEFBA);
+    background: -webkit-linear-gradient(to top, #ffffff, #ffefba);
     /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to top, #FFFFFF, #FFEFBA);
+    background: linear-gradient(to top, #ffffff, #ffefba);
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
 }
 
 .financial::after {
@@ -1388,13 +1384,12 @@ Faculty card start
     opacity: 0.6;
     position: absolute;
     z-index: -1;
-    background: #FFEFBA;
+    background: #ffefba;
     /* fallback for old browsers */
-    background: -webkit-linear-gradient(to top, #FFFFFF, #FFEFBA);
+    background: -webkit-linear-gradient(to top, #ffffff, #ffefba);
     /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to top, #FFFFFF, #FFEFBA);
+    background: linear-gradient(to top, #ffffff, #ffefba);
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
 }
 
 /* Program seminar */
@@ -1408,11 +1403,9 @@ Faculty card start
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-
 }
 
 .program-seminar::after {
-
     content: "";
     top: 0;
     left: 0;
@@ -1421,8 +1414,6 @@ Faculty card start
     opacity: 0.6;
     position: absolute;
     z-index: -1;
-
-
 }
 
 /* End program seminar */
@@ -1437,7 +1428,6 @@ Faculty card start
     z-index: -1;
     background: url("/images/1.jpg");
     background-size: cover;
-
 }
 
 .event {
@@ -1479,7 +1469,7 @@ Faculty card start
     left: 100%;
     text-transform: uppercase;
     font-weight: normal;
-    font-family: 'Source Sans Pro', Arial, sans-serif;
+    font-family: "Source Sans Pro", Arial, sans-serif;
     font-size: 1.5rem;
     text-align: center;
     color: #2f2f2f;
@@ -1487,7 +1477,7 @@ Faculty card start
 
 .event-day {
     background-color: #e79800;
-    color: #FFF;
+    color: #fff;
     display: block;
     margin-bottom: 15px;
     padding: 10px;
@@ -1496,7 +1486,7 @@ Faculty card start
 
 .event-month {
     background-color: #e79800;
-    color: #FFF;
+    color: #fff;
     display: block;
     margin-top: 15px;
     padding: 10px;
@@ -1522,7 +1512,7 @@ Seminar/Events CSS Ends
 }
 
 .gallery-thumb:hover {
-    opacity: .7;
+    opacity: 0.7;
 }
 
 /*-------------------------
@@ -1541,29 +1531,15 @@ Gallery CSS Ends
 }
 
 .our-process h2 {
-
     font-size: 2.5rem;
     text-transform: uppercase;
     margin-bottom: 40px;
-
 }
 
 .our-process h5 {
-
+    font-size: 18px;
     color: #000;
 }
-
-.process h3,
-.process p {
-
-    margin-bottom: 0px;
-}
-
-.process h3 {
-    text-transform: capitalize;
-    font-weight: normal;
-}
-
 .process .number {
     float: left;
     font-size: 2rem;
@@ -1592,8 +1568,6 @@ Gallery CSS Ends
     line-height: 60px;
     margin-right: 25px;
     font-weight: bold;
-
-
 }
 
 .process .right-info {
@@ -1601,7 +1575,7 @@ Gallery CSS Ends
 }
 
 .process {
-    margin-bottom: 30px;
+    padding-bottom:120px;
 }
 
 .our-process .process:last-child {
@@ -1615,7 +1589,7 @@ Our Process Ends
 .gallery-image img {
     height: 100%;
     width: auto;
-    transform: scale(1.0);
+    transform: scale(1);
     transition: transform 0.4s ease;
 }
 
@@ -1635,7 +1609,7 @@ Our Process Ends
     position: absolute;
     bottom: 5px;
     left: 20px;
-    opacity: 0.0;
+    opacity: 0;
     transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
@@ -1659,7 +1633,7 @@ Our Process Ends
 
 .img-box:hover .caption {
     transform: translateY(-20px);
-    opacity: 1.0;
+    opacity: 1;
 }
 
 .img-box:hover {
@@ -1672,13 +1646,12 @@ Our Process Ends
 
 .opacity-low {
     opacity: 0.9;
-    color: #F7f7f7;
+    color: #f7f7f7;
 }
 
 /* END OF HOME GALLERY */
 
 /* Start of newsletter css */
-
 
 /* .input-group-field {
       border-radius: 5000px 0 0 5000px;
@@ -1690,7 +1663,6 @@ Our Process Ends
       font-size: 0.8rem;
     } */
 
-
 /* End of newsletter css */
 /*-------------------------
  14 - Testimonials Starts
@@ -1701,7 +1673,6 @@ Our Process Ends
 
 .testimonial {
     background-color: white;
-
 
     /* margin-bottom: 15%; */
 }
@@ -1834,7 +1805,6 @@ News panel in the home page
 
 /* End of news card */
 
-
 .posts-panel {
     max-width: 75rem;
     margin-right: auto;
@@ -1853,7 +1823,7 @@ News panel in the home page
 .posts-panel::before,
 .posts-panel::after {
     display: table;
-    content: ' ';
+    content: " ";
     -webkit-flex-basis: 0;
     -ms-flex-preferred-size: 0;
     flex-basis: 0;
@@ -1897,7 +1867,7 @@ screen and (min-width: 40em) {
 .posts-panel .panel-header::before,
 .posts-panel .panel-header::after {
     display: table;
-    content: ' ';
+    content: " ";
     -webkit-flex-basis: 0;
     -ms-flex-preferred-size: 0;
     flex-basis: 0;
@@ -1954,7 +1924,7 @@ screen and (min-width: 40em) {
 .posts-panel .posts-list::before,
 .posts-panel .posts-list::after {
     display: table;
-    content: ' ';
+    content: " ";
     -webkit-flex-basis: 0;
     -ms-flex-preferred-size: 0;
     flex-basis: 0;
@@ -1994,7 +1964,7 @@ screen and (min-width: 40em) {
 .posts-panel .post-item::before,
 .posts-panel .post-item::after {
     display: table;
-    content: ' ';
+    content: " ";
     -webkit-flex-basis: 0;
     -ms-flex-preferred-size: 0;
     flex-basis: 0;
@@ -2013,6 +1983,7 @@ screen and (min-width: 40em) {
     float: left;
     padding-right: 0.625rem;
     padding-left: 0.625rem;
+    height: 40px;
 }
 
 @media print,
@@ -2102,7 +2073,7 @@ screen and (min-width: 40em) {
 .posts-panel .pinned-post .post-thumbnail::before,
 .posts-panel .pinned-post .post-thumbnail::after {
     display: table;
-    content: ' ';
+    content: " ";
     -webkit-flex-basis: 0;
     -ms-flex-preferred-size: 0;
     flex-basis: 0;
@@ -2151,7 +2122,7 @@ screen and (min-width: 40em) {
 .posts-panel .pinned-post .post-text::before,
 .posts-panel .pinned-post .post-text::after {
     display: table;
-    content: ' ';
+    content: " ";
     -webkit-flex-basis: 0;
     -ms-flex-preferred-size: 0;
     flex-basis: 0;
@@ -2244,7 +2215,7 @@ screen and (min-width: 40em) {
     .posts-panel.grid .posts-list::before,
     .posts-panel.grid .posts-list::after {
         display: table;
-        content: ' ';
+        content: " ";
         -webkit-flex-basis: 0;
         -ms-flex-preferred-size: 0;
         flex-basis: 0;
@@ -2291,7 +2262,6 @@ screen and (min-width: 40em) {
     display: none;
 }
 
-
 /* ----------------------------------
 End of the news panel in the home
 ------------------------------------- */
@@ -2315,7 +2285,7 @@ End of the news panel in the home
 
 .posts-wrap {
     background-color: #fefefe;
-    box-shadow: 0 3px 6px #F7f7f7, 0 3px 6px #F7f7f7;
+    box-shadow: 0 3px 6px #f7f7f7, 0 3px 6px #f7f7f7;
 }
 
 .post-thumb {
@@ -2346,7 +2316,7 @@ End of the news panel in the home
 }
 
 .post-content {
-    background-color: #FFF;
+    background-color: #fff;
     width: calc(100% - 30px);
     padding: 15px;
     z-index: 5;
@@ -2369,7 +2339,6 @@ Blog Posts Ends
 -------------------------*/
 .brands-wrap {
     margin-bottom: 80px;
-
 }
 
 .bran-logo {
@@ -2380,7 +2349,7 @@ Blog Posts Ends
     margin-bottom: 0px;
     border: 1px solid #ededed;
     padding: 3px;
-    opacity: .4;
+    opacity: 0.4;
     height: auto !important;
     width: auto !important;
 }
@@ -2482,12 +2451,12 @@ Call to Action Box Ends
     padding-top: 25px;
     padding-bottom: 25px;
     position: relative;
-    background: url('/images/example.jpg');
+    background: url("/images/example.jpg");
 }
 
 .title-section::after {
     content: "";
-    background: url('images/1.jpg');
+    background: url("images/1.jpg");
     top: 0;
     left: 0;
     bottom: 0;
@@ -2501,7 +2470,7 @@ Call to Action Box Ends
     font-weight: bold;
     margin-top: 0px;
     margin-bottom: 5px;
-    color: #FFF;
+    color: #fff;
 }
 
 .title-section ul {
@@ -2694,7 +2663,7 @@ Page Preloader Ends
 
 .courses-table-row:after {
     clear: both !important;
-    content: ' ';
+    content: " ";
     display: table;
 }
 
@@ -2761,7 +2730,7 @@ Page Preloader Ends
     text-align: center;
     line-height: 55px;
     margin-right: 7px;
-    color: #FFF !important;
+    color: #fff !important;
     background-color: #e79800;
 }
 
@@ -2775,7 +2744,7 @@ Page Preloader Ends
 .info-side p strong {
     font-size: 18px;
     color: #2f2f2f;
-    font-family: 'Source Sans Pro', Arial, sans-serif;
+    font-family: "Source Sans Pro", Arial, sans-serif;
 }
 
 .icon-box p {
@@ -2808,8 +2777,8 @@ Page Preloader Ends
 .boxed {
     max-width: 1250px;
     margin: auto;
-    box-shadow: 0px 0px 6px 1px #CCC;
-    background-color: #FFF;
+    box-shadow: 0px 0px 6px 1px #ccc;
+    background-color: #fff;
     position: relative;
     z-index: 0;
 }
@@ -2873,7 +2842,6 @@ body.box {
     transition: background 0.15s ease-in, color 0.15s ease-in;
 }
 
-
 .blog-page .featured-image {
     position: relative;
 }
@@ -2883,7 +2851,8 @@ body.box {
     text-align: justify;
     border-bottom: 1px solid #ededed;
     margin-bottom: 30px;
-    box-shadow: 0 5px 10px rgba(154, 160, 185, .05), 0 15px 40px rgba(166, 173, 201, .2);
+    box-shadow: 0 5px 10px rgba(154, 160, 185, 0.05),
+        0 15px 40px rgba(166, 173, 201, 0.2);
 }
 
 .blog-page .blog-post.last-post {
@@ -2896,14 +2865,14 @@ body.box {
     background-color: #e79800;
     padding: 10px;
     max-width: 370px;
-    color: #FFF;
+    color: #fff;
     position: absolute;
     bottom: 15px;
     left: 4px;
 }
 
 .blog-page .post-meta a {
-    color: #FFF;
+    color: #fff;
 }
 
 .blog-post .post-excerpt h4 {
@@ -2917,8 +2886,8 @@ body.box {
 }
 
 .sharing-posts {
-    border-top: 1px solid #EDEDED;
-    border-bottom: 1px solid #EDEDED;
+    border-top: 1px solid #ededed;
+    border-bottom: 1px solid #ededed;
     margin-top: 25px;
     margin-bottom: 25px;
     padding-top: 10px;
@@ -2947,14 +2916,14 @@ body.box {
 .single-post .sharing-posts .small-12 {
     margin-top: 0px;
     margin-bottom: 0px;
-    border: #EDEDED 2px;
+    border: #ededed 2px;
     border-bottom: 1px solid #95141b;
 }
 
 .author-box {
     margin-bottom: 25px;
     padding-bottom: 25px;
-    border: 1px solid #EDEDED;
+    border: 1px solid #ededed;
 }
 
 .content-section .events-wrapper .event {
@@ -2963,7 +2932,6 @@ body.box {
     -moz-box-shadow: 10px 10px 31px -15px rgba(0, 0, 0, 0.54);
     box-shadow: 10px 10px 31px -15px rgba(0, 0, 0, 0.54);
     height: auto;
-
 }
 
 /*-----------------------
@@ -2974,7 +2942,7 @@ body.box {
 }
 
 .shadow {
-    box-shadow: 0px 0px 2px 1px #CCC;
+    box-shadow: 0px 0px 2px 1px #ccc;
     padding: 10px;
 }
 
@@ -3021,7 +2989,7 @@ h4 span {
     width: 35px;
     height: 35px;
     background-color: #e79800;
-    color: #FFF;
+    color: #fff;
     line-height: 35px;
     padding: 0px;
     margin: 0px 5px;
@@ -3031,7 +2999,7 @@ h4 span {
 
 .staff-links .menu li a:hover {
     color: #e79800;
-    background-color: #FFF;
+    background-color: #fff;
     border-color: transparent;
 }
 
@@ -3063,7 +3031,6 @@ h4 span {
 Styles For Inner Pages Ends
 -------------------------*/
 
-
 /*-------------------------
   22 - Sidebars CSS
 -------------------------*/
@@ -3080,8 +3047,7 @@ Styles For Inner Pages Ends
     background-color: #fefefe;
     margin-bottom: 25px;
     padding: 15px;
-    box-shadow: 0 1px 4px 2px rgba(0, 0, 0, .1);
-
+    box-shadow: 0 1px 4px 2px rgba(0, 0, 0, 0.1);
 }
 
 .sidebar .widget:last-child {
@@ -3098,7 +3064,7 @@ Styles For Inner Pages Ends
 }
 
 .widget .button,
-.search input[type=text] {
+.search input[type="text"] {
     margin-bottom: 0px;
     width: 100%;
 }
@@ -3158,7 +3124,7 @@ Styles For Inner Pages Ends
 
 .tags li a:hover {
     background-color: #e79800;
-    color: #FFF;
+    color: #fff;
 }
 
 .tags li:first-child {
@@ -3187,7 +3153,7 @@ Styles For Inner Pages Ends
 .our-store {
     padding-top: 60px;
     padding-bottom: 60px;
-    background-color: #F7f7f7;
+    background-color: #f7f7f7;
 }
 
 .our-store .price {
@@ -3231,7 +3197,7 @@ Styles For Inner Pages Ends
 
 .product-img img {
     overflow: hidden;
-    min-height: 320px;
+    height: 310px;
     width: 100%;
 }
 
@@ -3243,7 +3209,7 @@ Styles For Inner Pages Ends
     padding: 10px 10px;
     text-transform: uppercase;
     font-weight: bold;
-    color: #FFF;
+    color: #fff;
     background-color: #e79800;
 }
 
@@ -3358,7 +3324,7 @@ Styles For Inner Pages Ends
     margin-bottom: 25px;
 }
 
-.add-cart-option input[type=number] {
+.add-cart-option input[type="number"] {
     max-width: 75px;
     float: left;
     margin-right: 20px;
@@ -3409,14 +3375,14 @@ Styles For Inner Pages Ends
 
 .accordion-title:focus,
 .accordion-title:hover {
-    background-color: #FFF;
+    background-color: #fff;
     border-bottom: 1px solid #e79800;
     color: #e79800;
 }
 
 .accordion-title {
     font-size: 1rem;
-    font-family: 'Source Sans Pro', Arial, sans-serif;
+    font-family: "Source Sans Pro", Arial, sans-serif;
     color: #2f2f2f;
 }
 
@@ -3437,10 +3403,14 @@ Styles For Inner Pages Ends
     font-size: 16px;
     font-weight: 300;
     padding: 20px 10px 25px;
-    -webkit-transition: margin-left 0.3s linear, font-weight 0.2s linear, color 0.3s linear;
-    -moz-transition: margin-left 0.3s linear, font-weight 0.2s linear, color 0.3s linear;
-    -o-transition: margin-left 0.3s linear, font-weight 0.2s linear, color 0.3s linear;
-    -ms-transition: margin-left 0.3s linear, font-weight 0.2s linear, color 0.3s linear;
+    -webkit-transition: margin-left 0.3s linear, font-weight 0.2s linear,
+        color 0.3s linear;
+    -moz-transition: margin-left 0.3s linear, font-weight 0.2s linear,
+        color 0.3s linear;
+    -o-transition: margin-left 0.3s linear, font-weight 0.2s linear,
+        color 0.3s linear;
+    -ms-transition: margin-left 0.3s linear, font-weight 0.2s linear,
+        color 0.3s linear;
 }
 
 .price-plan .price-title:hover {
@@ -3501,7 +3471,6 @@ Styles For Inner Pages Ends
   Pricing-list CSS  Ends
 -------------------------*/
 
-
 /*-------------------------
   25 - Footer
 -------------------------*/
@@ -3512,7 +3481,7 @@ Styles For Inner Pages Ends
 
 .footer::after {
     content: "";
-    background: url('images/help/gallery9.jpg');
+    background: url("images/help/gallery9.jpg");
     background-size: cover;
     top: 0;
     left: 0;
@@ -3532,7 +3501,7 @@ Styles For Inner Pages Ends
     width: 45px;
     display: block;
     height: 3px;
-    opacity: .8;
+    opacity: 0.8;
     margin: 10px 0 15px;
 }
 
@@ -3605,7 +3574,7 @@ Styles For Inner Pages Ends
     padding-bottom: 10px;
 }
 
-.footer-widget input[type=text] {
+.footer-widget input[type="text"] {
     height: 40px;
     max-width: 230px;
 }
@@ -3628,21 +3597,21 @@ Styles For Inner Pages Ends
 
 .footer {
     background-color: #95141b;
-    color: #FFF;
+    color: #fff;
 }
 
 .footer a {
     font-size: 1.0625rem;
-    color: #FFF;
+    color: #fff;
 }
 
 .footer p {
     font-size: 1.0625rem;
-    color: #FFF;
+    color: #fff;
 }
 
 .footer a:hover {
-    transition-duration: 1.0s;
+    transition-duration: 1s;
     color: #e79800;
 }
 
@@ -3656,16 +3625,16 @@ Styles For Inner Pages Ends
 
 .footerTop ul {
     font-size: 1.0625rem;
-    color: #FFF;
+    color: #fff;
 }
 
 .footerbottom {
     background: #f0951f;
-    color: #FFF;
+    color: #fff;
 }
 
 .footerbottom a {
-    color: #FFF;
+    color: #fff;
 }
 
 .footerbottom a:hover {
@@ -3688,10 +3657,10 @@ Styles For Inner Pages Ends
     height: 30px;
     padding: 0px 0px 0px;
     font-size: 22px;
-    opacity: .9;
+    opacity: 0.9;
     z-index: 99;
     display: none;
-    background-color: #FFF;
+    background-color: #fff;
     color: #e79800;
     line-height: 30px;
     border: 1px solid #e79800;
@@ -3700,7 +3669,7 @@ Styles For Inner Pages Ends
 #top:hover {
     transition-duration: 2s;
     background-color: #e79800;
-    color: #FFF;
+    color: #fff;
 }
 
 /*-------------------------
@@ -3768,14 +3737,14 @@ Styles For Inner Pages Ends
 
     .top-bar ul li a {
         padding-left: 15px;
-        color: #FFF;
+        color: #fff;
     }
 
     .top-bar ul li a:hover,
     .top-bar ul .is-active a,
     .top-bar ul li a {
         border-bottom: 0px !important;
-        color: #FFF !important;
+        color: #fff !important;
     }
 
     .top-bar ul li a:hover {
@@ -3787,7 +3756,7 @@ Styles For Inner Pages Ends
     }
 
     .is-accordion-submenu-parent>a:after {
-        border-color: #FFF transparent transparent;
+        border-color: #fff transparent transparent;
     }
 
     .top-bar ul ul li a {
@@ -3872,15 +3841,13 @@ Styles For Inner Pages Ends
     }
 
     .seminar-events .event-thumb {
-        padding-right: .625rem;
+        padding-right: 0.625rem;
         display: none;
     }
 
     .gallery-container {
         text-align: center;
         width: 100%;
-
-
     }
 
     .gallery-container a {
@@ -3946,7 +3913,7 @@ Styles For Inner Pages Ends
 
     .owl-stage-outer:after {
         clear: both !important;
-        content: ' ';
+        content: " ";
         display: table;
     }
 
@@ -3960,7 +3927,7 @@ Styles For Inner Pages Ends
     }
 
     .navigation-style-two {
-        background-color: #FFF;
+        background-color: #fff;
         margin-bottom: 25px;
     }
 

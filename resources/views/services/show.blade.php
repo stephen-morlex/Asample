@@ -47,11 +47,12 @@
         <div class="medium-4 small-12 columns sidebar">
             <div class="widget">
                 <h2>More student services</h2>
-                <ol class="price-details">
+                <ol class="menu vertical">
                     @foreach ($sideServices as $sr)
                     <li>
-                        <i class="fa fa-caret-right" aria-hidden="true"></i>
+                        <i class="fa fa-caret-right" aria-hidden="true">
                         <a href="{{ route('services.show',$sr->slug)}}">{{ $sr->name }}</a>
+                        </i>
                      </li>
                     @endforeach
                 </ol>

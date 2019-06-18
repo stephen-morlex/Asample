@@ -43,13 +43,13 @@
                       <div class="medium-17 small-12 columns">
                             <ol class="progress-indicator">
                                     <li class="is-complete" data-step="1" >
-                                            <span>Chose a program</span>
+                                          <a href="{{ asset('program.index') }}"<span>Choose a programme</span></a>
                                     </li>
                                     <li class="is-complete" data-step="2">
-                                            <span>Apply</span>
+                                           <a href="{{ asset('application.index') }}"> <span>Apply</span></a>
                                     </li>
                                     <li class="is-complete" data-step="3">
-                                            <span>Verification of your certificate</span>
+                                           <a href="{{ asset('studentLife.index') }}"> <span>join University</span></a>
                                     </li>
                                   </ol>
                      </div><!-- product Ends here -->

@@ -118,55 +118,18 @@
             </div><!-- Course content /-->
         </div><!-- Posts wrap ends /-->
            <div class="medium-4 small-12 columns sidebar">
-                        <div class="icon-box">
-                            <div class="icon-side float-left">
-                                <i class="fa fa-heart" aria-hidden="true"></i>
-                            </div><!-- icon side /-->
-                            <div class="info-side float-left">
-                                <p><strong>Why Study With Us?</strong><br>
-                                    Chartered Private University accredited by Commission of University Education.
-                                </p>
-                            </div><!-- info side /-->
-                            <div class="clearfix"></div>
-                        </div><!-- icon-box /-->
-
+                      @foreach ($abouts as $item)
                         <div class="icon-box">
                             <div class="icon-side float-left">
                                 <i class="fa fa-book" aria-hidden="true"></i>
                             </div><!-- icon side /-->
                             <div class="info-side float-left">
-                                <p><strong>Special Techniques</strong><br>
-                                    34 solid years of offering education grounded on values.
-                                </p>
+                                <a href="{{ route('about.show',$item->slug) }}"><p><strong>{{ $item->title }}</strong><br></a></p>
                             </div><!-- info side /-->
                             <div class="clearfix"></div>
                         </div><!-- icon-box /-->
-
-                        <div class="icon-box">
-                            <div class="icon-side float-left">
-                                <i class="fa fa-user" aria-hidden="true"></i>
-                            </div><!-- icon side /-->
-                            <div class="info-side float-left">
-                                <p><strong>International University</strong><br>
-                                    Rich diversity: Over 20 nationalities  and 100+ programmes on offer.
-                                </p>
-                            </div><!-- info side /-->
-                            <div class="clearfix"></div>
-                        </div><!-- icon-box /-->
-
-                        <div class="icon-box">
-                            <div class="icon-side float-left">
-                                <i class="fa fa-phone" aria-hidden="true"></i>
-                            </div><!-- icon side /-->
-                            <div class="info-side float-left">
-                                <p><strong>Get Admission</strong><br>
-                                    admissions@cuea.edu <br>
-                                    +254 (0) 709-691-111
-                                </p>
-                            </div><!-- info side /-->
-                            <div class="clearfix"></div>
-                        </div><!-- icon-box /-->
-                    </div><!-- icon-box ends -->
+            @endforeach
+        </div><!-- icon-box ends -->
 
         </div><!-- Row Ends /-->
     </div>

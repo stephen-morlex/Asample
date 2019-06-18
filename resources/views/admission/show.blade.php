@@ -35,40 +35,40 @@
                  <div class="tx-div"></div>
             </div><!-- Course Thumb /-->
             <div class="event-content">
-                        <ul class="accordion" data-accordion>
+                        <ul class="accordion"  data-accordion data-allow-all-closed="true">
                             <li class="accordion-item" data-accordion-item>
                                 <a href="#" class="accordion-title"> Application Process</a>
-                                <div class="accordion-content" data-tab-content>
+                                <div class="accordion-content" data-tab-content >
                                     {!! $admission->process !!}
                                 </div>
                             </li>
 
                             <li class="accordion-item" data-accordion-item>
-                                <a href="#" class="accordion-title"> Application Requirments</a>
-                                <div class="accordion-content" data-tab-content>
+                                <a href="#" class="accordion-title"> Application Requirements</a>
+                                <div class="accordion-content" data-tab-content >
                                     {!! $admission->requirement !!}
                                 </div>
                             </li>
 
                             <li class="accordion-item" data-accordion-item>
                                 <a href="#" class="accordion-title"  target="_blank"> Application Forms</a>
-                                <div class="accordion-content" data-tab-content>
+                                <div class="accordion-content" data-tab-content >
                                         <?php $file = (json_decode($admission->application))[0]->download_link; ?>
-                                        <iframe src ="{{ Voyager::image( $file ) }}" width="1000px" height="600px">Click here to download the application form </iframe>
+                                        <a href="{{ Voyager::image( $file ) }}" target="_blank">{{$admission->Nom}} Click here to download the Application form</a>
 
                                 </div>
                             </li>
 
                             <li class="accordion-item" data-accordion-item>
                                 <a href="#" class="accordion-title"> Brochure</a>
-                                <div class="accordion-content" data-tab-content>
+                                <div class="accordion-content" data-tab-content >
                                         <?php $file = (json_decode($admission->brochure))[0]->download_link; ?>
                                         <a href="{{ Voyager::image( $file ) }}" target="_blank">{{$admission->Nom}} Click here to download the Brohure</a>
                                 </div>
                             </li>
                             <li class="accordion-item" data-accordion-item>
                                 <a href="#" class="accordion-title">Fees structure</a>
-                                <div class="accordion-content" data-tab-content>
+                                <div class="accordion-content" data-tab-content >
 
                                     {!! $admission->fees !!}
                                 </div>
