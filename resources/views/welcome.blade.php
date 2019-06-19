@@ -48,11 +48,11 @@
                             data-start="1000"
                             data-splitin="none"
                             data-splitout="none"
-                            data-responsive_offset="on">{{ str_limit($item->body,40) }}
+                            data-responsive_offset="on">{{ $item->title }}
                         </div>
 
                         <!-- LAYER NR. 3 -->
-                        <div class="tp-caption Newspaper-Subtitle layer3 tp-resizeme rs-parallaxlevel-0"
+                        {{-- <div class="tp-caption Newspaper-Subtitle layer3 tp-resizeme rs-parallaxlevel-0"
                              id="slide-18-layer-2"
                              data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
                              data-y="['middle','middle','middle','middle']" data-voffset="['-82','-82','-82','-58']"
@@ -68,11 +68,11 @@
                             data-start="1000"
                             data-splitin="none"
                             data-splitout="none"
-                            data-responsive_offset="on">{{ $item->title }}
-                        </div>
+                            data-responsive_offset="on">
+                        </div> --}}
 
                         <!-- LAYER NR. 4 -->
-                        <div class="tp-caption layer4 rs-parallaxlevel-0"
+                        {{--  <div class="tp-caption layer4 rs-parallaxlevel-0"
                              id="slide-18-layer-4"
                              data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
                              data-y="['middle','middle','middle','middle']" data-voffset="['92','92','92','76']"
@@ -90,7 +90,7 @@
                             data-splitout="none"
                             data-responsive_offset="on"
                             data-responsive="off"><a href="{{ $item->link }}" class="button primary bordered-light">READ MORE</a>
-                        </div>
+                        </div>  --}}
                     </li>
                 @endforeach
                 <!-- SLIDE  -->
@@ -368,28 +368,27 @@
 <!-- Blog Posts Ends /-->
 
 <div class="blog-posts module grey-bg">
-    <div class="row">
+     <div class="row">
             <div class="section-title">
                 <h2>Campus Gallery</h2>
             </div>
             <br>
-           <div class="medium-12 gallery-image">
-                        @foreach($galleries as $gallery)
-                        @php $image = json_decode($gallery->image); @endphp
-                        @if (isset($image[0]))
-                        <div class="img-box">
+    <div class="medium-12 small-12 columns gallery-image">
+         @foreach($galleries as $gallery)
+            @php $image = json_decode($gallery->image); @endphp
+                @if (isset($image[0]))
+                    <div class="media-object img-box">
                           <img src="{{ Voyager::image($image[0]) }}" alt="{{ $gallery->title }}" />
                           <div class="transparent-box">
                             <div class="caption">
                               {{--  <p>{{ $gallery->title }}</p>  --}}
                               <p class="opacity-low">{{ $gallery->description }}</p>
                             </div>
-                          </div>
-                        </div>
+                         </div>
+                    </div>
                         @endif
                         @endforeach
-
-                </div>
+    </div>
     </div>
  </div>
 

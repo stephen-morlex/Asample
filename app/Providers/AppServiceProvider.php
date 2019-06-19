@@ -35,7 +35,7 @@ class AppServiceProvider extends ServiceProvider
     {
         view()->composer('*', function ($view) {
             $admissions = Section::orderBy('name')->get();
-            $ad = Section::orderBy('name','asc')->get();
+            $ad = Section::orderBy('id','asc')->get();
             $abouts     = About::orderBy('id','asc')->get();
             $researchNav = Research::orderBy('name','asc')->get();
             $studLife   = StudentCategory::orderBy('name','asc')->get();
