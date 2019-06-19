@@ -29,4 +29,9 @@ class Faculty extends Model implements Searchable
             $url
         );
     }
+
+    public function publication()
+    {
+        return $this->hasOne('App\Publication');
+    }
 }

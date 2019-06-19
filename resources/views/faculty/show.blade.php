@@ -44,6 +44,18 @@
         </div><!-- Posts wrap ends /-->
 
         <div class="medium-4 small-12 columns sidebar">
+            <div class="widget">
+                <ol class="menu vertical">
+                    @if(empty($faculty->publication))
+                        <li>There is no research and publication</li>     
+                    @else
+                        <li>
+                            <a href="{{route('publication.show',$faculty->publication->slug)}}" >Research and Publications</a>
+                            
+                        </li>
+                    @endif
+                </ol>
+            </div><!-- widget ends /-->
 
             <div class="widget">
                     <h2>{!! $faculty->name !!} Programmes</h2>

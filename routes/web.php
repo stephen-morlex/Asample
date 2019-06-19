@@ -108,6 +108,10 @@ Route::get('/parent/{parent}', 'AboutParentController@show')->name('parent.show'
 Route::get('/documents', 'DocumentController@index')->name('document.index');
 
 
+// RESEARCH AND PUBLICATIONS
+Route::get('/research-and-publication/{publication}', 'PublicationController@show')->name('publication.show');
+
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
