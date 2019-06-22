@@ -149,9 +149,6 @@
         <div class="clearfix"></div>
     </div>
     <!-- information boxes ends /-->
-
-
-
 <!-- Welcome Message -->
 <div class="welcome-message module">
 	<div class="row">
@@ -250,18 +247,13 @@
 
 </div>
 <!-- Welcome Message Ends /-->
-
 <!-- Seminar/Events -->
 <div class="seminar-events module">
-
     <div class="row">
-
             <div class="section-title">
                 <h2>Upcoming Events</h2>
                 <br>
             </div>
-
-
         <div class="events-wrapper">
             @forelse ($events as $e)
             <div class="medium-6 small-12 columns" >
@@ -283,7 +275,6 @@
             @empty
             @endforelse
         </div><!-- Events Wrapper Ends /-->
-
     </div>
     <!-- Row Ends /-->
     <br>
@@ -308,11 +299,19 @@
     </ul>
     <div class="tabs-content" data-tabs-content="collapsing-tabs">
       <div class="tabs-panel " id="panel1c">
-        <a class="twitter-timeline" data-width="1200" data-height="450" data-theme="light" data-link-color="#e79800" href="https://twitter.com/CUEA_OFFICIAL?ref_src=twsrc%5Etfw">Tweets by CUEA_OFFICIAL</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        <a class="twitter-timeline" data-width="1200" data-height="650" data-theme="light" data-link-color="#e79800" href="https://twitter.com/CUEA_OFFICIAL?ref_src=twsrc%5Etfw">Tweets by CUEA_OFFICIAL</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
       </div>
       <div class="tabs-panel is-active" id="panel2c">
-            <div id='plyr-youtube' data-type="youtube" data-video-id="https://youtu.be/ny7pBK0_MTk"></div>
-
+            <div class="plyr__video-embed" id="player" download>
+                    <iframe
+                        src="https://youtu.be/ny7pBK0_MTk"
+                        allowfullscreen
+                        allowtransparency
+                        captions
+                        allow="autoplay"
+                    ></iframe>
+                </div>
+        <div data-type="youtube" data-video-id="https://youtu.be/ny7pBK0_MTk" autoplay></div>
       </div>
     </div>
   </div>

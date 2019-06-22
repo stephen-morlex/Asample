@@ -10,9 +10,13 @@ use App\Research;
 use App\StudentCategory;
 use App\Services;
 use App\Event;
+use App\Sources;
+use App\ClergyType;
+use App\ModeOfStudy;
 use App\News;
 use App\NewsCategory;
 use App\Student;
+use App\Dean;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -50,6 +54,10 @@ class AppServiceProvider extends ServiceProvider
             $sideResearch=Research::orderBy('name','asc')->get();
             $sideServices=Services::orderBy('name','asc')->get();
             $studentSide= Student::skip(0)->take(50)->get();
+            $deansSide= Dean::all();
+            $sources= Sources::all();
+            $clergytypes = ClergyType::all();
+            $modeofstudy = ModeOfStudy::all();
             $view->with('admissions',$admissions);
             $view->with('ad',$ad);
             $view->with('researchNav',$researchNav);
@@ -66,6 +74,11 @@ class AppServiceProvider extends ServiceProvider
             $view->with('sideResearch',$sideResearch);
             $view->with('sideServices',$sideServices);
             $view->with('studentSide',$studentSide);
+            $view->with('deansSide',$deansSide);
+            $view->with('clergytypes',$clergytypes);
+            $view->with('modeofstudy',$modeofstudy);
+            $view->with('sources',$sources);
+
 
 
 
