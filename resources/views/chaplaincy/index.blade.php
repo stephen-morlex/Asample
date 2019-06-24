@@ -15,7 +15,7 @@
                     <ul class="breadcrumbs">
                      <li><a href="/">Home</a></li>
                      <li class="active"><a href="">Academics</a></li>
-                     <li class="active"><a href="{{ route('faculty.index') }}">Faculties, Schools and Institute</a></li>
+                     <li class="active"><a href="{{ route('chaplaincy.index') }}">About the chaplain</a></li>
                     </ul><!-- Breadcrumbs /-->
                 </div><!-- Bottom Row /-->
 
@@ -34,9 +34,9 @@
                     </div><!-- Left Column /-->
                     
                     <div class="medium-6 small-12 columns">
-                        <h2><span>{{!! $c->firstname !!}} {{!! $c->lastname !!}} {{!! $c->surname !!}}</span></h2>
+                        <h2><span>{!! $c->firstname !!} {!! $c->lastname !!} {!! $c->surname !!}</span></h2>
                         
-                        <p>{{!! $c->profile !!}}.</p>
+                        <p>{!! $c->profile !!}.</p>
                     </div><!-- Right Column /-->
                     
                 @empty
