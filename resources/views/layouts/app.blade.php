@@ -111,15 +111,15 @@
         var n=3;
     
         $('#add').click(function(){
+                  i++;
                  if(i<4)
                  {
-                    i++;
-                    $('#dynamic_field').append('<div class="row" id="row'+i+'"><div class="medium-3 small-12 columns"><label>High school name</label><label><input type="text" name="high_school'+i+'" placeholder="The name of  your high school here..." /></label></div> <div class="medium-3 small-12 columns"><label>School Address</label><label><input type="text" name="school_address'+i+'" value="{{ old('school_address') }}" placeholder="The address of your school here..." /></label></div><div class="medium-2 small-12 columns"><label>When started</label><label><input type="date" name="when_started_highschool'+i+'" value="{{  old('when_started_highschool') }}" placeholder="mm/dd/yyyy" /></label></div><div class="medium-2 small-12 columns"><label>When ended</label><label><input type="date" name="when_ended_highschool'+i+'" placeholder="mm/dd/yyyy" /></label></div><div class="medium-2 small-12 columns"><label>&nbsp;</label><button  type="button" name="remove" id="'+i+'" class="btn_remov button alert">Remove</button></div></div><!-- Row Ends /-->');
+                    $('#dynamic_field').append('<div class="row" id="ro'+i+'"><div class="medium-3 small-12 columns"><label>High school name</label><label><input type="text" name="high_school'+i+'" placeholder="The name of  your high school here..." /></label></div> <div class="medium-3 small-12 columns"><label>School Address</label><label><input type="text" name="school_address'+i+'" value="{{ old('school_address') }}" placeholder="The address of your school here..." /></label></div><div class="medium-2 small-12 columns"><label>When started</label><label><input type="date" name="when_started_highschool'+i+'" value="{{  old('when_started_highschool') }}" placeholder="mm/dd/yyyy" /></label></div><div class="medium-2 small-12 columns"><label>When ended</label><label><input type="date" name="when_ended_highschool'+i+'" placeholder="mm/dd/yyyy" /></label></div><div class="medium-2 small-12 columns"><label>&nbsp;</label><button  type="button" name="remove" id="'+i+'" class="btn_remov button alert">Remove</button></div></div><!-- Row Ends /-->');
                 }
         });
         $(document).on("click", ".btn_remov",function(){
             var button_id = $(this).attr("id");
-            $("#row"+button_id+"").remove();
+            $("#ro"+button_id+"").remove();
             n--;
             if(n==2)
             {

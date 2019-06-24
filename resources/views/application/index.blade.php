@@ -415,7 +415,7 @@
 
 
                                 <div class="row">
-                                    
+                                
                                     <div class="medium-2 small-12 columns">
                                         <span class="help-inline" style="color:#FF0000">*required</span>
                                         <label>Any&nbsp;disabilities?</label>
@@ -499,7 +499,7 @@
                                         <div class="medium-2 small-12 columns">
                                             <br>
                                             <label>&nbsp;</label>
-                                           <button  type="button" name="add" id="add" class="button success">Add more</button><sup>Only add two more</sup>
+                                           <button  type="button" name="add" id="add" class="button success">Add more</button>
                                         </div>
                                     
                                      </div><!-- Row Ends /-->
