@@ -112,6 +112,15 @@ Route::get('/documents', 'DocumentController@index')->name('document.index');
 Route::get('/research-and-publication/{publication}', 'PublicationController@show')->name('publication.show');
 
 
+// ADMINISTRATIVE OFFICES
+Route::get('/administrative-offices', 'AdministrativeofficeController@index')->name('administrativeoffice.index');
+Route::get('/administrative-office/{administrativeoffice}', 'AdministrativeofficeController@show')->name('administrativeoffice.show');
+
+
+// BOOKING
+Route::get('/booking', 'BookingController@index')->name('booking.index');
+Route::post('/booking/send', 'BookingController@store')->name('booking.store');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

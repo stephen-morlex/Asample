@@ -79,6 +79,7 @@
                             @foreach ($abouts as $about)
                                 <li><a href="{{ route('about.show', $about->slug) }}">{{ $about->title }}</a></li>
                             @endforeach
+                            <li><a href="{{ route('administrativeoffice.index') }}">Administrative Offices</a></li>
                          </ul>
                     </li>
                     <li class="single-sub parent-nav"><a>Portals </a>
@@ -87,8 +88,6 @@
                             <li><a href="https://staff.cuea.edu/site/login">Staff portal</a></li>
                             <li><a href="https://www.premiercert.org/cuea/">Degree verification</a></li>
                         </ul>
-                    </li>
-                    <li class="single-sub parent-nav"><a href="{{ route('contact.index') }}"> </a>
                     </li>
                 </ul>
             </nav>
