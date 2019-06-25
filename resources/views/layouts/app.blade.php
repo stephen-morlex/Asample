@@ -98,9 +98,7 @@
       $(document).foundation();
   </script>
   <script>
-        $(function() {
-            plyr.setup();
-        });
+    const player = new Plyr('#player');
   </script>
 </body>
 </html>

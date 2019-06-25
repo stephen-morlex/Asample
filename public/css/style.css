@@ -142,12 +142,14 @@ iframe {
     outline: none;
 
 }
+
 .button:hover {
 
-    box-shadow: 0px 30px 100px #95141b;
+    box-shadow: 0px 30px 100px;
     color: #fff;
-    transform: translateY(-7px);
-  }
+    transform: translateY(-5px);
+}
+
 .button.primary {
     background-color: #f0951f;
 }
@@ -442,7 +444,7 @@ End of Admission CSS
 
 .row .sidebar.small-12 {
     margin-top: 0px;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+    /* box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1); */
 }
 
 /*-------------------------
@@ -964,10 +966,11 @@ Welcome Message CSS Ends
     border: 0px;
     background-color: transparent;
 }
+
 /* Video css */
 
 
-.video{
+.video {
     position: relative;
     width: 100%;
     height: 100%;
@@ -979,13 +982,13 @@ Welcome Message CSS Ends
     flex-direction: column;
     justify-content: center;
     align-items: center;
-  }
+}
 
-  iframe {
+iframe {
     /* optional */
     width: 100%;
     height: 100%;
-  }
+}
 
 /* Edn of the video css */
 
@@ -1447,7 +1450,7 @@ Faculty card start
     background-color: rgba(255, 255, 255, 0.95);
     border-radius: 5px;
     padding: 0px 0px;
-    box-shadow: 0 19px 40px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+    box-shadow: 0 19px 40px rgba(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.22);
 }
 
 .event-data {
@@ -1555,6 +1558,7 @@ Gallery CSS Ends
     font-size: 18px;
     color: #000;
 }
+
 .process .number {
     float: left;
     font-size: 2rem;
@@ -1590,7 +1594,7 @@ Gallery CSS Ends
 }
 
 .process {
-    padding-bottom:120px;
+    padding-bottom: 120px;
 }
 
 .our-process .process:last-child {
@@ -1740,7 +1744,7 @@ News panel in the home page
     -moz-border-radius: 10px;
     border-radius: 10px;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-    box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+    box-shadow: 0 19px 38px rgba(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.22);
 }
 
 .card-image {
@@ -2300,8 +2304,9 @@ End of the news panel in the home
 }
 
 .posts-wrap {
+    padding: 10px;
     background-color: #fefefe;
-    box-shadow: 0 3px 6px #f7f7f7, 0 3px 6px #f7f7f7;
+    box-shadow: 0 3px 6px #ffffff, 0 3px 6px #ffffff;
 }
 
 .post-thumb {
@@ -3051,7 +3056,7 @@ Styles For Inner Pages Ends
   22 - Sidebars CSS
 -------------------------*/
 .sidebar .icon-box {
-    margin-top:5px;
+    margin-top: 5px;
     margin-bottom: 25px;
     text-align: justify;
 }
@@ -3066,6 +3071,7 @@ Styles For Inner Pages Ends
     margin-bottom: 25px;
     padding: 15px;
     box-shadow: 0 1px 4px 2px rgba(0, 0, 0, 0.1);
+    margin-top: 15px;
 }
 
 .sidebar .widget:last-child {
@@ -3164,6 +3170,515 @@ Styles For Inner Pages Ends
   Sidebars CSS Ends
 -------------------------*/
 
+/* Leaders profile
+---------------------*/
+
+.card-user-profile {
+    position: relative;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    border: 0;
+    border-radius: 0;
+    background: #fefefe;
+    box-shadow: none;
+    overflow: hidden;
+    color: #0a0a0a;
+}
+
+.card-user-profile> :last-child {
+    margin-bottom: 0;
+}
+
+.card-user-profile:hover .card-user-profile-img {
+    opacity: 1;
+}
+
+.card-user-profile-content {
+    position: relative;
+}
+
+.card-user-profile-content::before {
+    position: absolute;
+    content: '';
+    top: -3.4375rem;
+    left: -1.875rem;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 3.4375rem 0 0 31.25rem;
+    z-index: 0;
+    border-color: transparent transparent transparent #fefefe;
+}
+
+.card-user-profile-actions {
+    -webkit-flex: 0 1 auto;
+    -ms-flex: 0 1 auto;
+    flex: 0 1 auto;
+    padding: 1rem;
+    background: #e6e6e6;
+    background: #fefefe;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.card-user-profile-actions> :last-child {
+    margin-bottom: 0;
+}
+
+.card-user-profile-img {
+    max-width: 100%;
+    opacity: 0.85;
+    transition: all 0.25s ease;
+}
+
+.card-user-profile-avatar {
+    position: absolute;
+    bottom: 100%;
+    left: 1rem;
+    z-index: 2;
+    max-width: 5.625rem;
+}
+
+.card-user-profile-avatar img {
+    border-radius: 50%;
+    box-shadow: 0 0 15px rgba(10, 10, 10, 0.3);
+}
+
+.card-user-profile-name {
+    margin-bottom: 0;
+    font-weight: 300;
+    font-size: 1.5rem;
+}
+
+.card-user-profile-button {
+    margin-bottom: 0;
+    -webkit-flex: 1 0 0;
+    -ms-flex: 1 0 0px;
+    flex: 1 0 0;
+}
+
+.card-user-profile-button+.card-user-profile-button {
+    margin-left: 1rem;
+}
+
+.card-user-profile-info {
+    font-size: 0.875rem;
+    letter-spacing: 1px;
+    opacity: 0.8;
+}
+
+
+
+.text-black {
+    color: rgba(0, 0, 0, 0.9);
+}
+
+.text-muted {
+    color: rgba(0, 0, 0, 0.3);
+}
+
+
+
+.text-uppercase {
+    text-transform: uppercase;
+}
+
+.ff-serif {
+    font-family: 'Lora', serif;
+}
+
+.font-weight-normal {
+    font-weight: normal;
+}
+
+.font-weight-medium {
+    font-weight: 500;
+}
+
+.lts-1px {
+    letter-spacing: 1px;
+}
+
+.lts-2px {
+    letter-spacing: 2px;
+}
+
+
+.w-full {
+    width: 100%;
+    opacity: 1;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.d-block {
+    display: block;
+}
+
+.d-inline-block {
+    display: inline-block;
+}
+
+.p-relative {
+    position: relative;
+}
+
+.p-absolute {
+    position: absolute
+}
+
+
+.bg-white {
+    background-color: #fff;
+}
+
+.small {
+    font-size: 0.75rem;
+}
+
+.card-heading {
+    font-size: 2.25rem;
+}
+
+.styled-link {
+    text-decoration: none;
+    outline: none;
+    color: #e79800;
+    transition: all 0.25s ease-in;
+}
+
+.styled-link:hover,
+.styled-link:focus,
+.styled-link:active {
+    color: #e79800;
+}
+
+.shadow-1 {
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.15);
+}
+
+.blue-hover {
+    transition: all 0.25s ease-in;
+    border-bottom: 5px solid transparent;
+}
+
+.blue-hover:hover {
+    transform: translateY(-5px);
+    border: none;
+    border-bottom: 5px solid #e79800;
+}
+
+
+
+
+.clearfix::before,
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.float-left {
+    float: left;
+}
+
+.float-right {
+    float: right;
+}
+
+
+
+
+
+
+/**Margin and padding utilities*/
+.mx-auto {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.ml-auto {
+    margin-left: auto;
+}
+
+.mr-auto {
+    margin-right: auto;
+}
+
+.mx-0 {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.mx-1 {
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+.mx-2 {
+    margin-left: 2rem;
+    margin-right: 2rem;
+}
+
+.mx-3 {
+    margin-left: 3rem;
+    margin-right: 3rem;
+}
+
+
+.my-0 {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.my-1 {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.my-2 {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.my-3 {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
+
+.mt-0 {
+    margin-top: 0;
+}
+
+.mt-1 {
+    margin-top: 1rem;
+}
+
+.mt-2 {
+    margin-top: 2rem;
+}
+
+.mt-3 {
+    margin-top: 3rem;
+}
+
+.mb-0 {
+    margin-bottom: 0;
+}
+
+.mb-1 {
+    margin-bottom: 1rem;
+}
+
+.mb-2 {
+    margin-bottom: 2rem;
+}
+
+.mb-3 {
+    margin-bottom: 3rem;
+}
+
+.ml-0 {
+    margin-left: 0;
+}
+
+.ml-1 {
+    margin-left: 1rem;
+}
+
+.ml-2 {
+    margin-left: 2rem;
+}
+
+.ml-3 {
+    margin-left: 3rem;
+}
+
+
+
+
+.px-0 {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.px-1 {
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.px-2 {
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+.px-3 {
+    padding-left: 3rem;
+    padding-right: 3rem;
+}
+
+
+.py-0 {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.py-1 {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.py-2 {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+.py-3 {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+
+.pt-0 {
+    padding-top: 0;
+}
+
+.pt-1 {
+    padding-top: 1rem;
+}
+
+.pt-2 {
+    padding-top: 2rem;
+}
+
+.pt-3 {
+    padding-top: 3rem;
+}
+
+.pb-0 {
+    padding-bottom: 0;
+}
+
+.pb-1 {
+    padding-bottom: 1rem;
+}
+
+.pb-2 {
+    padding-bottom: 2rem;
+}
+
+.pb-3 {
+    padding-bottom: 3rem;
+}
+
+/* ------------------------
+End of leaders
+------------------------------- */
+/* Dean profile */
+
+.about-the-author {
+    background-color: #fefefe;
+    padding: 1rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+}
+
+.about-the-author:hover {
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+.about-the-author .separator-left {
+    font-weight: bolder;
+    text-align: left;
+}
+
+.about-the-author .separator-left::before,
+.about-the-author .separator-left::after {
+    display: table;
+    content: ' ';
+    -webkit-flex-basis: 0;
+    -ms-flex-preferred-size: 0;
+    flex-basis: 0;
+    -webkit-order: 1;
+    -ms-flex-order: 1;
+    order: 1;
+}
+
+.about-the-author .separator-left::after {
+    clear: both;
+}
+
+.about-the-author .separator-left::after {
+    position: relative;
+    width: 5rem;
+    border-bottom: 0.125rem solid #e79800;
+    margin: 0.10rem auto 0;
+    margin-left: 0;
+}
+
+.about-the-author .author-title {
+    text-transform: uppercase;
+}
+
+.about-the-author .author-social {
+    text-align: center;
+    margin-top: 0.7rem;
+    margin-bottom: 0.7rem;
+}
+
+.about-the-author .author-social .fa-stack {
+    display: inline-block;
+}
+
+.about-the-author .author-social .fa-stack.facebook {
+    color: #4c70ba;
+}
+
+.about-the-author .author-social .fa-stack.facebook:hover,
+.about-the-author .author-social .fa-stack.facebook:focus {
+    color: #3b5998;
+}
+
+.about-the-author .author-social .fa-stack.twitter {
+    color: #83c3f3;
+}
+
+.about-the-author .author-social .fa-stack.twitter:hover,
+.about-the-author .author-social .fa-stack.twitter:focus {
+    color: #55acee;
+}
+
+.about-the-author .author-social .fa-stack.linkedin {
+    color: #009ee8;
+}
+
+.about-the-author .author-social .fa-stack.linkedin:hover,
+.about-the-author .author-social .fa-stack.linkedin:focus {
+    color: #007bb5;
+}
+
+.about-the-author .author-image {
+    border: 1px solid #cacaca;
+}
+
+
+/* End of Dean profile */
 /*-------------------------
   23 - Products Section
        CSS

@@ -114,7 +114,7 @@
                     <li><i class="fa fa-check-square-o" aria-hidden="true"></i> Clear Learning path, Innovative and marketable graduates</li>
                 </ul>
                 <div class="clearfix"></div>
-                <a href="{{ route('faculty.index') }}" class="primary button bordered-light">Find out More!</a>
+                <a href="{{ route('faculty.index') }}" class="primary button bordered-light">Find out More</a>
             </div>
         </div><!-- courses column Ends /-->
         <div class="faculty-info medium-4 small-12 columns">
@@ -128,7 +128,7 @@
                     <li><i class="fa fa-check-square-o" aria-hidden="true"></i>Spiritual movements</li>
                 </ul>
                 <div class="clearfix"></div>
-                <a href="{{ route('student.index') }}" class="primary button bordered-light">Explore more!</a>
+                <a href="{{ route('student.index') }}" class="primary button bordered-light">Explore more</a>
             </div>
         </div><!-- faculty info ends /-->
 
@@ -143,15 +143,12 @@
                     <li><i class="fa fa-check-square-o" aria-hidden="true"></i>Government-Sponsored students get a direct placement</li>
                 </ul>
                 <div class="clearfix"></div>
-                <a href="{{ route('admission.index') }}" class="primary button bordered-light">Get Enrolled!</a>
+                <a href="{{ route('admission.index') }}" class="primary button bordered-light">Get Enrolled</a>
             </div>
         </div>
         <div class="clearfix"></div>
     </div>
     <!-- information boxes ends /-->
-
-
-
 <!-- Welcome Message -->
 <div class="welcome-message module">
 	<div class="row">
@@ -244,24 +241,19 @@
 
     <div class="row">
             <div class="small-6 small-centered text-center columns">
-                    <a href="{{ route('about.index') }}" style="text-align:center;" class="primary button">More about cuea!</a>
+                    <a href="{{ route('about.index') }}" style="text-align:center;" class="primary button">More about cuea</a>
             </div>
     </div>
 
 </div>
 <!-- Welcome Message Ends /-->
-
 <!-- Seminar/Events -->
 <div class="seminar-events module">
-
     <div class="row">
-
             <div class="section-title">
                 <h2>Upcoming Events</h2>
                 <br>
             </div>
-
-
         <div class="events-wrapper">
             @forelse ($events as $e)
             <div class="medium-6 small-12 columns" >
@@ -283,13 +275,12 @@
             @empty
             @endforelse
         </div><!-- Events Wrapper Ends /-->
-
     </div>
     <!-- Row Ends /-->
     <br>
     @if (count($events)>=1)
     <div class="load-more text-center">
-        <a href="{{ route('events.index') }}" class="button primary">More Events...</a>
+        <a href="{{ route('events.index') }}" class="button primary">More Events</a>
     </div>
     @else
     <h3 align="center" >there is no event at the moment!</h3>
@@ -308,11 +299,19 @@
     </ul>
     <div class="tabs-content" data-tabs-content="collapsing-tabs">
       <div class="tabs-panel " id="panel1c">
-        <a class="twitter-timeline" data-width="1200" data-height="450" data-theme="light" data-link-color="#e79800" href="https://twitter.com/CUEA_OFFICIAL?ref_src=twsrc%5Etfw">Tweets by CUEA_OFFICIAL</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        <a class="twitter-timeline" data-width="1200" data-height="650" data-theme="light" data-link-color="#e79800" href="https://twitter.com/CUEA_OFFICIAL?ref_src=twsrc%5Etfw">Tweets by CUEA_OFFICIAL</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
       </div>
       <div class="tabs-panel is-active" id="panel2c">
-            <div id='plyr-youtube' data-type="youtube" data-video-id="https://youtu.be/ny7pBK0_MTk"></div>
-
+            <div class="plyr__video-embed" id="player" download>
+                    <iframe
+                        src="https://youtu.be/ny7pBK0_MTk"
+                        allowfullscreen
+                        allowtransparency
+                        captions
+                        allow="autoplay"
+                    ></iframe>
+                </div>
+        <div data-type="youtube" data-video-id="https://youtu.be/ny7pBK0_MTk" autoplay></div>
       </div>
     </div>
   </div>
@@ -360,7 +359,7 @@
     <br>
      <div class="row">
             <div class="small-6 small-centered text-center columns">
-                    <a href="{{ route('news.index') }}" style="text-align:center;" class="primary button">More news!</a>
+                    <a href="{{ route('news.index') }}" style="text-align:center;" class="primary button">More news</a>
             </div>
     </div>
 </div>

@@ -13,6 +13,7 @@ use App\Event;
 use App\News;
 use App\NewsCategory;
 use App\Student;
+use App\Dean;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -50,6 +51,7 @@ class AppServiceProvider extends ServiceProvider
             $sideResearch=Research::orderBy('name','asc')->get();
             $sideServices=Services::orderBy('name','asc')->get();
             $studentSide= Student::skip(0)->take(50)->get();
+            $deansSide= Dean::all();
             $view->with('admissions',$admissions);
             $view->with('ad',$ad);
             $view->with('researchNav',$researchNav);
@@ -66,6 +68,8 @@ class AppServiceProvider extends ServiceProvider
             $view->with('sideResearch',$sideResearch);
             $view->with('sideServices',$sideServices);
             $view->with('studentSide',$studentSide);
+            $view->with('deansSide',$deansSide);
+
 
 
 

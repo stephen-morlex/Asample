@@ -3,7 +3,6 @@
 @section('content')
 @include('partials.topNav')
 @include('layouts.mainNav')
-
 <!-- banner section -->
         <div class="title-section module">
             <div class="row">
@@ -22,14 +21,10 @@
 
             </div><!-- Row /-->
         </div>
-
 <!-- End of the banner section -->
-
 <div class="content-section module blog-page">
-
     <div class="row">
-
-        <div class="medium-8 small-12 columns posts-wrap">
+        <div class="medium-7 small-12 columns posts-wrap">
             {{--  <h2>{!! $faculty->name !!}</h2>  --}}
             <div class="event-thumb">
                 <img  src="{{ Voyager::image( $faculty->image ) }}"  class="thumbnail" />
@@ -40,11 +35,26 @@
                     <hr>
                     <p>{!! $faculty->content !!}</p>
                 </div><!-- Course content /-->
-
-        </div><!-- Posts wrap ends /-->
-
-        <div class="medium-4 small-12 columns sidebar">
-
+                </div><!-- Posts wrap ends /-->
+                <div class="medium-4 small-12 columns sidebar">
+            {{-- Link to word from the Dean --}}
+               @if (empty($faculty->dean))
+               @else
+                    <div class="widget">
+                    <ol class="menu vertical">
+                     <li><a href="{{ route('dean.show',$faculty->dean->slug) }}"> <i class="fa fa-file-text fa-lg" aria-hidden="true"></i> Word from the Dean</a></li>
+                    </ol>
+                  </div><!-- widget ends /-->
+            @endif
+            {{-- Link to faculty Leaders --}}
+            @if (empty($faculty->leaders))
+            @else
+                <div class="widget">
+                    <ol class="menu vertical">
+                        <li><a href="{{ route('leader.faculty',$faculty->slug) }}"> <i class="fa fa-th-list fa-lg" aria-hidden="true"></i> Faculty Leadership</a></li>
+                    </ol>
+                </div><!-- widget ends /-->
+            @endif
             <div class="widget">
                     <h2>{!! $faculty->name !!} Programmes</h2>
                     @if (count($sections)==0)
@@ -68,26 +78,13 @@
                     @endif
             </div>
             <div class="widget">
-                <h2>{!! $faculty->name !!} Brochure</h2>
                 <ol class="menu vertical">
-                    <li>
-                            @if (!empty($faculty->file[0]))
-                            <a href="{{ Voyager::image( (json_decode($faculty->file))[0]->download_link) }}" target="_blank"> Click here to download
-                            </a>
-                            @else
-                            <li>no file</li>
-                            @endif
-                     </li>
-             </ol>
+                     <li><a href="{{ Voyager::image( (json_decode($faculty->file))[0]->download_link) }}" target="_blank"> <i class="fa fa-download fa-lg" aria-hidden="true"></i>{!! $faculty->name !!} Brochure</a>
+                    </li>
+                    <br>
+                    <li><a href="{{ route('admission.index') }}">  <i class="fa fa-hand-o-right fa-lg" aria-hidden="true"></i> Apply now</a></li>
+                </ol>
             </div><!-- widget ends /-->
-            <div class="widget">
-                <h2>Apply Now!</h2>
-                <ul class="menu vertical">
-                    <li><a href="{{ route('admission.index') }}">Apply now</a></li>
-                </ul>
-            </div><!-- widget ends /-->
-
-
             <div class="widget">
                 <h2>Intakes</h2>
                 <ul class="menu vertical">
@@ -96,7 +93,6 @@
                     <li><a href="#">August - December</a></li>
                 </ul>
             </div><!-- widget ends /-->
-
             <div class="widget">
                 <h2> Some People also interested in</h2>
 
@@ -106,22 +102,12 @@
                     @endforeach
                 </ul>
             </div><!-- widget ends /-->
-
-
-
-
             <div class="clearfix"></div>
-            </div><!-- widget ends /-->
-
         </div><!-- right bar ends here /-->
-
     </div><!-- Row Ends /-->
-
 </div>
 <!-- Content Section Ends /-->
-
 <!-- Our Teachers -->
-
 <div class="seminar-events content-area module">
 	<div class="row">
         <div class="section-title-wrapper">
@@ -210,13 +196,11 @@
                 </div>
 </div><!-- Row /-->
 <br>
-
 <div class="row">
         <div class="small-6 small-centered text-center columns">
                 <a href="{{ route('about.index') }}" style="text-align:center;" class="primary button">More about cuea!</a>
         </div>
 </div>
-
 </div>
 <!-- Call to Action box -->
 @include('partials.call')
