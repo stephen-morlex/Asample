@@ -83,6 +83,7 @@
         @yield('content')
 
     </div>
+    @yield('script')
 
     {{-- scroll script --}}
 

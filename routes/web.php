@@ -17,7 +17,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/academics/faculties-schools-and-institues', 'FacultyController@index')->name('faculty.index');
-Route::get('/faculties-schools-and-institues/{faculty}','FacultyController@show')->name('faculty.show');
+Route::get('/faculties-schools-and-institues/{faculty}', 'FacultyController@show')->name('faculty.show');
 Route::get('/leaders/{faculty}', 'FacultyController@leaders')->name('faculty.leader');
 
 // programs routes
@@ -42,13 +42,13 @@ Route::get('/events', 'EventController@index')->name('events.index');
 Route::get('/event/{event}', 'EventController@show')->name('event.show');
 
 // Research routes
-Route::get('/research','ResearchController@index')->name('research.index');
-Route::get('/research/{research}','ResearchController@show')->name('research.show');
+Route::get('/research', 'ResearchController@index')->name('research.index');
+Route::get('/research/{research}', 'ResearchController@show')->name('research.show');
 
 // Students service information
 
-Route::get('/academics/students-service-information','ServicesController@index')->name('services.index');
-Route::get('/students-service-information/{services}','ServicesController@show')->name('services.show');
+Route::get('/academics/students-service-information', 'ServicesController@index')->name('services.index');
+Route::get('/students-service-information/{services}', 'ServicesController@show')->name('services.show');
 
 // ABOUT CUEA
 Route::get('/about-cuea', 'AboutController@index')->name('about.index');
@@ -73,6 +73,11 @@ Route::get('/leader/{FacultyLeaders}', 'FacultyLeadersController@show')->name('l
 
 Route::get('/faculty/leaders/{Faculty}', 'FacultyLeadersController@faculty')->name('leader.faculty');
 
+Route::get('/faculty/leaders/{Faculty}', 'FacultyLeadersController@faculty')->name('leader.faculty');
+
+
+
+// Leaders
 
 
 // Leaders
@@ -95,6 +100,4 @@ Route::group(['prefix' => 'cuea'], function () {
 });
 // Dean
 Route::get('/dean/', 'DeanController@index')->name('dean.index');
-Route::get('/{dean}','DeanController@show')->name('dean.show');
-
-
+Route::get('/{dean}', 'DeanController@show')->name('dean.show');

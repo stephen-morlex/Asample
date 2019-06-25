@@ -13,6 +13,8 @@ use App\StudentCategory;
 use App\Research;
 use App\About;
 use App\Services;
+use PDF;
+use App\Sponsor;
 
 class ApplicationController extends Controller
 {
@@ -33,7 +35,8 @@ class ApplicationController extends Controller
         $abouts     = About::orderBy('title','asc')->get();
         $services1=   Services::orderBY('name','asc')->take(6)->get();
         $services2=   Services::orderBY('name','asc')->skip(6)->take(10)->get();
-        return view('application.index',compact('sections','ad','studLife','faculties','program','religion','researchNav','abouts','services1','services2'));
+        $sponsor = Sponsor::orderBY('name','desc')->get();
+        return view('application.index',compact('sections','ad','studLife','faculties','program','religion','researchNav','abouts','services1','services2','sponsor'));
 
     }
 
@@ -56,52 +59,86 @@ class ApplicationController extends Controller
     public function store(Request $request)
     {
         //
-        $this->validate($request, [
-            'firstname'      => 'required|max:150|min:2',
-            'surname'      => 'required|max:150|min:2',
-            'lastname'      => 'required|max:150|min:2',
-            'gender'      => 'required|max:10|min:2',
-            'dob'       => 'required',
-            'country'      => 'required',
-            'id_number' =>'required',
-            'current_address'   => 'required',
-            'telephone' => 'required|numeric',
-            'marital_status'  => 'required',
-            'religion'       => 'required',
-            'disabled' =>'required',
-            'disability_specification' => 'required',
-            'high_school' => 'required',
-            'school_address' =>'',
-            'when_started_highschool' =>'required',
-            'when_ended_highschool' => 'required',
-            'colledge' => 'required',
-            'colledge_address' => '',
-            'when_started_colledge' =>'',
-            'when_ended_colledge' => '',
-            'programme_type' => 'required',
-            'when_to_start' => 'required',
-            'cuea_before' => '',
-            'reg_no' => '',
-            'first_choice' => 'required',
-            'second_choice' => 'required',
-            'third_choice' => '',
-            'sponsor' => 'required',
-            'sponsor_name' => 'required',
-            'sponsor_address' => 'required',
-            'sponsor_telephone' => 'required',
-            'next_of_kin' => '',
-            'next_of_kin_address' => '',
-            'next_of_kin_telephone' => '',
-            'source' => 'required',
-        ]);
+        $applicant = new Applicant();
 
+                     // dynamic section
+        ############################################################################
+        $this->validate($request, [
+        'high_school' =>'required',
+        'school_address' =>'required',
+        'when_started_highschool' =>'required',
+        'when_ended_highschool' =>'required',
+        'college' =>'',
+        'college_address' =>'',
+        'when_started_college' =>'',
+        'when_ended_college' =>'',
+        'high_school2' =>'',
+        'school_address2' =>'',
+        'when_started_highschool2' =>'',
+        'when_ended_highschool2' =>'',
+        'college2' =>'',
+        'college_address2' =>'',
+        'when_started_college2' =>'',
+        'when_ended_college2' =>'',
+        'high_school3' =>'',
+        'school_address3' =>'',
+        'when_started_highschool3' =>'',
+        'when_ended_highschool3' =>'',
+        'college3' =>'',
+        'college_address3' =>'',
+        'when_started_college3' =>'',
+        'when_ended_college3' =>'',
+        'firstname' =>'required',
+        'lastname' =>'required',
+        'surname' =>'required',
+        'gender' =>'required',
+        'dob' =>'required',
+        'marital_status' =>'required',
+        'current_address' =>'required',
+        'email' =>'required|email',
+        'telephone' =>'required',
+        'country' =>'required',
+        'id_number' =>'required',
+        'religion' =>'required',
+        'disabled' =>'required',
+        'disability_specification' =>'',
+        'clergy_type' =>'',
+        'religious_order' =>'',  
+        'campus' =>'required',
+        'level' =>'required',
+        'first_choice' =>'required',
+        'second_choice' =>'required',
+        'third_choice' =>'required',
+        'mode_of_study' =>'required',
+        'when_to_start' =>'required',
+        'cuea_before' =>'',
+        'previous_reg_number' =>'numeric',
+        'sponsor' =>'required',
+        'sponsor_name' =>'',
+        'sponsor_address' =>'',
+        'sponsor_telephone' =>'',
+        'sponsor_email' =>'',
+        'next_of_kin' =>'required',
+        'next_of_kin_address' =>'required',
+        'next_of_kin_telephone' =>'required',
+        'next_of_kin_email' =>'required',
+        'sources' =>'required',
+        'other_sources' =>'',
+
+
+        'id_number_file' =>'required',
+        'college_file' =>'required',
+        'high_school_file' =>'required',
+     ]);
+
+       $path =$request->file('id_number_file')->Store('applications');
+       $path =$request->file('high_school_file')->Store('applications');
+       $path =$request->file('college_file')->Store('applications');
 
         Applicant::create($request->all());
 
-
-        Session::flash('success','thanks for Applying to Catholic University of Eastern Africa');
+        Session::flash('success','thanks for contacting us, we will return to you within 24 hours');
         return redirect()->back();
-
     }
 
     /**
@@ -163,5 +200,22 @@ class ApplicationController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function applicationpdf()
+{
+    $user = Applicant::findOrFail(1);
+
+    return view('application.application_pdf',compact('user'));
+}
+
+    public function generatepdf()
+    {
+            $user = Applicant::findOrFail(1);
+        
+        $pdf = PDF::loadView('application.application_pdf',compact('user'));
+  
+        set_time_limit(300);
+        return $pdf->download('applicants.pdf');
     }
 }

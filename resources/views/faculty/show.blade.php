@@ -24,7 +24,7 @@
 <!-- End of the banner section -->
 <div class="content-section module blog-page">
     <div class="row">
-        <div class="medium-7 small-12 columns posts-wrap">
+        <div class="medium-8 small-12 columns posts-wrap">
             {{--  <h2>{!! $faculty->name !!}</h2>  --}}
             <div class="event-thumb">
                 <img  src="{{ Voyager::image( $faculty->image ) }}"  class="thumbnail" />
@@ -35,11 +35,11 @@
                     <hr>
                     <p>{!! $faculty->content !!}</p>
                 </div><!-- Course content /-->
-                </div><!-- Posts wrap ends /-->
-                <div class="medium-4 small-12 columns sidebar">
+        </div><!-- Posts wrap ends /-->
+        <div class="medium-4 small-12 columns sidebar">
             {{-- Link to word from the Dean --}}
-               @if (empty($faculty->dean))
-               @else
+            @if (empty($faculty->dean))
+            @else
                     <div class="widget">
                     <ol class="menu vertical">
                      <li><a href="{{ route('dean.show',$faculty->dean->slug) }}"> <i class="fa fa-file-text fa-lg" aria-hidden="true"></i> Word from the Dean</a></li>
