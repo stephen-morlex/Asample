@@ -3,6 +3,7 @@
 @include('partials.topNav')
 @include('layouts.mainNav')
 
+
 <!-- banner section -->
 <div class="title-section module">
     <div class="row">

@@ -415,11 +415,7 @@
 
 
                                 <div class="row">
-<<<<<<< HEAD
-                                    
-=======
                                 
->>>>>>> a5ce10130999b23318ac5d4e4998428c1547a2d0
                                     <div class="medium-2 small-12 columns">
                                         <span class="help-inline" style="color:#FF0000">*required</span>
                                         <label>Any&nbsp;disabilities?</label>
@@ -477,11 +473,7 @@
                                        </div>
 
                                        <div class="medium-3 small-12 columns">
-<<<<<<< HEAD
-                                        <span class="help-inline" style="color:#FF0000">(required)</span>
-=======
                                         <span class="help-inline" style="color:#FF0000">*required</span>
->>>>>>> a5ce10130999b23318ac5d4e4998428c1547a2d0
                                            <label>School Address</label>
                                            <label>
                                             
@@ -554,12 +546,7 @@
                                         </div>
                                      </div><!-- Row Ends /-->
                                 </div>
-<<<<<<< HEAD
-                                 </div>
-                            </div>
-=======
                                  
->>>>>>> a5ce10130999b23318ac5d4e4998428c1547a2d0
                                <br>
                                <u ><h6>CUEA related information here</h6></u>
                                <div style="border: 2px solid">
@@ -579,14 +566,9 @@
                                             <label>Select level</label>
                                             <label>
                                                 <select name="level" required>
-<<<<<<< HEAD
-                                                    <option value="Undergraduate" id="level">Undergraduate</option>
-                                                    <option value="Masters">Masters</option>
-=======
                                                  @foreach ($sections as $sl) 
                                                     <option value="{{ $sl->name }}" id="level">{{ $sl->name }}</option>
                                                     @endforeach
->>>>>>> a5ce10130999b23318ac5d4e4998428c1547a2d0
                                                  </select>
                                              </label>
                                            </div>
@@ -638,18 +620,12 @@
                                             <span class="help-inline" style="color:#FF0000">*required</span>
                                             <label>Specify Mode of study</label>
                                             <label>
-<<<<<<< HEAD
-                                                @foreach ($modeofstudy as $m1)
-                                                <input type="radio" value="{{ $m1->name }}" name= "mode_of_study" id="mode_of_study" required>{{ $m1->name }}<br>
-                                                @endforeach
-=======
                                                 <select name= "mode_of_study" required>
                                                 @foreach ($modeofstudy as $m1)
                                                 <option value="{{ $m1->name }}" id="mode_of_study" name="mode_of_study">{{ $m1->name }}</option>
                                                 @endforeach
                                                 </option>
                                                 </select>
->>>>>>> a5ce10130999b23318ac5d4e4998428c1547a2d0
                                             </label>
                                         </div>
 
@@ -669,13 +645,6 @@
                                             <br>
                                             <label> CUEA before </label>
                                             <label>
-<<<<<<< HEAD
-                                                <select name="cuea_before">
-                                                    <option value="Bridging" id="cuea_before">Bridging</option>
-                                                    <option value="Masters"id="cuea_before">Masters</option>
-                                                    <option value="Undergraduate"id="cuea_before">Undergraduate</option>
-                                                </select>
-=======
                                                 <select name="cuea_before" required>
                                                     <option value="Bridging"> Bridging</option>
                                                  @foreach ($sections as $sl) 
@@ -683,7 +652,6 @@
                                                     @endforeach
                                                  </select>
 
->>>>>>> a5ce10130999b23318ac5d4e4998428c1547a2d0
                                             </label>
                                         </div>
 
@@ -704,15 +672,9 @@
                                             <label>Who will sponsor your education?</label>
                                             <label>
                                                 <select name="sponsor" required>
-<<<<<<< HEAD
-                                                    <option value="Self" id="sponsor">Self</option>
-                                                    <option value="Parents" id="sponsor">Parents</option>
-                                                    <option value="no" id="sponsor">Parents</option>
-=======
                                                     @foreach ($sponsor as $s2) 
                                                     <option value="{{ $s2->name }}" id="sponsor">{{ $s2->name }}</option>
                                                     @endforeach
->>>>>>> a5ce10130999b23318ac5d4e4998428c1547a2d0
                                                 </select>
                                            </label>
                                         </div>
@@ -845,10 +807,7 @@
                                         </div>
                                     </div><!-- Row Ends /-->
                             </form>
-<<<<<<< HEAD
-=======
                             </div>
->>>>>>> a5ce10130999b23318ac5d4e4998428c1547a2d0
                 </div>
                 </div>
            </div>

@@ -114,7 +114,7 @@
                     <li><i class="fa fa-check-square-o" aria-hidden="true"></i> Clear Learning path, Innovative and marketable graduates</li>
                 </ul>
                 <div class="clearfix"></div>
-                <a href="{{ route('faculty.index') }}" class="primary button bordered-light">Find out More!</a>
+                <a href="{{ route('faculty.index') }}" class="primary button bordered-light">Find out More</a>
             </div>
         </div><!-- courses column Ends /-->
         <div class="faculty-info medium-4 small-12 columns">
@@ -128,7 +128,7 @@
                     <li><i class="fa fa-check-square-o" aria-hidden="true"></i>Spiritual movements</li>
                 </ul>
                 <div class="clearfix"></div>
-                <a href="{{ route('student.index') }}" class="primary button bordered-light">Explore more!</a>
+                <a href="{{ route('student.index') }}" class="primary button bordered-light">Explore more</a>
             </div>
         </div><!-- faculty info ends /-->
 
@@ -143,7 +143,7 @@
                     <li><i class="fa fa-check-square-o" aria-hidden="true"></i>Government-Sponsored students get a direct placement</li>
                 </ul>
                 <div class="clearfix"></div>
-                <a href="{{ route('admission.index') }}" class="primary button bordered-light">Get Enrolled!</a>
+                <a href="{{ route('admission.index') }}" class="primary button bordered-light">Get Enrolled</a>
             </div>
         </div>
         <div class="clearfix"></div>
@@ -241,7 +241,7 @@
 
     <div class="row">
             <div class="small-6 small-centered text-center columns">
-                    <a href="{{ route('about.index') }}" style="text-align:center;" class="primary button">More about cuea!</a>
+                    <a href="{{ route('about.index') }}" style="text-align:center;" class="primary button">More about cuea</a>
             </div>
     </div>
 
@@ -280,7 +280,7 @@
     <br>
     @if (count($events)>=1)
     <div class="load-more text-center">
-        <a href="{{ route('events.index') }}" class="button primary">More Events...</a>
+        <a href="{{ route('events.index') }}" class="button primary">More Events</a>
     </div>
     @else
     <h3 align="center" >there is no event at the moment!</h3>
@@ -359,7 +359,7 @@
     <br>
      <div class="row">
             <div class="small-6 small-centered text-center columns">
-                    <a href="{{ route('news.index') }}" style="text-align:center;" class="primary button">More news!</a>
+                    <a href="{{ route('news.index') }}" style="text-align:center;" class="primary button">More news</a>
             </div>
     </div>
 </div>

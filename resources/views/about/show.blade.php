@@ -30,27 +30,16 @@
 <div class="content-section">
     <div class="content-section module blog-page">
         <div class="row">
-             <div class="medium-8 small-12 columns posts-wrap">
-            <div class="event-thumb">
-                <br>
-                 <h2>{{ $about->name }}</h2>
-                 <div class="tx-div"></div>
-            </div><!-- Course Thumb /-->
-            <div class="event-content">
-                 <ul class="accordion" data-accordion>
-            <li class="accordion-item is-active" data-accordion-item>
-                <a href="#" class="accordion-title">{!! $about->title !!}</a>
-                <div class="accordion-content" data-tab-content
-                    data-aos="fade-up"
-                    data-aos-anchor-placement="center-bottom"
-                    data-aos-delay="100"
-                >
-                  {!! $about->content !!}
-                </div>
-            </li>
-         </ul> <!-- reasons accordion ends -->
-            </div><!-- Course content /-->
-        </div><!-- Posts wrap ends /-->
+            <div class="medium-7 small-12 columns posts-wrap">
+		    <div class="single-post">
+                    <h3 ><a href="{{ route('about.show',$about->slug) }}">{{ $about->title }}</a></h3>
+                    <hr>
+                <div class="post-excerpt">
+                <p>{!! $about->content !!}</p>
+                </div><!-- post excerpt /-->
+			    <div class="clearfix"></div>
+		    </div><!-- post ends here /-->
+	    </div><!-- Posts wrap ends /-->
               <div class="medium-4 small-12 columns sidebar">
             @foreach ($abouts as $item)
                         <div class="icon-box">

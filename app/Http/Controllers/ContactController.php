@@ -39,10 +39,20 @@ class ContactController extends Controller
             'subject'       => 'required|max:100|min:2',
             'message'       => 'required|min:5',
         ]);
-
         Contact::create($request->all());
-
-        Session::flash('success','thanks for contacting us, we will return to you within 24 hours');
+        Mail::send('contact.mail',
+                array(
+                    'fullName' => $request->get('fullName'),
+                    'email' => $request->get('email'),
+                    'phoneNumber' => $request->get('phoneNumber'),
+                    'user_message' => $request->get('message'),
+                    'subject' => $request->get('subject')
+                ), function($message)
+            {
+            $message->from('stephenvicson@gmail.com');
+            $message->to('stephenvicson@gmail.com', 'Admin')->subject('Contact information from your website');
+});
+        Session::flash('success','thanks for contacting us, we will return to you within the 24 hours of the work');
         return redirect()->back();
 
     }

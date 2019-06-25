@@ -3,7 +3,6 @@
 @section('content')
 @include('partials.topNav')
 @include('layouts.mainNav')
-
 <!-- banner section -->
         <div class="title-section module">
             <div class="row">
@@ -22,9 +21,7 @@
 
             </div><!-- Row /-->
         </div>
-
 <!-- End of the banner section -->
-
 <div class="content-section module blog-page">
     <div class="row">
         <div class="medium-8 small-12 columns posts-wrap">
@@ -40,21 +37,6 @@
                 </div><!-- Course content /-->
         </div><!-- Posts wrap ends /-->
         <div class="medium-4 small-12 columns sidebar">
-<<<<<<< HEAD
-            <div class="widget">
-                <ol class="menu vertical">
-                    @if(empty($faculty->publication))
-                        <li>There is no research and publication</li>     
-                    @else
-                        <li>
-                            <a href="{{route('publication.show',$faculty->publication->slug)}}" >Research and Publications</a>
-                            
-                        </li>
-                    @endif
-                </ol>
-            </div><!-- widget ends /-->
-
-=======
             {{-- Link to word from the Dean --}}
             @if (empty($faculty->dean))
             @else
@@ -73,7 +55,6 @@
                     </ol>
                 </div><!-- widget ends /-->
             @endif
->>>>>>> a5ce10130999b23318ac5d4e4998428c1547a2d0
             <div class="widget">
                     <h2>{!! $faculty->name !!} Programmes</h2>
                     @if (count($sections)==0)
@@ -104,7 +85,6 @@
                     <li><a href="{{ route('admission.index') }}">  <i class="fa fa-hand-o-right fa-lg" aria-hidden="true"></i> Apply now</a></li>
                 </ol>
             </div><!-- widget ends /-->
-
             <div class="widget">
                 <h2>Intakes</h2>
                 <ul class="menu vertical">
@@ -113,7 +93,6 @@
                     <li><a href="#">August - December</a></li>
                 </ul>
             </div><!-- widget ends /-->
-
             <div class="widget">
                 <h2> Some People also interested in</h2>
 
@@ -124,17 +103,11 @@
                 </ul>
             </div><!-- widget ends /-->
             <div class="clearfix"></div>
-            </div><!-- widget ends /-->
-
         </div><!-- right bar ends here /-->
-
     </div><!-- Row Ends /-->
-
 </div>
 <!-- Content Section Ends /-->
-
 <!-- Our Teachers -->
-
 <div class="seminar-events content-area module">
 	<div class="row">
         <div class="section-title-wrapper">
@@ -223,13 +196,11 @@
                 </div>
 </div><!-- Row /-->
 <br>
-
 <div class="row">
         <div class="small-6 small-centered text-center columns">
                 <a href="{{ route('about.index') }}" style="text-align:center;" class="primary button">More about cuea!</a>
         </div>
 </div>
-
 </div>
 <!-- Call to Action box -->
 @include('partials.call')

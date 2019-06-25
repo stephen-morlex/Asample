@@ -9,24 +9,15 @@ table, th, td {
 }
 </style>
 </head>
-<<<<<<< HEAD
-=======
 <div style="border-width:2px;  
     border-style:double;">
 <div style="border: 1px solid black;padding-top: 3px;padding-right: 3px;padding-bottom: 3px;padding-left: 3px;">
->>>>>>> a5ce10130999b23318ac5d4e4998428c1547a2d0
 <body>
    <br><br><h2 style="margin-left: 25%;"><u>Catholic university of Eastern Africa</u></h2><br> 
     <h3 style="margin-left: 40%;"><u>Application form</u></h3><br>
 
-<<<<<<< HEAD
-
-<hr style="border-top: 3px dotted black;">
-<table>
-=======
 <table>
   <center><u><caption>Personal information</caption></u></center>
->>>>>>> a5ce10130999b23318ac5d4e4998428c1547a2d0
   <tr>
     <th>Surname</th>
     <th>Firstname</th>
@@ -34,11 +25,7 @@ table, th, td {
     <th>Date of birth</th>
   </tr>
   <tr>
-<<<<<<< HEAD
-    <td>Surname:{{ $user->surname}}</td>
-=======
     <td>{{ $user->surname}}</td>
->>>>>>> a5ce10130999b23318ac5d4e4998428c1547a2d0
     <td>{{ $user->firstname}}</td>
     <td>{{ $user->lastname}}</td>
     <td>{{ $user->dob}}</td>
@@ -82,13 +69,6 @@ table, th, td {
     <td>{{ $user->religious_order }}</td>
     
   </tr>
-<<<<<<< HEAD
-</table>
-<hr style="border-top: 3px dotted black;">
-<table>
-  <tr>
-
-=======
 
 </table>
 <hr style="border-top: 3px dotted black;">
@@ -97,7 +77,6 @@ table, th, td {
   <center><u><caption>Academic data</caption></u></center>
   <center><u><caption>Last high school the applicant attended</caption></u></center>
   <tr>
->>>>>>> a5ce10130999b23318ac5d4e4998428c1547a2d0
     <th>High school</th>
     <th>High school address</th>
     <th>when they started highschool</th>
@@ -112,10 +91,6 @@ table, th, td {
     <td>{{ $user->when_ended_highschool }}</td>
                      
   </tr>
-<<<<<<< HEAD
-  <tr>
-
-=======
 </table>
 <table>
 
@@ -152,25 +127,10 @@ table, th, td {
 <table>
 <center><u><caption>A list of previous colleges that the applicant has attended</caption></u></center>
   <tr>
->>>>>>> a5ce10130999b23318ac5d4e4998428c1547a2d0
     <th>college</th>
     <th>college address</th>
     <th>when they started college</th>
     <th>When they ended college</th>
-<<<<<<< HEAD
-                      
-    
-  </tr>
-  <tr>
-    <td>{{ $user->college }}</td>
-    <td>{{ $user->college_address }}</td>
-    <td>{{ $user->when_started_college }}</td>
-    <td>{{ $user->when_ended_college }}</td>
-  </tr>
-</table>
-<hr style="border-top: 3px dotted black;">
-<table>
-=======
   </tr>
   <tr>
     <td>{{ $user->college2 }}</td>
@@ -190,7 +150,6 @@ table, th, td {
 <hr style="border-top: 3px dotted black;">
 <table>
   <center><u><caption>Cuea related information</caption></u></center>
->>>>>>> a5ce10130999b23318ac5d4e4998428c1547a2d0
   <tr>
     <th>Campus</th>
     <th>Level</th>
@@ -214,13 +173,9 @@ table, th, td {
                   
   </tr>
 </table>
-<<<<<<< HEAD
-<hr style="border-top: 3px dotted black;">
-=======
 
 <hr style="border-top: 3px dotted black;">
 
->>>>>>> a5ce10130999b23318ac5d4e4998428c1547a2d0
 <table>
   <tr>
     <th>Mode of study</th>
@@ -236,13 +191,9 @@ table, th, td {
                       
   </tr>
 </table>
-<<<<<<< HEAD
-<hr style="border-top: 3px dotted black;">
-=======
 
 <hr style="border-top: 3px dotted black;">
 
->>>>>>> a5ce10130999b23318ac5d4e4998428c1547a2d0
 <table>
   <tr>
     <th>Is your educationed sponsored</th>
@@ -250,11 +201,8 @@ table, th, td {
   <tr>
      <td>{{ $user->sponsor }}</td>
   </tr>
-<<<<<<< HEAD
-=======
 </table>
 <table>
->>>>>>> a5ce10130999b23318ac5d4e4998428c1547a2d0
   <tr>
       <th>Sponsor's name</th>
       <th>Sponsor's address</th>
@@ -269,12 +217,9 @@ table, th, td {
     <td>{{ $user->sponsor_email }}</td>
     
   </tr>
-<<<<<<< HEAD
-=======
 </table>
 <hr style="border-top: 3px dotted black;">
 <table>
->>>>>>> a5ce10130999b23318ac5d4e4998428c1547a2d0
   <tr>
     <th>Next of Kin</th>
     <th>Next of kin's address</th>
@@ -290,13 +235,9 @@ table, th, td {
     
   </tr>
 </table>
-<<<<<<< HEAD
-<hr style="border-top: 3px dotted black;">
-=======
 
 <hr style="border-top: 3px dotted black;">
 
->>>>>>> a5ce10130999b23318ac5d4e4998428c1547a2d0
 <table>
    <tr>
       <th>Where the applicant heard abou CUEA</th>
@@ -308,46 +249,6 @@ table, th, td {
       <td>{{ $user->other_sources}}</td>
      
    </tr>
-<<<<<<< HEAD
-</table>   
-                    
-                
-                                              
-                                                   <h3>For Official use only</h3>           
- 
-      <div><p>Recommendation of Departmental Academic Board:</p><br></div>
-      <div><p>Recommended Programme:___________________________________________________________________________________</p></div>
-      <div><p>No of years</p>[1]     [2]     [3]      [4]</div>
-
-    <div><p>Not Recommended:Reason:_______________________________________________________________________________________</p></div>
-    <div><p>Referred to:________________________________________________________________________________________</p></div>
-    <p>Head of Department Signature:_____________________</p><div><p>Date:______________________________________________</p></div>
-</div>
-</div> 
-                                  
-                                        <label>Firstname</label>
-                                        <label>
-                                           <p>Endoresed by Dean of Faculty:_______________________________________________________________________</p>
-                                                <p>Dean's Siganture____________________________________________________________</p><p>Date:_____________________________________________</p>
-                                        </label>
-                                    </div>
-
-                                        <label>Lastname</label>
-                                        <label>
-                                            <p>Admissions Committe Decision:</p>
-
-                                            <p>Approved:</p> <p>Programme:____________________________________________________________</p>
-                                            <p>No of years     [1]   [2]   [3]   [4]</p>
-
-                                            <p>Not Approved: Reason:__________________________________________________________________________________</p>
-                                            <p>Chairman's Signature:_______________________________________</p><p>Date:___________________________________</p>
-                                            <p>Action by Registrar:___________________________________________________</p><p>Signature:__________________</p><p>Date:____________________</p>
-                                        </label>
-                                    </div>
-
-                                    </div>
-</body>
-=======
 </table>
 
 <hr style="border-top: 3px dotted black;">
@@ -384,5 +285,4 @@ table, th, td {
 </body>
 </div>
 </div>
->>>>>>> a5ce10130999b23318ac5d4e4998428c1547a2d0
 </html>

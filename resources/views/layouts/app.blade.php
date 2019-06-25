@@ -94,10 +94,6 @@
   <script>
     AOS.init();
   </script>
-<<<<<<< HEAD
-  <script src="{{ asset('/js/app.js') }}"></script>
-  
-=======
   {{--  <script src="{{ asset('/js/app.js') }}"></script>  --}}
   <script>
 
@@ -106,7 +102,6 @@
   <script>
     const player = new Plyr('#player');
   </script>
->>>>>>> a5ce10130999b23318ac5d4e4998428c1547a2d0
 </body>
 </html>
 <script>

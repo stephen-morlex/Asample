@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateClergyTypesTable extends Migration
+class CreateCommunityservicesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,12 @@ class CreateClergyTypesTable extends Migration
      */
     public function up()
     {
-        Schema::create('clergy_types', function (Blueprint $table) {
+        Schema::create('communityservices', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('name');
+            $table->string('title');
+            $table->string('image')->nullable();
+            $table->text('content');
+            $table->string('slug')->unique();
             $table->timestamps();
         });
     }
@@ -27,6 +30,6 @@ class CreateClergyTypesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('clergy_types');
+        Schema::dropIfExists('communityservices');
     }
 }

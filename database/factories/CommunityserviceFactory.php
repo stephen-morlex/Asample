@@ -2,10 +2,10 @@
 
 /* @var $factory \Illuminate\Database\Eloquent\Factory */
 
-use App\communitysercive;
+use App\Communityservice;
 use Faker\Generator as Faker;
 
-$factory->define(communitysercive::class, function (Faker $faker) {
+$factory->define(Communityservice::class, function (Faker $faker) {
     return [
         //
         'title'     => $title,

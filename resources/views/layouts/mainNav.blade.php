@@ -77,9 +77,11 @@
                             <li><a href="{{ route('administrativeoffice.index') }}">Administrative Offices</a></li>
                          </ul>
                     </li>
-                    <li class="single-sub parent-nav"><a href="">Community service</a>
+                    <li class="single-sub parent-nav"><a href="{{ route('communitysercive.index') }}">Community service</a>
                         <ul class="child-nav menu vertical">
-                                <li><a href="}">community 1</a></li>
+                            @foreach ($community_services as $communityservice)
+                                <li><a href="{{ route('communitysercive.show', $communityservice->slug) }}">{{ $communityservice->title }}</a></li>
+                            @endforeach
                          </ul>
                     </li>
                     <li class="single-sub parent-nav"><a>Portals </a>

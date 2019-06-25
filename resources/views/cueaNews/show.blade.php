@@ -27,7 +27,7 @@
         <!-- Content section -->
         <div class="content-section module blog-page">
             <div class="row">
-                <div class="medium-8 small-12 columns posts-wrap">
+                <div class="medium-7 small-12 columns posts-wrap">
                     <h3><a href="{{route('news.show',$newsItem->slug)}}">{{ $newsItem->title }}</a></h3>
                     <div class="tx-div"></div>
                     <div class="single-post">
@@ -37,8 +37,6 @@
                             </a>
                         	<div class="post-meta"><i class="fa fa-clock-o" aria-hidden="true"></i> {{  $newsItem->created_at->diffForHumans() }} | <i class="fa fa-user" aria-hidden="true"></i> <a>Administrator</a> | <i class="fa fa-list" aria-hidden="true"></i> | <a href="{{ route('news.category',$newsItem->newsCategory->slug) }}">{{ $newsItem->newsCategory->name }}</a> </div>
                          </div>
-                        <hr>
-                        {{ $newsItem->view_count}}
                         <div class="post-excerpt">
                            <p>{!! $newsItem->content !!}</p>
                         </div><!-- post excerpt /-->

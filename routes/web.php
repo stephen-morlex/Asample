@@ -71,8 +71,8 @@ Route::get('/contact/', 'ContactController@index')->name('contact.index');
 Route::post('/contact/send', 'ContactController@store')->name('contact.store');
 
 
-// APPLICATION FORM 
-Route::get('/application/', 'ApplicationController@index')->name('application.index');
+// APPLICATION FORM
+Route::get('/application', 'ApplicationController@index')->name('application.index');
 Route::post('/application/send', 'ApplicationController@store')->name('application.store');
 
 //Generate Pdf
@@ -109,9 +109,9 @@ Route::get('/research-and-publication/{publication}', 'PublicationController@sho
 Route::get('/administrative-offices', 'AdministrativeofficeController@index')->name('administrativeoffice.index');
 Route::get('/administrative-office/{administrativeoffice}', 'AdministrativeofficeController@show')->name('administrativeoffice.show');
 
-// ADMINISTRATIVE OFFICESS
-Route::get('/community-sercive', 'CommunityserciveController@index')->name('communitysercive.index');
-Route::get('/community-sercive/{communitysercive}', 'CommunityserciveController@show')->name('communitysercive.show');
+// COMMUNITY SERVICE
+Route::get('/community-sercive', 'CommunityserviceController@index')->name('communitysercive.index');
+Route::get('/community-sercive/{communitysercive}', 'CommunityserviceController@show')->name('communitysercive.show');
 
 // BOOKING
 Route::get('/booking', 'BookingController@index')->name('booking.index');
