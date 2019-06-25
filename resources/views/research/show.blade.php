@@ -23,7 +23,6 @@
             </div><!-- Row /-->
         </div>
  <!-- End of the banner section -->
-
 <!-- Content section -->
 <div class="content-section module blog-page">
     <div class="row">
@@ -36,7 +35,6 @@
                         <img class="display:none" src="{{ Voyager::image( $research->image ) }}" class="thumbnail" />
                     </a>
                 </div>
-                <hr>
                 <div class="post-excerpt">
                 <p>{!! $research->content !!}</p>
                 </div><!-- post excerpt /-->

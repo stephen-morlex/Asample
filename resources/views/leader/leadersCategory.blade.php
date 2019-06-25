@@ -30,12 +30,11 @@
                                     <img src="{{ Voyager::image( $leader->thumbnail('small'))}}" alt="Man with backpack"
                                         class="d-block w-full">
                               <div class="px-2 py-2">
-                                <p class="mb-0 small font-weight-medium text-uppercase mb-1 text-muted lts-2px">
+                                <p class="">
                                   <a href="{{ route('leader.show',$leader->slug) }}">{{ $leader->tilte }} of {{ $leader->faculty->name }}</a>
                                 </p>
-                                <h1 class="ff-serif font-weight-normal text-black card-heading mt-0 mb-1" style="line-height: 1.25;">
-                                 {{$leader->name}}
-                                </h1>
+                                <hr>
+                                <h3>{{$leader->name}}</h3>
                                 <p class="mb-1">
                                 </p>
                               </div>

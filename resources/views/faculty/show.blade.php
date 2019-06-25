@@ -25,14 +25,11 @@
 <div class="content-section module blog-page">
     <div class="row">
         <div class="medium-8 small-12 columns posts-wrap">
-            {{--  <h2>{!! $faculty->name !!}</h2>  --}}
             <div class="event-thumb">
-                <img  src="{{ Voyager::image( $faculty->image ) }}"  class="thumbnail" />
+                <img  src="{{ Voyager::image( $faculty->image ) }}" />
             </div><!-- Course Thumb /-->
             <div class="event-content">
-                <p></p>
                     <p>{!! $faculty->description  !!}</p>
-                    <hr>
                     <p>{!! $faculty->content !!}</p>
                 </div><!-- Course content /-->
         </div><!-- Posts wrap ends /-->

@@ -27,17 +27,10 @@
 
 <!-- Content section -->
 
-
-
-
-        <div class="content-section module single-products-page products-page">
-
+ <div class="content-section module single-products-page products-page">
         <!-- Content Section Ends /-->
-
 		<!-- Related Products -->
-
         	<div class="row">
-
                 <div class="products-wrap">
                 @forelse ($services as $service)
                     <div class="medium-4 small-12 columns">

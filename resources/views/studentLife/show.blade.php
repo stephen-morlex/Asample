@@ -26,10 +26,9 @@
         <div class="row">
              <div class="medium-8 small-12 columns posts-wrap">
             <div class="event-thumb">
-                <br>
                  <h2>{{ $student->name }}</h2>
                  <div class="tx-div"></div>
-                <img src="{{ Voyager::image( $student->image)}}"  class="thumbnail" />
+                <img src="{{ Voyager::image( $student->image)}}"/>
             </div><!-- Course Thumb /-->
             <div class="event-content">
               <p> {!!  $student->content  !!}</p>

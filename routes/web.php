@@ -13,8 +13,6 @@
 
 Route::get('/', 'WelcomeController@index')->name('welcome');
 
-Auth::routes();
-
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/academics/faculties-schools-and-institues', 'FacultyController@index')->name('faculty.index');
 Route::get('/faculties-schools-and-institues/{faculty}', 'FacultyController@show')->name('faculty.show');
@@ -77,7 +75,13 @@ Route::get('/faculty/leaders/{Faculty}', 'FacultyLeadersController@faculty')->na
 
 
 
-// Leaders
+// Chaplinacy
+Route::get('/chaplaincy', 'ChaplainController@index')->name('chaplaincy.index');
+Route::get('/chaplaincy/{chaplaincy}', 'ChaplainController@show')->name('chaplaincy.show');
+
+//Generate Pdf
+Route::get('/applicationpp/', 'ApplicationController@applicationpdf')->name('application.application_pdf');
+Route::get('/generate-pdf', 'ApplicationController@generatepdf');
 
 
 // Leaders

@@ -20,11 +20,11 @@ class AboutController extends Controller
     public function index()
     {
         //
-        $about      = About::first()->take(1)->get();
+        $about = About::skip(10)->take(1)->get();
         return view('about.index', compact('about'));
     }
 
-/**
+    /**
      * Display the specified resource.
      *
      * @param  string  $slug

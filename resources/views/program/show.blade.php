@@ -9,13 +9,13 @@
             <div class="row">
 
                 <div class="small-12 columns">
-                    <h1>Programs</h1>
+                    <h1>Programme</h1>
                 </div><!-- Top Row /-->
                 <div class="small-12 columns">
                     <ul class="breadcrumbs">
                      <li><a href="/">Home</a></li>
                      <li class="active"><a href="{{ route('faculty.index') }}">Academics</a></li>
-                     <li ><a href="{{route('program.index')}}">Programs</a></li>
+                     <li ><a href="{{route('program.index')}}">Programmes</a></li>
                       <li><a href="{{route('program.show',$program->slug)}}"> {{ $program->name }}</a></li>
                     </ul><!-- Breadcrumbs /-->
                 </div><!-- Bottom Row /-->
@@ -27,10 +27,9 @@
     <div class="row">
         <div class="medium-9 small-12 columns posts-wrap">
             <div class="event-thumb">
-                <br>
-                 <h2>{{ $program->name }}</h2>
+                 <h3>{{ $program->name }}</h3>
                  <div class="tx-div"></div>
-                <img src="{{ Voyager::image( $program->image)}}" style=" width:auto;" class="thumbnail" />
+                <img src="{{ Voyager::image( $program->image)}}" style=" width:auto;" />
             </div><!-- Course Thumb /-->
             <div class="event-content">
               <p> {!!  $program->body  !!}</p>

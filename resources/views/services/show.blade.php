@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', $faculty->name)
+@section('title', $service->name)
 @section('content')
 @include('partials.topNav')
 @include('layouts.mainNav')
@@ -26,21 +26,14 @@
 <!-- End of the banner section -->
 
 <div class="content-section module blog-page">
-
     <div class="row">
-
         <div class="medium-8 small-12 columns posts-wrap">
-            {{--  <h2>{!! $service->name !!}</h2>  --}}
             <div class="event-thumb">
-                <img  src="{{ Voyager::image( $service->image ) }}"  class="thumbnail" />
+                <img  src="{{ Voyager::image( $service->image ) }}"/>
             </div><!-- Course Thumb /-->
             <div class="event-content">
-                <p></p>
-                    <p>{!! $service->description  !!}</p>
-                    <hr>
                     <p>{!! $service->content !!}</p>
                 </div><!-- Course content /-->
-
         </div><!-- Posts wrap ends /-->
            <div class="medium-4 small-12 columns sidebar">
                 <div class="widget">
@@ -49,7 +42,7 @@
                     <ol class="menu vertical">
                         <li>
                              <i class="fa fa-list-ul fa-lg" aria-hidden="true">
-                                <a href="{{ route('student.show', $ss->slug) }}">  {{ $ss->name }}</a>
+                                <a href="{{ route('services.show', $ss->slug) }}">  {{ $ss->name }}</a>
                             </i>
                         </li>
                     </ol>
