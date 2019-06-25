@@ -13,11 +13,17 @@ use App\StudentCategory;
 use App\Research;
 use App\About;
 use App\Services;
+<<<<<<< HEAD
 use App\ClergyType;
 use App\ModeOfStudy;
 use App\Sources;
 use Redirect;
 use PDF;
+=======
+use PDF;
+use App\Sponsor;
+
+>>>>>>> a5ce10130999b23318ac5d4e4998428c1547a2d0
 class ApplicationController extends Controller
 {
     /**
@@ -40,7 +46,12 @@ class ApplicationController extends Controller
         $abouts     = About::orderBy('title','asc')->get();
         $services1=   Services::orderBY('name','asc')->take(6)->get();
         $services2=   Services::orderBY('name','asc')->skip(6)->take(10)->get();
+<<<<<<< HEAD
         return view('application.index',compact('sections','ad','studLife','faculties','sources','program','religion','researchNav','abouts','services1','services2','clergytypes','modeofstudy'));
+=======
+        $sponsor = Sponsor::orderBY('name','desc')->get();
+        return view('application.index',compact('sections','ad','studLife','faculties','program','religion','researchNav','abouts','services1','services2','sponsor'));
+>>>>>>> a5ce10130999b23318ac5d4e4998428c1547a2d0
 
     }
 
@@ -206,48 +217,20 @@ class ApplicationController extends Controller
         //
     }
 
-    public function postApplicationAjax()
-    {
-        //
-    }
-    // public function generatepdf(){
-    //     $sources = Sources::orderBy('name','desc')->get();
-    //     $modeofstudy = ModeOfStudy::orderBy('name','desc')->get();
-    //     $clergytypes = ClergyType::orderBy('name','desc')->get();
-    //     $sections=Section::with('admission')->get();
-    //     $ad=Section::orderBy('name','asc')->get();
-    //     $studLife=StudentCategory::orderBy('name','asc')->get();
-    //     $faculties   = faculty::orderBy('name','asc')->get();
-    //     $program   = Program::orderBy('name','asc')->get();
-    //     $religion   = Religion::orderBy('name','asc')->get();
-    //     $researchNav = Research::orderBy('name','asc')->get();
-    //     $abouts     = About::orderBy('title','asc')->get();
-    //     $services1=   Services::orderBY('name','asc')->take(6)->get();
-    //     $services2=   Services::orderBY('name','asc')->skip(6)->take(10)->get();
-       
-      
-    //  $applicants =Applicant::get();
- 
-    //  $pdf = PDF::loadView('application.application_pdf',compact('sections','ad','studLife','faculties','sources','program','religion','researchNav','abouts','services1','services2','clergytypes','modeofstudy','applicants'));
-   
-    //  return $pdf->download('applicants.pdf');
-    
-    // }
-public function applicationpdf()
+    public function applicationpdf()
 {
-    $user = Applicant::findOrFail(2);
+    $user = Applicant::findOrFail(1);
 
     return view('application.application_pdf',compact('user'));
 }
 
     public function generatepdf()
     {
-            $user = Applicant::findOrFail(2);
+            $user = Applicant::findOrFail(1);
         
         $pdf = PDF::loadView('application.application_pdf',compact('user'));
   
         set_time_limit(300);
         return $pdf->download('applicants.pdf');
     }
-
 }

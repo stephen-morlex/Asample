@@ -193,7 +193,10 @@ return [
     */
 
     'aliases' => [
+<<<<<<< HEAD
          
+=======
+>>>>>>> a5ce10130999b23318ac5d4e4998428c1547a2d0
         'PDF' => Barryvdh\DomPDF\Facade::class,
         'App' => Illuminate\Support\Facades\App::class,
         'Arr' => Illuminate\Support\Arr::class,

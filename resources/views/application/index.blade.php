@@ -415,7 +415,11 @@
 
 
                                 <div class="row">
+<<<<<<< HEAD
                                     
+=======
+                                
+>>>>>>> a5ce10130999b23318ac5d4e4998428c1547a2d0
                                     <div class="medium-2 small-12 columns">
                                         <span class="help-inline" style="color:#FF0000">*required</span>
                                         <label>Any&nbsp;disabilities?</label>
@@ -473,7 +477,11 @@
                                        </div>
 
                                        <div class="medium-3 small-12 columns">
+<<<<<<< HEAD
                                         <span class="help-inline" style="color:#FF0000">(required)</span>
+=======
+                                        <span class="help-inline" style="color:#FF0000">*required</span>
+>>>>>>> a5ce10130999b23318ac5d4e4998428c1547a2d0
                                            <label>School Address</label>
                                            <label>
                                             
@@ -546,8 +554,12 @@
                                         </div>
                                      </div><!-- Row Ends /-->
                                 </div>
+<<<<<<< HEAD
                                  </div>
                             </div>
+=======
+                                 
+>>>>>>> a5ce10130999b23318ac5d4e4998428c1547a2d0
                                <br>
                                <u ><h6>CUEA related information here</h6></u>
                                <div style="border: 2px solid">
@@ -567,8 +579,14 @@
                                             <label>Select level</label>
                                             <label>
                                                 <select name="level" required>
+<<<<<<< HEAD
                                                     <option value="Undergraduate" id="level">Undergraduate</option>
                                                     <option value="Masters">Masters</option>
+=======
+                                                 @foreach ($sections as $sl) 
+                                                    <option value="{{ $sl->name }}" id="level">{{ $sl->name }}</option>
+                                                    @endforeach
+>>>>>>> a5ce10130999b23318ac5d4e4998428c1547a2d0
                                                  </select>
                                              </label>
                                            </div>
@@ -620,9 +638,18 @@
                                             <span class="help-inline" style="color:#FF0000">*required</span>
                                             <label>Specify Mode of study</label>
                                             <label>
+<<<<<<< HEAD
                                                 @foreach ($modeofstudy as $m1)
                                                 <input type="radio" value="{{ $m1->name }}" name= "mode_of_study" id="mode_of_study" required>{{ $m1->name }}<br>
                                                 @endforeach
+=======
+                                                <select name= "mode_of_study" required>
+                                                @foreach ($modeofstudy as $m1)
+                                                <option value="{{ $m1->name }}" id="mode_of_study" name="mode_of_study">{{ $m1->name }}</option>
+                                                @endforeach
+                                                </option>
+                                                </select>
+>>>>>>> a5ce10130999b23318ac5d4e4998428c1547a2d0
                                             </label>
                                         </div>
 
@@ -642,11 +669,21 @@
                                             <br>
                                             <label> CUEA before </label>
                                             <label>
+<<<<<<< HEAD
                                                 <select name="cuea_before">
                                                     <option value="Bridging" id="cuea_before">Bridging</option>
                                                     <option value="Masters"id="cuea_before">Masters</option>
                                                     <option value="Undergraduate"id="cuea_before">Undergraduate</option>
                                                 </select>
+=======
+                                                <select name="cuea_before" required>
+                                                    <option value="Bridging"> Bridging</option>
+                                                 @foreach ($sections as $sl) 
+                                                    <option value="{{ $sl->name }}" id="cuea_before">{{ $sl->name }}</option>
+                                                    @endforeach
+                                                 </select>
+
+>>>>>>> a5ce10130999b23318ac5d4e4998428c1547a2d0
                                             </label>
                                         </div>
 
@@ -667,9 +704,15 @@
                                             <label>Who will sponsor your education?</label>
                                             <label>
                                                 <select name="sponsor" required>
+<<<<<<< HEAD
                                                     <option value="Self" id="sponsor">Self</option>
                                                     <option value="Parents" id="sponsor">Parents</option>
                                                     <option value="no" id="sponsor">Parents</option>
+=======
+                                                    @foreach ($sponsor as $s2) 
+                                                    <option value="{{ $s2->name }}" id="sponsor">{{ $s2->name }}</option>
+                                                    @endforeach
+>>>>>>> a5ce10130999b23318ac5d4e4998428c1547a2d0
                                                 </select>
                                            </label>
                                         </div>
@@ -802,6 +845,10 @@
                                         </div>
                                     </div><!-- Row Ends /-->
                             </form>
+<<<<<<< HEAD
+=======
+                            </div>
+>>>>>>> a5ce10130999b23318ac5d4e4998428c1547a2d0
                 </div>
                 </div>
            </div>
@@ -834,4 +881,64 @@
 <!-- Call to Action End /-->
 
 @include('partials.footer')
+@endsection
+@section('script')
+<script>
+    
+    $(document).ready(function(){
+        var i=1;
+        var j=1;
+        var m=3;
+        var n=3;
+    
+        $('#add').click(function(){
+                  i++;
+                 if(i<4)
+                 {
+                    $('#dynamic_field').append('<div class="row" id="ro'+i+'"><div class="medium-3 small-12 columns"><label>High school name</label><label><input type="text" name="high_school'+i+'" placeholder="The name of  your high school here..." /></label></div> <div class="medium-3 small-12 columns"><label>School Address</label><label><input type="text" name="school_address'+i+'" value="{{ old('school_address') }}" placeholder="The address of your school here..." /></label></div><div class="medium-2 small-12 columns"><label>When started</label><label><input type="date" name="when_started_highschool'+i+'" value="{{  old('when_started_highschool') }}" placeholder="mm/dd/yyyy" /></label></div><div class="medium-2 small-12 columns"><label>When ended</label><label><input type="date" name="when_ended_highschool'+i+'" placeholder="mm/dd/yyyy" /></label></div><div class="medium-2 small-12 columns"><label>&nbsp;</label><button  type="button" name="remove" id="'+i+'" class="btn_remov button alert">Remove</button></div></div><!-- Row Ends /-->');
+                }
+        });
+        $(document).on("click", ".btn_remov",function(){
+            var button_id = $(this).attr("id");
+            $("#ro"+button_id+"").remove();
+            n--;
+            if(n==2)
+            {
+                i=1;
+            }
+        });
+        $('#submit').click(function(){
+           $.ajax({
+            url:"name.php",
+            method:"POST",
+            data:$('#add_name').serialize(),
+            success:function(data){
+                alert(data);
+                $('#add_name')[0].reset();
+            }
+           })
+        });
+    });
+</script>
+<script>
+    $(document).ready(function(){
+         var j=1;
+
+         $('#add2').click(function(){
+                j++;
+                if(j<4){
+                $('#dynamic_field2').append('<div class="row" id="row'+j+'"><div class="medium-3 small-12 columns"><label>college name</label><label><input type="text" name="college'+j+'" placeholder="The name of college here..." /></label></div><div class="medium-3 small-12 columns"><label>School Address</label><label><input type="text" name="college_address'+j+'" placeholder="The address of your school here..." /></label></div><div class="medium-2 small-12 columns"><label>When started</label><label><input type="date" name="when_started_college'+j+'" placeholder="mm/dd/yyyy" /></label></div><div class="medium-2 small-12 columns"><label>When Ended</label><label><input type="date" name="when_ended_college'+j+'" placeholder="mm/dd/yyyy" /></label></div><div class="medium-2 small-12 columns"><label>&nbsp;</label><button  type="button" name="remove" id="'+j+'" class="btn_remove2 button alert">Remove</button></div></div><!-- Row Ends /-->');
+            }
+    });
+         $(document).on("click", ".btn_remove2",function(){
+            var button_id = $(this).attr("id");
+            $("#row"+button_id+"").remove();
+            m--;
+            if(m==2)
+            {
+                i=1;
+            }
+        });
+     });
+</script>
 @endsection

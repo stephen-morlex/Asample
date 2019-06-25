@@ -91,31 +91,27 @@ Route::get('/news/category/{newscategory}', 'NewsController@newsCategory')->name
 // Search
 Route::get('/search', 'SearchController@search')->name('search.result');
 
-
-
 Route::group(['prefix' => 'cuea'], function () {
     Voyager::routes();
 });
-
-
 
 // PARENT
 Route::get('/parent', 'AboutParentController@index')->name('parent.index');
 Route::get('/parent/{parent}', 'AboutParentController@show')->name('parent.show');
 
-
 // DOCUMENT
 Route::get('/documents', 'DocumentController@index')->name('document.index');
-
 
 // RESEARCH AND PUBLICATIONS
 Route::get('/research-and-publication/{publication}', 'PublicationController@show')->name('publication.show');
 
-
-// ADMINISTRATIVE OFFICES
+// ADMINISTRATIVE OFFICESS
 Route::get('/administrative-offices', 'AdministrativeofficeController@index')->name('administrativeoffice.index');
 Route::get('/administrative-office/{administrativeoffice}', 'AdministrativeofficeController@show')->name('administrativeoffice.show');
 
+// ADMINISTRATIVE OFFICESS
+Route::get('/community-sercive', 'CommunityserciveController@index')->name('communitysercive.index');
+Route::get('/community-sercive/{communitysercive}', 'CommunityserciveController@show')->name('communitysercive.show');
 
 // BOOKING
 Route::get('/booking', 'BookingController@index')->name('booking.index');

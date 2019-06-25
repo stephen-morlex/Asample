@@ -11,6 +11,8 @@
 
     <!-- important for responsiveness remove to make your site non responsive. -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
      @include('meta::manager', [
             'title'         => 'CUEA',
             'description'   => 'Catholic University of Eastern Africa',
@@ -54,7 +56,8 @@
     <!-- REVOLUTION NAVIGATION STYLES -->
     <link rel="stylesheet" type="text/css" href="{{ asset('/lib/revolution/css/navigation.css') }}">
     {{-- scroll animation --}}
-      <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.5.3/plyr.css" />
 
 
 <script async src="//platform-api.sharethis.com/js/sharethis.js#property=5ced204190e94700129832d2&product="sticky-share-buttons"></script>
@@ -81,15 +84,29 @@
         @yield('content')
 
     </div>
+    @yield('script')
 
     {{-- scroll script --}}
 
      <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+     <script src="https://cdn.plyr.io/3.5.3/plyr.polyfilled.js"></script>
+
   <script>
     AOS.init();
   </script>
+<<<<<<< HEAD
   <script src="{{ asset('/js/app.js') }}"></script>
   
+=======
+  {{--  <script src="{{ asset('/js/app.js') }}"></script>  --}}
+  <script>
+
+      $(document).foundation();
+  </script>
+  <script>
+    const player = new Plyr('#player');
+  </script>
+>>>>>>> a5ce10130999b23318ac5d4e4998428c1547a2d0
 </body>
 </html>
 <script>

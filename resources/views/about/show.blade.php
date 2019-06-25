@@ -59,7 +59,6 @@
                             </div><!-- icon side /-->
                             <div class="info-side float-left">
                                 <a href="{{ route('about.show',$item->slug) }}"><p><strong>{{ $item->title }}</strong><br></a>
-                                    <hr>
                                 </p>
                             </div><!-- info side /-->
                             <div class="clearfix"></div>

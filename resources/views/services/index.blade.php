@@ -46,7 +46,7 @@
                         >
                             <div class="product-img thumbnail">
                                 <a href="{{route('services.show',$service->slug)}}">
-                                    <img   class="front-image" src="{{ Voyager::image( $service->thumbnail('cropped'))}}">
+                                    <img class="front-image" src="{{ Voyager::image( $service->thumbnail('cropped'))}}">
                                 </a>
                                 <div class="add-to-cart-top">
                                         <a href="{{route('services.show',$service->slug)}}" class="button primary">{{$service->name}}</a>

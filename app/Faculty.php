@@ -14,11 +14,19 @@ class Faculty extends Model implements Searchable
     {
         return $this->hasMany('App\Program');
     }
-    public function pro()
-    {
-        return $this->belongsTo('App\Program');
-    }
 
+    // faculty to dean
+
+    public function dean()
+    {
+        return $this->hasOne('App\Dean');
+    }
+    // Faculty to Leadership
+    public function leaders()
+    {
+      return $this->hasOne('App\FacultyLeaders');
+    }
+    // Search
     public function getSearchResult(): SearchResult
     {
         $url = route('faculty.show', $this->slug);

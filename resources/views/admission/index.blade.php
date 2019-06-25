@@ -43,13 +43,13 @@
                       <div class="medium-17 small-12 columns">
                             <ol class="progress-indicator">
                                     <li class="is-complete" data-step="1" >
-                                            <span>Chose a program</span>
+                                          <a href="{{ route('program.index') }}"<span>Choose a programme</span></a>
                                     </li>
                                     <li class="is-complete" data-step="2">
-                                            <span>Apply</span>
+                                           <a href="{{ route('application.index') }}"> <span>Apply</span></a>
                                     </li>
                                     <li class="is-complete" data-step="3">
-                                            <span>Verification of your certificate</span>
+                                           <a href="{{ route('student.index') }}"> <span>join University</span></a>
                                     </li>
                                   </ol>
                      </div><!-- product Ends here -->

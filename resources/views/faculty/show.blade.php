@@ -26,9 +26,7 @@
 <!-- End of the banner section -->
 
 <div class="content-section module blog-page">
-
     <div class="row">
-
         <div class="medium-8 small-12 columns posts-wrap">
             {{--  <h2>{!! $faculty->name !!}</h2>  --}}
             <div class="event-thumb">
@@ -40,10 +38,9 @@
                     <hr>
                     <p>{!! $faculty->content !!}</p>
                 </div><!-- Course content /-->
-
         </div><!-- Posts wrap ends /-->
-
         <div class="medium-4 small-12 columns sidebar">
+<<<<<<< HEAD
             <div class="widget">
                 <ol class="menu vertical">
                     @if(empty($faculty->publication))
@@ -57,17 +54,37 @@
                 </ol>
             </div><!-- widget ends /-->
 
+=======
+            {{-- Link to word from the Dean --}}
+            @if (empty($faculty->dean))
+            @else
+                    <div class="widget">
+                    <ol class="menu vertical">
+                     <li><a href="{{ route('dean.show',$faculty->dean->slug) }}"> <i class="fa fa-file-text fa-lg" aria-hidden="true"></i> Word from the Dean</a></li>
+                    </ol>
+                  </div><!-- widget ends /-->
+            @endif
+            {{-- Link to faculty Leaders --}}
+            @if (empty($faculty->leaders))
+            @else
+                <div class="widget">
+                    <ol class="menu vertical">
+                        <li><a href="{{ route('leader.faculty',$faculty->slug) }}"> <i class="fa fa-th-list fa-lg" aria-hidden="true"></i> Faculty Leadership</a></li>
+                    </ol>
+                </div><!-- widget ends /-->
+            @endif
+>>>>>>> a5ce10130999b23318ac5d4e4998428c1547a2d0
             <div class="widget">
                     <h2>{!! $faculty->name !!} Programmes</h2>
                     @if (count($sections)==0)
-                    <p>There is no programmes at the moment!</p>
+                    <p><a href="{{ route('program.index') }}">Show all programmes</a></p>
                     @else
-                    <ul class="accordion" data-accordion data-deep-link="true" data-update-history="true" data-deep-link-smudge="true" data-deep-link-smudge-delay="500" id="deeplinked-accordion">
+                    <ul class="accordion"  data-accordion data-allow-all-closed="true">
                         @foreach ($sections as $section => $programs)
                             <li class="accordion-item " data-accordion-item>
                               <a href="#deeplink1" class="accordion-title">{{ App\Section::find($section)->name }}</a>
                               <div class="accordion-content" data-tab-content id="deeplink1">
-                                    <ul style="height:auto !important;overflow:scroll;"class="menu vertical">
+                                    <ul style="max-height:150px !important;overflow:scroll;"class="menu vertical">
                                     @foreach ($programs as $program)
                                     <li><a href="{{route('program.show',$program->slug)}}">{!!$program->name !!}</a></li>
                                     <hr>
@@ -80,30 +97,22 @@
                     @endif
             </div>
             <div class="widget">
-                <h2>{!! $faculty->name !!} Brochure</h2>
                 <ol class="menu vertical">
-                    <li>
-                            @if (!empty($faculty->file[0]))
-                            <a href="{{ Voyager::image( (json_decode($faculty->file))[0]->download_link) }}" target="_blank"> Click here to download
-                            </a>
-                            @else
-                            <li>no file</li>
-                            @endif
-                     </li>
-             </ol>
+                     <li><a href="{{ Voyager::image( (json_decode($faculty->file))[0]->download_link) }}" target="_blank"> <i class="fa fa-download fa-lg" aria-hidden="true"></i>{!! $faculty->name !!} Brochure</a>
+                    </li>
+                    <br>
+                    <li><a href="{{ route('admission.index') }}">  <i class="fa fa-hand-o-right fa-lg" aria-hidden="true"></i> Apply now</a></li>
+                </ol>
             </div><!-- widget ends /-->
 
             <div class="widget">
-                <h2>In takes</h2>
-
+                <h2>Intakes</h2>
                 <ul class="menu vertical">
                     <li><a href="#">January - April</a></li>
                     <li><a href="#">May - july</a></li>
                     <li><a href="#">August - December</a></li>
                 </ul>
             </div><!-- widget ends /-->
-
-
 
             <div class="widget">
                 <h2> Some People also interested in</h2>
@@ -114,10 +123,6 @@
                     @endforeach
                 </ul>
             </div><!-- widget ends /-->
-
-
-
-
             <div class="clearfix"></div>
             </div><!-- widget ends /-->
 
@@ -131,112 +136,100 @@
 <!-- Our Teachers -->
 
 <div class="seminar-events content-area module">
-
-    <div class="row">
+	<div class="row">
         <div class="section-title-wrapper">
                 <div class="section-title">
                     <h2>Why CUEA</h2>
                 </div>
                 <br>
             </div> <!-- Title Ends /-->
-            <div class="medium-12 small-12 columns our-process">
-
-                    <div class="medium-4 small-12 columns process">
-                            <div class="number"><i class="fa fa-heart" aria-hidden="true"></i></div>
-                            <div class="right-info">
-                                <a href="http://www.cue.or.ke/index.php/component/accreditedinstitutions/?view=university&amp;Itemid=253"><h5> Chartered Private University accredited by Commission of University Education.</h5></a>
-                            </div>
-                            <div class="clearfix"></div>
-                    </div><!-- process /-->
-
-                        <div class="medium-4 small-12 columns process">
+                <div class="medium-4 columns our-process">
+                  <div class="media-object process">
+                    <div class="number media-object-section">
+                        <div class="number"><i class="fa fa-graduation-cap" aria-hidden="true"></i></div>
+                    </div>
+                    <div class="media-object-section right-info">
+                        <h5><a href="http://www.cue.or.ke/index.php/component/accreditedinstitutions/?view=university&amp;Itemid=253"><h5> Chartered Private University accredited by Commission of University Education.</h5></a></h5>
+                    </div>
+                  </div>
+                  <div class="media-object process">
+                    <div class=" number media-object-section">
+                        <div class="number"><i class="fa fa-users" aria-hidden="true"></i></div>
+                    </div>
+                    <div class="media-object-section right-info">
+                        <h5> Rich diversity: Over 30 nationalities and 100+ programmes on offer.</h5>
+                    </div>
+                  </div>
+                  <div class="media-object process">
+                    <div class=" number media-object-section">
+                        <div class="number"><i class="fa fa-certificate" aria-hidden="true"></i></div>
+                    </div>
+                    <div class="media-object-section right-info">
+                        <h5> Clear learning path from Certificate, Diploma, Degree, Masters and Doctoral Courses with a high completion time rate.</h5>
+                    </div>
+                  </div>
+                </div>
+                <div class="medium-4 columns our-process">
+                    <div class="media-object process">
+                        <div class=" number media-object-section">
                             <div class="number"><i class="fa fa-calendar" aria-hidden="true"></i></div>
-                            <div class="right-info">
-                                <h5>  35 solid years of offering education grounded on values.</h5>
-
-                            </div>
-                            <div class="clearfix"></div>
-                        </div><!-- process /-->
-
-                        <div class="medium-4 small-12 columns process">
+                        </div>
+                        <div class="media-object-section right-info">
+                            <h5> 35 solid years of offering education grounded on values.</h5>
+                        </div>
+                      </div>
+                      <div class="media-object process">
+                        <div class=" number media-object-section">
+                            <div class="number"><i class="fa fa-files-o" aria-hidden="true"></i></div>
+                        </div>
+                        <div class="media-object-section right-info">
+                            <h5>Training and examination centre for ACCA and KASNEB (CPA & CS).</h5>
+                        </div>
+                      </div>
+                      <div class="media-object process">
+                        <div class=" number media-object-section">
+                            <div class="number"><i class="fa fa-building" aria-hidden="true"></i></div>
+                        </div>
+                        <div class="media-object-section right-info">
+                            <h5> Two campuses: Main campus located in Langata, Nairobi and Gaba campus located in Eldoret.</h5>
+                        </div>
+                      </div>
+                </div>
+                <div class="medium-4 columns our-process">
+                    <div class="media-object process">
+                        <div class=" number media-object-section">
                             <div class="number"><i class="fa fa-globe" aria-hidden="true"></i></div>
-                            <div class="right-info">
-                                <h5> A leading regional and international University..</h5>
-                            </div>
-                            <div class="clearfix"></div>
-                        </div><!-- process /-->
-
-                        <div class="medium-4 small-12 columns process">
-                                    <div class="number"><i class="fa fa-users" aria-hidden="true"></i></div>
-                                    <div class="right-info">
-                                        <h5> Rich diversity: Over 30 nationalities and 100+ programmes on offer.</h5>
-
-                                    </div>
-                                    <div class="clearfix"></div>
-                         </div><!-- process /-->
-
-                         <div class="medium-4 small-12 columns process">
-                                    <div class="number"><i class="fa fa-files-o" aria-hidden="true"></i></div>
-                                    <div class="right-info">
-                                        <h5>Training and examination centre for ACCA and KASNEB (CPA & CS).</h5>
-
-                                    </div>
-                                    <div class="clearfix"></div>
-                        </div><!-- process /-->
-
-                        <div class="medium-4 small-12 columns process">
-                                <div class="number"><i class="fa fa-cogs" aria-hidden="true"></i></div>
-                                <div class="right-info">
-                                   <a href="{{ route('student.index') }}"> <h5>Rich extra-curricula activities, innovation and marketable graduates.</h5></a>
-
-                                </div>
-                                <div class="clearfix"></div>
-                        </div><!-- process /-->
-
-                        <div class="medium-4 small-12 columns process">
-                                    <div class="number"><i class="fa fa-certificate" aria-hidden="true"></i></div>
-                                    <div class="right-info">
-                                        <h5> Clear learning path from Certificate, Diploma, Degree, Masters and Doctoral Courses with a high completion time rate.</h5>
-
-                                    </div>
-                                    <div class="clearfix"></div>
-                        </div><!-- process /-->
-
-
-
-                        <div class="medium-4 small-12 columns process">
-                                <div class="number"><i class="fa fa-building" aria-hidden="true"></i></div>
-
-                                <div class="right-info">
-
-                                    <h5> Two campuses: Main campus located in Langata, Nairobi and Gaba campus located in Eldoret.</h5>
-
-                                </div>
-                                <div class="clearfix"></div>
-                    </div><!-- process /-->
-
-                         {{--  <div class="medium-4 small-12 columns process">
-                                    <div class="number"><i class="fa fa-cogs" aria-hidden="true"></i></div>
-                                    <div class="right-info">
-                                        <h5>  Innovative and marketable graduates. </h5>
-                                    </div>
-                                    <div class="clearfix"></div>
-                        </div><!-- process /-->  --}}
-
-                        <div class="medium-4 small-12 columns process">
-                                <div class="number"><i class="fa fa-eye" aria-hidden="true"></i></div>
-                                <div class="right-info">
-                                    <h5>Quality and prompt research supervision for postgraduate students. </h5>
-
-                                </div>
-                                <div class="clearfix"></div>
-                            </div><!-- process /-->
-
-                </div><!-- Left Process Ends /-->
-
-
-
+                        </div>
+                        <div class="media-object-section right-info">
+                            <h5> A leading regional and international University..</h5>
+                        </div>
+                      </div>
+                      <div class="media-object process">
+                        <div class=" number media-object-section">
+                            <div class="number"><i class="fa fa-cogs" aria-hidden="true"></i></div>
+                        </div>
+                        <div class="media-object-section right-info">
+                            <a href="{{ route('student.index') }}"><h5>Rich extra-curricula activities, innovation and marketable graduates.</h5></a>
+                        </div>
+                      </div>
+                      <div class="media-object process">
+                        <div class=" number media-object-section">
+                            <div class="number"><i class="fa fa-eye" aria-hidden="true"></i></div>
+                        </div>
+                        <div class="media-object-section right-info">
+                            <h5>Quality and prompt research supervision for postgraduate students.</h5>
+                        </div>
+                      </div>
+                </div>
 </div><!-- Row /-->
+<br>
+
+<div class="row">
+        <div class="small-6 small-centered text-center columns">
+                <a href="{{ route('about.index') }}" style="text-align:center;" class="primary button">More about cuea!</a>
+        </div>
+</div>
+
 </div>
 <!-- Call to Action box -->
 @include('partials.call')

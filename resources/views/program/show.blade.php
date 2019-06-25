@@ -30,7 +30,7 @@
                 <br>
                  <h2>{{ $program->name }}</h2>
                  <div class="tx-div"></div>
-                <img src="{{ Voyager::image( $program->image)}}"  class="thumbnail" />
+                <img src="{{ Voyager::image( $program->image)}}" style=" width:auto;" class="thumbnail" />
             </div><!-- Course Thumb /-->
             <div class="event-content">
               <p> {!!  $program->body  !!}</p>

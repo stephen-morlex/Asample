@@ -33,6 +33,7 @@
                         </div><!-- Testimonial Thumb /-->
                          <div class="testimonial-detail">
                             <h4>{{ $pro->name }}</h4>
+
                             <a href="{{ route('program.section', $pro->section->slug) }}"><cite>{{ $pro->section->name }} programm</cite></a>
                         </div><!-- Testimonial Detail /-->
                              <div class="clearfix"></div>

@@ -48,11 +48,11 @@
                             data-start="1000"
                             data-splitin="none"
                             data-splitout="none"
-                            data-responsive_offset="on">{{ str_limit($item->body,40) }}
+                            data-responsive_offset="on">{{ $item->title }}
                         </div>
 
                         <!-- LAYER NR. 3 -->
-                        <div class="tp-caption Newspaper-Subtitle layer3 tp-resizeme rs-parallaxlevel-0"
+                        {{-- <div class="tp-caption Newspaper-Subtitle layer3 tp-resizeme rs-parallaxlevel-0"
                              id="slide-18-layer-2"
                              data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
                              data-y="['middle','middle','middle','middle']" data-voffset="['-82','-82','-82','-58']"
@@ -68,11 +68,11 @@
                             data-start="1000"
                             data-splitin="none"
                             data-splitout="none"
-                            data-responsive_offset="on">{{ $item->title }}
-                        </div>
+                            data-responsive_offset="on">
+                        </div> --}}
 
                         <!-- LAYER NR. 4 -->
-                        <div class="tp-caption layer4 rs-parallaxlevel-0"
+                        {{--  <div class="tp-caption layer4 rs-parallaxlevel-0"
                              id="slide-18-layer-4"
                              data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
                              data-y="['middle','middle','middle','middle']" data-voffset="['92','92','92','76']"
@@ -90,7 +90,7 @@
                             data-splitout="none"
                             data-responsive_offset="on"
                             data-responsive="off"><a href="{{ $item->link }}" class="button primary bordered-light">READ MORE</a>
-                        </div>
+                        </div>  --}}
                     </li>
                 @endforeach
                 <!-- SLIDE  -->
@@ -107,7 +107,7 @@
         <div class="courses-info medium-4 small-12 columns">
             <div class="">
                 <h3><i class="fa fa-book" aria-hidden="true"></i> Academics</h3>
-                <p>We form graduates to be well-rounded, broad-minded social catalysts for integral human development and personal fulfillment...</p>
+                <p>We form graduates to be well-rounded, broad-minded social catalysts for integral human development.</p>
                 <ul class="no-bullet">
                     <li><i class="fa fa-check-square-o" aria-hidden="true"></i> Education grounded on values</li>
                     <li><i class="fa fa-check-square-o" aria-hidden="true"></i> Accredited academic programmes</li>
@@ -117,7 +117,6 @@
                 <a href="{{ route('faculty.index') }}" class="primary button bordered-light">Find out More!</a>
             </div>
         </div><!-- courses column Ends /-->
-
         <div class="faculty-info medium-4 small-12 columns">
             <div class="">
                 <h3><i class="fa fa-users" aria-hidden="true"></i> Student Life</h3>
@@ -127,7 +126,6 @@
                     <li><i class="fa fa-check-square-o" aria-hidden="true"></i>Social events for fun and talent showcase.</li>
                     <li><i class="fa fa-check-square-o" aria-hidden="true"></i>Participation in local and international competitions</li>
                     <li><i class="fa fa-check-square-o" aria-hidden="true"></i>Spiritual movements</li>
-                    <br>
                 </ul>
                 <div class="clearfix"></div>
                 <a href="{{ route('student.index') }}" class="primary button bordered-light">Explore more!</a>
@@ -151,9 +149,6 @@
         <div class="clearfix"></div>
     </div>
     <!-- information boxes ends /-->
-
-
-
 <!-- Welcome Message -->
 <div class="welcome-message module">
 	<div class="row">
@@ -163,103 +158,86 @@
                     </div>
                     <br>
                 </div> <!-- Title Ends /-->
-            <div class="medium-12 small-12 columns our-process">
-
-                    <div class="medium-4 small-12 columns process">
-                            <div class="number"><i class="fa fa-heart" aria-hidden="true"></i></div>
-                            <div class="right-info">
-                                <a href="http://www.cue.or.ke/index.php/component/accreditedinstitutions/?view=university&amp;Itemid=253"><h5> Chartered Private University accredited by Commission of University Education.</h5></a>
+                    <div class="medium-4 columns our-process">
+                      <div class="media-object process">
+                        <div class="number media-object-section">
+                            <div class="number"><i class="fa fa-graduation-cap" aria-hidden="true"></i></div>
+                        </div>
+                        <div class="media-object-section right-info">
+                            <h5><a href="http://www.cue.or.ke/index.php/component/accreditedinstitutions/?view=university&amp;Itemid=253"><h5> Chartered Private University accredited by Commission of University Education.</h5></a></h5>
+                        </div>
+                      </div>
+                      <div class="media-object process">
+                        <div class=" number media-object-section">
+                            <div class="number"><i class="fa fa-users" aria-hidden="true"></i></div>
+                        </div>
+                        <div class="media-object-section right-info">
+                            <h5> Rich diversity: Over 30 nationalities and 100+ programmes on offer.</h5>
+                        </div>
+                      </div>
+                      <div class="media-object process">
+                        <div class=" number media-object-section">
+                            <div class="number"><i class="fa fa-certificate" aria-hidden="true"></i></div>
+                        </div>
+                        <div class="media-object-section right-info">
+                            <h5> Clear learning path from Certificate, Diploma, Degree, Masters and Doctoral Courses with a high completion time rate.</h5>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="medium-4 columns our-process">
+                        <div class="media-object process">
+                            <div class=" number media-object-section">
+                                <div class="number"><i class="fa fa-calendar" aria-hidden="true"></i></div>
                             </div>
-                            <div class="clearfix"></div>
-                    </div><!-- process /-->
-
-                        <div class="medium-4 small-12 columns process">
-                            <div class="number"><i class="fa fa-calendar" aria-hidden="true"></i></div>
-                            <div class="right-info">
-                                <h5>  35 solid years of offering education grounded on values.</h5>
-
+                            <div class="media-object-section right-info">
+                                <h5> 35 solid years of offering education grounded on values.</h5>
                             </div>
-                            <div class="clearfix"></div>
-                        </div><!-- process /-->
-
-                        <div class="medium-4 small-12 columns process">
-                            <div class="number"><i class="fa fa-globe" aria-hidden="true"></i></div>
-                            <div class="right-info">
+                          </div>
+                          <div class="media-object process">
+                            <div class=" number media-object-section">
+                                <div class="number"><i class="fa fa-files-o" aria-hidden="true"></i></div>
+                            </div>
+                            <div class="media-object-section right-info">
+                                <h5>Training and examination centre for ACCA and KASNEB (CPA & CS).</h5>
+                            </div>
+                          </div>
+                          <div class="media-object process">
+                            <div class=" number media-object-section">
+                                <div class="number"><i class="fa fa-building" aria-hidden="true"></i></div>
+                            </div>
+                            <div class="media-object-section right-info">
+                                <h5> Two campuses: Main campus located in Langata, Nairobi and Gaba campus located in Eldoret.</h5>
+                            </div>
+                          </div>
+                    </div>
+                    <div class="medium-4 columns our-process">
+                        <div class="media-object process">
+                            <div class=" number media-object-section">
+                                <div class="number"><i class="fa fa-globe" aria-hidden="true"></i></div>
+                            </div>
+                            <div class="media-object-section right-info">
                                 <h5> A leading regional and international University..</h5>
                             </div>
-                            <div class="clearfix"></div>
-                        </div><!-- process /-->
-
-                        <div class="medium-4 small-12 columns process">
-                                    <div class="number"><i class="fa fa-users" aria-hidden="true"></i></div>
-                                    <div class="right-info">
-                                        <h5> Rich diversity: Over 30 nationalities and 100+ programmes on offer.</h5>
-
-                                    </div>
-                                    <div class="clearfix"></div>
-                         </div><!-- process /-->
-
-                         <div class="medium-4 small-12 columns process">
-                                    <div class="number"><i class="fa fa-files-o" aria-hidden="true"></i></div>
-                                    <div class="right-info">
-                                        <h5>Training and examination centre for ACCA and KASNEB (CPA & CS).</h5>
-
-                                    </div>
-                                    <div class="clearfix"></div>
-                        </div><!-- process /-->
-
-                        <div class="medium-4 small-12 columns process">
+                          </div>
+                          <div class="media-object process">
+                            <div class=" number media-object-section">
                                 <div class="number"><i class="fa fa-cogs" aria-hidden="true"></i></div>
-                                <div class="right-info">
-                                   <a href="{{ route('student.index') }}"> <h5>Rich extra-curricula activities, innovation and marketable graduates.</h5></a>
-
-                                </div>
-                                <div class="clearfix"></div>
-                        </div><!-- process /-->
-
-                        <div class="medium-4 small-12 columns process">
-                                    <div class="number"><i class="fa fa-certificate" aria-hidden="true"></i></div>
-                                    <div class="right-info">
-                                        <h5> Clear learning path from Certificate, Diploma, Degree, Masters and Doctoral Courses with a high completion time rate.</h5>
-
-                                    </div>
-                                    <div class="clearfix"></div>
-                        </div><!-- process /-->
-
-
-
-                        <div class="medium-4 small-12 columns process">
-                                <div class="number"><i class="fa fa-building" aria-hidden="true"></i></div>
-
-                                <div class="right-info">
-
-                                    <h5> Two campuses: Main campus located in Langata, Nairobi and Gaba campus located in Eldoret.</h5>
-
-                                </div>
-                                <div class="clearfix"></div>
-                    </div><!-- process /-->
-
-                         {{--  <div class="medium-4 small-12 columns process">
-                                    <div class="number"><i class="fa fa-cogs" aria-hidden="true"></i></div>
-                                    <div class="right-info">
-                                        <h5>  Innovative and marketable graduates. </h5>
-                                    </div>
-                                    <div class="clearfix"></div>
-                        </div><!-- process /-->  --}}
-
-                        <div class="medium-4 small-12 columns process">
+                            </div>
+                            <div class="media-object-section right-info">
+                                <a href="{{ route('student.index') }}"><h5>Rich extra-curricula activities, innovation and marketable graduates.</h5></a>
+                            </div>
+                          </div>
+                          <div class="media-object process">
+                            <div class=" number media-object-section">
                                 <div class="number"><i class="fa fa-eye" aria-hidden="true"></i></div>
-                                <div class="right-info">
-                                    <h5>Quality and prompt research supervision for postgraduate students. </h5>
-
-                                </div>
-                                <div class="clearfix"></div>
-                            </div><!-- process /-->
-
-                </div><!-- Left Process Ends /-->
-
-
+                            </div>
+                            <div class="media-object-section right-info">
+                                <h5>Quality and prompt research supervision for postgraduate students.</h5>
+                            </div>
+                          </div>
+                    </div>
     </div><!-- Row /-->
+    <br>
 
     <div class="row">
             <div class="small-6 small-centered text-center columns">
@@ -269,18 +247,13 @@
 
 </div>
 <!-- Welcome Message Ends /-->
-
 <!-- Seminar/Events -->
 <div class="seminar-events module">
-
     <div class="row">
-
             <div class="section-title">
                 <h2>Upcoming Events</h2>
                 <br>
             </div>
-
-
         <div class="events-wrapper">
             @forelse ($events as $e)
             <div class="medium-6 small-12 columns" >
@@ -302,7 +275,6 @@
             @empty
             @endforelse
         </div><!-- Events Wrapper Ends /-->
-
     </div>
     <!-- Row Ends /-->
     <br>
@@ -318,41 +290,33 @@
 <!-- Seminar Events Ends /-->
 
 <!-- Testimonials Section /-->
-<div class="testimonials-wrapper side-controls module">
-	<div class="section-title-wrapper">
-		<div class="section-title">
-			<h2>Social media feeds</h2>
-			<h4>Dont miss out!</h4>
-        </div>
-        <br>
-	</div> <!-- Title Ends /-->
+<div class="welcome-message module">
+<div class="row">
+  <div class="columns">
+    <ul class="tabs" data-active-collapse="true" data-tabs id="collapsing-tabs">
+      <li class="tabs-title "><a href="#panel1c">Twitter</a></li>
+      <li class="tabs-title is-active" aria-selected="true"><a href="#panel2c">Youtube</a></li>
+    </ul>
+    <div class="tabs-content" data-tabs-content="collapsing-tabs">
+      <div class="tabs-panel " id="panel1c">
+        <a class="twitter-timeline" data-width="1200" data-height="650" data-theme="light" data-link-color="#e79800" href="https://twitter.com/CUEA_OFFICIAL?ref_src=twsrc%5Etfw">Tweets by CUEA_OFFICIAL</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+      </div>
+      <div class="tabs-panel is-active" id="panel2c">
+            <div class="plyr__video-embed" id="player" download>
+                    <iframe
+                        src="https://youtu.be/ny7pBK0_MTk"
+                        allowfullscreen
+                        allowtransparency
+                        captions
+                        allow="autoplay"
+                    ></iframe>
+                </div>
+        <div data-type="youtube" data-video-id="https://youtu.be/ny7pBK0_MTk" autoplay></div>
+      </div>
+    </div>
+  </div>
+</div>
 
-	<div class="row">
-
-		<div class="testimonials">
-			<div class=" testimonial">
-				<div class="testimonial-detail">
-                    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-                    <a class="twitter-timeline" href="https://twitter.com/CUEA_OFFICIAL" data-widget-id="636436522443644928" data-theme="light" data-link-color="#660000" data-chrome="" data-border-color="">Tweets by @CUEA_OFFICIAL</a>
-      		    </div><!-- Testimonial Detail /-->
-				<div class="clearfix"></div>
-			</div> <!-- Testimonial /-->
-
-             <div class=" testimonial">
-
-                    <div class="testimonial-detail">
-                        <div class="responsive-embed" data-aos="zoom-in-left"   data-aos-duration="2500" data-aos-easing="ease-in-sine">
-                               <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/ny7pBK0_MTk" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" width="560" height="400" frameborder="0"></iframe>
-                       </div>
-                  </div><!-- Testimonial Detail /-->
-                    <div class="clearfix"></div>
-                 </div> <!-- Testimonial /-->
-
-
-
-		</div><!-- Testimonials /-->
-
-    </div><!-- Row /-->
 
 </div>
 <!-- Testimonials Section Ends /-->
@@ -403,28 +367,27 @@
 <!-- Blog Posts Ends /-->
 
 <div class="blog-posts module grey-bg">
-    <div class="row">
+     <div class="row">
             <div class="section-title">
                 <h2>Campus Gallery</h2>
             </div>
             <br>
-           <div class="medium-12 gallery-image">
-                        @foreach($galleries as $gallery)
-                        @php $image = json_decode($gallery->image); @endphp
-                        @if (isset($image[0]))
-                        <div class="img-box">
+    <div class="medium-12 small-12 columns gallery-image">
+         @foreach($galleries as $gallery)
+            @php $image = json_decode($gallery->image); @endphp
+                @if (isset($image[0]))
+                    <div class="media-object img-box">
                           <img src="{{ Voyager::image($image[0]) }}" alt="{{ $gallery->title }}" />
                           <div class="transparent-box">
                             <div class="caption">
                               {{--  <p>{{ $gallery->title }}</p>  --}}
                               <p class="opacity-low">{{ $gallery->description }}</p>
                             </div>
-                          </div>
-                        </div>
+                         </div>
+                    </div>
                         @endif
                         @endforeach
-
-                </div>
+    </div>
     </div>
  </div>
 
@@ -452,20 +415,6 @@
 	</div><!-- Row /-->
 </div>
 <!-- Our Partners /-->
-{{--  <div class="financial">
-        <div>
-
-             <div class="responsive-embed "
-             data-aos="zoom-in-left"   data-aos-duration="2500"
-             data-aos-easing="ease-in-sine"
-             >
-                    <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/ny7pBK0_MTk" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" width="560" height="400" frameborder="0"></iframe>
-            </div>
-
-
-        </div>
-</div>  --}}
-
 <!-- Call to Action box -->
 @include('partials.call')
 <!-- Call to Action End /-->
