@@ -17,13 +17,15 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/academics/faculties-schools-and-institues', 'FacultyController@index')->name('faculty.index');
-Route::get('/faculties-schools-and-institues/{faculty}', 'FacultyController@show')->name('faculty.show');
-Route::get('/leaders/{faculty}', 'FacultyController@leaders')->name('faculty.leader');
+Route::get('/faculties-schools-and-institues/{faculty}','FacultyController@show')->name('faculty.show');
+
 
 // programs routes
 Route::get('/academics/programmes', 'ProgramController@index')->name('program.index');
 Route::get('/academics/programmes/{program}', 'ProgramController@show')->name('program.show');
 Route::get('/academics/programmes-section/{section}', 'ProgramController@section')->name('program.section');
+
+
 
 // admission routes
 Route::get('/cuea-admission', 'AdmissionController@index')->name('admission.index');
@@ -42,21 +44,30 @@ Route::get('/events', 'EventController@index')->name('events.index');
 Route::get('/event/{event}', 'EventController@show')->name('event.show');
 
 // Research routes
-Route::get('/research', 'ResearchController@index')->name('research.index');
-Route::get('/research/{research}', 'ResearchController@show')->name('research.show');
+
+
+Route::get('/research','ResearchController@index')->name('research.index');
+Route::get('/research/{research}','ResearchController@show')->name('research.show');
 
 // Students service information
 
-Route::get('/academics/students-service-information', 'ServicesController@index')->name('services.index');
-Route::get('/students-service-information/{services}', 'ServicesController@show')->name('services.show');
+
+
+Route::get('/academics/students-service-information','ServicesController@index')->name('services.index');
+Route::get('/students-service-information/{services}','ServicesController@show')->name('services.show');
+
+
+
+
 
 // ABOUT CUEA
 Route::get('/about-cuea', 'AboutController@index')->name('about.index');
 Route::get('/about-cuea/{about}', 'AboutController@show')->name('about.show');
 
 
+
 // CONTACT US
-Route::get('/contact', 'ContactController@index')->name('contact.index');
+Route::get('/contact/', 'ContactController@index')->name('contact.index');
 Route::post('/contact/send', 'ContactController@store')->name('contact.store');
 
 //CHAPLAINCY
@@ -73,6 +84,7 @@ Route::post('/application/send', 'ApplicationController@store')->name('applicati
 Route::get('/applicationpp/', 'ApplicationController@applicationpdf')->name('application.application_pdf');
 Route::get('/generate-pdf','ApplicationController@generatepdf');
 
+<<<<<<< HEAD
 
 // GALLERY
 Route::get('/gallery', 'GalleryController@index')->name('gallery.index');
@@ -87,23 +99,46 @@ Route::get('/faculty/leaders/{Faculty}', 'FacultyLeadersController@faculty')->na
 
 
 // Leaders
+=======
+>>>>>>> d243d4111cb9dc9119ac911583bc220501cfedca
 
+// GALLERY
+Route::get('/gallery/', 'GalleryController@index')->name('gallery.index');
 
 // NEWS
-Route::get('/news', 'NewsController@index')->name('news.index');
+Route::get('/news/', 'NewsController@index')->name('news.index');
 Route::get('/news/{news}', 'NewsController@show')->name('news.show');
 Route::get('/news/category/{newscategory}', 'NewsController@newsCategory')->name('news.category');
 
 // Search
 Route::get('/search', 'SearchController@search')->name('search.result');
 
-// PARENT
-Route::get('/parents', 'AboutParentController@index')->name('parent.index');
-Route::get('/parent/{parent}', 'AboutParentController@show')->name('parent.show');
-Auth::routes();
 Route::group(['prefix' => 'cuea'], function () {
     Voyager::routes();
 });
-// Dean
-Route::get('/dean/', 'DeanController@index')->name('dean.index');
-Route::get('/{dean}', 'DeanController@show')->name('dean.show');
+
+// PARENT
+Route::get('/parent', 'AboutParentController@index')->name('parent.index');
+Route::get('/parent/{parent}', 'AboutParentController@show')->name('parent.show');
+
+// DOCUMENT
+Route::get('/documents', 'DocumentController@index')->name('document.index');
+
+// RESEARCH AND PUBLICATIONS
+Route::get('/research-and-publication/{publication}', 'PublicationController@show')->name('publication.show');
+
+// ADMINISTRATIVE OFFICESS
+Route::get('/administrative-offices', 'AdministrativeofficeController@index')->name('administrativeoffice.index');
+Route::get('/administrative-office/{administrativeoffice}', 'AdministrativeofficeController@show')->name('administrativeoffice.show');
+
+// COMMUNITY SERVICE
+Route::get('/community-sercive', 'CommunityserviceController@index')->name('communitysercive.index');
+Route::get('/community-sercive/{communitysercive}', 'CommunityserviceController@show')->name('communitysercive.show');
+
+// BOOKING
+Route::get('/booking', 'BookingController@index')->name('booking.index');
+Route::post('/booking/send', 'BookingController@store')->name('booking.store');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
