@@ -84,8 +84,6 @@ Route::post('/application/send', 'ApplicationController@store')->name('applicati
 Route::get('/applicationpp/', 'ApplicationController@applicationpdf')->name('application.application_pdf');
 Route::get('/generate-pdf','ApplicationController@generatepdf');
 
-<<<<<<< HEAD
-
 // GALLERY
 Route::get('/gallery', 'GalleryController@index')->name('gallery.index');
 
@@ -99,8 +97,7 @@ Route::get('/faculty/leaders/{Faculty}', 'FacultyLeadersController@faculty')->na
 
 
 // Leaders
-=======
->>>>>>> d243d4111cb9dc9119ac911583bc220501cfedca
+
 
 // GALLERY
 Route::get('/gallery/', 'GalleryController@index')->name('gallery.index');
@@ -132,8 +129,8 @@ Route::get('/administrative-offices', 'AdministrativeofficeController@index')->n
 Route::get('/administrative-office/{administrativeoffice}', 'AdministrativeofficeController@show')->name('administrativeoffice.show');
 
 // COMMUNITY SERVICE
-Route::get('/community-sercive', 'CommunityserviceController@index')->name('communitysercive.index');
-Route::get('/community-sercive/{communitysercive}', 'CommunityserviceController@show')->name('communitysercive.show');
+Route::get('/community-service', 'CommunityserviceController@index')->name('communityservice.index');
+Route::get('/community-service/{communityservice}', 'CommunityserviceController@show')->name('communityservice.show');
 
 // BOOKING
 Route::get('/booking', 'BookingController@index')->name('booking.index');

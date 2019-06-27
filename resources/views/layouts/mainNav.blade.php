@@ -77,10 +77,10 @@
                             <li><a href="{{ route('administrativeoffice.index') }}">Administrative Offices</a></li>
                          </ul>
                     </li>
-                    <li class="single-sub parent-nav"><a href="{{ route('communitysercive.index') }}">Community service</a>
+                    <li class="single-sub parent-nav"><a href="{{ route('communityservice.index') }}">Community service</a>
                         <ul class="child-nav menu vertical">
                             @foreach ($community_services as $communityservice)
-                                <li><a href="{{ route('communitysercive.show', $communityservice->slug) }}">{{ $communityservice->title }}</a></li>
+                                <li><a href="{{ route('communityservice.show', $communityservice->slug) }}">{{ $communityservice->title }}</a></li>
                             @endforeach
                          </ul>
                     </li>

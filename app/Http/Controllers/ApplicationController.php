@@ -13,17 +13,14 @@ use App\StudentCategory;
 use App\Research;
 use App\About;
 use App\Services;
-<<<<<<< HEAD
 use App\ClergyType;
 use App\ModeOfStudy;
 use App\Sources;
 use Redirect;
 use PDF;
-=======
-use PDF;
+use Storage;
 use App\Sponsor;
 
->>>>>>> a5ce10130999b23318ac5d4e4998428c1547a2d0
 class ApplicationController extends Controller
 {
     /**
@@ -46,13 +43,9 @@ class ApplicationController extends Controller
         $abouts     = About::orderBy('title','asc')->get();
         $services1=   Services::orderBY('name','asc')->take(6)->get();
         $services2=   Services::orderBY('name','asc')->skip(6)->take(10)->get();
-<<<<<<< HEAD
-        return view('application.index',compact('sections','ad','studLife','faculties','sources','program','religion','researchNav','abouts','services1','services2','clergytypes','modeofstudy'));
-=======
         $sponsor = Sponsor::orderBY('name','desc')->get();
-        return view('application.index',compact('sections','ad','studLife','faculties','program','religion','researchNav','abouts','services1','services2','sponsor'));
->>>>>>> a5ce10130999b23318ac5d4e4998428c1547a2d0
-
+        return view('application.index',compact('sections','ad','studLife','faculties','program','sources','religion','researchNav','abouts','services1','services2','sponsor','clergytypes','modeofstudy'));
+        
     }
 
     /**
@@ -265,9 +258,18 @@ class ApplicationController extends Controller
     {
         //
     }
+    public function getImage()
+    {
+      
+
+    }
 
     public function applicationpdf()
 {
+
+   // $path = storage_path('app/file.txt');
+    
+
     $user = Applicant::findOrFail(11);
 
     return view('application.application_pdf',compact('user'));
