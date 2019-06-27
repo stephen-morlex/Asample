@@ -84,23 +84,6 @@ Route::post('/application/send', 'ApplicationController@store')->name('applicati
 Route::get('/applicationpp/', 'ApplicationController@applicationpdf')->name('application.application_pdf');
 Route::get('/generate-pdf','ApplicationController@generatepdf');
 
-<<<<<<< HEAD
-
-// GALLERY
-Route::get('/gallery', 'GalleryController@index')->name('gallery.index');
-
-// Leader Routes
-Route::get('/leaders', 'FacultyLeadersController@index')->name('leader.index');
-Route::get('/leader/{FacultyLeaders}', 'FacultyLeadersController@show')->name('leader.show');
-
-Route::get('/faculty/leaders/{Faculty}', 'FacultyLeadersController@faculty')->name('leader.faculty');
-
-// Leaders
-
-
-// Leaders
-=======
->>>>>>> d243d4111cb9dc9119ac911583bc220501cfedca
 
 // GALLERY
 Route::get('/gallery/', 'GalleryController@index')->name('gallery.index');
