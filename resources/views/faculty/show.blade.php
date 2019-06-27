@@ -90,6 +90,16 @@
                     <li><a href="#">August - December</a></li>
                 </ul>
             </div><!-- widget ends /-->
+            @if (empty($faculty->publication))
+            @else
+             <div class="widget">
+                    <ol class="menu vertical">
+                     <li><a href="{{ route('publication.show',$faculty->publication->slug) }}"> <i class="fa fa-file-o fa-lg" aria-hidden="true"></i> Research and Publication</a></li>
+                    </ol>
+            </div><!-- widget ends /-->
+
+            @endif
+
             <div class="widget">
                 <h2> Some People also interested in</h2>
 

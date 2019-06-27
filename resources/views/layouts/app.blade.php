@@ -44,8 +44,6 @@
     <!-- Font Awesome CSS File -->
     <link href="{{ asset('css/font-awesome.min.css')}}" rel="stylesheet">
 
-
-
     <!-- Google Fonts For Stylesheet -->
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700%7CMontserrat:400,700%7CRoboto+Slab:400%7CRoboto:900,700" rel="stylesheet" type="text/css" />
 
@@ -104,60 +102,3 @@
   </script>
 </body>
 </html>
-<script>
-    
-    $(document).ready(function(){
-        var i = 1;
-        var j=1;
-    
-        $('#add').click(function(){
-            i++;
-                    $('#dynamic_field').append('<div class="row" id="row'+i+'"><div class="medium-3 small-12 columns"><label>High school name</label><label><input type="text" name="high_school'+i+'" placeholder="The name of  your high school here..." /></label></div> <div class="medium-3 small-12 columns"><label>School Address</label><label><input type="text" name="school_address'+i+'" value="{{ old('school_address') }}" placeholder="The address of your school here..." /></label></div><div class="medium-2 small-12 columns"><label>When started</label><label><input type="date" name="when_started_highschool'+i+'" value="{{  old('when_started_highschool') }}" placeholder="mm/dd/yyyy" /></label></div><div class="medium-2 small-12 columns"><label>When ended</label><label><input type="date" name="when_ended_highschool'+i+'" placeholder="mm/dd/yyyy" /></label></div><div class="medium-2 small-12 columns"><label>&nbsp;</label><button  type="button" name="remove" id="'+i+'" class="btn_remov button alert">Remove</button></div></div><!-- Row Ends /-->');
-
-             
-              
-              // $('#dynamic_field').append('<tr id="row'+i+'"><td><input type="text" name="name[]" id="name" placeholder="Enter name"></td><td><button name="remove" id="'+i+'" class="btn btn-danger btn_remove">Remove</button></td></tr>');
-
-              // <button  type="button" name="add" id="add" class="button success">Add more</button>  
- 
-      
-        });
-        $(document).on("click", ".btn_remov",function(){
-            var button_id = $(this).attr("id");
-            $("#row"+button_id+"").remove();
-            
-        });
-        $('#submit').click(function(){
-           $.ajax({
-            url:"name.php",
-            method:"POST",
-            data:$('#add_name').serialize(),
-            success:function(data){
-                alert(data);
-                $('#add_name')[0].reset();
-            }
-           })
-        });
-    });
-</script>
-<script>
-    $(document).ready(function(){
-         var j=1;
-
-         $('#add2').click(function(){
-                j++;
-                
-                $('#dynamic_field2').append('<div class="row" id="row'+j+'"><div class="medium-3 small-12 columns"><label>college name</label><label><input type="text" name="college'+j+'" placeholder="The name of college here..." /></label></div><div class="medium-3 small-12 columns"><label>School Address</label><label><input type="text" name="college_address'+j+'" placeholder="The address of your school here..." /></label></div><div class="medium-2 small-12 columns"><label>When started</label><label><input type="date" name="when_started_college'+j+'" placeholder="mm/dd/yyyy" /></label></div><div class="medium-2 small-12 columns"><label>When Ended</label><label><input type="date" name="when_ended_college'+j+'" placeholder="mm/dd/yyyy" /></label></div><div class="medium-2 small-12 columns"><label>&nbsp;</label><button  type="button" name="remove" id="'+j+'" class="btn_remove2 button alert">Remove</button></div></div><!-- Row Ends /-->');
-            
-    });
-         $(document).on("click", ".btn_remove2",function(){
-            var button_id = $(this).attr("id");
-            $("#row"+button_id+"").remove();
-            
-        });
-     });
-</script>
-<script src="http://code.jquery.com/jquery-3.3.1.min.js"
-               integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-               crossorigin="anonymous">
-      </script>

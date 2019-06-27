@@ -26,16 +26,16 @@
     <div class="row">
 
         <div class="medium-8 small-12 columns posts-wrap">
-            <h2>{!! $communitysercive->title  !!}</h2>
+            <h3>{!! $communitysercive->title  !!}</h3>
             <div class="event-thumb">
-                <img  src="{{ Voyager::image( $communitysercive->image ) }}"  class="thumbnail" alt="{!! $communitysercive->title !!}"/>
+                <img  src="{{ Voyager::image( $communitysercive->image ) }}" alt="{!! $communitysercive->title !!}"/>
             </div>
             <div class="event-content">
                 <p>{!! $communitysercive->content  !!}</p>
             </div>
         </div><!-- Posts wrap ends /-->
 
-        <div class="medium-4 small-12 columns sidebar">  
+        <div class="medium-4 small-12 columns sidebar">
             <div class="widget">
                 <h2>Community Sercive</h2>
                 <ul class="menu vertical">

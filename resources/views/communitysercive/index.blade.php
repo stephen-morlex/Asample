@@ -24,12 +24,12 @@
 
 <div class="content-section module blog-page">
     <div class="row">
-        
+
         <div class="medium-8 small-12 columns posts-wrap">
             @forelse($first_community_sercive as $community_sercive)
-                <h2>{!! $community_sercive->title !!}</h2>
+                <h3>{!! $community_sercive->title !!}</h3>
                 <div class="event-thumb">
-                    <img  src="{{ Voyager::image( $community_sercive->image ) }}"  class="thumbnail" alt="{!! $community_sercive->title !!}"/>
+                    <img  src="{{ Voyager::image( $community_sercive->image ) }}"  alt="{!! $community_sercive->title !!}"/>
                 </div>
                 <div class="event-content">
                     <p>{!! $community_sercive->content !!}</p>
