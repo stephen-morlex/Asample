@@ -296,6 +296,7 @@
     <ul class="tabs" data-active-collapse="true" data-tabs id="collapsing-tabs">
       <li class="tabs-title "><a href="#panel1c">Twitter</a></li>
       <li class="tabs-title is-active" aria-selected="true"><a href="#panel2c">Youtube</a></li>
+      <li class="tabs-title " aria-selected="true"><a href="#panel3">Events Calender</a></li>
     </ul>
     <div class="tabs-content" data-tabs-content="collapsing-tabs">
       <div class="tabs-panel " id="panel1c">
@@ -312,6 +313,9 @@
                     ></iframe>
                 </div>
         <div data-type="youtube" data-video-id="https://youtu.be/ny7pBK0_MTk" autoplay></div>
+      </div>
+      <div class="tabs-panel " id="panel3">
+        <a class="twitter-timeline" data-width="1200" data-height="650" data-theme="light" data-link-color="#e79800" href="https://twitter.com/CUEA_OFFICIAL?ref_src=twsrc%5Etfw">Tweets by CUEA_OFFICIAL</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
       </div>
     </div>
   </div>
