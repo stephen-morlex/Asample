@@ -17,6 +17,8 @@ use App\News;
 use App\NewsCategory;
 use App\Student;
 use App\Dean;
+use App\Communityservice;
+
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -38,6 +40,7 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         view()->composer('*', function ($view) {
+            $community_services = Communityservice::orderBy('title')->get();
             $admissions = Section::orderBy('name')->get();
             $ad = Section::orderBy('id', 'asc')->get();
             $abouts     = About::orderBy('id', 'asc')->get();
@@ -58,6 +61,7 @@ class AppServiceProvider extends ServiceProvider
             $sources = Sources::all();
             $clergytypes = ClergyType::all();
             $modeofstudy = ModeOfStudy::all();
+            $view->with('community_services', $community_services);
             $view->with('admissions', $admissions);
             $view->with('ad', $ad);
             $view->with('researchNav', $researchNav);

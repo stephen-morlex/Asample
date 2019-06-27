@@ -74,16 +74,22 @@
                             @foreach ($abouts as $about)
                                 <li><a href="{{ route('about.show', $about->slug) }}">{{ $about->title }}</a></li>
                             @endforeach
+                            <li><a href="{{ route('administrativeoffice.index') }}">Administrative Offices</a></li>
                          </ul>
                     </li>
-                    <li class="single-sub parent-nav"><a href="{{ route('contact.index') }}">Portals </a>
+                    <li class="single-sub parent-nav"><a href="{{ route('communitysercive.index') }}">Community service</a>
+                        <ul class="child-nav menu vertical">
+                            @foreach ($community_services as $communityservice)
+                                <li><a href="{{ route('communitysercive.show', $communityservice->slug) }}">{{ $communityservice->title }}</a></li>
+                            @endforeach
+                         </ul>
+                    </li>
+                    <li class="single-sub parent-nav"><a>Portals </a>
                         <ul class="child-nav menu vertical">
                             <li><a href="https://student.cuea.edu/">Student portal</a></li>
                             <li><a href="https://staff.cuea.edu/site/login">Staff portal</a></li>
                             <li><a href="https://www.premiercert.org/cuea/">Degree verification</a></li>
                         </ul>
-                    </li>
-                    <li class="single-sub parent-nav"><a href="{{ route('contact.index') }}"> </a>
                     </li>
                 </ul>
             </nav>
