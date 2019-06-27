@@ -85,8 +85,26 @@ Route::get('/applicationpp/', 'ApplicationController@applicationpdf')->name('app
 Route::get('/generate-pdf','ApplicationController@generatepdf');
 
 
+// Leader Routes
+Route::get('/leaders', 'FacultyLeadersController@index')->name('leader.index');
+Route::get('/leader/{FacultyLeaders}', 'FacultyLeadersController@show')->name('leader.show');
+
+Route::get('/faculty/leaders/{Faculty}', 'FacultyLeadersController@faculty')->name('leader.faculty');
+
+
+
 // GALLERY
-Route::get('/gallery/', 'GalleryController@index')->name('gallery.index');
+Route::get('/gallery', 'GalleryController@index')->name('gallery.index');
+
+// Leader Routes
+Route::get('/leaders', 'FacultyLeadersController@index')->name('leader.index');
+Route::get('/leader/{FacultyLeaders}', 'FacultyLeadersController@show')->name('leader.show');
+
+Route::get('/faculty/leaders/{Faculty}', 'FacultyLeadersController@faculty')->name('leader.faculty');
+
+// Leaders
+
+
 
 // NEWS
 Route::get('/news/', 'NewsController@index')->name('news.index');
@@ -115,8 +133,8 @@ Route::get('/administrative-offices', 'AdministrativeofficeController@index')->n
 Route::get('/administrative-office/{administrativeoffice}', 'AdministrativeofficeController@show')->name('administrativeoffice.show');
 
 // COMMUNITY SERVICE
-Route::get('/community-sercive', 'CommunityserviceController@index')->name('communitysercive.index');
-Route::get('/community-sercive/{communitysercive}', 'CommunityserviceController@show')->name('communitysercive.show');
+Route::get('/community-service', 'CommunityserviceController@index')->name('communityservice.index');
+Route::get('/community-service/{communityservice}', 'CommunityserviceController@show')->name('communityservice.show');
 
 // BOOKING
 Route::get('/booking', 'BookingController@index')->name('booking.index');

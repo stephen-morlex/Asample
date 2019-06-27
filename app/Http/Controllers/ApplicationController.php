@@ -13,7 +13,25 @@ use App\StudentCategory;
 use App\Research;
 use App\About;
 use App\Services;
+<<<<<<< HEAD
 use PDF;
+||||||| merged common ancestors
+<<<<<<< HEAD
+use App\ClergyType;
+use App\ModeOfStudy;
+use App\Sources;
+use Redirect;
+use PDF;
+=======
+use PDF;
+=======
+use App\ClergyType;
+use App\ModeOfStudy;
+use App\Sources;
+use Redirect;
+use PDF;
+use Storage;
+>>>>>>> 9a9174feed6d8f6ad9e473807c3855099265db40
 use App\Sponsor;
 use App\Sources;
 use App\ModeOfStudy;
@@ -42,8 +60,17 @@ class ApplicationController extends Controller
         $services1=   Services::orderBY('name','asc')->take(6)->get();
         $services2=   Services::orderBY('name','asc')->skip(6)->take(10)->get();
         $sponsor = Sponsor::orderBY('name','desc')->get();
+<<<<<<< HEAD
         return view('application.index',compact('sections','ad','studLife','faculties','program','religion','researchNav','abouts','services1','services2','sponsor'));
 
+||||||| merged common ancestors
+        return view('application.index',compact('sections','ad','studLife','faculties','program','religion','researchNav','abouts','services1','services2','sponsor'));
+>>>>>>> a5ce10130999b23318ac5d4e4998428c1547a2d0
+
+=======
+        return view('application.index',compact('sections','ad','studLife','faculties','program','sources','religion','researchNav','abouts','services1','services2','sponsor','clergytypes','modeofstudy'));
+        
+>>>>>>> 9a9174feed6d8f6ad9e473807c3855099265db40
     }
 
     /**
@@ -256,9 +283,18 @@ class ApplicationController extends Controller
     {
         //
     }
+    public function getImage()
+    {
+      
+
+    }
 
     public function applicationpdf()
 {
+
+   // $path = storage_path('app/file.txt');
+    
+
     $user = Applicant::findOrFail(11);
 
     return view('application.application_pdf',compact('user'));

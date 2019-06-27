@@ -26,13 +26,13 @@
     <div class="row">
         
         <div class="medium-8 small-12 columns posts-wrap">
-            @forelse($first_community_sercive as $community_sercive)
-                <h2>{!! $community_sercive->title !!}</h2>
+            @forelse($first_community_service as $community_service)
+                <h2>{!! $community_service->title !!}</h2>
                 <div class="event-thumb">
-                    <img  src="{{ Voyager::image( $community_sercive->image ) }}"  class="thumbnail" alt="{!! $community_sercive->title !!}"/>
+                    <img  src="{{ Voyager::image( $community_service->image ) }}"  class="thumbnail" alt="{!! $community_service->title !!}"/>
                 </div>
                 <div class="event-content">
-                    <p>{!! $community_sercive->content !!}</p>
+                    <p>{!! $community_service->content !!}</p>
                 </div>
             @empty
                 <h2>No community service at the moment<h2>
@@ -44,8 +44,8 @@
             <div class="widget">
                 <h2> Administrative Offices</h2>
                 <ul class="menu vertical">
-                    @forelse($community_sercives as $community_sercive)
-                        <li><a href="{{ route('communitysercive.show',$community_sercive->slug) }}">{!! $community_sercive->title !!}</a></li>
+                    @forelse($community_services as $community_service)
+                        <li><a href="{{ route('communityservice.show',$community_service->slug) }}">{!! $community_service->title !!}</a></li>
                     @empty
                         <li>No community service at the moment<li>
                     @endforelse

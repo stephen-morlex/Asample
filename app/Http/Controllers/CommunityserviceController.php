@@ -15,9 +15,9 @@ class CommunityserviceController extends Controller
     public function index()
     {
         //
-        $community_sercives         = Communityservice::all();
-        $first_community_sercive    = Communityservice::take(1)->get();
-        return view('communitysercive.index', compact('community_sercives', 'first_community_sercive'));
+        $community_services         = Communityservice::all();
+        $first_community_service    = Communityservice::take(1)->get();
+        return view('communityservice.index', compact('community_services', 'first_community_service'));
     }
 
     /**
@@ -29,11 +29,11 @@ class CommunityserviceController extends Controller
     public function show($slug)
     {
         //
-        $communitysercive    = Communityservice::where('slug', $slug)->firstOrFail();
-        $communitysercives   = Communityservice::orderBy('title')->get();
-        return view('communitysercive.show')->with([
-            'communitysercive'    => $communitysercive,
-            'communitysercives'   => $communitysercives
+        $communityservice    = Communityservice::where('slug', $slug)->firstOrFail();
+        $communityservices   = Communityservice::orderBy('title')->get();
+        return view('communityservice.show')->with([
+            'communityservice'    => $communityservice,
+            'communityservices'   => $communityservices
         ]);
     }
 
