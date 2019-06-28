@@ -13,17 +13,14 @@ use App\StudentCategory;
 use App\Research;
 use App\About;
 use App\Services;
-<<<<<<< HEAD
 use App\ClergyType;
 use App\ModeOfStudy;
 use App\Sources;
 use Redirect;
 use PDF;
-=======
-use PDF;
+use Storage;
 use App\Sponsor;
 
->>>>>>> a5ce10130999b23318ac5d4e4998428c1547a2d0
 class ApplicationController extends Controller
 {
     /**
@@ -46,13 +43,9 @@ class ApplicationController extends Controller
         $abouts     = About::orderBy('title','asc')->get();
         $services1=   Services::orderBY('name','asc')->take(6)->get();
         $services2=   Services::orderBY('name','asc')->skip(6)->take(10)->get();
-<<<<<<< HEAD
-        return view('application.index',compact('sections','ad','studLife','faculties','sources','program','religion','researchNav','abouts','services1','services2','clergytypes','modeofstudy'));
-=======
         $sponsor = Sponsor::orderBY('name','desc')->get();
-        return view('application.index',compact('sections','ad','studLife','faculties','program','religion','researchNav','abouts','services1','services2','sponsor'));
->>>>>>> a5ce10130999b23318ac5d4e4998428c1547a2d0
-
+        return view('application.index',compact('sections','ad','studLife','faculties','program','sources','religion','researchNav','abouts','services1','services2','sponsor','clergytypes','modeofstudy'));
+        
     }
 
     /**
@@ -140,15 +133,64 @@ class ApplicationController extends Controller
         'sources' =>'required',
         'other_sources' =>'',
 
-
+        'passport_picture' => 'required',
         'id_number_file' =>'required',
         'college_file' =>'required',
         'high_school_file' =>'required',
      ]);
+      // $imageName = time().'.'.request()->passport_picture->getClientOriginalExtension();
 
-       $path =$request->file('id_number_file')->Store('applications');
-       $path =$request->file('high_school_file')->Store('applications');
-       $path =$request->file('college_file')->Store('applications');
+  
+
+      //   request()->passport_picture->move(storage_path('app/application'), $imageName);
+
+
+      //  if($request->hasfile('passport_picture')) 
+      //   { 
+      //     $file = $request->file('passport_picture');
+      //     $extension = $file->getClientOriginalExtension(); // getting image extension
+      //     $filename =time().'.'.$extension;
+      //     $file->move(storage_path('app/public/applications'), $filename);
+      //     $applicant->passport_picture = $filename;
+      //   }
+
+      // if($request->hasfile('id_number_file')) 
+      //   { 
+      //     $file = $request->file('id_number_file');
+      //     $extension = $file->getClientOriginalExtension(); // getting image extension
+      //     $filename =time().'.'.$extension;
+      //     $file->move(storage_path('app/public/applications'), $filename);
+      //     $applicant->id_number_file = $filename;
+      //   }
+
+      // if($request->hasfile('college_file')) 
+      //   { 
+      //     $file = $request->file('college_file');
+      //     $extension = $file->getClientOriginalExtension(); // getting image extension
+      //     $filename =time().'.'.$extension;
+      //     $file->move(storage_path('app/public/applications'), $filename);
+      //     $applicant->college_file = $filename;
+      //   }
+
+      // if($request->hasfile('high_school_file')) 
+      //   { 
+      //     $file = $request->file('high_school_file');
+      //     $extension = $file->getClientOriginalExtension(); // getting image extension
+      //     $filename =time().'.'.$extension;
+      //     $file->move(storage_path('app/public/applications'), $filename);
+      //     $applicant->high_school_file = $filename;
+      //   } 
+
+     
+       $path_passport_picture =$request->file('passport_picture')->Store('public/applications');
+       $path_id_number_file =$request->file('id_number_file')->Store('public/applications');
+       $path_high_school_file =$request->file('high_school_file')->Store('public/applications');
+       $path_college_file =$request->file('college_file')->Store('public/applications');
+
+       // $applicant->passport_picture = $path_passport_picture;
+       // $applicant->id_number_file = $path_id_number_file;
+       // $applicant->high_school_file = $path_high_school_file;
+       // $applicant->college_file = $path_college_file;
 
         Applicant::create($request->all());
 
@@ -216,17 +258,26 @@ class ApplicationController extends Controller
     {
         //
     }
+    public function getImage()
+    {
+      
+
+    }
 
     public function applicationpdf()
 {
-    $user = Applicant::findOrFail(1);
+
+   // $path = storage_path('app/file.txt');
+    
+
+    $user = Applicant::findOrFail(11);
 
     return view('application.application_pdf',compact('user'));
 }
 
     public function generatepdf()
     {
-            $user = Applicant::findOrFail(1);
+            $user = Applicant::findOrFail(11);
         
         $pdf = PDF::loadView('application.application_pdf',compact('user'));
   

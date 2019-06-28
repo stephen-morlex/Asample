@@ -630,7 +630,7 @@
                                         </div>
 
                                         <div class="medium-4 small-12 columns">
-                                            <br>
+                                        
                                             <span class="help-inline" style="color:#FF0000">*required</span>
                                             <label>When would you like to start?</label>
                                             <label>
@@ -768,14 +768,21 @@
                         
                                  <div style="border: 2px solid">
                                      <div class="row">
-                                    <div class="medium-4 small-12 columns">
+                                        <div class="medium-3 small-12 columns">
+                                        <span class="help-inline" style="color:#FF0000">*required</span>
+                                        <label>Passport picture</label>
+                                        <label>
+                                            <input type="file" name="passport_picture" placeholder="here..." required/>
+                                        </label>
+                                    </div>
+                                    <div class="medium-3 small-12 columns">
                                         <span class="help-inline" style="color:#FF0000">*required</span>
                                         <label>KCSE Slip</label>
                                         <label>
                                             <input type="file" name="high_school_file" placeholder="here..." required/>
                                         </label>
                                     </div>
-                                    <div class="medium-4 small-12 columns">
+                                    <div class="medium-3 small-12 columns">
                                         <span class="help-inline" style="color:#FF0000">*required</span>
                                         <label>college slips</label>
                                         <label>
@@ -783,7 +790,7 @@
                                         </label>
                                     </div>
                                     
-                                    <div class="medium-4 small-12 columns">
+                                    <div class="medium-3 small-12 columns">
                                         <span class="help-inline" style="color:#FF0000">*required</span>
                                         <label>Passport or ID file</label>
                                         <label>
@@ -791,7 +798,24 @@
                                         </label>
                                     </div>
                                      </div><!-- Row Ends /-->
-                                 </div>
+                                 </div><br>
+                                   
+                                   <div class="row">
+                                        <div class="medium-4 small-12 columns">
+                                            &nbsp;
+                                        </div>
+
+                                        <div class="medium-4 small-12 columns">
+                                            <span class="help-inline" style="color:#FF0000">*required</span>
+                                            <label for="checkbox12">Accept CUEA Rules and conditions</label>
+                                            <input id="checkbox12" type="checkbox" required>
+                                           
+                                        </div>
+
+                                        <div class="medium-4 small-12 columns">
+                                            &nbsp;
+                                        </div>
+                                    </div><!-- Row Ends /--><br>
 
                                    <div class="row">
                                         <div class="medium-4 small-12 columns">
@@ -799,11 +823,12 @@
                                         </div>
 
                                         <div class="medium-4 small-12 columns">
-                                            &nbsp;
-                                        </div>
+                                            
+                                            <input type="submit" class="button primary" value="Submit" style="float: center;" />
+                                        </div><br>
 
                                         <div class="medium-4 small-12 columns">
-                                            <input type="submit" class="button primary" value="Submit" />
+                                            &nbsp;
                                         </div>
                                     </div><!-- Row Ends /-->
                             </form>

@@ -13,6 +13,11 @@ table, th, td {
     border-style:double;">
 <div style="border: 1px solid black;padding-top: 3px;padding-right: 3px;padding-bottom: 3px;padding-left: 3px;">
 <body>
+<!-- 
+   <img  alt="{{ $user->passport_picture }}" src="{{URL::to('storage/app/public/applications/'.$user->passport_picture) }}" class="thumbnail"/> -->
+
+  <img src="">
+
    <br><br><h2 style="margin-left: 25%;"><u>Catholic university of Eastern Africa</u></h2><br> 
     <h3 style="margin-left: 40%;"><u>Application form</u></h3><br>
 
