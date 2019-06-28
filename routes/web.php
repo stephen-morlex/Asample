@@ -91,6 +91,7 @@ Route::get('/leader/{FacultyLeaders}', 'FacultyLeadersController@show')->name('l
 
 Route::get('/faculty/leaders/{Faculty}', 'FacultyLeadersController@faculty')->name('leader.faculty');
 
+// Leaders
 
 
 // GALLERY
