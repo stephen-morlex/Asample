@@ -22,12 +22,12 @@
  <!-- Content section -->
 <div class="content-section module blog-page">
     <div class="row">
-        <div class="medium-8 small-12 columns posts-wrap">
+        <div class="medium-8 small-12 columns">
                     @forelse($news as $item)
             <div class="blog-post">
                 <div class="featured-image">
                     <a href="{{ route('news.show', $item->slug) }}">
-                    <img alt="{{ $item->title }}" src="{{Voyager::image( $item->image) }}" class="thumbnail" />
+                    <img alt="{{ $item->title }}" src="{{Voyager::image( $item->image) }}" />
                     </a>
                     <div class="post-meta"><i class="fa fa-clock-o" aria-hidden="true"></i> {{ $item->created_at->diffForHumans() }} | <i class="fa fa-user" aria-hidden="true"></i> Administrator</a> | <i class="fa fa-list" aria-hidden="true"></i> <a href="{{ route('news.category', $item->newsCategory->slug) }}">{{ $item->newsCategory->name }}</a></div>
                 </div>

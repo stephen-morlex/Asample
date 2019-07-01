@@ -25,14 +25,11 @@
 <div class="content-section module blog-page">
     <div class="row">
         <div class="medium-8 small-12 columns posts-wrap">
-            {{--  <h2>{!! $faculty->name !!}</h2>  --}}
             <div class="event-thumb">
-                <img  src="{{ Voyager::image( $faculty->image ) }}"  class="thumbnail" />
+                <img  src="{{ Voyager::image( $faculty->image ) }}" />
             </div><!-- Course Thumb /-->
             <div class="event-content">
-                <p></p>
                     <p>{!! $faculty->description  !!}</p>
-                    <hr>
                     <p>{!! $faculty->content !!}</p>
                 </div><!-- Course content /-->
         </div><!-- Posts wrap ends /-->
@@ -93,6 +90,16 @@
                     <li><a href="#">August - December</a></li>
                 </ul>
             </div><!-- widget ends /-->
+            @if (empty($faculty->publication))
+            @else
+             <div class="widget">
+                    <ol class="menu vertical">
+                     <li><a href="{{ route('publication.show',$faculty->publication->slug) }}"> <i class="fa fa-file-o fa-lg" aria-hidden="true"></i> Research and Publication</a></li>
+                    </ol>
+            </div><!-- widget ends /-->
+
+            @endif
+
             <div class="widget">
                 <h2> Some People also interested in</h2>
 

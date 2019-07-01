@@ -24,7 +24,7 @@
 
 <div class="content-section module blog-page">
     <div class="row">
-        
+
         <div class="medium-8 small-12 columns posts-wrap">
             @forelse($first_community_service as $community_service)
                 <h2>{!! $community_service->title !!}</h2>
@@ -38,11 +38,9 @@
                 <h2>No community service at the moment<h2>
             @endforelse
         </div><!-- Posts wrap ends /-->
-
-
         <div class="medium-4 small-12 columns sidebar">
             <div class="widget">
-                <h2> Administrative Offices</h2>
+                <h2> Community Services</h2>
                 <ul class="menu vertical">
                     @forelse($community_services as $community_service)
                         <li><a href="{{ route('communityservice.show',$community_service->slug) }}">{!! $community_service->title !!}</a></li>
@@ -52,12 +50,8 @@
                 </ul>
             </div>
         </div><!-- right bar ends here /-->
-
     </div><!-- Row Ends /-->
 </div>
-
-
-
 <!-- Call to Action box -->
 @include('partials.call')
 <!-- Call to Action End /-->

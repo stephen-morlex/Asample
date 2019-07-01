@@ -9,12 +9,10 @@
                 <div class="small-12 columns">
                     <h1>Student Services Information</h1>
                 </div><!-- Top Row /-->
-
                 <div class="small-12 columns">
                     <ul class="breadcrumbs">
                          <li class="active"><a href="/">Home</a></li>
                          <li class="active"><a href="{{ route('faculty.index') }}">Academics</a></li>
-                         <li class="active"><a href="{{ route('dean.index') }}">Deans</a></li>
                         <li class="active"><a href="{{ route('dean.show',$dean->slug) }}">{{ $dean->name }}</a></li>
                     </ul><!-- Breadcrumbs /-->
                 </div><!-- Bottom Row /-->
@@ -33,7 +31,6 @@
                         <div class="author-image">
                           <img src="{{ Voyager::image( $dean->image)}}">
                         </div>
-
                       </div>
                       <div class="small-12 medium-8 columns">
                         <h4 class="separator-left">Word from the Dean of the {{ $dean->faculty->name }}</h4>
