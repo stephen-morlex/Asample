@@ -29,7 +29,6 @@
                 <img  src="{{ Voyager::image( $faculty->image ) }}" />
             </div><!-- Course Thumb /-->
             <div class="event-content">
-                    <p>{!! $faculty->description  !!}</p>
                     <p>{!! $faculty->content !!}</p>
                 </div><!-- Course content /-->
         </div><!-- Posts wrap ends /-->
@@ -65,7 +64,6 @@
                                     <ul style="max-height:150px !important;overflow:scroll;"class="menu vertical">
                                     @foreach ($programs as $program)
                                     <li><a href="{{route('program.show',$program->slug)}}">{!!$program->name !!}</a></li>
-                                    <hr>
                                     @endforeach
                                 </ul>
                               </div>
@@ -97,12 +95,9 @@
                      <li><a href="{{ route('publication.show',$faculty->publication->slug) }}"> <i class="fa fa-file-o fa-lg" aria-hidden="true"></i> Research and Publication</a></li>
                     </ol>
             </div><!-- widget ends /-->
-
             @endif
-
             <div class="widget">
                 <h2> Some People also interested in</h2>
-
                 <ul class="menu vertical">
                     @foreach ($alsoInterested as $f)
                     <li><a href="{{ route('faculty.show',$f->slug) }}">{{ $f->name }}</a></li>

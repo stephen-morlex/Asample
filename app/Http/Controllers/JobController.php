@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Gallery;
+use App\Job;
 
-class GalleryController extends Controller
+class JobController extends Controller
 {
+
     /**
      * Display a listing of the resource.
      *
@@ -13,7 +14,7 @@ class GalleryController extends Controller
      */
     public function index()
     {
-        $galleries = Gallery::orderBy('title', 'asc')->get();
-        return view('gallery.index', compact('galleries'));
+        $jobs = Job::latest()->get();
+        return view('job.index', compact('jobs'));
     }
 }

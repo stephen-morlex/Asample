@@ -47,8 +47,10 @@ CopyRight    : 2016 @ www.webfulcreations.com
 /*-------------------------
  01 - General CSS starts
 -------------------------*/
+
 body {
-    background-color: #ffffff;
+
+    background-color: #F9F9F9;
     font-family: "Source Sans Pro", Arial, sans-serif;
     font-size: 0.875rem;
     color: #000;
@@ -223,14 +225,14 @@ Admission CSS
     table-layout: fixed;
 }
 
-.progress-indicator > li {
+.progress-indicator>li {
     position: relative;
     display: table-cell;
     text-align: center;
     font-size: 1.5em;
 }
 
-.progress-indicator > li span {
+.progress-indicator>li span {
     position: relative;
     color: #e6e6e6;
     -webkit-transform: translateX(-50%);
@@ -240,7 +242,7 @@ Admission CSS
     font-size: 0.875rem;
 }
 
-.progress-indicator > li::before {
+.progress-indicator>li::before {
     content: attr(data-step);
     display: block;
     margin: 0 auto;
@@ -255,7 +257,7 @@ Admission CSS
     z-index: 1000;
 }
 
-.progress-indicator > li::after {
+.progress-indicator>li::after {
     content: "";
     position: absolute;
     display: block;
@@ -271,39 +273,39 @@ Admission CSS
     z-index: 0;
 }
 
-.progress-indicator > li:last-child:after {
+.progress-indicator>li:last-child:after {
     display: none;
 }
 
-.progress-indicator > li.is-complete {
+.progress-indicator>li.is-complete {
     color: #e79800;
 }
 
-.progress-indicator > li.is-complete::before,
-.progress-indicator > li.is-complete::after {
+.progress-indicator>li.is-complete::before,
+.progress-indicator>li.is-complete::after {
     color: #fefefe;
     background: #e79800;
 }
 
-.progress-indicator > li.is-complete span {
+.progress-indicator>li.is-complete span {
     color: #95141b;
 }
 
-.progress-indicator > li.is-complete span:hover {
+.progress-indicator>li.is-complete span:hover {
     color: #e79800;
     border-bottom: #e79800 10px;
 }
 
-.progress-indicator > li.is-current {
+.progress-indicator>li.is-current {
     color: #95141b;
 }
 
-.progress-indicator > li.is-current::before {
+.progress-indicator>li.is-current::before {
     color: #fefefe;
     background: #95141b;
 }
 
-.progress-indicator > li.is-current span {
+.progress-indicator>li.is-current span {
     color: #95141b;
 }
 
@@ -514,6 +516,7 @@ Top bar CSS Ends
     box-shadow: rgba(0, 0, 0, 0.239216) 0px 4px 9px 0px;
     transform: translateZ(0);
     -webkit-transform: translateZ(0);
+    background-color: #ffffff;
 }
 
 .header .logo img {
@@ -570,15 +573,15 @@ Top bar CSS Ends
     position: relative;
 }
 
-.dropdown.menu.medium-horizontal > li.is-dropdown-submenu-parent > a:after {
+.dropdown.menu.medium-horizontal>li.is-dropdown-submenu-parent>a:after {
     border: 0px;
 }
 
-.dropdown.menu.medium-horizontal > li > a {
+.dropdown.menu.medium-horizontal>li>a {
     padding: 12px;
 }
 
-.top-bar .dropdown.menu > li.opens-right > .is-dropdown-submenu {
+.top-bar .dropdown.menu>li.opens-right>.is-dropdown-submenu {
     position: absolute;
     max-width: 100%;
     margin-top: 26px;
@@ -620,7 +623,7 @@ Top bar CSS Ends
     background-blend-mode: color;
 }
 
-.top-bar .dropdown.menu > li.opens-right > .is-dropdown-submenu li a {
+.top-bar .dropdown.menu>li.opens-right>.is-dropdown-submenu li a {
     transition: 0.3s ease;
     border-bottom: 0px !important;
     background-color: #95141b;
@@ -628,12 +631,12 @@ Top bar CSS Ends
     width: 200%;
 }
 
-.top-bar .dropdown.menu > li.opens-right > .is-dropdown-submenu li a:before {
+.top-bar .dropdown.menu>li.opens-right>.is-dropdown-submenu li a:before {
     content: "\00BB";
     margin-right: 10px;
 }
 
-.top-bar .dropdown.menu > li.opens-right > .is-dropdown-submenu li a:hover {
+.top-bar .dropdown.menu>li.opens-right>.is-dropdown-submenu li a:hover {
     color: #e79800 !important;
     /* border-bottom: solid #f0951f !important; */
     position: relative;
@@ -649,7 +652,7 @@ Top bar CSS Ends
     color: #e79800 !important;
 }
 
-.menu .active > a {
+.menu .active>a {
     background-color: #e79800;
     color: #fff;
 }
@@ -685,16 +688,12 @@ Header CSS Ends
     transition: all 0.5s;
 }
 
-.navigation-style-two .dropdown.menu.medium-horizontal > li > a {
+.navigation-style-two .dropdown.menu.medium-horizontal>li>a {
     padding-top: 18px;
     padding-bottom: 18px;
 }
 
-.navigation-style-two
-    .top-bar
-    .dropdown.menu
-    > li.opens-right
-    > .is-dropdown-submenu {
+.navigation-style-two .top-bar .dropdown.menu>li.opens-right>.is-dropdown-submenu {
     margin-top: 0px;
     transition: all 0.5s;
     border-top: 1px solid #e79800;
@@ -967,6 +966,139 @@ Welcome Message CSS Ends
     border: 0px;
     background-color: transparent;
 }
+
+/* Jobs css */
+.callout {
+    position: relative;
+    font-family: Arial, Helvetica, sans-serif;
+    border-radius: 4px 4px 4px 4px;
+    box-shadow: 0 14px 28px rgba(201, 201, 201, 0.25),
+        0 10px 10px rgba(201, 201, 201, 0.22);
+}
+
+.callout span {
+    font-weight: bolder;
+    position: absolute;
+    width: 6%;
+    font-size: 18px;
+    top: 0;
+    right: 0px;
+    border-radius: 0px 50px;
+    box-shadow: 0 14px 28px rgba(201, 201, 201, 0.25),
+        0 10px 10px rgba(201, 201, 201, 0.22);
+    -webkit-animation: heartbeat 1.5s ease-in-out infinite both;
+    animation: heartbeat 1.5s ease-in-out infinite both;
+
+}
+
+/* ----------------------------------------------
+ * Generated by Animista on 2019-6-28 11:20:2
+ * w: http://animista.net, t: @cssanimista
+ * ---------------------------------------------- */
+
+/**
+ * ----------------------------------------
+ * animation heartbeat
+ * ----------------------------------------
+ */
+@-webkit-keyframes heartbeat {
+    from {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        -webkit-transform-origin: center center;
+        transform-origin: center center;
+        -webkit-animation-timing-function: ease-out;
+        animation-timing-function: ease-out;
+    }
+
+    10% {
+        -webkit-transform: scale(0.91);
+        transform: scale(0.91);
+        -webkit-animation-timing-function: ease-in;
+        animation-timing-function: ease-in;
+    }
+
+    17% {
+        -webkit-transform: scale(0.98);
+        transform: scale(0.98);
+        -webkit-animation-timing-function: ease-out;
+        animation-timing-function: ease-out;
+    }
+
+    33% {
+        -webkit-transform: scale(0.87);
+        transform: scale(0.87);
+        -webkit-animation-timing-function: ease-in;
+        animation-timing-function: ease-in;
+    }
+
+    45% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        -webkit-animation-timing-function: ease-out;
+        animation-timing-function: ease-out;
+    }
+}
+
+@keyframes heartbeat {
+    from {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        -webkit-transform-origin: center center;
+        transform-origin: center center;
+        -webkit-animation-timing-function: ease-out;
+        animation-timing-function: ease-out;
+    }
+
+    10% {
+        -webkit-transform: scale(0.91);
+        transform: scale(0.91);
+        -webkit-animation-timing-function: ease-in;
+        animation-timing-function: ease-in;
+    }
+
+    17% {
+        -webkit-transform: scale(0.98);
+        transform: scale(0.98);
+        -webkit-animation-timing-function: ease-out;
+        animation-timing-function: ease-out;
+    }
+
+    33% {
+        -webkit-transform: scale(0.87);
+        transform: scale(0.87);
+        -webkit-animation-timing-function: ease-in;
+        animation-timing-function: ease-in;
+    }
+
+    45% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        -webkit-animation-timing-function: ease-out;
+        animation-timing-function: ease-out;
+    }
+}
+
+
+.read-more-content,
+.read-more {
+    display: none;
+    margin-top: 1rem;
+    font-family: Arial,
+        Helvetica,
+        sans-serif;
+}
+
+.read-more-content.expanded .read-more,
+.read-more.expanded .read-more {
+    display: block;
+    font-family: Arial,
+        Helvetica,
+        sans-serif;
+}
+
+
+/* End of Jobs css */
 
 /* Video css */
 
@@ -1261,11 +1393,11 @@ Our Courses CSS Ends
     border: 2px solid #e79800;
 }
 
-.teacher:hover > .teacher-thumb img {
+.teacher:hover>.teacher-thumb img {
     opacity: 0.3;
 }
 
-.teacher:hover > .teacher-thumb .teacher-links {
+.teacher:hover>.teacher-thumb .teacher-links {
     opacity: 1;
 }
 
@@ -1283,7 +1415,7 @@ Our Courses CSS Ends
     text-align: center;
 }
 
-.teacher-links .menu > li > a i {
+.teacher-links .menu>li>a i {
     line-height: 35px;
     margin-left: 0px;
     margin-right: 0px;
@@ -1560,7 +1692,7 @@ Gallery CSS Ends
 .process .number {
     float: left;
     font-size: 2rem;
-    background-color: #f7f7f7;
+    background-color: #ffffff;
     color: #95141b;
     display: block;
     width: 60px;
@@ -1657,7 +1789,7 @@ Our Process Ends
     cursor: pointer;
 }
 
-.caption > p:nth-child(2) {
+.caption>p:nth-child(2) {
     font-size: 0.8em;
 }
 
@@ -1854,7 +1986,8 @@ News panel in the home page
     clear: both;
 }
 
-@media print, screen and (min-width: 40em) {
+@media print,
+screen and (min-width: 40em) {
     .posts-panel {
         padding-right: 0.9375rem;
         padding-left: 0.9375rem;
@@ -1897,7 +2030,8 @@ News panel in the home page
     clear: both;
 }
 
-@media print, screen and (min-width: 40em) {
+@media print,
+screen and (min-width: 40em) {
     .posts-panel .panel-header {
         padding-right: 0.9375rem;
         padding-left: 0.9375rem;
@@ -2002,7 +2136,8 @@ News panel in the home page
     height: 40px;
 }
 
-@media print, screen and (min-width: 40em) {
+@media print,
+screen and (min-width: 40em) {
     .posts-panel .post-item .post-thumbnail {
         padding-right: 0.9375rem;
         padding-left: 0.9375rem;
@@ -2025,7 +2160,8 @@ News panel in the home page
     padding-left: 0.625rem;
 }
 
-@media print, screen and (min-width: 40em) {
+@media print,
+screen and (min-width: 40em) {
     .posts-panel .post-item .post-text {
         padding-right: 0.9375rem;
         padding-left: 0.9375rem;
@@ -2100,7 +2236,8 @@ News panel in the home page
     clear: both;
 }
 
-@media print, screen and (min-width: 40em) {
+@media print,
+screen and (min-width: 40em) {
     .posts-panel .pinned-post .post-thumbnail {
         padding-right: 0.9375rem;
         padding-left: 0.9375rem;
@@ -2148,7 +2285,8 @@ News panel in the home page
     clear: both;
 }
 
-@media print, screen and (min-width: 40em) {
+@media print,
+screen and (min-width: 40em) {
     .posts-panel .pinned-post .post-text {
         padding-right: 0.9375rem;
         padding-left: 0.9375rem;
@@ -2210,6 +2348,7 @@ News panel in the home page
 }
 
 @media screen and (max-width: 39.9375em) {
+
     .posts-panel.grid .pinned-post,
     .posts-panel.grid .posts-list {
         max-width: 75rem;
@@ -2282,7 +2421,7 @@ End of the news panel in the home
 -------------------------*/
 
 .blog-posts {
-    background-color: #f7f7f7;
+    background-color: #ffffff;
     border-top: 1px solid #ededed;
     border-bottom: 1px solid #ededed;
     border: 1px solid #ededed;
@@ -2295,6 +2434,7 @@ End of the news panel in the home
 }
 
 .posts-wrap {
+    background-color: #ffffff;
     padding: 10px;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
     transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
@@ -2969,7 +3109,7 @@ h4 span {
     left: 0px;
 }
 
-.staff-links .menu > li > a i {
+.staff-links .menu>li>a i {
     line-height: 35px;
     margin-left: 0px;
     margin-right: 0px;
@@ -3164,7 +3304,7 @@ Styles For Inner Pages Ends
     color: #0a0a0a;
 }
 
-.card-user-profile > :last-child {
+.card-user-profile> :last-child {
     margin-bottom: 0;
 }
 
@@ -3176,7 +3316,7 @@ Styles For Inner Pages Ends
     position: relative;
 }
 
-.card-user-profile > :last-child {
+.card-user-profile> :last-child {
     margin-bottom: 0;
 }
 
@@ -3219,7 +3359,7 @@ Styles For Inner Pages Ends
     display: flex;
 }
 
-.card-user-profile-actions > :last-child {
+.card-user-profile-actions> :last-child {
     margin-bottom: 0;
 }
 
@@ -3233,7 +3373,7 @@ Styles For Inner Pages Ends
     font-family: Arial, Helvetica, sans-serif;
 }
 
-.card-user-profile-actions > :last-child {
+.card-user-profile-actions> :last-child {
     margin-bottom: 0;
 }
 
@@ -3269,7 +3409,7 @@ Styles For Inner Pages Ends
     flex: 1 0 0;
 }
 
-.card-user-profile-button + .card-user-profile-button {
+.card-user-profile-button+.card-user-profile-button {
     margin-left: 1rem;
 }
 
@@ -3356,8 +3496,7 @@ Styles For Inner Pages Ends
     font-size: 2.25rem;
 }
 
-.styled-link {
-}
+.styled-link {}
 
 .card-user-profile-avatar img {
     border-radius: 50%;
@@ -3377,7 +3516,7 @@ Styles For Inner Pages Ends
     flex: 1 0 0;
 }
 
-.card-user-profile-button + .card-user-profile-button {
+.card-user-profile-button+.card-user-profile-button {
     margin-left: 1rem;
 }
 
@@ -4145,8 +4284,8 @@ End of leaders
     transition: opacity 0.5s ease-in-out;
 }
 
-.single-product:hover > .product-img .pro-buttons,
-.single-product:hover > .product-img .add-to-cart-top {
+.single-product:hover>.product-img .pro-buttons,
+.single-product:hover>.product-img .add-to-cart-top {
     opacity: 1;
 }
 
@@ -4182,8 +4321,8 @@ End of leaders
     transition: opacity 1s ease-in-out;
 }
 
-.single-product:hover > .product-img .pro-buttons,
-.single-product:hover > .product-img .add-to-cart-top {
+.single-product:hover>.product-img .pro-buttons,
+.single-product:hover>.product-img .add-to-cart-top {
     opacity: 1;
 }
 
@@ -4666,7 +4805,7 @@ End of leaders
         margin-top: 0px;
     }
 
-    .is-accordion-submenu-parent > a:after {
+    .is-accordion-submenu-parent>a:after {
         border-color: #fff transparent transparent;
     }
 

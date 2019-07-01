@@ -12,8 +12,6 @@
 */
 
 Route::get('/', 'WelcomeController@index')->name('welcome');
-
-Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/academics/faculties-schools-and-institues', 'FacultyController@index')->name('faculty.index');
 Route::get('/faculties-schools-and-institues/{faculty}', 'FacultyController@show')->name('faculty.show');
 
@@ -57,8 +55,8 @@ Route::post('/contact/send', 'ContactController@store')->name('contact.store');
 
 //CHAPLAINCY
 
-Route::get('/chaplaincy','ChaplainController@index')->name('chaplaincy.index');
-Route::get('/chaplaincy/{chaplaincy}','ChaplainController@show')->name('chaplaincy.show');
+Route::get('/chaplaincy', 'ChaplainController@index')->name('chaplaincy.index');
+Route::get('/chaplaincy/{chaplaincy}', 'ChaplainController@show')->name('chaplaincy.show');
 
 
 // APPLICATION FORM
@@ -80,12 +78,11 @@ Route::get('/faculty/leaders/{Faculty}', 'FacultyLeadersController@faculty')->na
 
 // Leaders
 
-
 // Leaders
-
 
 // GALLERY
 Route::get('/gallery/', 'GalleryController@index')->name('gallery.index');
+Route::get('/gallery/speeches', 'SpeechController@index')->name('gallery.speech');
 
 // NEWS
 Route::get('/news/', 'NewsController@index')->name('news.index');
@@ -121,6 +118,10 @@ Route::get('/community-service/{communityservice}', 'CommunityserviceController@
 // BOOKING
 Route::get('/booking', 'BookingController@index')->name('booking.index');
 Route::post('/booking/send', 'BookingController@store')->name('booking.store');
+
+// JOBs
+Route::get('/jobs', 'JobController@index')->name('job.index');
+Route::get('/job/[Job]', 'JobController@store')->name('job.show');
 
 // Leader Routes
 Route::get('/leaders', 'FacultyLeadersController@index')->name('leader.index');

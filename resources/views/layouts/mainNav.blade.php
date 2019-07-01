@@ -89,6 +89,7 @@
                         <ul class="child-nav menu vertical">
                             <li><a href="https://student.cuea.edu/">Student portal</a></li>
                             <li><a href="https://staff.cuea.edu/site/login">Staff portal</a></li>
+                            <li><a href="http://odel.cuea.edu/login/index.php">Odel portal</a></li>
                             <li><a href="https://www.premiercert.org/cuea/">Degree verification</a></li>
                         </ul>
                     </li>

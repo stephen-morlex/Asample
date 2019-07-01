@@ -34,12 +34,23 @@
                 <h2>Useful Information</h2>
                 <div class="tx-div"></div>
                 <ul  class="vertical office-hours">
+                    <li><a href="https://amecea.org/" target="_blank"> AMECEA</a></li>
                     @foreach ($services1 as $item)
                     <li><a href="{{ route('services.show',$item->slug) }}"> {{ $item->name }}</a></li>
                     @endforeach
                     @foreach ($services2 as $item)
                     <li><a href="{{ route('services.show',$item->slug) }}"> {{ $item->name }}</a></li>
                     @endforeach
+                    <br>
+                </ul>
+                <hr>
+                 <h2>Quick Links </h2>
+                <div class="tx-div"></div>
+                <ul  class="vertical office-hours">
+                    <li><a href="{{ route('job.index') }}"> Jobs@cuea</a></li>
+                    <li><a href="{{ route('document.index') }}">Downloads</a></li>
+                    {{--  <li><a href="{{ route('services.show',$item->slug) }}"> {{ $item->name }}</a></li>  --}}
+
                 </ul>
             </div><!-- Widget 2 Ends /-->
             <div class="large-3 medium-8 small-12 columns footer-widget">

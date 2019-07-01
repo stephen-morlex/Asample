@@ -32,8 +32,8 @@
                         <a href="{{ route('program.show',$pro->slug) }}"> <img src="{{ Voyager::image( $pro->thumbnail('cropped'))}}" alt="John Doe" /></a>
                         </div><!-- Testimonial Thumb /-->
                          <div class="testimonial-detail">
-                            <h4>{{ $pro->name }}</h4>
-
+                            <a href="{{ route('program.show', $pro->slug) }}"><h3>{{ $pro->name }}</h3></a>
+                            <p>{!!  substr(strip_tags($pro->body), 0, 100) !!}...<a href="{{ route('program.show', $pro->slug) }}">Read More &raquo;</a></p>
                             <a href="{{ route('program.section', $pro->section->slug) }}"><cite>{{ $pro->section->name }} programm</cite></a>
                         </div><!-- Testimonial Detail /-->
                              <div class="clearfix"></div>

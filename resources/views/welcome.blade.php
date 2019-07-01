@@ -320,8 +320,6 @@
     </div>
   </div>
 </div>
-
-
 </div>
 <!-- Testimonials Section Ends /-->
 
