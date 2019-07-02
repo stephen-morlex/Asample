@@ -44,8 +44,6 @@
     <!-- Font Awesome CSS File -->
     <link href="{{ asset('css/font-awesome.min.css')}}" rel="stylesheet">
 
-
-
     <!-- Google Fonts For Stylesheet -->
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700%7CMontserrat:400,700%7CRoboto+Slab:400%7CRoboto:900,700" rel="stylesheet" type="text/css" />
 
@@ -104,7 +102,3 @@
   </script>
 </body>
 </html>
-<script src="http://code.jquery.com/jquery-3.3.1.min.js"
-               integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-               crossorigin="anonymous">
-      </script>

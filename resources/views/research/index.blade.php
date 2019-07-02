@@ -38,7 +38,6 @@
                 <img alt="" src="{{ Voyager::image( $re->image ) }}" class="thumbnail" />
             </a>
         </div>
-
         <div class="post-excerpt">
               <p> {!! $re->content !!}</p>
         </div><!-- post excerpt /-->

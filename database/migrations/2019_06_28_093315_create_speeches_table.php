@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateFacultyLeadersTable extends Migration
+class CreateSpeechesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,12 @@ class CreateFacultyLeadersTable extends Migration
      */
     public function up()
     {
-        Schema::create('faculty_leaders', function (Blueprint $table) {
+        Schema::create('speeches', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('name');
-            $table->string('tilte');
-            $table->string('slug')->unique();
-            $table->string('image')->nullable();
-            $table->string('bio');
+            $table->string('title')->unique();
+            $table->text('event')->nullable();
+            $table->string('year')->nullable();
+            $table->string('file')->nullable();
             $table->timestamps();
         });
     }
@@ -31,6 +30,6 @@ class CreateFacultyLeadersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('faculty_leaders');
+        Schema::dropIfExists('speeches');
     }
 }

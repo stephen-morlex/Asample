@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\AboutParent;
 use App\News;
 
@@ -14,17 +15,19 @@ class AboutParentController extends Controller
     public function index()
     {
         //
-        $aboutParents= AboutParent::all();
-        $news=News::latest()->take(5)->get();
-        return view('parent.index', compact('aboutParents','news'));
+        $aboutParents = AboutParent::all();
+        $news = News::latest()->take(5)->get();
+        return view('parent.index', compact('aboutParents', 'news'));
     }
 
     public function newsCategory($slug)
     {
         //
-        $news= NewsCategory::where('slug', $slug)->first()->news;
+        $news = NewsCategory::where('slug', $slug)->first()->news;
         $newsCategories = newsCategory::latest()->get();
-        return view('cueaNews.index', compact('news', 'newsCategories')
+        return view(
+            'cueaNews.index',
+            compact('news', 'newsCategories')
         );
     }
 
@@ -39,7 +42,8 @@ class AboutParentController extends Controller
         //
         $aboutParents = AboutParent::where('slug', $slug)->firstOrFail();
         $parentTabs = AboutParent::all();
-        return view('parent.show')->with(['aboutParents'  => $aboutParents,'parentTabs'    => $parentTabs,
+        return view('parent.show')->with([
+            'aboutParents'  => $aboutParents, 'parentTabs'    => $parentTabs,
         ]);
     }
 }

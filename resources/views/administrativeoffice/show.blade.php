@@ -26,16 +26,16 @@
     <div class="row">
 
         <div class="medium-8 small-12 columns posts-wrap">
-            <h2>{!! $administrative_office->title  !!}</h2>
+            <h3>{!! $administrative_office->title  !!}</h3>
             <div class="event-thumb">
-                <img  src="{{ Voyager::image( $administrative_office->image ) }}"  class="thumbnail" alt="{!! $administrative_office->title !!}"/>
+                <img  src="{{ Voyager::image( $administrative_office->image ) }}" alt="{!! $administrative_office->title !!}"/>
             </div>
             <div class="event-content">
                 <p>{!! $administrative_office->content  !!}</p>
             </div>
         </div><!-- Posts wrap ends /-->
 
-        <div class="medium-4 small-12 columns sidebar">  
+        <div class="medium-4 small-12 columns sidebar">
             <div class="widget">
                 <h2> Administrative Offices</h2>
                 <ul class="menu vertical">

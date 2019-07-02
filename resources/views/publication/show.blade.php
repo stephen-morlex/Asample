@@ -3,7 +3,6 @@
   @section('content')
   @include('partials.topNav')
   @include('layouts.mainNav')
-
   <!-- banner section -->
         <div class="title-section module">
             <div class="row">
@@ -19,13 +18,10 @@
             </div><!-- Row /-->
         </div>
  <!-- End of the banner section -->
-
-
  <!-- Content section -->
 <div class="content-section module blog-page">
     <div class="row">
-
-        <div class="medium-12 small-12 columns posts-wrap">
+        <div class="medium-12 small-12 columns">
             <div class="blog-post">
                 <div class="post-excerpt">
                     <center><h2><a>{!! $publication->title !!}</a></h2></center>
@@ -33,12 +29,8 @@
                 </div>
             </div>
         </div><!-- Posts wrap /-->
-        
-
     </div><!-- Row Ends /-->
 </div>
-
-
 @include('partials.call')
 @include('partials.footer')
 @endsection

@@ -23,12 +23,12 @@
 
 <div class="content-section module blog-page">
     <div class="row">
-        
+
         <div class="medium-8 small-12 columns posts-wrap">
             @forelse($administratives as $administrative)
-                <h2>{!! $administrative->title !!}</h2>
+                <h3>{!! $administrative->title !!}</h3>
                 <div class="event-thumb">
-                    <img  src="{{ Voyager::image( $administrative->image ) }}"  class="thumbnail" alt="{!! $administrative->title !!}"/>
+                    <img  src="{{ Voyager::image( $administrative->image ) }}" alt="{!! $administrative->title !!}"/>
                 </div>
                 <div class="event-content">
                     <p>{!! $administrative->content !!}</p>

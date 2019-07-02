@@ -34,12 +34,23 @@
                 <h2>Useful Information</h2>
                 <div class="tx-div"></div>
                 <ul  class="vertical office-hours">
+                    <li><a href="https://amecea.org/" target="_blank"> AMECEA</a></li>
                     @foreach ($services1 as $item)
                     <li><a href="{{ route('services.show',$item->slug) }}"> {{ $item->name }}</a></li>
                     @endforeach
                     @foreach ($services2 as $item)
                     <li><a href="{{ route('services.show',$item->slug) }}"> {{ $item->name }}</a></li>
                     @endforeach
+                    <br>
+                </ul>
+                <hr>
+                 <h2>Quick Links </h2>
+                <div class="tx-div"></div>
+                <ul  class="vertical office-hours">
+                    <li><a href="{{ route('job.index') }}"> Jobs@cuea</a></li>
+                    <li><a href="{{ route('document.index') }}">Downloads</a></li>
+                    {{--  <li><a href="{{ route('services.show',$item->slug) }}"> {{ $item->name }}</a></li>  --}}
+
                 </ul>
             </div><!-- Widget 2 Ends /-->
             <div class="large-3 medium-8 small-12 columns footer-widget">
@@ -83,17 +94,17 @@
                     <hr>
                     <div class="socialicons">
                         Social:
-                        <a target="_blank" href="https://www.facebook.com/TheCatholicUniversityOfEasternAfricaCuea?ref=bookmarks"><i class="fa fa-facebook"></i></a>
-                        <a  target="_blank" href="https://twitter.com/cuea_official"><i class="fa fa-twitter"></i></a>
-                        <a target="_blank" href="#"><i class="fa fa-youtube-play"></i></a>
+                        <a href="https://www.facebook.com/TheCatholicUniversityOfEasternAfricaCuea?ref=bookmarks" target="_blank"><i class="fa fa-facebook fa-lg"></i></a></li>
+                        <a href="https://twitter.com/cuea_official" target="_blank"><i class="fa fa-twitter fa-lg"></i></a></li>
+                        <a href="https://www.instagram.com/cuea_official/"target="_blank"><i class="fa fa-instagram fa-lg"></i></a></li>
+                        <a href="#"><i class="fa fa-youtube-play fa-lg" target="_blank"></i></a></li>
+                        <a target="_blank" href="https://www.linkedin.com/in/the-catholic-university-of-eastern-africa-4295b3a9?trk=hp-identity-name"><i class="fa fa-linkedin fa-lg" aria-hidden="true"></i></a>
                     </div><!-- Social Icons /-->
                 </div><!-- text widget /-->
             </div><!-- widget 4 /-->
             <div class="clearfix"></div>
         </div><!-- Row Ends /-->
-
     </div><!-- footerTop Ends here.. -->
-
     <div class="footerbottom">
         <div class="row">
             <div class="medium-6 small-12 columns">

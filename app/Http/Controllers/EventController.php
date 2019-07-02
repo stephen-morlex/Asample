@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Event;
 
 class EventController extends Controller
@@ -12,11 +13,11 @@ class EventController extends Controller
      */
     public function index()
     {
-        $events=Event::latest()->paginate(6);
-        return view('event.index',compact('events'));
+        $events = Event::latest()->paginate(6);
+        return view('event.index', compact('events'));
     }
 
-   /**
+    /**
      * Display the specified resource.
      *
      * @param  string  $slug
@@ -26,6 +27,7 @@ class EventController extends Controller
     {
         $event = Event::where('slug', $slug)->firstOrFail();
         return view('event.show')->with([
-            'event' => $event]);
+            'event' => $event
+        ]);
     }
 }

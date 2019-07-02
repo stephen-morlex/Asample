@@ -35,7 +35,7 @@
             </div>
         </div><!-- Posts wrap ends /-->
 
-        <div class="medium-4 small-12 columns sidebar">  
+        <div class="medium-4 small-12 columns sidebar">
             <div class="widget">
                 <h2>Community service</h2>
                 <ul class="menu vertical">

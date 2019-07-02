@@ -15,7 +15,7 @@ return [
         'default_role'                 => 'user',
         'namespace'                    => null,
         'default_avatar'               => 'users/default.png',
-        'redirect'                     => '/admin',
+        'redirect'                     => '/cuea',
     ],
 
     /*

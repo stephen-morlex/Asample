@@ -23,11 +23,11 @@ class CreateApplicantsTable extends Migration
             $table->string('dob')->nullable();
             $table->string('id_number')->nullable();
             $table->string('telephone')->nullable();
-            $table->string('gender')->nullable(); 
+            $table->string('gender')->nullable();
             $table->string('email')->nullable();
-            $table->string('marital_status')->nullable(); 
-            $table->string('country')->nullable(); 
-            $table->string('current_address')->nullable(); 
+            $table->string('marital_status')->nullable();
+            $table->string('country')->nullable();
+            $table->string('current_address')->nullable();
             $table->string('religion')->nullable();
             $table->string('clergy_type')->nullable();
             $table->string('religious_order')->nullable();
@@ -58,9 +58,9 @@ class CreateApplicantsTable extends Migration
             $table->string('when_to_start')->nullable();
             $table->string('cuea_before')->nullable();
             $table->string('previous_reg_number')->nullable();
-            $table->string('mode_of_study')->nullable(); 
-            $table->string('campus')->nullable();  
-            $table->string('level')->nullable();      
+            $table->string('mode_of_study')->nullable();
+            $table->string('campus')->nullable();
+            $table->string('level')->nullable();
             $table->string('first_choice')->nullable();
             $table->string('second_choice')->nullable();
             $table->string('third_choice')->nullable();
@@ -75,9 +75,13 @@ class CreateApplicantsTable extends Migration
             $table->string('next_of_kin_email')->nullable();
             $table->string('sources')->nullable();
             $table->string('other_sources')->nullable();
+<<<<<<< HEAD
 
             $table->string('passport_picture')->nullable();
 
+=======
+            $table->string('passport_picture')->nullable();
+>>>>>>> 6497ff0fe3e54bb5133ce7f4fc8cc7fe7197eac4
             $table->string('id_number_file')->nullable();
             $table->string('college_file')->nullable();
             $table->string('high_school_file')->nullable();
@@ -92,6 +96,6 @@ class CreateApplicantsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('applicants')->nullable();
+        Schema::dropIfExists('applicants');
     }
 }
