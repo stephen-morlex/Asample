@@ -67,8 +67,6 @@ Route::post('/application/send', 'ApplicationController@store')->name('applicati
 Route::get('/applicationpp/', 'ApplicationController@applicationpdf')->name('application.application_pdf');
 Route::get('/generate-pdf', 'ApplicationController@generatepdf');
 
-// GALLERY
-Route::get('/gallery', 'GalleryController@index')->name('gallery.index');
 
 // Leader Routes
 Route::get('/leaders', 'FacultyLeadersController@index')->name('leader.index');
@@ -127,6 +125,14 @@ Route::get('/job/[Job]', 'JobController@store')->name('job.show');
 Route::get('/leaders', 'FacultyLeadersController@index')->name('leader.index');
 Route::get('/leader/{FacultyLeaders}', 'FacultyLeadersController@show')->name('leader.show');
 Route::get('/faculty/leaders/{Faculty}', 'FacultyLeadersController@faculty')->name('leader.faculty');
+
+
+
+
+// VIDEO GALLERY
+Route::get('/videos-gallery', 'VideogalleryController@index')->name('video.index');
+// Route::get('/{Dean}', 'DeanController@show')->name('dean.show');
+
 
 Auth::routes();
 Route::group(['prefix' => 'cuea'], function () {

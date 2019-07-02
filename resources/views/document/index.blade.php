@@ -33,7 +33,8 @@
                 <table>
                     <thead>
                         <tr>
-                        <th width="200"><h1>Documents</h1></th>
+                        <th width="900"><h1>Title</h1></th>
+                        <th width=""><h1>View</h1></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -42,10 +43,16 @@
                             <td>
                             @if (!empty($document->file[0]))
                                 <?php $file = (json_decode($document->file))[0]->download_link; ?>
-                                <a href="{{ Voyager::image( $file ) }}" target="_blank">{{$document->title}}</a>   
+                                <a href="{{ Voyager::image( $file ) }}" target="_blank" >{!! $document->title !!}</a>   
                             @else
-                                <li>no file</li>
+                                <li>There is no document at the moment!</li>
                             @endif
+                            </td>
+                            <td>
+                                @if (!empty($document->file[0]))
+                                    <?php $file = (json_decode($document->file))[0]->download_link; ?>
+                                    <a href="{{ Voyager::image( $file ) }}" target="_blank" class="button primary">View</a>
+                                @endif
                             </td>
                         </tr>
                     @empty
