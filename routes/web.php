@@ -118,6 +118,22 @@ Route::group(['prefix' => 'cuea'], function () {
 Route::get('/parent', 'AboutParentController@index')->name('parent.index');
 Route::get('/parent/{parent}', 'AboutParentController@show')->name('parent.show');
 
+
+// SCHOLARSHIPS
+Route::get('/scholarships', 'ScholarshipController@index')->name('scholarships.index');
+Route::get('/scholarships/{scholarship}', 'ScholarshipController@show')->name('scholarships.show');
+
+// CALL FOR PAPERS
+Route::get('/callforpapers', 'CallForPapersController@index')->name('callforpapers.index');
+Route::get('/callforpapers/{callforpaper}', 'CallForPapersController@show')->name('callforpapers.show');
+
+
+// Governance
+Route::get('/governance', 'MemberController@index')->name('governor.index');
+Route::get('/governance/{governor}', 'GovernorController@show')->name('governance.show');
+
+
+
 // DOCUMENT
 Route::get('/documents', 'DocumentController@index')->name('document.index');
 

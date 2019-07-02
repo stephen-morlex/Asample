@@ -19,7 +19,6 @@ use App\Student;
 use App\Dean;
 use App\Communityservice;
 
-
 class AppServiceProvider extends ServiceProvider
 {
     /**

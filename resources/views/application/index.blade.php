@@ -885,12 +885,7 @@
         $(document).on("click", ".btn_remov",function(){
             var button_id = $(this).attr("id");
             $("#ro"+button_id+"").remove();
-            n--;
-            if(n==2)
-            {
-                i=1;
-            }
-        });
+                    });
         $('#submit').click(function(){
            $.ajax({
             url:"name.php",
@@ -916,12 +911,9 @@
     });
          $(document).on("click", ".btn_remove2",function(){
             var button_id = $(this).attr("id");
+             j-2;
             $("#row"+button_id+"").remove();
-            m--;
-            if(m==2)
-            {
-                i=1;
-            }
+          
         });
      });
 </script>
