@@ -296,7 +296,6 @@
     <ul class="tabs" data-active-collapse="true" data-tabs id="collapsing-tabs">
       <li class="tabs-title "><a href="#panel1c">Twitter</a></li>
       <li class="tabs-title is-active" aria-selected="true"><a href="#panel2c">Youtube</a></li>
-      <li class="tabs-title " aria-selected="true"><a href="#panel3">Events Calender</a></li>
     </ul>
     <div class="tabs-content" data-tabs-content="collapsing-tabs">
       <div class="tabs-panel " id="panel1c">

@@ -19,6 +19,13 @@
                 </div><!-- Bottom Row /-->
                         </div><!-- Row /-->
         </div>
+<div>
+    <ul class="tabs" id="example-tabs">
+        <li class="tabs-title "><a href="{{route('gallery.index')}}" aria-selected="true">Images</a></li>
+        <li class="tabs-title "><a href="{{route('video.index')}}" aria-selected="true">Videos</a></li>
+        <li class="tabs-title "><a href="{{route('gallery.speech')}}" aria-selected="true">Speeches</a></li>
+    </ul>
+</div>
  <!-- End of the banner section -->
         <!-- Content section -->
  <div class="content-section gallery-page module-gallery">
