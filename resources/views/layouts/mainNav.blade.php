@@ -75,11 +75,8 @@
                                 <li><a href="{{ route('about.show', $about->slug) }}">{{ $about->title }}</a></li>
                             @endforeach
                             <li><a href="{{ route('administrativeoffice.index') }}">Administrative Offices</a></li>
-<<<<<<< HEAD
-                            <li><a href="{{ route('governor.index') }}">Governance</a></li>
-=======
+                            <li><a href="{{ route('governor.index') }}">Governaces</a></li>
                             <li><a href="{{ route('chaplaincy.index') }}">Chaplaincy</a></li>
->>>>>>> 6497ff0fe3e54bb5133ce7f4fc8cc7fe7197eac4
                          </ul>
                     </li>
                     <li class="single-sub parent-nav"><a href="{{ route('communityservice.index') }}">Community service</a>

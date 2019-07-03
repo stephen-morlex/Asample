@@ -33,8 +33,7 @@
                         </div><!-- Testimonial Thumb /-->
                          <div class="testimonial-detail">
                             <a href="{{ route('program.show', $pro->slug) }}"><h3>{{ $pro->name }}</h3></a>
-                            <p>{!!  substr(strip_tags($pro->body), 0, 100) !!}...<a href="{{ route('program.show', $pro->slug) }}">Read More &raquo;</a></p>
-                            <a href="{{ route('program.section', $pro->section->slug) }}"><cite>{{ $pro->section->name }} programm</cite></a>
+                            <p>{!!  substr(strip_tags($pro->body), 0, 120) !!}...<a href="{{ route('program.show', $pro->slug) }}">Read More &raquo;</a></p>
                         </div><!-- Testimonial Detail /-->
                              <div class="clearfix"></div>
                     </div> <!-- Testimonial /-->

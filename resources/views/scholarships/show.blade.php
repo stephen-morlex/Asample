@@ -7,13 +7,14 @@
 <div class="title-section module">
     <div class="row">
         <div class="small-12 columns">
-            <h1>Administrative Offices</h2>
+            <h1>Scholarship</h2>
             <div class="tx-div"></div>
         </div>
         <div class="small-12 columns">
             <ul class="breadcrumbs">
                 <li><a href="/">Home</a></li>
                 <li class="active"><a href="#">Scholarships</a></li>
+                <li class="active"><a href="#">{{ $scholarships->title }}</a></li>
             </ul>
         </div>
     </div><!-- Row /-->
@@ -23,12 +24,12 @@
 
 <div class="content-section module blog-page">
     <div class="row">
-        
+
         <div class="medium-8 small-12 columns posts-wrap">
-                <h2>{!! $scholarships->title !!}</h2>
-                <div class="event-thumb">
+                <h3>{!! $scholarships->title !!}</h3>
+                {{-- <div class="event-thumb">
                     <img  src="{{ Voyager::image( $scholarships->image ) }}"  class="thumbnail" alt="{!! $scholarships->title !!}"/>
-                </div>
+                </div> --}}
                 <!-- <div class="event-content">
                     <p>{!! $scholarships->content !!}</p>
                 </div> -->

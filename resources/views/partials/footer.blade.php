@@ -44,13 +44,15 @@
                     <br>
                 </ul>
                 <hr>
+                <br>
                  <h2>Quick Links </h2>
                 <div class="tx-div"></div>
                 <ul  class="vertical office-hours">
                     <li><a href="{{ route('job.index') }}"> Jobs@cuea</a></li>
                     <li><a href="{{ route('document.index') }}">Downloads</a></li>
-                    {{--  <li><a href="{{ route('services.show',$item->slug) }}"> {{ $item->name }}</a></li>  --}}
-
+                    <li><a href="{{ route('scholarships.index') }}">Scholarships</a></li>
+                    <li><a href="{{ route('callforpapers.index') }}">Call for papers</a></li>
+                    <li><a href="ftp://iso.cuea.edu/" target="_blank">Quality Assurance</a></li>
                 </ul>
             </div><!-- Widget 2 Ends /-->
             <div class="large-3 medium-8 small-12 columns footer-widget">

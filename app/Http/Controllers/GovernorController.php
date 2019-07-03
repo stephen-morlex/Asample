@@ -15,9 +15,8 @@ class GovernorController extends Controller
      */
     public function index()
     {
-        //
-        $governances = Governor::all();
-        return view('governance.index', compact('governances'));
+        // $governances = Governor::all();
+        // return view('governance.index', compact('governances'));
     }
 
 
