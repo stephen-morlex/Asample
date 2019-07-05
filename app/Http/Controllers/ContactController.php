@@ -1,15 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use App\Contact;
 use Illuminate\Support\Facades\Session;
-
 use Illuminate\Http\Request;
-
 use Mail;
-
-
 class ContactController extends Controller
 {
     /**
@@ -22,7 +17,6 @@ class ContactController extends Controller
         //
         return view('contact.index');
     }
-
     /**
      * Store a newly created resource in storage.
      *
@@ -51,7 +45,7 @@ class ContactController extends Controller
             {
             $message->from('stephenvicson@gmail.com');
             $message->to('stephenvicson@gmail.com', 'Admin')->subject('Contact information from your website');
-});
+             });
         Session::flash('success','thanks for contacting us, we will return to you within the 24 hours of the work');
         return redirect()->back();
 

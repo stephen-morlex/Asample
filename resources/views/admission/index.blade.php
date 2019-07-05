@@ -59,18 +59,13 @@
             </div>
             <!-- Our Teachers /-->
         </div>
-
     <div class="seminar-events">
-
         <div class="row">
                 <div class="course-section">
-
                     <div class="section-title">
                         <h2><span>Our Programmes</span></h2>
                     </div><!-- Section Title Ends /-->
-
               @forelse ($sections as $section)
-
                <div class="medium-3 small-12 columns">
                         <div class="single-product">
                             <div class="product-img thumbnail"
@@ -86,24 +81,17 @@
                             <div class="product-info"
                             data-aos="zoom-in"data-aos-anchor-placement="bottom-bottom" data-aos-duration="3000"
                             >
-                                <h6><a href="{{route('admission.show',$section->slug)}}">{{$section->name}}</a></h6>
+                                <h2><a href="{{route('admission.show',$section->slug)}}">{{$section->name}}</a></h2>
                                <div class="tx-div"></div>
                             </div>
                         </div>
                     </div><!-- product Ends here -->
-
               @empty
                     <h4 align="center"> there is no program at the moment !</h4>
               @endforelse
-
                     <div class="clearfix"></div>
                 </div><!-- Courses Section Ends /-->
-
-
-
         </div><!-- Row Ends /-->
-
-
     </div>
     <!-- Our Teachers /-->
     <div class="financial">

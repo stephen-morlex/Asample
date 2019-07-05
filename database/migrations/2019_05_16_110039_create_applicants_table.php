@@ -75,8 +75,14 @@ class CreateApplicantsTable extends Migration
             $table->string('next_of_kin_email')->nullable();
             $table->string('sources')->nullable();
             $table->string('other_sources')->nullable();
+<<<<<<< HEAD
             $table->string('passport_picture')->nullable();
             $table->string('passport_picture')->nullable();
+=======
+
+            $table->string('passport_picture')->nullable();
+
+>>>>>>> a9958a029a9738f748941c7adc7fddac013190ba
             $table->string('id_number_file')->nullable();
             $table->string('college_file')->nullable();
             $table->string('high_school_file')->nullable();

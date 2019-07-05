@@ -43,10 +43,13 @@
                                 </div>
                             </li>
                             <li class="accordion-item" data-accordion-item>
-                                <a href="#" class="accordion-title"  target="_blank"> Application Forms</a>
+                                <a href="#" class="accordion-title"  target="_blank"> Application</a>
                                 <div class="accordion-content" data-tab-content >
+                                    <a href="{{ route('application.index') }}">Apply online</a>
                                         <?php $file = (json_decode($admission->application))[0]->download_link; ?>
-                                        <a href="{{ Voyager::image( $file ) }}" target="_blank">{{$admission->Nom}} Click here to download the Application form</a>
+                                        <br>
+                                        <hr>
+                                        <a href="{{ Voyager::image( $file ) }}" target="_blank">{{$admission->Nom}}Download the Application form</a>
                                 </div>
                             </li>
                             <li class="accordion-item" data-accordion-item>

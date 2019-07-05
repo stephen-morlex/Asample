@@ -42,7 +42,11 @@
                           <p class="card-user-profile-info">{!! $leader->bio !!}.</p>
                         </div>
                         <div class="card-user-profile-actions">
-                          <a href="{{ Voyager::image( (json_decode($leader->file))[0]->download_link) }}" class="card-user-profile"><img width="50" height="10" src="{{ asset('/images/svg/cv.svg') }}" alt=""> </a>
+                        @if (empty($leader->file[0]))
+                          <p>there is no file!</p>  
+                        @else
+                            <a href="{{ Voyager::image( (json_decode($leader->file))[0]->download_link) }}" class="card-user-profile"><img width="50" height="10" src="{{ asset('/images/svg/cv.svg') }}" alt=""> </a> 
+                        @endif
                         </div>
                       </div>
         </div><!-- Posts wrap ends /-->

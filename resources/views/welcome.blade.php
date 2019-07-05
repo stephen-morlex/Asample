@@ -22,7 +22,6 @@
                             data-height="full"
                             data-whitespace="normal"
                             data-transform_idle="o:1;"
-
                              data-transform_in="opacity:0;s:1500;e:Power3.easeInOut;"
                              data-transform_out="s:300;s:300;"
                             data-start="1000"
@@ -40,7 +39,6 @@
                             data-height="none"
                             data-whitespace="normal"
                             data-transform_idle="o:1;"
-
                              data-transform_in="y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;s:1500;e:Power3.easeInOut;"
                              data-transform_out="auto:auto;s:1000;"
                              data-mask_in="x:0px;y:0px;"
@@ -50,27 +48,8 @@
                             data-splitout="none"
                             data-responsive_offset="on">{{ $item->title }}
                         </div>
-
                         <!-- LAYER NR. 3 -->
-                        {{-- <div class="tp-caption Newspaper-Subtitle layer3 tp-resizeme rs-parallaxlevel-0"
-                             id="slide-18-layer-2"
-                             data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
-                             data-y="['middle','middle','middle','middle']" data-voffset="['-82','-82','-82','-58']"
-                                        data-width="none"
-                            data-height="none"
-                            data-whitespace="nowrap"
-                            data-transform_idle="o:1;"
-
-                             data-transform_in="y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;s:1500;e:Power3.easeInOut;"
-                             data-transform_out="auto:auto;s:1000;"
-                             data-mask_in="x:0px;y:0px;"
-                             data-mask_out="x:0;y:0;"
-                            data-start="1000"
-                            data-splitin="none"
-                            data-splitout="none"
-                            data-responsive_offset="on">
-                        </div> --}}
-
+                      e
                         <!-- LAYER NR. 4 -->
                         {{--  <div class="tp-caption layer4 rs-parallaxlevel-0"
                              id="slide-18-layer-4"
@@ -82,7 +61,6 @@
                             data-transform_idle="o:1;"
                             data-transform_hover="o:1;rX:0;rY:0;rZ:0;z:0;s:300;e:Power1.easeInOut;"
                             data-style_hover="c:rgba(0, 0, 0, 1.00);bg:rgba(255, 255, 255, 1.00);bc:rgba(255, 255, 255, 1.00);cursor:pointer;"
-
                             data-transform_in="y:50px;opacity:0;s:1500;e:Power4.easeInOut;"
                             data-transform_out="y:50px;opacity:0;s:1000;s:1000;"
                             data-start="1000"
@@ -94,7 +72,6 @@
                     </li>
                 @endforeach
                 <!-- SLIDE  -->
-
             </ul>
             <div class="tp-static-layers"></div>
             <div class="tp-bannertimer" style="height: 7px; background-color: rgba(255, 255, 255, 0.25);"></div>
@@ -131,7 +108,6 @@
                 <a href="{{ route('student.index') }}" class="primary button bordered-light">Explore more</a>
             </div>
         </div><!-- faculty info ends /-->
-
         <div class="newadmission-info medium-4 small-12 columns">
             <div class="">
                 <h3><i class="fa fa-sign-in" aria-hidden="true"></i> Admission Process</h3>
@@ -140,7 +116,7 @@
                     <li><i class="fa fa-check-square-o" aria-hidden="true"></i>Applicants fill in the application form and pays the application fee.</li>
                     <li><i class="fa fa-check-square-o" aria-hidden="true"></i>The University accepts qualified applicants</li>
                     <li><i class="fa fa-check-square-o" aria-hidden="true"></i>The Applicant receives an Admission letter</li>
-                    <li><i class="fa fa-check-square-o" aria-hidden="true"></i>Government-Sponsored students get a direct placement</li>
+                    {{-- <li><i class="fa fa-check-square-o" aria-hidden="true"></i>Government-Sponsored students get a direct placement</li> --}}
                 </ul>
                 <div class="clearfix"></div>
                 <a href="{{ route('admission.index') }}" class="primary button bordered-light">Get Enrolled</a>

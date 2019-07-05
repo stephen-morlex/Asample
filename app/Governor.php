@@ -10,9 +10,8 @@ class Governor extends Model
     //
     use Resizable;
     protected $guarded = [];
-
     public function members()
     {
-        return $this->belongsToMany('App\Govenormember');
+        return $this->belongsToMany('App\Member');
     }
 }

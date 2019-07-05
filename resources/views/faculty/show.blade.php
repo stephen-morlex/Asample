@@ -13,7 +13,7 @@
                 <div class="small-12 columns">
                     <ul class="breadcrumbs">
                      <li><a href="/">Home</a></li>
-                     <li class="active"><a href="">Academics</a></li>
+                     <li class="active"><a href="{{ route('faculty.index') }}">Academics</a></li>
                      <li class="active"><a href="{{ route('faculty.index') }}">Faculties, Schools and Institute</a></li>
                      <li class="active"><a href="{{ route('faculty.show',$faculty->slug) }}">{{ $faculty->name }}</a></li>
                     </ul><!-- Breadcrumbs /-->
@@ -74,7 +74,7 @@
             </div>
             <div class="widget">
                 <ol class="menu vertical">
-                     <li><a href="{{ Voyager::image( (json_decode($faculty->file))[0]->download_link) }}" target="_blank"> <i class="fa fa-download fa-lg" aria-hidden="true"></i>{!! $faculty->name !!} Brochure</a>
+                     <li><a href="{{ route('document.index')}}" target="_blank"> <i class="fa fa-download fa-lg" aria-hidden="true"></i>{!! $faculty->name !!} Brochure</a>
                     </li>
                     <br>
                     <li><a href="{{ route('admission.index') }}">  <i class="fa fa-hand-o-right fa-lg" aria-hidden="true"></i> Apply now</a></li>

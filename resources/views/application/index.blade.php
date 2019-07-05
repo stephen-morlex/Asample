@@ -25,124 +25,97 @@
 
 <!-- Content section -->
 <div class="content-section">
-    
+
     <div class="row">
         <div class="course-section">
-
             <div class="section-title">
                 <h2><span>Application form</span></h2>
             </div><!-- Section Title Ends /-->
-            <div class="content-area module faq">
-                <div class="row">
-
-                                <div class="medium-12 small-12 small-centered columns">
-                                    <h2>Use this form to apply.</h2>
-                                    <p>thanks!.</p>
-                                     @include('partials.message')
-
-                                    <div class="contact-form">
+<div class="content-area module faq">
+        <div class="row">
+            <div class="medium-12 small-12 small-centered columns ">
+            @include('partials.message')
+                <div class="contact-form">
                              <form action="{{ route('application.store') }}" method="POST" enctype="multipart/form-data" id="form">
                                 @csrf
-                                <div style="border: 2px solid">
+                                <div class="application">
                                     <div class="row">
-
                                     <div class="medium-4 small-12 columns">
-                                        <span >&ensp;</span>
-                                        <label>Surname</label>
+                                        <label>Surname <span class="help-inline" style="color:#FF0000">*</span></label>
                                         <label>
-                                            <input type="text" id="surname" name="surname" placeholder="Your surname here..." />
+                                            <input type="text" id="surname" name="surname" placeholder="Your surname here..." value="{{ old('surname') }}" />
                                         </label>
                                     </div>
-
                                     <div class="medium-4 small-12 columns">
-                                        <span class="help-inline" style="color:#FF0000">*required</span>
-                                        <label>Firstname</label>
                                         <label>
-                                            <input type="text" name="firstname" placeholder="Your firstname here..." required/>
+                                            Firstname
+                                            <span class="help-inline" style="color:#FF0000">*</span>
+                                        </label>
+                                        <label>
+                                            <input type="text" name="firstname" placeholder="Your firstname here..." value="{{ old('firstname') }}" required/>
                                         </label>
                                     </div>
-
-
                                     <div class="medium-4 small-12 columns">
-                                        <span class="help-inline" style="color:#FF0000">*required</span>
-                                        <label>Lastname</label>
+                                        <label>Lastname <span class="help-inline" style="color:#FF0000">*</span></label>
                                         <label>
-                                            <input type="text" id="lastname" name="lastname" placeholder="Your lastname here..." required/>
+                                            <input type="text" id="lastname" name="lastname" placeholder="Your lastname here..." value="{{ old('lastname') }}" required/>
                                         </label>
                                     </div>
-
                                     </div><!-- Row Ends /-->
-
                                     <div class="row">
                                          <div class="medium-4 small-12 columns">
-                                            <span class="help-inline" style="color:#FF0000">*required</span>
-                                        <label>Date of Birth</label>
+                                        <label>Date of Birth <span class="help-inline" style="color:#FF0000">*</span></label>
                                         <label>
-                                            <input type="date" id="dob" name="dob" placeholder="Your date of birth here..."required />
+                                            <input type="date" id="dob" name="dob" placeholder="Your date of birth here..." value="{{ old('dob') }}"required />
+                                        </label>
+                                    </div>
+                                    <br>
+                                    <div class="medium-4 small-12 columns">
+                                        <label>Select your gender <span class="help-inline" style="color:#FF0000">*</span> </label>
+                                        <label>
+                                            <input type="radio" name="gender" id="gender" value="female" value="{{ old('gender') }}">Female
+                                            <input type="radio" name="gender" id="gender" value="male"  value="{{ old('gender') }}" >Male
                                         </label>
                                     </div>
 
-
                                     <div class="medium-4 small-12 columns">
-                                        <span class="help-inline" style="color:#FF0000">*required</span>
-                                        <label>Select your gender</label>
-                                        <label>
-                                            <input type="radio" name="gender" id="gender" value="female">Female<br>
-                                            <input type="radio" name="gender" id="gender" value="male">Male<br>
-                                        </label>
-                                    </div>
-
-
-                                    <div class="medium-4 small-12 columns">
+<<<<<<< HEAD
                                         <span class="help-inline" style="color:#FF0000">*required</span>
                                         <label>Select your Marital status</label>
+=======
+                                        <label>Select your Marital stats <span class="help-inline" style="color:#FF0000">*</span></label>
+>>>>>>> a9958a029a9738f748941c7adc7fddac013190ba
                                         <label>
-                                            <input type="radio" name="marital_status" id="marital_status" value="single">Single<br>
-                                            <input type="radio" name="marital_status" id="marital_status" value="Married">Married<br>
+                                            <input type="radio" name="marital_status" id="marital_status" value="single"  value="{{ old('marital_status') }}">Single
+                                            <input type="radio" name="marital_status" id="marital_status" value="Married"  value="{{ old('marital_status') }}">Married
                                         </label>
                                     </div>
-
-
                                     </div>
-
-
                                 <div class="row">
-
                                     <div class="medium-4 small-12 columns">
-                                        <span class="help-inline" style="color:#FF0000">*required</span>
-                                        <label>Email</label>
+                                        <label>Email <span class="help-inline" style="color:#FF0000">*</span> </label>
                                         <label>
-                                            <input type="email" id="email" name="email" placeholder="Your email here..." required/>
+                                            <input type="email" id="email" name="email" placeholder="Your email here..."  value="{{ old('email') }}" required/>
                                         </label>
                                     </div>
-
                                       <div class="medium-4 small-12 columns">
-                                        <span class="help-inline" style="color:#FF0000">*required</span>
-                                        <label>Telephone</label>
+                                        <label>Telephone <span class="help-inline" style="color:#FF0000">*</span> </label>
                                         <label>
-                                            <input type="text" id="telephone" name="telephone"  placeholder="Your Telephone number here..." required />
+                                            <input type="text" id="telephone" name="telephone"  placeholder="Your Telephone number here..."  value="{{ old('telephone') }}" required />
                                         </label>
                                     </div>
-
-
-
                                     <div class="medium-4 small-12 columns">
-                                        <span class="help-inline" style="color:#FF0000">*required</span>
-                                        <label>Current Address</label>
+                                        <label>Current Address <span class="help-inline" style="color:#FF0000">*</span></label>
                                         <label>
-                                            <input type="text" id="current_address" name="current_address" placeholder="Your current address here..." required />
+                                            <input type="text" id="current_address" name="current_address" placeholder="Your current address here..."  value="{{ old('current_address') }}" required />
                                         </label>
                                     </div>
-
                                 </div><!-- Row Ends /-->
-
-
                                 <div class="row">
                                     <div class="medium-4 small-12 columns">
-                                        <span class="help-inline" style="color:#FF0000">*required</span>
-                                        <label>Select your country</label>
+                                        <label>Select your country <span class="help-inline" style="color:#FF0000">*</span> </label>
                                         <label>
-                                            <select id="country" name="country" class="form-control" required>
+                                            <select id="country" name="country" class="form-control"  value="{{ old('country') }}" required>
                                                 <option value="Afghanistan">Afghanistan</option>
                                                 <option value="Åland Islands">Åland Islands</option>
                                                 <option value="Albania">Albania</option>
@@ -196,7 +169,7 @@
                                                 <option value="Congo, The Democratic Republic of The">Congo, The Democratic Republic of The</option>
                                                 <option value="Cook Islands">Cook Islands</option>
                                                 <option value="Costa Rica">Costa Rica</option>
-                                                <option value="Cote D'ivoire">Cote D'ivoire</option>
+                                                <option value="Cote D&apos;ivoire">Cote D&apos;ivoire</option>
                                                 <option value="Croatia">Croatia</option>
                                                 <option value="Cuba">Cuba</option>
                                                 <option value="Cyprus">Cyprus</option>
@@ -258,11 +231,11 @@
                                                 <option value="Kazakhstan">Kazakhstan</option>
                                                 <option value="Kenya">Kenya</option>
                                                 <option value="Kiribati">Kiribati</option>
-                                                <option value="Korea, Democratic People's Republic of">Korea, Democratic People's Republic of</option>
+                                                <option value="Korea, Democratic People's Republic of">Korea, Democratic Peoples Republic of</option>
                                                 <option value="Korea, Republic of">Korea, Republic of</option>
                                                 <option value="Kuwait">Kuwait</option>
                                                 <option value="Kyrgyzstan">Kyrgyzstan</option>
-                                                <option value="Lao People's Democratic Republic">Lao People's Democratic Republic</option>
+                                                <option value="Lao People's Democratic Republic">Lao Peoples Democratic Republic</option>
                                                 <option value="Latvia">Latvia</option>
                                                 <option value="Lebanon">Lebanon</option>
                                                 <option value="Lesotho">Lesotho</option>
@@ -390,184 +363,154 @@
                                             </select>
                                         </label>
                                     </div>
-
-
                                     <div class="medium-4 small-12 columns">
-                                        <span class="help-inline" style="color:#FF0000">*required</span>
-                                        <label>Passport or ID number</label>
+                                        <label>Passport or ID number <span class="help-inline" style="color:#FF0000">*</span></label>
                                         <label>
-                                            <input type="text" id="id_number" name="id_number" placeholder="Your passport or id number here..." required/>
+                                            <input type="text" id="id_number" name="id_number" placeholder="Your passport or id number here..."  value="{{ old('id_number') }}" required/>
                                         </label>
                                     </div>
-
                                   <div class="medium-4 small-12 columns">
-                                    <span class="help-inline" style="color:#FF0000">*required</span>
-                                        <label>Religous Affiliation</label>
+                                        <label>Religous Affiliation <span class="help-inline" style="color:#FF0000">*</span></label>
                                         <label>
                                             <select name="religion" required>
                                                 @foreach ($religion as $sl)
-                                                <option value="{{ $sl->name }}" id="religion">{{ $sl->name }}</option>
+                                                <option value="{{ $sl->name }}" id="religion"  value="{{ old('religious') }}">{{ $sl->name }}</option>
                                                 @endforeach
                                             </select>
                                         </label>
                                     </div>
                                 </div><!-- Row Ends /-->
-
-
                                 <div class="row">
-                                
                                     <div class="medium-2 small-12 columns">
-                                        <span class="help-inline" style="color:#FF0000">*required</span>
-                                        <label>Any&nbsp;disabilities?</label>
+
+                                        <label>Any disabilities? <span class="help-inline" style="color:#FF0000">*</span></label>
                                         <label>
                                             <select name="disabled" required>
-                                                <option value="yes" id="disabled">Yes</option>
-                                                <option value="no" id="disabled">No</option>
+                                                <option value="yes" id="disabled"  value="{{ old('disabled') }}">Yes</option>
+                                                <option value="no" id="disabled"  value="{{ old('disabled') }}">No</option>
                                             </select>
-
                                         </label>
                                     </div>
                                     <div class="medium-2 small-12 columns">
-                                        <br>
                                     <label>
                                         <label>If yes, specify here</label>
-                                            <input type="text" name="disability_specification" id="disability_specification" placeholder="here..." required/>
+                                            <input type="text" name="disability_specification" id="disability_specification" placeholder="here..."  value="{{ old('disability_specification') }}"/>
                                         </label>
                                     </div>
-
                                     <div class="medium-4 small-12 columns">
-                                        <br>
                                         <label>For Catholic clergy only!!</label>
                                         <label>
-                                            <select name="clergy_type" required>
+                                            <select name="clergy_type" >
                                                 @foreach ($clergytypes as $cl)
-                                                <option value="{{ $cl->name }}"id="clergy_type">{{ $cl->name }}</option>
+                                                <option value="{{ $cl->name }}"id="clergy_type"  value="{{ old('clergy_type') }}">{{ $cl->name }}</option>
                                                  @endforeach
                                             </select>
                                         </label>
-
                                     </div>
-
                                     <div class="medium-4 small-12 columns">
-                                        <br>
                                        <label>Name of Religious order</label>
                                         <label>
-                                            <input type="text" id="religious_order" name="religious_order" placeholder="here..." />
+                                            <input type="text" id="religious_order" name="religious_order" placeholder="here..."  value="{{ old('religious_order') }}" />
                                         </label>
                                     </div>
                                 </div><!-- Row Ends /-->
                                  </div>
-                                 <br>
-                                 
-                                 <br>
-                                  <u ><h6>List all High schools you have attended</h6></u>
-                                 <div style="border: 2px solid" id="dynamic_field">
+                                  <h4>List all High schools you have attended</h4>
+                                 <div class="application" id="dynamic_field">
                                     <div class="row">
                                         <div class="medium-3 small-12 columns">
+<<<<<<< HEAD
                                             <span class="help-inline" style="color:#FF0000">*required</span>
                                             <label>First High school
+=======
+                                            <label>First High school <span class="help-inline" style="color:#FF0000">*</span>
+>>>>>>> a9958a029a9738f748941c7adc7fddac013190ba
                                             </label>
                                             <label>
-                                                 <input type="text" id="high_school" name="high_school" placeholder="The name of  your high school here..." required/>
+                                                 <input type="text" id="high_school" name="high_school" placeholder="The name of  your high school here..."  value="{{ old('high_school') }}" required/>
                                             </label>
                                        </div>
-
                                        <div class="medium-3 small-12 columns">
-                                        <span class="help-inline" style="color:#FF0000">*required</span>
-                                           <label>School Address</label>
+                                           <label>School Address <span class="help-inline" style="color:#FF0000">*</span> </label>
                                            <label>
-                                            
-                                              <input type="text" id="school_address" name="school_address" placeholder="The address of your school here..." required/>
+                                              <input type="text" id="school_address" name="school_address" placeholder="The address of your school here..."  value="{{ old('school_address') }}" required/>
                                            </label>
                                         </div>
-
                                         <div class="medium-2 small-12 columns">
-                                            <span class="help-inline" style="color:#FF0000">*required</span>
-                                             <label>When started</label>
+                                             <label>When started <span class="help-inline" style="color:#FF0000">*</span></label>
                                              <label>
-                                                <input type="date" id="when_started_highschool" name="when_started_highschool" placeholder="mm/dd/yyyy" required/>
+                                                <input type="date" id="when_started_highschool" name="when_started_highschool" placeholder="mm/dd/yyyy"  value="{{ old('when_started_highschool') }}" required/>
                                             </label>
                                         </div>
-
                                         <div class="medium-2 small-12 columns">
-                                            <span class="help-inline" style="color:#FF0000">*required</span>
-                                            <label>When ended</label>
+                                            <label>When ended <span class="help-inline" style="color:#FF0000">*</span></label>
                                             <label>
-                                               <input type="date" id="when_ended_highschool" name="when_ended_highschool" placeholder="mm/dd/yyyy" required/>
+                                               <input type="date" id="when_ended_highschool" name="when_ended_highschool" placeholder="mm/dd/yyyy"  value="{{ old('when_ended_highschool') }}" required/>
                                             </label>
                                         </div>
                                         <div class="medium-2 small-12 columns">
-                                            <br>
                                             <label>&nbsp;</label>
                                            <button  type="button" name="add" id="add" class="button success" title="click once. Two more entries available">Add more</button>
                                         </div>
-                                    
                                      </div><!-- Row Ends /-->
                                  </div>
-
-                                <u ><h6>List all college schools you have attended</h6></u>
-                                <div style="border: 2px solid" id="dynamic_field2">
+                                <h4>List all college schools you have attended</h4>
+                                <div  class="application" id="dynamic_field2">
                                      <div class="row">
                                         <div class="medium-3 small-12 columns">
+<<<<<<< HEAD
                                             <span class="help-inline" style="color:#FF0000">*required</span>
                                             <label>First college or university</label>
+=======
+                                            <label>First college or university <span class="help-inline" style="color:#FF0000">*</span></label>
+>>>>>>> a9958a029a9738f748941c7adc7fddac013190ba
                                             <label>
-                                                <input type="text" id="college" name="college" placeholder="The name of college here..." />
+                                                <input type="text" id="college" name="college" placeholder="The name of college here..."  value="{{ old('college') }}" />
                                             </label>
                                         </div>
-
                                         <div class="medium-3 small-12 columns">
-                                            <span class="help-inline" style="color:#FF0000">*required</span>
-                                            <label>college Address</label>
+                                            <label>college Address <span class="help-inline" style="color:#FF0000">*</span></label>
                                             <label>
-                                                <input type="text" id="college_address" name="college_address" placeholder="The address of your school here..." />
+                                                <input type="text" id="college_address" name="college_address" placeholder="The address of your school here..."  value="{{ old('college_address') }}" />
                                             </label>
                                         </div>
+                                        <div class="medium-2 small-12 columns">
+                                            <label>When started <span class="help-inline" style="color:#FF0000">*</span></label>
+                                            <label>
+                                                <input type="date" id="when_started_college" name="when_started_college" placeholder="mm/dd/yyyy"  value="{{ old('when_started_college') }}" />
+                                            </label>
+                                        </div>
+                                        <div class="medium-2 small-12 columns">
+                                            <label>When Ended <span class="help-inline" style="color:#FF0000">*</span></label>
+                                            <label>
+                                                <input type="date" id="when_ended_college" name="when_ended_college" placeholder="mm/dd/yyyy"  value="{{ old('when_ended_college') }}" />
+                                            </label>
+                                        </div>
+                                        <div class="medium-2 small-12 columns">
 
-                                        <div class="medium-2 small-12 columns">
-                                            <span class="help-inline" style="color:#FF0000">*required</span>
-                                            <label>When started</label>
-                                            <label>
-                                                <input type="date" id="when_started_college" name="when_started_college" placeholder="mm/dd/yyyy" />
-                                            </label>
-                                        </div>
-
-                                        <div class="medium-2 small-12 columns">
-                                            <span class="help-inline" style="color:#FF0000">*required</span>
-                                            <label>When Ended</label>
-                                            <label>
-                                                <input type="date" id="when_ended_college" name="when_ended_college" placeholder="mm/dd/yyyy" />
-                                            </label>
-                                        </div>
-                                        <div class="medium-2 small-12 columns">
-                                            <br>
                                             <label>&nbsp;</label>
                                            <button  type="button" id="add2" id="add2" class="button success" title="click once. Two more entries available">Add more</button>
                                         </div>
                                      </div><!-- Row Ends /-->
                                 </div>
-                                 
-                               <br>
-                               <u ><h6>CUEA related information here</h6></u>
-                               <div style="border: 2px solid">
+                               <h4>CUEA related information here</h4>
+                               <div  class="application">
                                     <div class="row">
                                         <div class="medium-4 small-12 columns">
-                                            <span class="help-inline" style="color:#FF0000">*required</span>
-                                            <label>Choose campus</label>
+                                            <label>Choose campus <span class="help-inline" style="color:#FF0000">*</span> </label>
                                             <label>
                                                 <select name="campus" required>
-                                                    <option value="Langata" id="campus">Langata</option>
-                                                    <option value="Eldoret" id="campus">Eldoret</option>
+                                                    <option value="Langata" id="campus"  value="{{ old('campus') }}">Langata</option>
+                                                    <option value="Eldoret" id="campus"  value="{{ old('campus') }}">Eldoret</option>
                                                  </select>
                                              </label>
                                            </div>
                                            <div class="medium-4 small-12 columns">
-                                            <span class="help-inline" style="color:#FF0000">*required</span>
-                                            <label>Select level</label>
+                                            <label>Select level <span class="help-inline" style="color:#FF0000">*</span> </label>
                                             <label>
                                                 <select name="level" required>
-                                                 @foreach ($sections as $sl) 
-                                                    <option value="{{ $sl->name }}" id="level">{{ $sl->name }}</option>
+                                                 @foreach ($sections as $sl)
+                                                    <option value="{{ $sl->name }}"  value="{{ old('level') }}" id="level">{{ $sl->name }}</option>
                                                     @endforeach
                                                  </select>
                                              </label>
@@ -578,177 +521,155 @@
                                     </div>
                                     <div class="row">
                                         <div class="medium-4 small-12 columns">
-                                            <span class="help-inline" style="color:#FF0000">*required</span>
-                                             <label>Firstchoice</label>
+                                             <label>First choice <span class="help-inline" style="color:#FF0000">*</span></label>
                                                 <select name="first_choice" >
                                                     @foreach ($program as $pl)
-                                                     <option value="{{ $pl->name }}" id="first_choice" name="first_choice">{{ $pl->name }}</option>
-                                                     @endforeach 
+                                                     <option value="{{ $pl->name }}" id="first_choice" name="first_choice"  value="{{ old('first_chioce') }}">{{ $pl->name }}</option>
+                                                     @endforeach
                                                 </select>
                                             </label>
                                         </div>
-
-
                                         <div class="medium-4 small-12 columns">
-                                            <span class="help-inline" style="color:#FF0000">*required</span>
-                                             <label>Secondchoice</label>
-                                            <label>
+
+                                             <label>Second choice <span class="help-inline" style="color:#FF0000">*</span></label>
+                                             <label>
                                                  <select name="second_choice" required>
                                                      @foreach ($program as $pl)
-                                                     <option value="{{ $pl->name }}" id="second_choice" name="second_choice">{{ $pl->name }}</option>
-                                                     @endforeach 
+                                                     <option value="{{ $pl->name }}" id="second_choice" name="second_choice"  value="{{ old('second_choice') }}">{{ $pl->name }}</option>
+                                                     @endforeach
                                                  </select>
                                            </label>
                                         </div>
-
                                         <div class="medium-4 small-12 columns">
-                                            <span class="help-inline" style="color:#FF0000">*required</span>
-                                             <label>Thirdchoice</label>
-                                             <label>
+
+                                             <label>Third choice <span class="help-inline" style="color:#FF0000">*</span></label>
+                                              <label>
                                                  <select name="third_choice" required>
                                                      @foreach ($program as $pl)
-                                                     <option value="{{ $pl->name }}" id="third_choice" name="third_choice">{{ $pl->name }}</option>
-                                                     @endforeach 
+                                                     <option value="{{ $pl->name }}" id="third_choice" name="third_choice"  value="{{ old('third_choice') }}">{{ $pl->name }}</option>
+                                                     @endforeach
                                                 </select>
                                             </label>
                                         </div>
-
                                     </div> <!-- End of row -->
-
                                     <div class="row">
                                         <div class="medium-4 small-12 columns">
-                                            <span class="help-inline" style="color:#FF0000">*required</span>
-                                            <label>Specify Mode of study</label>
+                                            <label>Specify Mode of study <span class="help-inline" style="color:#FF0000">*</span> </label>
                                             <label>
                                                 <select name= "mode_of_study" required>
                                                 @foreach ($modeofstudy as $m1)
-                                                <option value="{{ $m1->name }}" id="mode_of_study" name="mode_of_study">{{ $m1->name }}</option>
+                                                <option value="{{ $m1->name }}" id="mode_of_study" name="mode_of_study"  value="{{ old('mode_of_study') }}">{{ $m1->name }}</option>
                                                 @endforeach
                                                 </option>
                                                 </select>
                                             </label>
                                         </div>
-
                                         <div class="medium-4 small-12 columns">
-                                        
-                                            <span class="help-inline" style="color:#FF0000">*required</span>
-                                            <label>When would you like to start?</label>
+
+                                            <label>When would you like to start? <span class="help-inline" style="color:#FF0000">*</span></label>
                                             <label>
                                                 <select name="when_to_start" required>
+<<<<<<< HEAD
                                                     @foreach ($intakes as $i1)
                                                         <option value="{{ $i1->intake }}" id="when_to_start">{{ $i1->intake }}</option>
                                                     @endforeach
+=======
+                                                    <option value="May-Aug 2020" id="when_to_start"  value="{{ old('when_to_start') }}">May-Aug 2020</option>
+                                                    <option value="Sep-Dec 2020" id="when_to_start"  value="{{ old('when_to_start') }}">Sep-Dec 2020</option>
+>>>>>>> a9958a029a9738f748941c7adc7fddac013190ba
                                                 </select>
                                             </label>
                                         </div>
-
                                         <div class="medium-2 small-12 columns">
-                                            <br>
                                             <label> CUEA before </label>
                                             <label>
                                                 <select name="cuea_before" required>
                                                     <option value="Bridging"> Bridging</option>
-                                                 @foreach ($sections as $sl) 
-                                                    <option value="{{ $sl->name }}" id="cuea_before">{{ $sl->name }}</option>
+                                                 @foreach ($sections as $sl)
+                                                    <option value="{{ $sl->name }}" id="cuea_before"  value="{{ old('cuea_before') }}">{{ $sl->name }}</option>
                                                     @endforeach
                                                  </select>
-
                                             </label>
                                         </div>
-
                                         <div class="medium-2 small-12 columns">
-                                            <br>
                                             <label>Previous number</label>
                                             <label>
-                                                <input type="text" id="previous_reg_number" name="previous_reg_number" value="{{ old('reg_no') }}" placeholder="here..."/>
+                                                <input type="text" id="previous_reg_number" name="previous_reg_number" value="{{ old('previous_reg_number') }}" placeholder="here..."/>
                                             </label>
                                         </div>
                                     </div>
                                 </div>
-                                 <br>
-                                <div style="border: 2px solid">
+                                <div  class="application">
                                     <div class="row">
-                                       <div class="medium-4 small-12 columns">
-                                        <span class="help-inline" style="color:#FF0000">*required</span>
-                                            <label>Who will sponsor your education?</label>
+                                       <div class="medium-12 small-12 columns">
+                                            <label>Who will sponsor your education? <span class="help-inline" style="color:#FF0000">*</span> </label>
                                             <label>
                                                 <select name="sponsor" required>
-                                                    @foreach ($sponsor as $s2) 
-                                                    <option value="{{ $s2->name }}" id="sponsor">{{ $s2->name }}</option>
+                                                    @foreach ($sponsor as $s2)
+                                                    <option value="{{ $s2->name }}" id="sponsor"  value="{{ old('sponsor') }}">{{ $s2->name }}</option>
                                                     @endforeach
                                                 </select>
                                            </label>
                                         </div>
                                    </div>
-
                                    <div class="row">
                                         <div class="medium-3 small-12 columns">
-                                            <label>Sponsor's Fullname</label>
+                                            <label>Sponsor &apos;s Fullname</label>
                                             <label>
                                                <input type="text" id="sponsor_name" name="sponsor_name" value="{{ old('sponsor_name') }}" placeholder="Your Sponsor's fullname here..." required/>
                                             </label>
                                         </div>
-
                                        <div class="medium-3 small-12 columns">
-                                            <label>Sponsor's Address</label>
+                                            <label>Sponsor &apos;s Address</label>
                                             <label>
                                                 <input type="text" id="sponsor_address" name="sponsor_address" value="{{ old('sponsor_address') }}" placeholder="Your Sponsor's address here..." />
                                            </label>
                                        </div>
-
                                        <div class="medium-3 small-12 columns">
-                                            <label>Sponsors Telephone</label>
+                                            <label>Sponsor &apos;s Telephone</label>
                                             <label>
                                                 <input type="text" id="sponsor_telephone" name="sponsor_telephone" value="{{ old('sponsor_telephone') }}" placeholder="Your Sponsor's telephone here..." />
                                            </label>
                                        </div>
-
-
                                        <div class="medium-3 small-12 columns">
-                                            <label>Sponsor's email</label>
+                                            <label>Sponsor &apos;s email</label>
                                             <label>
-                                                <input type="text" id="sponsor_email" name="sponsor_email" value="{{ old('sponsor_email') }}" placeholder="Your sponsor's email here..." />
+                                                <input type="email" id="sponsor_email" name="sponsor_email" value="{{ old('sponsor_email') }}" placeholder="Your sponsor's email here..." />
                                             </label>
                                         </div>
-
                                     </div>
-
                                     <div class="row">
                                         <div class="medium-3 small-12 columns">
-                                            <label>Next of Kin's Fullname</label>
+                                            <label>Next of Kin&apos;s Fullname</label>
                                             <label>
                                                <input type="text" id="next_of_kin" name="next_of_kin" value="{{ old('next_of_kin') }}" placeholder="Your next of kin's fullname here..." />
                                          </label>
                                         </div>
-
                                         <div class="medium-3 small-12 columns">
-                                            <label>Next of Kin's Address</label>
+                                            <label>Next of Kin&apos;s Address</label>
                                             <label>
                                                 <input type="text" id="next_of_kin_address" name="next_of_kin_address" value="{{ old('next_of_kin_address') }}" placeholder="Your next of kin address here..." />
                                             </label>
                                         </div>
-
                                         <div class="medium-3 small-12 columns">
-                                            <label>Next of Kin's Telephone</label>
+                                            <label>Next of Kin&apos;s Telephone</label>
                                             <label>
                                                 <input type="text" id="next_of_kin_telephone" name="next_of_kin_telephone" value="{{ old('next_of_kin_telephone') }}" placeholder="Your next of kin's telephone here..." />
                                             </label>
                                         </div>
-
                                         <div class="medium-3 small-12 columns">
-                                            <label>Next of Kin's email</label>
+                                            <label>Next of Kin&apos;s email</label>
                                             <label>
-                                                <input type="text" id="next_of_kin_email" name="next_of_kin_email" placeholder="Next of kin email here..." />
+                                                <input type="email" id="next_of_kin_email" name="next_of_kin_email" placeholder="Next of kin email here..."  value="{{ old('next_of_kin_email') }}"/>
                                            </label>
                                         </div>
                                     </div>
                                </div>
-                               <u><h5>Additional Data</h5></u>
-                               <div style="border: 2px solid">
+                               <h4>Additional Data</h4>
+                               <div class="application">
                                    <div class="row">
-                                        <div class="medium-8 small-12 columns">
-                                            <span class="help-inline" style="color:#FF0000">*required</span>
-                                            <label>Specify how you found out about CUEA</label>
+                                        <div class="medium-12 small-12 columns">
+                                            <label>Specify how you found out about CUEA <span class="help-inline" style="color:#FF0000">*</span> </label>
                                             <label>
                                                 <select name="sources" required>
                                                     @foreach($sources as $s1)
@@ -765,116 +686,57 @@
                                         </div>
                                     </div>
                                </div>
-                               <u ><h6>Provide your Educational slips here</h6></u>
-                        
-                                 <div style="border: 2px solid">
+                               <h4>Provide your Educational slips here</h4>
+                                 <div  class="application">
                                      <div class="row">
-                                        <div class="medium-3 small-12 columns">
-                                        <span class="help-inline" style="color:#FF0000">*required</span>
-                                        <label>Passport picture</label>
+                                    <div class="medium-4 small-12 columns">
+                                        <label>KCSE Slip <span class="help-inline" style="color:#FF0000">*</span></label>
                                         <label>
-                                            <input type="file" name="passport_picture" placeholder="here..." required/>
+                                            <input type="file" name="high_school_file" placeholder="here..."  value="{{ old('high_school_file') }}" required/>
                                         </label>
                                     </div>
-                                    <div class="medium-3 small-12 columns">
-                                        <span class="help-inline" style="color:#FF0000">*required</span>
-                                        <label>KCSE Slip</label>
-                                        <label>
-                                            <input type="file" name="high_school_file" placeholder="here..." required/>
-                                        </label>
-                                    </div>
-                                    <div class="medium-3 small-12 columns">
-                                        <span class="help-inline" style="color:#FF0000">*required</span>
+                                    <div class="medium-4 small-12 columns">
                                         <label>college slips</label>
                                         <label>
-                                            <input type="file" name="college_file" required/>
+                                            <input type="file" name="college_file"  value="{{ old('college_file') }}"/>
                                         </label>
                                     </div>
-                                    
-                                    <div class="medium-3 small-12 columns">
-                                        <span class="help-inline" style="color:#FF0000">*required</span>
-                                        <label>Passport or ID file</label>
+                                    <div class="medium-4 small-12 columns">
+                                        <label>Passport or ID  <span class="help-inline" style="color:#FF0000">*</span></label>
                                         <label>
-                                            <input type="file" name="id_number_file" required />
+                                            <input type="file" name="id_number_file" required  value="{{ old('id_number_file') }}" />
                                         </label>
                                     </div>
                                      </div><!-- Row Ends /-->
-                                 </div><br>
-                                   
-                                   <div class="row">
-                                        <div class="medium-4 small-12 columns">
-                                            &nbsp;
-                                        </div>
-
-                                        <div class="medium-4 small-12 columns">
-                                            <span class="help-inline" style="color:#FF0000">*required</span>
-                                            <label for="checkbox12">Accept CUEA Rules and conditions</label>
-                                            <input id="checkbox12" type="checkbox" required>
-                                           
-                                        </div>
-
-                                        <div class="medium-4 small-12 columns">
-                                            &nbsp;
-                                        </div>
-                                    </div><!-- Row Ends /--><br>
-
-                                   <div class="row">
-                                        <div class="medium-4 small-12 columns">
-                                            &nbsp;
-                                        </div>
-
-                                        <div class="medium-4 small-12 columns">
-                                            
-                                            <input type="submit" class="button primary" value="Submit" style="float: center;" />
-                                        </div><br>
-
-                                        <div class="medium-4 small-12 columns">
-                                            &nbsp;
-                                        </div>
-                                    </div><!-- Row Ends /-->
-                            </form>
-                            </div>
-                </div>
-                </div>
-           </div>
-        </div>              
+                                 </div>
+                                 <div class="clearfix"></div>
+                                 <a class="button primary  medium-only-expanded"> <button type="submit">SUBMIT THE FORM</button>  </a>
+                             </form>
+                    </div>
+                 </div>
+             </div>
+        </div>
+    </div>
 </div>
-
-
-</div><!-- Content Area Ends /-->
-                    <div class="clearfix"></div>
-                </div><!-- Courses Section Ends /-->
-        </div><!-- Row Ends /-->
-
-    <!-- Our Teachers /-->
-
 </div>
+<!-- Content Area Ends /-->
+        <div class="clearfix"></div>
 <!-- Content Section Ends /-->
-
-
 <!-- Call to Action box -->
-<div class="call-to-action">
-   <div class="row">
-        <div class="medium-10 small-12 columns">
-            <h2><i class="fa fa-phone" aria-hidden="true"></i>  If you Have Any Questions Call Us On <span>(010)123-456-7890</span></h2>
-        </div>
-        <div class="medium-2 small-12 columns">
-            <a href="#" class="button secondary">Appointment</a>
-        </div>
-   </div><!-- row /-->
- </div>
+@include('partials.call')
 <!-- Call to Action End /-->
 
 @include('partials.footer')
 @endsection
 @section('script')
 <script>
-    
+
     $(document).ready(function(){
         var i=2;
         var z=3;
         var j=1;
         var m=1;
+<<<<<<< HEAD
         
     
         $('#add').click(function(){
@@ -885,6 +747,13 @@
                 m++;
                 }
                 
+=======
+        $('#add').click(function(){
+                  if(m!=2){
+                    $('#dynamic_field').append('<div class="row" id="ro'+i+'"><div class="medium-3 small-12 columns"><label>Second High school</label><label><input type="text" name="high_school'+i+'" placeholder="The name of  your high school here..." /></label></div> <div class="medium-3 small-12 columns"><label>School Address</label><label><input type="text" name="school_address'+i+'" value="{{ old('school_address') }}" placeholder="The address of your school here..." /></label></div><div class="medium-2 small-12 columns"><label>When started</label><label><input type="date" name="when_started_highschool'+i+'" value="{{  old('when_started_highschool') }}" placeholder="mm/dd/yyyy" /></label></div><div class="medium-2 small-12 columns"><label>When ended</label><label><input type="date" name="when_ended_highschool'+i+'" placeholder="mm/dd/yyyy" /></label></div><div class="medium-2 small-12 columns"><label>&nbsp;</label>&nbsp;</div><div class="medium-3 small-12 columns"><label>Third High school</label><label><input type="text" name="high_school'+z+'" placeholder="The name of  your high school here..." /></label></div> <div class="medium-3 small-12 columns"><label>School Address</label><label><input type="text" name="school_address'+z+'" value="{{ old('school_address') }}" placeholder="The address of your school here..." /></label></div><div class="medium-2 small-12 columns"><label>When started</label><label><input type="date" name="when_started_highschool'+z+'" value="{{  old('when_started_highschool') }}" placeholder="mm/dd/yyyy" /></label></div><div class="medium-2 small-12 columns"><label>When ended</label><label><input type="date" name="when_ended_highschool'+z+'" placeholder="mm/dd/yyyy" /></label></div><div class="medium-2 small-12 columns"><label>&nbsp;</label>&nbsp;</div></div><!-- Row Ends /-->');
+                m++;
+                }
+>>>>>>> a9958a029a9738f748941c7adc7fddac013190ba
         });
     });
 </script>
@@ -894,15 +763,25 @@
          var b=3;
          var n=1;
          $('#add2').click(function(){
+<<<<<<< HEAD
                 
+=======
+
+>>>>>>> a9958a029a9738f748941c7adc7fddac013190ba
                 if(n!=2)
                 {
                 $('#dynamic_field2').append('<div class="row" id="row'+j+'"><div class="medium-3 small-12 columns"><label>Second college or University</label><label><input type="text" name="college'+j+'" placeholder="The name of college here..." /></label></div><div class="medium-3 small-12 columns"><label>School Address</label><label><input type="text" name="college_address'+j+'" placeholder="The address of your school here..." /></label></div><div class="medium-2 small-12 columns"><label>When started</label><label><input type="date" name="when_started_college'+j+'" placeholder="mm/dd/yyyy" /></label></div><div class="medium-2 small-12 columns"><label>When Ended</label><label><input type="date" name="when_ended_college'+j+'" placeholder="mm/dd/yyyy" /></label></div><div class="medium-2 small-12 columns"><label>&nbsp;</label>&nbsp;</div><div class="medium-3 small-12 columns"><label>Third college or University</label><label><input type="text" name="college'+b+'" placeholder="The name of college here..." /></label></div><div class="medium-3 small-12 columns"><label>School Address</label><label><input type="text" name="college_address'+b+'" placeholder="The address of your school here..." /></label></div><div class="medium-2 small-12 columns"><label>When started</label><label><input type="date" name="when_started_college'+b+'" placeholder="mm/dd/yyyy" /></label></div><div class="medium-2 small-12 columns"><label>When Ended</label><label><input type="date" name="when_ended_college'+b+'" placeholder="mm/dd/yyyy" /></label></div><div class="medium-2 small-12 columns"><label>&nbsp;</label>&nbsp;</div></div><!-- Row Ends /-->');
                 n++;
             }
+<<<<<<< HEAD
             
     });
          
+=======
+
+    });
+
+>>>>>>> a9958a029a9738f748941c7adc7fddac013190ba
      });
 </script>
 @endsection

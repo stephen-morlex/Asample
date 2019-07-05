@@ -31,8 +31,7 @@
             <div class="medium-7 small-12 columns posts-wrap">
                 @forelse ($scholarships as $scholarship)
                    <div class="single-post">
-                       <h3 ><a href="{{ route('scholarships.show',$scholarship->slug) }}">{{ $scholarship->scholarship }}</a></h3>
-                       <hr>
+                       <h5 ><a href="{{ route('scholarships.show',$scholarship->slug) }}">{{ $scholarship->title }}</a></h5>
                        <div class="clearfix"></div>
                     </div><!-- post ends here /-->
 

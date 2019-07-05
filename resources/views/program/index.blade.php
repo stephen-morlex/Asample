@@ -6,11 +6,9 @@
 <!-- banner section -->
         <div class="title-section module">
             <div class="row">
-
                 <div class="small-12 columns">
                     <h1>Programmes</h1>
                 </div><!-- Top Row /-->
-
                 <div class="small-12 columns">
                     <ul class="breadcrumbs">
                      <li><a href="/">Home</a></li>
@@ -18,12 +16,9 @@
                      <li ><a href="{{ route('program.index') }}">Programmes</a></li>
                     </ul><!-- Breadcrumbs /-->
                 </div><!-- Bottom Row /-->
-
             </div><!-- Row /-->
         </div>
-
 <!-- End of the banner section -->
-
 <div class="content-section">
     <div class="program-seminar">
         <div class="row">

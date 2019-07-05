@@ -23,13 +23,13 @@
 
 <div class="content-section module blog-page">
     <div class="row">
-        
+
         <div class="medium-8 small-12 columns posts-wrap">
             @forelse($papers as $paper)
                 <h2>{!! $paper->title !!}</h2>
-                <div class="event-thumb">
+                {{-- <div class="event-thumb">
                     <img  src="{{ Voyager::image( $paper->image ) }}"  class="thumbnail" alt="{!! $paper->title !!}"/>
-                </div>
+                </div> --}}
                 <div class="event-content">
                     <p>{!! $paper->content !!}</p>
                 </div>
