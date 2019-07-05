@@ -65,7 +65,7 @@ Route::post('/application/send', 'ApplicationController@store')->name('applicati
 
 //Generate Pdf
 Route::get('/applicationpp/', 'ApplicationController@applicationpdf')->name('application.application_pdf');
-Route::get('/generate-pdf', 'ApplicationController@generatepdf');
+Route::get('/generate-pdf/{id}', 'ApplicationController@generatepdf')->name('application.pdf');
 
 
 // Leader Routes

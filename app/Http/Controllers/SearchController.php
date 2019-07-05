@@ -31,9 +31,7 @@ class SearchController extends Controller
      */
     public function search( Request $request)
     {
-
         $searchterm = $request->input('query');
-
         $searchResults = (new Search())
                     ->registerModel(Program::class, 'name')
                     ->registerModel(Faculty::class, 'name')

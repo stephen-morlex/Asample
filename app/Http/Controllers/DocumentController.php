@@ -15,7 +15,7 @@ class DocumentController extends Controller
     public function index()
     {
         //
-        $documents  = Document::latest()->paginate(10);
+        $documents  = Document::orderBy('title','asc')->paginate(10);
         return view('document.index',compact('documents'));
     }
 

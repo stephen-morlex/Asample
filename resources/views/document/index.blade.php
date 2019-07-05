@@ -18,22 +18,18 @@
                        <li class="active"><a href="{{route('document.index')}}">Documents</a></li>
                     </ul><!-- Breadcrumbs /-->
                 </div><!-- Bottom Row /-->
-
             </div><!-- Row /-->
         </div>
  <!-- End of the banner section -->
-
 <!-- Content section -->
 <div class="content-section module">
-
     <!-- Seminar/Events -->
     <div class="space-section module">
         <div class="row">
-
                 <table>
                     <thead>
                         <tr>
-                        <th width="900"><h1>Title</h1></th>
+                        <th width="900"><h1>Files</h1></th>
                         <th width=""><h1>View</h1></th>
                         </tr>
                     </thead>
@@ -43,7 +39,7 @@
                             <td>
                             @if (!empty($document->file[0]))
                                 <?php $file = (json_decode($document->file))[0]->download_link; ?>
-                                <a href="{{ Voyager::image( $file ) }}" target="_blank" >{!! $document->title !!}</a>   
+                                <a href="{{ Voyager::image( $file ) }}" target="_blank" >{!! $document->title !!}</a>
                             @else
                                 <li>There is no document at the moment!</li>
                             @endif

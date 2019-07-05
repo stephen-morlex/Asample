@@ -168,7 +168,7 @@
                             <div class="row">
                             	<div class="medium-12 small-12 columns">
                                 	<label>
-                                    	Your Comments
+                                    	Message
                                         <textarea rows="10" required name="message" id="message" placeholder="Your message ...">{{ old('message') }}</textarea>
                                     </label>
 

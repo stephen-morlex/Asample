@@ -43,7 +43,7 @@
                                     <div class="medium-4 small-12 columns">
                                         <label>Surname <span class="help-inline" style="color:#FF0000">*</span></label>
                                         <label>
-                                            <input type="text" id="surname" name="surname" placeholder="Your surname here..." />
+                                            <input type="text" id="surname" name="surname" placeholder="Your surname here..." value="{{ old('surname') }}" />
                                         </label>
                                     </div>
                                     <div class="medium-4 small-12 columns">
@@ -52,13 +52,13 @@
                                             <span class="help-inline" style="color:#FF0000">*</span>
                                         </label>
                                         <label>
-                                            <input type="text" name="firstname" placeholder="Your firstname here..." required/>
+                                            <input type="text" name="firstname" placeholder="Your firstname here..." value="{{ old('firstname') }}" required/>
                                         </label>
                                     </div>
                                     <div class="medium-4 small-12 columns">
                                         <label>Lastname <span class="help-inline" style="color:#FF0000">*</span></label>
                                         <label>
-                                            <input type="text" id="lastname" name="lastname" placeholder="Your lastname here..." required/>
+                                            <input type="text" id="lastname" name="lastname" placeholder="Your lastname here..." value="{{ old('lastname') }}" required/>
                                         </label>
                                     </div>
                                     </div><!-- Row Ends /-->
@@ -66,23 +66,23 @@
                                          <div class="medium-4 small-12 columns">
                                         <label>Date of Birth <span class="help-inline" style="color:#FF0000">*</span></label>
                                         <label>
-                                            <input type="date" id="dob" name="dob" placeholder="Your date of birth here..."required />
+                                            <input type="date" id="dob" name="dob" placeholder="Your date of birth here..." value="{{ old('dob') }}"required />
                                         </label>
                                     </div>
                                     <br>
                                     <div class="medium-4 small-12 columns">
                                         <label>Select your gender <span class="help-inline" style="color:#FF0000">*</span> </label>
                                         <label>
-                                            <input type="radio" name="gender" id="gender" value="female">Female
-                                            <input type="radio" name="gender" id="gender" value="male">Male
+                                            <input type="radio" name="gender" id="gender" value="female" value="{{ old('gender') }}">Female
+                                            <input type="radio" name="gender" id="gender" value="male"  value="{{ old('gender') }}" >Male
                                         </label>
                                     </div>
 
                                     <div class="medium-4 small-12 columns">
                                         <label>Select your Marital stats <span class="help-inline" style="color:#FF0000">*</span></label>
                                         <label>
-                                            <input type="radio" name="marital_status" id="marital_status" value="single">Single
-                                            <input type="radio" name="marital_status" id="marital_status" value="Married">Married
+                                            <input type="radio" name="marital_status" id="marital_status" value="single"  value="{{ old('marital_status') }}">Single
+                                            <input type="radio" name="marital_status" id="marital_status" value="Married"  value="{{ old('marital_status') }}">Married
                                         </label>
                                     </div>
                                     </div>
@@ -90,19 +90,19 @@
                                     <div class="medium-4 small-12 columns">
                                         <label>Email <span class="help-inline" style="color:#FF0000">*</span> </label>
                                         <label>
-                                            <input type="email" id="email" name="email" placeholder="Your email here..." required/>
+                                            <input type="email" id="email" name="email" placeholder="Your email here..."  value="{{ old('email') }}" required/>
                                         </label>
                                     </div>
                                       <div class="medium-4 small-12 columns">
                                         <label>Telephone <span class="help-inline" style="color:#FF0000">*</span> </label>
                                         <label>
-                                            <input type="text" id="telephone" name="telephone"  placeholder="Your Telephone number here..." required />
+                                            <input type="text" id="telephone" name="telephone"  placeholder="Your Telephone number here..."  value="{{ old('telephone') }}" required />
                                         </label>
                                     </div>
                                     <div class="medium-4 small-12 columns">
                                         <label>Current Address <span class="help-inline" style="color:#FF0000">*</span></label>
                                         <label>
-                                            <input type="text" id="current_address" name="current_address" placeholder="Your current address here..." required />
+                                            <input type="text" id="current_address" name="current_address" placeholder="Your current address here..."  value="{{ old('current_address') }}" required />
                                         </label>
                                     </div>
                                 </div><!-- Row Ends /-->
@@ -110,7 +110,7 @@
                                     <div class="medium-4 small-12 columns">
                                         <label>Select your country <span class="help-inline" style="color:#FF0000">*</span> </label>
                                         <label>
-                                            <select id="country" name="country" class="form-control" required>
+                                            <select id="country" name="country" class="form-control"  value="{{ old('country') }}" required>
                                                 <option value="Afghanistan">Afghanistan</option>
                                                 <option value="Åland Islands">Åland Islands</option>
                                                 <option value="Albania">Albania</option>
@@ -226,11 +226,11 @@
                                                 <option value="Kazakhstan">Kazakhstan</option>
                                                 <option value="Kenya">Kenya</option>
                                                 <option value="Kiribati">Kiribati</option>
-                                                <option value="Korea, Democratic People's Republic of">Korea, Democratic People's Republic of</option>
+                                                <option value="Korea, Democratic People's Republic of">Korea, Democratic Peoples Republic of</option>
                                                 <option value="Korea, Republic of">Korea, Republic of</option>
                                                 <option value="Kuwait">Kuwait</option>
                                                 <option value="Kyrgyzstan">Kyrgyzstan</option>
-                                                <option value="Lao People's Democratic Republic">Lao People's Democratic Republic</option>
+                                                <option value="Lao People's Democratic Republic">Lao Peoples Democratic Republic</option>
                                                 <option value="Latvia">Latvia</option>
                                                 <option value="Lebanon">Lebanon</option>
                                                 <option value="Lesotho">Lesotho</option>
@@ -361,7 +361,7 @@
                                     <div class="medium-4 small-12 columns">
                                         <label>Passport or ID number <span class="help-inline" style="color:#FF0000">*</span></label>
                                         <label>
-                                            <input type="text" id="id_number" name="id_number" placeholder="Your passport or id number here..." required/>
+                                            <input type="text" id="id_number" name="id_number" placeholder="Your passport or id number here..."  value="{{ old('id_number') }}" required/>
                                         </label>
                                     </div>
                                   <div class="medium-4 small-12 columns">
@@ -369,7 +369,7 @@
                                         <label>
                                             <select name="religion" required>
                                                 @foreach ($religion as $sl)
-                                                <option value="{{ $sl->name }}" id="religion">{{ $sl->name }}</option>
+                                                <option value="{{ $sl->name }}" id="religion"  value="{{ old('religious') }}">{{ $sl->name }}</option>
                                                 @endforeach
                                             </select>
                                         </label>
@@ -381,23 +381,23 @@
                                         <label>Any disabilities? <span class="help-inline" style="color:#FF0000">*</span></label>
                                         <label>
                                             <select name="disabled" required>
-                                                <option value="yes" id="disabled">Yes</option>
-                                                <option value="no" id="disabled">No</option>
+                                                <option value="yes" id="disabled"  value="{{ old('disabled') }}">Yes</option>
+                                                <option value="no" id="disabled"  value="{{ old('disabled') }}">No</option>
                                             </select>
                                         </label>
                                     </div>
                                     <div class="medium-2 small-12 columns">
                                     <label>
                                         <label>If yes, specify here</label>
-                                            <input type="text" name="disability_specification" id="disability_specification" placeholder="here..." required/>
+                                            <input type="text" name="disability_specification" id="disability_specification" placeholder="here..."  value="{{ old('disability_specification') }}"/>
                                         </label>
                                     </div>
                                     <div class="medium-4 small-12 columns">
                                         <label>For Catholic clergy only!!</label>
                                         <label>
-                                            <select name="clergy_type" required>
+                                            <select name="clergy_type" >
                                                 @foreach ($clergytypes as $cl)
-                                                <option value="{{ $cl->name }}"id="clergy_type">{{ $cl->name }}</option>
+                                                <option value="{{ $cl->name }}"id="clergy_type"  value="{{ old('clergy_type') }}">{{ $cl->name }}</option>
                                                  @endforeach
                                             </select>
                                         </label>
@@ -405,7 +405,7 @@
                                     <div class="medium-4 small-12 columns">
                                        <label>Name of Religious order</label>
                                         <label>
-                                            <input type="text" id="religious_order" name="religious_order" placeholder="here..." />
+                                            <input type="text" id="religious_order" name="religious_order" placeholder="here..."  value="{{ old('religious_order') }}" />
                                         </label>
                                     </div>
                                 </div><!-- Row Ends /-->
@@ -417,25 +417,25 @@
                                             <label>First High school <span class="help-inline" style="color:#FF0000">*</span>
                                             </label>
                                             <label>
-                                                 <input type="text" id="high_school" name="high_school" placeholder="The name of  your high school here..." required/>
+                                                 <input type="text" id="high_school" name="high_school" placeholder="The name of  your high school here..."  value="{{ old('high_school') }}" required/>
                                             </label>
                                        </div>
                                        <div class="medium-3 small-12 columns">
                                            <label>School Address <span class="help-inline" style="color:#FF0000">*</span> </label>
                                            <label>
-                                              <input type="text" id="school_address" name="school_address" placeholder="The address of your school here..." required/>
+                                              <input type="text" id="school_address" name="school_address" placeholder="The address of your school here..."  value="{{ old('school_address') }}" required/>
                                            </label>
                                         </div>
                                         <div class="medium-2 small-12 columns">
                                              <label>When started <span class="help-inline" style="color:#FF0000">*</span></label>
                                              <label>
-                                                <input type="date" id="when_started_highschool" name="when_started_highschool" placeholder="mm/dd/yyyy" required/>
+                                                <input type="date" id="when_started_highschool" name="when_started_highschool" placeholder="mm/dd/yyyy"  value="{{ old('when_started_highschool') }}" required/>
                                             </label>
                                         </div>
                                         <div class="medium-2 small-12 columns">
                                             <label>When ended <span class="help-inline" style="color:#FF0000">*</span></label>
                                             <label>
-                                               <input type="date" id="when_ended_highschool" name="when_ended_highschool" placeholder="mm/dd/yyyy" required/>
+                                               <input type="date" id="when_ended_highschool" name="when_ended_highschool" placeholder="mm/dd/yyyy"  value="{{ old('when_ended_highschool') }}" required/>
                                             </label>
                                         </div>
                                         <div class="medium-2 small-12 columns">
@@ -450,25 +450,25 @@
                                         <div class="medium-3 small-12 columns">
                                             <label>First college or university <span class="help-inline" style="color:#FF0000">*</span></label>
                                             <label>
-                                                <input type="text" id="college" name="college" placeholder="The name of college here..." />
+                                                <input type="text" id="college" name="college" placeholder="The name of college here..."  value="{{ old('college') }}" />
                                             </label>
                                         </div>
                                         <div class="medium-3 small-12 columns">
                                             <label>college Address <span class="help-inline" style="color:#FF0000">*</span></label>
                                             <label>
-                                                <input type="text" id="college_address" name="college_address" placeholder="The address of your school here..." />
+                                                <input type="text" id="college_address" name="college_address" placeholder="The address of your school here..."  value="{{ old('college_address') }}" />
                                             </label>
                                         </div>
                                         <div class="medium-2 small-12 columns">
                                             <label>When started <span class="help-inline" style="color:#FF0000">*</span></label>
                                             <label>
-                                                <input type="date" id="when_started_college" name="when_started_college" placeholder="mm/dd/yyyy" />
+                                                <input type="date" id="when_started_college" name="when_started_college" placeholder="mm/dd/yyyy"  value="{{ old('when_started_college') }}" />
                                             </label>
                                         </div>
                                         <div class="medium-2 small-12 columns">
                                             <label>When Ended <span class="help-inline" style="color:#FF0000">*</span></label>
                                             <label>
-                                                <input type="date" id="when_ended_college" name="when_ended_college" placeholder="mm/dd/yyyy" />
+                                                <input type="date" id="when_ended_college" name="when_ended_college" placeholder="mm/dd/yyyy"  value="{{ old('when_ended_college') }}" />
                                             </label>
                                         </div>
                                         <div class="medium-2 small-12 columns">
@@ -485,8 +485,8 @@
                                             <label>Choose campus <span class="help-inline" style="color:#FF0000">*</span> </label>
                                             <label>
                                                 <select name="campus" required>
-                                                    <option value="Langata" id="campus">Langata</option>
-                                                    <option value="Eldoret" id="campus">Eldoret</option>
+                                                    <option value="Langata" id="campus"  value="{{ old('campus') }}">Langata</option>
+                                                    <option value="Eldoret" id="campus"  value="{{ old('campus') }}">Eldoret</option>
                                                  </select>
                                              </label>
                                            </div>
@@ -495,7 +495,7 @@
                                             <label>
                                                 <select name="level" required>
                                                  @foreach ($sections as $sl)
-                                                    <option value="{{ $sl->name }}" id="level">{{ $sl->name }}</option>
+                                                    <option value="{{ $sl->name }}"  value="{{ old('level') }}" id="level">{{ $sl->name }}</option>
                                                     @endforeach
                                                  </select>
                                              </label>
@@ -509,7 +509,7 @@
                                              <label>First choice <span class="help-inline" style="color:#FF0000">*</span></label>
                                                 <select name="first_choice" >
                                                     @foreach ($program as $pl)
-                                                     <option value="{{ $pl->name }}" id="first_choice" name="first_choice">{{ $pl->name }}</option>
+                                                     <option value="{{ $pl->name }}" id="first_choice" name="first_choice"  value="{{ old('first_chioce') }}">{{ $pl->name }}</option>
                                                      @endforeach
                                                 </select>
                                             </label>
@@ -520,7 +520,7 @@
                                              <label>
                                                  <select name="second_choice" required>
                                                      @foreach ($program as $pl)
-                                                     <option value="{{ $pl->name }}" id="second_choice" name="second_choice">{{ $pl->name }}</option>
+                                                     <option value="{{ $pl->name }}" id="second_choice" name="second_choice"  value="{{ old('second_choice') }}">{{ $pl->name }}</option>
                                                      @endforeach
                                                  </select>
                                            </label>
@@ -531,7 +531,7 @@
                                               <label>
                                                  <select name="third_choice" required>
                                                      @foreach ($program as $pl)
-                                                     <option value="{{ $pl->name }}" id="third_choice" name="third_choice">{{ $pl->name }}</option>
+                                                     <option value="{{ $pl->name }}" id="third_choice" name="third_choice"  value="{{ old('third_choice') }}">{{ $pl->name }}</option>
                                                      @endforeach
                                                 </select>
                                             </label>
@@ -543,7 +543,7 @@
                                             <label>
                                                 <select name= "mode_of_study" required>
                                                 @foreach ($modeofstudy as $m1)
-                                                <option value="{{ $m1->name }}" id="mode_of_study" name="mode_of_study">{{ $m1->name }}</option>
+                                                <option value="{{ $m1->name }}" id="mode_of_study" name="mode_of_study"  value="{{ old('mode_of_study') }}">{{ $m1->name }}</option>
                                                 @endforeach
                                                 </option>
                                                 </select>
@@ -554,8 +554,8 @@
                                             <label>When would you like to start? <span class="help-inline" style="color:#FF0000">*</span></label>
                                             <label>
                                                 <select name="when_to_start" required>
-                                                    <option value="May-Aug 2020" id="when_to_start">May-Aug 2020</option>
-                                                    <option value="Sep-Dec 2020" id="when_to_start">Sep-Dec 2020</option>
+                                                    <option value="May-Aug 2020" id="when_to_start"  value="{{ old('when_to_start') }}">May-Aug 2020</option>
+                                                    <option value="Sep-Dec 2020" id="when_to_start"  value="{{ old('when_to_start') }}">Sep-Dec 2020</option>
                                                 </select>
                                             </label>
                                         </div>
@@ -565,7 +565,7 @@
                                                 <select name="cuea_before" required>
                                                     <option value="Bridging"> Bridging</option>
                                                  @foreach ($sections as $sl)
-                                                    <option value="{{ $sl->name }}" id="cuea_before">{{ $sl->name }}</option>
+                                                    <option value="{{ $sl->name }}" id="cuea_before"  value="{{ old('cuea_before') }}">{{ $sl->name }}</option>
                                                     @endforeach
                                                  </select>
                                             </label>
@@ -573,7 +573,7 @@
                                         <div class="medium-2 small-12 columns">
                                             <label>Previous number</label>
                                             <label>
-                                                <input type="text" id="previous_reg_number" name="previous_reg_number" value="{{ old('reg_no') }}" placeholder="here..."/>
+                                                <input type="text" id="previous_reg_number" name="previous_reg_number" value="{{ old('previous_reg_number') }}" placeholder="here..."/>
                                             </label>
                                         </div>
                                     </div>
@@ -585,7 +585,7 @@
                                             <label>
                                                 <select name="sponsor" required>
                                                     @foreach ($sponsor as $s2)
-                                                    <option value="{{ $s2->name }}" id="sponsor">{{ $s2->name }}</option>
+                                                    <option value="{{ $s2->name }}" id="sponsor"  value="{{ old('sponsor') }}">{{ $s2->name }}</option>
                                                     @endforeach
                                                 </select>
                                            </label>
@@ -613,7 +613,7 @@
                                        <div class="medium-3 small-12 columns">
                                             <label>Sponsor &apos;s email</label>
                                             <label>
-                                                <input type="text" id="sponsor_email" name="sponsor_email" value="{{ old('sponsor_email') }}" placeholder="Your sponsor's email here..." />
+                                                <input type="email" id="sponsor_email" name="sponsor_email" value="{{ old('sponsor_email') }}" placeholder="Your sponsor's email here..." />
                                             </label>
                                         </div>
                                     </div>
@@ -639,7 +639,7 @@
                                         <div class="medium-3 small-12 columns">
                                             <label>Next of Kin&apos;s email</label>
                                             <label>
-                                                <input type="text" id="next_of_kin_email" name="next_of_kin_email" placeholder="Next of kin email here..." />
+                                                <input type="email" id="next_of_kin_email" name="next_of_kin_email" placeholder="Next of kin email here..."  value="{{ old('next_of_kin_email') }}"/>
                                            </label>
                                         </div>
                                     </div>
@@ -671,19 +671,19 @@
                                     <div class="medium-4 small-12 columns">
                                         <label>KCSE Slip <span class="help-inline" style="color:#FF0000">*</span></label>
                                         <label>
-                                            <input type="file" name="high_school_file" placeholder="here..." required/>
+                                            <input type="file" name="high_school_file" placeholder="here..."  value="{{ old('high_school_file') }}" required/>
                                         </label>
                                     </div>
                                     <div class="medium-4 small-12 columns">
-                                        <label>college slips <span class="help-inline" style="color:#FF0000">*</span></label>
+                                        <label>college slips</label>
                                         <label>
-                                            <input type="file" name="college_file" required/>
+                                            <input type="file" name="college_file"  value="{{ old('college_file') }}"/>
                                         </label>
                                     </div>
                                     <div class="medium-4 small-12 columns">
-                                        <label>Passport or ID file <span class="help-inline" style="color:#FF0000">*</span></label>
+                                        <label>Passport or ID  <span class="help-inline" style="color:#FF0000">*</span></label>
                                         <label>
-                                            <input type="file" name="id_number_file" required />
+                                            <input type="file" name="id_number_file" required  value="{{ old('id_number_file') }}" />
                                         </label>
                                     </div>
                                      </div><!-- Row Ends /-->
