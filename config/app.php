@@ -177,7 +177,7 @@ return [
         App\Providers\RouteServiceProvider::class,
         App\Providers\ComposerServiceProvider::class,
         Davmixcool\MetaManager\MetaServiceProvider::class,
-        Cohensive\Embed\EmbedServiceProvider::class,
+        // Cohensive\Embed\EmbedServiceProvider::class,
         // Goodnesskay\LaravelPdfViewer\LaravelPdfViewerServiceProvider::class,
 
     ],

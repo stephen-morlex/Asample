@@ -280,10 +280,11 @@ table, th, td {
         <br><br>
       <center><div><p>No of years:&nbsp;[1]&nbsp;[2]&nbsp;[3]&nbsp;[4]</p></div></center>
  
-      <div><p>Not Approved: Reason:__________________________</p></div>
+      <div><p>Not Approved: Reason:_______________________________________________________________________</p></div>
       <br>
       <div style="float: left;"><p>Chairman's Signature:________________________</p></div><div style="float: right;"><p>Date:_________________</p></div><br><br>
-      <div style="float: left;"><p>Action by Registrar:__________________</p></div><div><p>Signature:__________________</p></div>&nbsp;<div style="float: right;"><p>Date:____________________</p></div><br><br>
+      <div style="float: left;"><p>Action by Registrar:__________________</p></div><div><p>Signature:__________________</p></div><br>
+      <center><div><p>Date:____________________</p></div></center><br><br>
       <center><strong>CUEA/DVC/ACD/REG/01/fm01s</strong></center>
 
         </div>

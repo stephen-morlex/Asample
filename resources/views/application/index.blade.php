@@ -95,7 +95,7 @@
 
                                     <div class="medium-4 small-12 columns">
                                         <span class="help-inline" style="color:#FF0000">*required</span>
-                                        <label>Select your Marital stats</label>
+                                        <label>Select your Marital status</label>
                                         <label>
                                             <input type="radio" name="marital_status" id="marital_status" value="single">Single<br>
                                             <input type="radio" name="marital_status" id="marital_status" value="Married">Married<br>
@@ -465,7 +465,7 @@
                                     <div class="row">
                                         <div class="medium-3 small-12 columns">
                                             <span class="help-inline" style="color:#FF0000">*required</span>
-                                            <label>High school name
+                                            <label>First High school
                                             </label>
                                             <label>
                                                  <input type="text" id="high_school" name="high_school" placeholder="The name of  your high school here..." required/>
@@ -499,7 +499,7 @@
                                         <div class="medium-2 small-12 columns">
                                             <br>
                                             <label>&nbsp;</label>
-                                           <button  type="button" name="add" id="add" class="button success">Add more</button>
+                                           <button  type="button" name="add" id="add" class="button success" title="click once. Two more entries available">Add more</button>
                                         </div>
                                     
                                      </div><!-- Row Ends /-->
@@ -510,7 +510,7 @@
                                      <div class="row">
                                         <div class="medium-3 small-12 columns">
                                             <span class="help-inline" style="color:#FF0000">*required</span>
-                                            <label>college name</label>
+                                            <label>First college or university</label>
                                             <label>
                                                 <input type="text" id="college" name="college" placeholder="The name of college here..." />
                                             </label>
@@ -542,7 +542,7 @@
                                         <div class="medium-2 small-12 columns">
                                             <br>
                                             <label>&nbsp;</label>
-                                           <button  type="button" id="add2" id="add2" class="button success">Add more</button>
+                                           <button  type="button" id="add2" id="add2" class="button success" title="click once. Two more entries available">Add more</button>
                                         </div>
                                      </div><!-- Row Ends /-->
                                 </div>
@@ -635,8 +635,9 @@
                                             <label>When would you like to start?</label>
                                             <label>
                                                 <select name="when_to_start" required>
-                                                    <option value="yes" id="when_to_start">May-Aug 2020</option>
-                                                    <option value="no" id="when_to_start">Sep-Dec 2020</option>
+                                                    @foreach ($intakes as $i1)
+                                                        <option value="{{ $i1->intake }}" id="when_to_start">{{ $i1->intake }}</option>
+                                                    @endforeach
                                                 </select>
                                             </label>
                                         </div>
@@ -870,51 +871,38 @@
 <script>
     
     $(document).ready(function(){
-        var i=1;
+        var i=2;
+        var z=3;
         var j=1;
-        var m=3;
-        var n=3;
+        var m=1;
+        
     
         $('#add').click(function(){
-                  i++;
-                 if(i<4)
-                 {
-                    $('#dynamic_field').append('<div class="row" id="ro'+i+'"><div class="medium-3 small-12 columns"><label>High school name</label><label><input type="text" name="high_school'+i+'" placeholder="The name of  your high school here..." /></label></div> <div class="medium-3 small-12 columns"><label>School Address</label><label><input type="text" name="school_address'+i+'" value="{{ old('school_address') }}" placeholder="The address of your school here..." /></label></div><div class="medium-2 small-12 columns"><label>When started</label><label><input type="date" name="when_started_highschool'+i+'" value="{{  old('when_started_highschool') }}" placeholder="mm/dd/yyyy" /></label></div><div class="medium-2 small-12 columns"><label>When ended</label><label><input type="date" name="when_ended_highschool'+i+'" placeholder="mm/dd/yyyy" /></label></div><div class="medium-2 small-12 columns"><label>&nbsp;</label><button  type="button" name="remove" id="'+i+'" class="btn_remov button alert">Remove</button></div></div><!-- Row Ends /-->');
+                 
+                  if(m!=2){
+                    $('#dynamic_field').append('<div class="row" id="ro'+i+'"><div class="medium-3 small-12 columns"><label>Second High school</label><label><input type="text" name="high_school'+i+'" placeholder="The name of  your high school here..." /></label></div> <div class="medium-3 small-12 columns"><label>School Address</label><label><input type="text" name="school_address'+i+'" value="{{ old('school_address') }}" placeholder="The address of your school here..." /></label></div><div class="medium-2 small-12 columns"><label>When started</label><label><input type="date" name="when_started_highschool'+i+'" value="{{  old('when_started_highschool') }}" placeholder="mm/dd/yyyy" /></label></div><div class="medium-2 small-12 columns"><label>When ended</label><label><input type="date" name="when_ended_highschool'+i+'" placeholder="mm/dd/yyyy" /></label></div><div class="medium-2 small-12 columns"><label>&nbsp;</label>&nbsp;</div><div class="medium-3 small-12 columns"><label>Third High school</label><label><input type="text" name="high_school'+z+'" placeholder="The name of  your high school here..." /></label></div> <div class="medium-3 small-12 columns"><label>School Address</label><label><input type="text" name="school_address'+z+'" value="{{ old('school_address') }}" placeholder="The address of your school here..." /></label></div><div class="medium-2 small-12 columns"><label>When started</label><label><input type="date" name="when_started_highschool'+z+'" value="{{  old('when_started_highschool') }}" placeholder="mm/dd/yyyy" /></label></div><div class="medium-2 small-12 columns"><label>When ended</label><label><input type="date" name="when_ended_highschool'+z+'" placeholder="mm/dd/yyyy" /></label></div><div class="medium-2 small-12 columns"><label>&nbsp;</label>&nbsp;</div></div><!-- Row Ends /-->');
+
+                m++;
                 }
-        });
-        $(document).on("click", ".btn_remov",function(){
-            var button_id = $(this).attr("id");
-            $("#ro"+button_id+"").remove();
-                    });
-        $('#submit').click(function(){
-           $.ajax({
-            url:"name.php",
-            method:"POST",
-            data:$('#add_name').serialize(),
-            success:function(data){
-                alert(data);
-                $('#add_name')[0].reset();
-            }
-           })
+                
         });
     });
 </script>
 <script>
     $(document).ready(function(){
-         var j=1;
-
+         var j=2;
+         var b=3;
+         var n=1;
          $('#add2').click(function(){
-                j++;
-                if(j<4){
-                $('#dynamic_field2').append('<div class="row" id="row'+j+'"><div class="medium-3 small-12 columns"><label>college name</label><label><input type="text" name="college'+j+'" placeholder="The name of college here..." /></label></div><div class="medium-3 small-12 columns"><label>School Address</label><label><input type="text" name="college_address'+j+'" placeholder="The address of your school here..." /></label></div><div class="medium-2 small-12 columns"><label>When started</label><label><input type="date" name="when_started_college'+j+'" placeholder="mm/dd/yyyy" /></label></div><div class="medium-2 small-12 columns"><label>When Ended</label><label><input type="date" name="when_ended_college'+j+'" placeholder="mm/dd/yyyy" /></label></div><div class="medium-2 small-12 columns"><label>&nbsp;</label><button  type="button" name="remove" id="'+j+'" class="btn_remove2 button alert">Remove</button></div></div><!-- Row Ends /-->');
+                
+                if(n!=2)
+                {
+                $('#dynamic_field2').append('<div class="row" id="row'+j+'"><div class="medium-3 small-12 columns"><label>Second college or University</label><label><input type="text" name="college'+j+'" placeholder="The name of college here..." /></label></div><div class="medium-3 small-12 columns"><label>School Address</label><label><input type="text" name="college_address'+j+'" placeholder="The address of your school here..." /></label></div><div class="medium-2 small-12 columns"><label>When started</label><label><input type="date" name="when_started_college'+j+'" placeholder="mm/dd/yyyy" /></label></div><div class="medium-2 small-12 columns"><label>When Ended</label><label><input type="date" name="when_ended_college'+j+'" placeholder="mm/dd/yyyy" /></label></div><div class="medium-2 small-12 columns"><label>&nbsp;</label>&nbsp;</div><div class="medium-3 small-12 columns"><label>Third college or University</label><label><input type="text" name="college'+b+'" placeholder="The name of college here..." /></label></div><div class="medium-3 small-12 columns"><label>School Address</label><label><input type="text" name="college_address'+b+'" placeholder="The address of your school here..." /></label></div><div class="medium-2 small-12 columns"><label>When started</label><label><input type="date" name="when_started_college'+b+'" placeholder="mm/dd/yyyy" /></label></div><div class="medium-2 small-12 columns"><label>When Ended</label><label><input type="date" name="when_ended_college'+b+'" placeholder="mm/dd/yyyy" /></label></div><div class="medium-2 small-12 columns"><label>&nbsp;</label>&nbsp;</div></div><!-- Row Ends /-->');
+                n++;
             }
+            
     });
-         $(document).on("click", ".btn_remove2",function(){
-            var button_id = $(this).attr("id");
-             j-2;
-            $("#row"+button_id+"").remove();
-          
-        });
+         
      });
 </script>
 @endsection

@@ -12,7 +12,7 @@
                 <div class="small-12 columns">
                     <ul class="breadcrumbs">
                          <li class="active"><a href="/">Home</a></li>
-                         <li class="active"><a href="{{ route('governor.index') }}"> Governance</a></li>
+                         <li class="active"><a href="{{ route('governance.index') }}"> Governance</a></li>
                     </ul><!-- Breadcrumbs /-->
                 </div><!-- Bottom Row /-->
             </div><!-- Row /-->

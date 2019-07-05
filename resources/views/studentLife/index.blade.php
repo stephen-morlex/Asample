@@ -41,12 +41,17 @@
             <div class="row">
                 <div class="widget">
                     <h2>More about student experience</h2>
-                    @foreach ($studentSide as $ss)
                     <ol class="menu vertical">
+                    @foreach ($studentSide as $ss)
+                    
                         <li> <i class="fa fa-list"><a href="{{ route('student.show', $ss->slug) }}">  {{ $ss->name }}</a></i></li>
                         <br>
-                    </ol>
+                    
                     @endforeach
+                        <li> <i class="fa fa-list"><a href="{{ route('cueasoleaders.index') }}">CUEASO Leaders</a></i></li><br>
+
+                        <li> <i class="fa fa-list"><a href="{{ route('cueasoleaders.past_leaders') }}">Past CUEASO Leaders</a></i></li>
+                    </ol>
                 </div><!-- widget ends /-->
                 <div class="widget">
                     <h2>Popular News</h2>

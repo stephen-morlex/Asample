@@ -4,15 +4,12 @@ namespace App\Http\Controllers;
 
 use App\Applicant;
 use App\Religion;
-use App\Faculty;
-use App\Program;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 use App\Section;
-use App\StudentCategory;
-use App\Research;
 use App\About;
-use App\Services;
+use App\Intake;
+use App\Program;
 use App\ClergyType;
 use App\ModeOfStudy;
 use App\Sources;
@@ -34,17 +31,11 @@ class ApplicationController extends Controller
         $modeofstudy = ModeOfStudy::orderBy('name','desc')->get();
         $clergytypes = ClergyType::orderBy('name','desc')->get();
         $sections=Section::with('admission')->get();
-        $ad=Section::orderBy('name','asc')->get();
-        $studLife=StudentCategory::orderBy('name','asc')->get();
-        $faculties   = faculty::orderBy('name','asc')->get();
         $program   = Program::orderBy('name','asc')->get();
         $religion   = Religion::orderBy('name','asc')->get();
-        $researchNav = Research::orderBy('name','asc')->get();
-        $abouts     = About::orderBy('title','asc')->get();
-        $services1=   Services::orderBY('name','asc')->take(6)->get();
-        $services2=   Services::orderBY('name','asc')->skip(6)->take(10)->get();
+        $intakes = Intake::orderBy('intake','desc')->get();
         $sponsor = Sponsor::orderBY('name','desc')->get();
-        return view('application.index',compact('sections','ad','studLife','faculties','program','sources','religion','researchNav','abouts','services1','services2','sponsor','clergytypes','modeofstudy'));
+        return view('application.index',compact('sections','program','sources','religion','intakes','sponsor','clergytypes','modeofstudy'));
         
     }
 
@@ -277,11 +268,20 @@ class ApplicationController extends Controller
 
     public function generatepdf()
     {
+           $filename = Applicant::select('surname','firstname')->where('id', 11)->get();
+           
+      foreach ($filename as $p) {
+         // code
+        $ff = $p->firstname;
+        $sn = $p->surname;
+
+         }
+
             $user = Applicant::findOrFail(11);
-        
-        $pdf = PDF::loadView('application.application_pdf',compact('user'));
+       
+            $pdf = PDF::loadView('application.application_pdf',compact('user'));
   
         set_time_limit(300);
-        return $pdf->download('applicants.pdf');
+        return $pdf->download($ff."_".$sn.".pdf");
     }
 }
