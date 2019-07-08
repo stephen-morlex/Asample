@@ -77,14 +77,8 @@
                                             <input type="radio" name="gender" id="gender" value="male"  value="{{ old('gender') }}" >Male
                                         </label>
                                     </div>
-
                                     <div class="medium-4 small-12 columns">
-<<<<<<< HEAD
-                                        <span class="help-inline" style="color:#FF0000">*required</span>
-                                        <label>Select your Marital status</label>
-=======
                                         <label>Select your Marital stats <span class="help-inline" style="color:#FF0000">*</span></label>
->>>>>>> a9958a029a9738f748941c7adc7fddac013190ba
                                         <label>
                                             <input type="radio" name="marital_status" id="marital_status" value="single"  value="{{ old('marital_status') }}">Single
                                             <input type="radio" name="marital_status" id="marital_status" value="Married"  value="{{ old('marital_status') }}">Married
@@ -419,12 +413,7 @@
                                  <div class="application" id="dynamic_field">
                                     <div class="row">
                                         <div class="medium-3 small-12 columns">
-<<<<<<< HEAD
-                                            <span class="help-inline" style="color:#FF0000">*required</span>
-                                            <label>First High school
-=======
                                             <label>First High school <span class="help-inline" style="color:#FF0000">*</span>
->>>>>>> a9958a029a9738f748941c7adc7fddac013190ba
                                             </label>
                                             <label>
                                                  <input type="text" id="high_school" name="high_school" placeholder="The name of  your high school here..."  value="{{ old('high_school') }}" required/>
@@ -458,12 +447,7 @@
                                 <div  class="application" id="dynamic_field2">
                                      <div class="row">
                                         <div class="medium-3 small-12 columns">
-<<<<<<< HEAD
-                                            <span class="help-inline" style="color:#FF0000">*required</span>
-                                            <label>First college or university</label>
-=======
                                             <label>First college or university <span class="help-inline" style="color:#FF0000">*</span></label>
->>>>>>> a9958a029a9738f748941c7adc7fddac013190ba
                                             <label>
                                                 <input type="text" id="college" name="college" placeholder="The name of college here..."  value="{{ old('college') }}" />
                                             </label>
@@ -569,14 +553,9 @@
                                             <label>When would you like to start? <span class="help-inline" style="color:#FF0000">*</span></label>
                                             <label>
                                                 <select name="when_to_start" required>
-<<<<<<< HEAD
                                                     @foreach ($intakes as $i1)
                                                         <option value="{{ $i1->intake }}" id="when_to_start">{{ $i1->intake }}</option>
                                                     @endforeach
-=======
-                                                    <option value="May-Aug 2020" id="when_to_start"  value="{{ old('when_to_start') }}">May-Aug 2020</option>
-                                                    <option value="Sep-Dec 2020" id="when_to_start"  value="{{ old('when_to_start') }}">Sep-Dec 2020</option>
->>>>>>> a9958a029a9738f748941c7adc7fddac013190ba
                                                 </select>
                                             </label>
                                         </div>
@@ -736,24 +715,16 @@
         var z=3;
         var j=1;
         var m=1;
-<<<<<<< HEAD
-        
-    
+
+
         $('#add').click(function(){
-                 
+
                   if(m!=2){
                     $('#dynamic_field').append('<div class="row" id="ro'+i+'"><div class="medium-3 small-12 columns"><label>Second High school</label><label><input type="text" name="high_school'+i+'" placeholder="The name of  your high school here..." /></label></div> <div class="medium-3 small-12 columns"><label>School Address</label><label><input type="text" name="school_address'+i+'" value="{{ old('school_address') }}" placeholder="The address of your school here..." /></label></div><div class="medium-2 small-12 columns"><label>When started</label><label><input type="date" name="when_started_highschool'+i+'" value="{{  old('when_started_highschool') }}" placeholder="mm/dd/yyyy" /></label></div><div class="medium-2 small-12 columns"><label>When ended</label><label><input type="date" name="when_ended_highschool'+i+'" placeholder="mm/dd/yyyy" /></label></div><div class="medium-2 small-12 columns"><label>&nbsp;</label>&nbsp;</div><div class="medium-3 small-12 columns"><label>Third High school</label><label><input type="text" name="high_school'+z+'" placeholder="The name of  your high school here..." /></label></div> <div class="medium-3 small-12 columns"><label>School Address</label><label><input type="text" name="school_address'+z+'" value="{{ old('school_address') }}" placeholder="The address of your school here..." /></label></div><div class="medium-2 small-12 columns"><label>When started</label><label><input type="date" name="when_started_highschool'+z+'" value="{{  old('when_started_highschool') }}" placeholder="mm/dd/yyyy" /></label></div><div class="medium-2 small-12 columns"><label>When ended</label><label><input type="date" name="when_ended_highschool'+z+'" placeholder="mm/dd/yyyy" /></label></div><div class="medium-2 small-12 columns"><label>&nbsp;</label>&nbsp;</div></div><!-- Row Ends /-->');
 
                 m++;
                 }
-                
-=======
-        $('#add').click(function(){
-                  if(m!=2){
-                    $('#dynamic_field').append('<div class="row" id="ro'+i+'"><div class="medium-3 small-12 columns"><label>Second High school</label><label><input type="text" name="high_school'+i+'" placeholder="The name of  your high school here..." /></label></div> <div class="medium-3 small-12 columns"><label>School Address</label><label><input type="text" name="school_address'+i+'" value="{{ old('school_address') }}" placeholder="The address of your school here..." /></label></div><div class="medium-2 small-12 columns"><label>When started</label><label><input type="date" name="when_started_highschool'+i+'" value="{{  old('when_started_highschool') }}" placeholder="mm/dd/yyyy" /></label></div><div class="medium-2 small-12 columns"><label>When ended</label><label><input type="date" name="when_ended_highschool'+i+'" placeholder="mm/dd/yyyy" /></label></div><div class="medium-2 small-12 columns"><label>&nbsp;</label>&nbsp;</div><div class="medium-3 small-12 columns"><label>Third High school</label><label><input type="text" name="high_school'+z+'" placeholder="The name of  your high school here..." /></label></div> <div class="medium-3 small-12 columns"><label>School Address</label><label><input type="text" name="school_address'+z+'" value="{{ old('school_address') }}" placeholder="The address of your school here..." /></label></div><div class="medium-2 small-12 columns"><label>When started</label><label><input type="date" name="when_started_highschool'+z+'" value="{{  old('when_started_highschool') }}" placeholder="mm/dd/yyyy" /></label></div><div class="medium-2 small-12 columns"><label>When ended</label><label><input type="date" name="when_ended_highschool'+z+'" placeholder="mm/dd/yyyy" /></label></div><div class="medium-2 small-12 columns"><label>&nbsp;</label>&nbsp;</div></div><!-- Row Ends /-->');
-                m++;
-                }
->>>>>>> a9958a029a9738f748941c7adc7fddac013190ba
+
         });
     });
 </script>
@@ -763,25 +734,15 @@
          var b=3;
          var n=1;
          $('#add2').click(function(){
-<<<<<<< HEAD
-                
-=======
 
->>>>>>> a9958a029a9738f748941c7adc7fddac013190ba
                 if(n!=2)
                 {
                 $('#dynamic_field2').append('<div class="row" id="row'+j+'"><div class="medium-3 small-12 columns"><label>Second college or University</label><label><input type="text" name="college'+j+'" placeholder="The name of college here..." /></label></div><div class="medium-3 small-12 columns"><label>School Address</label><label><input type="text" name="college_address'+j+'" placeholder="The address of your school here..." /></label></div><div class="medium-2 small-12 columns"><label>When started</label><label><input type="date" name="when_started_college'+j+'" placeholder="mm/dd/yyyy" /></label></div><div class="medium-2 small-12 columns"><label>When Ended</label><label><input type="date" name="when_ended_college'+j+'" placeholder="mm/dd/yyyy" /></label></div><div class="medium-2 small-12 columns"><label>&nbsp;</label>&nbsp;</div><div class="medium-3 small-12 columns"><label>Third college or University</label><label><input type="text" name="college'+b+'" placeholder="The name of college here..." /></label></div><div class="medium-3 small-12 columns"><label>School Address</label><label><input type="text" name="college_address'+b+'" placeholder="The address of your school here..." /></label></div><div class="medium-2 small-12 columns"><label>When started</label><label><input type="date" name="when_started_college'+b+'" placeholder="mm/dd/yyyy" /></label></div><div class="medium-2 small-12 columns"><label>When Ended</label><label><input type="date" name="when_ended_college'+b+'" placeholder="mm/dd/yyyy" /></label></div><div class="medium-2 small-12 columns"><label>&nbsp;</label>&nbsp;</div></div><!-- Row Ends /-->');
                 n++;
             }
-<<<<<<< HEAD
-            
-    });
-         
-=======
 
     });
 
->>>>>>> a9958a029a9738f748941c7adc7fddac013190ba
      });
 </script>
 @endsection

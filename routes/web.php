@@ -103,16 +103,9 @@ Route::get('/callforpapers', 'CallForPapersController@index')->name('callforpape
 Route::get('/callforpapers/{callforpaper}', 'CallForPapersController@show')->name('callforpapers.show');
 
 // Governance
-<<<<<<< HEAD
-Route::get('/governance', 'MemberController@index')->name('governance.index');
-Route::get('/governance/{governor}', 'GovernorController@show')->name('governance.show');
-
-
-=======
 Route::get('/governance', 'MemberController@index')->name('governor.index');
 // Route::get('/governance/{governor}', 'GovernorController@show')->name('governance.show');
 Route::get('/governance/{governor}', 'MemberController@governor')->name('governor.governor');
->>>>>>> a9958a029a9738f748941c7adc7fddac013190ba
 
 // DOCUMENT
 Route::get('/documents', 'DocumentController@index')->name('document.index');
@@ -145,15 +138,12 @@ Route::get('/job/[Job]', 'JobController@store')->name('job.show');
 Route::get('/leaders', 'FacultyLeadersController@index')->name('leader.index');
 Route::get('/leader/{FacultyLeaders}', 'FacultyLeadersController@show')->name('leader.show');
 Route::get('/faculty/leaders/{Faculty}', 'FacultyLeadersController@faculty')->name('leader.faculty');
-<<<<<<< HEAD
 
 // CUEASO LEADERS
 Route::get('/current-leaders/', 'CurrentStudentLeaderController@index')->name('cueasoleaders.index');
 Route::get('/past-cueaso-leaders/', 'PastStudentLeaderController@index')->name('cueasoleaders.past_leaders');
 
 
-=======
->>>>>>> a9958a029a9738f748941c7adc7fddac013190ba
 // VIDEO GALLERY
 Route::get('/videos-gallery', 'VideogalleryController@index')->name('video.index');
 // Route::get('/{Dean}', 'DeanController@show')->name('dean.show');
