@@ -94,9 +94,9 @@
             <div class="content-wrapper">
             	<div class="medium-3 small-12 columns">
                 	<div class="contact-info">
-                    	<img src="{{ asset('images/cueaContact.jpg') }}" alt="Calling Girl" />
+                    	<img src="{{ asset('images/cueaContact.jpg') }}" alt="CUEA logo" />
                     </div>
-                    <div class="contact-info">
+                    <div class="contact-info application">
                         <h5>LANGATA CAMPUS</h5>
                         <div class="tx-div"></div>
                         <p>
@@ -108,7 +108,7 @@
                             <strong>Mobile: </strong>+(254) 704-913318
                         </p>
                     </div>
-                    <div class="contact-info">
+                    <div class="contact-info application">
                         <h5>ELDORET - GABA CAMPUS</h5>
                         <div class="tx-div"></div>
                         <p>
@@ -120,7 +120,7 @@
                             <strong>Sms:</strong> &nbsp;&nbsp;&nbsp;+(254)-729 742791
                         </p>
                     </div>
-                    <div class="contact-info">
+                    <div class="contact-info application">
                         <h5>Follow Us</h5>
                         <div class="tx-div"></div>
                          <div class="socialicons">
@@ -133,7 +133,7 @@
                 </div><!-- Left column Ends /-->
                 <div class="medium-9 small-12 columns">
                     <h2>Please fill the form below to contact us</h2>
-                    <div class="contact-form">
+                    <div class="contact-form application">
 						<form action="{{ route('contact.store') }}" method="post">
                             @csrf
                         	<div class="row">

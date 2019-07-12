@@ -15,7 +15,7 @@
                     <ul class="breadcrumbs">
                      <li><a href="/">Home</a></li>
                      <li class="active"><a href="">Academics</a></li>
-                     <li class="active"><a href="{{ route('services.index') }}">Faculties, Schools and Institute</a></li>
+                     <li class="active"><a href="{{ route('services.index') }}">Student Service Information</a></li>
                      <li class="active"><a href="{{ route('services.show',$service->slug) }}">{{ $service->name }}</a></li>
                     </ul><!-- Breadcrumbs /-->
                 </div><!-- Bottom Row /-->
@@ -29,7 +29,7 @@
     <div class="row">
         <div class="medium-8 small-12 columns posts-wrap">
             <div class="event-thumb">
-                <img  src="{{ Voyager::image( $service->image ) }}"/>
+                <img  src="{{ Voyager::image( $service->image ) }}" onerror="this.style.display='none'"/>
             </div><!-- Course Thumb /-->
             <div class="event-content">
                     <p>{!! $service->content !!}</p>

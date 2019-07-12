@@ -27,8 +27,9 @@
 
         <div class="medium-8 small-12 columns posts-wrap">
             <h3>{!! $administrative_office->title  !!}</h3>
+            <div class="tx-div"></div>
             <div class="event-thumb">
-                <img  src="{{ Voyager::image( $administrative_office->image ) }}" alt="{!! $administrative_office->title !!}"/>
+                <img  src="{{ Voyager::image( $administrative_office->image ) }}" alt="{!! $administrative_office->title !!}" onerror="this.style.display='none'"/>
             </div>
             <div class="event-content">
                 <p>{!! $administrative_office->content  !!}</p>
@@ -39,6 +40,7 @@
             <div class="widget">
                 <h2> Administrative Offices</h2>
                 <ul class="menu vertical">
+                 <li><a href="{{ route('chaplaincy.index') }}">Chaplaincy</a></li>
                     @forelse($administrative_offices as $administrative)
                         <li><a href="{{ route('administrativeoffice.show',$administrative->slug) }}">{!! $administrative->title !!}</a></li>
                     @empty

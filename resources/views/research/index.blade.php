@@ -35,7 +35,7 @@
             <div class="tx-div"></div>
         <div class="featured-image">
             <a href="{{ route('research.show',$re->slug) }}">
-                <img alt="" src="{{ Voyager::image( $re->image ) }}" class="thumbnail" />
+                <img alt="" src="{{ Voyager::image( $re->image ) }}" onerror="this.style.display='none'"/>
             </a>
         </div>
         <div class="post-excerpt">

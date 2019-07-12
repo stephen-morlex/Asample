@@ -28,7 +28,7 @@
             <div class="event-thumb">
                  <h2>{{ $student->name }}</h2>
                  <div class="tx-div"></div>
-                <img src="{{ Voyager::image( $student->image)}}"/>
+                <img src="{{ Voyager::image( $student->image)}}" onerror="this.style.display='none'"/>
             </div><!-- Course Thumb /-->
             <div class="event-content">
               <p> {!!  $student->content  !!}</p>
@@ -47,6 +47,9 @@
                     </ol>
                     <br>
                     @endforeach
+                    <ol class="menu vertical">
+                        <li> <i class="fa fa-list-ul fa-lg"><a href="{{ route('cueasoleaders.past_leaders') }}"> Past CUEASO Leaders</a></i></li>
+                    </ol>
                 </div><!-- widget ends /-->
                 <div class="widget">
                     <h2>Popular News</h2>

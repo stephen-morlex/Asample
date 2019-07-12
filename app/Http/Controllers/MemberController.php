@@ -15,14 +15,14 @@ class MemberController extends Controller
      */
     public function index()
     {
-          $members = Member::get();
-          $governance = Governor::all();
-           return view('governance.index',compact('members','governance'));
+        $members = Member::get();
+        $governance = Governor::all();
+        return view('governance.index', compact('members', 'governance'));
     }
     public function governor($slug)
     {
-        $members = Governor::where('slug', $slug)->first()->members()->paginate(6);
+        $members = Governor::where('slug', $slug)->first()->members()->get();
         $governance = Governor::all();
-        return view('governance.index',compact('members','governance'));
+        return view('governance.index', compact('members', 'governance'));
     }
 }

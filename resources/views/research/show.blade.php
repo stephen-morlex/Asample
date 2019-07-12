@@ -32,7 +32,7 @@
                     <div class="tx-div"></div>
 			    <div class="featured-image">
                     <a href="{{ route('research.show',$research->slug) }}">
-                        <img class="display:none" src="{{ Voyager::image( $research->image ) }}" class="thumbnail" />
+                        <img src="{{ Voyager::image( $research->image ) }}" onerror="this.style.display='none'" />
                     </a>
                 </div>
                 <div class="post-excerpt">
@@ -58,7 +58,7 @@
                     @foreach ($newsSide as $item)
                         <div class="popular-post">
                             <a href="{{ route('news.show', $item->slug) }}"><strong>{{ $item->title }}</strong></a>
-                           <p><img alt="" src="{{ Voyager::image( $item->thumbnail('small'))}}" class="float-left" />{!!  substr(strip_tags($item->content), 0,90) !!}...<a href="{{ route('news.show', $item->slug) }}">Read more</a></p>
+                           <p><img alt="{{ $item->title }}" src="{{ Voyager::image( $item->thumbnail('small'))}}" class="float-left" />{!!  substr(strip_tags($item->content), 0,90) !!}...<a href="{{ route('news.show', $item->slug) }}">Read more</a></p>
                         </div>
                     @endforeach
             </div><!-- widget ends /-->

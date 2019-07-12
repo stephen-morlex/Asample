@@ -28,7 +28,7 @@
 <div class="content-section">
     <div class="content-section module blog-page">
         <div class="row">
-            <div class="medium-7 small-12 columns posts-wrap">
+            <div class="medium-8 small-12 columns posts-wrap">
                <table>
                   <thead>
                     <tr>
@@ -37,30 +37,25 @@
                       <th>Faculty</th>
                     </tr>
                   </thead>
-                  <tbody>
-                        <tr>
-                @forelse ($currentleaders as $cl)
-                   <div class="single-post">
-                        
-                                <td>
-                                 <p>{{ $cl->name }}</p>    
-                                </td>
-                                <td>
-                                     <p>{{ $cl->position }}</p>
-                                </td>
-                                 <td>
-                                     <p>{{ $cl->faculty  }}</p>
-                                </td>
-                            
-                     
-                       <div class="clearfix"></div>
-                    </div><!-- post ends here /-->
-
-                    @empty
-                     <h2>No cueaso member at the moment<h2>
-
-                @endforelse
-                </tbody>
+                 <tbody>
+                                                @foreach ($currentleaders as $pastleader)
+                                                    <tr>
+                                            
+                                            
+                                                      <td>
+                                                       <p>{!!$pastleader->name !!}</p>    
+                                                      </td>
+                                                      <td>
+                                                           {!!$pastleader->position !!}
+                                                      </td>
+                                                      <td>
+                                                            {!!$pastleader->faculty !!}
+                                                      </td>
+                                            
+                                           
+                                                     </tr>
+                                                      @endforeach
+                                            </tbody>
                 </tr>
                         </table>
         </div><!-- Posts wrap ends /-->
@@ -70,11 +65,11 @@
                     <ol class="menu vertical">
                     @foreach ($studentSide as $ss)
                     
-                        <li> <i class="fa fa-list"><a href="{{ route('student.show', $ss->slug) }}">  {{ $ss->name }}</a></i></li>
+                        <li> <i class="fa fa-list-ul fa-lg"><a href="{{ route('student.show', $ss->slug) }}">  {{ $ss->name }}</a></i></li>
                         <br>
-                    
                     @endforeach
-                        <li> <i class="fa fa-list"><a href="{{ route('cueasoleaders.index') }}">CUEASO Leaders</a></i></li>
+                        <li> <i class="fa fa-list-ul fa-lg"><a href="{{ route('cueasoleaders.index') }}"> CUEASO Leaders</a></i></li><br>
+                        <li> <i class="fa fa-list-ul fa-lg"><a href="{{ route('cueasoleaders.past_leaders') }}"> Past CUEASO Leaders</a></i></li>
                     </ol>
                 </div><!-- widget ends /-->
 

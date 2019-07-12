@@ -30,15 +30,18 @@
         <div class="row">
             <div class="medium-12 small-12 columns">
                 @forelse($videos as $video)
-                    <div class="medium-3 small-12 columns">
+                    <div class="medium-6 small-12 columns">
                         <div class="flex-video">
-                            <iframe width="420" height="315" src="{{ $video->video_html }}" frameborder="0" allowfullscreen></iframe>
+                           {!! $video->video_html !!}
                         </div>
+
+                        <p>{{ $video->title }}</p>
+
+                        <hr style="border-bottom:2px solid #f0951f">
                     </div>
                 @empty
                     <h2>No video at the moment.</h2>
                 @endforelse
-
             </div>
         </div><!-- Row Ends /-->
     </div>

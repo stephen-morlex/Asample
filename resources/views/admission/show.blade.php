@@ -142,7 +142,7 @@
                     <div class="medium-6 columns medium-pull-6" data-aos="zoom-in-right"  data-aos-duration="3000"
                     data-aos-easing="ease-in-sine">
                     <a href="{{ route('services.show',$item->slug) }}"><h2>{{ $item->name }}.</h2></a>
-                    <p>{!! str_limit($item->content,300) !!}<a href="{{ route('services.show', $item->slug) }}"><strong>Read More &raquo;</strong></a></p>
+                   <p>{!!  substr(strip_tags($item->content), 0, 400) !!}...<a href="{{ route('services.show', $item->slug) }}">Read More &raquo;</a></p>
                     </div>
                     </div>
                @endforeach
