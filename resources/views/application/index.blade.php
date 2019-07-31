@@ -650,11 +650,12 @@
                                         <div class="medium-12 small-12 columns">
                                             <label>Specify how you found out about CUEA <span class="help-inline" style="color:#FF0000">*</span> </label>
                                             <label>
-                                                <select name="sources" required>
-                                                    @foreach($sources as $s1)
-                                                    <option value="{{ $s1->name }}" name="sources" id="sources">{{ $s1->name }}</option>
-                                                    @endforeach
-                                               </select>
+                                                 @foreach($sources as $s1)
+                                                  <input type="checkbox" name="sources[]" value="{{ $s1->name }}"/> {{ $s1->name }}
+                                                 @endforeach
+                                               <br>
+
+                                             <!--   <input type="checkbox" name="facility_required[]" -->
                                            </label>
                                            <label>
                                                 <input type="text" id="other_sources" name="other_sources" value="{{ old('other_sources') }}" placeholder="Specify others here..." />

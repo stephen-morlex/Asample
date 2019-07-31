@@ -140,7 +140,7 @@
                             <label>
                                 <legend>Facility Required *</legend>
                                 @foreach ($facilities as $facility)
-                                    <input type="checkbox" name="facility_required[]" value="{{ $facility->title }}"/> {{ $facility->title }}<br>
+                                    <input type="checkbox" name="facility_required[]" value="{{ $facility->title }}"/> {{ $facility->title }}
                                 @endforeach  
                             </label>
                         </div>
