@@ -11,7 +11,7 @@ class CallForPapersController extends Controller
     {
 
        $allpapers = CallForPaper::all();
-    	$papers      = CallForPaper::first()->take(1)->get();
+    	$papers      = CallForPaper::get();
         return view('callforpapers.index', compact('papers','allpapers'));
     }
 

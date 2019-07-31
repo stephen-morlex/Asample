@@ -26,7 +26,7 @@
                @forelse ($members as $member)
                <div class="card-profile-stats">
                     <div class="card-profile-stats-intro">
-                      <img class="card-profile-stats-intro-pic" src="{{ Voyager::image( $member->image)}}" alt="{{ $member->name }}" />
+                      <img class="card-profile-stats-intro-pic" src="{{ Voyager::image( $member->image)}}" alt="{{ $member->name }}" onerror="this.style.display='none'" />
                       <div class="card-profile-stats-intro-content">
                         <h5>{{ $member->name }}</h5>
                         <div class="tx-div"></div>

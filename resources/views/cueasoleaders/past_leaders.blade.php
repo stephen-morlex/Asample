@@ -8,13 +8,13 @@
             <div class="row">
 
                 <div class="small-12 columns">
-                    <h1>Current CUEASO LEADERS</h1>
+                    <h1>FORMER CUEASO LEADERS</h1>
                 </div><!-- Top Row /-->
 
                 <div class="small-12 columns">
                     <ul class="breadcrumbs">
                        <li><a href="/">Home</a></li>
-                       <li class="active"><a href="{{route('cueasoleaders.index')}}">CURRENT CUEASO LEADERS</a></li>
+                       <li class="active"><a href="{{route('cueasoleaders.index')}}">Former CUEASO LEADERS</a></li>
 
                     </ul><!-- Breadcrumbs /-->
                 </div><!-- Bottom Row /-->
@@ -78,11 +78,12 @@
                     <ol class="menu vertical">
                     @foreach ($studentSide as $ss)
                     
-                        <li> <i class="fa fa-list"><a href="{{ route('student.show', $ss->slug) }}">  {{ $ss->name }}</a></i></li>
+                        <li> <i class="fa fa-list-ul fa-lg"><a href="{{ route('student.show', $ss->slug) }}">  {{ $ss->name }}</a></i></li>
                         <br>
                     
                     @endforeach
-                        <li> <i class="fa fa-list"><a href="{{ route('cueasoleaders.index') }}">CUEASO Leaders</a></i></li>
+                        <li> <i class="fa fa-list-ul fa-lg"><a href="{{ route('cueasoleaders.index') }}"> Current CUEASO Leaders</a></i></li><br>
+                        <li> <i class="fa fa-list-ul fa-lg"><a href="{{ route('cueasoleaders.past_leaders') }}"> Past CUEASO Leaders</a></i></li>
                     </ol>
                 </div><!-- widget ends /-->
 

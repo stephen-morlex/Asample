@@ -3,8 +3,9 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-
+use TCG\Voyager\Traits\Resizable;
 class Chaplaincy extends Model
 {
-    //
+    protected $guarded = [];
+    use Resizable;
 }

@@ -9,7 +9,7 @@
 | routes are loaded by the RouteServiceProvider within a group which
 | contains the "web" middleware group. Now create something great!
 |
-*/
+ */
 
 Route::get('/', 'WelcomeController@index')->name('welcome');
 Route::get('/academics/faculties-schools-and-institues', 'FacultyController@index')->name('faculty.index');
@@ -58,7 +58,6 @@ Route::post('/contact/send', 'ContactController@store')->name('contact.store');
 Route::get('/chaplaincy', 'ChaplainController@index')->name('chaplaincy.index');
 Route::get('/chaplaincy/{chaplaincy}', 'ChaplainController@show')->name('chaplaincy.show');
 
-
 // APPLICATION FORM
 Route::get('/application', 'ApplicationController@index')->name('application.index');
 Route::post('/application/send', 'ApplicationController@store')->name('application.store');
@@ -67,7 +66,6 @@ Route::post('/application/send', 'ApplicationController@store')->name('applicati
 Route::get('/applicationpp/', 'ApplicationController@applicationpdf')->name('application.application_pdf');
 Route::get('/generate-pdf/{id}', 'ApplicationController@generatepdf')->name('application.pdf');
 
-
 // Leader Routes
 Route::get('/leaders', 'FacultyLeadersController@index')->name('leader.index');
 Route::get('/leader/{FacultyLeaders}', 'FacultyLeadersController@show')->name('leader.show');
@@ -75,7 +73,6 @@ Route::get('/leader/{FacultyLeaders}', 'FacultyLeadersController@show')->name('l
 Route::get('/faculty/leaders/{Faculty}', 'FacultyLeadersController@faculty')->name('leader.faculty');
 
 // Leaders
-
 
 // GALLERY
 Route::get('/gallery/', 'GalleryController@index')->name('gallery.index');
@@ -87,12 +84,11 @@ Route::get('/news/{news}', 'NewsController@show')->name('news.show');
 Route::get('/news/category/{newscategory}', 'NewsController@newsCategory')->name('news.category');
 
 // Search
-Route::get('/search', 'SearchController@search')->name('search.result');
+Route::get('/search/', 'SearchController@search')->name('search.result');
 
 // PARENT
 Route::get('/parent', 'AboutParentController@index')->name('parent.index');
 Route::get('/parent/{parent}', 'AboutParentController@show')->name('parent.show');
-
 
 // SCHOLARSHIPS
 Route::get('/scholarships', 'ScholarshipController@index')->name('scholarships.index');
@@ -142,7 +138,6 @@ Route::get('/faculty/leaders/{Faculty}', 'FacultyLeadersController@faculty')->na
 // CUEASO LEADERS
 Route::get('/current-leaders/', 'CurrentStudentLeaderController@index')->name('cueasoleaders.index');
 Route::get('/past-cueaso-leaders/', 'PastStudentLeaderController@index')->name('cueasoleaders.past_leaders');
-
 
 // VIDEO GALLERY
 Route::get('/videos-gallery', 'VideogalleryController@index')->name('video.index');

@@ -4,7 +4,7 @@
 @include('partials.topNav')
 @include('layouts.mainNav')
 
-  
+
  <!-- banner section -->
 <div class="title-section module">
     <div class="row">
@@ -20,50 +20,37 @@
     </div><!-- Row /-->
 </div>
  <!-- End of the banner section -->
-
-
-
 <!-- Content section -->
 <div class="content-section module">
-
-    <div class="row">
-        <div class="medium-12 small-12 columns">
-            @include('partials.message')
-        </div>
-    </div>
-
     <!-- Contact content area -->
     <div class="content-wrapper">
-
-        <div class="medium-3 small-12 columns">
-            <div class="contact-info">
-                <img src="{{ asset('images/3.jpg') }}" alt="Calling Girl" />
-            </div>
-            <div class="contact-info">
+  <div class="row">
+        <div class="medium-3 small-12 columns " style="margin-top:72px;">
+            <div class="contact-info application ">
                 <h4>LANGATA CAMPUS</h4>
                 <p>
                     <strong>P.O. </strong>Box 62157 - 00200<br>
                     Nairobi, Kenya<br>
-                    <!-- <strong>Email: </strong>admissions@cuea.edu<br> -->
+                  <strong>Email: </strong>admissions@cuea.edu<br>
                     <strong>Mobile: </strong>+(254) 709-691111<br>
                     <strong>Mobile: </strong>+(254) 709-691000<br>
                     <strong>Mobile: </strong>+(254) 704-913318
                 </p>
             </div>
 
-            <!-- <div class="contact-info">
+            <!-- <div class="contact-info application">
                 <h4>ELDORET - GABA CAMPUS</h4>
                 <p>
                     <strong>P.O. Box 908 - 30100<br>
                     Eldoret, Kenya<br>
-                    <strong>Email: </strong>registrygaba@cuea.edu<br> 
+                    <strong>Email: </strong>registrygaba@cuea.edu<br>
                     <strong>Mobile: </strong>+(254) - 728 458276<br>
                     <strong>Mobile: </strong>+(254) - 738 238352<br>
                     <strong>Sms: </strong>+(254) - 729 742791
                 </p>
             </div> -->
 
-            <div class="contact-info">
+            <div class="contact-info application">
                 <h4>Follow Us</h4>
                     <div class="socialicons">
                     <a href="https://www.facebook.com/TheCatholicUniversityOfEasternAfricaCuea/" target="_blank"><i class="fa fa-facebook"></i></a>
@@ -72,15 +59,15 @@
                 </div><!-- Social Icons /-->
             </div>
         </div><!-- Left column Ends /-->
-
-
-
         <div class="medium-9 small-12 columns">
+            <div class="row">
+                 <div class="medium-12 small-12 columns">
+            @include('partials.message')
+                 </div>
+          </div>
             <h2>Please fill the form below to book</h2><br>
-
-            <div class="contact-form">
+            <div class="contact-form application">
                 <form action="{{ route('booking.store') }}" method="post">
-
                     @csrf
                     <div class="row">
                         <div class="medium-6 small-12 columns">
@@ -96,7 +83,6 @@
                             </label>
                         </div>
                     </div><!-- Row Ends /-->
-
                     <div class="row">
                         <div class="medium-6 small-12 columns">
                             <label>
@@ -141,21 +127,26 @@
                                 <legend>Facility Required *</legend>
                                 @foreach ($facilities as $facility)
                                     <input type="checkbox" name="facility_required[]" value="{{ $facility->title }}"/> {{ $facility->title }}
+<<<<<<< HEAD
                                 @endforeach  
+=======
+                                @endforeach
+>>>>>>> d1c7980e40568f754fc4ce77042e884147ac2195
                             </label>
                         </div>
-                    </div><br><!-- Row Ends /-->
+                    </div><!-- Row Ends /-->
 
                     <div class="row">
                         <div class="medium-12 small-12 columns">
                             <input type="submit" class="button primary" value="Send your Booking" />
                         </div>
                     </div><!-- Row Ends /-->
-                    
+
                 </form>
             </div><!-- Contact form /-->
         </div><!-- Right Column Ends /-->
         <div class="clearfix"></div>
+        </div>
     </div>
     <!-- Contact Content Area /-->
 

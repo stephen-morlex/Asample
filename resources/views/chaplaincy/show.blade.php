@@ -14,9 +14,9 @@
                 <div class="small-12 columns">
                     <ul class="breadcrumbs">
                      <li><a href="/">Home</a></li>
-                     <li class="active"><a href="">Academics</a></li>
-                     <!-- <li class="active"><a href="{{ route('faculty.index') }}">Faculties, Schools and Institute</a></li>
-                     <li class="active"><a href="{{ route('chaplaincy.show',$chaplaincy->slug) }}">{{ $chaplaincy->name }}</a></li> -->
+                     <li class="active"><a href="{{route('administrativeoffice.index')}}">ADMINISTRATIVE OFFICES</a></li>
+                     <li class="active"><a href="{{ route('chaplaincy.index') }}">CHAPLAINCY</a></li>
+                    <!-- <li class="active"><a href="{{ route('chaplaincy.show',$chaplaincy->slug) }}">{{ $chaplaincy->name }}</a></li> -->
                     </ul><!-- Breadcrumbs /-->
                 </div><!-- Bottom Row /-->
 
@@ -26,45 +26,41 @@
 <!-- End of the banner section -->
 
 <div class="content-section module blog-page">
-
     <div class="row">
-
         <div class="medium-8 small-12 columns posts-wrap">
-            {{--  <h2>{!! $chaplaincy->name !!}</h2>  --}}
-            <div class="event-thumb">
-                <img  src="{{ Voyager::image( $chaplaincy->image ) }}"  class="thumbnail" />
-            </div><!-- Course Thumb /-->
+             <h2>{!! $chaplaincy->name !!}</h2> 
+            @if($chaplaincy->image)
+                <div class="event-thumb">
+                    <img  src="{{ Voyager::image( $chaplaincy->thumbnail('small'))}}"  class="thumbnail" />
+                </div><!-- Course Thumb /-->
+            @else
+
+            @endif
             <div class="event-content">
                 <p></p>
                     <p>{!! $chaplaincy->description  !!}</p>
                     <hr>
                     <p>{!! $chaplaincy->content !!}</p>
-                </div><!-- Course content /-->
-
-        </div><!-- Posts wrap ends /-->
+            </div><!-- Course content /-->
+     </div><!-- Posts wrap ends /-->
 
         <div class="medium-4 small-12 columns sidebar">
-
             <div class="widget">
-
-                <ul class="menu vertical">
+                <ol class="menu vertical">
                     @forelse($chaplaincies as $chaplaincy)
-                    <li><a href="{{route('chaplaincy.show',$chaplaincy->slug)}}">{!! $chaplaincy->name !!}</a></li>
+                    <li> <a href="{{route('chaplaincy.show',$chaplaincy->slug)}}"><i class="fa fa-list-ul fa-lg"> {!! $chaplaincy->name !!}</i></a></li>
+                    <br>
                     @empty
                        <!--  <li>There is no chaplaincy at the moment.</li> -->
                     @endforelse
-                </ul>
+                </ol>
             </div><!-- widget ends /-->
-
-
-
+            
             <div class="clearfix"></div>
-            </div><!-- widget ends /-->
+      </div><!-- widget ends /-->
 
-        </div><!-- right bar ends here /-->
-
-    </div><!-- Row Ends /-->
-
+</div><!-- right bar ends here /-->
+</div><!-- Row Ends /-->
 </div>
 <!-- Content Section Ends /-->
 

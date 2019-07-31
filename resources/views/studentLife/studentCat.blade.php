@@ -36,7 +36,7 @@
                     >
                         <div class="product-img thumbnail">
                             <a href="{{route('student.show',$item->slug)}}">
-                                <img   class="front-image" src="{{ Voyager::image( $item->thumbnail('cropped'))}}">
+                                <img class="front-image" src="{{ Voyager::image( $item->thumbnail('cropped'))}}" onerror="this.style.display='none'">
                             </a>
                             <div class="add-to-cart-top">
                                     <a href="{{route('student.show',$item->slug)}}" class="button primary">{{$item->name}}</a>

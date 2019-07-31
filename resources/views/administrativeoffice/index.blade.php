@@ -19,16 +19,14 @@
     </div><!-- Row /-->
 </div>
 <!-- End of the banner section -->
-
-
 <div class="content-section module blog-page">
     <div class="row">
-
         <div class="medium-8 small-12 columns posts-wrap">
             @forelse($administratives as $administrative)
                 <h3>{!! $administrative->title !!}</h3>
+                <div class="tx-div"></div>
                 <div class="event-thumb">
-                    <img  src="{{ Voyager::image( $administrative->image ) }}" alt="{!! $administrative->title !!}"/>
+                    <img  src="{{ Voyager::image( $administrative->image ) }}" alt="{!! $administrative->title !!}" onerror="this.style.display='none'"/>
                 </div>
                 <div class="event-content">
                     <p>{!! $administrative->content !!}</p>
@@ -37,12 +35,11 @@
                 <h2>No administrative office at the moment<h2>
             @endforelse
         </div><!-- Posts wrap ends /-->
-
-
         <div class="medium-4 small-12 columns sidebar">
             <div class="widget">
                 <h2> Administrative Offices</h2>
                 <ul class="menu vertical">
+                 <li><a href="{{ route('chaplaincy.index') }}">Chaplaincy</a></li>
                     @forelse($administrative_offices as $administrative_office)
                         <li><a href="{{ route('administrativeoffice.show',$administrative_office->slug) }}">{!! $administrative_office->title !!}</a></li>
                     @empty
